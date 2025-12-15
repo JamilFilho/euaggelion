@@ -14,6 +14,6 @@ Junte-se a nós e vamos crescer, dia após dia, na graça e no conhecimento de n
 
 ### Estrutura de diretórios
 
-Artigos, estudos e outros materiais semanais: `/[slug]`
-Páginas internas: `/p/[page]`
-Categorias de conteúdos (seções): `/s/[category]`
+- Artigos, estudos e outros materiais semanais: `/[slug]`
+- Páginas internas: `/p/[page]`
+- Categorias de conteúdos (seções): `/s/[category]`
