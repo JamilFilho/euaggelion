@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { Article } from "@/components/content/Article";
 import { getAllArticles, getArticleBySlug, getArticleNavigation } from "@/lib/getArticles";
 import { notFound } from "next/navigation";
@@ -16,7 +17,7 @@ interface Params {
 
 export async function generateStaticParams() {
   const articles = getAllArticles();
-  
+
   return articles
     .filter(article => article.published)
     .map((article) => ({
@@ -24,19 +25,44 @@ export async function generateStaticParams() {
     }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<Params> }) {
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<Params> 
+}): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
 
   if (!article) {
     return {
-      title: "Artigo não encontrado",
+      title: "Artigo não encontrado | Euaggelion",
+      description: "O artigo solicitado não foi encontrado.",
     };
   }
 
+  const categoryMeta = CATEGORIES[article.category] ?? { name: article.category };
+  const categoryName = typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name;
+
   return {
-    title: article.title,
+    title: `${article.title} | Euaggelion`,
     description: article.description,
+    openGraph: {
+      title: article.title,
+      description: article.description,
+      type: 'article',
+      publishedTime: article.date,
+      authors: article.author ? [article.author] : undefined,
+      tags: article.tags,
+      url: `https://euaggelion.com.br/${article.slug}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.description,
+    },
+    keywords: article.tags,
+    authors: article.author ? [{ name: article.author }] : undefined,
+    category: categoryName,
   };
 }
 
@@ -53,10 +79,8 @@ export default async function ArticlePage({
     notFound();
   }
 
-  // Usa o nome real do arquivo
   const filePath = path.join(process.cwd(), "content", "articles", found.fileName);
   
-  // Verifica se o arquivo existe
   if (!fs.existsSync(filePath)) {
     console.error(`Arquivo não encontrado: ${filePath}`);
     notFound();
