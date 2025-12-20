@@ -8,11 +8,11 @@ interface FeedGroupProps {
 }
 
 export default function FeedGroup({ children }: FeedGroupProps) {
-    const { filteredArticles } = useFeedContext();
+    const { paginatedArticles } = useFeedContext();
     
     return (
         <>
-            {filteredArticles.length === 0 ? (
+            {paginatedArticles.length === 0 ? (
                 <div className="md:col-span-3 p-10 text-center text-foreground/60">
                     Nenhum conteúdo encontrado.
                 </div>

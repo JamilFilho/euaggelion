@@ -6,6 +6,7 @@ import FeedItem from "./FeedItem";
 import FeedTitle from "./FeedTitle";
 import FeedExcerpt from "./FeedExcerpt";
 import FeedLink from "./FeedLink";
+import FeedPagination from "./FeedPagination";
 
 export const Feed = {
     Root: FeedRoot,
@@ -15,5 +16,6 @@ export const Feed = {
     Item: FeedItem,
     Title: FeedTitle,
     Excerpt: FeedExcerpt,
-    Link: FeedLink
+    Link: FeedLink,
+    Pagination: FeedPagination
 }

@@ -8,16 +8,18 @@ interface FeedArticlesProps {
 }
 
 export default function FeedArticles({ category }: FeedArticlesProps) {
-    const { filteredArticles } = useFeedContext();
+    const { paginatedArticles } = useFeedContext();
     
     return (
         <>
-            {filteredArticles.map((article) => (
+            {paginatedArticles.map((article, index) => (
                 <Feed.Item
                     key={article.slug}
                     slug={article.slug}
                     category={category}
                     isWiki={article.isWiki}
+                    index={index}
+                    totalItems={paginatedArticles.length}
                 >
                     <Feed.Title content={article.title} />
                     <Feed.Excerpt content={article.description} />
