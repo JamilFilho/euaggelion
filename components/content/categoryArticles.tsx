@@ -18,6 +18,9 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { ArrowRight } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { count } from "console";
 
 interface Article {
   slug: string;
@@ -25,6 +28,8 @@ interface Article {
   description: string;
   category: string;
   testament?: "at" | "nt";
+  isWiki?: boolean;
+  count?:number
 }
 
 interface CategoryArticlesProps {
@@ -94,7 +99,7 @@ export function CategoryArticles({ articles, category }: CategoryArticlesProps) 
 
   return (
     <div className="flex flex-col">
-      <section className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-x divide-ring/20 border-t border-ring/20">
+      <section className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-ring/20 border-t border-ring/20">
         {category === "verso-a-verso" && (
           <header className="md:col-span-3 flex items-center justify-between md:justify-end md:gap-4 border-b border-ring/20 py-4 px-10">
             <span className="text-foreground/60">Filtrar conteúdo:</span>
@@ -118,24 +123,53 @@ export function CategoryArticles({ articles, category }: CategoryArticlesProps) 
         ) : (
           currentArticles.map((article, index) => (
             <article
-              className={`p-10 ${
-                index === currentArticles.length - 1 &&
-                currentArticles.length % 3 === 1
-                  ? "md:col-span-2 flex flex-col"
+              className={`h-full ${
+                index === currentArticles.length - 1 && currentArticles.length % 3 === 1
+                  ? "md:col-span-3"
+                  : index === currentArticles.length - 1 && currentArticles.length % 3 === 2
+                  ? "md:col-span-2"
                   : ""
               }`}
               key={article.slug}
             >
               <Link
-                href={`/${article.slug}`}
-                className="flex flex-col gap-4"
+                href={article.isWiki ? (category === "wiki" ? `/wiki/${article.slug}` : `/wiki/${category}/${article.slug}`) : (category === "articles" ? `/s/${article.slug}` : `/${article.slug}`)}
+                className="flex flex-col gap-4 h-full"
               >
-                <header>
-                  <h3 className="text-3xl font-bold">{article.title}</h3>
+                <header className="pt-12 px-10">
+                  <h3 className="text-3xl font-bold line-clamp-2 mb-4">{article.title}</h3>
+                  {article.count !== undefined && (
+                    <Badge variant="secondary">
+                      {article.count === 0 ? (
+                        <span>Nenhum artigo</span>
+                      ) : article.count === 1 ? (
+                        <span>{article.count} artigo</span>
+                      ) : (
+                        <span>{article.count} artigos</span>
+                      )}
+                    </Badge>
+                  )}
                 </header>
-                <section>
-                  <p className="text-foreground/60">{article.description}</p>
+                <section className="flex-1 px-10 mb-10">
+                  <p className="text-foreground/60 line-clamp-3">{article.description}</p>
                 </section>
+
+                <footer className="px-10 py-4 hover:pr-8 flex flex-row justify-between items-center border-t border-ring/20 md:border-b bg-black/10 hover:bg-black/20 transition-all ease-in-out text-sm text-foreground font-semibold">
+                    {article.isWiki ? (
+                      category === "wiki" ? (
+                        <span>Ver artigos</span>
+                      ) : (
+                        <span>Continuar lendo</span>
+                      )
+                    ) : (
+                      category === "articles" ? (
+                        <span>Ver artigos</span>
+                      ) : (
+                        <span>Continuar lendo</span>
+                      )
+                    )}
+                  <ArrowRight />
+                </footer>
               </Link>
             </article>
           ))

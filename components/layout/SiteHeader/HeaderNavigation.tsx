@@ -8,8 +8,8 @@ interface SiteHeaderNavigationProps {
 export function SiteHeaderNavigation({icon: Icon}: SiteHeaderNavigationProps) {
     return(
         <>
-        <Link className="ml-auto" href="/p/links">
-            <Icon className="color-white" />
+        <Link className="md:hidden" href="/p/links">
+            <Icon className="color-white size-5" />
         </Link>
         </>
     )

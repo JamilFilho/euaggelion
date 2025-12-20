@@ -3,6 +3,7 @@ import { getArticlesByCategory } from "@/lib/getArticles";
 import { CATEGORIES } from "@/lib/categories";
 import { CategoryArticles } from "@/components/content/categoryArticles";
 import { Page } from "@/components/content/Page";
+import  { Newsletter } from "@/components/layout/Newsletter";
 
 interface Params {
   category: string;
@@ -73,6 +74,14 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       <Page.Content>
         <CategoryArticles articles={articlesInCategory} category={category} />
       </Page.Content>
+      <Newsletter.Root>
+        <Newsletter.Header>
+          <Newsletter.Title content="NewsGelion"/>
+          <Newsletter.Headline content="Receba nossos materiais, gratuitamente, em seu e-mail." />
+        </Newsletter.Header>
+        <Newsletter.Form />
+        <Newsletter.Footer />
+      </Newsletter.Root>
     </Page.Root>
   );
 }

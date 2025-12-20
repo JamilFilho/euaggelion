@@ -14,18 +14,18 @@ interface ThumbnailGradientProps {
 }
 
 export function ThumbnailGradient({
-  colors = ["#3b82f6", "#8b5cf6", "#ec4899", "#f59e0b"],
-  backgroundColor = "#f8fafc",
-  blurAmount = 125,
-  noiseAmount = 0.3,
-  contrastAmount = 130,
-  saturationAmount = 110,
+  colors = ["var(--foreground)", "var(--primary)", "var(--ring)", "var(--foregroung)"],
+  backgroundColor = "var(--background)",
+  blurAmount = 10,
+  noiseAmount = 1.2,
+  contrastAmount = 200,
+  saturationAmount = 60,
   className = "",
   randomize = false,
 }: ThumbnailGradientProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [dimensions, setDimensions] = useState({ width: 800, height: 600 });
+  const [dimensions, setDimensions] = useState({ width: 1920, height: 1800 });
 
   // Observa o tamanho do container
   useEffect(() => {
@@ -197,7 +197,6 @@ export function ThumbnailGradient({
       className={className} 
       style={{ 
         position: "relative",
-        borderRadius: ".5rem",
         overflow: "hidden"
       }}
     >

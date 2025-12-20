@@ -1,13 +1,32 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Remove 'md' e 'mdx' das pageExtensions já que estamos usando next-mdx-remote
-  // Os arquivos .mdx na pasta /content são carregados manualmente, não como páginas
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
-  
-  experimental: {
-    // Turbopack está em beta, pode causar problemas
-    // Remova se encontrar outros erros
+
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'X-DNS-Prefetch-Control', value: 'off' },
+          { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'no-referrer' },
+          { key: 'Permissions-Policy', value: 'geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()' },
+          { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
+          { key: 'X-XSS-Protection', value: '1; mode=block' },
+          { key: 'ETag', value: ''}
+        ],
+      },
+      {
+        source: '/:path*.{png,jpg,jpeg,webp,svg,woff,woff2}',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable'}]
+      },
+    ]
   },
+
+  poweredByHeader: false,
+  compress: true,
+  reactStrictMode: true,
 };
 
 export default nextConfig;

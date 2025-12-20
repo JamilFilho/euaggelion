@@ -1,11 +1,21 @@
-// lib/categories.ts
-
 export interface CategoryMeta {
-  name: string;          // Nome legível
-  description?: string;  // Descrição para exibir na página
+  name: string;
+  description?: string;
 }
 
 export const CATEGORIES: Record<string, CategoryMeta> = {
+  "glossario": {
+    name: "Glossário Teológico",
+    description: "Termos e conceitos biblicos e teológicos",
+  },
+  teologos: {
+    name: "Teólogos",
+    description: "Vida e obra dos homens e mulheres que contribuiram para a teologia cristã",
+  },
+  escatologia: {
+    name: "Escatologia",
+    description: "Escolas escatológicas e interpretações proféticas",
+  },
   "biblioteca-crista": {
     name: "Biblioteca Cristã",
     description: "Clássicos da literatura cristã, materiais teológicos e recursos para edificar sua fé.",
@@ -42,9 +52,13 @@ export const CATEGORIES: Record<string, CategoryMeta> = {
     name: "Parábolas",
     description: "Estudos sobre as parábolas de Jesus",
   },
+  planners: {
+    name: "Planners de Leitura",
+    description: "Organize sua leitura bíblica com nossos planners gratuitos",
+  },
   sermoes: {
     name: "Sermões Históricos",
-    description: "Edifique sua fé com sermões e pregações de homens e mulheres que marcaram a história do cristianismo.",
+    description: "Edifique sua fé com sermões e pregações de homens e mulheres que marcaram a história do cristianismo",
   },
   teoleigo: {
     name: "TEOleigo",

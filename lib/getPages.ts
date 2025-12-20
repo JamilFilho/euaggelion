@@ -12,9 +12,6 @@ export interface PageMeta {
   published: boolean;
 }
 
-/**
- * Obtém todas as páginas estáticas
- */
 export function getAllPages(): PageMeta[] {
   if (!fs.existsSync(PAGES_PATH)) {
     console.warn(`Diretório ${PAGES_PATH} não encontrado`);
@@ -40,16 +37,10 @@ export function getAllPages(): PageMeta[] {
     });
 }
 
-/**
- * Obtém uma página específica pelo slug
- */
 export function getPageBySlug(slug: string): PageMeta | undefined {
   return getAllPages().find((page) => page.slug === slug);
 }
 
-/**
- * Obtém apenas as páginas publicadas
- */
 export function getPublishedPages(): PageMeta[] {
   return getAllPages().filter((page) => page.published);
 }

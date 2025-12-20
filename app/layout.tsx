@@ -4,6 +4,7 @@ import { Menu } from "lucide-react";
 import { Toaster } from "@/components/ui/sonner";
 import { SiteHeader } from "@/components/layout/SiteHeader/";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { SearchContent } from "@/components/content/search";
 
 export const metadata: Metadata = {
   title: "Euaggelion",
@@ -13,10 +14,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="pt-br">
-      <body className="bg-secondary">
+      <body className="bg-secondary selection:bg-accent selection:text-secondary black:selection:text-foreground">
         <SiteHeader.Root>
           <SiteHeader.Title text="Euaggelion" logo="/euaggelion-logo.svg" />
-          <SiteHeader.Navigation icon={Menu} />
+
+          <div className="ml-auto flex flex-row gap-4">
+            <SearchContent />
+            <SiteHeader.Navigation icon={Menu} />
+          </div>
         </SiteHeader.Root>
 
         <main>
@@ -25,7 +30,11 @@ export default function RootLayout({ children }: Readonly<{children: React.React
 
         <SiteFooter.Root>
           <SiteFooter.Menu />
-          <SiteFooter.Copy copyright="CC0 1.0 Universal — Euaggelion" content="O projeto Euaggelion é uma iniciativa cristã independente cujo objetivo central é a divulgação gratuita de conteúdo cristão e teológico. Todo material disponibilizado por meio de nosso site está diponível sob uma licença de uso de domínio público." />
+          
+          <SiteFooter.Content>
+            <SiteFooter.Title text="Euaggelion" logo="/euaggelion-logo.svg" />
+            <SiteFooter.Copy copyright="CC0 1.0 Universal" content="O projeto Euaggelion é uma iniciativa cristã independente cujo objetivo central é a divulgação gratuita de conteúdo cristão e teológico. Todo material disponibilizado por meio de nosso site está diponível sob uma licença de uso de domínio público." />
+          </SiteFooter.Content>
         </SiteFooter.Root>
         
         <Toaster />

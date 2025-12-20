@@ -4,6 +4,6 @@ interface PageDescriptionProps {
 
 export function PageDescription({content}: PageDescriptionProps) {
     return(
-        <h2 className="text-base text-foreground/60">{content}</h2>
+        <h2 className="text-base md:text-xl text-foreground/60">{content}</h2>
     )
 }

@@ -64,17 +64,19 @@ export default async function StaticPage({
   const components = useMDXComponents({});
 
   return (
-    <Article.Root>
-      <Article.Header>
-        <Article.Group>
-          <Article.Title content={page.title} />
-          <Article.Description content={page.description} />
-        </Article.Group>
-      </Article.Header>
+    <div className="site-page">
+      <Article.Root>
+        <Article.Header>
+          <Article.Group>
+            <Article.Title content={page.title} />
+            <Article.Description content={page.description} />
+          </Article.Group>
+        </Article.Header>
 
-      <Article.Content>
-        <MDXRemote source={content} components={components} />
-      </Article.Content>
-    </Article.Root>
+        <Article.Content>
+          <MDXRemote source={content} components={components} />
+        </Article.Content>
+      </Article.Root>
+    </div>
   );
 }

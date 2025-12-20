@@ -10,6 +10,7 @@ import { useMDXComponents } from "@/mdx-components";
 import { CATEGORIES } from "@/lib/categories";
 import Link from "next/link";
 import { getReadingTime } from "@/lib/timeReader";
+import { Newsletter } from '@/components/layout/Newsletter';
 
 interface Params {
   slug: string;
@@ -129,10 +130,19 @@ export default async function ArticlePage({
         />
       </Article.Footer>
 
+      <Newsletter.Root>
+        <Newsletter.Header>
+          <Newsletter.Title content="NewsGelion"/>
+          <Newsletter.Headline content="Gostou deste conteúdo? Inscreva-se gratuitamente e receba materiais como este em seu e-mail." />
+        </Newsletter.Header>
+        <Newsletter.Form />
+        <Newsletter.Footer />
+      </Newsletter.Root>
+
       <Article.Navigation
-          prev={navigation.prev}
-          next={navigation.next}
-          category={found.category}
+        prev={navigation.prev}
+        next={navigation.next}
+        category={found.category}
       />
     </Article.Root>
   );

@@ -1,0 +1,43 @@
+# .github/workflows/archive-wayback.yml
+name: Archive no Internet Archive
+
+on:
+  # Semanalmente (domingo às 2h UTC / sábado 23h Brasília)
+  schedule:
+    - cron: '0 2 * * 0'
+  
+  # Manual
+  workflow_dispatch:
+  
+  # Após push na main (opcional)
+  push:
+    branches:
+      - main
+    paths:
+      - 'content/**'
+      - 'app/**'
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Arquivar site via sitemap
+        run: node scripts/archive-from-sitemap.js
+      
+      - name: Resumo
+        if: always()
+        run: |
+          echo "### Arquivamento Concluído" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Site arquivado no Internet Archive" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[Ver snapshots](https://web.archive.org/web/*/https://euaggelion.com.br)" >> $GITHUB_STEP_SUMMARY

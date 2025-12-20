@@ -6,6 +6,6 @@ interface ArticlePublishedAtProps {
 
 export function ArticlePublishedAt({content}: ArticlePublishedAtProps) {
     return(
-        <span className="col-span-1">{getRelativeTime(content)}</span>
+        <span className="col-span-1 font-semibold black:font-normal">{getRelativeTime(content)}</span>
     )
 }

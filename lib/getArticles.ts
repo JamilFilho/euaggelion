@@ -6,15 +6,17 @@ const CONTENT_PATH = path.join(process.cwd(), "content", "articles");
 
 export interface ArticleMeta {
   slug: string;
-  fileName: string; // Nome real do arquivo
+  fileName: string;
   title: string;
   published: boolean;
   description: string;
-  date?: string;
+  date: string;
   author?: string;
   category: string;
   tags?: string[];
   testament?: "at" | "nt";
+  content: string;
+  search?: boolean;
 }
 
 export interface ArticleNavigation {
@@ -23,7 +25,6 @@ export interface ArticleNavigation {
 }
 
 export function getAllArticles(): ArticleMeta[] {
-  // Verifica se o diretório existe
   if (!fs.existsSync(CONTENT_PATH)) {
     console.warn(`Diretório ${CONTENT_PATH} não encontrado`);
     return [];
@@ -32,24 +33,25 @@ export function getAllArticles(): ArticleMeta[] {
   const files = fs.readdirSync(CONTENT_PATH);
   
   return files
-    .filter((file) => file.endsWith(".mdx"))
-    .map((file) => {
-      const filePath = path.join(CONTENT_PATH, file);
-      const raw = fs.readFileSync(filePath, "utf-8");
-      const { data } = matter(raw);
+  .filter((file) => file.endsWith(".mdx"))
+  .map((file) => {
+    const filePath = path.join(CONTENT_PATH, file);
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const { data, content } = matter(raw);
       
       return {
-        slug: file.replace(/\.mdx$/, "").toLowerCase(), // Slug normalizado
-        fileName: file, // Nome real do arquivo
+        slug: file.replace(/\.mdx$/, "").toLowerCase(),
+        fileName: file,
         title: data.title ?? "",
         description: data.description ?? "",
         date: data.date ?? "",
         author: data.author ?? "",
         published: data.published ?? false,
-        // Normaliza a categoria para lowercase
         category: (data.category ?? "").toLowerCase(),
         tags: data.tags ?? [],
-        testament: data.testament
+        testament: data.testament,
+        content,
+        search: data.search ?? true,
       } satisfies ArticleMeta;
     });
 }
@@ -57,24 +59,20 @@ export function getAllArticles(): ArticleMeta[] {
 export function getArticlesByCategory(category?: string): ArticleMeta[] {
   const allArticles = getAllArticles();
   
-  // Se não passou categoria, retorna todos os artigos publicados
   if (!category) {
     return allArticles
       .filter(article => article.published)
       .sort((a, b) => {
-        // Ordena do mais novo para o mais antigo
         if (!a.date || !b.date) return 0;
         return new Date(b.date).getTime() - new Date(a.date).getTime();
       });
   }
   
-  // Filtra por categoria específica e ordena
   return allArticles
     .filter(
       (article) => article.category === category.toLowerCase() && article.published
     )
     .sort((a, b) => {
-      // Ordena do mais novo para o mais antigo
       if (!a.date || !b.date) return 0;
       return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
@@ -84,9 +82,25 @@ export function getArticleBySlug(slug: string): ArticleMeta | undefined {
   return getAllArticles().find((article) => article.slug === slug);
 }
 
-/**
- * Obtém os artigos anterior e próximo dentro da mesma categoria
- */
+export function getArticleCategoriesWithCount(): { category: string; count: number }[] {
+  const articles = getAllArticles().filter(article => article.published);
+  const categoryCounts: Record<string, number> = {};
+
+  articles.forEach((article) => {
+    const category = article.category;
+    if (categoryCounts[category]) {
+      categoryCounts[category]++;
+    } else {
+      categoryCounts[category] = 1;
+    }
+  });
+
+  return Object.keys(categoryCounts).map((category) => ({
+    category,
+    count: categoryCounts[category],
+  }));
+}
+
 export function getArticleNavigation(
   currentSlug: string,
   category: string
@@ -101,11 +115,9 @@ export function getArticleNavigation(
   }
 
   return {
-    // Anterior = índice - 1 (mais recente na ordenação)
     prev: currentIndex > 0 ? articlesInCategory[currentIndex - 1] : null,
-    // Próximo = índice + 1 (mais antigo na ordenação)
-    next: currentIndex < articlesInCategory.length - 1 
-      ? articlesInCategory[currentIndex + 1] 
+    next: currentIndex < articlesInCategory.length - 1
+      ? articlesInCategory[currentIndex + 1]
       : null,
   };
 }
