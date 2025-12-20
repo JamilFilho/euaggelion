@@ -9,11 +9,19 @@ import { SearchContent } from "@/components/content/search";
 export const metadata: Metadata = {
   title: "Euaggelion",
   description: "Semeando as boas novas da salvação",
+  other: {
+    'webmention': 'https://webmention.io/euaggelion.com.br/webmention',
+    'pingback': 'https://webmention.io/euaggelion.com.br/xmlrpc',
+  }
 };
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="pt-br">
+      <head>
+        <link rel="webmention" href="https://webmention.io/euaggelion.com.br/webmention" />
+        <link rel="pingback" href="https://webmention.io/euaggelion.com.br/xmlrpc" />
+      </head>
       <body className="bg-secondary selection:bg-accent selection:text-secondary black:selection:text-foreground">
         <SiteHeader.Root>
           <SiteHeader.Title text="Euaggelion" logo="/euaggelion-logo.svg" />
