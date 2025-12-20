@@ -20,7 +20,7 @@ export function SiteFooterMenu() {
             <li><Link href="/s/biblioteca-crista" title="Biblioteca Cristã">Biblioteca Cristã</Link></li>
             <li><Link href="/s/estudos" title="Estudos Temáticos">Estudos Temáticos</Link></li>
             <li><Link href="/s/sermoes" title="Sermões Históricos">Sermões Históricos</Link></li>
-            <li><Link href="/s/estudos" title="Estudos">TEOleigo</Link></li>
+            <li><Link href="/s/teoleigo" title="TEOleigo">TEOleigo</Link></li>
             <li><Link href="/s/verso-a-verso" title="Verso a verso">Verso a verso</Link></li>
           </ul>
 
