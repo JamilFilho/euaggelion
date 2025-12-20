@@ -1,5 +1,5 @@
 # .github/workflows/archive-wayback.yml
-name: Archive no Internet Archive
+name: Internet Archive
 
 on:
   # Semanalmente (domingo às 2h UTC / sábado 23h Brasília)
@@ -31,7 +31,7 @@ jobs:
           node-version: '18'
       
       - name: Arquivar site via sitemap
-        run: node scripts/archive-from-sitemap.js
+        run: node scripts/archive-wayback.js
       
       - name: Resumo
         if: always()
