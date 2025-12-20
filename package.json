@@ -11,6 +11,7 @@
     "archive": "node scripts/archive-wayback.js"
   },
   "dependencies": {
+    "@mailerlite/mailerlite-nodejs": "^1.5.0",
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@mesh-gradient/react": "^1.5.0",
