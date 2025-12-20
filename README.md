@@ -27,7 +27,6 @@ Este projeto está comprometido com a privacidade total dos usuários:
 - ❌ Sem Vercel Analytics
 - ❌ Sem cookies de rastreamento
 - ❌ Sem fingerprinting
-- ❌ Sem compartilhamento de dados com terceiros
 - ✅ Código 100% auditável
 - ✅ Self-hosted de recursos sempre que possível
 
@@ -38,3 +37,4 @@ Para verificar, inspecione a aba Network do seu navegador ao navegar pelo site.
 - Artigos, estudos e outros materiais semanais: `/[slug]`
 - Páginas internas: `/p/[page]`
 - Categorias de conteúdos (seções): `/s/[category]`
+- Wiki: `/wiki`
