@@ -1,0 +1,35 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+interface FeedLinkProps {
+    slug: string;
+    category: string;
+    isWiki?: boolean;
+}
+
+export default function FeedLink({ slug, category, isWiki = false }: FeedLinkProps) {
+    const href = isWiki
+        ? category === "wiki"
+            ? `/wiki/${slug}`
+            : `/wiki/${category}/${slug}`
+        : category === "articles"
+            ? `/s/${slug}`
+            : `/${slug}`;
+
+    const content = isWiki
+        ? category === "wiki"
+            ? "Ver artigos"
+            : "Continuar lendo"
+        : category === "articles"
+            ? "Ver artigos"
+            : "Continuar lendo";
+
+    return (
+        <Link href={href} className="flex flex-col gap-4 h-full">
+            <footer className="px-10 py-4 hover:pr-8 flex flex-row justify-between items-center border-t border-ring/20 md:border-b bg-black/10 hover:bg-black/20 transition-all ease-in-out text-sm text-foreground font-semibold">
+                {content}
+                <ArrowRight />
+            </footer>
+        </Link>
+    );
+}
