@@ -70,12 +70,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
       <Page.Content>    
         <Feed.Root articles={articlesInCategory} category={category}>
-          <Feed.Header show={category === "verso-a-verso"} />
-          <Feed.Group>
+            <Feed.Header show={category === "verso-a-verso"} />
+            <Feed.Group>
               <Feed.Articles category={category} />
-          </Feed.Group>
-
-          <Feed.Pagination />
+            </Feed.Group>
+            <Feed.Pagination />
         </Feed.Root>
       </Page.Content>
       
