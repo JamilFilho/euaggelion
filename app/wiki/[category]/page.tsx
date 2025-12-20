@@ -70,13 +70,11 @@ export default async function WikiCategoryPage({ params }: WikiCategoryPageProps
                 )}
             </Page.Header>
             <Page.Content>
-              <Feed.Root articles={articlesInCategory} category={category}>
-                  <Feed.Header show={false} />
-                  <Feed.Group>
-                      <Feed.Articles category={category} />
-                  </Feed.Group>
-      
-                  <Feed.Pagination />
+              <Feed.Root articles={articlesInCategory} category="wiki">
+                <Feed.Group>
+                  <Feed.Articles category="wiki" isCategoryPage={true} />
+                </Feed.Group>
+                <Feed.Pagination />
               </Feed.Root>
             </Page.Content> 
         </Page.Root>

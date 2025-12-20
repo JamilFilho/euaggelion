@@ -2,13 +2,16 @@
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useFeedContext } from "./FeedProvider";
+import { ReactNode } from "react";
 
 interface FeedHeaderProps {
+    children?: ReactNode;
     show?: boolean;
     options?: { value: string; label: string }[];
 }
 
-export default function FeedHeader({ 
+export default function FeedHeader({
+    children,
     show = true, 
     options = [
         { value: "all", label: "Todos" },
@@ -19,7 +22,7 @@ export default function FeedHeader({
     const { filter, onFilterChange } = useFeedContext();
 
     if (!show) {
-        return null;
+        return <header className="md:col-span-3 flex flex-col justify-center border-b border-ring/20 py-6 px-10">{children}</header>;
     }
 
     return (

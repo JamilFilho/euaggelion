@@ -5,9 +5,10 @@ import { useFeedContext } from "./FeedProvider";
 
 interface FeedArticlesProps {
     category: string;
+    isCategoryPage?: boolean;
 }
 
-export default function FeedArticles({ category }: FeedArticlesProps) {
+export default function FeedArticles({ category, isCategoryPage = false }: FeedArticlesProps) {
     const { paginatedArticles } = useFeedContext();
     
     return (
@@ -26,7 +27,9 @@ export default function FeedArticles({ category }: FeedArticlesProps) {
                     <Feed.Link
                         slug={article.slug}
                         category={category}
+                        articleCategory={article.category}
                         isWiki={article.isWiki}
+                        isCategoryPage={isCategoryPage}
                     />
                 </Feed.Item>
             ))}

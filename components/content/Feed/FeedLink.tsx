@@ -4,14 +4,16 @@ import { ArrowRight } from "lucide-react";
 interface FeedLinkProps {
     slug: string;
     category: string;
+    articleCategory?: string;
     isWiki?: boolean;
+    isCategoryPage?: boolean;
 }
 
-export default function FeedLink({ slug, category, isWiki = false }: FeedLinkProps) {
-    const href = isWiki
-        ? category === "wiki"
-            ? `/wiki/${slug}`
-            : `/wiki/${category}/${slug}`
+export default function FeedLink({ slug, category, articleCategory, isWiki = false, isCategoryPage = false }: FeedLinkProps) {
+    const href = isWiki || category === "wiki"
+        ? isCategoryPage
+            ? `/wiki/${articleCategory}/${slug}`
+            : `/wiki/${articleCategory}`
         : category === "articles"
             ? `/s/${slug}`
             : `/${slug}`;

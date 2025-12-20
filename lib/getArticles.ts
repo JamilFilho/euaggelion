@@ -56,26 +56,27 @@ export function getAllArticles(): ArticleMeta[] {
     });
 }
 
-export function getArticlesByCategory(category?: string): ArticleMeta[] {
+export function getArticlesByCategory(category?: string, limit?: number ): ArticleMeta[] {
   const allArticles = getAllArticles();
   
-  if (!category) {
-    return allArticles
-      .filter(article => article.published)
-      .sort((a, b) => {
-        if (!a.date || !b.date) return 0;
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
-      });
+  let filteredArticles = allArticles.filter(article => article.published);
+  
+  if (category) {
+    filteredArticles = filteredArticles.filter(
+      (article) => article.category === category.toLowerCase()
+    );
+  }
+
+  const sortedArticles = filteredArticles.sort((a, b) => {
+    if (!a.date || !b.date) return 0;
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
+
+  if (limit) {
+    return sortedArticles.slice(0, limit);
   }
   
-  return allArticles
-    .filter(
-      (article) => article.category === category.toLowerCase() && article.published
-    )
-    .sort((a, b) => {
-      if (!a.date || !b.date) return 0;
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
-    });
+  return sortedArticles;
 }
 
 export function getArticleBySlug(slug: string): ArticleMeta | undefined {

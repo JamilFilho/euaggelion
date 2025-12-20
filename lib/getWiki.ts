@@ -83,22 +83,3 @@ export function getWikiCategories(): string[] {
   const categories = articles.map(article => article.category);
   return [...new Set(categories)];
 }
-
-export function getWikiCategoriesWithCount(): { category: string; count: number }[] {
-  const articles = getAllWikiArticles().filter(article => article.published);
-  const categoryCounts: Record<string, number> = {};
-
-  articles.forEach((article) => {
-    const category = article.category;
-    if (categoryCounts[category]) {
-      categoryCounts[category]++;
-    } else {
-      categoryCounts[category] = 1;
-    }
-  });
-
-  return Object.keys(categoryCounts).map((category) => ({
-    category,
-    count: categoryCounts[category],
-  }));
-}

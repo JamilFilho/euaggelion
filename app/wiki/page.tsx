@@ -40,11 +40,9 @@ export default function WikiPage() {
         <Page.Root>
             <Page.Content>
                 <Feed.Root articles={articles} category={category}>
-                    <Feed.Header show={false} />
                     <Feed.Group>
                       <Feed.Articles category={category} />
                     </Feed.Group>
-        
                     <Feed.Pagination />
                 </Feed.Root>
             </Page.Content>
