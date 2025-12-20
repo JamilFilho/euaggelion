@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { getAllWikiCategory, getWikiCategories } from "@/lib/getWiki";
 import { CATEGORIES } from "@/lib/categories";
-import { CategoryArticles } from "@/components/content/categoryArticles";
 import { Page } from "@/components/content/Page";
+import { Feed } from '@/components/content/Feed';
 
 interface Params {
   category: string;
@@ -59,10 +59,7 @@ interface WikiCategoryPageProps {
 export default async function WikiCategoryPage({ params }: WikiCategoryPageProps) {
     const { category } = await params;
     const categoryMeta = CATEGORIES[category] ?? { name: category };
-    const articlesInCategory = getAllWikiCategory(category).map(article => ({
-        ...article,
-        isWiki: true,
-    }));
+    const articlesInCategory = getAllWikiCategory(category).map(article => ({...article}));
   
   return(
         <Page.Root>
@@ -73,7 +70,14 @@ export default async function WikiCategoryPage({ params }: WikiCategoryPageProps
                 )}
             </Page.Header>
             <Page.Content>
-                <CategoryArticles articles={articlesInCategory} category={category} />
+              <Feed.Root articles={articlesInCategory} category={category}>
+                  <Feed.Header show={false} />
+                  <Feed.Group>
+                      <Feed.Articles category={category} />
+                  </Feed.Group>
+      
+                  <Feed.Pagination />
+              </Feed.Root>
             </Page.Content> 
         </Page.Root>
   )

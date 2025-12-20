@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { getArticlesByCategory } from "@/lib/getArticles";
 import { CATEGORIES } from "@/lib/categories";
-import { CategoryArticles } from "@/components/content/categoryArticles";
 import { Page } from "@/components/content/Page";
 import  { Newsletter } from "@/components/layout/Newsletter";
+import { Feed } from '@/components/content/Feed';
 
 interface Params {
   category: string;
@@ -15,11 +15,7 @@ export async function generateStaticParams() {
   return categories.map(category => ({ category }));
 }
 
-export async function generateMetadata({ 
-  params 
-}: { 
-  params: Promise<Params> 
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { category } = await params;
   const categoryMeta = CATEGORIES[category] ?? { name: category };
   const articlesInCategory = getArticlesByCategory(category);
@@ -71,9 +67,18 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           <Page.Description content={categoryMeta.description} />
         )}
       </Page.Header>
-      <Page.Content>
-        <CategoryArticles articles={articlesInCategory} category={category} />
+
+      <Page.Content>    
+        <Feed.Root articles={articlesInCategory} category={category}>
+          <Feed.Header show={category === "verso-a-verso"} />
+          <Feed.Group>
+              <Feed.Articles category={category} />
+          </Feed.Group>
+
+          <Feed.Pagination />
+        </Feed.Root>
       </Page.Content>
+      
       <Newsletter.Root>
         <Newsletter.Header>
           <Newsletter.Title content="NewsGelion"/>

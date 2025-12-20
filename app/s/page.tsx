@@ -1,8 +1,8 @@
 import { getArticleCategoriesWithCount } from "@/lib/getArticles";
 import { CATEGORIES } from "@/lib/categories";
 import { Page } from "@/components/content/Page";
-import { CategoryArticles } from "@/components/content/categoryArticles";
 import { Metadata } from "next";
+import { Feed } from "@/components/content/Feed";
 
 export const metadata: Metadata = {
     title: "Seções | Euaggelion",
@@ -34,6 +34,8 @@ export default function CategoriesPage() {
         isWiki: false,
         count: count,
     }));
+
+    const category = "articles";
     
     return(
         <Page.Root>
@@ -42,7 +44,14 @@ export default function CategoriesPage() {
                 <Page.Description content="Navegue por nossas seções de conteúdos" />
             </Page.Header>
             <Page.Content>
-                <CategoryArticles articles={articles} category="articles" />
+                <Feed.Root articles={articles} category={category}>
+                    <Feed.Header show={false} />
+                    <Feed.Group>
+                        <Feed.Articles category={category} />
+                    </Feed.Group>
+        
+                    <Feed.Pagination />
+                </Feed.Root>
             </Page.Content>
         </Page.Root>
     )

@@ -1,8 +1,8 @@
-import { getWikiCategoriesWithCount } from "@/lib/getWiki";
+import { getAllWikiCategory } from "@/lib/getWiki";
 import { CATEGORIES } from "@/lib/categories";
 import { Page } from "@/components/content/Page";
-import { CategoryArticles } from "@/components/content/categoryArticles";
 import { Metadata } from "next";
+import { Feed } from "@/components/content/Feed";
 
 export const metadata: Metadata = {
   title: "WikiGelion | Euaggelion",
@@ -24,21 +24,29 @@ export const metadata: Metadata = {
 };
 
 export default function WikiPage() {
-    const categories = getWikiCategoriesWithCount().sort((a, b) => a.category.localeCompare(b.category));
+    const categories = getAllWikiCategory().sort((a, b) => a.category.localeCompare(b.category));
     
-    const articles = categories.map(({ category, count }) => ({
+    const articles = categories.map(({ category }) => ({
         slug: category,
         title: CATEGORIES[category]?.name || category,
         description: CATEGORIES[category]?.description || "",
         category: category,
         isWiki: true,
-        count: count,
     }));
+
+    const category = "wiki"
     
     return(
         <Page.Root>
             <Page.Content>
-                <CategoryArticles articles={articles} category="wiki" />
+                <Feed.Root articles={articles} category={category}>
+                    <Feed.Header show={false} />
+                    <Feed.Group>
+                      <Feed.Articles category={category} />
+                    </Feed.Group>
+        
+                    <Feed.Pagination />
+                </Feed.Root>
             </Page.Content>
         </Page.Root>
     )
