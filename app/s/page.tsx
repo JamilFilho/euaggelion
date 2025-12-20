@@ -45,7 +45,6 @@ export default function CategoriesPage() {
             </Page.Header>
             <Page.Content>
                 <Feed.Root articles={articles} category={category}>
-                    <Feed.Header show={false} />
                     <Feed.Group>
                         <Feed.Articles category={category} />
                     </Feed.Group>
