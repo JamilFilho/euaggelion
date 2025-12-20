@@ -64,6 +64,14 @@ export async function generateMetadata({
     keywords: article.tags,
     authors: article.author ? [{ name: article.author }] : undefined,
     category: categoryName,
+    other: {
+      'schema:type': 'Article',
+      'schema:author': article.author ? [article.author] : "Euaggelion",
+      'schema:datePublished': article.date,
+    },
+    alternates: {
+      canonical: `https://euaggelion.com.br/${article.slug}`
+    }
   };
 }
 
