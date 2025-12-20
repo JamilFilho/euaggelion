@@ -1,8 +1,21 @@
+import { Feed } from "@/components/content/Feed";
 import { Page } from "@/components/content/Page";
-import { CategorySection } from "@/components/content/categoryHome";
 import { Newsletter } from "@/components/layout/Newsletter";
+import { CATEGORIES } from "@/lib/categories";
+import { getArticlesByCategory } from "@/lib/getArticles";
 
-export default function Home() {
+export default async function Home() {
+  const homeFeed = [
+    {
+      category: "verso-a-verso",
+      limit: 6
+    },
+    {
+      category: "teoleigo",
+      limit: 3
+    }
+  ]
+
   return (
     <>
       <Page.Root>
@@ -12,7 +25,24 @@ export default function Home() {
         </Page.Header>
 
         <Page.Content>
-          <CategorySection category="ecos-da-eternidade" limit={3} />
+          {homeFeed.map((feedItem) => {
+            const articles = getArticlesByCategory(feedItem.category, feedItem.limit);
+            const categoryMeta = CATEGORIES[feedItem.category];
+            
+            return (
+              <Feed.Root key={feedItem.category} articles={articles} category={feedItem.category}>
+                <Feed.Header show={false}>
+                  <Feed.Name content={categoryMeta.name} />
+                  <Feed.Description content={categoryMeta.description} />
+                </Feed.Header>
+                <Feed.Group>
+                  <Feed.Articles category={feedItem.category} />
+                  <Feed.Footer category={feedItem.category} />
+                </Feed.Group>
+                <Feed.Pagination />
+              </Feed.Root>
+            );
+          })}
 
           <Newsletter.Root>
             <Newsletter.Header>
@@ -22,8 +52,6 @@ export default function Home() {
             <Newsletter.Form />
             <Newsletter.Footer />
           </Newsletter.Root>
-
-          <CategorySection category="teoleigo" limit={3} />
         </Page.Content>
       </Page.Root>
     </>
