@@ -6,6 +6,7 @@ import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { useMDXComponents } from "@/mdx-components";
 import { Article } from "@/components/content/Article";
+import { Metadata } from "next";
 
 interface Params {
   page: string;
@@ -21,7 +22,11 @@ export async function generateStaticParams() {
     }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<Params> }) {
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<Params> 
+}): Promise<Metadata> {
   const { page: pageSlug } = await params;
   const page = getPageBySlug(pageSlug);
 
@@ -32,8 +37,22 @@ export async function generateMetadata({ params }: { params: Promise<Params> }) 
   }
 
   return {
-    title: page.title,
+    title: `${page.title} | Euaggelion`,
     description: page.description,
+    openGraph: {
+      title: page.title,
+      description: page.description,
+      type: 'website',
+      url: `https://euaggelion.com.br/p/${page.slug}`,
+    },
+    twitter: {
+      card: 'summary',
+      title: page.title,
+      description: page.description,
+    },
+    alternates: {
+      canonical: `https://euaggelion.com.br/p/${page.slug}`,
+    },
   };
 }
 
