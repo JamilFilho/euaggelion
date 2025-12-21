@@ -11,6 +11,7 @@ import { CATEGORIES } from "@/lib/categories";
 import Link from "next/link";
 import { getReadingTime } from "@/lib/timeReader";
 import { Newsletter } from '@/components/layout/Newsletter';
+import { Webmentions } from '@/components/webMentions';
 
 interface Params {
   slug: string;
@@ -68,9 +69,13 @@ export async function generateMetadata({
       'schema:type': 'Article',
       'schema:author': article.author ? [article.author] : "Euaggelion",
       'schema:datePublished': article.date,
+      'webmention': 'https://webmention.io/euaggelion.com.br/webmention',
     },
     alternates: {
-      canonical: `https://euaggelion.com.br/${article.slug}`
+      canonical: `https://euaggelion.com.br/${article.slug}`,
+      types: {
+        'application/activity+json': `https://euaggelion.com.br/activitypub/${slug}`,
+      }
     }
   };
 }
@@ -131,11 +136,15 @@ export default async function ArticlePage({
       
       <Article.Footer>
         <Article.Tags tags={tags}/>
+
+        
         <Article.Actions
           excerpt={found.description}
           link={`https://euaggelion.com.br/${found.slug}`}
           headline={found.title}
         />
+
+        <Webmentions target={`https://euaggelion.com.br/${found.slug}`} />
       </Article.Footer>
 
       <Newsletter.Root>

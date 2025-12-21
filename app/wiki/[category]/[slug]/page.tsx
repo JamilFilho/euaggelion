@@ -4,6 +4,7 @@ import { Article } from "@/components/content/Article";
 import { getWikiSlug, getAllWikiArticles } from "@/lib/getWiki";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { CATEGORIES } from '@/lib/categories';
+import { Webmentions } from '@/components/webMentions';
 
 interface WikiPageProps {
   params: Promise<{
@@ -93,8 +94,10 @@ export default async function WikiPage({ params }: WikiPageProps) {
         <Article.Actions 
           headline={article.title} 
           excerpt={article.description} 
-          link={`/wiki/${article.category}/${article.slug}`}
+          link={`https://euaggelion.com.br/wiki/${article.category}/${article.slug}`}
         />
+
+        <Webmentions target={`https://euaggelion.com.br/wiki/${article.category}/${article.slug}`} />
       </Article.Footer>
     </Article.Root>
   );
