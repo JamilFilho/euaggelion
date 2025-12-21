@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node lib/generateSearchIndex.js && next dev --webpack",
-    "build": "next build --webpack && npm run search && npm run archive",
+    "build": "next build --webpack && npm run search",
     "build:vercel": "next build",
     "start": "next start",
     "lint": "eslint",
