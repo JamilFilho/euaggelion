@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { SiteHeader } from "@/components/layout/SiteHeader/";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SearchContent } from "@/components/content/search";
+import { SiteNavigation } from "@/components/layout/SiteNavigation";
 
 export const metadata: Metadata = {
   title: "Euaggelion",
@@ -21,15 +22,20 @@ export default function RootLayout({ children }: Readonly<{children: React.React
       <head>
         <link rel="webmention" href="https://webmention.io/euaggelion.com.br/webmention" />
         <link rel="pingback" href="https://webmention.io/euaggelion.com.br/xmlrpc" />
+        <link rel="me" href="https://mastodon.social/@euaggelion" />
       </head>
       <body className="bg-secondary selection:bg-accent selection:text-secondary black:selection:text-foreground">
         <SiteHeader.Root>
           <SiteHeader.Title text="Euaggelion" logo="/euaggelion-logo.svg" />
+          
+          <SiteNavigation.Root>
+            <SiteNavigation.Menu />
+            <div className="h-full flex items-center ml-auto">
+              <SearchContent />
+            </div>
+          </SiteNavigation.Root>
 
-          <div className="ml-auto flex flex-row gap-4">
-            <SearchContent />
-            <SiteHeader.Navigation icon={Menu} />
-          </div>
+          <SiteHeader.Navigation icon={Menu} />
         </SiteHeader.Root>
 
         <main>

@@ -11,7 +11,7 @@ export function SiteHeaderTitle({ text, logo }: SiteHeaderTitleProps) {
             <h1>
             {logo ? (
                 <>
-                <img src={logo} alt={text} className="w-[8rem] grayscale dark:grayscale-0"/>
+                <img src={logo} alt={text} className="w-[10rem] md:w-[8rem] grayscale dark:grayscale-0"/>
                 <span className="sr-only">{text}</span>
                 </>
             ) : (
