@@ -7,12 +7,14 @@ import { ReactNode } from "react";
 interface FeedHeaderProps {
     children?: ReactNode;
     show?: boolean;
+    home?: boolean;
     options?: { value: string; label: string }[];
 }
 
 export default function FeedHeader({
     children,
     show = true, 
+    home = false,
     options = [
         { value: "all", label: "Todos" },
         { value: "at", label: "Antigo Testamento" },
@@ -21,8 +23,12 @@ export default function FeedHeader({
 }: FeedHeaderProps) {
     const { filter, onFilterChange } = useFeedContext();
 
-    if (!show) {
+    if (home) {
         return <header className="md:col-span-3 flex flex-col justify-center border-b border-ring/20 py-6 px-10">{children}</header>;
+    }
+
+    if (!show) {
+        return null;
     }
 
     return (

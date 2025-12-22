@@ -31,7 +31,7 @@ export default async function Home() {
             
             return (
               <Feed.Root key={feedItem.category} articles={articles} category={feedItem.category}>
-                <Feed.Header show={false}>
+                <Feed.Header show={false} home>
                   <Feed.Name content={categoryMeta.name} />
                   <Feed.Description content={categoryMeta.description} />
                 </Feed.Header>
