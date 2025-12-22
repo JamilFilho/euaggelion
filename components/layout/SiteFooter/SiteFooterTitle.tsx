@@ -7,8 +7,8 @@ interface SiteFooterTitleProps {
 
 export function SiteFooterTitle({ text, logo }: SiteFooterTitleProps) {
     return(
-        <div className="md:col-span-3">
-            <Link href="/" title="Euaggelion">
+        <div className="md:col-span-3 flex">
+            <Link href="/" title="Euaggelion" className="w-fit">
                 <h1>
                 {logo ? (
                     <>
