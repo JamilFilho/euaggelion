@@ -4,6 +4,10 @@ export interface CategoryMeta {
 }
 
 export const CATEGORIES: Record<string, CategoryMeta> = {
+  credos: {
+    name: "Credos cristãos",
+    description: "Documentos e declarações de fé desenvolvidos durante a história do cristianismo",
+  },
   "glossario": {
     name: "Glossário Teológico",
     description: "Termos e conceitos biblicos e teológicos",
