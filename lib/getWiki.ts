@@ -24,7 +24,6 @@ export interface ArticleNavigation {
 
 export function getAllWikiArticles(): WikiMeta[] {
   if (!fs.existsSync(CONTENT_PATH)) {
-    console.warn(`Diretório ${CONTENT_PATH} não encontrado`);
     return [];
   }
 
