@@ -5,6 +5,8 @@ import { getWikiSlug, getAllWikiArticles } from "@/lib/getWiki";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { CATEGORIES } from '@/lib/categories';
 import { Webmentions } from '@/components/webMentions';
+import Link from 'next/link';
+import { Badge } from '@/components/ui/badge';
 
 interface WikiPageProps {
   params: Promise<{
@@ -14,7 +16,7 @@ interface WikiPageProps {
 }
 
 interface Params {
-    slug:string;
+    slug: string;
 }
 
 export async function generateStaticParams() {
@@ -82,8 +84,37 @@ export default async function WikiPage({ params }: WikiPageProps) {
     <Article.Root>
       <Article.Header variant="wiki">
         <Article.Group>
+          <Badge className="w-fit" variant="destructive">{article.status}</Badge>
           <Article.Title content={article.title} variant="wiki" />
+          <Article.Description content={article.description}/>
         </Article.Group>
+
+        <Article.Meta>
+          {article.related && article.related.length > 0 && (
+            <>
+              <div className="col-span-1 items-center">
+                <p className="text-lg font-semibold">Tópicos</p>
+              </div>
+              <ul className="px-4 col-span-2 flex flex-row !justify-start items-start flex-wrap gap-2">
+                {article.related.map((relatedCategory) => {
+                  
+                  const categoryInfo = CATEGORIES[relatedCategory];
+                  const categoryName = typeof categoryInfo === 'string' ? categoryInfo : categoryInfo?.name ?? relatedCategory;                  
+
+                  return (
+                    <li key={relatedCategory}>
+                      <Link href={`/wiki/${relatedCategory}`} title={categoryName}>
+                        <Badge>
+                          {categoryName}
+                        </Badge>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </>
+          )}
+        </Article.Meta>
       </Article.Header>
 
       <Article.Content>
