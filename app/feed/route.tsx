@@ -1,5 +1,6 @@
 import { Feed } from "feed";
 import { getAllArticles } from "@/lib/getArticles";
+export const dynamic = "force-static";
 
 export async function GET() {
   const siteURL = "https://euaggelion.com";
