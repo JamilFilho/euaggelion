@@ -1,6 +1,6 @@
 # Euaggelion
 
-[![Internet Archive](https://img.shields.io/badge/dynamic/json?url=https://archive.org/wayback/available?url=euaggelion.com.br&label=Wayback%20Machine&query=$.archived_snapshots.closest.timestamp&color=blue&logo=internetarchive)](https://web.archive.org/web/*/https://euaggelion.com.br)
+[![Internet Archive](https://img.shields.io/badge/dynamic/json?url=https://archive.org/wayback/available?url=euaggelion.com.br&label=Wayback%20Machine&query=$.archived_snapshots.closest.timestamp&color=blue&logo=internetarchive)](https://web.archive.org/web/*/https://euaggelion.com.br) [![Internet Archive](https://github.com/JamilFilho/euaggelion/actions/workflows/archive-wayback.yml/badge.svg)](https://github.com/JamilFilho/euaggelion/actions/workflows/archive-wayback.yml)
 
 > Semeando as boas novas da salvação.
 
