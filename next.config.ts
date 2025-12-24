@@ -2,7 +2,6 @@
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
 
-  output: 'export', 
   images: {
     unoptimized: true,
   },

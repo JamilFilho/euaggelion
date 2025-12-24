@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { getAllArticles } from "@/lib/getArticles";
-export const dynamic = "force-static";
 
 /**
  * API Route que retorna o índice de busca
