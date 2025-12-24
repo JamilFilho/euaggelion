@@ -4,6 +4,26 @@ export interface CategoryMeta {
 }
 
 export const CATEGORIES: Record<string, CategoryMeta> = {
+  "igreja-primitiva": {
+    name: "Igreja Primitiva",
+    description: "",
+  },
+  apologetica: {
+    name: "Apologética",
+    description: "",
+  },
+  patristica: {
+    name: "Patrística",
+    description: "",
+  },
+  teologia: {
+    name: "Teologia",
+    description: "",
+  },
+  historia: {
+    name: "História",
+    description: "",
+  },
   credos: {
     name: "Credos cristãos",
     description: "Documentos e declarações de fé desenvolvidos durante a história do cristianismo",
