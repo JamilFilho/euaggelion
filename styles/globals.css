@@ -79,7 +79,7 @@
   }
 
   .article-content a {
-    @apply text-accent underline decoration-dotted break-words;
+    @apply text-accent underline decoration-dotted break-words font-bold;
   }
 
   .article-content blockquote {
