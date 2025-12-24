@@ -8,11 +8,13 @@ export interface WikiMeta {
   slug: string;
   fileName: string;
   title: string;
+  status: string;
   published: boolean;
   description: string;
   date: string;
   category: string;
   tags?: string[];
+  related?: string[];
   content: string;
   search?: boolean;
 }
@@ -40,11 +42,13 @@ export function getAllWikiArticles(): WikiMeta[] {
         slug: file.replace(/\.mdx$/, "").toLowerCase(),
         fileName: file,
         title: data.title ?? "",
+        status: data.status ?? "",
         description: data.description ?? "",
         date: data.date ?? "",
         published: data.published ?? false,
         category: (data.category ?? "").toLowerCase(),
         tags: data.tags ?? [],
+        related: data.related ?? [],
         content,
         search: data.search ?? true,
       } satisfies WikiMeta;
