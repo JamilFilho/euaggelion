@@ -8,7 +8,7 @@ interface SiteHeaderNavigationProps {
 export function SiteHeaderNavigation({icon: Icon}: SiteHeaderNavigationProps) {
     return(
         <>
-        <Link className="md:hidden" href="/p/links">
+        <Link className="md:hidden" href="/p/links" title="Links do projeto Euaggelion">
             <Icon className="color-white size-5" />
         </Link>
         </>

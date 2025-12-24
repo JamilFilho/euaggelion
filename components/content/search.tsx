@@ -30,7 +30,7 @@ export function SearchContent() {
       <DialogHeader className="hidden">
         <DialogTitle>Pesquisar no Euaggelion</DialogTitle>
       </DialogHeader>
-      <DialogTrigger>
+      <DialogTrigger aria-label="Pesquisar no Euaggelion...">
         <Search className="size-5"/>
       </DialogTrigger>
       
