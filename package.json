@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "@mailerlite/mailerlite-nodejs": "^1.5.0",
-    "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@mesh-gradient/react": "^1.5.0",
+    "@next/mdx": "^16.1.1",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-navigation-menu": "^1.2.14",
     "@radix-ui/react-select": "^2.2.6",
