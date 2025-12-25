@@ -15,7 +15,6 @@ on:
       - main
     paths:
       - 'content/**'
-      - 'app/**'
 
 jobs:
   archive:
