@@ -44,7 +44,42 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     // Links
-    a: ({ href, children }: { href?: string; children?: ReactNode }) => {
+    a: ({ href, children, id, className }: { 
+      href?: string; 
+      children?: ReactNode;
+      id?: string;
+      className?: string;
+    }) => {
+      // Detecta se é uma referência de nota de rodapé
+      const isFootnoteRef = className?.includes('data-footnote-ref');
+      const isFootnoteBackref = className?.includes('data-footnote-backref');
+      
+      if (isFootnoteRef) {
+        return (
+          <sup>
+            <a
+              href={href}
+              id={id}
+              className="footnote-ref text-accent hover:underline"
+            >
+              {children}
+            </a>
+          </sup>
+        );
+      }
+
+      if (isFootnoteBackref) {
+        return (
+          <a
+            href={href}
+            className="footnote-backref text-accent hover:underline ml-2"
+            aria-label="Voltar ao texto"
+          >
+            {children}
+          </a>
+        );
+      }
+
       const isExternal = href?.startsWith("http");
       
       if (isExternal) {
