@@ -128,6 +128,18 @@ export default async function ArticlePage({
             <Article.PublishedAt content={found.date} />
             <Article.ReadTime content={readingTime} />
         </Article.Meta>
+          {found.reference && found.reference.length > 0 && (
+            <div className="py-8 px-10 w-full text-base text-foreground/60 md:text-lg flex flex-row justify-start gap-2 border-t border-foreground/20">
+              <span className="font-semibold">Leia também:</span>
+              <ul>
+                {found.reference.map((ref, index) => (
+                  <span key={index}>
+                    {ref}
+                  </span>
+                ))}
+              </ul>
+            </div>
+          )}
       </Article.Header>
 
       <Article.Content>

@@ -14,6 +14,7 @@ export interface ArticleMeta {
   author?: string;
   category: string;
   tags?: string[];
+  reference?: string[];
   testament?: "at" | "nt";
   content: string;
   search?: boolean;
@@ -49,6 +50,7 @@ export function getAllArticles(): ArticleMeta[] {
         published: data.published ?? false,
         category: (data.category ?? "").toLowerCase(),
         tags: data.tags ?? [],
+        reference: data.reference ?? [],
         testament: data.testament,
         content,
         search: data.search ?? true,
