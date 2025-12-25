@@ -12,6 +12,7 @@ import Link from "next/link";
 import { getReadingTime } from "@/lib/timeReader";
 import { Newsletter } from '@/components/layout/Newsletter';
 import { Webmentions } from '@/components/webMentions';
+import { Badge } from '@/components/ui/badge';
 
 interface Params {
   slug: string;
@@ -129,15 +130,17 @@ export default async function ArticlePage({
             <Article.ReadTime content={readingTime} />
         </Article.Meta>
           {found.reference && found.reference.length > 0 && (
-            <div className="py-8 px-10 w-full text-base text-foreground/60 md:text-lg flex flex-row justify-start gap-2 border-t border-foreground/20">
-              <span className="font-semibold">Leia também:</span>
-              <ul>
+            <div className="flex flex-col md:flex-row gap-4 py-8 px-10 w-full border-t border-foreground/20">
+              <span className="text-lg font-semibold text-foreground/60">Leia também:</span>
+              <ul className="flex flex-row flex-wrap justify-start gap-2">
                 {found.reference.map((ref, index) => (
-                  <span key={index}>
+                  <li key={index}>
+                  <Badge>
                     {ref}
-                  </span>
+                  </Badge>
+                  </li>
                 ))}
-              </ul>
+                </ul>
             </div>
           )}
       </Article.Header>
