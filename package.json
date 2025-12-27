@@ -8,7 +8,7 @@
     "build:vercel": "next build",
     "start": "tinacms build && next start",
     "lint": "eslint",
-    "search": " node lib/generateSearchIndex.ts",
+    "search": " tsx lib/generateSearchIndex.ts",
     "archive": "node scripts/archive-wayback.js"
   },
   "dependencies": {
