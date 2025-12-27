@@ -22,7 +22,7 @@ export function generateSearchIndex() {
   const allContent = [...articles, ...markedWikiArticles];
 
   const index = allContent.map((item) => {
-    const isWikiArticle = item.isWiki === true;
+    const isWikiArticle = 'isWiki' in item && item.isWiki === true;
     
     const slug = isWikiArticle
       ? `/wiki/${item.category ?? 'uncategorized'}/${item.slug}`
