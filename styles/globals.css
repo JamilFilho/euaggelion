@@ -47,7 +47,7 @@
   .article-content h3,
   .article-content h4,
   .article-content h5 {
-    @apply text-primary my-8 font-bold;
+    @apply text-primary my-2 font-bold;
   }
 
   .article-content h1 {
@@ -91,7 +91,7 @@
   }
 
   .article-content pre  {
-    @apply max-w-full my-10 py-10 px-6 rounded-xl bg-emerald-950 overflow-x-scroll text-amber-600;
+    @apply text-lg text-center my-10 p-4 rounded-xl bg-black/20 overflow-x-hidden text-foreground/60 break-words;
   }
 
   .article-content hr {
@@ -118,6 +118,32 @@
   .site-footer ul li a {
     @apply text-accent underline decoration-dotted;
   }
+
+  .article-content table {
+    @apply w-full border-collapse text-sm md:text-base;
+  }
+
+  .article-content thead {
+    @apply bg-black/20;
+  }
+
+  .article-content th {
+    @apply border border-border px-3 py-2 text-left font-semibold md:px-4 md:py-3;
+  }
+
+  .article-content td {
+    @apply border border-border px-3 py-2 md:px-4 md:py-3;
+  }
+
+  .article-content tbody tr:hover {
+    @apply bg-muted/50 transition-colors;
+  }
+
+  /* Para tabelas em telas muito pequenas, adicione scroll horizontal */
+  .article-content {
+    @apply overflow-x-auto;
+  }
+
 }
 
 @media (prefers-color-scheme: dark) {
