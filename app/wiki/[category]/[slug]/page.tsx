@@ -8,6 +8,10 @@ import { Webmentions } from '@/components/webMentions';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 
+import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+
 interface WikiPageProps {
   params: Promise<{
     category: string;
@@ -74,7 +78,19 @@ export async function generateMetadata({
 export default async function WikiPage({ params }: WikiPageProps) {
   const { slug, category } = await params;
   const article = getWikiSlug(slug);
-  
+
+  const mdxOptions = {
+    mdxOptions: {
+      remarkPlugins: [
+        remarkGfm, // Suporte para tabelas, strikethrough, tasklists, etc.
+      ],
+      rehypePlugins: [
+        rehypeSlug, // Adiciona IDs aos headings
+        rehypeAutolinkHeadings, // Adiciona links aos headings
+      ],
+    },
+  };
+
   // Verifica se o artigo existe, está publicado e a categoria bate
   if (!article || !article.published || article.category !== category) {
     notFound();
@@ -84,7 +100,9 @@ export default async function WikiPage({ params }: WikiPageProps) {
     <Article.Root>
       <Article.Header variant="wiki">
         <Article.Group>
-          <Badge className="w-fit" variant="destructive">{article.status}</Badge>
+          {article.status && (
+            <Badge className="w-fit" variant="destructive">{article.status}</Badge>
+          )}
           <Article.Title content={article.title} variant="wiki" />
           <Article.Description content={article.description}/>
         </Article.Group>
@@ -118,7 +136,10 @@ export default async function WikiPage({ params }: WikiPageProps) {
       </Article.Header>
 
       <Article.Content>
-        <MDXRemote source={article.content} />
+        <MDXRemote 
+          source={article.content}
+          options={mdxOptions}
+        />
       </Article.Content>
       
       <Article.Footer>

@@ -6,13 +6,16 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { useMDXComponents } from "@/mdx-components";
 import { CATEGORIES } from "@/lib/categories";
 import Link from "next/link";
 import { getReadingTime } from "@/lib/timeReader";
 import { Newsletter } from '@/components/layout/Newsletter';
 import { Webmentions } from '@/components/webMentions';
 import { Badge } from '@/components/ui/badge';
+
+import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 interface Params {
   slug: string;
@@ -103,12 +106,23 @@ export default async function ArticlePage({
   
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { content } = matter(fileContent);
-  const components = useMDXComponents({});
   const categoryMeta = CATEGORIES[found.category] ?? { name: found.category };
   const tags = found.tags;
   const readingTime = getReadingTime(content);
   
   const navigation = getArticleNavigation(slug, found.category);
+
+  const mdxOptions = {
+    mdxOptions: {
+      remarkPlugins: [
+        remarkGfm, // Suporte para tabelas, strikethrough, tasklists, etc.
+      ],
+      rehypePlugins: [
+        rehypeSlug, // Adiciona IDs aos headings
+        rehypeAutolinkHeadings, // Adiciona links aos headings
+      ],
+    },
+  };
 
   return (
     <Article.Root>
@@ -146,7 +160,10 @@ export default async function ArticlePage({
       </Article.Header>
 
       <Article.Content>
-        <MDXRemote source={content} components={components} />
+        <MDXRemote 
+          source={content}
+          options={mdxOptions}
+        />
       </Article.Content>
       
       <Article.Footer>
