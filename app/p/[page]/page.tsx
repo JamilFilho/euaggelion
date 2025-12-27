@@ -4,9 +4,12 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { useMDXComponents } from "@/mdx-components";
 import { Article } from "@/components/content/Article";
 import { Metadata } from "next";
+
+import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 interface Params {
   page: string;
@@ -80,7 +83,18 @@ export default async function StaticPage({
   
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { content } = matter(fileContent);
-  const components = useMDXComponents({});
+  
+  const mdxOptions = {
+    mdxOptions: {
+      remarkPlugins: [
+        remarkGfm, // Suporte para tabelas, strikethrough, tasklists, etc.
+      ],
+      rehypePlugins: [
+        rehypeSlug, // Adiciona IDs aos headings
+        rehypeAutolinkHeadings, // Adiciona links aos headings
+      ],
+    },
+  };
 
   return (
     <div className="site-page">
@@ -93,7 +107,10 @@ export default async function StaticPage({
         </Article.Header>
 
         <Article.Content>
-          <MDXRemote source={content} components={components} />
+          <MDXRemote 
+            source={content}
+            options={mdxOptions}
+          />
         </Article.Content>
       </Article.Root>
     </div>
