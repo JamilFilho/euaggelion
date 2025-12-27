@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
-import { getAllArticles } from "./getArticles.ts";
-import { getAllWikiArticles } from "./getWiki.ts";
+import { getAllArticles } from "./getArticles.js";
+import { getAllWikiArticles } from "./getWiki.js";
 
 const OUTPUT_PATH = path.join(
   process.cwd(),
