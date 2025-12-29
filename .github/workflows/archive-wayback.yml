@@ -5,16 +5,6 @@ on:
   # Semanalmente (domingo às 2h UTC / sábado 23h Brasília)
   schedule:
     - cron: '0 2 * * 0'
-  
-  # Manual
-  workflow_dispatch:
-  
-  # Após push na main (opcional)
-  push:
-    branches:
-      - main
-    paths:
-      - 'content/**'
 
 jobs:
   archive:
