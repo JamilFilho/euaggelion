@@ -10,7 +10,6 @@ export function SiteFooterTitle({ text, logo }: SiteFooterTitleProps) {
     return(
         <div className="md:col-span-3 flex">
             <Link href="/" title="Euaggelion" className="w-fit">
-                <h1>
                 {logo ? (
                     <>
                     <Image src={logo} alt={text} width={300} height={55} loading="lazy" className="w-[10rem]"/>
@@ -19,7 +18,6 @@ export function SiteFooterTitle({ text, logo }: SiteFooterTitleProps) {
                 ) : (
                     text
                 )}
-                </h1>
             </Link>
         </div>
     )
