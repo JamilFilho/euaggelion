@@ -6,8 +6,7 @@ export default defineConfig({
     process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF || // Vercel branch variable
     process.env.HEAD || // Netlify branch variable
     "main",
-
-  // Credenciais do Tina Cloud (geradas automaticamente)
+    
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
   token: process.env.TINA_TOKEN!,
 
@@ -89,6 +88,7 @@ export default defineConfig({
               { value: "biblioteca-crista", label: "Biblioteca Cristã" },
               { value: "blog", label: "Blog" },
               { value: "cada-manha", label: "Cada Manhã" },
+              { value: "desvendando-a-biblia", label: "Desvendando a Bíblia" },
               { value: "ebook", label: "eBook" },
               { value: "ecos-da-eternidade", label: "Ecos da Eternidade" },
               { value: "editorial", label: "Editorial" },
