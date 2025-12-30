@@ -88,7 +88,7 @@ export default defineConfig({
               { value: "biblioteca-crista", label: "Biblioteca Cristã" },
               { value: "blog", label: "Blog" },
               { value: "cada-manha", label: "Cada Manhã" },
-              { value: "desvendando-a-biblia", label: "Desvendando a Bíblia" },
+              // { value: "desvendando-a-biblia", label: "Desvendando a Bíblia" },
               { value: "ebook", label: "eBook" },
               { value: "ecos-da-eternidade", label: "Ecos da Eternidade" },
               { value: "editorial", label: "Editorial" },
