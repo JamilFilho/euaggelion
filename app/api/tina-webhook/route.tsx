@@ -6,17 +6,13 @@ import path from 'path'
 
 /**
  * Valida o webhook secret
+ * @deprecated Authentication is now handled by middleware
  */
 function validateWebhook(request: NextRequest): boolean {
-  const secret = request.headers.get('x-webhook-secret')
-  const expectedSecret = process.env.WEBHOOK_SECRET
-  
-  if (!expectedSecret) {
-    console.warn('WEBHOOK_SECRET não configurado')
-    return true // Permitir em desenvolvimento
-  }
-  
-  return secret === expectedSecret
+  // Authentication is now handled by middleware.ts
+  // This function is kept for backward compatibility but always returns true
+  console.warn('⚠️  Webhook authentication is now handled by middleware')
+  return true
 }
 
 /**
@@ -116,13 +112,8 @@ function formatNotificationMessage(
  */
 export async function POST(request: NextRequest) {
   try {
-    // Validar webhook
-    if (!validateWebhook(request)) {
-      return NextResponse.json(
-        { error: 'Unauthorized' },
-        { status: 401 }
-      )
-    }
+    // Validação do webhook é feita pelo middleware
+    // Se chegou aqui, a autenticação já foi validada
     
     const body = await request.json()
     const { files } = body
