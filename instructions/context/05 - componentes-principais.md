@@ -48,6 +48,51 @@ Este documento descreve os componentes principais do projeto "Euaggelion", suas 
 - **Descrição**: Componente de entrada de texto.
 - **Funcionalidades**:
   - Suporta diferentes tipos de entrada (e.g., text, email).
+
+### SearchContent
+
+- **Localização**: `components/content/search.tsx`
+- **Descrição**: Componente de busca com interface modal.
+- **Funcionalidades**:
+  - Interface de busca full-screen
+  - Pesquisa em tempo real com Fuse.js
+  - Exibição de resultados com destaque
+  - Navegação direta para artigos
+  - Filtro por categorias
+- **Integração**:
+  - Usa o hook `useSearch` para busca client-side
+  - Conecta com a API `/api/search` para obter índice
+  - Interface com Dialog do Radix UI
+
+### Webmentions
+
+- **Localização**: `components/webMentions.tsx`
+- **Descrição**: Componente para exibir interações sociais.
+- **Funcionalidades**:
+  - Exibição de comentários, curtidas e compartilhamentos
+  - Filtro por tipo de interação
+  - Carregamento assíncrono
+  - Exibição de informações do autor
+  - Formatação de datas
+- **Integração**:
+  - Conecta com a API `/api/webmentions`
+  - Usa o serviço webmention.io
+  - Suporte para diferentes tipos de webmentions
+
+### PWA Install Button
+
+- **Localização**: `components/layout/PWA/pwaPrompt.tsx`
+- **Descrição**: Componente para instalação do Progressive Web App.
+- **Funcionalidades**:
+  - Detecção automática de capacidade de instalação
+  - Prompt de instalação personalizado
+  - Detecção de modo standalone
+  - Feedback visual de sucesso
+  - Gerenciamento do evento beforeinstallprompt
+- **Integração**:
+  - Usa a API PWA do navegador
+  - Interface com ícone e botão
+  - Notificações de sucesso com Sonner
   - Estilizado com Tailwind CSS.
 
 ### Dialog

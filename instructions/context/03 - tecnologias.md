@@ -32,6 +32,26 @@
 - **Versão**: Utilizada a versão mais recente compatível com o projeto.
 - **Propósito**: Permite a criação de conteúdo rico com componentes React integrados.
 
+### Fuse.js
+
+- **Descrição**: Biblioteca de busca fuzzy para JavaScript.
+- **Versão**: ^7.1.0
+- **Propósito**: Implementação de busca tolerante a erros em conteúdo.
+- **Integração**: Usado no hook `useSearch` para busca client-side.
+
+### MailerLite Node.js SDK
+
+- **Descrição**: SDK oficial do MailerLite para Node.js.
+- **Versão**: ^1.5.0
+- **Propósito**: Integração com a API do MailerLite para gerenciamento de newsletter.
+- **Integração**: Usado no endpoint `/api/newsletter`.
+
+### Webmention.io
+
+- **Descrição**: Serviço para gerenciamento de interações sociais (webmentions).
+- **Propósito**: Coleta e gerenciamento de comentários, curtidas e compartilhamentos.
+- **Integração**: Usado no endpoint `/api/webmentions` e componente `Webmentions`.
+
 ## Ferramentas de Desenvolvimento
 
 ### ESLint

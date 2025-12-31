@@ -10,11 +10,31 @@ Este documento descreve as APIs e rotas disponíveis no projeto "Euaggelion", in
 
 - **Localização**: `app/api/newsletter/route.ts`
 - **Método**: POST
-- **Descrição**: Rota para inscrição em newsletter.
+- **Descrição**: Rota para inscrição em newsletter com integração MailerLite.
 - **Funcionalidades**:
-  - Recebe dados de inscrição.
-  - Processa e armazena informações do usuário.
-  - Retorna uma resposta de sucesso ou erro.
+  - Validação de email
+  - Verificação de inscrições duplicadas
+  - Integração com MailerLite API
+  - Gerenciamento de grupos de assinantes
+- **Autenticação**: Requere `MAILERLITE_API_KEY` e `MAILERLITE_GROUP_ID`
+- **Exemplo de Request**:
+  ```json
+  {
+    "email": "usuario@example.com"
+  }
+  ```
+- **Exemplo de Response (Sucesso)**:
+  ```json
+  {
+    "message": "Inscrição realizada com sucesso!"
+  }
+  ```
+- **Exemplo de Response (Erro)**:
+  ```json
+  {
+    "error": "Este email já está inscrito"
+  }
+  ```
 
 ### Exemplo de Uso
 
@@ -33,11 +53,83 @@ export async function POST(request: Request) {
 
 - **Localização**: `app/api/search/route.tsx`
 - **Método**: GET
-- **Descrição**: Rota para busca de conteúdo.
+- **Descrição**: Rota para busca de conteúdo com cache otimizado.
 - **Funcionalidades**:
-  - Recebe parâmetros de busca.
-  - Retorna resultados de busca.
-  - Suporta filtros e ordenação.
+  - Retorna índice de busca completo
+  - Cache de 1 hora para melhor desempenho
+  - Filtra apenas conteúdo publicado
+  - Inclui metadados para busca fuzzy
+- **Cache Headers**:
+  ```
+  Cache-Control: public, s-maxage=3600, stale-while-revalidate=86400
+  ```
+- **Integração**: Usado pelo hook `useSearch` com Fuse.js para busca client-side
+- **Exemplo de Response**:
+  ```json
+  [
+    {
+      "slug": "nome-do-artigo",
+      "title": "Título do Artigo",
+      "description": "Descrição do artigo",
+      "date": "2025-12-31",
+      "category": "teologia",
+      "tags": ["tag1", "tag2"],
+      "testament": "Novo Testamento"
+    }
+  ]
+  ```
+
+### Webmentions
+
+- **Localização**: `app/api/webmentions/route.tsx`
+- **Método**: GET
+- **Descrição**: Rota para buscar interações sociais (webmentions) para um artigo específico.
+- **Funcionalidades**:
+  - Integração com webmention.io
+  - Suporte para diferentes tipos de interações
+  - Cache de 5 minutos
+  - Filtro por URL alvo
+- **Parâmetros**:
+  - `target` (obrigatório): URL do artigo
+- **Autenticação**: Requere `WEBMENTION_IO_TOKEN`
+- **Cache Headers**:
+  ```
+  Cache-Control: public, s-maxage=300, stale-while-revalidate=600
+  ```
+- **Tipos de Webmentions**:
+  - `in-reply-to`: Comentários/respostas
+  - `like-of`: Curtidas
+  - `repost-of`: Compartilhamentos
+  - `mention-of`: Menções
+  - `bookmark-of`: Favoritos
+- **Exemplo de Request**:
+  ```
+  GET /api/webmentions?target=https://euaggelion.com.br/artigo-exemplo
+  ```
+- **Exemplo de Response**:
+  ```json
+  {
+    "mentions": [
+      {
+        "type": "entry",
+        "author": {
+          "name": "João Silva",
+          "photo": "https://example.com/photo.jpg",
+          "url": "https://example.com"
+        },
+        "url": "https://example.com/resposta",
+        "published": "2025-12-31T10:00:00Z",
+        "wm-received": "2025-12-31T10:05:00Z",
+        "wm-id": 12345,
+        "wm-property": "in-reply-to",
+        "content": {
+          "text": "Ótimo artigo! Concordo com sua análise."
+        }
+      }
+    ],
+    "count": 1
+  }
+  ```
 
 ### Exemplo de Uso
 
