@@ -38,13 +38,17 @@ function arrayBufferToBase64(buffer: ArrayBuffer): string {
 /**
  * Inscreve um usuário para receber notificações push
  */
-export async function subscribeUser(sub: PushSubscription) {
+export async function subscribeUser(sub: any) {
   try {
+    // Handle both PushSubscription object and serialized subscription
+    const p256dh = sub.getKey ? arrayBufferToBase64(sub.getKey('p256dh')!) : sub.keys.p256dh
+    const auth = sub.getKey ? arrayBufferToBase64(sub.getKey('auth')!) : sub.keys.auth
+    
     const subscriptionData: PushSubscriptionData = {
       endpoint: sub.endpoint,
       keys: {
-        p256dh: arrayBufferToBase64(sub.getKey('p256dh')!),
-        auth: arrayBufferToBase64(sub.getKey('auth')!)
+        p256dh: typeof p256dh === 'string' ? p256dh : arrayBufferToBase64(p256dh),
+        auth: typeof auth === 'string' ? auth : arrayBufferToBase64(auth)
       },
       subscribedAt: new Date().toISOString()
     }
