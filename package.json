@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "tsx lib/generateSearchIndex.ts && npx tinacms dev -c \"next dev --webpack\"",
+    "dev:pwa": "tsx lib/generateSearchIndex.ts && next dev --experimental-https",
     "build": "tinacms build && next build --webpack && npm run search",
     "build:vercel": "next build",
     "start": "tinacms build && next start",
     "lint": "eslint",
-    "search": " tsx lib/generateSearchIndex.ts",
+    "search": "tsx lib/generateSearchIndex.ts",
     "archive": "node scripts/archive-wayback.js"
   },
   "dependencies": {
@@ -41,13 +42,15 @@
     "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
     "tinacms": "^3.1.2",
-    "vaul": "^1.1.2"
+    "vaul": "^1.1.2",
+    "web-push": "^3.6.7"
   },
   "devDependencies": {
     "@tinacms/cli": "^2.0.5",
     "@types/node": "^20.19.27",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/web-push": "^3.6.4",
     "autoprefixer": "^10.4.22",
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
