@@ -6,6 +6,9 @@ import { SiteHeader } from "@/components/layout/SiteHeader/";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SearchContent } from "@/components/content/search";
 import { SiteNavigation } from "@/components/layout/SiteNavigation";
+import { PushNotificationManager } from "@/components/pushNotification";
+
+// Use os componentes onde necessário
 
 export const metadata: Metadata = {
   title: "Euaggelion",
@@ -30,7 +33,8 @@ export default function RootLayout({ children }: Readonly<{children: React.React
           
           <SiteNavigation.Root>
             <SiteNavigation.Menu />
-            <div className="h-full flex items-center ml-auto">
+            <div className="h-full flex items-center justify-center gap-4 ml-auto">
+              <PushNotificationManager />
               <SearchContent />
             </div>
           </SiteNavigation.Root>
@@ -41,10 +45,10 @@ export default function RootLayout({ children }: Readonly<{children: React.React
         <main>
           {children}
         </main>
-
+        
         <SiteFooter.Root>
           <SiteFooter.Menu />
-          
+
           <SiteFooter.Content>
             <SiteFooter.Title text="Euaggelion" logo="/euaggelion-logo.svg" />
             <SiteFooter.Copy copyright="CC0 1.0 Universal" content="O projeto Euaggelion é uma iniciativa cristã independente cujo objetivo central é a divulgação gratuita de conteúdo cristão e teológico. Todo material disponibilizado por meio de nosso site está diponível sob uma licença de uso de domínio público." />
