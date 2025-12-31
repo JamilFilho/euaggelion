@@ -135,9 +135,20 @@ export async function POST(request: NextRequest) {
     }> = []
     
     for (const filePath of fileList) {
+      // Security: Prevent Path Traversal
+      // 1. Normalize path and check for suspicious patterns
+      if (filePath.includes('..') || filePath.startsWith('/') || path.isAbsolute(filePath)) {
+        console.warn(`⚠️  Blocked suspicious path: ${filePath}`)
+        continue
+      }
+
       const contentType = getContentType(filePath)
       
-      if (!contentType) continue
+      // 2. Ensure the file is within the allowed content directories
+      if (!contentType) {
+        console.log(`⏭️  Skipping non-content file: ${filePath}`)
+        continue
+      }
       
       const contentInfo = await getContentInfo(filePath)
       
