@@ -63,8 +63,17 @@ export async function middleware(request: NextRequest) {
       })
     }
   } catch (error) {
-    console.error('Rate limiting error:', error)
-    // Continue without rate limiting if Redis fails
+    console.error('❌ Rate limiting error:', error)
+    
+    // Fail-closed: If rate limiting service is down, block the request for security
+    // This prevents bypassing the limit if the Redis service fails
+    return new NextResponse(JSON.stringify({
+      error: 'Service temporarily unavailable',
+      message: 'Security check failed. Please try again later.'
+    }), {
+      status: 503,
+      headers: { 'Content-Type': 'application/json' }
+    })
   }
 
   // 2. CORS Validation
