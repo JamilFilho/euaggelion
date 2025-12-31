@@ -192,3 +192,6 @@ dist
 .ionide
 
 /public/search-index.json
+node_modules
+.env
+certificates
