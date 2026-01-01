@@ -27,7 +27,9 @@ export function getBibleVersions(): BibleVersion[] {
   if (!fs.existsSync(versionsFile)) return [];
   
   const raw = fs.readFileSync(versionsFile, "utf-8");
-  return JSON.parse(raw);
+  // Remove BOM (Byte Order Mark) if present
+  const cleaned = raw.charCodeAt(0) === 0xFEFF ? raw.slice(1) : raw;
+  return JSON.parse(cleaned);
 }
 
 export function getBibleVersion(versionId: string): BibleVersion | undefined {
