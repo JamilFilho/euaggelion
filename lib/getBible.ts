@@ -8,24 +8,32 @@ export interface BibleBookMeta {
   slug: string;
   abbrev: string;
   chapters: number;
+  description?: string;
+  author?: string;
+  date?: string;
 }
 
 export interface BibleVersion {
   id: string;
   name: string;
   books: BibleBookMeta[];
+  description?: string;
 }
 
 export interface BibleVersionRaw {
   id: string;
   name: string;
   books: string[]; // Slugs of the books
+  description?: string;
 }
 
 export interface BibleBookContent {
   name: string;
   abbrev: string;
   chapters: string[][];
+  description?: string;
+  author: string;
+  date: string;
 }
 
 function readJsonFile<T>(filePath: string): T | null {
@@ -55,12 +63,6 @@ export function getBibleVersions(): BibleVersion[] {
   const versionsFile = path.join(BIBLE_PATH, "versions.json");
   const versionsRaw = readJsonFile<BibleVersionRaw[]>(versionsFile);
   
-<<<<<<< HEAD
-  const raw = fs.readFileSync(versionsFile, "utf-8");
-  // Remove BOM (Byte Order Mark) if present
-  const cleaned = raw.charCodeAt(0) === 0xFEFF ? raw.slice(1) : raw;
-  return JSON.parse(cleaned);
-=======
   if (!versionsRaw) return [];
   
   const allBooks = getBibleBooks();
@@ -70,7 +72,6 @@ export function getBibleVersions(): BibleVersion[] {
     ...version,
     books: version.books.map(slug => booksMap.get(slug.trim())).filter((book): book is BibleBookMeta => !!book)
   }));
->>>>>>> 1f9a4128b6832b9c2a41d96d74ea09353309270d
 }
 
 export function getBibleVersion(versionId: string): BibleVersion | undefined {
@@ -93,7 +94,26 @@ export function getBibleVersion(versionId: string): BibleVersion | undefined {
 
 export function getBibleBook(versionId: string, bookSlug: string): BibleBookContent | undefined {
   const bookFile = path.join(BIBLE_PATH, versionId, `${bookSlug}.json`);
-  return readJsonFile<BibleBookContent>(bookFile) || undefined;
+  const book = readJsonFile<BibleBookContent>(bookFile);
+  
+  if (!book) return undefined;
+  
+  const allBooks = getBibleBooks();
+  const bookMeta = allBooks.find(b => b.slug === bookSlug);
+  
+  if (bookMeta) {
+    if (bookMeta.description) {
+      book.description = bookMeta.description;
+    }
+    if (bookMeta.author) {
+      book.author = bookMeta.author;
+    }
+    if (bookMeta.date) {
+      book.date = bookMeta.date;
+    }
+  }
+  
+  return book;
 }
 
 export function getBibleChapter(versionId: string, bookSlug: string, chapter: number): string[] | undefined {

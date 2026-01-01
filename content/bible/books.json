@@ -3,396 +3,594 @@
     "name": "Gênesis",
     "slug": "genesis",
     "abbrev": "Gn",
-    "chapters": 50
+    "chapters": 50,
+    "description": "O primeiro livro da Bíblia, que narra a criação do mundo, a história dos patriarcas e as origens do povo de Israel.",
+    "author": "Moisés",
+    "date": "1445–1405 a.C."
   },
   {
     "name": "Êxodo",
     "slug": "exodo",
     "abbrev": "Êx",
-    "chapters": 40
+    "chapters": 40,
+    "description": "Narra a libertação dos israelitas da escravidão no Egito e a jornada pelo deserto até o Monte Sinai, onde recebem os Dez Mandamentos.",
+    "author": "Moisés",
+    "date": "1445–1405 a.C."
   },
   {
     "name": "Levítico",
     "slug": "levitico",
     "abbrev": "Lv",
-    "chapters": 27
+    "chapters": 27,
+    "description": "Contém leis e instruções sobre sacrifícios, pureza ritual e o papel dos sacerdotes na adoração a Deus.",
+    "author": "Moisés",
+    "date": "1445–1405 a.C."
   },
   {
     "name": "Números",
     "slug": "numeros",
     "abbrev": "Nm",
-    "chapters": 36
+    "chapters": 36,
+    "description": "Descreve a jornada dos israelitas pelo deserto, incluindo censos, rebeliões e preparativos para entrar na Terra Prometida.",
+    "author": "Moisés",
+    "date": "1445–1405 a.C."
   },
   {
     "name": "Deuteronômio",
     "slug": "deuteronomio",
     "abbrev": "Dt",
-    "chapters": 34
+    "chapters": 34,
+    "description": "Contém os discursos finais de Moisés, revisando a lei e preparando o povo para entrar em Canaã.",
+    "author": "Moisés",
+    "date": "1405 a.C."
   },
   {
     "name": "Josué",
     "slug": "josue",
     "abbrev": "Js",
-    "chapters": 24
+    "chapters": 24,
+    "description": "Relata a conquista de Canaã sob a liderança de Josué, sucessor de Moisés, e a divisão da terra entre as tribos de Israel.",
+    "author": "Josué",
+    "date": "1380–1370 a.C."
   },
   {
     "name": "Juízes",
     "slug": "juizes",
     "abbrev": "Jz",
-    "chapters": 21
+    "chapters": 21,
+    "description": "Descreve o período em que juízes governaram Israel, marcados por ciclos de pecado, opressão, arrependimento e libertação.",
+    "author": "Samuel",
+    "date": "1045 a.C."
   },
   {
     "name": "Rute",
     "slug": "rute",
     "abbrev": "Rt",
-    "chapters": 4
+    "chapters": 4,
+    "description": "Uma história de lealdade e redenção, mostrando como Rute, uma moabita, se torna parte da linhagem do Rei Davi.",
+    "author": "Samuel",
+    "date": "1010 a.C."
   },
   {
     "name": "1 Samuel",
     "slug": "1samuel",
     "abbrev": "1Sm",
-    "chapters": 31
+    "chapters": 31,
+    "description": "Narra a transição de Israel de um sistema de juízes para uma monarquia, destacando a vida de Samuel, Saul e Davi.",
+    "author": "Samuel",
+    "date": "930 a.C."
   },
   {
     "name": "2 Samuel",
     "slug": "2samuel",
     "abbrev": "2Sm",
-    "chapters": 24
+    "chapters": 24,
+    "description": "Continua a história do reinado de Davi, suas conquistas, pecados e a promessa de um reino eterno.",
+    "author": "Natan e Gade",
+    "date": "930 a.C."
   },
   {
     "name": "1 Reis",
     "slug": "1reis",
     "abbrev": "1Rs",
-    "chapters": 22
+    "chapters": 22,
+    "description": "Descreve o reinado de Salomão, a construção do Templo em Jerusalém e a divisão do reino de Israel.",
+    "author": "Jeremias",
+    "date": "550 a.C."
   },
   {
     "name": "2 Reis",
     "slug": "2reis",
     "abbrev": "2Rs",
-    "chapters": 25
+    "chapters": 25,
+    "description": "Relata a história dos reinos de Israel e Judá, culminando na queda de ambos e no exílio do povo.",
+    "author": "Jeremias",
+    "date": "550 a.C."
   },
   {
     "name": "1 Crônicas",
     "slug": "1cronicas",
     "abbrev": "1Cr",
-    "chapters": 29
+    "chapters": 29,
+    "description": "Um registro genealógico e histórico de Israel, desde Adão até o reinado de Davi.",
+    "author": "Esdras",
+    "date": "450–430 a.C."
   },
   {
     "name": "2 Crônicas",
     "slug": "2cronicas",
     "abbrev": "2Cr",
-    "chapters": 36
+    "chapters": 36,
+    "description": "Continua a história de Israel, focando no reino de Judá, desde Salomão até o exílio babilônico.",
+    "author": "Esdras",
+    "date": "450–430 a.C."
   },
   {
     "name": "Esdras",
     "slug": "esdras",
     "abbrev": "Ed",
-    "chapters": 10
+    "chapters": 10,
+    "description": "Descreve o retorno dos judeus do exílio babilônico e a reconstrução do Templo em Jerusalém.",
+    "author": "Esdras",
+    "date": "450 a.C."
   },
   {
     "name": "Neemias",
     "slug": "neemias",
     "abbrev": "Ne",
-    "chapters": 13
+    "chapters": 13,
+    "description": "Relata a reconstrução dos muros de Jerusalém e as reformas religiosas lideradas por Neemias.",
+    "author": "Neemias",
+    "date": "430 a.C."
   },
   {
     "name": "Ester",
     "slug": "ester",
     "abbrev": "Et",
-    "chapters": 10
+    "chapters": 10,
+    "description": "Narra como Ester, uma judia, se torna rainha da Pérsia e salva seu povo de um plano de extermínio.",
+    "author": "Mardoqueu",
+    "date": "470 a.C."
   },
   {
     "name": "Jó",
     "slug": "jo",
     "abbrev": "Jó",
-    "chapters": 42
+    "chapters": 42,
+    "description": "Explora o sofrimento humano e a soberania de Deus através da história de Jó, um homem justo que perde tudo.",
+    "author": "Moisés",
+    "date": "1445–1405 a.C."
   },
   {
     "name": "Salmos",
     "slug": "salmos",
     "abbrev": "Sl",
-    "chapters": 150
+    "chapters": 150,
+    "description": "Uma coleção de cânticos e orações que expressam adoração, louvor, arrependimento e confiança em Deus.",
+    "author": "Davi e outros",
+    "date": "1440–450 a.C."
   },
   {
     "name": "Provérbios",
     "slug": "proverbios",
     "abbrev": "Pv",
-    "chapters": 31
+    "chapters": 31,
+    "description": "Contém ensinamentos práticos sobre sabedoria, moralidade e vida cotidiana, atribuídos principalmente a Salomão.",
+    "author": "Salomão",
+    "date": "970–930 a.C."
   },
   {
     "name": "Eclesiastes",
     "slug": "eclesiastes",
     "abbrev": "Ec",
-    "chapters": 12
+    "chapters": 12,
+    "description": "Reflete sobre o significado da vida e a busca por propósito, concluindo que tudo é vaidade sem Deus.",
+    "author": "Salomão",
+    "date": "935 a.C."
   },
   {
     "name": "Cânticos",
     "slug": "canticos",
     "abbrev": "Ct",
-    "chapters": 8
+    "chapters": 8,
+    "description": "Um poema de amor que celebra o relacionamento entre um noivo e uma noiva, frequentemente interpretado como uma alegoria do amor de Deus por Israel.",
+    "author": "Salomão",
+    "date": "970–930 a.C."
   },
   {
     "name": "Isaías",
     "slug": "isaias",
     "abbrev": "Is",
-    "chapters": 66
+    "chapters": 66,
+    "description": "Um livro profético que anuncia juízo e salvação, destacando a promessa do Messias.",
+    "author": "Isaías",
+    "date": "700–680 a.C."
   },
   {
     "name": "Jeremias",
     "slug": "jeremias",
     "abbrev": "Jr",
-    "chapters": 52
+    "chapters": 52,
+    "description": "Profetiza sobre a queda de Judá e Jerusalém, chamando o povo ao arrependimento e anunciando a restauração futura.",
+    "author": "Jeremias",
+    "date": "626–586 a.C."
   },
   {
     "name": "Lamentações de Jeremias",
     "slug": "lamentacoes-de-jeremias",
     "abbrev": "Lm",
-    "chapters": 5
+    "chapters": 5,
+    "description": "Expressa o lamento de Jeremias pela destruição de Jerusalém e o sofrimento do povo.",
+    "author": "Jeremias",
+    "date": "586 a.C."
   },
   {
     "name": "Ezequiel",
     "slug": "ezequiel",
     "abbrev": "Ez",
-    "chapters": 48
+    "chapters": 48,
+    "description": "Contém visões proféticas sobre o juízo de Deus, a restauração de Israel e a glória do Senhor.",
+    "author": "Ezequiel",
+    "date": "593–570 a.C."
   },
   {
     "name": "Daniel",
     "slug": "daniel",
     "abbrev": "Dn",
-    "chapters": 12
+    "chapters": 12,
+    "description": "Narra a vida de Daniel no exílio babilônico e suas visões sobre o futuro dos reinos e a vinda do Messias.",
+    "author": "Daniel",
+    "date": "536 a.C."
   },
   {
     "name": "Oséias",
     "slug": "oseias",
     "abbrev": "Os",
-    "chapters": 14
+    "chapters": 14,
+    "description": "Usa o casamento de Oséias como uma alegoria do relacionamento entre Deus e Israel, destacando o amor fiel de Deus.",
+    "author": "Oséias",
+    "date": "750–710 a.C."
   },
   {
     "name": "Joel",
     "slug": "joel",
     "abbrev": "Jl",
-    "chapters": 3
+    "chapters": 3,
+    "description": "Anuncia o Dia do Senhor, chamando o povo ao arrependimento e prometendo a restauração futura.",
+    "author": "Joel",
+    "date": "835–800 a.C."
   },
   {
     "name": "Amós",
     "slug": "amos",
     "abbrev": "Am",
-    "chapters": 9
+    "chapters": 9,
+    "description": "Profetiza contra a injustiça social e a idolatria, chamando Israel ao arrependimento.",
+    "author": "Amós",
+    "date": "760–750 a.C."
   },
   {
     "name": "Obadias",
     "slug": "obadias",
     "abbrev": "Ob",
-    "chapters": 1
+    "chapters": 1,
+    "description": "Anuncia o juízo de Deus sobre Edom por sua hostilidade contra Israel.",
+    "author": "Obadias",
+    "date": "850–840 a.C."
   },
   {
     "name": "Jonas",
     "slug": "jonas",
     "abbrev": "Jn",
-    "chapters": 4
+    "chapters": 4,
+    "description": "Relata a missão de Jonas a Nínive, destacando a misericórdia de Deus para com os que se arrependem.",
+    "author": "Jonas",
+    "date": "785–760 a.C."
   },
   {
     "name": "Miquéias",
     "slug": "miqueias",
     "abbrev": "Mq",
-    "chapters": 7
+    "chapters": 7,
+    "description": "Anuncia juízo contra a injustiça, mas também promete restauração e a vinda de um governante de Belém.",
+    "author": "Miquéias",
+    "date": "735–710 a.C."
   },
   {
     "name": "Naum",
     "slug": "naum",
     "abbrev": "Na",
-    "chapters": 3
+    "chapters": 3,
+    "description": "Anuncia a queda de Nínive como juízo de Deus contra a cidade cruel e idólatra.",
+    "author": "Naum",
+    "date": "663–612 a.C."
   },
   {
     "name": "Habacuque",
     "slug": "habacuque",
     "abbrev": "Hc",
-    "chapters": 3
+    "chapters": 3,
+    "description": "Explora a justiça de Deus e a fé do profeta, mesmo em tempos de crise.",
+    "author": "Habacuque",
+    "date": "612–589 a.C."
   },
   {
     "name": "Sofonias",
     "slug": "sofonias",
     "abbrev": "Sf",
-    "chapters": 3
+    "chapters": 3,
+    "description": "Anuncia o Dia do Senhor e chama o povo ao arrependimento, prometendo salvação para os humildes.",
+    "author": "Sofonias",
+    "date": "630 a.C."
   },
   {
     "name": "Ageu",
     "slug": "ageu",
     "abbrev": "Ag",
-    "chapters": 2
+    "chapters": 2,
+    "description": "Incentiva o povo a reconstruir o Templo, destacando a prioridade da adoração a Deus.",
+    "author": "Ageu",
+    "date": "520 a.C."
   },
   {
     "name": "Zacarias",
     "slug": "zacarias",
     "abbrev": "Zc",
-    "chapters": 14
+    "chapters": 14,
+    "description": "Contém visões sobre a restauração de Jerusalém e a vinda do Messias.",
+    "author": "Zacarias",
+    "date": "520–470 a.C."
   },
   {
     "name": "Malaquias",
     "slug": "malaquias",
     "abbrev": "Ml",
-    "chapters": 4
+    "chapters": 4,
+    "description": "Aborda a infidelidade do povo e anuncia a vinda do mensageiro que preparará o caminho para o Senhor.",
+    "author": "Malaquias",
+    "date": "430 a.C."
   },
   {
     "name": "Mateus",
     "slug": "mateus",
     "abbrev": "Mt",
-    "chapters": 28
+    "chapters": 28,
+    "description": "Presenta Jesus como o Messias prometido, destacando Seu ensino e a fundação da Igreja.",
+    "author": "Mateus",
+    "date": "50–70 d.C."
   },
   {
     "name": "Marcos",
     "slug": "marcos",
     "abbrev": "Mc",
-    "chapters": 16
+    "chapters": 16,
+    "description": "Um evangelho conciso que enfatiza as ações de Jesus como o Servo Sofredor.",
+    "author": "João Marcos",
+    "date": "50–60 d.C."
   },
   {
     "name": "Lucas",
     "slug": "lucas",
     "abbrev": "Lc",
-    "chapters": 24
+    "chapters": 24,
+    "description": "Um evangelho detalhado que destaca a humanidade de Jesus e Seu ministério de compaixão.",
+    "author": "Lucas",
+    "date": "60–65 d.C."
   },
   {
     "name": "João",
     "slug": "joao",
     "abbrev": "Jo",
-    "chapters": 21
+    "chapters": 21,
+    "description": "Presenta Jesus como o Filho de Deus, enfatizando Sua divindade e a vida eterna através dEle.",
+    "author": "João",
+    "date": "85–90 d.C."
   },
   {
     "name": "Atos",
     "slug": "atos",
     "abbrev": "At",
-    "chapters": 28
+    "chapters": 28,
+    "description": "Relata a história da Igreja primitiva, a expansão do Evangelho e a obra do Espírito Santo.",
+    "author": "Lucas",
+    "date": "60–65 d.C."
   },
   {
     "name": "Romanos",
     "slug": "romanos",
     "abbrev": "Rm",
-    "chapters": 16
+    "chapters": 16,
+    "description": "Uma exposição sistemática do Evangelho, destacando a justificação pela fé e a graça de Deus.",
+    "author": "Paulo",
+    "date": "57 d.C."
   },
   {
     "name": "1 Coríntios",
     "slug": "1corintios",
     "abbrev": "1Co",
-    "chapters": 16
+    "chapters": 16,
+    "description": "Aborda questões práticas e teológicas na igreja de Corinto, enfatizando o amor e a unidade.",
+    "author": "Paulo",
+    "date": "55 d.C."
   },
   {
     "name": "2 Coríntios",
     "slug": "2corintios",
     "abbrev": "2Co",
-    "chapters": 13
+    "chapters": 13,
+    "description": "Paulo defende seu ministério e encoraja a igreja a viver em santidade e generosidade.",
+    "author": "Paulo",
+    "date": "55–56 d.C."
   },
   {
     "name": "Gálatas",
     "slug": "galatas",
     "abbrev": "Gl",
-    "chapters": 6
+    "chapters": 6,
+    "description": "Defende a justificação pela fé, contrastando-a com a lei, e exorta à liberdade em Cristo.",
+    "author": "Paulo",
+    "date": "49 d.C."
   },
   {
     "name": "Efésios",
     "slug": "efesios",
     "abbrev": "Ef",
-    "chapters": 6
+    "chapters": 6,
+    "description": "Destaca a unidade da Igreja em Cristo e a vida cristã prática, incluindo a armadura de Deus.",
+    "author": "Paulo",
+    "date": "60–62 d.C."
   },
   {
     "name": "Filipenses",
     "slug": "filipenses",
     "abbrev": "Fp",
-    "chapters": 4
+    "chapters": 4,
+    "description": "Uma carta de alegria e gratidão, enfatizando a humildade de Cristo e a importância da contentamento.",
+    "author": "Paulo",
+    "date": "60–62 d.C."
   },
   {
     "name": "Colossenses",
     "slug": "colossenses",
     "abbrev": "Cl",
-    "chapters": 4
+    "chapters": 4,
+    "description": "Enfatiza a supremacia de Cristo e encoraja os crentes a viverem em unidade e santidade.",
+    "author": "Paulo",
+    "date": "60–62 d.C."
   },
   {
     "name": "1 Tessalonicenses",
     "slug": "1tessalonicenses",
     "abbrev": "1Ts",
-    "chapters": 5
+    "chapters": 5,
+    "description": "Encoraja os crentes a viverem em santidade e espera pela volta de Cristo.",
+    "author": "Paulo",
+    "date": "51 d.C."
   },
   {
     "name": "2 Tessalonicenses",
     "slug": "2tessalonicenses",
     "abbrev": "2Ts",
-    "chapters": 3
+    "chapters": 3,
+    "description": "Aborda a segunda vinda de Cristo e exorta os crentes a perseverarem na fé.",
+    "author": "Paulo",
+    "date": "51–52 d.C."
   },
   {
     "name": "1 Timóteo",
     "slug": "1timoteo",
     "abbrev": "1Tn",
-    "chapters": 6
+    "chapters": 6,
+    "description": "Instruções pastorais de Paulo a Timóteo sobre liderança, doutrina e vida na igreja.",
+    "author": "Paulo",
+    "date": "62–64 d.C."
   },
   {
     "name": "2 Timóteo",
     "slug": "2timoteo",
     "abbrev": "2Tm",
-    "chapters": 4
+    "chapters": 4,
+    "description": "Paulo encoraja Timóteo a perseverar na fé e no ministério, apesar das dificuldades.",
+    "author": "Paulo",
+    "date": "66–67 d.C."
   },
   {
     "name": "Tito",
     "slug": "tito",
     "abbrev": "Tt",
-    "chapters": 3
+    "chapters": 3,
+    "description": "Instruções de Paulo a Tito sobre liderança na igreja e vida cristã prática.",
+    "author": "Paulo",
+    "date": "62–64 d.C."
   },
   {
     "name": "Filemom",
     "slug": "filemom",
     "abbrev": "Fm",
-    "chapters": 1
+    "chapters": 1,
+    "description": "Uma carta pessoal de Paulo a Filemom, intercedendo por Onésimo, um escravo convertido.",
+    "author": "Paulo",
+    "date": "60–62 d.C."
   },
   {
     "name": "Hebreus",
     "slug": "hebreus",
     "abbrev": "Hb",
-    "chapters": 13
+    "chapters": 13,
+    "description": "Destaca a superioridade de Cristo sobre os profetas, anjos e o sistema sacrificial do Antigo Testamento.",
+    "author": "Desconhecido",
+    "date": "67–69 d.C."
   },
   {
     "name": "Tiago",
     "slug": "tiago",
     "abbrev": "Tg",
-    "chapters": 5
+    "chapters": 5,
+    "description": "Ensinamentos práticos sobre fé, sabedoria e vida cristã, enfatizando a importância das obras.",
+    "author": "Tiago",
+    "date": "45–49 d.C."
   },
   {
     "name": "1 Pedro",
     "slug": "1pedro",
     "abbrev": "1Pe",
-    "chapters": 5
+    "chapters": 5,
+    "description": "Encoraja os crentes a perseverarem na fé, apesar do sofrimento, e a viverem em santidade.",
+    "author": "Pedro",
+    "date": "64–65 d.C."
   },
   {
     "name": "2 Pedro",
     "slug": "2pedro",
     "abbrev": "2Pe",
-    "chapters": 3
+    "chapters": 3,
+    "description": "Adverte contra falsos mestres e exorta os crentes a crescerem na graça e no conhecimento de Cristo.",
+    "author": "Pedro",
+    "date": "66–68 d.C."
   },
   {
     "name": "1 João",
     "slug": "1joao",
     "abbrev": "1Jo",
-    "chapters": 5
+    "chapters": 5,
+    "description": "Enfatiza o amor, a comunhão com Deus e a importância de viver em obediência aos Seus mandamentos.",
+    "author": "João",
+    "date": "85–95 d.C."
   },
   {
     "name": "2 João",
     "slug": "2joao",
     "abbrev": "2Jo",
-    "chapters": 1
+    "chapters": 1,
+    "description": "Adverte contra falsos mestres e encoraja o amor e a obediência à verdade.",
+    "author": "João",
+    "date": "90–95 d.C."
   },
   {
     "name": "3 João",
     "slug": "3joao",
     "abbrev": "3Jo",
-    "chapters": 1
+    "chapters": 1,
+    "description": "Uma carta pessoal que elogia a hospitalidade e encoraja o apoio aos missionários.",
+    "author": "João",
+    "date": "90–95 d.C."
   },
   {
     "name": "Judas",
     "slug": "judas",
     "abbrev": "Jd",
-    "chapters": 1
+    "chapters": 1,
+    "description": "Adverte contra falsos mestres e exorta os crentes a contenderem pela fé.",
+    "author": "Judas",
+    "date": "65–80 d.C."
   },
   {
     "name": "Apocalipse",
     "slug": "apocalipse",
     "abbrev": "Ap",
-    "chapters": 22
+    "chapters": 22,
+    "description": "Um livro profético que revela a vitória final de Cristo, o juízo de Deus e a esperança da nova criação.",
+    "author": "João",
+    "date": "95–96 d.C."
   }
 ]
