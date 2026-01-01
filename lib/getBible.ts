@@ -28,54 +28,65 @@ export interface BibleBookContent {
   chapters: string[][];
 }
 
+function readJsonFile<T>(filePath: string): T | null {
+  if (!fs.existsSync(filePath)) return null;
+  
+  let raw = fs.readFileSync(filePath, "utf-8");
+  
+  // Handle UTF-8 BOM (Byte Order Mark)
+  if (raw.charCodeAt(0) === 0xFEFF) {
+    raw = raw.slice(1);
+  }
+  
+  try {
+    return JSON.parse(raw);
+  } catch (error) {
+    console.error(`Error parsing JSON from ${filePath}:`, error);
+    return null;
+  }
+}
+
 export function getBibleBooks(): BibleBookMeta[] {
   const booksFile = path.join(BIBLE_PATH, "books.json");
-  if (!fs.existsSync(booksFile)) return [];
-  
-  const raw = fs.readFileSync(booksFile, "utf-8");
-  return JSON.parse(raw);
+  return readJsonFile<BibleBookMeta[]>(booksFile) || [];
 }
 
 export function getBibleVersions(): BibleVersion[] {
   const versionsFile = path.join(BIBLE_PATH, "versions.json");
-  if (!fs.existsSync(versionsFile)) return [];
+  const versionsRaw = readJsonFile<BibleVersionRaw[]>(versionsFile);
   
-  const raw = fs.readFileSync(versionsFile, "utf-8");
-  const versionsRaw: BibleVersionRaw[] = JSON.parse(raw);
+  if (!versionsRaw) return [];
+  
   const allBooks = getBibleBooks();
-  const booksMap = new Map(allBooks.map(book => [book.slug, book]));
+  const booksMap = new Map(allBooks.map(book => [book.slug.trim(), book]));
 
   return versionsRaw.map(version => ({
     ...version,
-    books: version.books.map(slug => booksMap.get(slug)).filter((book): book is BibleBookMeta => !!book)
+    books: version.books.map(slug => booksMap.get(slug.trim())).filter((book): book is BibleBookMeta => !!book)
   }));
 }
 
 export function getBibleVersion(versionId: string): BibleVersion | undefined {
   const versionsFile = path.join(BIBLE_PATH, "versions.json");
-  if (!fs.existsSync(versionsFile)) return undefined;
+  const versionsRaw = readJsonFile<BibleVersionRaw[]>(versionsFile);
   
-  const raw = fs.readFileSync(versionsFile, "utf-8");
-  const versionsRaw: BibleVersionRaw[] = JSON.parse(raw);
+  if (!versionsRaw) return undefined;
+  
   const versionRaw = versionsRaw.find(v => v.id === versionId);
-  
   if (!versionRaw) return undefined;
 
   const allBooks = getBibleBooks();
-  const booksMap = new Map(allBooks.map(book => [book.slug, book]));
+  const booksMap = new Map(allBooks.map(book => [book.slug.trim(), book]));
 
   return {
     ...versionRaw,
-    books: versionRaw.books.map(slug => booksMap.get(slug)).filter((book): book is BibleBookMeta => !!book)
+    books: versionRaw.books.map(slug => booksMap.get(slug.trim())).filter((book): book is BibleBookMeta => !!book)
   };
 }
 
 export function getBibleBook(versionId: string, bookSlug: string): BibleBookContent | undefined {
   const bookFile = path.join(BIBLE_PATH, versionId, `${bookSlug}.json`);
-  if (!fs.existsSync(bookFile)) return undefined;
-  
-  const raw = fs.readFileSync(bookFile, "utf-8");
-  return JSON.parse(raw);
+  return readJsonFile<BibleBookContent>(bookFile) || undefined;
 }
 
 export function getBibleChapter(versionId: string, bookSlug: string, chapter: number): string[] | undefined {
