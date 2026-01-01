@@ -3,5226 +3,936 @@
     "id": "nvt",
     "name": "Nova Versão Transformadora",
     "books": [
-      {
-        "name": "Gênesis",
-        "slug": "genesis",
-        "abbrev": "Gn",
-        "chapters": 50
-      },
-      {
-        "name": "Êxodo",
-        "slug": "exodo",
-        "abbrev": "Êx",
-        "chapters": 40
-      },
-      {
-        "name": "Levítico",
-        "slug": "levitico",
-        "abbrev": "Lv",
-        "chapters": 27
-      },
-      {
-        "name": "Números",
-        "slug": "numeros",
-        "abbrev": "Nm",
-        "chapters": 36
-      },
-      {
-        "name": "Deuteronômio",
-        "slug": "deuteronomio",
-        "abbrev": "Dt",
-        "chapters": 34
-      },
-      {
-        "name": "Josué",
-        "slug": "josue",
-        "abbrev": "Js",
-        "chapters": 24
-      },
-      {
-        "name": "Juízes",
-        "slug": "juizes",
-        "abbrev": "Jz",
-        "chapters": 21
-      },
-      {
-        "name": "Rute",
-        "slug": "rute",
-        "abbrev": "Rt",
-        "chapters": 4
-      },
-      {
-        "name": "1 Samuel",
-        "slug": "1samuel",
-        "abbrev": "1Sm",
-        "chapters": 31
-      },
-      {
-        "name": "2 Samuel",
-        "slug": "2samuel",
-        "abbrev": "2Sm",
-        "chapters": 24
-      },
-      {
-        "name": "1 Reis",
-        "slug": "1reis",
-        "abbrev": "1Rs",
-        "chapters": 22
-      },
-      {
-        "name": "2 Reis",
-        "slug": "2reis",
-        "abbrev": "2Rs",
-        "chapters": 25
-      },
-      {
-        "name": "1 Crônicas",
-        "slug": "1cronicas",
-        "abbrev": "1Cr",
-        "chapters": 29
-      },
-      {
-        "name": "2 Crônicas",
-        "slug": "2cronicas",
-        "abbrev": "2Cr",
-        "chapters": 36
-      },
-      {
-        "name": "Esdras",
-        "slug": "esdras",
-        "abbrev": "Ed",
-        "chapters": 10
-      },
-      {
-        "name": "Neemias",
-        "slug": "neemias",
-        "abbrev": "Ne",
-        "chapters": 13
-      },
-      {
-        "name": "Ester",
-        "slug": "ester",
-        "abbrev": "Et",
-        "chapters": 10
-      },
-      {
-        "name": "Jó",
-        "slug": "jo",
-        "abbrev": "Jó",
-        "chapters": 42
-      },
-      {
-        "name": "Salmos",
-        "slug": "salmos",
-        "abbrev": "Sl",
-        "chapters": 150
-      },
-      {
-        "name": "Provérbios",
-        "slug": "proverbios",
-        "abbrev": "Pv",
-        "chapters": 31
-      },
-      {
-        "name": "Eclesiastes",
-        "slug": "eclesiastes",
-        "abbrev": "Ec",
-        "chapters": 12
-      },
-      {
-        "name": "Cânticos",
-        "slug": "canticos",
-        "abbrev": "Ct",
-        "chapters": 8
-      },
-      {
-        "name": "Isaías",
-        "slug": "isaias",
-        "abbrev": "Is",
-        "chapters": 66
-      },
-      {
-        "name": "Jeremias",
-        "slug": "jeremias",
-        "abbrev": "Jr",
-        "chapters": 52
-      },
-      {
-        "name": "Lamentações de Jeremias",
-        "slug": "lamentacoes-de-jeremias",
-        "abbrev": "Lm",
-        "chapters": 5
-      },
-      {
-        "name": "Ezequiel",
-        "slug": "ezequiel",
-        "abbrev": "Ez",
-        "chapters": 48
-      },
-      {
-        "name": "Daniel",
-        "slug": "daniel",
-        "abbrev": "Dn",
-        "chapters": 12
-      },
-      {
-        "name": "Oséias",
-        "slug": "oseias",
-        "abbrev": "Os",
-        "chapters": 14
-      },
-      {
-        "name": "Joel",
-        "slug": "joel",
-        "abbrev": "Jl",
-        "chapters": 3
-      },
-      {
-        "name": "Amós",
-        "slug": "amos",
-        "abbrev": "Am",
-        "chapters": 9
-      },
-      {
-        "name": "Obadias",
-        "slug": "obadias",
-        "abbrev": "Ob",
-        "chapters": 1
-      },
-      {
-        "name": "Jonas",
-        "slug": "jonas",
-        "abbrev": "Jn",
-        "chapters": 4
-      },
-      {
-        "name": "Miquéias",
-        "slug": "miqueias",
-        "abbrev": "Mq",
-        "chapters": 7
-      },
-      {
-        "name": "Naum",
-        "slug": "naum",
-        "abbrev": "Na",
-        "chapters": 3
-      },
-      {
-        "name": "Habacuque",
-        "slug": "habacuque",
-        "abbrev": "Hc",
-        "chapters": 3
-      },
-      {
-        "name": "Sofonias",
-        "slug": "sofonias",
-        "abbrev": "Sf",
-        "chapters": 3
-      },
-      {
-        "name": "Ageu",
-        "slug": "ageu",
-        "abbrev": "Ag",
-        "chapters": 2
-      },
-      {
-        "name": "Zacarias",
-        "slug": "zacarias",
-        "abbrev": "Zc",
-        "chapters": 14
-      },
-      {
-        "name": "Malaquias",
-        "slug": "malaquias",
-        "abbrev": "Ml",
-        "chapters": 4
-      },
-      {
-        "name": "Mateus",
-        "slug": "mateus",
-        "abbrev": "Mt",
-        "chapters": 28
-      },
-      {
-        "name": "Marcos",
-        "slug": "marcos",
-        "abbrev": "Mc",
-        "chapters": 16
-      },
-      {
-        "name": "Lucas",
-        "slug": "lucas",
-        "abbrev": "Lc",
-        "chapters": 24
-      },
-      {
-        "name": "João",
-        "slug": "joao",
-        "abbrev": "Jo",
-        "chapters": 21
-      },
-      {
-        "name": "Atos",
-        "slug": "atos",
-        "abbrev": "At",
-        "chapters": 28
-      },
-      {
-        "name": "Romanos",
-        "slug": "romanos",
-        "abbrev": "Rm",
-        "chapters": 16
-      },
-      {
-        "name": "1 Coríntios",
-        "slug": "1corintios",
-        "abbrev": "1Co",
-        "chapters": 16
-      },
-      {
-        "name": "2 Coríntios",
-        "slug": "2corintios",
-        "abbrev": "2Co",
-        "chapters": 13
-      },
-      {
-        "name": "Gálatas",
-        "slug": "galatas",
-        "abbrev": "Gl",
-        "chapters": 6
-      },
-      {
-        "name": "Efésios",
-        "slug": "efesios",
-        "abbrev": "Ef",
-        "chapters": 6
-      },
-      {
-        "name": "Filipenses",
-        "slug": "filipenses",
-        "abbrev": "Fp",
-        "chapters": 4
-      },
-      {
-        "name": "Colossenses",
-        "slug": "colossenses",
-        "abbrev": "Cl",
-        "chapters": 4
-      },
-      {
-        "name": "1 Tessalonicenses",
-        "slug": "1tessalonicenses",
-        "abbrev": "1Ts",
-        "chapters": 5
-      },
-      {
-        "name": "2 Tessalonicenses",
-        "slug": "2tessalonicenses",
-        "abbrev": "2Ts",
-        "chapters": 3
-      },
-      {
-        "name": "1 Timóteo",
-        "slug": "1timoteo",
-        "abbrev": "1Tn",
-        "chapters": 6
-      },
-      {
-        "name": "2 Timóteo",
-        "slug": "2timoteo",
-        "abbrev": "2Tm",
-        "chapters": 4
-      },
-      {
-        "name": "Tito",
-        "slug": "tito",
-        "abbrev": "Tt",
-        "chapters": 3
-      },
-      {
-        "name": "Filemom",
-        "slug": "filemom",
-        "abbrev": "Fm",
-        "chapters": 1
-      },
-      {
-        "name": "Hebreus",
-        "slug": "hebreus",
-        "abbrev": "Hb",
-        "chapters": 13
-      },
-      {
-        "name": "Tiago",
-        "slug": "tiago",
-        "abbrev": "Tg",
-        "chapters": 5
-      },
-      {
-        "name": "1 Pedro",
-        "slug": "1pedro",
-        "abbrev": "1Pe",
-        "chapters": 5
-      },
-      {
-        "name": "2 Pedro",
-        "slug": "2pedro",
-        "abbrev": "2Pe",
-        "chapters": 3
-      },
-      {
-        "name": "1 João",
-        "slug": "1joao",
-        "abbrev": "1Jo",
-        "chapters": 5
-      },
-      {
-        "name": "2 João",
-        "slug": "2joao",
-        "abbrev": "2Jo",
-        "chapters": 1
-      },
-      {
-        "name": "3 João",
-        "slug": "3joao",
-        "abbrev": "3Jo",
-        "chapters": 1
-      },
-      {
-        "name": "Judas",
-        "slug": "judas",
-        "abbrev": "Jd",
-        "chapters": 1
-      },
-      {
-        "name": "Apocalipse",
-        "slug": "apocalipse",
-        "abbrev": "Ap",
-        "chapters": 22
-      }
+      "genesis",
+      "exodo",
+      "levitico",
+      "numeros",
+      "deuteronomio",
+      "josue",
+      "juizes",
+      "rute",
+      "1samuel",
+      "2samuel",
+      "1reis",
+      "2reis",
+      "1cronicas",
+      "2cronicas",
+      "esdras",
+      "neemias",
+      "ester",
+      "jo",
+      "salmos",
+      "proverbios",
+      "eclesiastes",
+      "canticos",
+      "isaias",
+      "jeremias",
+      "lamentacoes-de-jeremias",
+      "ezequiel",
+      "daniel",
+      "oseias",
+      "joel",
+      "amos",
+      "obadias",
+      "jonas",
+      "miqueias",
+      "naum",
+      "habacuque",
+      "sofonias",
+      "ageu",
+      "zacarias",
+      "malaquias",
+      "mateus",
+      "marcos",
+      "lucas",
+      "joao",
+      "atos",
+      "romanos",
+      "1corintios",
+      "2corintios",
+      "galatas",
+      "efesios",
+      "filipenses",
+      "colossenses",
+      "1tessalonicenses",
+      "2tessalonicenses",
+      "1timoteo",
+      "2timoteo",
+      "tito",
+      "filemom",
+      "hebreus",
+      "tiago",
+      "1pedro",
+      "2pedro",
+      "1joao",
+      "2joao",
+      "3joao",
+      "judas",
+      "apocalipse"
     ]
   },
   {
     "id": "acf",
     "name": "Almeida Corrigida Fiel",
     "books": [
-      {
-        "name": "Gênesis",
-        "slug": "genesis",
-        "abbrev": "Gn",
-        "chapters": 50
-      },
-      {
-        "name": "Êxodo",
-        "slug": "exodo",
-        "abbrev": "Êx",
-        "chapters": 40
-      },
-      {
-        "name": "Levítico",
-        "slug": "levitico",
-        "abbrev": "Lv",
-        "chapters": 27
-      },
-      {
-        "name": "Números",
-        "slug": "numeros",
-        "abbrev": "Nm",
-        "chapters": 36
-      },
-      {
-        "name": "Deuteronômio",
-        "slug": "deuteronomio",
-        "abbrev": "Dt",
-        "chapters": 34
-      },
-      {
-        "name": "Josué",
-        "slug": "josue",
-        "abbrev": "Js",
-        "chapters": 24
-      },
-      {
-        "name": "Juízes",
-        "slug": "juizes",
-        "abbrev": "Jz",
-        "chapters": 21
-      },
-      {
-        "name": "Rute",
-        "slug": "rute",
-        "abbrev": "Rt",
-        "chapters": 4
-      },
-      {
-        "name": "1 Samuel",
-        "slug": "1samuel",
-        "abbrev": "1Sm",
-        "chapters": 31
-      },
-      {
-        "name": "2 Samuel",
-        "slug": "2samuel",
-        "abbrev": "2Sm",
-        "chapters": 24
-      },
-      {
-        "name": "1 Reis",
-        "slug": "1reis",
-        "abbrev": "1Rs",
-        "chapters": 22
-      },
-      {
-        "name": "2 Reis",
-        "slug": "2reis",
-        "abbrev": "2Rs",
-        "chapters": 25
-      },
-      {
-        "name": "1 Crônicas",
-        "slug": "1cronicas",
-        "abbrev": "1Cr",
-        "chapters": 29
-      },
-      {
-        "name": "2 Crônicas",
-        "slug": "2cronicas",
-        "abbrev": "2Cr",
-        "chapters": 36
-      },
-      {
-        "name": "Esdras",
-        "slug": "esdras",
-        "abbrev": "Ed",
-        "chapters": 10
-      },
-      {
-        "name": "Neemias",
-        "slug": "neemias",
-        "abbrev": "Ne",
-        "chapters": 13
-      },
-      {
-        "name": "Ester",
-        "slug": "ester",
-        "abbrev": "Et",
-        "chapters": 10
-      },
-      {
-        "name": "Jó",
-        "slug": "jo",
-        "abbrev": "Jó",
-        "chapters": 42
-      },
-      {
-        "name": "Salmos",
-        "slug": "salmos",
-        "abbrev": "Sl",
-        "chapters": 150
-      },
-      {
-        "name": "Provérbios",
-        "slug": "proverbios",
-        "abbrev": "Pv",
-        "chapters": 31
-      },
-      {
-        "name": "Eclesiastes",
-        "slug": "eclesiastes",
-        "abbrev": "Ec",
-        "chapters": 12
-      },
-      {
-        "name": "Cânticos",
-        "slug": "canticos",
-        "abbrev": "Ct",
-        "chapters": 8
-      },
-      {
-        "name": "Isaías",
-        "slug": "isaias",
-        "abbrev": "Is",
-        "chapters": 66
-      },
-      {
-        "name": "Jeremias",
-        "slug": "jeremias",
-        "abbrev": "Jr",
-        "chapters": 52
-      },
-      {
-        "name": "Lamentações de Jeremias",
-        "slug": "lamentacoes-de-jeremias",
-        "abbrev": "Lm",
-        "chapters": 5
-      },
-      {
-        "name": "Ezequiel",
-        "slug": "ezequiel",
-        "abbrev": "Ez",
-        "chapters": 48
-      },
-      {
-        "name": "Daniel",
-        "slug": "daniel",
-        "abbrev": "Dn",
-        "chapters": 12
-      },
-      {
-        "name": "Oséias",
-        "slug": "oseias",
-        "abbrev": "Os",
-        "chapters": 14
-      },
-      {
-        "name": "Joel",
-        "slug": "joel",
-        "abbrev": "Jl",
-        "chapters": 3
-      },
-      {
-        "name": "Amós",
-        "slug": "amos",
-        "abbrev": "Am",
-        "chapters": 9
-      },
-      {
-        "name": "Obadias",
-        "slug": "obadias",
-        "abbrev": "Ob",
-        "chapters": 1
-      },
-      {
-        "name": "Jonas",
-        "slug": "jonas",
-        "abbrev": "Jn",
-        "chapters": 4
-      },
-      {
-        "name": "Miquéias",
-        "slug": "miqueias",
-        "abbrev": "Mq",
-        "chapters": 7
-      },
-      {
-        "name": "Naum",
-        "slug": "naum",
-        "abbrev": "Na",
-        "chapters": 3
-      },
-      {
-        "name": "Habacuque",
-        "slug": "habacuque",
-        "abbrev": "Hc",
-        "chapters": 3
-      },
-      {
-        "name": "Sofonias",
-        "slug": "sofonias",
-        "abbrev": "Sf",
-        "chapters": 3
-      },
-      {
-        "name": "Ageu",
-        "slug": "ageu",
-        "abbrev": "Ag",
-        "chapters": 2
-      },
-      {
-        "name": "Zacarias",
-        "slug": "zacarias",
-        "abbrev": "Zc",
-        "chapters": 14
-      },
-      {
-        "name": "Malaquias",
-        "slug": "malaquias",
-        "abbrev": "Ml",
-        "chapters": 4
-      },
-      {
-        "name": "Mateus",
-        "slug": "mateus",
-        "abbrev": "Mt",
-        "chapters": 28
-      },
-      {
-        "name": "Marcos",
-        "slug": "marcos",
-        "abbrev": "Mc",
-        "chapters": 16
-      },
-      {
-        "name": "Lucas",
-        "slug": "lucas",
-        "abbrev": "Lc",
-        "chapters": 24
-      },
-      {
-        "name": "João",
-        "slug": "joao",
-        "abbrev": "Jo",
-        "chapters": 21
-      },
-      {
-        "name": "Atos",
-        "slug": "atos",
-        "abbrev": "At",
-        "chapters": 28
-      },
-      {
-        "name": "Romanos",
-        "slug": "romanos",
-        "abbrev": "Rm",
-        "chapters": 16
-      },
-      {
-        "name": "1 Coríntios",
-        "slug": "1corintios",
-        "abbrev": "1Co",
-        "chapters": 16
-      },
-      {
-        "name": "2 Coríntios",
-        "slug": "2corintios",
-        "abbrev": "2Co",
-        "chapters": 13
-      },
-      {
-        "name": "Gálatas",
-        "slug": "galatas",
-        "abbrev": "Gl",
-        "chapters": 6
-      },
-      {
-        "name": "Efésios",
-        "slug": "efesios",
-        "abbrev": "Ef",
-        "chapters": 6
-      },
-      {
-        "name": "Filipenses",
-        "slug": "filipenses",
-        "abbrev": "Fp",
-        "chapters": 4
-      },
-      {
-        "name": "Colossenses",
-        "slug": "colossenses",
-        "abbrev": "Cl",
-        "chapters": 4
-      },
-      {
-        "name": "1 Tessalonicenses",
-        "slug": "1tessalonicenses",
-        "abbrev": "1Ts",
-        "chapters": 5
-      },
-      {
-        "name": "2 Tessalonicenses",
-        "slug": "2tessalonicenses",
-        "abbrev": "2Ts",
-        "chapters": 3
-      },
-      {
-        "name": "1 Timóteo",
-        "slug": "1timoteo",
-        "abbrev": "1Tn",
-        "chapters": 6
-      },
-      {
-        "name": "2 Timóteo",
-        "slug": "2timoteo",
-        "abbrev": "2Tm",
-        "chapters": 4
-      },
-      {
-        "name": "Tito",
-        "slug": "tito",
-        "abbrev": "Tt",
-        "chapters": 3
-      },
-      {
-        "name": "Filemom",
-        "slug": "filemom",
-        "abbrev": "Fm",
-        "chapters": 1
-      },
-      {
-        "name": "Hebreus",
-        "slug": "hebreus",
-        "abbrev": "Hb",
-        "chapters": 13
-      },
-      {
-        "name": "Tiago",
-        "slug": "tiago",
-        "abbrev": "Tg",
-        "chapters": 5
-      },
-      {
-        "name": "1 Pedro",
-        "slug": "1pedro",
-        "abbrev": "1Pe",
-        "chapters": 5
-      },
-      {
-        "name": "2 Pedro",
-        "slug": "2pedro",
-        "abbrev": "2Pe",
-        "chapters": 3
-      },
-      {
-        "name": "1 João",
-        "slug": "1joao",
-        "abbrev": "1Jo",
-        "chapters": 5
-      },
-      {
-        "name": "2 João",
-        "slug": "2joao",
-        "abbrev": "2Jo",
-        "chapters": 1
-      },
-      {
-        "name": "3 João",
-        "slug": "3joao",
-        "abbrev": "3Jo",
-        "chapters": 1
-      },
-      {
-        "name": "Judas",
-        "slug": "judas",
-        "abbrev": "Jd",
-        "chapters": 1
-      },
-      {
-        "name": "Apocalipse",
-        "slug": "apocalipse",
-        "abbrev": "Ap",
-        "chapters": 22
-      }
+      "genesis",
+      "exodo",
+      "levitico",
+      "numeros",
+      "deuteronomio",
+      "josue",
+      "juizes",
+      "rute",
+      "1samuel",
+      "2samuel",
+      "1reis",
+      "2reis",
+      "1cronicas",
+      "2cronicas",
+      "esdras",
+      "neemias",
+      "ester",
+      "jo",
+      "salmos",
+      "proverbios",
+      "eclesiastes",
+      "canticos",
+      "isaias",
+      "jeremias",
+      "lamentacoes-de-jeremias",
+      "ezequiel",
+      "daniel",
+      "oseias",
+      "joel",
+      "amos",
+      "obadias",
+      "jonas",
+      "miqueias",
+      "naum",
+      "habacuque",
+      "sofonias",
+      "ageu",
+      "zacarias",
+      "malaquias",
+      "mateus",
+      "marcos",
+      "lucas",
+      "joao",
+      "atos",
+      "romanos",
+      "1corintios",
+      "2corintios",
+      "galatas",
+      "efesios",
+      "filipenses",
+      "colossenses",
+      "1tessalonicenses",
+      "2tessalonicenses",
+      "1timoteo",
+      "2timoteo",
+      "tito",
+      "filemom",
+      "hebreus",
+      "tiago",
+      "1pedro",
+      "2pedro",
+      "1joao",
+      "2joao",
+      "3joao",
+      "judas",
+      "apocalipse"
     ]
   },
   {
     "id": "ara",
     "name": "Almeida Revista Atualizada",
     "books": [
-      {
-        "name": "Gênesis",
-        "slug": "genesis",
-        "abbrev": "Gn",
-        "chapters": 50
-      },
-      {
-        "name": "Êxodo",
-        "slug": "exodo",
-        "abbrev": "Êx",
-        "chapters": 40
-      },
-      {
-        "name": "Levítico",
-        "slug": "levitico",
-        "abbrev": "Lv",
-        "chapters": 27
-      },
-      {
-        "name": "Números",
-        "slug": "numeros",
-        "abbrev": "Nm",
-        "chapters": 36
-      },
-      {
-        "name": "Deuteronômio",
-        "slug": "deuteronomio",
-        "abbrev": "Dt",
-        "chapters": 34
-      },
-      {
-        "name": "Josué",
-        "slug": "josue",
-        "abbrev": "Js",
-        "chapters": 24
-      },
-      {
-        "name": "Juízes",
-        "slug": "juizes",
-        "abbrev": "Jz",
-        "chapters": 21
-      },
-      {
-        "name": "Rute",
-        "slug": "rute",
-        "abbrev": "Rt",
-        "chapters": 4
-      },
-      {
-        "name": "1 Samuel",
-        "slug": "1samuel",
-        "abbrev": "1Sm",
-        "chapters": 31
-      },
-      {
-        "name": "2 Samuel",
-        "slug": "2samuel",
-        "abbrev": "2Sm",
-        "chapters": 24
-      },
-      {
-        "name": "1 Reis",
-        "slug": "1reis",
-        "abbrev": "1Rs",
-        "chapters": 22
-      },
-      {
-        "name": "2 Reis",
-        "slug": "2reis",
-        "abbrev": "2Rs",
-        "chapters": 25
-      },
-      {
-        "name": "1 Crônicas",
-        "slug": "1cronicas",
-        "abbrev": "1Cr",
-        "chapters": 29
-      },
-      {
-        "name": "2 Crônicas",
-        "slug": "2cronicas",
-        "abbrev": "2Cr",
-        "chapters": 36
-      },
-      {
-        "name": "Esdras",
-        "slug": "esdras",
-        "abbrev": "Ed",
-        "chapters": 10
-      },
-      {
-        "name": "Neemias",
-        "slug": "neemias",
-        "abbrev": "Ne",
-        "chapters": 13
-      },
-      {
-        "name": "Ester",
-        "slug": "ester",
-        "abbrev": "Et",
-        "chapters": 10
-      },
-      {
-        "name": "Jó",
-        "slug": "jo",
-        "abbrev": "Jó",
-        "chapters": 42
-      },
-      {
-        "name": "Salmos",
-        "slug": "salmos",
-        "abbrev": "Sl",
-        "chapters": 150
-      },
-      {
-        "name": "Provérbios",
-        "slug": "proverbios",
-        "abbrev": "Pv",
-        "chapters": 31
-      },
-      {
-        "name": "Eclesiastes",
-        "slug": "eclesiastes",
-        "abbrev": "Ec",
-        "chapters": 12
-      },
-      {
-        "name": "Cânticos",
-        "slug": "canticos",
-        "abbrev": "Ct",
-        "chapters": 8
-      },
-      {
-        "name": "Isaías",
-        "slug": "isaias",
-        "abbrev": "Is",
-        "chapters": 66
-      },
-      {
-        "name": "Jeremias",
-        "slug": "jeremias",
-        "abbrev": "Jr",
-        "chapters": 52
-      },
-      {
-        "name": "Lamentações de Jeremias",
-        "slug": "lamentacoes-de-jeremias",
-        "abbrev": "Lm",
-        "chapters": 5
-      },
-      {
-        "name": "Ezequiel",
-        "slug": "ezequiel",
-        "abbrev": "Ez",
-        "chapters": 48
-      },
-      {
-        "name": "Daniel",
-        "slug": "daniel",
-        "abbrev": "Dn",
-        "chapters": 12
-      },
-      {
-        "name": "Oséias",
-        "slug": "oseias",
-        "abbrev": "Os",
-        "chapters": 14
-      },
-      {
-        "name": "Joel",
-        "slug": "joel",
-        "abbrev": "Jl",
-        "chapters": 3
-      },
-      {
-        "name": "Amós",
-        "slug": "amos",
-        "abbrev": "Am",
-        "chapters": 9
-      },
-      {
-        "name": "Obadias",
-        "slug": "obadias",
-        "abbrev": "Ob",
-        "chapters": 1
-      },
-      {
-        "name": "Jonas",
-        "slug": "jonas",
-        "abbrev": "Jn",
-        "chapters": 4
-      },
-      {
-        "name": "Miquéias",
-        "slug": "miqueias",
-        "abbrev": "Mq",
-        "chapters": 7
-      },
-      {
-        "name": "Naum",
-        "slug": "naum",
-        "abbrev": "Na",
-        "chapters": 3
-      },
-      {
-        "name": "Habacuque",
-        "slug": "habacuque",
-        "abbrev": "Hc",
-        "chapters": 3
-      },
-      {
-        "name": "Sofonias",
-        "slug": "sofonias",
-        "abbrev": "Sf",
-        "chapters": 3
-      },
-      {
-        "name": "Ageu",
-        "slug": "ageu",
-        "abbrev": "Ag",
-        "chapters": 2
-      },
-      {
-        "name": "Zacarias",
-        "slug": "zacarias",
-        "abbrev": "Zc",
-        "chapters": 14
-      },
-      {
-        "name": "Malaquias",
-        "slug": "malaquias",
-        "abbrev": "Ml",
-        "chapters": 4
-      },
-      {
-        "name": "Mateus",
-        "slug": "mateus",
-        "abbrev": "Mt",
-        "chapters": 28
-      },
-      {
-        "name": "Marcos",
-        "slug": "marcos",
-        "abbrev": "Mc",
-        "chapters": 16
-      },
-      {
-        "name": "Lucas",
-        "slug": "lucas",
-        "abbrev": "Lc",
-        "chapters": 24
-      },
-      {
-        "name": "João",
-        "slug": "joao",
-        "abbrev": "Jo",
-        "chapters": 21
-      },
-      {
-        "name": "Atos",
-        "slug": "atos",
-        "abbrev": "At",
-        "chapters": 28
-      },
-      {
-        "name": "Romanos",
-        "slug": "romanos",
-        "abbrev": "Rm",
-        "chapters": 16
-      },
-      {
-        "name": "1 Coríntios",
-        "slug": "1corintios",
-        "abbrev": "1Co",
-        "chapters": 16
-      },
-      {
-        "name": "2 Coríntios",
-        "slug": "2corintios",
-        "abbrev": "2Co",
-        "chapters": 13
-      },
-      {
-        "name": "Gálatas",
-        "slug": "galatas",
-        "abbrev": "Gl",
-        "chapters": 6
-      },
-      {
-        "name": "Efésios",
-        "slug": "efesios",
-        "abbrev": "Ef",
-        "chapters": 6
-      },
-      {
-        "name": "Filipenses",
-        "slug": "filipenses",
-        "abbrev": "Fp",
-        "chapters": 4
-      },
-      {
-        "name": "Colossenses",
-        "slug": "colossenses",
-        "abbrev": "Cl",
-        "chapters": 4
-      },
-      {
-        "name": "1 Tessalonicenses",
-        "slug": "1tessalonicenses",
-        "abbrev": "1Ts",
-        "chapters": 5
-      },
-      {
-        "name": "2 Tessalonicenses",
-        "slug": "2tessalonicenses",
-        "abbrev": "2Ts",
-        "chapters": 3
-      },
-      {
-        "name": "1 Timóteo",
-        "slug": "1timoteo",
-        "abbrev": "1Tn",
-        "chapters": 6
-      },
-      {
-        "name": "2 Timóteo",
-        "slug": "2timoteo",
-        "abbrev": "2Tm",
-        "chapters": 4
-      },
-      {
-        "name": "Tito",
-        "slug": "tito",
-        "abbrev": "Tt",
-        "chapters": 3
-      },
-      {
-        "name": "Filemom",
-        "slug": "filemom",
-        "abbrev": "Fm",
-        "chapters": 1
-      },
-      {
-        "name": "Hebreus",
-        "slug": "hebreus",
-        "abbrev": "Hb",
-        "chapters": 13
-      },
-      {
-        "name": "Tiago",
-        "slug": "tiago",
-        "abbrev": "Tg",
-        "chapters": 5
-      },
-      {
-        "name": "1 Pedro",
-        "slug": "1pedro",
-        "abbrev": "1Pe",
-        "chapters": 5
-      },
-      {
-        "name": "2 Pedro",
-        "slug": "2pedro",
-        "abbrev": "2Pe",
-        "chapters": 3
-      },
-      {
-        "name": "1 João",
-        "slug": "1joao",
-        "abbrev": "1Jo",
-        "chapters": 5
-      },
-      {
-        "name": "2 João",
-        "slug": "2joao",
-        "abbrev": "2Jo",
-        "chapters": 1
-      },
-      {
-        "name": "3 João",
-        "slug": "3joao",
-        "abbrev": "3Jo",
-        "chapters": 1
-      },
-      {
-        "name": "Judas",
-        "slug": "judas",
-        "abbrev": "Jd",
-        "chapters": 1
-      },
-      {
-        "name": "Apocalipse",
-        "slug": "apocalipse",
-        "abbrev": "Ap",
-        "chapters": 22
-      }
+      "genesis",
+      "exodo",
+      "levitico",
+      "numeros",
+      "deuteronomio",
+      "josue",
+      "juizes",
+      "rute",
+      "1samuel",
+      "2samuel",
+      "1reis",
+      "2reis",
+      "1cronicas",
+      "2cronicas",
+      "esdras",
+      "neemias",
+      "ester",
+      "jo",
+      "salmos",
+      "proverbios",
+      "eclesiastes",
+      "canticos",
+      "isaias",
+      "jeremias",
+      "lamentacoes-de-jeremias",
+      "ezequiel",
+      "daniel",
+      "oseias",
+      "joel",
+      "amos",
+      "obadias",
+      "jonas",
+      "miqueias",
+      "naum",
+      "habacuque",
+      "sofonias",
+      "ageu",
+      "zacarias",
+      "malaquias",
+      "mateus",
+      "marcos",
+      "lucas",
+      "joao",
+      "atos",
+      "romanos",
+      "1corintios",
+      "2corintios",
+      "galatas",
+      "efesios",
+      "filipenses",
+      "colossenses",
+      "1tessalonicenses",
+      "2tessalonicenses",
+      "1timoteo",
+      "2timoteo",
+      "tito",
+      "filemom",
+      "hebreus",
+      "tiago",
+      "1pedro",
+      "2pedro",
+      "1joao",
+      "2joao",
+      "3joao",
+      "judas",
+      "apocalipse"
     ]
   },
   {
     "id": "arc",
     "name": "Almeida Revista Corrigida",
     "books": [
-      {
-        "name": "Gênesis",
-        "slug": "genesis",
-        "abbrev": "Gn",
-        "chapters": 50
-      },
-      {
-        "name": "Êxodo",
-        "slug": "exodo",
-        "abbrev": "Êx",
-        "chapters": 40
-      },
-      {
-        "name": "Levítico",
-        "slug": "levitico",
-        "abbrev": "Lv",
-        "chapters": 27
-      },
-      {
-        "name": "Números",
-        "slug": "numeros",
-        "abbrev": "Nm",
-        "chapters": 36
-      },
-      {
-        "name": "Deuteronômio",
-        "slug": "deuteronomio",
-        "abbrev": "Dt",
-        "chapters": 34
-      },
-      {
-        "name": "Josué",
-        "slug": "josue",
-        "abbrev": "Js",
-        "chapters": 24
-      },
-      {
-        "name": "Juízes",
-        "slug": "juizes",
-        "abbrev": "Jz",
-        "chapters": 21
-      },
-      {
-        "name": "Rute",
-        "slug": "rute",
-        "abbrev": "Rt",
-        "chapters": 4
-      },
-      {
-        "name": "1 Samuel",
-        "slug": "1samuel",
-        "abbrev": "1Sm",
-        "chapters": 31
-      },
-      {
-        "name": "2 Samuel",
-        "slug": "2samuel",
-        "abbrev": "2Sm",
-        "chapters": 24
-      },
-      {
-        "name": "1 Reis",
-        "slug": "1reis",
-        "abbrev": "1Rs",
-        "chapters": 22
-      },
-      {
-        "name": "2 Reis",
-        "slug": "2reis",
-        "abbrev": "2Rs",
-        "chapters": 25
-      },
-      {
-        "name": "1 Crônicas",
-        "slug": "1cronicas",
-        "abbrev": "1Cr",
-        "chapters": 29
-      },
-      {
-        "name": "2 Crônicas",
-        "slug": "2cronicas",
-        "abbrev": "2Cr",
-        "chapters": 36
-      },
-      {
-        "name": "Esdras",
-        "slug": "esdras",
-        "abbrev": "Ed",
-        "chapters": 10
-      },
-      {
-        "name": "Neemias",
-        "slug": "neemias",
-        "abbrev": "Ne",
-        "chapters": 13
-      },
-      {
-        "name": "Ester",
-        "slug": "ester",
-        "abbrev": "Et",
-        "chapters": 10
-      },
-      {
-        "name": "Jó",
-        "slug": "jo",
-        "abbrev": "Jó",
-        "chapters": 42
-      },
-      {
-        "name": "Salmos",
-        "slug": "salmos",
-        "abbrev": "Sl",
-        "chapters": 150
-      },
-      {
-        "name": "Provérbios",
-        "slug": "proverbios",
-        "abbrev": "Pv",
-        "chapters": 31
-      },
-      {
-        "name": "Eclesiastes",
-        "slug": "eclesiastes",
-        "abbrev": "Ec",
-        "chapters": 12
-      },
-      {
-        "name": "Cânticos",
-        "slug": "canticos",
-        "abbrev": "Ct",
-        "chapters": 8
-      },
-      {
-        "name": "Isaías",
-        "slug": "isaias",
-        "abbrev": "Is",
-        "chapters": 66
-      },
-      {
-        "name": "Jeremias",
-        "slug": "jeremias",
-        "abbrev": "Jr",
-        "chapters": 52
-      },
-      {
-        "name": "Lamentações de Jeremias",
-        "slug": "lamentacoes-de-jeremias",
-        "abbrev": "Lm",
-        "chapters": 5
-      },
-      {
-        "name": "Ezequiel",
-        "slug": "ezequiel",
-        "abbrev": "Ez",
-        "chapters": 48
-      },
-      {
-        "name": "Daniel",
-        "slug": "daniel",
-        "abbrev": "Dn",
-        "chapters": 12
-      },
-      {
-        "name": "Oséias",
-        "slug": "oseias",
-        "abbrev": "Os",
-        "chapters": 14
-      },
-      {
-        "name": "Joel",
-        "slug": "joel",
-        "abbrev": "Jl",
-        "chapters": 3
-      },
-      {
-        "name": "Amós",
-        "slug": "amos",
-        "abbrev": "Am",
-        "chapters": 9
-      },
-      {
-        "name": "Obadias",
-        "slug": "obadias",
-        "abbrev": "Ob",
-        "chapters": 1
-      },
-      {
-        "name": "Jonas",
-        "slug": "jonas",
-        "abbrev": "Jn",
-        "chapters": 4
-      },
-      {
-        "name": "Miquéias",
-        "slug": "miqueias",
-        "abbrev": "Mq",
-        "chapters": 7
-      },
-      {
-        "name": "Naum",
-        "slug": "naum",
-        "abbrev": "Na",
-        "chapters": 3
-      },
-      {
-        "name": "Habacuque",
-        "slug": "habacuque",
-        "abbrev": "Hc",
-        "chapters": 3
-      },
-      {
-        "name": "Sofonias",
-        "slug": "sofonias",
-        "abbrev": "Sf",
-        "chapters": 3
-      },
-      {
-        "name": "Ageu",
-        "slug": "ageu",
-        "abbrev": "Ag",
-        "chapters": 2
-      },
-      {
-        "name": "Zacarias",
-        "slug": "zacarias",
-        "abbrev": "Zc",
-        "chapters": 14
-      },
-      {
-        "name": "Malaquias",
-        "slug": "malaquias",
-        "abbrev": "Ml",
-        "chapters": 4
-      },
-      {
-        "name": "Mateus",
-        "slug": "mateus",
-        "abbrev": "Mt",
-        "chapters": 28
-      },
-      {
-        "name": "Marcos",
-        "slug": "marcos",
-        "abbrev": "Mc",
-        "chapters": 16
-      },
-      {
-        "name": "Lucas",
-        "slug": "lucas",
-        "abbrev": "Lc",
-        "chapters": 24
-      },
-      {
-        "name": "João",
-        "slug": "joao",
-        "abbrev": "Jo",
-        "chapters": 21
-      },
-      {
-        "name": "Atos",
-        "slug": "atos",
-        "abbrev": "At",
-        "chapters": 28
-      },
-      {
-        "name": "Romanos",
-        "slug": "romanos",
-        "abbrev": "Rm",
-        "chapters": 16
-      },
-      {
-        "name": "1 Coríntios",
-        "slug": "1corintios",
-        "abbrev": "1Co",
-        "chapters": 16
-      },
-      {
-        "name": "2 Coríntios",
-        "slug": "2corintios",
-        "abbrev": "2Co",
-        "chapters": 13
-      },
-      {
-        "name": "Gálatas",
-        "slug": "galatas",
-        "abbrev": "Gl",
-        "chapters": 6
-      },
-      {
-        "name": "Efésios",
-        "slug": "efesios",
-        "abbrev": "Ef",
-        "chapters": 6
-      },
-      {
-        "name": "Filipenses",
-        "slug": "filipenses",
-        "abbrev": "Fp",
-        "chapters": 4
-      },
-      {
-        "name": "Colossenses",
-        "slug": "colossenses",
-        "abbrev": "Cl",
-        "chapters": 4
-      },
-      {
-        "name": "1 Tessalonicenses",
-        "slug": "1tessalonicenses",
-        "abbrev": "1Ts",
-        "chapters": 5
-      },
-      {
-        "name": "2 Tessalonicenses",
-        "slug": "2tessalonicenses",
-        "abbrev": "2Ts",
-        "chapters": 3
-      },
-      {
-        "name": "1 Timóteo",
-        "slug": "1timoteo",
-        "abbrev": "1Tn",
-        "chapters": 6
-      },
-      {
-        "name": "2 Timóteo",
-        "slug": "2timoteo",
-        "abbrev": "2Tm",
-        "chapters": 4
-      },
-      {
-        "name": "Tito",
-        "slug": "tito",
-        "abbrev": "Tt",
-        "chapters": 3
-      },
-      {
-        "name": "Filemom",
-        "slug": "filemom",
-        "abbrev": "Fm",
-        "chapters": 1
-      },
-      {
-        "name": "Hebreus",
-        "slug": "hebreus",
-        "abbrev": "Hb",
-        "chapters": 13
-      },
-      {
-        "name": "Tiago",
-        "slug": "tiago",
-        "abbrev": "Tg",
-        "chapters": 5
-      },
-      {
-        "name": "1 Pedro",
-        "slug": "1pedro",
-        "abbrev": "1Pe",
-        "chapters": 5
-      },
-      {
-        "name": "2 Pedro",
-        "slug": "2pedro",
-        "abbrev": "2Pe",
-        "chapters": 3
-      },
-      {
-        "name": "1 João",
-        "slug": "1joao",
-        "abbrev": "1Jo",
-        "chapters": 5
-      },
-      {
-        "name": "2 João",
-        "slug": "2joao",
-        "abbrev": "2Jo",
-        "chapters": 1
-      },
-      {
-        "name": "3 João",
-        "slug": "3joao",
-        "abbrev": "3Jo",
-        "chapters": 1
-      },
-      {
-        "name": "Judas",
-        "slug": "judas",
-        "abbrev": "Jd",
-        "chapters": 1
-      },
-      {
-        "name": "Apocalipse",
-        "slug": "apocalipse",
-        "abbrev": "Ap",
-        "chapters": 22
-      }
+      "genesis",
+      "exodo",
+      "levitico",
+      "numeros",
+      "deuteronomio",
+      "josue",
+      "juizes",
+      "rute",
+      "1samuel",
+      "2samuel",
+      "1reis",
+      "2reis",
+      "1cronicas",
+      "2cronicas",
+      "esdras",
+      "neemias",
+      "ester",
+      "jo",
+      "salmos",
+      "proverbios",
+      "eclesiastes",
+      "canticos",
+      "isaias",
+      "jeremias",
+      "lamentacoes-de-jeremias",
+      "ezequiel",
+      "daniel",
+      "oseias",
+      "joel",
+      "amos",
+      "obadias",
+      "jonas",
+      "miqueias",
+      "naum",
+      "habacuque",
+      "sofonias",
+      "ageu",
+      "zacarias",
+      "malaquias",
+      "mateus",
+      "marcos",
+      "lucas",
+      "joao",
+      "atos",
+      "romanos",
+      "1corintios",
+      "2corintios",
+      "galatas",
+      "efesios",
+      "filipenses",
+      "colossenses",
+      "1tessalonicenses",
+      "2tessalonicenses",
+      "1timoteo",
+      "2timoteo",
+      "tito",
+      "filemom",
+      "hebreus",
+      "tiago",
+      "1pedro",
+      "2pedro",
+      "1joao",
+      "2joao",
+      "3joao",
+      "judas",
+      "apocalipse"
     ]
   },
   {
     "id": "as21",
     "name": "Almeida Século 21",
     "books": [
-      {
-        "name": "Gênesis",
-        "slug": "genesis",
-        "abbrev": "Gn",
-        "chapters": 50
-      },
-      {
-        "name": "Êxodo",
-        "slug": "exodo",
-        "abbrev": "Êx",
-        "chapters": 40
-      },
-      {
-        "name": "Levítico",
-        "slug": "levitico",
-        "abbrev": "Lv",
-        "chapters": 27
-      },
-      {
-        "name": "Números",
-        "slug": "numeros",
-        "abbrev": "Nm",
-        "chapters": 36
-      },
-      {
-        "name": "Deuteronômio",
-        "slug": "deuteronomio",
-        "abbrev": "Dt",
-        "chapters": 34
-      },
-      {
-        "name": "Josué",
-        "slug": "josue",
-        "abbrev": "Js",
-        "chapters": 24
-      },
-      {
-        "name": "Juízes",
-        "slug": "juizes",
-        "abbrev": "Jz",
-        "chapters": 21
-      },
-      {
-        "name": "Rute",
-        "slug": "rute",
-        "abbrev": "Rt",
-        "chapters": 4
-      },
-      {
-        "name": "1 Samuel",
-        "slug": "1samuel",
-        "abbrev": "1Sm",
-        "chapters": 31
-      },
-      {
-        "name": "2 Samuel",
-        "slug": "2samuel",
-        "abbrev": "2Sm",
-        "chapters": 24
-      },
-      {
-        "name": "1 Reis",
-        "slug": "1reis",
-        "abbrev": "1Rs",
-        "chapters": 22
-      },
-      {
-        "name": "2 Reis",
-        "slug": "2reis",
-        "abbrev": "2Rs",
-        "chapters": 25
-      },
-      {
-        "name": "1 Crônicas",
-        "slug": "1cronicas",
-        "abbrev": "1Cr",
-        "chapters": 29
-      },
-      {
-        "name": "2 Crônicas",
-        "slug": "2cronicas",
-        "abbrev": "2Cr",
-        "chapters": 36
-      },
-      {
-        "name": "Esdras",
-        "slug": "esdras",
-        "abbrev": "Ed",
-        "chapters": 10
-      },
-      {
-        "name": "Neemias",
-        "slug": "neemias",
-        "abbrev": "Ne",
-        "chapters": 13
-      },
-      {
-        "name": "Ester",
-        "slug": "ester",
-        "abbrev": "Et",
-        "chapters": 10
-      },
-      {
-        "name": "Jó",
-        "slug": "jo",
-        "abbrev": "Jó",
-        "chapters": 42
-      },
-      {
-        "name": "Salmos",
-        "slug": "salmos",
-        "abbrev": "Sl",
-        "chapters": 150
-      },
-      {
-        "name": "Provérbios",
-        "slug": "proverbios",
-        "abbrev": "Pv",
-        "chapters": 31
-      },
-      {
-        "name": "Eclesiastes",
-        "slug": "eclesiastes",
-        "abbrev": "Ec",
-        "chapters": 12
-      },
-      {
-        "name": "Cânticos",
-        "slug": "canticos",
-        "abbrev": "Ct",
-        "chapters": 8
-      },
-      {
-        "name": "Isaías",
-        "slug": "isaias",
-        "abbrev": "Is",
-        "chapters": 66
-      },
-      {
-        "name": "Jeremias",
-        "slug": "jeremias",
-        "abbrev": "Jr",
-        "chapters": 52
-      },
-      {
-        "name": "Lamentações de Jeremias",
-        "slug": "lamentacoes-de-jeremias",
-        "abbrev": "Lm",
-        "chapters": 5
-      },
-      {
-        "name": "Ezequiel",
-        "slug": "ezequiel",
-        "abbrev": "Ez",
-        "chapters": 48
-      },
-      {
-        "name": "Daniel",
-        "slug": "daniel",
-        "abbrev": "Dn",
-        "chapters": 12
-      },
-      {
-        "name": "Oséias",
-        "slug": "oseias",
-        "abbrev": "Os",
-        "chapters": 14
-      },
-      {
-        "name": "Joel",
-        "slug": "joel",
-        "abbrev": "Jl",
-        "chapters": 3
-      },
-      {
-        "name": "Amós",
-        "slug": "amos",
-        "abbrev": "Am",
-        "chapters": 9
-      },
-      {
-        "name": "Obadias",
-        "slug": "obadias",
-        "abbrev": "Ob",
-        "chapters": 1
-      },
-      {
-        "name": "Jonas",
-        "slug": "jonas",
-        "abbrev": "Jn",
-        "chapters": 4
-      },
-      {
-        "name": "Miquéias",
-        "slug": "miqueias",
-        "abbrev": "Mq",
-        "chapters": 7
-      },
-      {
-        "name": "Naum",
-        "slug": "naum",
-        "abbrev": "Na",
-        "chapters": 3
-      },
-      {
-        "name": "Habacuque",
-        "slug": "habacuque",
-        "abbrev": "Hc",
-        "chapters": 3
-      },
-      {
-        "name": "Sofonias",
-        "slug": "sofonias",
-        "abbrev": "Sf",
-        "chapters": 3
-      },
-      {
-        "name": "Ageu",
-        "slug": "ageu",
-        "abbrev": "Ag",
-        "chapters": 2
-      },
-      {
-        "name": "Zacarias",
-        "slug": "zacarias",
-        "abbrev": "Zc",
-        "chapters": 14
-      },
-      {
-        "name": "Malaquias",
-        "slug": "malaquias",
-        "abbrev": "Ml",
-        "chapters": 4
-      },
-      {
-        "name": "Mateus",
-        "slug": "mateus",
-        "abbrev": "Mt",
-        "chapters": 28
-      },
-      {
-        "name": "Marcos",
-        "slug": "marcos",
-        "abbrev": "Mc",
-        "chapters": 16
-      },
-      {
-        "name": "Lucas",
-        "slug": "lucas",
-        "abbrev": "Lc",
-        "chapters": 24
-      },
-      {
-        "name": "João",
-        "slug": "joao",
-        "abbrev": "Jo",
-        "chapters": 21
-      },
-      {
-        "name": "Atos",
-        "slug": "atos",
-        "abbrev": "At",
-        "chapters": 28
-      },
-      {
-        "name": "Romanos",
-        "slug": "romanos",
-        "abbrev": "Rm",
-        "chapters": 16
-      },
-      {
-        "name": "1 Coríntios",
-        "slug": "1corintios",
-        "abbrev": "1Co",
-        "chapters": 16
-      },
-      {
-        "name": "2 Coríntios",
-        "slug": "2corintios",
-        "abbrev": "2Co",
-        "chapters": 13
-      },
-      {
-        "name": "Gálatas",
-        "slug": "galatas",
-        "abbrev": "Gl",
-        "chapters": 6
-      },
-      {
-        "name": "Efésios",
-        "slug": "efesios",
-        "abbrev": "Ef",
-        "chapters": 6
-      },
-      {
-        "name": "Filipenses",
-        "slug": "filipenses",
-        "abbrev": "Fp",
-        "chapters": 4
-      },
-      {
-        "name": "Colossenses",
-        "slug": "colossenses",
-        "abbrev": "Cl",
-        "chapters": 4
-      },
-      {
-        "name": "1 Tessalonicenses",
-        "slug": "1tessalonicenses",
-        "abbrev": "1Ts",
-        "chapters": 5
-      },
-      {
-        "name": "2 Tessalonicenses",
-        "slug": "2tessalonicenses",
-        "abbrev": "2Ts",
-        "chapters": 3
-      },
-      {
-        "name": "1 Timóteo",
-        "slug": "1timoteo",
-        "abbrev": "1Tn",
-        "chapters": 6
-      },
-      {
-        "name": "2 Timóteo",
-        "slug": "2timoteo",
-        "abbrev": "2Tm",
-        "chapters": 4
-      },
-      {
-        "name": "Tito",
-        "slug": "tito",
-        "abbrev": "Tt",
-        "chapters": 3
-      },
-      {
-        "name": "Filemom",
-        "slug": "filemom",
-        "abbrev": "Fm",
-        "chapters": 1
-      },
-      {
-        "name": "Hebreus",
-        "slug": "hebreus",
-        "abbrev": "Hb",
-        "chapters": 13
-      },
-      {
-        "name": "Tiago",
-        "slug": "tiago",
-        "abbrev": "Tg",
-        "chapters": 5
-      },
-      {
-        "name": "1 Pedro",
-        "slug": "1pedro",
-        "abbrev": "1Pe",
-        "chapters": 5
-      },
-      {
-        "name": "2 Pedro",
-        "slug": "2pedro",
-        "abbrev": "2Pe",
-        "chapters": 3
-      },
-      {
-        "name": "1 João",
-        "slug": "1joao",
-        "abbrev": "1Jo",
-        "chapters": 5
-      },
-      {
-        "name": "2 João",
-        "slug": "2joao",
-        "abbrev": "2Jo",
-        "chapters": 1
-      },
-      {
-        "name": "3 João",
-        "slug": "3joao",
-        "abbrev": "3Jo",
-        "chapters": 1
-      },
-      {
-        "name": "Judas",
-        "slug": "judas",
-        "abbrev": "Jd",
-        "chapters": 1
-      },
-      {
-        "name": "Apocalipse",
-        "slug": "apocalipse",
-        "abbrev": "Ap",
-        "chapters": 22
-      }
+      "genesis",
+      "exodo",
+      "levitico",
+      "numeros",
+      "deuteronomio",
+      "josue",
+      "juizes",
+      "rute",
+      "1samuel",
+      "2samuel",
+      "1reis",
+      "2reis",
+      "1cronicas",
+      "2cronicas",
+      "esdras",
+      "neemias",
+      "ester",
+      "jo",
+      "salmos",
+      "proverbios",
+      "eclesiastes",
+      "canticos",
+      "isaias",
+      "jeremias",
+      "lamentacoes-de-jeremias",
+      "ezequiel",
+      "daniel",
+      "oseias",
+      "joel",
+      "amos",
+      "obadias",
+      "jonas",
+      "miqueias",
+      "naum",
+      "habacuque",
+      "sofonias",
+      "ageu",
+      "zacarias",
+      "malaquias",
+      "mateus",
+      "marcos",
+      "lucas",
+      "joao",
+      "atos",
+      "romanos",
+      "1corintios",
+      "2corintios",
+      "galatas",
+      "efesios",
+      "filipenses",
+      "colossenses",
+      "1tessalonicenses",
+      "2tessalonicenses",
+      "1timoteo",
+      "2timoteo",
+      "tito",
+      "filemom",
+      "hebreus",
+      "tiago",
+      "1pedro",
+      "2pedro",
+      "1joao",
+      "2joao",
+      "3joao",
+      "judas",
+      "apocalipse"
     ]
   },
   {
     "id": "jfaa",
     "name": "João Ferreira de Almeida Atualizada",
     "books": [
-      {
-        "name": "Gênesis",
-        "slug": "genesis",
-        "abbrev": "Gn",
-        "chapters": 50
-      },
-      {
-        "name": "Êxodo",
-        "slug": "exodo",
-        "abbrev": "Êx",
-        "chapters": 40
-      },
-      {
-        "name": "Levítico",
-        "slug": "levitico",
-        "abbrev": "Lv",
-        "chapters": 27
-      },
-      {
-        "name": "Números",
-        "slug": "numeros",
-        "abbrev": "Nm",
-        "chapters": 36
-      },
-      {
-        "name": "Deuteronômio",
-        "slug": "deuteronomio",
-        "abbrev": "Dt",
-        "chapters": 34
-      },
-      {
-        "name": "Josué",
-        "slug": "josue",
-        "abbrev": "Js",
-        "chapters": 24
-      },
-      {
-        "name": "Juízes",
-        "slug": "juizes",
-        "abbrev": "Jz",
-        "chapters": 21
-      },
-      {
-        "name": "Rute",
-        "slug": "rute",
-        "abbrev": "Rt",
-        "chapters": 4
-      },
-      {
-        "name": "1 Samuel",
-        "slug": "1samuel",
-        "abbrev": "1Sm",
-        "chapters": 31
-      },
-      {
-        "name": "2 Samuel",
-        "slug": "2samuel",
-        "abbrev": "2Sm",
-        "chapters": 24
-      },
-      {
-        "name": "1 Reis",
-        "slug": "1reis",
-        "abbrev": "1Rs",
-        "chapters": 22
-      },
-      {
-        "name": "2 Reis",
-        "slug": "2reis",
-        "abbrev": "2Rs",
-        "chapters": 25
-      },
-      {
-        "name": "1 Crônicas",
-        "slug": "1cronicas",
-        "abbrev": "1Cr",
-        "chapters": 29
-      },
-      {
-        "name": "2 Crônicas",
-        "slug": "2cronicas",
-        "abbrev": "2Cr",
-        "chapters": 36
-      },
-      {
-        "name": "Esdras",
-        "slug": "esdras",
-        "abbrev": "Ed",
-        "chapters": 10
-      },
-      {
-        "name": "Neemias",
-        "slug": "neemias",
-        "abbrev": "Ne",
-        "chapters": 13
-      },
-      {
-        "name": "Ester",
-        "slug": "ester",
-        "abbrev": "Et",
-        "chapters": 10
-      },
-      {
-        "name": "Jó",
-        "slug": "jo",
-        "abbrev": "Jó",
-        "chapters": 42
-      },
-      {
-        "name": "Salmos",
-        "slug": "salmos",
-        "abbrev": "Sl",
-        "chapters": 150
-      },
-      {
-        "name": "Provérbios",
-        "slug": "proverbios",
-        "abbrev": "Pv",
-        "chapters": 31
-      },
-      {
-        "name": "Eclesiastes",
-        "slug": "eclesiastes",
-        "abbrev": "Ec",
-        "chapters": 12
-      },
-      {
-        "name": "Cânticos",
-        "slug": "canticos",
-        "abbrev": "Ct",
-        "chapters": 8
-      },
-      {
-        "name": "Isaías",
-        "slug": "isaias",
-        "abbrev": "Is",
-        "chapters": 66
-      },
-      {
-        "name": "Jeremias",
-        "slug": "jeremias",
-        "abbrev": "Jr",
-        "chapters": 52
-      },
-      {
-        "name": "Lamentações de Jeremias",
-        "slug": "lamentacoes-de-jeremias",
-        "abbrev": "Lm",
-        "chapters": 5
-      },
-      {
-        "name": "Ezequiel",
-        "slug": "ezequiel",
-        "abbrev": "Ez",
-        "chapters": 48
-      },
-      {
-        "name": "Daniel",
-        "slug": "daniel",
-        "abbrev": "Dn",
-        "chapters": 12
-      },
-      {
-        "name": "Oséias",
-        "slug": "oseias",
-        "abbrev": "Os",
-        "chapters": 14
-      },
-      {
-        "name": "Joel",
-        "slug": "joel",
-        "abbrev": "Jl",
-        "chapters": 3
-      },
-      {
-        "name": "Amós",
-        "slug": "amos",
-        "abbrev": "Am",
-        "chapters": 9
-      },
-      {
-        "name": "Obadias",
-        "slug": "obadias",
-        "abbrev": "Ob",
-        "chapters": 1
-      },
-      {
-        "name": "Jonas",
-        "slug": "jonas",
-        "abbrev": "Jn",
-        "chapters": 4
-      },
-      {
-        "name": "Miquéias",
-        "slug": "miqueias",
-        "abbrev": "Mq",
-        "chapters": 7
-      },
-      {
-        "name": "Naum",
-        "slug": "naum",
-        "abbrev": "Na",
-        "chapters": 3
-      },
-      {
-        "name": "Habacuque",
-        "slug": "habacuque",
-        "abbrev": "Hc",
-        "chapters": 3
-      },
-      {
-        "name": "Sofonias",
-        "slug": "sofonias",
-        "abbrev": "Sf",
-        "chapters": 3
-      },
-      {
-        "name": "Ageu",
-        "slug": "ageu",
-        "abbrev": "Ag",
-        "chapters": 2
-      },
-      {
-        "name": "Zacarias",
-        "slug": "zacarias",
-        "abbrev": "Zc",
-        "chapters": 14
-      },
-      {
-        "name": "Malaquias",
-        "slug": "malaquias",
-        "abbrev": "Ml",
-        "chapters": 4
-      },
-      {
-        "name": "Mateus",
-        "slug": "mateus",
-        "abbrev": "Mt",
-        "chapters": 28
-      },
-      {
-        "name": "Marcos",
-        "slug": "marcos",
-        "abbrev": "Mc",
-        "chapters": 16
-      },
-      {
-        "name": "Lucas",
-        "slug": "lucas",
-        "abbrev": "Lc",
-        "chapters": 24
-      },
-      {
-        "name": "João",
-        "slug": "joao",
-        "abbrev": "Jo",
-        "chapters": 21
-      },
-      {
-        "name": "Atos",
-        "slug": "atos",
-        "abbrev": "At",
-        "chapters": 28
-      },
-      {
-        "name": "Romanos",
-        "slug": "romanos",
-        "abbrev": "Rm",
-        "chapters": 16
-      },
-      {
-        "name": "1 Coríntios",
-        "slug": "1corintios",
-        "abbrev": "1Co",
-        "chapters": 16
-      },
-      {
-        "name": "2 Coríntios",
-        "slug": "2corintios",
-        "abbrev": "2Co",
-        "chapters": 13
-      },
-      {
-        "name": "Gálatas",
-        "slug": "galatas",
-        "abbrev": "Gl",
-        "chapters": 6
-      },
-      {
-        "name": "Efésios",
-        "slug": "efesios",
-        "abbrev": "Ef",
-        "chapters": 6
-      },
-      {
-        "name": "Filipenses",
-        "slug": "filipenses",
-        "abbrev": "Fp",
-        "chapters": 4
-      },
-      {
-        "name": "Colossenses",
-        "slug": "colossenses",
-        "abbrev": "Cl",
-        "chapters": 4
-      },
-      {
-        "name": "1 Tessalonicenses",
-        "slug": "1tessalonicenses",
-        "abbrev": "1Ts",
-        "chapters": 5
-      },
-      {
-        "name": "2 Tessalonicenses",
-        "slug": "2tessalonicenses",
-        "abbrev": "2Ts",
-        "chapters": 3
-      },
-      {
-        "name": "1 Timóteo",
-        "slug": "1timoteo",
-        "abbrev": "1Tn",
-        "chapters": 6
-      },
-      {
-        "name": "2 Timóteo",
-        "slug": "2timoteo",
-        "abbrev": "2Tm",
-        "chapters": 4
-      },
-      {
-        "name": "Tito",
-        "slug": "tito",
-        "abbrev": "Tt",
-        "chapters": 3
-      },
-      {
-        "name": "Filemom",
-        "slug": "filemom",
-        "abbrev": "Fm",
-        "chapters": 1
-      },
-      {
-        "name": "Hebreus",
-        "slug": "hebreus",
-        "abbrev": "Hb",
-        "chapters": 13
-      },
-      {
-        "name": "Tiago",
-        "slug": "tiago",
-        "abbrev": "Tg",
-        "chapters": 5
-      },
-      {
-        "name": "1 Pedro",
-        "slug": "1pedro",
-        "abbrev": "1Pe",
-        "chapters": 5
-      },
-      {
-        "name": "2 Pedro",
-        "slug": "2pedro",
-        "abbrev": "2Pe",
-        "chapters": 3
-      },
-      {
-        "name": "1 João",
-        "slug": "1joao",
-        "abbrev": "1Jo",
-        "chapters": 5
-      },
-      {
-        "name": "2 João",
-        "slug": "2joao",
-        "abbrev": "2Jo",
-        "chapters": 1
-      },
-      {
-        "name": "3 João",
-        "slug": "3joao",
-        "abbrev": "3Jo",
-        "chapters": 1
-      },
-      {
-        "name": "Judas",
-        "slug": "judas",
-        "abbrev": "Jd",
-        "chapters": 1
-      },
-      {
-        "name": "Apocalipse",
-        "slug": "apocalipse",
-        "abbrev": "Ap",
-        "chapters": 22
-      }
+      "genesis",
+      "exodo",
+      "levitico",
+      "numeros",
+      "deuteronomio",
+      "josue",
+      "juizes",
+      "rute",
+      "1samuel",
+      "2samuel",
+      "1reis",
+      "2reis",
+      "1cronicas",
+      "2cronicas",
+      "esdras",
+      "neemias",
+      "ester",
+      "jo",
+      "salmos",
+      "proverbios",
+      "eclesiastes",
+      "canticos",
+      "isaias",
+      "jeremias",
+      "lamentacoes-de-jeremias",
+      "ezequiel",
+      "daniel",
+      "oseias",
+      "joel",
+      "amos",
+      "obadias",
+      "jonas",
+      "miqueias",
+      "naum",
+      "habacuque",
+      "sofonias",
+      "ageu",
+      "zacarias",
+      "malaquias",
+      "mateus",
+      "marcos",
+      "lucas",
+      "joao",
+      "atos",
+      "romanos",
+      "1corintios",
+      "2corintios",
+      "galatas",
+      "efesios",
+      "filipenses",
+      "colossenses",
+      "1tessalonicenses",
+      "2tessalonicenses",
+      "1timoteo",
+      "2timoteo",
+      "tito",
+      "filemom",
+      "hebreus",
+      "tiago",
+      "1pedro",
+      "2pedro",
+      "1joao",
+      "2joao",
+      "3joao",
+      "judas",
+      "apocalipse"
     ]
   },
   {
     "id": "kja",
     "name": "King James Atualizada",
     "books": [
-      {
-        "name": "Gênesis",
-        "slug": "genesis",
-        "abbrev": "Gn",
-        "chapters": 50
-      },
-      {
-        "name": "Êxodo",
-        "slug": "exodo",
-        "abbrev": "Êx",
-        "chapters": 40
-      },
-      {
-        "name": "Levítico",
-        "slug": "levitico",
-        "abbrev": "Lv",
-        "chapters": 27
-      },
-      {
-        "name": "Números",
-        "slug": "numeros",
-        "abbrev": "Nm",
-        "chapters": 36
-      },
-      {
-        "name": "Deuteronômio",
-        "slug": "deuteronomio",
-        "abbrev": "Dt",
-        "chapters": 34
-      },
-      {
-        "name": "Josué",
-        "slug": "josue",
-        "abbrev": "Js",
-        "chapters": 24
-      },
-      {
-        "name": "Juízes",
-        "slug": "juizes",
-        "abbrev": "Jz",
-        "chapters": 21
-      },
-      {
-        "name": "Rute",
-        "slug": "rute",
-        "abbrev": "Rt",
-        "chapters": 4
-      },
-      {
-        "name": "1 Samuel",
-        "slug": "1samuel",
-        "abbrev": "1Sm",
-        "chapters": 31
-      },
-      {
-        "name": "2 Samuel",
-        "slug": "2samuel",
-        "abbrev": "2Sm",
-        "chapters": 24
-      },
-      {
-        "name": "1 Reis",
-        "slug": "1reis",
-        "abbrev": "1Rs",
-        "chapters": 22
-      },
-      {
-        "name": "2 Reis",
-        "slug": "2reis",
-        "abbrev": "2Rs",
-        "chapters": 25
-      },
-      {
-        "name": "1 Crônicas",
-        "slug": "1cronicas",
-        "abbrev": "1Cr",
-        "chapters": 29
-      },
-      {
-        "name": "2 Crônicas",
-        "slug": "2cronicas",
-        "abbrev": "2Cr",
-        "chapters": 36
-      },
-      {
-        "name": "Esdras",
-        "slug": "esdras",
-        "abbrev": "Ed",
-        "chapters": 10
-      },
-      {
-        "name": "Neemias",
-        "slug": "neemias",
-        "abbrev": "Ne",
-        "chapters": 13
-      },
-      {
-        "name": "Ester",
-        "slug": "ester",
-        "abbrev": "Et",
-        "chapters": 10
-      },
-      {
-        "name": "Jó",
-        "slug": "jo",
-        "abbrev": "Jó",
-        "chapters": 42
-      },
-      {
-        "name": "Salmos",
-        "slug": "salmos",
-        "abbrev": "Sl",
-        "chapters": 150
-      },
-      {
-        "name": "Provérbios",
-        "slug": "proverbios",
-        "abbrev": "Pv",
-        "chapters": 31
-      },
-      {
-        "name": "Eclesiastes",
-        "slug": "eclesiastes",
-        "abbrev": "Ec",
-        "chapters": 12
-      },
-      {
-        "name": "Cânticos",
-        "slug": "canticos",
-        "abbrev": "Ct",
-        "chapters": 8
-      },
-      {
-        "name": "Isaías",
-        "slug": "isaias",
-        "abbrev": "Is",
-        "chapters": 66
-      },
-      {
-        "name": "Jeremias",
-        "slug": "jeremias",
-        "abbrev": "Jr",
-        "chapters": 52
-      },
-      {
-        "name": "Lamentações de Jeremias",
-        "slug": "lamentacoes-de-jeremias",
-        "abbrev": "Lm",
-        "chapters": 5
-      },
-      {
-        "name": "Ezequiel",
-        "slug": "ezequiel",
-        "abbrev": "Ez",
-        "chapters": 48
-      },
-      {
-        "name": "Daniel",
-        "slug": "daniel",
-        "abbrev": "Dn",
-        "chapters": 12
-      },
-      {
-        "name": "Oséias",
-        "slug": "oseias",
-        "abbrev": "Os",
-        "chapters": 14
-      },
-      {
-        "name": "Joel",
-        "slug": "joel",
-        "abbrev": "Jl",
-        "chapters": 3
-      },
-      {
-        "name": "Amós",
-        "slug": "amos",
-        "abbrev": "Am",
-        "chapters": 9
-      },
-      {
-        "name": "Obadias",
-        "slug": "obadias",
-        "abbrev": "Ob",
-        "chapters": 1
-      },
-      {
-        "name": "Jonas",
-        "slug": "jonas",
-        "abbrev": "Jn",
-        "chapters": 4
-      },
-      {
-        "name": "Miquéias",
-        "slug": "miqueias",
-        "abbrev": "Mq",
-        "chapters": 7
-      },
-      {
-        "name": "Naum",
-        "slug": "naum",
-        "abbrev": "Na",
-        "chapters": 3
-      },
-      {
-        "name": "Habacuque",
-        "slug": "habacuque",
-        "abbrev": "Hc",
-        "chapters": 3
-      },
-      {
-        "name": "Sofonias",
-        "slug": "sofonias",
-        "abbrev": "Sf",
-        "chapters": 3
-      },
-      {
-        "name": "Ageu",
-        "slug": "ageu",
-        "abbrev": "Ag",
-        "chapters": 2
-      },
-      {
-        "name": "Zacarias",
-        "slug": "zacarias",
-        "abbrev": "Zc",
-        "chapters": 14
-      },
-      {
-        "name": "Malaquias",
-        "slug": "malaquias",
-        "abbrev": "Ml",
-        "chapters": 4
-      },
-      {
-        "name": "Mateus",
-        "slug": "mateus",
-        "abbrev": "Mt",
-        "chapters": 28
-      },
-      {
-        "name": "Marcos",
-        "slug": "marcos",
-        "abbrev": "Mc",
-        "chapters": 16
-      },
-      {
-        "name": "Lucas",
-        "slug": "lucas",
-        "abbrev": "Lc",
-        "chapters": 24
-      },
-      {
-        "name": "João",
-        "slug": "joao",
-        "abbrev": "Jo",
-        "chapters": 21
-      },
-      {
-        "name": "Atos",
-        "slug": "atos",
-        "abbrev": "At",
-        "chapters": 28
-      },
-      {
-        "name": "Romanos",
-        "slug": "romanos",
-        "abbrev": "Rm",
-        "chapters": 16
-      },
-      {
-        "name": "1 Coríntios",
-        "slug": "1corintios",
-        "abbrev": "1Co",
-        "chapters": 16
-      },
-      {
-        "name": "2 Coríntios",
-        "slug": "2corintios",
-        "abbrev": "2Co",
-        "chapters": 13
-      },
-      {
-        "name": "Gálatas",
-        "slug": "galatas",
-        "abbrev": "Gl",
-        "chapters": 6
-      },
-      {
-        "name": "Efésios",
-        "slug": "efesios",
-        "abbrev": "Ef",
-        "chapters": 6
-      },
-      {
-        "name": "Filipenses",
-        "slug": "filipenses",
-        "abbrev": "Fp",
-        "chapters": 4
-      },
-      {
-        "name": "Colossenses",
-        "slug": "colossenses",
-        "abbrev": "Cl",
-        "chapters": 4
-      },
-      {
-        "name": "1 Tessalonicenses",
-        "slug": "1tessalonicenses",
-        "abbrev": "1Ts",
-        "chapters": 5
-      },
-      {
-        "name": "2 Tessalonicenses",
-        "slug": "2tessalonicenses",
-        "abbrev": "2Ts",
-        "chapters": 3
-      },
-      {
-        "name": "1 Timóteo",
-        "slug": "1timoteo",
-        "abbrev": "1Tn",
-        "chapters": 6
-      },
-      {
-        "name": "2 Timóteo",
-        "slug": "2timoteo",
-        "abbrev": "2Tm",
-        "chapters": 4
-      },
-      {
-        "name": "Tito",
-        "slug": "tito",
-        "abbrev": "Tt",
-        "chapters": 3
-      },
-      {
-        "name": "Filemom",
-        "slug": "filemom",
-        "abbrev": "Fm",
-        "chapters": 1
-      },
-      {
-        "name": "Hebreus",
-        "slug": "hebreus",
-        "abbrev": "Hb",
-        "chapters": 13
-      },
-      {
-        "name": "Tiago",
-        "slug": "tiago",
-        "abbrev": "Tg",
-        "chapters": 5
-      },
-      {
-        "name": "1 Pedro",
-        "slug": "1pedro",
-        "abbrev": "1Pe",
-        "chapters": 5
-      },
-      {
-        "name": "2 Pedro",
-        "slug": "2pedro",
-        "abbrev": "2Pe",
-        "chapters": 3
-      },
-      {
-        "name": "1 João",
-        "slug": "1joao",
-        "abbrev": "1Jo",
-        "chapters": 5
-      },
-      {
-        "name": "2 João",
-        "slug": "2joao",
-        "abbrev": "2Jo",
-        "chapters": 1
-      },
-      {
-        "name": "3 João",
-        "slug": "3joao",
-        "abbrev": "3Jo",
-        "chapters": 1
-      },
-      {
-        "name": "Judas",
-        "slug": "judas",
-        "abbrev": "Jd",
-        "chapters": 1
-      },
-      {
-        "name": "Apocalipse",
-        "slug": "apocalipse",
-        "abbrev": "Ap",
-        "chapters": 22
-      }
+      "genesis",
+      "exodo",
+      "levitico",
+      "numeros",
+      "deuteronomio",
+      "josue",
+      "juizes",
+      "rute",
+      "1samuel",
+      "2samuel",
+      "1reis",
+      "2reis",
+      "1cronicas",
+      "2cronicas",
+      "esdras",
+      "neemias",
+      "ester",
+      "jo",
+      "salmos",
+      "proverbios",
+      "eclesiastes",
+      "canticos",
+      "isaias",
+      "jeremias",
+      "lamentacoes-de-jeremias",
+      "ezequiel",
+      "daniel",
+      "oseias",
+      "joel",
+      "amos",
+      "obadias",
+      "jonas",
+      "miqueias",
+      "naum",
+      "habacuque",
+      "sofonias",
+      "ageu",
+      "zacarias",
+      "malaquias",
+      "mateus",
+      "marcos",
+      "lucas",
+      "joao",
+      "atos",
+      "romanos",
+      "1corintios",
+      "2corintios",
+      "galatas",
+      "efesios",
+      "filipenses",
+      "colossenses",
+      "1tessalonicenses",
+      "2tessalonicenses",
+      "1timoteo",
+      "2timoteo",
+      "tito",
+      "filemom",
+      "hebreus",
+      "tiago",
+      "1pedro",
+      "2pedro",
+      "1joao",
+      "2joao",
+      "3joao",
+      "judas",
+      "apocalipse"
     ]
   },
   {
     "id": "kjf",
     "name": "King James Fiel",
     "books": [
-      {
-        "name": "Gênesis",
-        "slug": "genesis",
-        "abbrev": "Gn",
-        "chapters": 50
-      },
-      {
-        "name": "Êxodo",
-        "slug": "exodo",
-        "abbrev": "Êx",
-        "chapters": 40
-      },
-      {
-        "name": "Levítico",
-        "slug": "levitico",
-        "abbrev": "Lv",
-        "chapters": 27
-      },
-      {
-        "name": "Números",
-        "slug": "numeros",
-        "abbrev": "Nm",
-        "chapters": 36
-      },
-      {
-        "name": "Deuteronômio",
-        "slug": "deuteronomio",
-        "abbrev": "Dt",
-        "chapters": 34
-      },
-      {
-        "name": "Josué",
-        "slug": "josue",
-        "abbrev": "Js",
-        "chapters": 24
-      },
-      {
-        "name": "Juízes",
-        "slug": "juizes",
-        "abbrev": "Jz",
-        "chapters": 21
-      },
-      {
-        "name": "Rute",
-        "slug": "rute",
-        "abbrev": "Rt",
-        "chapters": 4
-      },
-      {
-        "name": "1 Samuel",
-        "slug": "1samuel",
-        "abbrev": "1Sm",
-        "chapters": 31
-      },
-      {
-        "name": "2 Samuel",
-        "slug": "2samuel",
-        "abbrev": "2Sm",
-        "chapters": 24
-      },
-      {
-        "name": "1 Reis",
-        "slug": "1reis",
-        "abbrev": "1Rs",
-        "chapters": 22
-      },
-      {
-        "name": "2 Reis",
-        "slug": "2reis",
-        "abbrev": "2Rs",
-        "chapters": 25
-      },
-      {
-        "name": "1 Crônicas",
-        "slug": "1cronicas",
-        "abbrev": "1Cr",
-        "chapters": 29
-      },
-      {
-        "name": "2 Crônicas",
-        "slug": "2cronicas",
-        "abbrev": "2Cr",
-        "chapters": 36
-      },
-      {
-        "name": "Esdras",
-        "slug": "esdras",
-        "abbrev": "Ed",
-        "chapters": 10
-      },
-      {
-        "name": "Neemias",
-        "slug": "neemias",
-        "abbrev": "Ne",
-        "chapters": 13
-      },
-      {
-        "name": "Ester",
-        "slug": "ester",
-        "abbrev": "Et",
-        "chapters": 10
-      },
-      {
-        "name": "Jó",
-        "slug": "jo",
-        "abbrev": "Jó",
-        "chapters": 42
-      },
-      {
-        "name": "Salmos",
-        "slug": "salmos",
-        "abbrev": "Sl",
-        "chapters": 150
-      },
-      {
-        "name": "Provérbios",
-        "slug": "proverbios",
-        "abbrev": "Pv",
-        "chapters": 31
-      },
-      {
-        "name": "Eclesiastes",
-        "slug": "eclesiastes",
-        "abbrev": "Ec",
-        "chapters": 12
-      },
-      {
-        "name": "Cânticos",
-        "slug": "canticos",
-        "abbrev": "Ct",
-        "chapters": 8
-      },
-      {
-        "name": "Isaías",
-        "slug": "isaias",
-        "abbrev": "Is",
-        "chapters": 66
-      },
-      {
-        "name": "Jeremias",
-        "slug": "jeremias",
-        "abbrev": "Jr",
-        "chapters": 52
-      },
-      {
-        "name": "Lamentações de Jeremias",
-        "slug": "lamentacoes-de-jeremias",
-        "abbrev": "Lm",
-        "chapters": 5
-      },
-      {
-        "name": "Ezequiel",
-        "slug": "ezequiel",
-        "abbrev": "Ez",
-        "chapters": 48
-      },
-      {
-        "name": "Daniel",
-        "slug": "daniel",
-        "abbrev": "Dn",
-        "chapters": 12
-      },
-      {
-        "name": "Oséias",
-        "slug": "oseias",
-        "abbrev": "Os",
-        "chapters": 14
-      },
-      {
-        "name": "Joel",
-        "slug": "joel",
-        "abbrev": "Jl",
-        "chapters": 3
-      },
-      {
-        "name": "Amós",
-        "slug": "amos",
-        "abbrev": "Am",
-        "chapters": 9
-      },
-      {
-        "name": "Obadias",
-        "slug": "obadias",
-        "abbrev": "Ob",
-        "chapters": 1
-      },
-      {
-        "name": "Jonas",
-        "slug": "jonas",
-        "abbrev": "Jn",
-        "chapters": 4
-      },
-      {
-        "name": "Miquéias",
-        "slug": "miqueias",
-        "abbrev": "Mq",
-        "chapters": 7
-      },
-      {
-        "name": "Naum",
-        "slug": "naum",
-        "abbrev": "Na",
-        "chapters": 3
-      },
-      {
-        "name": "Habacuque",
-        "slug": "habacuque",
-        "abbrev": "Hc",
-        "chapters": 3
-      },
-      {
-        "name": "Sofonias",
-        "slug": "sofonias",
-        "abbrev": "Sf",
-        "chapters": 3
-      },
-      {
-        "name": "Ageu",
-        "slug": "ageu",
-        "abbrev": "Ag",
-        "chapters": 2
-      },
-      {
-        "name": "Zacarias",
-        "slug": "zacarias",
-        "abbrev": "Zc",
-        "chapters": 14
-      },
-      {
-        "name": "Malaquias",
-        "slug": "malaquias",
-        "abbrev": "Ml",
-        "chapters": 4
-      },
-      {
-        "name": "Mateus",
-        "slug": "mateus",
-        "abbrev": "Mt",
-        "chapters": 28
-      },
-      {
-        "name": "Marcos",
-        "slug": "marcos",
-        "abbrev": "Mc",
-        "chapters": 16
-      },
-      {
-        "name": "Lucas",
-        "slug": "lucas",
-        "abbrev": "Lc",
-        "chapters": 24
-      },
-      {
-        "name": "João",
-        "slug": "joao",
-        "abbrev": "Jo",
-        "chapters": 21
-      },
-      {
-        "name": "Atos",
-        "slug": "atos",
-        "abbrev": "At",
-        "chapters": 28
-      },
-      {
-        "name": "Romanos",
-        "slug": "romanos",
-        "abbrev": "Rm",
-        "chapters": 16
-      },
-      {
-        "name": "1 Coríntios",
-        "slug": "1corintios",
-        "abbrev": "1Co",
-        "chapters": 16
-      },
-      {
-        "name": "2 Coríntios",
-        "slug": "2corintios",
-        "abbrev": "2Co",
-        "chapters": 13
-      },
-      {
-        "name": "Gálatas",
-        "slug": "galatas",
-        "abbrev": "Gl",
-        "chapters": 6
-      },
-      {
-        "name": "Efésios",
-        "slug": "efesios",
-        "abbrev": "Ef",
-        "chapters": 6
-      },
-      {
-        "name": "Filipenses",
-        "slug": "filipenses",
-        "abbrev": "Fp",
-        "chapters": 4
-      },
-      {
-        "name": "Colossenses",
-        "slug": "colossenses",
-        "abbrev": "Cl",
-        "chapters": 4
-      },
-      {
-        "name": "1 Tessalonicenses",
-        "slug": "1tessalonicenses",
-        "abbrev": "1Ts",
-        "chapters": 5
-      },
-      {
-        "name": "2 Tessalonicenses",
-        "slug": "2tessalonicenses",
-        "abbrev": "2Ts",
-        "chapters": 3
-      },
-      {
-        "name": "1 Timóteo",
-        "slug": "1timoteo",
-        "abbrev": "1Tn",
-        "chapters": 6
-      },
-      {
-        "name": "2 Timóteo",
-        "slug": "2timoteo",
-        "abbrev": "2Tm",
-        "chapters": 4
-      },
-      {
-        "name": "Tito",
-        "slug": "tito",
-        "abbrev": "Tt",
-        "chapters": 3
-      },
-      {
-        "name": "Filemom",
-        "slug": "filemom",
-        "abbrev": "Fm",
-        "chapters": 1
-      },
-      {
-        "name": "Hebreus",
-        "slug": "hebreus",
-        "abbrev": "Hb",
-        "chapters": 13
-      },
-      {
-        "name": "Tiago",
-        "slug": "tiago",
-        "abbrev": "Tg",
-        "chapters": 5
-      },
-      {
-        "name": "1 Pedro",
-        "slug": "1pedro",
-        "abbrev": "1Pe",
-        "chapters": 5
-      },
-      {
-        "name": "2 Pedro",
-        "slug": "2pedro",
-        "abbrev": "2Pe",
-        "chapters": 3
-      },
-      {
-        "name": "1 João",
-        "slug": "1joao",
-        "abbrev": "1Jo",
-        "chapters": 5
-      },
-      {
-        "name": "2 João",
-        "slug": "2joao",
-        "abbrev": "2Jo",
-        "chapters": 1
-      },
-      {
-        "name": "3 João",
-        "slug": "3joao",
-        "abbrev": "3Jo",
-        "chapters": 1
-      },
-      {
-        "name": "Judas",
-        "slug": "judas",
-        "abbrev": "Jd",
-        "chapters": 1
-      },
-      {
-        "name": "Apocalipse",
-        "slug": "apocalipse",
-        "abbrev": "Ap",
-        "chapters": 22
-      }
+      "genesis",
+      "exodo",
+      "levitico",
+      "numeros",
+      "deuteronomio",
+      "josue",
+      "juizes",
+      "rute",
+      "1samuel",
+      "2samuel",
+      "1reis",
+      "2reis",
+      "1cronicas",
+      "2cronicas",
+      "esdras",
+      "neemias",
+      "ester",
+      "jo",
+      "salmos",
+      "proverbios",
+      "eclesiastes",
+      "canticos",
+      "isaias",
+      "jeremias",
+      "lamentacoes-de-jeremias",
+      "ezequiel",
+      "daniel",
+      "oseias",
+      "joel",
+      "amos",
+      "obadias",
+      "jonas",
+      "miqueias",
+      "naum",
+      "habacuque",
+      "sofonias",
+      "ageu",
+      "zacarias",
+      "malaquias",
+      "mateus",
+      "marcos",
+      "lucas",
+      "joao",
+      "atos",
+      "romanos",
+      "1corintios",
+      "2corintios",
+      "galatas",
+      "efesios",
+      "filipenses",
+      "colossenses",
+      "1tessalonicenses",
+      "2tessalonicenses",
+      "1timoteo",
+      "2timoteo",
+      "tito",
+      "filemom",
+      "hebreus",
+      "tiago",
+      "1pedro",
+      "2pedro",
+      "1joao",
+      "2joao",
+      "3joao",
+      "judas",
+      "apocalipse"
     ]
   },
   {
     "id": "naa",
     "name": "Nova Almeida Atualizada",
     "books": [
-      {
-        "name": "Gênesis",
-        "slug": "genesis",
-        "abbrev": "Gn",
-        "chapters": 50
-      },
-      {
-        "name": "Êxodo",
-        "slug": "exodo",
-        "abbrev": "Êx",
-        "chapters": 40
-      },
-      {
-        "name": "Levítico",
-        "slug": "levitico",
-        "abbrev": "Lv",
-        "chapters": 27
-      },
-      {
-        "name": "Números",
-        "slug": "numeros",
-        "abbrev": "Nm",
-        "chapters": 36
-      },
-      {
-        "name": "Deuteronômio",
-        "slug": "deuteronomio",
-        "abbrev": "Dt",
-        "chapters": 34
-      },
-      {
-        "name": "Josué",
-        "slug": "josue",
-        "abbrev": "Js",
-        "chapters": 24
-      },
-      {
-        "name": "Juízes",
-        "slug": "juizes",
-        "abbrev": "Jz",
-        "chapters": 21
-      },
-      {
-        "name": "Rute",
-        "slug": "rute",
-        "abbrev": "Rt",
-        "chapters": 4
-      },
-      {
-        "name": "1 Samuel",
-        "slug": "1samuel",
-        "abbrev": "1Sm",
-        "chapters": 31
-      },
-      {
-        "name": "2 Samuel",
-        "slug": "2samuel",
-        "abbrev": "2Sm",
-        "chapters": 24
-      },
-      {
-        "name": "1 Reis",
-        "slug": "1reis",
-        "abbrev": "1Rs",
-        "chapters": 22
-      },
-      {
-        "name": "2 Reis",
-        "slug": "2reis",
-        "abbrev": "2Rs",
-        "chapters": 25
-      },
-      {
-        "name": "1 Crônicas",
-        "slug": "1cronicas",
-        "abbrev": "1Cr",
-        "chapters": 29
-      },
-      {
-        "name": "2 Crônicas",
-        "slug": "2cronicas",
-        "abbrev": "2Cr",
-        "chapters": 36
-      },
-      {
-        "name": "Esdras",
-        "slug": "esdras",
-        "abbrev": "Ed",
-        "chapters": 10
-      },
-      {
-        "name": "Neemias",
-        "slug": "neemias",
-        "abbrev": "Ne",
-        "chapters": 13
-      },
-      {
-        "name": "Ester",
-        "slug": "ester",
-        "abbrev": "Et",
-        "chapters": 10
-      },
-      {
-        "name": "Jó",
-        "slug": "jo",
-        "abbrev": "Jó",
-        "chapters": 42
-      },
-      {
-        "name": "Salmos",
-        "slug": "salmos",
-        "abbrev": "Sl",
-        "chapters": 150
-      },
-      {
-        "name": "Provérbios",
-        "slug": "proverbios",
-        "abbrev": "Pv",
-        "chapters": 31
-      },
-      {
-        "name": "Eclesiastes",
-        "slug": "eclesiastes",
-        "abbrev": "Ec",
-        "chapters": 12
-      },
-      {
-        "name": "Cânticos",
-        "slug": "canticos",
-        "abbrev": "Ct",
-        "chapters": 8
-      },
-      {
-        "name": "Isaías",
-        "slug": "isaias",
-        "abbrev": "Is",
-        "chapters": 66
-      },
-      {
-        "name": "Jeremias",
-        "slug": "jeremias",
-        "abbrev": "Jr",
-        "chapters": 52
-      },
-      {
-        "name": "Lamentações de Jeremias",
-        "slug": "lamentacoes-de-jeremias",
-        "abbrev": "Lm",
-        "chapters": 5
-      },
-      {
-        "name": "Ezequiel",
-        "slug": "ezequiel",
-        "abbrev": "Ez",
-        "chapters": 48
-      },
-      {
-        "name": "Daniel",
-        "slug": "daniel",
-        "abbrev": "Dn",
-        "chapters": 12
-      },
-      {
-        "name": "Oséias",
-        "slug": "oseias",
-        "abbrev": "Os",
-        "chapters": 14
-      },
-      {
-        "name": "Joel",
-        "slug": "joel",
-        "abbrev": "Jl",
-        "chapters": 3
-      },
-      {
-        "name": "Amós",
-        "slug": "amos",
-        "abbrev": "Am",
-        "chapters": 9
-      },
-      {
-        "name": "Obadias",
-        "slug": "obadias",
-        "abbrev": "Ob",
-        "chapters": 1
-      },
-      {
-        "name": "Jonas",
-        "slug": "jonas",
-        "abbrev": "Jn",
-        "chapters": 4
-      },
-      {
-        "name": "Miquéias",
-        "slug": "miqueias",
-        "abbrev": "Mq",
-        "chapters": 7
-      },
-      {
-        "name": "Naum",
-        "slug": "naum",
-        "abbrev": "Na",
-        "chapters": 3
-      },
-      {
-        "name": "Habacuque",
-        "slug": "habacuque",
-        "abbrev": "Hc",
-        "chapters": 3
-      },
-      {
-        "name": "Sofonias",
-        "slug": "sofonias",
-        "abbrev": "Sf",
-        "chapters": 3
-      },
-      {
-        "name": "Ageu",
-        "slug": "ageu",
-        "abbrev": "Ag",
-        "chapters": 2
-      },
-      {
-        "name": "Zacarias",
-        "slug": "zacarias",
-        "abbrev": "Zc",
-        "chapters": 14
-      },
-      {
-        "name": "Malaquias",
-        "slug": "malaquias",
-        "abbrev": "Ml",
-        "chapters": 4
-      },
-      {
-        "name": "Mateus",
-        "slug": "mateus",
-        "abbrev": "Mt",
-        "chapters": 28
-      },
-      {
-        "name": "Marcos",
-        "slug": "marcos",
-        "abbrev": "Mc",
-        "chapters": 16
-      },
-      {
-        "name": "Lucas",
-        "slug": "lucas",
-        "abbrev": "Lc",
-        "chapters": 24
-      },
-      {
-        "name": "João",
-        "slug": "joao",
-        "abbrev": "Jo",
-        "chapters": 21
-      },
-      {
-        "name": "Atos",
-        "slug": "atos",
-        "abbrev": "At",
-        "chapters": 28
-      },
-      {
-        "name": "Romanos",
-        "slug": "romanos",
-        "abbrev": "Rm",
-        "chapters": 16
-      },
-      {
-        "name": "1 Coríntios",
-        "slug": "1corintios",
-        "abbrev": "1Co",
-        "chapters": 16
-      },
-      {
-        "name": "2 Coríntios",
-        "slug": "2corintios",
-        "abbrev": "2Co",
-        "chapters": 13
-      },
-      {
-        "name": "Gálatas",
-        "slug": "galatas",
-        "abbrev": "Gl",
-        "chapters": 6
-      },
-      {
-        "name": "Efésios",
-        "slug": "efesios",
-        "abbrev": "Ef",
-        "chapters": 6
-      },
-      {
-        "name": "Filipenses",
-        "slug": "filipenses",
-        "abbrev": "Fp",
-        "chapters": 4
-      },
-      {
-        "name": "Colossenses",
-        "slug": "colossenses",
-        "abbrev": "Cl",
-        "chapters": 4
-      },
-      {
-        "name": "1 Tessalonicenses",
-        "slug": "1tessalonicenses",
-        "abbrev": "1Ts",
-        "chapters": 5
-      },
-      {
-        "name": "2 Tessalonicenses",
-        "slug": "2tessalonicenses",
-        "abbrev": "2Ts",
-        "chapters": 3
-      },
-      {
-        "name": "1 Timóteo",
-        "slug": "1timoteo",
-        "abbrev": "1Tn",
-        "chapters": 6
-      },
-      {
-        "name": "2 Timóteo",
-        "slug": "2timoteo",
-        "abbrev": "2Tm",
-        "chapters": 4
-      },
-      {
-        "name": "Tito",
-        "slug": "tito",
-        "abbrev": "Tt",
-        "chapters": 3
-      },
-      {
-        "name": "Filemom",
-        "slug": "filemom",
-        "abbrev": "Fm",
-        "chapters": 1
-      },
-      {
-        "name": "Hebreus",
-        "slug": "hebreus",
-        "abbrev": "Hb",
-        "chapters": 13
-      },
-      {
-        "name": "Tiago",
-        "slug": "tiago",
-        "abbrev": "Tg",
-        "chapters": 5
-      },
-      {
-        "name": "1 Pedro",
-        "slug": "1pedro",
-        "abbrev": "1Pe",
-        "chapters": 5
-      },
-      {
-        "name": "2 Pedro",
-        "slug": "2pedro",
-        "abbrev": "2Pe",
-        "chapters": 3
-      },
-      {
-        "name": "1 João",
-        "slug": "1joao",
-        "abbrev": "1Jo",
-        "chapters": 5
-      },
-      {
-        "name": "2 João",
-        "slug": "2joao",
-        "abbrev": "2Jo",
-        "chapters": 1
-      },
-      {
-        "name": "3 João",
-        "slug": "3joao",
-        "abbrev": "3Jo",
-        "chapters": 1
-      },
-      {
-        "name": "Judas",
-        "slug": "judas",
-        "abbrev": "Jd",
-        "chapters": 1
-      },
-      {
-        "name": "Apocalipse",
-        "slug": "apocalipse",
-        "abbrev": "Ap",
-        "chapters": 22
-      }
+      "genesis",
+      "exodo",
+      "levitico",
+      "numeros",
+      "deuteronomio",
+      "josue",
+      "juizes",
+      "rute",
+      "1samuel",
+      "2samuel",
+      "1reis",
+      "2reis",
+      "1cronicas",
+      "2cronicas",
+      "esdras",
+      "neemias",
+      "ester",
+      "jo",
+      "salmos",
+      "proverbios",
+      "eclesiastes",
+      "canticos",
+      "isaias",
+      "jeremias",
+      "lamentacoes-de-jeremias",
+      "ezequiel",
+      "daniel",
+      "oseias",
+      "joel",
+      "amos",
+      "obadias",
+      "jonas",
+      "miqueias",
+      "naum",
+      "habacuque",
+      "sofonias",
+      "ageu",
+      "zacarias",
+      "malaquias",
+      "mateus",
+      "marcos",
+      "lucas",
+      "joao",
+      "atos",
+      "romanos",
+      "1corintios",
+      "2corintios",
+      "galatas",
+      "efesios",
+      "filipenses",
+      "colossenses",
+      "1tessalonicenses",
+      "2tessalonicenses",
+      "1timoteo",
+      "2timoteo",
+      "tito",
+      "filemom",
+      "hebreus",
+      "tiago",
+      "1pedro",
+      "2pedro",
+      "1joao",
+      "2joao",
+      "3joao",
+      "judas",
+      "apocalipse"
     ]
   },
   {
     "id": "nbv",
     "name": "Nova Bíblia Viva",
     "books": [
-      {
-        "name": "Gênesis",
-        "slug": "genesis",
-        "abbrev": "Gn",
-        "chapters": 50
-      },
-      {
-        "name": "Êxodo",
-        "slug": "exodo",
-        "abbrev": "Êx",
-        "chapters": 40
-      },
-      {
-        "name": "Levítico",
-        "slug": "levitico",
-        "abbrev": "Lv",
-        "chapters": 27
-      },
-      {
-        "name": "Números",
-        "slug": "numeros",
-        "abbrev": "Nm",
-        "chapters": 36
-      },
-      {
-        "name": "Deuteronômio",
-        "slug": "deuteronomio",
-        "abbrev": "Dt",
-        "chapters": 34
-      },
-      {
-        "name": "Josué",
-        "slug": "josue",
-        "abbrev": "Js",
-        "chapters": 24
-      },
-      {
-        "name": "Juízes",
-        "slug": "juizes",
-        "abbrev": "Jz",
-        "chapters": 21
-      },
-      {
-        "name": "Rute",
-        "slug": "rute",
-        "abbrev": "Rt",
-        "chapters": 4
-      },
-      {
-        "name": "1 Samuel",
-        "slug": "1samuel",
-        "abbrev": "1Sm",
-        "chapters": 31
-      },
-      {
-        "name": "2 Samuel",
-        "slug": "2samuel",
-        "abbrev": "2Sm",
-        "chapters": 24
-      },
-      {
-        "name": "1 Reis",
-        "slug": "1reis",
-        "abbrev": "1Rs",
-        "chapters": 22
-      },
-      {
-        "name": "2 Reis",
-        "slug": "2reis",
-        "abbrev": "2Rs",
-        "chapters": 25
-      },
-      {
-        "name": "1 Crônicas",
-        "slug": "1cronicas",
-        "abbrev": "1Cr",
-        "chapters": 29
-      },
-      {
-        "name": "2 Crônicas",
-        "slug": "2cronicas",
-        "abbrev": "2Cr",
-        "chapters": 36
-      },
-      {
-        "name": "Esdras",
-        "slug": "esdras",
-        "abbrev": "Ed",
-        "chapters": 10
-      },
-      {
-        "name": "Neemias",
-        "slug": "neemias",
-        "abbrev": "Ne",
-        "chapters": 13
-      },
-      {
-        "name": "Ester",
-        "slug": "ester",
-        "abbrev": "Et",
-        "chapters": 10
-      },
-      {
-        "name": "Jó",
-        "slug": "jo",
-        "abbrev": "Jó",
-        "chapters": 42
-      },
-      {
-        "name": "Salmos",
-        "slug": "salmos",
-        "abbrev": "Sl",
-        "chapters": 150
-      },
-      {
-        "name": "Provérbios",
-        "slug": "proverbios",
-        "abbrev": "Pv",
-        "chapters": 31
-      },
-      {
-        "name": "Eclesiastes",
-        "slug": "eclesiastes",
-        "abbrev": "Ec",
-        "chapters": 12
-      },
-      {
-        "name": "Cânticos",
-        "slug": "canticos",
-        "abbrev": "Ct",
-        "chapters": 8
-      },
-      {
-        "name": "Isaías",
-        "slug": "isaias",
-        "abbrev": "Is",
-        "chapters": 66
-      },
-      {
-        "name": "Jeremias",
-        "slug": "jeremias",
-        "abbrev": "Jr",
-        "chapters": 52
-      },
-      {
-        "name": "Lamentações de Jeremias",
-        "slug": "lamentacoes-de-jeremias",
-        "abbrev": "Lm",
-        "chapters": 5
-      },
-      {
-        "name": "Ezequiel",
-        "slug": "ezequiel",
-        "abbrev": "Ez",
-        "chapters": 48
-      },
-      {
-        "name": "Daniel",
-        "slug": "daniel",
-        "abbrev": "Dn",
-        "chapters": 12
-      },
-      {
-        "name": "Oséias",
-        "slug": "oseias",
-        "abbrev": "Os",
-        "chapters": 14
-      },
-      {
-        "name": "Joel",
-        "slug": "joel",
-        "abbrev": "Jl",
-        "chapters": 3
-      },
-      {
-        "name": "Amós",
-        "slug": "amos",
-        "abbrev": "Am",
-        "chapters": 9
-      },
-      {
-        "name": "Obadias",
-        "slug": "obadias",
-        "abbrev": "Ob",
-        "chapters": 1
-      },
-      {
-        "name": "Jonas",
-        "slug": "jonas",
-        "abbrev": "Jn",
-        "chapters": 4
-      },
-      {
-        "name": "Miquéias",
-        "slug": "miqueias",
-        "abbrev": "Mq",
-        "chapters": 7
-      },
-      {
-        "name": "Naum",
-        "slug": "naum",
-        "abbrev": "Na",
-        "chapters": 3
-      },
-      {
-        "name": "Habacuque",
-        "slug": "habacuque",
-        "abbrev": "Hc",
-        "chapters": 3
-      },
-      {
-        "name": "Sofonias",
-        "slug": "sofonias",
-        "abbrev": "Sf",
-        "chapters": 3
-      },
-      {
-        "name": "Ageu",
-        "slug": "ageu",
-        "abbrev": "Ag",
-        "chapters": 2
-      },
-      {
-        "name": "Zacarias",
-        "slug": "zacarias",
-        "abbrev": "Zc",
-        "chapters": 14
-      },
-      {
-        "name": "Malaquias",
-        "slug": "malaquias",
-        "abbrev": "Ml",
-        "chapters": 4
-      },
-      {
-        "name": "Mateus",
-        "slug": "mateus",
-        "abbrev": "Mt",
-        "chapters": 28
-      },
-      {
-        "name": "Marcos",
-        "slug": "marcos",
-        "abbrev": "Mc",
-        "chapters": 16
-      },
-      {
-        "name": "Lucas",
-        "slug": "lucas",
-        "abbrev": "Lc",
-        "chapters": 24
-      },
-      {
-        "name": "João",
-        "slug": "joao",
-        "abbrev": "Jo",
-        "chapters": 21
-      },
-      {
-        "name": "Atos",
-        "slug": "atos",
-        "abbrev": "At",
-        "chapters": 28
-      },
-      {
-        "name": "Romanos",
-        "slug": "romanos",
-        "abbrev": "Rm",
-        "chapters": 16
-      },
-      {
-        "name": "1 Coríntios",
-        "slug": "1corintios",
-        "abbrev": "1Co",
-        "chapters": 16
-      },
-      {
-        "name": "2 Coríntios",
-        "slug": "2corintios",
-        "abbrev": "2Co",
-        "chapters": 13
-      },
-      {
-        "name": "Gálatas",
-        "slug": "galatas",
-        "abbrev": "Gl",
-        "chapters": 6
-      },
-      {
-        "name": "Efésios",
-        "slug": "efesios",
-        "abbrev": "Ef",
-        "chapters": 6
-      },
-      {
-        "name": "Filipenses",
-        "slug": "filipenses",
-        "abbrev": "Fp",
-        "chapters": 4
-      },
-      {
-        "name": "Colossenses",
-        "slug": "colossenses",
-        "abbrev": "Cl",
-        "chapters": 4
-      },
-      {
-        "name": "1 Tessalonicenses",
-        "slug": "1tessalonicenses",
-        "abbrev": "1Ts",
-        "chapters": 5
-      },
-      {
-        "name": "2 Tessalonicenses",
-        "slug": "2tessalonicenses",
-        "abbrev": "2Ts",
-        "chapters": 3
-      },
-      {
-        "name": "1 Timóteo",
-        "slug": "1timoteo",
-        "abbrev": "1Tn",
-        "chapters": 6
-      },
-      {
-        "name": "2 Timóteo",
-        "slug": "2timoteo",
-        "abbrev": "2Tm",
-        "chapters": 4
-      },
-      {
-        "name": "Tito",
-        "slug": "tito",
-        "abbrev": "Tt",
-        "chapters": 3
-      },
-      {
-        "name": "Filemom",
-        "slug": "filemom",
-        "abbrev": "Fm",
-        "chapters": 1
-      },
-      {
-        "name": "Hebreus",
-        "slug": "hebreus",
-        "abbrev": "Hb",
-        "chapters": 13
-      },
-      {
-        "name": "Tiago",
-        "slug": "tiago",
-        "abbrev": "Tg",
-        "chapters": 5
-      },
-      {
-        "name": "1 Pedro",
-        "slug": "1pedro",
-        "abbrev": "1Pe",
-        "chapters": 5
-      },
-      {
-        "name": "2 Pedro",
-        "slug": "2pedro",
-        "abbrev": "2Pe",
-        "chapters": 3
-      },
-      {
-        "name": "1 João",
-        "slug": "1joao",
-        "abbrev": "1Jo",
-        "chapters": 5
-      },
-      {
-        "name": "2 João",
-        "slug": "2joao",
-        "abbrev": "2Jo",
-        "chapters": 1
-      },
-      {
-        "name": "3 João",
-        "slug": "3joao",
-        "abbrev": "3Jo",
-        "chapters": 1
-      },
-      {
-        "name": "Judas",
-        "slug": "judas",
-        "abbrev": "Jd",
-        "chapters": 1
-      },
-      {
-        "name": "Apocalipse",
-        "slug": "apocalipse",
-        "abbrev": "Ap",
-        "chapters": 22
-      }
+      "genesis",
+      "exodo",
+      "levitico",
+      "numeros",
+      "deuteronomio",
+      "josue",
+      "juizes",
+      "rute",
+      "1samuel",
+      "2samuel",
+      "1reis",
+      "2reis",
+      "1cronicas",
+      "2cronicas",
+      "esdras",
+      "neemias",
+      "ester",
+      "jo",
+      "salmos",
+      "proverbios",
+      "eclesiastes",
+      "canticos",
+      "isaias",
+      "jeremias",
+      "lamentacoes-de-jeremias",
+      "ezequiel",
+      "daniel",
+      "oseias",
+      "joel",
+      "amos",
+      "obadias",
+      "jonas",
+      "miqueias",
+      "naum",
+      "habacuque",
+      "sofonias",
+      "ageu",
+      "zacarias",
+      "malaquias",
+      "mateus",
+      "marcos",
+      "lucas",
+      "joao",
+      "atos",
+      "romanos",
+      "1corintios",
+      "2corintios",
+      "galatas",
+      "efesios",
+      "filipenses",
+      "colossenses",
+      "1tessalonicenses",
+      "2tessalonicenses",
+      "1timoteo",
+      "2timoteo",
+      "tito",
+      "filemom",
+      "hebreus",
+      "tiago",
+      "1pedro",
+      "2pedro",
+      "1joao",
+      "2joao",
+      "3joao",
+      "judas",
+      "apocalipse"
     ]
   },
   {
     "id": "ntlh",
     "name": "Nova Tradução Linguagem de Hoje",
     "books": [
-      {
-        "name": "Gênesis",
-        "slug": "genesis",
-        "abbrev": "Gn",
-        "chapters": 50
-      },
-      {
-        "name": "Êxodo",
-        "slug": "exodo",
-        "abbrev": "Êx",
-        "chapters": 40
-      },
-      {
-        "name": "Levítico",
-        "slug": "levitico",
-        "abbrev": "Lv",
-        "chapters": 27
-      },
-      {
-        "name": "Números",
-        "slug": "numeros",
-        "abbrev": "Nm",
-        "chapters": 36
-      },
-      {
-        "name": "Deuteronômio",
-        "slug": "deuteronomio",
-        "abbrev": "Dt",
-        "chapters": 34
-      },
-      {
-        "name": "Josué",
-        "slug": "josue",
-        "abbrev": "Js",
-        "chapters": 24
-      },
-      {
-        "name": "Juízes",
-        "slug": "juizes",
-        "abbrev": "Jz",
-        "chapters": 21
-      },
-      {
-        "name": "Rute",
-        "slug": "rute",
-        "abbrev": "Rt",
-        "chapters": 4
-      },
-      {
-        "name": "1 Samuel",
-        "slug": "1samuel",
-        "abbrev": "1Sm",
-        "chapters": 31
-      },
-      {
-        "name": "2 Samuel",
-        "slug": "2samuel",
-        "abbrev": "2Sm",
-        "chapters": 38
-      },
-      {
-        "name": "1 Reis",
-        "slug": "1reis",
-        "abbrev": "1Rs",
-        "chapters": 22
-      },
-      {
-        "name": "2 Reis",
-        "slug": "2reis",
-        "abbrev": "2Rs",
-        "chapters": 25
-      },
-      {
-        "name": "1 Crônicas",
-        "slug": "1cronicas",
-        "abbrev": "1Cr",
-        "chapters": 29
-      },
-      {
-        "name": "2 Crônicas",
-        "slug": "2cronicas",
-        "abbrev": "2Cr",
-        "chapters": 36
-      },
-      {
-        "name": "Esdras",
-        "slug": "esdras",
-        "abbrev": "Ed",
-        "chapters": 10
-      },
-      {
-        "name": "Neemias",
-        "slug": "neemias",
-        "abbrev": "Ne",
-        "chapters": 13
-      },
-      {
-        "name": "Ester",
-        "slug": "ester",
-        "abbrev": "Et",
-        "chapters": 10
-      },
-      {
-        "name": "Jó",
-        "slug": "jo",
-        "abbrev": "Jó",
-        "chapters": 42
-      },
-      {
-        "name": "Salmos",
-        "slug": "salmos",
-        "abbrev": "Sl",
-        "chapters": 150
-      },
-      {
-        "name": "Provérbios",
-        "slug": "proverbios",
-        "abbrev": "Pv",
-        "chapters": 31
-      },
-      {
-        "name": "Eclesiastes",
-        "slug": "eclesiastes",
-        "abbrev": "Ec",
-        "chapters": 12
-      },
-      {
-        "name": "Cânticos",
-        "slug": "canticos",
-        "abbrev": "Ct",
-        "chapters": 8
-      },
-      {
-        "name": "Isaías",
-        "slug": "isaias",
-        "abbrev": "Is",
-        "chapters": 66
-      },
-      {
-        "name": "Jeremias",
-        "slug": "jeremias",
-        "abbrev": "Jr",
-        "chapters": 52
-      },
-      {
-        "name": "Lamentações de Jeremias",
-        "slug": "lamentacoes-de-jeremias",
-        "abbrev": "Lm",
-        "chapters": 5
-      },
-      {
-        "name": "Ezequiel",
-        "slug": "ezequiel",
-        "abbrev": "Ez",
-        "chapters": 48
-      },
-      {
-        "name": "Daniel",
-        "slug": "daniel",
-        "abbrev": "Dn",
-        "chapters": 12
-      },
-      {
-        "name": "Oséias",
-        "slug": "oseias",
-        "abbrev": "Os",
-        "chapters": 14
-      },
-      {
-        "name": "Joel",
-        "slug": "joel",
-        "abbrev": "Jl",
-        "chapters": 3
-      },
-      {
-        "name": "Amós",
-        "slug": "amos",
-        "abbrev": "Am",
-        "chapters": 9
-      },
-      {
-        "name": "Obadias",
-        "slug": "obadias",
-        "abbrev": "Ob",
-        "chapters": 1
-      },
-      {
-        "name": "Jonas",
-        "slug": "jonas",
-        "abbrev": "Jn",
-        "chapters": 4
-      },
-      {
-        "name": "Miquéias",
-        "slug": "miqueias",
-        "abbrev": "Mq",
-        "chapters": 7
-      },
-      {
-        "name": "Naum",
-        "slug": "naum",
-        "abbrev": "Na",
-        "chapters": 3
-      },
-      {
-        "name": "Habacuque",
-        "slug": "habacuque",
-        "abbrev": "Hc",
-        "chapters": 3
-      },
-      {
-        "name": "Sofonias",
-        "slug": "sofonias",
-        "abbrev": "Sf",
-        "chapters": 3
-      },
-      {
-        "name": "Ageu",
-        "slug": "ageu",
-        "abbrev": "Ag",
-        "chapters": 2
-      },
-      {
-        "name": "Zacarias",
-        "slug": "zacarias",
-        "abbrev": "Zc",
-        "chapters": 14
-      },
-      {
-        "name": "Malaquias",
-        "slug": "malaquias",
-        "abbrev": "Ml",
-        "chapters": 4
-      },
-      {
-        "name": "Mateus",
-        "slug": "mateus",
-        "abbrev": "Mt",
-        "chapters": 28
-      },
-      {
-        "name": "Marcos",
-        "slug": "marcos",
-        "abbrev": "Mc",
-        "chapters": 16
-      },
-      {
-        "name": "Lucas",
-        "slug": "lucas",
-        "abbrev": "Lc",
-        "chapters": 24
-      },
-      {
-        "name": "João",
-        "slug": "joao",
-        "abbrev": "Jo",
-        "chapters": 21
-      },
-      {
-        "name": "Atos",
-        "slug": "atos",
-        "abbrev": "At",
-        "chapters": 28
-      },
-      {
-        "name": "Romanos",
-        "slug": "romanos",
-        "abbrev": "Rm",
-        "chapters": 16
-      },
-      {
-        "name": "1 Coríntios",
-        "slug": "1corintios",
-        "abbrev": "1Co",
-        "chapters": 16
-      },
-      {
-        "name": "2 Coríntios",
-        "slug": "2corintios",
-        "abbrev": "2Co",
-        "chapters": 13
-      },
-      {
-        "name": "Gálatas",
-        "slug": "galatas",
-        "abbrev": "Gl",
-        "chapters": 6
-      },
-      {
-        "name": "Efésios",
-        "slug": "efesios",
-        "abbrev": "Ef",
-        "chapters": 6
-      },
-      {
-        "name": "Filipenses",
-        "slug": "filipenses",
-        "abbrev": "Fp",
-        "chapters": 4
-      },
-      {
-        "name": "Colossenses",
-        "slug": "colossenses",
-        "abbrev": "Cl",
-        "chapters": 4
-      },
-      {
-        "name": "1 Tessalonicenses",
-        "slug": "1tessalonicenses",
-        "abbrev": "1Ts",
-        "chapters": 5
-      },
-      {
-        "name": "2 Tessalonicenses",
-        "slug": "2tessalonicenses",
-        "abbrev": "2Ts",
-        "chapters": 3
-      },
-      {
-        "name": "1 Timóteo",
-        "slug": "1timoteo",
-        "abbrev": "1Tn",
-        "chapters": 6
-      },
-      {
-        "name": "2 Timóteo",
-        "slug": "2timoteo",
-        "abbrev": "2Tm",
-        "chapters": 4
-      },
-      {
-        "name": "Tito",
-        "slug": "tito",
-        "abbrev": "Tt",
-        "chapters": 3
-      },
-      {
-        "name": "Filemom",
-        "slug": "filemom",
-        "abbrev": "Fm",
-        "chapters": 1
-      },
-      {
-        "name": "Hebreus",
-        "slug": "hebreus",
-        "abbrev": "Hb",
-        "chapters": 13
-      },
-      {
-        "name": "Tiago",
-        "slug": "tiago",
-        "abbrev": "Tg",
-        "chapters": 5
-      },
-      {
-        "name": "1 Pedro",
-        "slug": "1pedro",
-        "abbrev": "1Pe",
-        "chapters": 5
-      },
-      {
-        "name": "2 Pedro",
-        "slug": "2pedro",
-        "abbrev": "2Pe",
-        "chapters": 3
-      },
-      {
-        "name": "1 João",
-        "slug": "1joao",
-        "abbrev": "1Jo",
-        "chapters": 5
-      },
-      {
-        "name": "2 João",
-        "slug": "2joao",
-        "abbrev": "2Jo",
-        "chapters": 1
-      },
-      {
-        "name": "3 João",
-        "slug": "3joao",
-        "abbrev": "3Jo",
-        "chapters": 1
-      },
-      {
-        "name": "Judas",
-        "slug": "judas",
-        "abbrev": "Jd",
-        "chapters": 1
-      },
-      {
-        "name": "Apocalipse",
-        "slug": "apocalipse",
-        "abbrev": "Ap",
-        "chapters": 22
-      }
+      "genesis",
+      "exodo",
+      "levitico",
+      "numeros",
+      "deuteronomio",
+      "josue",
+      "juizes",
+      "rute",
+      "1samuel",
+      "2samuel",
+      "1reis",
+      "2reis",
+      "1cronicas",
+      "2cronicas",
+      "esdras",
+      "neemias",
+      "ester",
+      "jo",
+      "salmos",
+      "proverbios",
+      "eclesiastes",
+      "canticos",
+      "isaias",
+      "jeremias",
+      "lamentacoes-de-jeremias",
+      "ezequiel",
+      "daniel",
+      "oseias",
+      "joel",
+      "amos",
+      "obadias",
+      "jonas",
+      "miqueias",
+      "naum",
+      "habacuque",
+      "sofonias",
+      "ageu",
+      "zacarias",
+      "malaquias",
+      "mateus",
+      "marcos",
+      "lucas",
+      "joao",
+      "atos",
+      "romanos",
+      "1corintios",
+      "2corintios",
+      "galatas",
+      "efesios",
+      "filipenses",
+      "colossenses",
+      "1tessalonicenses",
+      "2tessalonicenses",
+      "1timoteo",
+      "2timoteo",
+      "tito",
+      "filemom",
+      "hebreus",
+      "tiago",
+      "1pedro",
+      "2pedro",
+      "1joao",
+      "2joao",
+      "3joao",
+      "judas",
+      "apocalipse"
     ]
   },
   {
     "id": "nvi",
     "name": "Nova Versão Internacional",
     "books": [
-      {
-        "name": "Gênesis",
-        "slug": "genesis",
-        "abbrev": "Gn",
-        "chapters": 50
-      },
-      {
-        "name": "Êxodo",
-        "slug": "exodo",
-        "abbrev": "Êx",
-        "chapters": 40
-      },
-      {
-        "name": "Levítico",
-        "slug": "levitico",
-        "abbrev": "Lv",
-        "chapters": 27
-      },
-      {
-        "name": "Números",
-        "slug": "numeros",
-        "abbrev": "Nm",
-        "chapters": 36
-      },
-      {
-        "name": "Deuteronômio",
-        "slug": "deuteronomio",
-        "abbrev": "Dt",
-        "chapters": 34
-      },
-      {
-        "name": "Josué",
-        "slug": "josue",
-        "abbrev": "Js",
-        "chapters": 24
-      },
-      {
-        "name": "Juízes",
-        "slug": "juizes",
-        "abbrev": "Jz",
-        "chapters": 21
-      },
-      {
-        "name": "Rute",
-        "slug": "rute",
-        "abbrev": "Rt",
-        "chapters": 4
-      },
-      {
-        "name": "1 Samuel",
-        "slug": "1samuel",
-        "abbrev": "1Sm",
-        "chapters": 31
-      },
-      {
-        "name": "2 Samuel",
-        "slug": "2samuel",
-        "abbrev": "2Sm",
-        "chapters": 24
-      },
-      {
-        "name": "1 Reis",
-        "slug": "1reis",
-        "abbrev": "1Rs",
-        "chapters": 22
-      },
-      {
-        "name": "2 Reis",
-        "slug": "2reis",
-        "abbrev": "2Rs",
-        "chapters": 25
-      },
-      {
-        "name": "1 Crônicas",
-        "slug": "1cronicas",
-        "abbrev": "1Cr",
-        "chapters": 29
-      },
-      {
-        "name": "2 Crônicas",
-        "slug": "2cronicas",
-        "abbrev": "2Cr",
-        "chapters": 36
-      },
-      {
-        "name": "Esdras",
-        "slug": "esdras",
-        "abbrev": "Ed",
-        "chapters": 10
-      },
-      {
-        "name": "Neemias",
-        "slug": "neemias",
-        "abbrev": "Ne",
-        "chapters": 13
-      },
-      {
-        "name": "Ester",
-        "slug": "ester",
-        "abbrev": "Et",
-        "chapters": 10
-      },
-      {
-        "name": "Jó",
-        "slug": "jo",
-        "abbrev": "Jó",
-        "chapters": 42
-      },
-      {
-        "name": "Salmos",
-        "slug": "salmos",
-        "abbrev": "Sl",
-        "chapters": 150
-      },
-      {
-        "name": "Provérbios",
-        "slug": "proverbios",
-        "abbrev": "Pv",
-        "chapters": 31
-      },
-      {
-        "name": "Eclesiastes",
-        "slug": "eclesiastes",
-        "abbrev": "Ec",
-        "chapters": 12
-      },
-      {
-        "name": "Cânticos",
-        "slug": "canticos",
-        "abbrev": "Ct",
-        "chapters": 8
-      },
-      {
-        "name": "Isaías",
-        "slug": "isaias",
-        "abbrev": "Is",
-        "chapters": 66
-      },
-      {
-        "name": "Jeremias",
-        "slug": "jeremias",
-        "abbrev": "Jr",
-        "chapters": 52
-      },
-      {
-        "name": "Lamentações de Jeremias",
-        "slug": "lamentacoes-de-jeremias",
-        "abbrev": "Lm",
-        "chapters": 5
-      },
-      {
-        "name": "Ezequiel",
-        "slug": "ezequiel",
-        "abbrev": "Ez",
-        "chapters": 48
-      },
-      {
-        "name": "Daniel",
-        "slug": "daniel",
-        "abbrev": "Dn",
-        "chapters": 12
-      },
-      {
-        "name": "Oséias",
-        "slug": "oseias",
-        "abbrev": "Os",
-        "chapters": 14
-      },
-      {
-        "name": "Joel",
-        "slug": "joel",
-        "abbrev": "Jl",
-        "chapters": 3
-      },
-      {
-        "name": "Amós",
-        "slug": "amos",
-        "abbrev": "Am",
-        "chapters": 9
-      },
-      {
-        "name": "Obadias",
-        "slug": "obadias",
-        "abbrev": "Ob",
-        "chapters": 1
-      },
-      {
-        "name": "Jonas",
-        "slug": "jonas",
-        "abbrev": "Jn",
-        "chapters": 4
-      },
-      {
-        "name": "Miquéias",
-        "slug": "miqueias",
-        "abbrev": "Mq",
-        "chapters": 7
-      },
-      {
-        "name": "Naum",
-        "slug": "naum",
-        "abbrev": "Na",
-        "chapters": 3
-      },
-      {
-        "name": "Habacuque",
-        "slug": "habacuque",
-        "abbrev": "Hc",
-        "chapters": 3
-      },
-      {
-        "name": "Sofonias",
-        "slug": "sofonias",
-        "abbrev": "Sf",
-        "chapters": 3
-      },
-      {
-        "name": "Ageu",
-        "slug": "ageu",
-        "abbrev": "Ag",
-        "chapters": 2
-      },
-      {
-        "name": "Zacarias",
-        "slug": "zacarias",
-        "abbrev": "Zc",
-        "chapters": 14
-      },
-      {
-        "name": "Malaquias",
-        "slug": "malaquias",
-        "abbrev": "Ml",
-        "chapters": 4
-      },
-      {
-        "name": "Mateus",
-        "slug": "mateus",
-        "abbrev": "Mt",
-        "chapters": 28
-      },
-      {
-        "name": "Marcos",
-        "slug": "marcos",
-        "abbrev": "Mc",
-        "chapters": 16
-      },
-      {
-        "name": "Lucas",
-        "slug": "lucas",
-        "abbrev": "Lc",
-        "chapters": 24
-      },
-      {
-        "name": "João",
-        "slug": "joao",
-        "abbrev": "Jo",
-        "chapters": 21
-      },
-      {
-        "name": "Atos",
-        "slug": "atos",
-        "abbrev": "At",
-        "chapters": 28
-      },
-      {
-        "name": "Romanos",
-        "slug": "romanos",
-        "abbrev": "Rm",
-        "chapters": 16
-      },
-      {
-        "name": "1 Coríntios",
-        "slug": "1corintios",
-        "abbrev": "1Co",
-        "chapters": 16
-      },
-      {
-        "name": "2 Coríntios",
-        "slug": "2corintios",
-        "abbrev": "2Co",
-        "chapters": 13
-      },
-      {
-        "name": "Gálatas",
-        "slug": "galatas",
-        "abbrev": "Gl",
-        "chapters": 6
-      },
-      {
-        "name": "Efésios",
-        "slug": "efesios",
-        "abbrev": "Ef",
-        "chapters": 6
-      },
-      {
-        "name": "Filipenses",
-        "slug": "filipenses",
-        "abbrev": "Fp",
-        "chapters": 4
-      },
-      {
-        "name": "Colossenses",
-        "slug": "colossenses",
-        "abbrev": "Cl",
-        "chapters": 4
-      },
-      {
-        "name": "1 Tessalonicenses",
-        "slug": "1tessalonicenses",
-        "abbrev": "1Ts",
-        "chapters": 5
-      },
-      {
-        "name": "2 Tessalonicenses",
-        "slug": "2tessalonicenses",
-        "abbrev": "2Ts",
-        "chapters": 3
-      },
-      {
-        "name": "1 Timóteo",
-        "slug": "1timoteo",
-        "abbrev": "1Tn",
-        "chapters": 6
-      },
-      {
-        "name": "2 Timóteo",
-        "slug": "2timoteo",
-        "abbrev": "2Tm",
-        "chapters": 4
-      },
-      {
-        "name": "Tito",
-        "slug": "tito",
-        "abbrev": "Tt",
-        "chapters": 3
-      },
-      {
-        "name": "Filemom",
-        "slug": "filemom",
-        "abbrev": "Fm",
-        "chapters": 1
-      },
-      {
-        "name": "Hebreus",
-        "slug": "hebreus",
-        "abbrev": "Hb",
-        "chapters": 13
-      },
-      {
-        "name": "Tiago",
-        "slug": "tiago",
-        "abbrev": "Tg",
-        "chapters": 5
-      },
-      {
-        "name": "1 Pedro",
-        "slug": "1pedro",
-        "abbrev": "1Pe",
-        "chapters": 5
-      },
-      {
-        "name": "2 Pedro",
-        "slug": "2pedro",
-        "abbrev": "2Pe",
-        "chapters": 3
-      },
-      {
-        "name": "1 João",
-        "slug": "1joao",
-        "abbrev": "1Jo",
-        "chapters": 5
-      },
-      {
-        "name": "2 João",
-        "slug": "2joao",
-        "abbrev": "2Jo",
-        "chapters": 1
-      },
-      {
-        "name": "3 João",
-        "slug": "3joao",
-        "abbrev": "3Jo",
-        "chapters": 1
-      },
-      {
-        "name": "Judas",
-        "slug": "judas",
-        "abbrev": "Jd",
-        "chapters": 1
-      },
-      {
-        "name": "Apocalipse",
-        "slug": "apocalipse",
-        "abbrev": "Ap",
-        "chapters": 22
-      }
+      "genesis",
+      "exodo",
+      "levitico",
+      "numeros",
+      "deuteronomio",
+      "josue",
+      "juizes",
+      "rute",
+      "1samuel",
+      "2samuel",
+      "1reis",
+      "2reis",
+      "1cronicas",
+      "2cronicas",
+      "esdras",
+      "neemias",
+      "ester",
+      "jo",
+      "salmos",
+      "proverbios",
+      "eclesiastes",
+      "canticos",
+      "isaias",
+      "jeremias",
+      "lamentacoes-de-jeremias",
+      "ezequiel",
+      "daniel",
+      "oseias",
+      "joel",
+      "amos",
+      "obadias",
+      "jonas",
+      "miqueias",
+      "naum",
+      "habacuque",
+      "sofonias",
+      "ageu",
+      "zacarias",
+      "malaquias",
+      "mateus",
+      "marcos",
+      "lucas",
+      "joao",
+      "atos",
+      "romanos",
+      "1corintios",
+      "2corintios",
+      "galatas",
+      "efesios",
+      "filipenses",
+      "colossenses",
+      "1tessalonicenses",
+      "2tessalonicenses",
+      "1timoteo",
+      "2timoteo",
+      "tito",
+      "filemom",
+      "hebreus",
+      "tiago",
+      "1pedro",
+      "2pedro",
+      "1joao",
+      "2joao",
+      "3joao",
+      "judas",
+      "apocalipse"
     ]
   },
   {
     "id": "tb",
     "name": "Tradução Brasileira",
     "books": [
-      {
-        "name": "Gênesis",
-        "slug": "genesis",
-        "abbrev": "Gn",
-        "chapters": 50
-      },
-      {
-        "name": "Êxodo",
-        "slug": "exodo",
-        "abbrev": "Êx",
-        "chapters": 40
-      },
-      {
-        "name": "Levítico",
-        "slug": "levitico",
-        "abbrev": "Lv",
-        "chapters": 27
-      },
-      {
-        "name": "Números",
-        "slug": "numeros",
-        "abbrev": "Nm",
-        "chapters": 36
-      },
-      {
-        "name": "Deuteronômio",
-        "slug": "deuteronomio",
-        "abbrev": "Dt",
-        "chapters": 34
-      },
-      {
-        "name": "Josué",
-        "slug": "josue",
-        "abbrev": "Js",
-        "chapters": 24
-      },
-      {
-        "name": "Juízes",
-        "slug": "juizes",
-        "abbrev": "Jz",
-        "chapters": 21
-      },
-      {
-        "name": "Rute",
-        "slug": "rute",
-        "abbrev": "Rt",
-        "chapters": 4
-      },
-      {
-        "name": "1 Samuel",
-        "slug": "1samuel",
-        "abbrev": "1Sm",
-        "chapters": 31
-      },
-      {
-        "name": "2 Samuel",
-        "slug": "2samuel",
-        "abbrev": "2Sm",
-        "chapters": 24
-      },
-      {
-        "name": "1 Reis",
-        "slug": "1reis",
-        "abbrev": "1Rs",
-        "chapters": 22
-      },
-      {
-        "name": "2 Reis",
-        "slug": "2reis",
-        "abbrev": "2Rs",
-        "chapters": 25
-      },
-      {
-        "name": "1 Crônicas",
-        "slug": "1cronicas",
-        "abbrev": "1Cr",
-        "chapters": 29
-      },
-      {
-        "name": "2 Crônicas",
-        "slug": "2cronicas",
-        "abbrev": "2Cr",
-        "chapters": 36
-      },
-      {
-        "name": "Esdras",
-        "slug": "esdras",
-        "abbrev": "Ed",
-        "chapters": 10
-      },
-      {
-        "name": "Neemias",
-        "slug": "neemias",
-        "abbrev": "Ne",
-        "chapters": 13
-      },
-      {
-        "name": "Ester",
-        "slug": "ester",
-        "abbrev": "Et",
-        "chapters": 10
-      },
-      {
-        "name": "Jó",
-        "slug": "jo",
-        "abbrev": "Jó",
-        "chapters": 42
-      },
-      {
-        "name": "Salmos",
-        "slug": "salmos",
-        "abbrev": "Sl",
-        "chapters": 150
-      },
-      {
-        "name": "Provérbios",
-        "slug": "proverbios",
-        "abbrev": "Pv",
-        "chapters": 31
-      },
-      {
-        "name": "Eclesiastes",
-        "slug": "eclesiastes",
-        "abbrev": "Ec",
-        "chapters": 12
-      },
-      {
-        "name": "Cânticos",
-        "slug": "canticos",
-        "abbrev": "Ct",
-        "chapters": 8
-      },
-      {
-        "name": "Isaías",
-        "slug": "isaias",
-        "abbrev": "Is",
-        "chapters": 66
-      },
-      {
-        "name": "Jeremias",
-        "slug": "jeremias",
-        "abbrev": "Jr",
-        "chapters": 52
-      },
-      {
-        "name": "Lamentações de Jeremias",
-        "slug": "lamentacoes-de-jeremias",
-        "abbrev": "Lm",
-        "chapters": 5
-      },
-      {
-        "name": "Ezequiel",
-        "slug": "ezequiel",
-        "abbrev": "Ez",
-        "chapters": 48
-      },
-      {
-        "name": "Daniel",
-        "slug": "daniel",
-        "abbrev": "Dn",
-        "chapters": 12
-      },
-      {
-        "name": "Oséias",
-        "slug": "oseias",
-        "abbrev": "Os",
-        "chapters": 14
-      },
-      {
-        "name": "Joel",
-        "slug": "joel",
-        "abbrev": "Jl",
-        "chapters": 3
-      },
-      {
-        "name": "Amós",
-        "slug": "amos",
-        "abbrev": "Am",
-        "chapters": 9
-      },
-      {
-        "name": "Obadias",
-        "slug": "obadias",
-        "abbrev": "Ob",
-        "chapters": 1
-      },
-      {
-        "name": "Jonas",
-        "slug": "jonas",
-        "abbrev": "Jn",
-        "chapters": 4
-      },
-      {
-        "name": "Miquéias",
-        "slug": "miqueias",
-        "abbrev": "Mq",
-        "chapters": 7
-      },
-      {
-        "name": "Naum",
-        "slug": "naum",
-        "abbrev": "Na",
-        "chapters": 3
-      },
-      {
-        "name": "Habacuque",
-        "slug": "habacuque",
-        "abbrev": "Hc",
-        "chapters": 3
-      },
-      {
-        "name": "Sofonias",
-        "slug": "sofonias",
-        "abbrev": "Sf",
-        "chapters": 3
-      },
-      {
-        "name": "Ageu",
-        "slug": "ageu",
-        "abbrev": "Ag",
-        "chapters": 2
-      },
-      {
-        "name": "Zacarias",
-        "slug": "zacarias",
-        "abbrev": "Zc",
-        "chapters": 14
-      },
-      {
-        "name": "Malaquias",
-        "slug": "malaquias",
-        "abbrev": "Ml",
-        "chapters": 4
-      },
-      {
-        "name": "Mateus",
-        "slug": "mateus",
-        "abbrev": "Mt",
-        "chapters": 28
-      },
-      {
-        "name": "Marcos",
-        "slug": "marcos",
-        "abbrev": "Mc",
-        "chapters": 16
-      },
-      {
-        "name": "Lucas",
-        "slug": "lucas",
-        "abbrev": "Lc",
-        "chapters": 24
-      },
-      {
-        "name": "João",
-        "slug": "joao",
-        "abbrev": "Jo",
-        "chapters": 21
-      },
-      {
-        "name": "Atos",
-        "slug": "atos",
-        "abbrev": "At",
-        "chapters": 28
-      },
-      {
-        "name": "Romanos",
-        "slug": "romanos",
-        "abbrev": "Rm",
-        "chapters": 16
-      },
-      {
-        "name": "1 Coríntios",
-        "slug": "1corintios",
-        "abbrev": "1Co",
-        "chapters": 16
-      },
-      {
-        "name": "2 Coríntios",
-        "slug": "2corintios",
-        "abbrev": "2Co",
-        "chapters": 13
-      },
-      {
-        "name": "Gálatas",
-        "slug": "galatas",
-        "abbrev": "Gl",
-        "chapters": 6
-      },
-      {
-        "name": "Efésios",
-        "slug": "efesios",
-        "abbrev": "Ef",
-        "chapters": 6
-      },
-      {
-        "name": "Filipenses",
-        "slug": "filipenses",
-        "abbrev": "Fp",
-        "chapters": 4
-      },
-      {
-        "name": "Colossenses",
-        "slug": "colossenses",
-        "abbrev": "Cl",
-        "chapters": 4
-      },
-      {
-        "name": "1 Tessalonicenses",
-        "slug": "1tessalonicenses",
-        "abbrev": "1Ts",
-        "chapters": 5
-      },
-      {
-        "name": "2 Tessalonicenses",
-        "slug": "2tessalonicenses",
-        "abbrev": "2Ts",
-        "chapters": 3
-      },
-      {
-        "name": "1 Timóteo",
-        "slug": "1timoteo",
-        "abbrev": "1Tn",
-        "chapters": 6
-      },
-      {
-        "name": "2 Timóteo",
-        "slug": "2timoteo",
-        "abbrev": "2Tm",
-        "chapters": 4
-      },
-      {
-        "name": "Tito",
-        "slug": "tito",
-        "abbrev": "Tt",
-        "chapters": 3
-      },
-      {
-        "name": "Filemom",
-        "slug": "filemom",
-        "abbrev": "Fm",
-        "chapters": 1
-      },
-      {
-        "name": "Hebreus",
-        "slug": "hebreus",
-        "abbrev": "Hb",
-        "chapters": 13
-      },
-      {
-        "name": "Tiago",
-        "slug": "tiago",
-        "abbrev": "Tg",
-        "chapters": 5
-      },
-      {
-        "name": "1 Pedro",
-        "slug": "1pedro",
-        "abbrev": "1Pe",
-        "chapters": 5
-      },
-      {
-        "name": "2 Pedro",
-        "slug": "2pedro",
-        "abbrev": "2Pe",
-        "chapters": 3
-      },
-      {
-        "name": "1 João",
-        "slug": "1joao",
-        "abbrev": "1Jo",
-        "chapters": 5
-      },
-      {
-        "name": "2 João",
-        "slug": "2joao",
-        "abbrev": "2Jo",
-        "chapters": 1
-      },
-      {
-        "name": "3 João",
-        "slug": "3joao",
-        "abbrev": "3Jo",
-        "chapters": 1
-      },
-      {
-        "name": "Judas",
-        "slug": "judas",
-        "abbrev": "Jd",
-        "chapters": 1
-      },
-      {
-        "name": "Apocalipse",
-        "slug": "apocalipse",
-        "abbrev": "Ap",
-        "chapters": 22
-      }
+      "genesis",
+      "exodo",
+      "levitico",
+      "numeros",
+      "deuteronomio",
+      "josue",
+      "juizes",
+      "rute",
+      "1samuel",
+      "2samuel",
+      "1reis",
+      "2reis",
+      "1cronicas",
+      "2cronicas",
+      "esdras",
+      "neemias",
+      "ester",
+      "jo",
+      "salmos",
+      "proverbios",
+      "eclesiastes",
+      "canticos",
+      "isaias",
+      "jeremias",
+      "lamentacoes-de-jeremias",
+      "ezequiel",
+      "daniel",
+      "oseias",
+      "joel",
+      "amos",
+      "obadias",
+      "jonas",
+      "miqueias",
+      "naum",
+      "habacuque",
+      "sofonias",
+      "ageu",
+      "zacarias",
+      "malaquias",
+      "mateus",
+      "marcos",
+      "lucas",
+      "joao",
+      "atos",
+      "romanos",
+      "1corintios",
+      "2corintios",
+      "galatas",
+      "efesios",
+      "filipenses",
+      "colossenses",
+      "1tessalonicenses",
+      "2tessalonicenses",
+      "1timoteo",
+      "2timoteo",
+      "tito",
+      "filemom",
+      "hebreus",
+      "tiago",
+      "1pedro",
+      "2pedro",
+      "1joao",
+      "2joao",
+      "3joao",
+      "judas",
+      "apocalipse"
     ]
   }
 ]
