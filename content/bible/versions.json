@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": "nvt",
     "name": "Nova Versão Transformadora",
@@ -7,49 +7,57 @@
         "name": "Gênesis",
         "slug": "genesis",
         "abbrev": "Gn",
-        "chapters": 50
+        "chapters": 50,
+        "description": "O primeiro livro da Bíblia, que narra a criação do mundo e a história dos patriarcas como Abraão, Isaque e Jacó."
       },
       {
         "name": "Êxodo",
         "slug": "exodo",
         "abbrev": "Êx",
-        "chapters": 40
+        "chapters": 40,
+        "description": "Narra a libertação dos israelitas da escravidão no Egito e a jornada pelo deserto sob a liderança de Moisés."
       },
       {
         "name": "Levítico",
         "slug": "levitico",
         "abbrev": "Lv",
-        "chapters": 27
+        "chapters": 27,
+        "description": "Contém leis e regulamentos para os sacrifícios, a adoração e a vida dos levitas, a tribo sacerdotal de Israel."
       },
       {
         "name": "Números",
         "slug": "numeros",
         "abbrev": "Nm",
-        "chapters": 36
+        "chapters": 36,
+        "description": "Descreve a jornada dos israelitas pelo deserto, incluindo censos, leis e eventos como a rebelião de Corá."
       },
       {
         "name": "Deuteronômio",
         "slug": "deuteronomio",
         "abbrev": "Dt",
-        "chapters": 34
+        "chapters": 34,
+        "description": "Contém os discursos finais de Moisés, revisando a lei e preparando Israel para entrar na Terra Prometida."
       },
       {
         "name": "Josué",
         "slug": "josue",
         "abbrev": "Js",
-        "chapters": 24
+        "chapters": 24,
+        "description": "Relata a conquista de Canaã pelos israelitas sob a liderança de Josué, sucessor de Moisés."
       },
       {
         "name": "Juízes",
         "slug": "juizes",
         "abbrev": "Jz",
-        "chapters": 21
+        "chapters": 21,
+        "description": "Descreve o período de transição em Israel, marcado por ciclos de pecado, opressão, arrependimento e libertação por juízes como Gideão e Sansão."
       },
       {
         "name": "Rute",
         "slug": "rute",
         "abbrev": "Rt",
-        "chapters": 4
+        "chapters": 4,
+        "description": "Uma história de lealdade e redenção, mostrando como Rute, uma moabita, se tornou parte da linhagem de Davi."
       },
       {
         "name": "1 Samuel",
