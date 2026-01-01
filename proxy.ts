@@ -29,7 +29,7 @@ const allowedOrigins = [
   process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
 ]
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname
   const origin = request.headers.get('origin') || request.headers.get('referer')
 
