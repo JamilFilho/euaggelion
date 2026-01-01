@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
+import { Article } from "@/components/content/Article";
 
 interface Props {
   params: Promise<{
@@ -23,22 +24,13 @@ export default async function BibleBookPage({ params }: Props) {
   }
 
   return (
-    <Page.Root>
-      <Page.Header>
-        <div className="flex items-center justify-between w-full mb-4">
-          <Link href={`/biblia/${versionId}`}>
-            <Button variant="ghost" size="sm">
-              <ChevronLeft className="mr-2 h-4 w-4" />
-              Voltar para livros
-            </Button>
-          </Link>
-          <span className="text-sm font-medium text-muted-foreground">
-            {version.name}
-          </span>
-        </div>
-        <Page.Title content={book.name} />
-        <Page.Description content={`Selecione um capítulo para ler (${book.chapters.length} capítulos disponíveis)`} />
-      </Page.Header>
+    <Article.Root>
+      <Article.Header>
+        <Article.Group>
+          <Article.Title content={book.name} />
+          <Article.Description content={"test"}/>
+        </Article.Group>
+      </Article.Header>
       
       <Page.Content>
         <div className="grid grid-cols-5 sm:grid-cols-7 md:grid-cols-10 gap-2">
@@ -56,6 +48,6 @@ export default async function BibleBookPage({ params }: Props) {
           })}
         </div>
       </Page.Content>
-    </Page.Root>
+    </Article.Root>
   );
 }
