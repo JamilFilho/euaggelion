@@ -7,6 +7,9 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SearchContent } from "@/components/content/search";
 import { SiteNavigation } from "@/components/layout/SiteNavigation";
 import { PushNotificationManager } from "@/components/pushNotification";
+import { BibleVersionProvider } from "@/lib/context/BibleVersionContext";
+import { getBibleVersions } from "@/lib/getBible";
+import { Suspense } from "react";
 
 // Use os componentes onde necessário
 
@@ -20,6 +23,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {
+  const versions = getBibleVersions();
+
   return (
     <html lang="pt-br">
       <head>
@@ -28,23 +33,27 @@ export default function RootLayout({ children }: Readonly<{children: React.React
         <link rel="me" href="https://mastodon.social/@euaggelion" />
       </head>
       <body className="bg-secondary selection:bg-accent selection:text-secondary black:selection:text-foreground">
-        <SiteHeader.Root>
-          <SiteHeader.Title text="Euaggelion" logo="/euaggelion-logo.svg" />
-          
-          <SiteNavigation.Root>
-            <SiteNavigation.Menu />
-            <div className="h-full flex items-center justify-center gap-4 ml-auto">
-              <PushNotificationManager />
-              <SearchContent />
-            </div>
-          </SiteNavigation.Root>
+        <Suspense fallback={null}>
+          <BibleVersionProvider versions={versions}>
+            <SiteHeader.Root>
+              <SiteHeader.Title text="Euaggelion" logo="/euaggelion-logo.svg" />
+              
+              <SiteNavigation.Root>
+                <SiteNavigation.Menu />
+                <div className="h-full flex items-center justify-center gap-4 ml-auto">
+                  <PushNotificationManager />
+                  <SearchContent />
+                </div>
+              </SiteNavigation.Root>
 
-          <SiteHeader.Navigation icon={Menu} />
-        </SiteHeader.Root>
+              <SiteHeader.Navigation icon={Menu} />
+            </SiteHeader.Root>
 
-        <main>
-          {children}
-        </main>
+            <main>
+              {children}
+            </main>
+          </BibleVersionProvider>
+        </Suspense>
         
         <SiteFooter.Root>
           <SiteFooter.Menu />

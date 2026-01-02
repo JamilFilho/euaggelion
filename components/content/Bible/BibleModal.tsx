@@ -25,7 +25,13 @@ interface BibleModalProps {
 }
 
 export default function BibleModal({ isOpen, onClose, reference }: BibleModalProps) {
-  const { currentVersion: contextVersion } = useBibleVersion();
+  let contextVersion;
+  try {
+    const context = useBibleVersion();
+    contextVersion = context.currentVersion;
+  } catch (e) {
+    contextVersion = "nvt";
+  }
   const currentVersion = contextVersion || "nvt";
   const [content, setContent] = useState<{ chapter: number; verses: { num: number; text: string }[] }[]>([]);
   const [loading, setLoading] = useState(false);
