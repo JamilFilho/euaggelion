@@ -1,7 +1,5 @@
-import { Page } from "@/components/content/Page";
 import { getBibleVersion, getBibleVersions } from "@/lib/getBible";
 import Link from "next/link";
-import { Article } from "@/components/content/Article";
 import { Bible } from "@/components/content/Bible";
 
 interface Props {

@@ -1,8 +1,6 @@
-import { Page } from "@/components/content/Page";
 import { getBibleBook, getBibleVersion } from "@/lib/getBible";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Article } from "@/components/content/Article";
 import { ArrowRight } from "lucide-react";
 import { Bible } from "@/components/content/Bible";
 
@@ -11,6 +9,28 @@ interface Props {
     version: string;
     book: string;
   }>;
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { version: versionId, book: bookSlug } = await params;
+  const version = getBibleVersion(versionId);
+  const book = getBibleBook(versionId, bookSlug);
+
+  if (!version || !book) {
+    return {
+      title: "Livro não encontrado",
+    };
+  }
+
+  return {
+    title: `${book.name} | ${version.name} | Euaggelion`,
+    description: book.description,
+    openGraph: {
+      title: `${book.name} | ${version.name} | Euaggelion`,
+      description: book.description,
+      url: `https://euaggelion.com.br/biblia/${versionId}/${bookSlug}`,
+    },
+  };
 }
 
 export default async function BibleBookPage({ params }: Props) {
