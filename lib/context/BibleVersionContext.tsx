@@ -28,18 +28,24 @@ export function BibleVersionProvider({ children, versions }: { children: ReactNo
     const versionFromQuery = searchParams.get("version");
     
     // Only set the version from URL if it exists; otherwise, use query params, localStorage, or default
-    if (versionFromUrl) {
+    if (versionFromUrl && versionFromUrl !== currentVersion) {
       setCurrentVersion(versionFromUrl);
       localStorage.setItem("bibleVersion", versionFromUrl);
-    } else if (versionFromQuery) {
+    } else if (versionFromQuery && versionFromQuery !== currentVersion) {
       setCurrentVersion(versionFromQuery);
       localStorage.setItem("bibleVersion", versionFromQuery);
     } else if (currentVersion === null) {
       // Try to get the version from localStorage, or default to NVT
       const storedVersion = localStorage.getItem("bibleVersion");
-      setCurrentVersion(storedVersion || "nvt");
+      const defaultVersion = storedVersion || "nvt";
+      setCurrentVersion(defaultVersion);
+      
+      // If we are at /biblia without a version, we might want to redirect or just set the state
+      if (pathname === "/biblia" && !versionFromQuery) {
+        // Optional: router.push(`/biblia?version=${defaultVersion}`);
+      }
     }
-  }, [pathname, searchParams]);
+  }, [pathname, searchParams, currentVersion]);
 
   const handleVersionChange = (versionId: string | null) => {
     if (!versionId) return;

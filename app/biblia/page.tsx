@@ -10,9 +10,9 @@ interface Props {
 
 export default async function BibleIndexPage({ searchParams }: Props) {
   const { version: versionId } = await searchParams;
-  const versions = getBibleVersions();
   
   // Use the selected version from URL, or default to NVT
+  // Note: The client-side context will handle persistence, but for SSR we use the query param
   const selectedVersion = versionId 
     ? getBibleVersion(versionId) 
     : getBibleVersion("nvt");
