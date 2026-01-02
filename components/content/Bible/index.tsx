@@ -15,6 +15,8 @@ import BiblePage from "./BiblePage";
 import BibleRoot from "./BibleRoot";
 import BibleTitle from "./BibleTitle";
 import BibleBookChapters from "./BookChapters";
+import BibliaLink from "./BibliaLink";
+import BibleModal from "./BibleModal";
 
 export const Bible = {   
     Root: BibleRoot,
@@ -33,5 +35,7 @@ export const Bible = {
     BooksHeader: BibleBooksHeader,
     BooksTitle: BibleBooksTitle,
     BooksItems: BibleBooksItems,
-    BookChapters: BibleBookChapters
+    BookChapters: BibleBookChapters,
+    Link: BibliaLink,
+    Modal: BibleModal
 }
