@@ -34,42 +34,61 @@ export default function BibliaLink({ children }: BibliaLinkProps) {
           regex.lastIndex = 0;
 
           while ((match = regex.exec(node)) !== null) {
-            if (match.index > lastIndex) {
-              parts.push(node.substring(lastIndex, match.index));
-            }
-
-            const fullMatch = match[0];
-            const bookName = match[1].toLowerCase();
-            const refDetails = match[2];
+            let fullMatch = match[0];
+            let bookNameMatch = match[1];
+            let refDetails = match[2];
+            
+            // Limpeza de pontuação no final da referência (detalhes)
+            // Remove parênteses, pontos, vírgulas, espaços e travessões extras no final
+            const cleanedRefDetails = refDetails.replace(/[\s\.\,\;\:\)\-\—]+$/, '');
+            const trailingPunctuation = refDetails.substring(cleanedRefDetails.length);
+            
+            const bookName = bookNameMatch.toLowerCase();
             const bookSlug = bookMap[bookName];
 
             if (bookSlug) {
+              // Texto antes do match
+              if (match.index > lastIndex) {
+                parts.push(node.substring(lastIndex, match.index));
+              }
+
               const reference: BibleReference = {
-                book: match[1],
+                book: bookNameMatch,
                 bookSlug,
                 chapters: [],
-                fullMatch
+                fullMatch: `${bookNameMatch} ${cleanedRefDetails}`
               };
               
               parts.push(
                 <span
-                  key={`${match.index}-${fullMatch}`}
+                  key={`${match.index}-${reference.fullMatch}`}
                   onClick={(e) => {
                     import("@/lib/bibleParser").then(({ parseReferenceDetails }) => {
-                      reference.chapters = parseReferenceDetails(refDetails);
+                      reference.chapters = parseReferenceDetails(cleanedRefDetails);
                       handleRefClick(e as any, reference);
                     });
                   }}
                   className="text-accent hover:underline decoration-dotted underline-offset-4 font-medium cursor-pointer"
                 >
-                  {fullMatch}
+                  {reference.fullMatch}
                 </span>
               );
-            } else {
-              parts.push(fullMatch);
-            }
 
-            lastIndex = regex.lastIndex;
+              // Adiciona a pontuação de volta como texto normal
+              if (trailingPunctuation) {
+                parts.push(trailingPunctuation);
+              }
+              
+              lastIndex = match.index + match[0].length;
+            } else {
+              // Se não for um livro válido, ignora e continua
+              if (match.index > lastIndex) {
+                parts.push(node.substring(lastIndex, match.index + match[0].length));
+              } else {
+                parts.push(match[0]);
+              }
+              lastIndex = match.index + match[0].length;
+            }
           }
 
           if (lastIndex < node.length) {
@@ -82,7 +101,8 @@ export default function BibliaLink({ children }: BibliaLinkProps) {
         if (React.isValidElement(node)) {
           const children = (node.props as any).children;
           if (children) {
-            if (node.type === 'a' || node.type === 'button') return node;
+            // Ignorar links, botões e blockquotes
+            if (node.type === 'a' || node.type === 'button' || node.type === 'blockquote') return node;
 
             return React.cloneElement(node, {
               ...node.props,
