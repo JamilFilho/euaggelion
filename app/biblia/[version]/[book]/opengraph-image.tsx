@@ -12,7 +12,7 @@ export default async function Image({ params }: { params: Promise<{ version: str
   const version = getBibleVersion(versionId)
   const book = getBibleBook(versionId, bookSlug)
 
-  if (!book) return new ImageResponse(<div>Livro não encontrado</div>)
+  if (!book) return new ImageResponse(<div style={{ display: 'flex' }}>Livro não encontrado</div>)
 
   return new ImageResponse(
     (

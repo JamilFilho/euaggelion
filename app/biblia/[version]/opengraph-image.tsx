@@ -11,7 +11,7 @@ export default async function Image({ params }: { params: Promise<{ version: str
   const { version: versionId } = await params
   const version = getBibleVersion(versionId)
 
-  if (!version) return new ImageResponse(<div>Versão não encontrada</div>)
+  if (!version) return new ImageResponse(<div style={{ display: 'flex' }}>Versão não encontrada</div>)
 
   return new ImageResponse(
     (
