@@ -1,6 +1,7 @@
 import { getBibleChapter, getBibleBook, getBibleVersion } from "@/lib/getBible";
 import { notFound } from "next/navigation";
 import { Article } from "@/components/content/Article";
+import VerseHighlighter from '@/components/content/Bible/VerseHighlighter';
 import { Bible } from "@/components/content/Bible";
 
 interface Props {
@@ -41,6 +42,7 @@ export default async function BibleChapterPage({ params }: Props) {
 
   return (
     <Bible.Root>
+      <VerseHighlighter />
       <Bible.Content>
           {verses.map((verse, index) => (
             <p id={`verse-${index + 1}`} key={index} className="p-4 hover:bg-black/20 transition-colors">

@@ -16,6 +16,7 @@ import { Badge } from '@/components/ui/badge';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import BibliaLink from '@/components/content/Bible/BibliaLink';
 
 interface Params {
   slug: string;
@@ -150,7 +151,9 @@ export default async function ArticlePage({
                 {found.reference.map((ref, index) => (
                   <li key={index}>
                   <Badge>
-                    {ref}
+                    <BibliaLink variant="link">
+                      {ref}
+                    </BibliaLink>
                   </Badge>
                   </li>
                 ))}
@@ -160,10 +163,12 @@ export default async function ArticlePage({
       </Article.Header>
 
       <Article.Content>
-        <MDXRemote 
-          source={content}
-          options={mdxOptions}
-        />
+        <BibliaLink>
+          <MDXRemote 
+            source={content}
+            options={mdxOptions}
+          />
+        </BibliaLink>
       </Article.Content>
       
       <Article.Footer>
