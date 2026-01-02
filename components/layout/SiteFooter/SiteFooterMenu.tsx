@@ -26,8 +26,7 @@ export function SiteFooterMenu() {
 
           <ul className="col-span-1 flex flex-col gap-2">
             <li className="text-lg font-bold mb-4">Ferramentas de Estudo</li>
-            <li><Link href="/f/leitor-biblico" title="Leitor Bíblico">Leitor Bíblico</Link></li>
-            <li><Link href="/f/versoes-biblicas" title="Versões Bíblicas">Versões Bíblicas</Link></li>
+            <li><Link href="/biblia" title="Bíblia Sagrada">Bíblia Sagrada</Link></li>
           </ul>
           
           <ul className="col-span-1 flex flex-col gap-2">

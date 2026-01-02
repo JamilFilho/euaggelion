@@ -9,10 +9,24 @@ Este documento descreve os hooks personalizados e utilitários utilizados no pro
 ### useSearch
 
 - **Localização**: `hooks/useSearch.tsx`
-- **Descrição**: Hook para funcionalidade de busca.
+- **Descrição**: Hook para busca fuzzy em conteúdo usando Fuse.js.
 - **Funcionalidades**:
-  - Fornece lógica para busca de conteúdo.
-  - Suporta filtros e ordenação.
+  - Busca em tempo real com Fuse.js
+  - Pesquisa em títulos, descrições e conteúdo
+  - Configuração de pesos para diferentes campos
+  - Limiar de relevância ajustável
+  - Carregamento assíncrono do índice de busca
+- **Parâmetros**:
+  - `query`: String de busca
+- **Retorno**: Array de itens correspondentes
+- **Configuração Fuse.js**:
+  - Título: peso 0.5 (mais importante)
+  - Descrição: peso 0.3
+  - Conteúdo: peso 0.2
+  - Limiar: 0.3 (máximo para correspondência)
+- **Integração**:
+  - Carrega índice de `/search-index.json`
+  - Usa cache do navegador para melhor desempenho
 
 ### Exemplo de Uso
 

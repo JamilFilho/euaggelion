@@ -1,0 +1,50 @@
+name: Notify Subscribers on Content Publish
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/articles/**'
+      - 'content/wiki/**'
+      - 'content/pages/**'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            content/articles/**
+            content/wiki/**
+            content/pages/**
+      
+      - name: Send webhook notification
+        if: steps.changed-files.outputs.any_changed == 'true'
+        env:
+          WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+        run: |
+          echo "Arquivos alterados:"
+          echo "${{ steps.changed-files.outputs.all_changed_files }}"
+          
+          curl -X POST "${WEBHOOK_URL}/api/tina-webhook" \
+            -H "Content-Type: application/json" \
+            -H "X-Webhook-Secret: ${WEBHOOK_SECRET}" \
+            -d "{\"files\": \"${{ steps.changed-files.outputs.all_changed_files }}\"}" \
+            --fail-with-body \
+            || echo "Falha ao enviar webhook (pode ser normal se não há subscriptions)"
+      
+      - name: Log completion
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          echo "Webhook enviado com sucesso"
+          echo "Total de arquivos processados: ${{ steps.changed-files.outputs.all_changed_files_count }}"
