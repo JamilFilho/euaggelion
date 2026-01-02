@@ -20,7 +20,7 @@ export async function getBookMap() {
 
 /**
  * Regex para capturar referências bíblicas
- * Suporta: Livro Cap:Ver, Ver; Cap:Ver-Ver, Ver
+ * Suporta: Livro Cap:Ver, Ver; Cap:Ver-Ver, Ver; Cap:Ver-Ver
  */
 export function getBibleRegex(bookNames: string[]) {
   // Ordena por comprimento decrescente para evitar que abreviações curtas
@@ -29,11 +29,14 @@ export function getBibleRegex(bookNames: string[]) {
   // Escapar nomes de livros para regex
   const escapedBooks = sorted.map(b => b.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
 
-  // Regex para capturar referências com capítulo e/ou versículos.
+  // Regex para capturar referências com múltiplos capítulos
   // Usa boundaries para garantir que não seja parte de outra palavra
-  // Captura formatos como: "Mateus 5:24,27", "João 3.16-17", ou apenas "Lucas 1".
-  // Após o capítulo, se houver versículos, aceitamos dígitos, vírgulas, traços e espaços.
-  return new RegExp(`\\b(${escapedBooks})\\b\\s+(\\d+(?:[:\\.]\\s*[\\d,\\-–—\\s]+)?)`, 'gi');
+  // Captura formatos como: "Mateus 5:24,27", "João 3.16-17; 4:1-5", ou apenas "Lucas 1".
+  // Suporta múltiplos capítulos separados por ponto-e-vírgula
+  // Pattern: Livro + 1º capítulo + (opcional: ; capítulos adicionais)
+  const singleChapter = `\\d+(?:[:\\.]\\s*[\\d,\\-–—\\s]+)?`;
+  const multipleChapters = `${singleChapter}(?:\\s*;\\s*${singleChapter})*`;
+  return new RegExp(`\\b(${escapedBooks})\\b\\s+(${multipleChapters})`, 'gi');
 }
 
 /**
@@ -79,13 +82,15 @@ export function parseReferenceDetails(refStr: string) {
     verseParts.forEach(vPart => {
       const vTrimmed = vPart.trim();
       if (!vTrimmed) return;
-      if (vTrimmed.includes('-')) {
-        const [start, end] = vTrimmed.split('-').map(n => parseInt(n));
+      // Normalizar todos os tipos de hífens/travessões (-, –, —) para um único tipo
+      const normalizedVerse = vTrimmed.replace(/[\-–—]/g, '-');
+      if (normalizedVerse.includes('-')) {
+        const [start, end] = normalizedVerse.split('-').map(n => parseInt(n.trim()));
         if (!isNaN(start) && !isNaN(end)) {
           ranges.push([start, end]);
         }
       } else {
-        const vNum = parseInt(vTrimmed);
+        const vNum = parseInt(normalizedVerse);
         if (!isNaN(vNum)) {
           verses.push(vNum);
         }

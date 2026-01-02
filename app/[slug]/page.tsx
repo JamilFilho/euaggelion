@@ -150,11 +150,9 @@ export default async function ArticlePage({
               <ul className="flex flex-row flex-wrap justify-start gap-2">
                 {found.reference.map((ref, index) => (
                   <li key={index}>
-                  <Badge>
                     <BibliaLink variant="link">
                       {ref}
                     </BibliaLink>
-                  </Badge>
                   </li>
                 ))}
                 </ul>

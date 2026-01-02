@@ -18,6 +18,7 @@ export default function VerseHighlighter() {
       const el = document.getElementById(id);
       if (el) {
         el.classList.add("bg-yellow-600");
+        el.classList.add("hover:text-foreground");
         el.classList.add("text-secondary");
       }
     });
@@ -27,6 +28,7 @@ export default function VerseHighlighter() {
         const el = document.getElementById(id);
         if (el) {
           el.classList.remove("bg-yellow-600");
+          el.classList.remove("hover:text-foreground");
           el.classList.remove("text-secondary");
         }
       });
