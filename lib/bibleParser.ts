@@ -23,12 +23,17 @@ export async function getBookMap() {
  * Suporta: Livro Cap:Ver, Ver; Cap:Ver-Ver, Ver
  */
 export function getBibleRegex(bookNames: string[]) {
+  // Ordena por comprimento decrescente para evitar que abreviações curtas
+  // capturem trechos de nomes maiores (ex: 'os' vs 'oséias').
+  const sorted = [...bookNames].sort((a, b) => b.length - a.length);
   // Escapar nomes de livros para regex
-  const escapedBooks = bookNames.map(b => b.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
-  
-  // Regex para capturar: (Livro) (Capítulo):(Versículos e Capítulos subsequentes)
-  // Ex: Mateus 2:1; João 3:16-17, 18; 4:1
-  return new RegExp(`(${escapedBooks})\\s+(\\d+:\\d+[^a-zA-Z]*)`, 'gi');
+  const escapedBooks = sorted.map(b => b.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+
+  // Regex para capturar referências com capítulo e/ou versículos.
+  // Usa boundaries para garantir que não seja parte de outra palavra
+  // Captura formatos como: "Mateus 5:24,27", "João 3.16-17", ou apenas "Lucas 1".
+  // Após o capítulo, se houver versículos, aceitamos dígitos, vírgulas, traços e espaços.
+  return new RegExp(`\\b(${escapedBooks})\\b\\s+(\\d+(?:[:\\.]\\s*[\\d,\\-–—\\s]+)?)`, 'gi');
 }
 
 /**
@@ -44,15 +49,21 @@ export function parseReferenceDetails(refStr: string) {
     const trimmedPart = part.trim();
     if (!trimmedPart) return;
 
-    // Verifica se tem capítulo definido (ex: "1:1-3") ou se é continuação (ex: "10")
-    const hasChapter = trimmedPart.includes(':');
+    // Verifica se tem capítulo definido (ex: "1:1" ou "1.1") ou se é continuação (ex: "10")
     let chapterNum: number;
     let versesStr: string;
 
-    if (hasChapter) {
-      const [c, v] = trimmedPart.split(':');
-      chapterNum = parseInt(c);
-      versesStr = v;
+    const chapterMatch = trimmedPart.match(/^(\d+)\s*[:\.]\s*(.*)$/);
+    const chapterOnlyMatch = trimmedPart.match(/^(\d+)$/);
+
+    if (chapterMatch) {
+      chapterNum = parseInt(chapterMatch[1]);
+      versesStr = chapterMatch[2];
+      lastChapter = chapterNum;
+    } else if (chapterOnlyMatch) {
+      // Apenas capítulo especificado (ex: "1") -> capítulo inteiro
+      chapterNum = parseInt(chapterOnlyMatch[1]);
+      versesStr = "";
       lastChapter = chapterNum;
     } else {
       chapterNum = lastChapter;
@@ -67,6 +78,7 @@ export function parseReferenceDetails(refStr: string) {
     const verseParts = versesStr.split(',');
     verseParts.forEach(vPart => {
       const vTrimmed = vPart.trim();
+      if (!vTrimmed) return;
       if (vTrimmed.includes('-')) {
         const [start, end] = vTrimmed.split('-').map(n => parseInt(n));
         if (!isNaN(start) && !isNaN(end)) {

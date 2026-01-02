@@ -19,6 +19,7 @@ export const BIBLE_BOOKS_MAP: Record<string, string> = {
   "ester": "ester", "et": "ester",
   "jó": "jo",
   "salmos": "salmos", "sl": "salmos",
+  "salmo": "salmos",
   "provérbios": "proverbios", "pv": "proverbios",
   "eclesiastes": "eclesiastes", "ec": "eclesiastes",
   "cânticos": "canticos", "ct": "canticos",
