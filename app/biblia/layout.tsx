@@ -3,6 +3,7 @@ import { getBibleVersions } from "@/lib/getBible";
 import { BibleVersionProvider } from "@/lib/context/BibleVersionContext";
 import BibleVersionSelector from "@/components/content/Bible/BibleVersionSelector";
 import BibleHomeLink from "@/components/content/Bible/BibleHomeLink";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Bíblia | Euaggelion",
@@ -28,15 +29,17 @@ export default function BibleLayout({ children }: Readonly<{children: React.Reac
     const versions = getBibleVersions();
     
     return(
-        <BibleVersionProvider versions={versions}>
-            <section className="mt-20 md:mt-0">
-                <header className="print:hidden px-10 flex flex-row justify-between items-center gap-2 border-b border-ring/20">
-                    <BibleHomeLink />
-                    <BibleVersionSelector />
-                </header>
+        <Suspense fallback={null}>
+            <BibleVersionProvider versions={versions}>
+                <section className="mt-20 md:mt-0">
+                    <header className="print:hidden px-10 flex flex-row justify-between items-center gap-2 border-b border-ring/20">
+                        <BibleHomeLink />
+                        <BibleVersionSelector />
+                    </header>
 
-                {children}
-            </section>
-        </BibleVersionProvider>
+                    {children}
+                </section>
+            </BibleVersionProvider>
+        </Suspense>
     )
 }

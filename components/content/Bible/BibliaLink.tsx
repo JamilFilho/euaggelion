@@ -1,0 +1,122 @@
+"use client";
+
+import React, { useState, useEffect, ReactNode } from "react";
+import { findBibleReferences, BibleReference, getBookMap, getBibleRegex } from "@/lib/bibleParser";
+import BibleModal from "./BibleModal";
+
+interface BibliaLinkProps {
+  children: ReactNode;
+}
+
+export default function BibliaLink({ children }: BibliaLinkProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedRef, setSelectedRef] = useState<BibleReference | null>(null);
+  const [processedContent, setProcessedContent] = useState<ReactNode>(children);
+
+  const handleRefClick = (e: React.MouseEvent, ref: BibleReference) => {
+    e.preventDefault();
+    setSelectedRef(ref);
+    setIsModalOpen(true);
+  };
+
+  useEffect(() => {
+    const processContent = async () => {
+      const bookMap = await getBookMap();
+      const bookNames = Object.keys(bookMap);
+      const regex = getBibleRegex(bookNames);
+
+      const walkAndReplace = (node: ReactNode): ReactNode => {
+        if (typeof node === "string") {
+          const parts: ReactNode[] = [];
+          let lastIndex = 0;
+          let match;
+
+          // Reset regex index
+          regex.lastIndex = 0;
+
+          while ((match = regex.exec(node)) !== null) {
+            // Texto antes do match
+            if (match.index > lastIndex) {
+              parts.push(node.substring(lastIndex, match.index));
+            }
+
+            const fullMatch = match[0];
+            const bookName = match[1].toLowerCase();
+            const refDetails = match[2];
+            const bookSlug = bookMap[bookName];
+
+            if (bookSlug) {
+              const reference: BibleReference = {
+                book: match[1],
+                bookSlug,
+                chapters: [], // Será preenchido no clique para economizar processamento ou via util
+                fullMatch
+              };
+
+              // Importar e usar a lógica de parsing de detalhes aqui para o objeto de referência
+              // Para simplificar, vamos re-parsear no clique ou passar a lógica
+              
+              parts.push(
+                <a
+                  key={match.index}
+                  href="#"
+                  onClick={(e) => {
+                    // Re-parsear detalhes no clique para garantir precisão
+                    import("@/lib/bibleParser").then(({ parseReferenceDetails }) => {
+                      reference.chapters = parseReferenceDetails(refDetails);
+                      handleRefClick(e, reference);
+                    });
+                  }}
+                  className="text-accent hover:underline decoration-dotted underline-offset-4 font-medium cursor-pointer"
+                >
+                  {fullMatch}
+                </a>
+              );
+            } else {
+              parts.push(fullMatch);
+            }
+
+            lastIndex = regex.lastIndex;
+          }
+
+          if (lastIndex < node.length) {
+            parts.push(node.substring(lastIndex));
+          }
+
+          return parts.length > 0 ? <>{parts}</> : node;
+        }
+
+        if (React.isValidElement(node) && node.props.children) {
+          // Não processar links já existentes ou componentes específicos se necessário
+          if (node.type === 'a' || node.type === 'button') return node;
+
+          return React.cloneElement(node, {
+            ...node.props,
+            children: React.Children.map(node.props.children, walkAndReplace),
+          });
+        }
+
+        if (Array.isArray(node)) {
+          return node.map(walkAndReplace);
+        }
+
+        return node;
+      };
+
+      setProcessedContent(React.Children.map(children, walkAndReplace));
+    };
+
+    processContent();
+  }, [children]);
+
+  return (
+    <>
+      {processedContent}
+      <BibleModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        reference={selectedRef}
+      />
+    </>
+  );
+}
