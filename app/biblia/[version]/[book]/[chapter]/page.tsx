@@ -1,6 +1,7 @@
 import { getBibleChapter, getBibleBook, getBibleVersion } from "@/lib/getBible";
 import { notFound } from "next/navigation";
 import { Article } from "@/components/content/Article";
+import { Bible } from "@/components/content/Bible";
 
 interface Props {
   params: Promise<{
@@ -25,7 +26,6 @@ export default async function BibleChapterPage({ params }: Props) {
   const hasPrev = chapterNum > 1;
   const hasNext = chapterNum < book.chapters.length;
 
-  // Create navigation objects for Article.Navigation
   const navigation = {
     prev: hasPrev ? {
       slug: `biblia/${versionId}/${bookSlug}/${chapterNum - 1}`,
@@ -40,31 +40,31 @@ export default async function BibleChapterPage({ params }: Props) {
   };
 
   return (
-    <Article.Root>
-      <Article.Header>
-        <Article.Group>
-        <Article.Title content={`${book.name} ${chapterNum}`} />
-        </Article.Group>
-      </Article.Header>
-      
-      <Article.Content>
+    <Bible.Root>
+      <Bible.Content>
           {verses.map((verse, index) => (
-            <p id={`verse-${index + 1}`} key={index} className="flex gap-4">
-              <span className="text-sm font-bold text-muted-foreground mt-1 min-w-[1.5rem]">
+            <p id={`verse-${index + 1}`} key={index} className="p-4 hover:bg-black/20 transition-colors">
+              <sup className="text-sm font-bold text-accent mt-1 mr-2">
                 {index + 1}
-              </span>
+              </sup>
               <span>{verse}</span>
             </p>
           ))}
-      </Article.Content>
+      </Bible.Content>
 
       <Article.Footer>
-        <Article.Navigation
-          prev={navigation.prev}
-          next={navigation.next}
-          category={book.name}
+        <Article.Actions
+          excerpt=""
+          link=""
+          headline={`Bíblia Sagrada - ${book.name} ${chapterNum}`}
         />
       </Article.Footer>
-    </Article.Root>
+      
+      <Article.Navigation
+        prev={navigation.prev}
+        next={navigation.next}
+        category={book.name}
+      />
+    </Bible.Root>
   );
 }

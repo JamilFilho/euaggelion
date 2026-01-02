@@ -1,3 +1,4 @@
+import { Bible } from "@/components/content/Bible";
 import { Page } from "@/components/content/Page";
 import { getBibleVersion } from "@/lib/getBible";
 import Link from "next/link";
@@ -16,20 +17,31 @@ export default async function BibleVersionPage({ params }: Props) {
   }
 
   return (
-    <Page.Root>
-      <Page.Header>
-        <Page.Title content={version.name} />
-        <Page.Description content="Selecione um livro para ler." />
-      </Page.Header>
-      <Page.Content>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-          {version.books.map((book) => (
-            <Link key={book.slug} href={`/biblia/${versionId}/${book.slug}`} className="block p-4 rounded-lg border bg-card text-card-foreground shadow-sm hover:bg-accent transition-colors text-center">
-              <span className="text-sm font-medium">{book.name}</span>
-            </Link>
-          ))}
-        </div>
-      </Page.Content>
-    </Page.Root>
+    <Bible.Root>
+      <Bible.Header>
+        <Bible.Group>
+          <Bible.Title content={version.name} />
+          <Bible.Description content={version.description} />
+        </Bible.Group>
+      </Bible.Header>
+
+      <Bible.Feed>
+          <Bible.Books>
+            <Bible.BooksHeader>
+              <Bible.BooksTitle content="Antigo Testamento" />
+            </Bible.BooksHeader>
+
+            <Bible.BooksItems version={version} testament="at"/>
+          </Bible.Books>
+
+          <Bible.Books>
+            <Bible.BooksHeader>
+              <Bible.BooksTitle content="Novo Testamento" />
+            </Bible.BooksHeader>
+
+            <Bible.BooksItems version={version} testament="nt"/>
+          </Bible.Books>
+      </Bible.Feed>
+    </Bible.Root>
   );
 }
