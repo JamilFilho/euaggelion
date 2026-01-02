@@ -1,4 +1,4 @@
-import { getBibleBooks } from "./getBible";
+import { BIBLE_BOOKS_MAP } from "./bibleData";
 
 export interface BibleReference {
   book: string;
@@ -15,16 +15,7 @@ export interface BibleReference {
  * Gera um mapa de nomes e abreviações para slugs de livros
  */
 export async function getBookMap() {
-  const books = getBibleBooks();
-  const map: Record<string, string> = {};
-  
-  books.forEach(book => {
-    map[book.name.toLowerCase()] = book.slug;
-    map[book.abbrev.toLowerCase()] = book.slug;
-    // Adicionar variações comuns sem acentos se necessário, mas aqui vamos focar no básico
-  });
-  
-  return map;
+  return BIBLE_BOOKS_MAP;
 }
 
 /**

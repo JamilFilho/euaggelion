@@ -31,11 +31,9 @@ export default function BibliaLink({ children }: BibliaLinkProps) {
           let lastIndex = 0;
           let match;
 
-          // Reset regex index
           regex.lastIndex = 0;
 
           while ((match = regex.exec(node)) !== null) {
-            // Texto antes do match
             if (match.index > lastIndex) {
               parts.push(node.substring(lastIndex, match.index));
             }
@@ -49,28 +47,23 @@ export default function BibliaLink({ children }: BibliaLinkProps) {
               const reference: BibleReference = {
                 book: match[1],
                 bookSlug,
-                chapters: [], // Será preenchido no clique para economizar processamento ou via util
+                chapters: [],
                 fullMatch
               };
-
-              // Importar e usar a lógica de parsing de detalhes aqui para o objeto de referência
-              // Para simplificar, vamos re-parsear no clique ou passar a lógica
               
               parts.push(
-                <a
-                  key={match.index}
-                  href="#"
+                <span
+                  key={`${match.index}-${fullMatch}`}
                   onClick={(e) => {
-                    // Re-parsear detalhes no clique para garantir precisão
                     import("@/lib/bibleParser").then(({ parseReferenceDetails }) => {
                       reference.chapters = parseReferenceDetails(refDetails);
-                      handleRefClick(e, reference);
+                      handleRefClick(e as any, reference);
                     });
                   }}
                   className="text-accent hover:underline decoration-dotted underline-offset-4 font-medium cursor-pointer"
                 >
                   {fullMatch}
-                </a>
+                </span>
               );
             } else {
               parts.push(fullMatch);
@@ -83,17 +76,19 @@ export default function BibliaLink({ children }: BibliaLinkProps) {
             parts.push(node.substring(lastIndex));
           }
 
-          return parts.length > 0 ? <>{parts}</> : node;
+          return parts.length > 0 ? <React.Fragment key={Math.random()}>{parts}</React.Fragment> : node;
         }
 
-        if (React.isValidElement(node) && node.props.children) {
-          // Não processar links já existentes ou componentes específicos se necessário
-          if (node.type === 'a' || node.type === 'button') return node;
+        if (React.isValidElement(node)) {
+          const children = (node.props as any).children;
+          if (children) {
+            if (node.type === 'a' || node.type === 'button') return node;
 
-          return React.cloneElement(node, {
-            ...node.props,
-            children: React.Children.map(node.props.children, walkAndReplace),
-          });
+            return React.cloneElement(node, {
+              ...node.props,
+              children: React.Children.map(children, walkAndReplace),
+            } as any);
+          }
         }
 
         if (Array.isArray(node)) {
