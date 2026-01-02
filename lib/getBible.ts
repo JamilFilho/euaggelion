@@ -18,6 +18,7 @@ export interface BibleVersion {
   name: string;
   books: BibleBookMeta[];
   description?: string;
+  copyright?: string;
 }
 
 export interface BibleVersionRaw {
@@ -25,6 +26,7 @@ export interface BibleVersionRaw {
   name: string;
   books: string[]; // Slugs of the books
   description?: string;
+  copyright?: string;
 }
 
 export interface BibleBookContent {
