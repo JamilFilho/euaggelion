@@ -1,5 +1,4 @@
 import { ArrowRight, Facebook, Globe, Instagram, Rss } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { InstallButton } from "@/components/layout/PWA/pwaPrompt";
 
