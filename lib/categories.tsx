@@ -4,6 +4,10 @@ export interface CategoryMeta {
 }
 
 export const CATEGORIES: Record<string, CategoryMeta> = {
+  pentateuco: {
+    name: "Pentateuco",
+    description: "Estudo dos cinco primeiros livros da Bíblia Sagrada: Gênesis, Êxodo, Levítico, Números e Deuteronômio",
+  },
   biblia: {
     name: "Bíblia Sagrada",
     description: "Estude a história, contexto e mensagem dos livros que compõem a Bíblia Sagrada",
