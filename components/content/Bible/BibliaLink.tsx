@@ -67,17 +67,64 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
                 fullMatch: `${bookNameMatch} ${cleanedRefDetails}`
               };
               // Parse the details now (synchronously) to support link generation
-              reference.chapters = parseReferenceDetails(cleanedRefDetails);
+              const parsedRef = parseReferenceDetails(cleanedRefDetails);
+              reference.chapters = parsedRef.chapters;
+              reference.isWholeChapterRange = parsedRef.isWholeChapterRange;
 
               // Detectar se é uma referência cross-chapter (ex: "20.11-22.5")
               // Cross-chapter tem múltiplos capítulos sequenciais onde o primeiro tem range com fim=999
               const isCrossChapter = reference.chapters && reference.chapters.length > 1 && 
                 reference.chapters[0].ranges && 
                 reference.chapters[0].ranges.length > 0 &&
-                reference.chapters[0].ranges.some(([_, end]) => end === 999);
+                reference.chapters[0].ranges.some(([_, end]) => end === 999) &&
+                !reference.isWholeChapterRange;
 
-              // CASO 1: Cross-chapter reference (ex: "Ap 20.11-22.5")
-              if (isCrossChapter) {
+              // Detectar se é intervalo de capítulos inteiros (ex: "1-2")
+              const isWholeChapterRange = reference.isWholeChapterRange;
+
+              // CASO 1: Intervalo de capítulos inteiros (ex: "Gn 1-2")
+              if (isWholeChapterRange) {
+                // Renderizar capítulos inteiros mantendo a notação original (ex: "Gn 1-2")
+                const firstChapter = reference.chapters[0];
+                const lastChapter = reference.chapters[reference.chapters.length - 1];
+                
+                const wholeChapterText = `${bookNameMatch} ${firstChapter.chapter}-${lastChapter.chapter}`;
+                
+                if (variant === "link") {
+                  const version = currentVersion || "nvt";
+                  const href = `/biblia/${version}/${bookSlug}/${firstChapter.chapter}`;
+
+                  parts.push(
+                    <Link
+                      key={match!.index}
+                      href={href}
+                      className="underline decoration-dotted inline-flex items-center text-accent font-medium"
+                      title={wholeChapterText}
+                    >
+                      {wholeChapterText}
+                      <ExternalLink className="h-4 w-4 mx-1" />
+                    </Link>
+                  );
+                } else {
+                  parts.push(
+                    <span
+                      key={match!.index}
+                      onClick={(e) => {
+                        handleRefClick(e as any, {
+                          ...reference,
+                          fullMatch: wholeChapterText
+                        });
+                      }}
+                      className="inline-flex items-center text-accent underline decoration-dotted underline-offset-4 font-medium cursor-pointer"
+                    >
+                      {wholeChapterText}
+                      <Copy className="h-4 w-4 mx-1" />
+                    </span>
+                  );
+                }
+              }
+              // CASO 2: Cross-chapter reference (ex: "Ap 20.11-22.5")
+              else if (isCrossChapter) {
                 // Renderizar como uma única referência com notação completa
                 const firstChapter = reference.chapters[0];
                 const lastChapter = reference.chapters[reference.chapters.length - 1];
@@ -124,7 +171,7 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
                   );
                 }
               }
-              // CASO 2: Múltiplos capítulos do mesmo livro separados (ex: "Mc 12:26; 7:10")
+              // CASO 3: Múltiplos capítulos do mesmo livro separados (ex: "Mc 12:26; 7:10")
               else if (reference.chapters && reference.chapters.length > 1) {
                 reference.chapters.forEach((chapterData, chapterIndex) => {
                   const chapterNum = chapterData.chapter;
@@ -142,12 +189,22 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
                     : `${chapterNum}`;
                   
                   const verseParts: string[] = [];
-                  if (chapterData.verses && chapterData.verses.length > 0) {
-                    verseParts.push(chapterData.verses.join(", "));
+                  
+                  // Verificar se é um capítulo inteiro (range [1, 999])
+                  const isWholeChapter = chapterData.ranges && chapterData.ranges.length === 1 &&
+                    chapterData.ranges[0][0] === 1 && chapterData.ranges[0][1] === 999 &&
+                    (!chapterData.verses || chapterData.verses.length === 0);
+                  
+                  // Só adicionar versículos se NÃO for um capítulo inteiro
+                  if (!isWholeChapter) {
+                    if (chapterData.verses && chapterData.verses.length > 0) {
+                      verseParts.push(chapterData.verses.join(", "));
+                    }
+                    if (chapterData.ranges && chapterData.ranges.length > 0) {
+                      verseParts.push(chapterData.ranges.map(([s, e]) => `${s}–${e}`).join(", "));
+                    }
                   }
-                  if (chapterData.ranges && chapterData.ranges.length > 0) {
-                    verseParts.push(chapterData.ranges.map(([s, e]) => `${s}–${e}`).join(", "));
-                  }
+                  
                   if (verseParts.length > 0) {
                     chapterRefText += `:${verseParts.join(", ")}`;
                   }
@@ -210,7 +267,7 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
                         className="inline-flex items-center text-accent underline decoration-dotted underline-offset-4 font-medium cursor-pointer"
                       >
                         {chapterRefText}
-                        {chapterIndex === 0 && <Copy className="h-4 w-4 mx-1" />}
+                        <Copy className="h-4 w-4 mx-1" />
                       </span>
                     );
 
@@ -220,7 +277,7 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
                   }
                 });
               }
-              // CASO 3: Capítulo único (comportamento original)
+              // CASO 4: Capítulo único (comportamento original)
               else {
                 if (variant === "link") {
                   // Determine chapter and verse to link to (first verse or range start)

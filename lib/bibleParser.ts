@@ -9,6 +9,7 @@ export interface BibleReference {
     ranges: [number, number][]; // Intervalos [início, fim]
   }[];
   fullMatch: string;
+  isWholeChapterRange?: boolean; // True se é um intervalo de capítulos inteiros (ex: "1-2")
 }
 
 /**
@@ -20,7 +21,7 @@ export async function getBookMap() {
 
 /**
  * Regex para capturar referências bíblicas
- * Suporta: Livro Cap:Ver, Ver; Cap:Ver-Ver (mesmo livro), e cross-chapter (Cap.Ver-Cap.Ver)
+ * Suporta: Livro Cap:Ver, Ver; Cap:Ver-Ver (mesmo livro), cross-chapter (Cap.Ver-Cap.Ver), e capítulos inteiros (Cap-Cap)
  */
 export function getBibleRegex(bookNames: string[]) {
   // Ordena por comprimento decrescente para evitar que abreviações curtas
@@ -29,16 +30,49 @@ export function getBibleRegex(bookNames: string[]) {
   // Escapar nomes de livros para regex
   const escapedBooks = sorted.map(b => b.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
 
-  // Regex para capturar referências incluindo cross-chapter
+  // Regex para capturar referências incluindo cross-chapter e intervalos de capítulos inteiros
+  // Capítulos inteiros: 1-2, 1-5 (cap-cap sem pontos/dois-pontos)
   // Cross-chapter: 20.11-22.5 (cap.verso-cap.verso)
   // Normal: 20.11-15 (cap.verso-verso) ou 20.11,15 (cap.verso,verso)
-  // Padrão: número + ":" ou "." + números/vírgulas/hífens/espaços E TAMBÉM cap.verso após hífen
+  // Padrão: número + ":" ou "." + números/vírgulas/hífens/espaços E TAMBÉM cap.verso após hífen, OU apenas cap-cap
   const verseReference = `\\d+[:\\.][\\d,\\-–—\\.\\s]+`;
+  const chapterRangeReference = `\\d+\\s*[\\-–—]\\s*\\d+`;
   const chapterReference = `\\d+`;
-  const reference = `(?:${verseReference}|${chapterReference})`;
-  // Permite múltiplas referências separadas por ; apenas se não for um número isolado
-  const multipleRefs = `${reference}(?:\\s*;\\s*${verseReference})*`;
+  const reference = `(?:${verseReference}|${chapterRangeReference}|${chapterReference})`;
+  // Permite múltiplas referências separadas por ; (versículos ou capítulos)
+  const multipleRefs = `${reference}(?:\\s*;\\s*${reference})*`;
   return new RegExp(`\\b(${escapedBooks})\\b\\s+(${multipleRefs})`, 'gi');
+}
+
+/**
+ * Detecta se um intervalo é cross-chapter de capítulos inteiros (ex: "1-2" ou "1-5")
+ * e expande para incluir todos os capítulos intermediários com todos os versículos
+ */
+function expandChapterRange(startChapter: number, endChapter: string): BibleReference['chapters'] | null {
+  // Padrão: apenas número-número (capítulos inteiros)
+  // Ex: "1-2" significa capítulo 1 até capítulo 2, com todos os versículos
+  const chapterRangePattern = /^(\d+)$/;
+  const match = endChapter.match(chapterRangePattern);
+  
+  if (!match) return null;
+  
+  const chapterEnd = parseInt(match[1]);
+  
+  // Se o capítulo final é menor ou igual ao inicial, não é válido
+  if (chapterEnd <= startChapter) return null;
+  
+  const chapters: BibleReference['chapters'] = [];
+  
+  // Todos os capítulos no intervalo: com todos os versículos (1 até 999 = fim do capítulo)
+  for (let ch = startChapter; ch <= chapterEnd; ch++) {
+    chapters.push({
+      chapter: ch,
+      verses: [],
+      ranges: [[1, 999]]
+    });
+  }
+  
+  return chapters;
 }
 
 /**
@@ -89,72 +123,102 @@ function expandCrossChapterRange(startChapter: number, startVerse: string): Bibl
 }
 
 /**
- * Faz o parsing de uma string de referência (ex: "1:1-3, 10; 14:2,4-6, 11")
+ * Faz o parsing de uma string de referência (ex: "1:1-3, 10; 14:2,4-6, 11" ou "1-2" para capítulos inteiros)
  */
-export function parseReferenceDetails(refStr: string) {
+export function parseReferenceDetails(refStr: string): { chapters: BibleReference['chapters']; isWholeChapterRange: boolean } {
   const chapters: BibleReference['chapters'] = [];
   const chapterParts = refStr.split(';');
   
   let lastChapter = -1;
+  let isWholeChapterRange = false;
+  let partCount = 0;
 
   chapterParts.forEach(part => {
     const trimmedPart = part.trim();
     if (!trimmedPart) return;
+    partCount++;
 
-    // Verifica se tem capítulo definido (ex: "1:1" ou "1.1") ou se é continuação (ex: "10")
-    let chapterNum: number;
-    let versesStr: string;
+    // Verifica se tem capítulo definido (ex: "1:1" ou "1.1") ou se é continuação (ex: "10") ou intervalo de capítulos (ex: "1-5")
+    let chapterNum: number | undefined = undefined;
+    let versesStr: string | undefined = undefined;
 
     const chapterMatch = trimmedPart.match(/^(\d+)\s*[:\.]\s*(.*)$/);
+    const chapterRangeMatch = trimmedPart.match(/^(\d+)\s*[\-–—]\s*(\d+)$/); // Intervalo de capítulos inteiros
     const chapterOnlyMatch = trimmedPart.match(/^(\d+)$/);
 
     if (chapterMatch) {
       chapterNum = parseInt(chapterMatch[1]);
       versesStr = chapterMatch[2];
       lastChapter = chapterNum;
-      
-      // Verificar se é uma referência cross-chapter
+      // Verificar se é uma referência cross-chapter de versículos entre capítulos
       const crossChapterResult = expandCrossChapterRange(chapterNum, versesStr);
       if (crossChapterResult) {
-        // É uma referência cross-chapter, adicionar todos os capítulos
         chapters.push(...crossChapterResult);
         return;
       }
+      // Verificar se é uma referência de capítulos inteiros (ex: "1-2" sem pontos/dois-pontos)
+      // Isso pode estar no versesStr (ex: capítulo "1" com versesStr "-2")
+      if (versesStr && /^[\-–—]\d+$/.test(versesStr)) {
+        const chapterRangeResult = expandChapterRange(chapterNum, versesStr.replace(/^[\-–—]\s*/, ''));
+        if (chapterRangeResult) {
+          chapters.push(...chapterRangeResult);
+          lastChapter = parseInt(versesStr.replace(/^[\-–—]\s*/, ''));
+          return;
+        }
+      }
+    } else if (chapterRangeMatch) {
+      // Intervalo direto de capítulos inteiros (ex: "1-2" ou "1-5")
+      const startChapter = parseInt(chapterRangeMatch[1]);
+      const endChapter = parseInt(chapterRangeMatch[2]);
+      const chapterRangeResult = expandChapterRange(startChapter, endChapter.toString());
+      if (chapterRangeResult) {
+        chapters.push(...chapterRangeResult);
+        lastChapter = endChapter;
+        // Marcar como intervalo de capítulos inteiros apenas se houver apenas uma "parte"
+        if (partCount === 1) {
+          isWholeChapterRange = true;
+        }
+        return;
+      }
     } else if (chapterOnlyMatch) {
-      // Apenas capítulo especificado (ex: "1") -> capítulo inteiro
       chapterNum = parseInt(chapterOnlyMatch[1]);
       versesStr = "";
       lastChapter = chapterNum;
     } else {
-      chapterNum = lastChapter;
+      chapterNum = lastChapter !== -1 ? lastChapter : undefined;
       versesStr = trimmedPart;
     }
 
-    if (chapterNum === -1) return;
+    if (typeof chapterNum === "undefined" || chapterNum === -1) return;
+
+    if (typeof versesStr === "undefined") return;
 
     const verses: number[] = [];
     const ranges: [number, number][] = [];
 
-    const verseParts = versesStr.split(',');
-    verseParts.forEach(vPart => {
-      const vTrimmed = vPart.trim();
-      if (!vTrimmed) return;
-      // Normalizar todos os tipos de hífens/travessões (-, –, —) para um único tipo
-      const normalizedVerse = vTrimmed.replace(/[\-–—]/g, '-');
-      if (normalizedVerse.includes('-')) {
-        const [start, end] = normalizedVerse.split('-').map(n => parseInt(n.trim()));
-        if (!isNaN(start) && !isNaN(end)) {
-          ranges.push([start, end]);
+    // Se versesStr está vazio e temos um capítulo, significa capítulo inteiro
+    if (versesStr === "") {
+      ranges.push([1, 999]);
+    } else {
+      const verseParts = versesStr.split(',');
+      verseParts.forEach(vPart => {
+        const vTrimmed = vPart.trim();
+        if (!vTrimmed) return;
+        const normalizedVerse = vTrimmed.replace(/[\-–—]/g, '-');
+        if (normalizedVerse.includes('-')) {
+          const [start, end] = normalizedVerse.split('-').map(n => parseInt(n.trim()));
+          if (!isNaN(start) && !isNaN(end)) {
+            ranges.push([start, end]);
+          }
+        } else {
+          const vNum = parseInt(normalizedVerse);
+          if (!isNaN(vNum)) {
+            verses.push(vNum);
+          }
         }
-      } else {
-        const vNum = parseInt(normalizedVerse);
-        if (!isNaN(vNum)) {
-          verses.push(vNum);
-        }
-      }
-    });
+      });
+    }
 
-    // Agrupar por capítulo se já existir
     const existingChapter = chapters.find(c => c.chapter === chapterNum);
     if (existingChapter) {
       existingChapter.verses.push(...verses);
@@ -164,7 +228,7 @@ export function parseReferenceDetails(refStr: string) {
     }
   });
 
-  return chapters;
+  return { chapters, isWholeChapterRange };
 }
 
 /**
@@ -203,12 +267,7 @@ export async function findBibleReferences(text: string): Promise<BibleReference[
           const semiColonIndex = refDetails.lastIndexOf(';');
           if (semiColonIndex !== -1) {
             const beforeSemi = refDetails.substring(0, semiColonIndex).trim();
-            const afterSemi = refDetails.substring(semiColonIndex + 1).trim();
-            
-            // Verificar se o que vem depois do ; parece ser apenas número (indicando outro livro)
-            if (/^\d+(?:[:\.\-\d\s,–—]+)?$/.test(afterSemi)) {
-              refDetails = beforeSemi;
-            }
+            refDetails = beforeSemi;
           }
         }
       }
@@ -226,11 +285,13 @@ export async function findBibleReferences(text: string): Promise<BibleReference[
 
   // Processar matches para criar referências
   matches.forEach((m) => {
+    const parsedRef = parseReferenceDetails(m.refDetails);
     references.push({
       book: m.bookName,
       bookSlug: m.bookSlug,
-      chapters: parseReferenceDetails(m.refDetails),
-      fullMatch: m.fullMatch
+      chapters: parsedRef.chapters,
+      fullMatch: m.fullMatch,
+      isWholeChapterRange: parsedRef.isWholeChapterRange
     });
   });
 
