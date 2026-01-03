@@ -13,17 +13,8 @@ export const metadata: Metadata = {
 export default function PlannersPage() {
     return (
         <Page.Root>
-            <div className="print:hidden">
-            <Page.Header>
-                <Page.Title content="Planner de leitura bíblica" />
-                <Page.Description content="Organize sua leitura bíblica, monte planos anuais ou semestrais, escolha testamentos ou grupos temáticos e exporte seu cronograma em PDF." />
-            </Page.Header>
-            </div>
-
             <Page.Content>
-                <div className="px-8 mb-6">
-                    <PlannerGenerator /> 
-                </div>         
+                <PlannerGenerator />
             </Page.Content>
         </Page.Root>
     );

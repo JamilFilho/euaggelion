@@ -1,29 +1,18 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import {
-  generateReadingPlan,
-  PlanScope,
-  PlanSpan,
-  THEMATIC_GROUPS,
-} from "@/lib/readingPlan";
-import { CalendarDays, Printer, Sparkles } from "lucide-react";
+import { generateReadingPlan, PlanScope, PlanSpan, THEMATIC_GROUPS } from "@/lib/readingPlan";
+import { CalendarDays, Info, Printer, Sparkles } from "lucide-react";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 
 const scopeLabels: Record<PlanScope, string> = {
   ot: "Antigo Testamento",
   nt: "Novo Testamento",
-  both: "Ambos",
+  both: "Antigo e Novo Testamento",
   group: "Plano temático",
 };
 
@@ -59,19 +48,15 @@ function ReadingDay({
   readings: { book: string; chapter: number }[];
 }) {
   return (
-    <div
-      className="rounded-lg border border-ring/20 bg-secondary/40 p-4 space-y-2"
-      style={{ breakInside: "avoid", pageBreakInside: "avoid" }}
-    >
-      <div className="flex items-center justify-between text-sm text-muted-foreground">
+    <div className="border-t border-b border-r border-l border-ring/20 py-4 hover:bg-black/20 transition-colors ease-in-out" style={{ breakInside: "avoid", pageBreakInside: "avoid" }} >
+      <div className="px-4 flex items-center justify-between text-sm text-foreground/60 border-b border-ring/20 pb-4">
         <span className="font-medium">Dia {dayNumber}</span>
         <span className="inline-flex items-center gap-2">
-          <CalendarDays className="h-4 w-4" />
+          <CalendarDays className="size-4" />
           {formatDateLabel(date)}
         </span>
       </div>
-      <Separator className="bg-ring/20" />
-      <div className="grid gap-2">
+      <div className="px-4 mt-4 grid gap-2">
         {readings.map((reading, index) => {
           const passageId = `day-${dayNumber}-reading-${index}`;
           return (
@@ -93,10 +78,12 @@ function ReadingDay({
 
 export function PlannerGenerator() {
   const today = useMemo(() => new Date(), []);
+  const fallbackGroup = THEMATIC_GROUPS[0] ?? "";
+
   const [scope, setScope] = useState<PlanScope>("both");
   const [span, setSpan] = useState<PlanSpan>("anual");
   const [chaptersPerDayInput, setChaptersPerDayInput] = useState<string>("3");
-  const [group, setGroup] = useState<string>(THEMATIC_GROUPS[0] ?? "");
+  const [group, setGroup] = useState<string>(fallbackGroup);
   const [startDateValue, setStartDateValue] = useState<string>(toInputDate(today));
   const [isGenerated, setIsGenerated] = useState<boolean>(false);
 
@@ -124,7 +111,14 @@ export function PlannerGenerator() {
     window.print();
   };
 
-  const thematicGroups = THEMATIC_GROUPS.length > 0 ? THEMATIC_GROUPS : ["Pentateuco", "Históricos", "Poéticos", "Profetas", "Evangelhos", "Cartas"];
+  const thematicGroups = THEMATIC_GROUPS.length > 0 ? THEMATIC_GROUPS : [
+    "Pentateuco",
+    "Históricos",
+    "Poéticos",
+    "Profetas",
+    "Evangelhos",
+    "Cartas",
+  ];
 
   const targetEnd = useMemo(() => {
     const start = parseInputDate(startDateValue);
@@ -135,51 +129,83 @@ export function PlannerGenerator() {
   }, [startDateValue, span]);
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[360px,1fr]">
-      <div className="space-y-4 print:hidden h-fit">
-        <div className="rounded-xl border border-ring/20 bg-secondary/40 p-5 space-y-4">
-          <div className="flex items-center gap-3">
-            <span className="p-2 rounded-lg bg-primary/10 text-primary">
-              <Sparkles className="h-4 w-4" />
-            </span>
-            <div>
-              <p className="text-sm text-muted-foreground">Monte seu plano</p>
-              <p className="text-lg font-semibold">Escolha como deseja ler</p>
-            </div>
+    <div className="mt-20 md:mt-0 min-h-fit border-t border-ring/20 grid grid-cols-1 md:grid-cols-3 md:divide-x divide-ring/20">
+
+      <div className="min-h-fit print:hidden col-span-1 flex flex-col gap-4">
+        <div className="my-6 flex items-center gap-4 px-8">
+          <span className="p-2 rounded-lg bg-primary/10 text-primary">
+            <Sparkles className="h-4 w-4" />
+          </span>
+          <div>
+            <p className="text-sm text-muted-foreground">Monte seu plano</p>
+            <p className="text-lg font-semibold">Escolha como deseja ler</p>
           </div>
 
-          <div className="space-y-3">
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Capítulos por dia</label>
-              <Input
-                type="number"
-                min={1}
-                value={chaptersPerDayInput}
-                onChange={(event) => setChaptersPerDayInput(event.target.value)}
-                onBlur={() => {
-                  if (chaptersPerDayInput.trim() === "") setChaptersPerDayInput("1");
-                }}
-              />
-            </div>
+          {isGenerated && (
+            <Popover>
+              <PopoverTrigger asChild>
+                <span className="ml-auto p-2 rounded-lg bg-primary/10 text-primary">
+                  <Info className="size-4" />
+                </span>
+              </PopoverTrigger>
+              <PopoverContent>
+                <div className="grid gap-2 mb-6">
+                  <SummaryItem label="Capítulos selecionados" value={`${plan.totalChapters}`} />
+                  <SummaryItem label="Dias necessários" value={`${plan.totalDays} dias`} />
+                  <SummaryItem label="Início previsto" value={formatDateLabel(plan.startDate)} />
+                  <SummaryItem label="Fim previsto" value={formatDateLabel(plan.endDate)} />
+                  <SummaryItem label="Período escolhido" value={`${spanLabels[span]} (${plan.targetDays} dias)`} />
+                  <SummaryItem label="Término do período" value={formatDateLabel(targetEnd)} />
+                </div>
+                {!plan.fitsInSpan && (
+                  <p className="text-sm text-amber-600 bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
+                    Para concluir dentro do período selecionado, aumente os capítulos diários para pelo menos {Math.ceil(plan.totalChapters / plan.targetDays)}.
+                  </p>
+                )}
+                {plan.fitsInSpan && plan.extraDays > 0 && (
+                  <p className="text-sm text-emerald-600 bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-3">
+                    Você finalizará {plan.extraDays} dias antes do término do período.
+                  </p>
+                )}
+              </PopoverContent>
+            </Popover>
+          )}
 
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Período</label>
-              <Select value={span} onValueChange={(value) => setSpan(value as PlanSpan)}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Selecione o período" />
-                </SelectTrigger>
-                <SelectContent>
-                  {(["anual", "semestral"] as PlanSpan[]).map((item) => (
-                    <SelectItem key={item} value={item}>
-                      {spanLabels[item]}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+        </div>
 
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Escopo da leitura</label>
+        <div className="space-y-4 px-8">
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Capítulos por dia</label>
+            <Input
+              type="number"
+              min={1}
+              value={chaptersPerDayInput}
+              onChange={(event) => setChaptersPerDayInput(event.target.value)}
+              onBlur={() => {
+                if (chaptersPerDayInput.trim() === "") setChaptersPerDayInput("1");
+              }}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Período</label>
+            <Select value={span} onValueChange={(value) => setSpan(value as PlanSpan)}>
+              <SelectTrigger>
+                <SelectValue placeholder="Selecione o período" />
+              </SelectTrigger>
+              <SelectContent>
+                {(["anual", "semestral"] as PlanSpan[]).map((item) => (
+                  <SelectItem key={item} value={item}>
+                    {spanLabels[item]}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="flex flex-row gap-2">
+            <div className="w-full space-y-2">
+              <label className="text-sm font-medium">Qual será sua leitura?</label>
               <Select value={scope} onValueChange={(value) => setScope(value as PlanScope)}>
                 <SelectTrigger>
                   <SelectValue placeholder="Escolha o escopo" />
@@ -195,7 +221,7 @@ export function PlannerGenerator() {
             </div>
 
             {scope === "group" && (
-              <div className="space-y-2">
+              <div className="w-full space-y-2">
                 <label className="text-sm font-medium">Grupo temático</label>
                 <Select value={group} onValueChange={setGroup}>
                   <SelectTrigger>
@@ -211,78 +237,52 @@ export function PlannerGenerator() {
                 </Select>
               </div>
             )}
-
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Data de início</label>
-              <Input
-                type="date"
-                value={startDateValue}
-                onChange={(event) => setStartDateValue(event.target.value)}
-              />
-            </div>
           </div>
 
-          <div className="flex gap-3 pt-2">
-            <Button className="w-full" onClick={handleGeneratePlan} type="button">
-              <Sparkles className="mr-2 h-4 w-4" />
-              Gerar plano
-            </Button>
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Data de início</label>
+            <Input
+              type="date"
+              value={startDateValue}
+              onChange={(event) => setStartDateValue(event.target.value)}
+            />
           </div>
         </div>
 
-        {isGenerated && (
-          <div className="rounded-xl border border-ring/20 bg-secondary/40 p-5 space-y-3">
-            <p className="text-lg font-semibold">Resumo</p>
-            <div className="grid gap-3">
-              <SummaryItem label="Capítulos selecionados" value={`${plan.totalChapters}`} />
-              <SummaryItem label="Dias necessários" value={`${plan.totalDays} dias`} />
-              <SummaryItem
-                label="Início previsto"
-                value={formatDateLabel(plan.startDate)}
-              />
-              <SummaryItem label="Fim previsto" value={formatDateLabel(plan.endDate)} />
-              <SummaryItem label="Período escolhido" value={`${spanLabels[span]} (${plan.targetDays} dias)`} />
-              <SummaryItem label="Término do período" value={formatDateLabel(targetEnd)} />
-            </div>
-            {!plan.fitsInSpan && (
-              <p className="text-sm text-amber-600 bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
-                Para concluir dentro do período selecionado, aumente os capítulos diários para pelo menos {Math.ceil(plan.totalChapters / plan.targetDays)}.
-              </p>
-            )}
-            {plan.fitsInSpan && plan.extraDays > 0 && (
-              <p className="text-sm text-emerald-600 bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-3">
-                Você finalizará {plan.extraDays} dias antes do término do período.
-              </p>
-            )}
-
-            <div className="flex gap-3">
-              <Button className="w-full" onClick={handlePrint} variant="destructive" type="button">
-                <Printer className="mr-2 h-4 w-4" />
-                Imprimir / Salvar PDF
-              </Button>
-            </div>
-          </div>
-        )}
+        <div className="mt-auto flex border-t border-ring/20 *:rounded-none *:w-full *:py-8">
+          <Button className="bg-black/20 text-foreground hover:bg-black/40" onClick={handleGeneratePlan} type="button">
+            <Sparkles className="mr-2 h-4 w-4" />
+            Gerar plano
+          </Button>
+          {isGenerated && (
+            <Button className="bg-accent text-foreground hover:bg-accent/60" onClick={handlePrint} type="button">
+              <Printer className="mr-2 h-4 w-4" />
+              Imprimir/Salvar PDF
+            </Button>
+          )}
+        </div>
       </div>
 
       {!isGenerated && (
-        <div className="hidden md:flex justify-center items-center text-center text-foreground/60 rounded-xl border border-ring/20 bg-secondary/40 p-10 space-y-4">
-            Preencha os dados ao lado e gere um plano de leitura bíblica personalizado. Depois, imprima ou salve em PDF para acompanhar sua jornada de leitura!
+        <div className="col-span-1 md:col-span-2 flex items-center justify-center text-center px-10 mx:px-20 py-10 border-t borer-ring/20 md:border-t-0 text-foreground/60">
+          Preencha o formulário e gere seu plano de leitura bíblica aqui.
         </div>
       )}
 
       {isGenerated && (
-        <div className="border border-ring/20 print:border-none rounded-xl p-5 space-y-4 h-full overflow-y-auto print:overflow-visible print:h-auto" id="planner-print">
-          <div className="flex items-center justify-between gap-3">
-            <div>
+        <div className="md:h-[calc(100vh-5rem)] border-t md:border-t-0 border-ring/20 col-span-1 md:col-span-2 overflow-y-auto print:overflow-visible print:h-auto" id="planner-print">
+
+          <div className="border-l border-r border-ring/20 w-full px-10 grid grid-cols-4 gap-3 divide-x divide-ring/20">
+            <div className="col-span-2 md:col-span-3 py-6">
               <p className="text-sm text-muted-foreground">Plano gerado</p>
               <p className="text-lg font-semibold">
-                {scopeLabels[scope]} — {spanLabels[span]}
+                {scopeLabels[scope]} - {spanLabels[span]}
               </p>
             </div>
-            <Badge variant="outline" className="print:hidden">
+
+            <div className="col-span-2 md:col-span-1 py-6 flex items-center justify-center">
               {chaptersPerDay} capítulos/dia
-            </Badge>
+            </div>
           </div>
 
           <Separator className="bg-ring/20" />
@@ -290,7 +290,7 @@ export function PlannerGenerator() {
           {plan.days.length === 0 ? (
             <p className="text-sm text-muted-foreground">Nenhum plano disponível com os filtros escolhidos.</p>
           ) : (
-            <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3 print:grid-cols-3">
+            <div className="grid grid-cols-2 md:grid-cols-3 print:grid-cols-3">
               {plan.days.map((day) => (
                 <ReadingDay
                   key={day.dayNumber}
@@ -302,7 +302,7 @@ export function PlannerGenerator() {
             </div>
           )}
         </div>
-      )}
+      )}      
     </div>
   );
 }
