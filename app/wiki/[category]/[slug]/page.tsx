@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import BibliaLink from '@/components/content/Bible/BibliaLink';
 
 interface WikiPageProps {
   params: Promise<{
@@ -136,10 +137,12 @@ export default async function WikiPage({ params }: WikiPageProps) {
       </Article.Header>
 
       <Article.Content>
-        <MDXRemote 
-          source={article.content}
-          options={mdxOptions}
-        />
+        <BibliaLink>
+          <MDXRemote 
+            source={article.content}
+            options={mdxOptions}
+          />
+        </BibliaLink>
       </Article.Content>
       
       <Article.Footer>
