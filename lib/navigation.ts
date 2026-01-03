@@ -10,7 +10,7 @@ export const navigationLinks = {
         title: "Download",
         items: [
             { href: "/s/ebook", label: "eBooks" },
-            { href: "/s/planners", label: "Planners de Leitura" },
+            { href: "/planners", label: "Planners de Leitura" },
         ]
     },
     estudoBiblico: {
