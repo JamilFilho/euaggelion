@@ -6,7 +6,7 @@ interface SiteHeaderRootProps {
 
 export function SiteHeaderRoot({ children }: SiteHeaderRootProps) {
     return(
-        <header className="print:hidden w-full fixed md:relative top-0 left-0 px-10 flex flex-row justify-between items-center gap-4 h-20 border-b border-ring/20 bg-secondary text-secondary-foreground z-[900]">
+        <header className="print:hidden w-full fixed md:relative top-0 left-0 px-6 md:px-10 flex flex-row justify-between items-center gap-4 h-20 border-b border-ring/20 bg-secondary text-secondary-foreground z-[900]">
             { children }
         </header>
     )
