@@ -4,8 +4,12 @@ export interface CategoryMeta {
 }
 
 export const CATEGORIES: Record<string, CategoryMeta> = {
+  biblia: {
+    name: "Bíblia Sagrada",
+    description: "Estude a história, contexto e mensagem dos livros que compõem a Bíblia Sagrada",
+  },
   "desvendando-a-biblia": {
-    name: "Desvendendo a Bíblia",
+    name: "Desvendando a Bíblia",
     description: "Desvendando os versículos e textos bíblicos que você conhece, mas sempre compreendeu errado",
   },
   "igreja-primitiva": {
@@ -30,6 +34,10 @@ export const CATEGORIES: Record<string, CategoryMeta> = {
   },
   "historia-da-teologia": {
     name: "História da Teologia",
+    description: "",
+  },
+  "historia-cristianismo": {
+    name: "História do Cristianismo",
     description: "",
   },
   credos: {
