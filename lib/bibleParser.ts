@@ -37,7 +37,8 @@ export function getBibleRegex(bookNames: string[]) {
   // Padrão: número + ":" ou "." + números/vírgulas/hífens/espaços E TAMBÉM cap.verso após hífen, OU apenas cap-cap
   const verseReference = `\\d+[:\\.][\\d,\\-–—\\.\\s]+`;
   const chapterRangeReference = `\\d+\\s*[\\-–—]\\s*\\d+`;
-  const chapterReference = `\\d+`;
+  // Importante: chapterReference não deve ser seguido de letra (que indicaria novo livro como "1Pe")
+  const chapterReference = `\\d+(?![a-zA-Z])`;
   const reference = `(?:${verseReference}|${chapterRangeReference}|${chapterReference})`;
   // Permite múltiplas referências separadas por ; (versículos ou capítulos)
   const multipleRefs = `${reference}(?:\\s*;\\s*${reference})*`;
