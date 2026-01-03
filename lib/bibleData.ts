@@ -1,7 +1,7 @@
 // Este arquivo contém os dados básicos dos livros para evitar o uso de 'fs' no Client Side
 export const BIBLE_BOOKS_MAP: Record<string, string> = {
   "gênesis": "genesis", "gn": "genesis",
-  "êxodo": "exodo", "êx": "exodo",
+  "êxodo": "exodo", "êx": "exodo", "ex": "exodo",
   "levítico": "levitico", "lv": "levitico",
   "números": "numeros", "nm": "numeros",
   "deuteronômio": "deuteronomio", "dt": "deuteronomio",
@@ -17,7 +17,7 @@ export const BIBLE_BOOKS_MAP: Record<string, string> = {
   "esdras": "esdras", "ed": "esdras",
   "neemias": "neemias", "ne": "neemias",
   "ester": "ester", "et": "ester",
-  "jó": "jo",
+  "jó": "jó",
   "salmos": "salmos", "sl": "salmos",
   "salmo": "salmos",
   "provérbios": "proverbios", "pv": "proverbios",
