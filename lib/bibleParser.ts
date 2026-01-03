@@ -20,7 +20,7 @@ export async function getBookMap() {
 
 /**
  * Regex para capturar referências bíblicas
- * Suporta: Livro Cap:Ver, Ver; Cap:Ver-Ver, Ver; Cap:Ver-Ver
+ * Suporta: Livro Cap:Ver, Ver; Cap:Ver-Ver (mesmo livro), e cross-chapter (Cap.Ver-Cap.Ver)
  */
 export function getBibleRegex(bookNames: string[]) {
   // Ordena por comprimento decrescente para evitar que abreviações curtas
@@ -29,14 +29,63 @@ export function getBibleRegex(bookNames: string[]) {
   // Escapar nomes de livros para regex
   const escapedBooks = sorted.map(b => b.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
 
-  // Regex para capturar referências com múltiplos capítulos
-  // Usa boundaries para garantir que não seja parte de outra palavra
-  // Captura formatos como: "Mateus 5:24,27", "João 3.16-17; 4:1-5", ou apenas "Lucas 1".
-  // Suporta múltiplos capítulos separados por ponto-e-vírgula
-  // Pattern: Livro + 1º capítulo + (opcional: ; capítulos adicionais)
-  const singleChapter = `\\d+(?:[:\\.]\\s*[\\d,\\-–—\\s]+)?`;
-  const multipleChapters = `${singleChapter}(?:\\s*;\\s*${singleChapter})*`;
-  return new RegExp(`\\b(${escapedBooks})\\b\\s+(${multipleChapters})`, 'gi');
+  // Regex para capturar referências incluindo cross-chapter
+  // Cross-chapter: 20.11-22.5 (cap.verso-cap.verso)
+  // Normal: 20.11-15 (cap.verso-verso) ou 20.11,15 (cap.verso,verso)
+  // Padrão: número + ":" ou "." + números/vírgulas/hífens/espaços E TAMBÉM cap.verso após hífen
+  const verseReference = `\\d+[:\\.][\\d,\\-–—\\.\\s]+`;
+  const chapterReference = `\\d+`;
+  const reference = `(?:${verseReference}|${chapterReference})`;
+  // Permite múltiplas referências separadas por ; apenas se não for um número isolado
+  const multipleRefs = `${reference}(?:\\s*;\\s*${verseReference})*`;
+  return new RegExp(`\\b(${escapedBooks})\\b\\s+(${multipleRefs})`, 'gi');
+}
+
+/**
+ * Detecta se um intervalo é cross-chapter (ex: "20.11-22.5" significa cap 20 v11 até cap 22 v5)
+ * e expande para incluir todos os capítulos intermediários
+ */
+function expandCrossChapterRange(startChapter: number, startVerse: string): BibleReference['chapters'] | null {
+  // Padrão: verso_inicial-capítulo_final.verso_final
+  // Ex: "11-22.5" onde 11 é verso, 22 é capítulo, 5 é verso
+  const crossChapterPattern = /^(\d+)-(\d+)\.(\d+)$/;
+  const match = startVerse.match(crossChapterPattern);
+  
+  if (!match) return null;
+  
+  const verseStart = parseInt(match[1]);
+  const chapterEnd = parseInt(match[2]);
+  const verseEnd = parseInt(match[3]);
+  
+  // Se o capítulo final é menor ou igual ao inicial, não é cross-chapter válido
+  if (chapterEnd <= startChapter) return null;
+  
+  const chapters: BibleReference['chapters'] = [];
+  
+  // Primeiro capítulo: do verso inicial até o fim (999 representa "até o fim do capítulo")
+  chapters.push({
+    chapter: startChapter,
+    verses: [],
+    ranges: [[verseStart, 999]]
+  });
+  
+  // Capítulos intermediários: todos os versículos
+  for (let ch = startChapter + 1; ch < chapterEnd; ch++) {
+    chapters.push({
+      chapter: ch,
+      verses: [],
+      ranges: [[1, 999]]
+    });
+  }
+  
+  // Último capítulo: do início até o verso final
+  chapters.push({
+    chapter: chapterEnd,
+    verses: [],
+    ranges: [[1, verseEnd]]
+  });
+  
+  return chapters;
 }
 
 /**
@@ -63,6 +112,14 @@ export function parseReferenceDetails(refStr: string) {
       chapterNum = parseInt(chapterMatch[1]);
       versesStr = chapterMatch[2];
       lastChapter = chapterNum;
+      
+      // Verificar se é uma referência cross-chapter
+      const crossChapterResult = expandCrossChapterRange(chapterNum, versesStr);
+      if (crossChapterResult) {
+        // É uma referência cross-chapter, adicionar todos os capítulos
+        chapters.push(...crossChapterResult);
+        return;
+      }
     } else if (chapterOnlyMatch) {
       // Apenas capítulo especificado (ex: "1") -> capítulo inteiro
       chapterNum = parseInt(chapterOnlyMatch[1]);
@@ -117,24 +174,65 @@ export async function findBibleReferences(text: string): Promise<BibleReference[
   const bookMap = await getBookMap();
   const bookNames = Object.keys(bookMap);
   const regex = getBibleRegex(bookNames);
-  
+
   const references: BibleReference[] = [];
   let match;
 
+  // Primeiro, encontrar todas as correspondências
+  const matches: Array<{bookName: string; refDetails: string; bookSlug: string; fullMatch: string; index: number; endIndex: number}> = [];
+  
   while ((match = regex.exec(text)) !== null) {
     const bookName = match[1].toLowerCase();
-    const refDetails = match[2];
+    let refDetails = match[2];
     const bookSlug = bookMap[bookName];
+    const matchStart = match.index;
+    const matchEnd = match.index + match[0].length;
 
     if (bookSlug) {
-      references.push({
-        book: match[1],
+      // Verificar se há um ponto-e-vírgula seguido de texto que pode ser outro livro
+      // Procurar por ; seguido de espaço e um padrão que pareça ser um livro (número + letra ou nome)
+      const afterMatch = text.substring(matchEnd);
+      const nextBookPattern = /^\s*;\s*([\d\w\s]+?)\s+\d+[:\.]/;
+      const nextBookMatch = afterMatch.match(nextBookPattern);
+      
+      if (nextBookMatch) {
+        // Verificar se o que vem após o ; é um nome de livro conhecido
+        const potentialBook = nextBookMatch[1].toLowerCase().trim();
+        if (bookMap[potentialBook]) {
+          // Há um novo livro após ;, então remover tudo após o ; desta referência
+          const semiColonIndex = refDetails.lastIndexOf(';');
+          if (semiColonIndex !== -1) {
+            const beforeSemi = refDetails.substring(0, semiColonIndex).trim();
+            const afterSemi = refDetails.substring(semiColonIndex + 1).trim();
+            
+            // Verificar se o que vem depois do ; parece ser apenas número (indicando outro livro)
+            if (/^\d+(?:[:\.\-\d\s,–—]+)?$/.test(afterSemi)) {
+              refDetails = beforeSemi;
+            }
+          }
+        }
+      }
+
+      matches.push({
+        bookName,
+        refDetails,
         bookSlug,
-        chapters: parseReferenceDetails(refDetails),
-        fullMatch: match[0]
+        fullMatch: match[0],
+        index: matchStart,
+        endIndex: matchEnd
       });
     }
   }
+
+  // Processar matches para criar referências
+  matches.forEach((m) => {
+    references.push({
+      book: m.bookName,
+      bookSlug: m.bookSlug,
+      chapters: parseReferenceDetails(m.refDetails),
+      fullMatch: m.fullMatch
+    });
+  });
 
   return references;
 }

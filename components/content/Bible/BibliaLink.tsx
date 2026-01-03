@@ -69,8 +69,63 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
               // Parse the details now (synchronously) to support link generation
               reference.chapters = parseReferenceDetails(cleanedRefDetails);
 
-              // Se há múltiplos capítulos, criar links/modais separados para cada um
-              if (reference.chapters && reference.chapters.length > 1) {
+              // Detectar se é uma referência cross-chapter (ex: "20.11-22.5")
+              // Cross-chapter tem múltiplos capítulos sequenciais onde o primeiro tem range com fim=999
+              const isCrossChapter = reference.chapters && reference.chapters.length > 1 && 
+                reference.chapters[0].ranges && 
+                reference.chapters[0].ranges.length > 0 &&
+                reference.chapters[0].ranges.some(([_, end]) => end === 999);
+
+              // CASO 1: Cross-chapter reference (ex: "Ap 20.11-22.5")
+              if (isCrossChapter) {
+                // Renderizar como uma única referência com notação completa
+                const firstChapter = reference.chapters[0];
+                const lastChapter = reference.chapters[reference.chapters.length - 1];
+                
+                // Construir texto da referência cross-chapter
+                const startVerse = firstChapter.ranges[0]?.[0] || 1;
+                const endVerse = lastChapter.ranges[lastChapter.ranges.length - 1]?.[1] === 999 
+                  ? lastChapter.ranges[lastChapter.ranges.length - 1]?.[0] 
+                  : lastChapter.ranges[lastChapter.ranges.length - 1]?.[1] || 1;
+                
+                const crossChapterText = `${bookNameMatch} ${firstChapter.chapter}.${startVerse}-${lastChapter.chapter}.${endVerse}`;
+                
+                if (variant === "link") {
+                  const version = currentVersion || "nvt";
+                  const href = `/biblia/${version}/${bookSlug}/${firstChapter.chapter}#verse-${startVerse}`;
+
+                  parts.push(
+                    <Link
+                      key={match!.index}
+                      href={href}
+                      className="underline decoration-dotted inline-flex items-center text-accent font-medium"
+                      title={crossChapterText}
+                    >
+                      {crossChapterText}
+                      <ExternalLink className="h-4 w-4 mx-1" />
+                    </Link>
+                  );
+                } else {
+                  // Modal com todos os capítulos intermediários
+                  parts.push(
+                    <span
+                      key={match!.index}
+                      onClick={(e) => {
+                        handleRefClick(e as any, {
+                          ...reference,
+                          fullMatch: crossChapterText
+                        });
+                      }}
+                      className="inline-flex items-center text-accent underline decoration-dotted underline-offset-4 font-medium cursor-pointer"
+                    >
+                      {crossChapterText}
+                      <Copy className="h-4 w-4 mx-1" />
+                    </span>
+                  );
+                }
+              }
+              // CASO 2: Múltiplos capítulos do mesmo livro separados (ex: "Mc 12:26; 7:10")
+              else if (reference.chapters && reference.chapters.length > 1) {
                 reference.chapters.forEach((chapterData, chapterIndex) => {
                   const chapterNum = chapterData.chapter;
                   let verseNum = 1;
@@ -81,7 +136,7 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
                   }
 
                   // Construir texto da referência para este capítulo
-                  // Primeira referência inclui o nome do livro, demais apenas capítulo:versículos
+                  // Para exibição no texto: primeira referência inclui o nome do livro, demais apenas capítulo
                   let chapterRefText = chapterIndex === 0 
                     ? `${bookNameMatch} ${chapterNum}`
                     : `${chapterNum}`;
@@ -97,11 +152,17 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
                     chapterRefText += `:${verseParts.join(", ")}`;
                   }
 
+                  // Para o fullMatch (usado no modal/link), sempre incluir o nome do livro
+                  let fullMatchText = `${bookNameMatch} ${chapterNum}`;
+                  if (verseParts.length > 0) {
+                    fullMatchText += `:${verseParts.join(", ")}`;
+                  }
+
                   const singleChapterRef: BibleReference = {
                     book: bookNameMatch,
                     bookSlug,
                     chapters: [chapterData],
-                    fullMatch: chapterRefText
+                    fullMatch: fullMatchText
                   };
 
                   if (variant === "link") {
@@ -158,8 +219,9 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
                     }
                   }
                 });
-              } else {
-                // Caso com um único capítulo (comportamento original)
+              }
+              // CASO 3: Capítulo único (comportamento original)
+              else {
                 if (variant === "link") {
                   // Determine chapter and verse to link to (first verse or range start)
                   let chapterNum = 1;
