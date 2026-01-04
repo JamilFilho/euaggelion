@@ -29,6 +29,11 @@ const siteLinks: SiteLink[] = [
         href:"/"
     },
     {
+        title: "Bíblia Online",
+        alt:"Leia a Bíblia Sagrada online",
+        href: "/biblia"
+    },
+    {
         title: "Blog",
         alt:"Leia nossos artigos do blog",
         href: "/s/blog"
