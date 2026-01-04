@@ -17,6 +17,13 @@ Este documento serve como um índice para a documentação do projeto, facilitan
 - [Scripts e Automação](11%20-%20scripts-automacao.md)
 - [Criação de Memórias](12%20-%20criacao-memorias.md)
 
+## Histórico de Implementações (Memories)
+
+As memories documentam as implementações, correções e melhorias realizadas no projeto ao longo do tempo:
+
+- **2026-01-02T00-00-00.md**: Integração do sistema de notificações WebPush com TinaCMS
+- **2026-01-02T12-00-00.md**: Correções no parsing de referências bíblicas (issue #9) e suporte para múltiplos capítulos com links separados
+
 ## Descrição dos Arquivos
 
 - **visao-geral.md**: Descreve o propósito e objetivos do projeto.

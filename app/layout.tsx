@@ -10,6 +10,7 @@ import { PushNotificationManager } from "@/components/pushNotification";
 import { BibleVersionProvider } from "@/lib/context/BibleVersionContext";
 import { getBibleVersions } from "@/lib/getBible";
 import { Suspense } from "react";
+import { InstallButton } from "@/components/layout/PWA/pwaPrompt";
 
 // Use os componentes onde necessário
 
@@ -58,9 +59,13 @@ export default function RootLayout({ children }: Readonly<{children: React.React
         <SiteFooter.Root>
           <SiteFooter.Menu />
 
-          <SiteFooter.Content>
-            <SiteFooter.Title text="Euaggelion" logo="/euaggelion-logo.svg" />
-            <SiteFooter.Copy copyright="CC0 1.0 Universal" content="O projeto Euaggelion é uma iniciativa cristã independente cujo objetivo central é a divulgação gratuita de conteúdo cristão e teológico. Todo material disponibilizado por meio de nosso site está diponível sob uma licença de uso de domínio público." />
+          <SiteFooter.Content>            
+            <SiteFooter.Group>
+              <SiteFooter.Title text="Euaggelion" logo="/euaggelion-logo.svg" />
+              <SiteFooter.Copy copyright="CC0 1.0 Universal" content="O projeto Euaggelion é uma iniciativa cristã independente cujo objetivo central é a divulgação gratuita de conteúdo cristão e teológico. Todo material disponibilizado por meio de nosso site está diponível sob uma licença de uso de domínio público." />
+            </SiteFooter.Group>
+            
+            <InstallButton />
           </SiteFooter.Content>
         </SiteFooter.Root>
         

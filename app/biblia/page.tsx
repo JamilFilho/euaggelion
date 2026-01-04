@@ -17,14 +17,6 @@ export default async function BibleIndexPage({ searchParams }: Props) {
 
   return (
     <Bible.Root>
-      <Bible.Header>
-        <Bible.Group>
-          <Bible.Title content="Bíblia Sagrada" />
-          <Bible.Description content={`"Guardei tua palavra em meu coração, para não pecar contra ti" — Salmos 119:11`}/>
-        </Bible.Group>
-      </Bible.Header>
-      
-      
       <Bible.Feed>
         {selectedVersion ? (
           <>

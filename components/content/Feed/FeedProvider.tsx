@@ -39,7 +39,7 @@ interface FeedProviderProps {
     children: ReactNode;
 }
 
-export default function FeedProvider({ articles, itemsPerPage = 9, children }: FeedProviderProps) {
+export default function FeedProvider({ articles, itemsPerPage = 12, children }: FeedProviderProps) {
     const [filter, setFilter] = useState<string>("all");
     const [currentPage, setCurrentPage] = useState<number>(1);
 

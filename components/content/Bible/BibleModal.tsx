@@ -57,10 +57,13 @@ export default function BibleModal({ isOpen, onClose, reference }: BibleModalPro
               num: index + 1,
               text
             })).filter((v: { num: number }) => {
-              // Se não houver versículos ou intervalos específicos, mostra o capítulo todo? 
-              // Geralmente o parser já traz os versículos.
+              // Se não houver versículos ou intervalos específicos, mostra o capítulo todo
               const inVerses = c.verses.includes(v.num);
-              const inRanges = c.ranges.some(([start, end]) => v.num >= start && v.num <= end);
+              const inRanges = c.ranges.some(([start, end]) => {
+                // 999 significa "até o fim do capítulo"
+                const effectiveEnd = end === 999 ? Infinity : end;
+                return v.num >= start && v.num <= effectiveEnd;
+              });
               
               // Se o parser não encontrou versículos específicos (ex: "João 3"), mostra tudo
               if (c.verses.length === 0 && c.ranges.length === 0) return true;

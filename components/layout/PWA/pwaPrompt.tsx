@@ -52,7 +52,7 @@ export function InstallButton() {
   }
 
   return (
-    <div className="col-span-1 flex items-center justify-center px-8">
+    <div className="col-span-1 flex items-center justify-center md:px-8">
         <div className="w-full flex flex-col gap-4 bg-black/20 rounded-xl p-6">
             <div className="flex-1 flex items-center justify-center">
                 <p className="text-lg">Instale o Euaggelion em seu dispositivo. <Link className="underline decoration-dotted" href="/p/pwa" title="Sobre o aplicativo">Saiba mais</Link></p>

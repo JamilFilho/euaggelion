@@ -1,0 +1,59 @@
+name: Notify WebPush on Tina content changes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/articles/**'
+      - 'content/wiki/**'
+      - 'content/pages/**'
+
+jobs:
+  notify-webpush:
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: ${{ secrets.SITE_URL || 'https://euaggelion.com.br' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Collect changed files
+        id: files
+        shell: bash
+        run: |
+          # Combine added, modified and removed files from the push event
+          FILES=()
+          if [ -n "${{ toJSON(github.event.head_commit.added) }}" ]; then
+            FILES+=( ${{ join(github.event.head_commit.added, ' ') }} )
+          fi
+          if [ -n "${{ toJSON(github.event.head_commit.modified) }}" ]; then
+            FILES+=( ${{ join(github.event.head_commit.modified, ' ') }} )
+          fi
+          if [ -n "${{ toJSON(github.event.head_commit.removed) }}" ]; then
+            FILES+=( ${{ join(github.event.head_commit.removed, ' ') }} )
+          fi
+          echo "files=${FILES[*]}" >> $GITHUB_OUTPUT
+
+      - name: Call Tina webhook endpoint
+        env:
+          WEBPUSH_KEY: ${{ secrets.WEBPUSH_API_KEY }}
+          WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}
+        run: |
+          FILES="${{ steps.files.outputs.files }}"
+          if [ -z "$FILES" ]; then
+            echo "No content files changed. Exiting."
+            exit 0
+          fi
+
+          PAYLOAD=$(jq -n --arg files "$FILES" '{ files: $files }')
+
+          # Prefer Authorization header with WEBPUSH_API_KEY, fallback to X-Webhook-Secret
+          if [ -n "$WEBPUSH_KEY" ]; then
+            AUTH_HDR=( -H "Authorization: Bearer $WEBPUSH_KEY" )
+          elif [ -n "$WEBHOOK_SECRET" ]; then
+            AUTH_HDR=( -H "x-webhook-secret: $WEBHOOK_SECRET" )
+          else
+            echo "No webhook auth configured. Set repo secret WEBPUSH_API_KEY or WEBHOOK_SECRET." >&2
+            exit 1
+          fi
+
+          curl -sS -X POST "$SITE_URL/api/tina-webhook" -H "Content-Type: application/json" "${AUTH_HDR[@]}" -d "$PAYLOAD" || exit 1
