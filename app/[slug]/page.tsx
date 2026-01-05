@@ -67,7 +67,7 @@ const headingAutolinkOptions = {
     'aria-label': 'Copiar link da seção',
   },
   content: [headingLinkIcon],
-};
+} as any;
 
 interface Params {
   slug: string;
@@ -193,7 +193,7 @@ export default async function ArticlePage({
         [
           rehypeAutolinkHeadings,
           headingAutolinkOptions,
-        ],
+        ] as any,
       ],
     },
   };

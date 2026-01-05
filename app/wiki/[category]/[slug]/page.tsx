@@ -64,7 +64,7 @@ const headingAutolinkOptions = {
     'aria-label': 'Copiar link da seção',
   },
   content: [headingLinkIcon],
-};
+} as any;
 
 interface WikiPageProps {
   params: Promise<{
@@ -163,7 +163,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
         [
           rehypeAutolinkHeadings,
           headingAutolinkOptions,
-        ],
+        ] as any,
       ],
     },
   };

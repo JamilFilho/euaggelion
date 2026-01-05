@@ -58,7 +58,7 @@ const headingAutolinkOptions = {
     'aria-label': 'Copiar link da seção',
   },
   content: [headingLinkIcon],
-};
+} as any;
 
 interface Params {
   page: string;
@@ -160,7 +160,7 @@ export default async function StaticPage({
         [
           rehypeAutolinkHeadings,
           headingAutolinkOptions,
-        ],
+        ] as any,
       ],
     },
   };
