@@ -195,3 +195,12 @@
     appearance: none;
   }
 }
+
+/* Marker-style highlighting for Bible verses */
+.highlight-marker {
+  display: inline;
+  background: linear-gradient(120deg, rgba(250, 204, 21, 0.5) 0%, rgba(250, 204, 21, 0.5) 100%);
+  padding: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
