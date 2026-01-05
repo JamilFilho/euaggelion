@@ -199,6 +199,9 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --sb-track-color:var(--secondary);
+    --sb-thumb-color: #7b7b7b;
+    --sb-size: 6px;
   }
 
   .article-content p {
