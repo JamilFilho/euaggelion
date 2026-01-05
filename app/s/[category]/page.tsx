@@ -115,7 +115,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
       <Page.Content>    
         <Feed.Root articles={articlesInCategory} category={category}>
-            <Feed.Header show={category === "verso-a-verso"} />
+            <Feed.Header 
+                show={true}
+                allowDateFilter={category !== "verso-a-verso"}
+                allowAuthorFilter={category !== "verso-a-verso"}
+            />
             <Feed.Group>
               <Feed.Articles category={category} />
             </Feed.Group>

@@ -9,6 +9,8 @@ interface Article {
     testament?: "at" | "nt";
     isWiki?: boolean;
     count?: number;
+    author?: string;
+    date?: string;
 }
 
 interface FeedRootProps {
@@ -19,7 +21,7 @@ interface FeedRootProps {
 
 export default function FeedRoot({ articles, category, children }: FeedRootProps) {
     return (
-        <FeedProvider articles={articles}>
+        <FeedProvider articles={articles} category={category}>
             <div className="flex flex-col">
                 <section className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-ring/20 border-t border-ring/20">
                     {children}
