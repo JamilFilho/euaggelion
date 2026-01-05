@@ -25,20 +25,19 @@ export interface ArticleNavigation {
   next: ArticleMeta | null;
 }
 
-export function getAllArticles(): ArticleMeta[] {
-  if (!fs.existsSync(CONTENT_PATH)) {
-    console.warn(`Diretório ${CONTENT_PATH} não encontrado`);
+function readArticlesFromDirectory(dirPath: string, category: string): ArticleMeta[] {
+  if (!fs.existsSync(dirPath)) {
     return [];
   }
 
-  const files = fs.readdirSync(CONTENT_PATH);
+  const files = fs.readdirSync(dirPath);
   
   return files
-  .filter((file) => file.endsWith(".mdx"))
-  .map((file) => {
-    const filePath = path.join(CONTENT_PATH, file);
-    const raw = fs.readFileSync(filePath, "utf-8");
-    const { data, content } = matter(raw);
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => {
+      const filePath = path.join(dirPath, file);
+      const raw = fs.readFileSync(filePath, "utf-8");
+      const { data, content } = matter(raw);
       
       return {
         slug: file.replace(/\.mdx$/, "").toLowerCase(),
@@ -48,7 +47,7 @@ export function getAllArticles(): ArticleMeta[] {
         date: data.date ?? "",
         author: data.author ?? "",
         published: data.published ?? false,
-        category: (data.category ?? "").toLowerCase(),
+        category: category.toLowerCase(),
         tags: data.tags ?? [],
         reference: data.reference ?? [],
         testament: data.testament,
@@ -56,6 +55,26 @@ export function getAllArticles(): ArticleMeta[] {
         search: data.search ?? true,
       } satisfies ArticleMeta;
     });
+}
+
+export function getAllArticles(): ArticleMeta[] {
+  if (!fs.existsSync(CONTENT_PATH)) {
+    console.warn(`Diretório ${CONTENT_PATH} não encontrado`);
+    return [];
+  }
+
+  const allArticles: ArticleMeta[] = [];
+  const categories = fs.readdirSync(CONTENT_PATH, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name);
+
+  categories.forEach((category) => {
+    const categoryPath = path.join(CONTENT_PATH, category);
+    const articles = readArticlesFromDirectory(categoryPath, category);
+    allArticles.push(...articles);
+  });
+
+  return allArticles;
 }
 
 export function getArticlesByCategory(category?: string, limit?: number ): ArticleMeta[] {

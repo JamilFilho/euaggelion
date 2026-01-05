@@ -18,7 +18,7 @@ export default async function BibleLayout({ children, params }: { children: Reac
     return(
         <>
         <Breadcrumb
-          className="sticky top-14 z-[800] bg-secondary"
+          className="sticky top-14 z-[600] bg-secondary"
           items={[
             { label: "Home", href: "/" },
             { label: "Bíblia", href: "/biblia" },

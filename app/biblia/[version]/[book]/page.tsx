@@ -47,7 +47,7 @@ export default async function BibleBookPage({ params }: Props) {
   return (
     <Bible.Root>
       <Breadcrumb
-        className="sticky top-14 z-[800] bg-secondary"
+        className="sticky top-14 z-[600] bg-secondary"
         items={[
           { label: "Home", href: "/" },
           { label: "Bíblia", href: "/biblia" },

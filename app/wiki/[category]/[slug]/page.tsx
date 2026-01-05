@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import { Article } from "@/components/content/Article";
 import { getWikiSlug, getAllWikiArticles } from "@/lib/getWiki";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import { CATEGORIES } from '@/lib/categories';
 import { Webmentions } from '@/components/webMentions';
 import Link from 'next/link';
@@ -119,6 +122,16 @@ export default async function WikiPage({ params }: WikiPageProps) {
     notFound();
   }
   
+  const filePath = path.join(process.cwd(), "content", "wiki", article.category, article.fileName);
+  
+  if (!fs.existsSync(filePath)) {
+    console.error(`Arquivo não encontrado: ${filePath}`);
+    notFound();
+  }
+  
+  const fileContent = fs.readFileSync(filePath, "utf-8");
+  const { content } = matter(fileContent);
+  
   const categoryMeta = CATEGORIES[article.category] ?? { name: article.category };
   const categoryName = typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name;
   
@@ -195,7 +208,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
       <Article.Content>
         <BibliaLink>
           <MDXRemote 
-            source={article.content}
+            source={content}
             options={mdxOptions}
           />
         </BibliaLink>
