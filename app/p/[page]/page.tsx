@@ -12,6 +12,54 @@ import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
+const headingLinkIcon = {
+  type: 'element',
+  tagName: 'svg',
+  properties: {
+    className: ['heading-link-icon'],
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 2,
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+    width: 18,
+    height: 18,
+    'aria-hidden': 'true',
+    focusable: 'false',
+  },
+  children: [
+    {
+      type: 'element',
+      tagName: 'path',
+      properties: { d: 'M15 7h2a5 5 0 0 1 0 10h-2' },
+      children: [],
+    },
+    {
+      type: 'element',
+      tagName: 'path',
+      properties: { d: 'M9 17H7a5 5 0 0 1 0-10h2' },
+      children: [],
+    },
+    {
+      type: 'element',
+      tagName: 'line',
+      properties: { x1: 8, y1: 12, x2: 16, y2: 12 },
+      children: [],
+    },
+  ],
+};
+
+const headingAutolinkOptions = {
+  behavior: 'prepend',
+  test: ['h2', 'h3', 'h4', 'h5', 'h6'],
+  properties: {
+    className: ['heading-anchor'],
+    'aria-label': 'Copiar link da seção',
+  },
+  content: [headingLinkIcon],
+};
+
 interface Params {
   page: string;
 }
@@ -109,7 +157,10 @@ export default async function StaticPage({
       ],
       rehypePlugins: [
         rehypeSlug, // Adiciona IDs aos headings
-        rehypeAutolinkHeadings, // Adiciona links aos headings
+        [
+          rehypeAutolinkHeadings,
+          headingAutolinkOptions,
+        ],
       ],
     },
   };
