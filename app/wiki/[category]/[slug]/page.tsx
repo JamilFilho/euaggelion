@@ -7,6 +7,8 @@ import { CATEGORIES } from '@/lib/categories';
 import { Webmentions } from '@/components/webMentions';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
+import { ArticleSchema, BreadcrumbSchema } from "@/lib/schema";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
@@ -54,25 +56,45 @@ export async function generateMetadata({
   const categoryName = typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name;
 
   return {
-    title: `${article.title} | Euaggelion`,
+    title: `${article.title} | Wiki | Euaggelion`,
     description: article.description,
+    keywords: article.tags,
+    authors: [{ name: "Euaggelion", url: "https://euaggelion.com.br" }],
+    category: categoryName,
     openGraph: {
       title: article.title,
       description: article.description,
       type: 'article',
       publishedTime: article.date,
-      authors: "Euaggelion",
+      authors: ["Euaggelion"],
       tags: article.tags,
       url: `https://euaggelion.com.br/wiki/${article.category}/${article.slug}`,
+      siteName: "Euaggelion",
+      locale: "pt_BR",
+      images: [
+        {
+          url: `https://euaggelion.com.br/api/og?slug=${article.slug}`,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
+      images: [`https://euaggelion.com.br/api/og?slug=${article.slug}`],
     },
-    keywords: article.tags,
-    authors: [{ name: "Euaggelions", url: "https://euaggelion.com.br" }],
-    category: categoryName,
+    robots: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+    },
+    alternates: {
+      canonical: `https://euaggelion.com.br/wiki/${article.category}/${article.slug}`,
+    },
   };
 }
 
@@ -97,8 +119,44 @@ export default async function WikiPage({ params }: WikiPageProps) {
     notFound();
   }
   
+  const categoryMeta = CATEGORIES[article.category] ?? { name: article.category };
+  const categoryName = typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name;
+  
   return (
-    <Article.Root>
+    <>
+      {/* Schema estruturado de artigo */}
+      <ArticleSchema
+        headline={article.title}
+        description={article.description}
+        datePublished={article.date}
+        dateModified={article.lastmod || article.date}
+        imageUrl={`https://euaggelion.com.br/api/og?slug=${article.slug}`}
+        url={`https://euaggelion.com.br/wiki/${article.category}/${article.slug}`}
+        tags={article.tags}
+      />
+      
+      {/* Schema de breadcrumbs */}
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://euaggelion.com.br" },
+          { name: "Wiki", url: "https://euaggelion.com.br/wiki" },
+          { name: categoryName, url: `https://euaggelion.com.br/wiki/${article.category}` },
+          { name: article.title, url: `https://euaggelion.com.br/wiki/${article.category}/${article.slug}` },
+        ]}
+      />
+      
+      {/* Breadcrumbs visuais */}
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Wiki", href: "/wiki" },
+          { label: categoryName, href: `/wiki/${category}` },
+          { label: article.title, href: `/wiki/${category}/${slug}` },
+        ]}
+        className="container mx-auto px-4 md:px-20 py-6"
+      />
+      
+      <Article.Root>
       <Article.Header variant="wiki">
         <Article.Group>
           {article.status && (
@@ -155,5 +213,6 @@ export default async function WikiPage({ params }: WikiPageProps) {
         <Webmentions target={`https://euaggelion.com.br/wiki/${article.category}/${article.slug}`} />
       </Article.Footer>
     </Article.Root>
+    </>
   );
 }

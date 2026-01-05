@@ -12,6 +12,8 @@ import { getReadingTime } from "@/lib/timeReader";
 import { Newsletter } from '@/components/layout/Newsletter';
 import { Webmentions } from '@/components/webMentions';
 import { Badge } from '@/components/ui/badge';
+import { ArticleSchema, BreadcrumbSchema } from "@/lib/schema";
+import { RelatedArticles } from "@/components/content/RelatedArticles";
 
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
@@ -53,34 +55,53 @@ export async function generateMetadata({
   return {
     title: `${article.title} | Euaggelion`,
     description: article.description,
+    keywords: article.tags?.join(', '),
+    authors: article.author ? [{ name: article.author }] : [{ name: "Euaggelion" }],
+    category: categoryName,
     openGraph: {
       title: article.title,
       description: article.description,
       type: 'article',
       publishedTime: article.date,
-      authors: article.author ? [article.author] : undefined,
+      modifiedTime: article.date,
+      authors: article.author ? [article.author] : ["Euaggelion"],
       tags: article.tags,
       url: `https://euaggelion.com.br/${article.slug}`,
+      images: [
+        {
+          url: `https://euaggelion.com.br/api/og?slug=${article.slug}`,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+          type: "image/png",
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
+      creator: article.author || "@euaggelion",
+      images: [`https://euaggelion.com.br/api/og?slug=${article.slug}`],
     },
-    keywords: article.tags,
-    authors: article.author ? [{ name: article.author }] : undefined,
-    category: categoryName,
+    robots: {
+      index: true,
+      follow: true,
+      nocache: false,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-snippet": -1,
+        "max-image-preview": "large",
+        "max-video-preview": -1,
+      },
+    },
     other: {
-      'schema:type': 'Article',
-      'schema:author': article.author ? [article.author] : "Euaggelion",
-      'schema:datePublished': article.date,
       'webmention': 'https://webmention.io/euaggelion.com.br/webmention',
+      'pingback': 'https://webmention.io/euaggelion.com.br/xmlrpc',
     },
     alternates: {
       canonical: `https://euaggelion.com.br/${article.slug}`,
-      types: {
-        'application/activity+json': `https://euaggelion.com.br/activitypub/${slug}`,
-      }
     }
   };
 }
@@ -126,7 +147,26 @@ export default async function ArticlePage({
   };
 
   return (
-    <Article.Root>
+    <>
+      {/* Schema Estruturado */}
+      <ArticleSchema
+        title={found.title}
+        description={found.description}
+        imageUrl={`https://euaggelion.com.br/api/og?slug=${found.slug}`}
+        datePublished={found.date}
+        authorName={found.author}
+        url={`https://euaggelion.com.br/${found.slug}`}
+        category={typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://euaggelion.com.br" },
+          { name: typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name, url: `https://euaggelion.com.br/s/${found.category}` },
+          { name: found.title, url: `https://euaggelion.com.br/${found.slug}` },
+        ]}
+      />
+
+      <Article.Root>
       <Article.Header>
         <Article.Group>
           <Link 
@@ -182,6 +222,16 @@ export default async function ArticlePage({
         <Webmentions target={`https://euaggelion.com.br/${found.slug}`} />
       </Article.Footer>
 
+      {/* Artigos relacionados */}
+      <RelatedArticles
+        currentArticle={{
+          slug: found.slug,
+          title: found.title,
+          category: found.category,
+          tags: found.tags || [],
+        }}
+      />
+
       <Newsletter.Root>
         <Newsletter.Header>
           <Newsletter.Title content="NewsGelion"/>
@@ -196,6 +246,7 @@ export default async function ArticlePage({
         next={navigation.next}
         category={found.category}
       />
-    </Article.Root>
+      </Article.Root>
+    </>
   );
 }

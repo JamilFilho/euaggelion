@@ -6,6 +6,7 @@ import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Article } from "@/components/content/Article";
 import { Metadata } from "next";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
@@ -42,16 +43,33 @@ export async function generateMetadata({
   return {
     title: `${page.title} | Euaggelion`,
     description: page.description,
+    keywords: page.title.split(' ').slice(0, 5),
     openGraph: {
-      title: page.title,
+      title: `${page.title} | Euaggelion`,
       description: page.description,
       type: 'website',
       url: `https://euaggelion.com.br/p/${page.slug}`,
+      siteName: "Euaggelion",
+      locale: "pt_BR",
+      images: [
+        {
+          url: "https://euaggelion.com.br/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: page.title,
+        },
+      ],
     },
     twitter: {
-      card: 'summary',
-      title: page.title,
+      card: 'summary_large_image',
+      title: `${page.title} | Euaggelion`,
       description: page.description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
     },
     alternates: {
       canonical: `https://euaggelion.com.br/p/${page.slug}`,
@@ -97,7 +115,17 @@ export default async function StaticPage({
   };
 
   return (
-    <div className="site-page">
+    <>
+      {/* Breadcrumbs */}
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: page.title, href: `/p/${page.slug}` },
+        ]}
+        className="container mx-auto px-4 md:px-20 py-6"
+      />
+      
+      <div className="site-page">
       <Article.Root>
         <Article.Header>
           <Article.Group>
@@ -113,6 +141,7 @@ export default async function StaticPage({
           />
         </Article.Content>
       </Article.Root>
-    </div>
+      </div>
+    </>
   );
 }

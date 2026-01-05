@@ -1,0 +1,6 @@
+Contact: https://euaggelion.com.br/p/contato
+Expires: 2027-01-01T00:00:00.000Z
+Preferred-Languages: pt-BR, pt, en
+Canonical: https://euaggelion.com.br/.well-known/security.txt
+Policy: https://euaggelion.com.br/p/politica-de-privacidade
+Acknowledgments: https://euaggelion.com.br/p/agradecimentos
