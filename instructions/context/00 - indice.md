@@ -16,6 +16,7 @@ Este documento serve como um índice para a documentação do projeto, facilitan
 - [Hooks e Utilitários](10%20-%20hooks-utilitarios.md)
 - [Scripts e Automação](11%20-%20scripts-automacao.md)
 - [Criação de Memórias](12%20-%20criacao-memorias.md)
+- [Logger Utilitário](22%20-%20logger-utilitario.md)
 
 ## Otimizações de SEO (2026)
 
@@ -49,6 +50,7 @@ As memories documentam as implementações, correções e melhorias realizadas n
 - **conteudo-mdx.md**: Explica o uso de MDX para conteúdo.
 - **hooks-utilitarios.md**: Documenta os hooks e utilitários personalizados.
 - **criacao-memorias.md**: Guia para criação de arquivos de memória (memories).
+- **logger-utilitario.md**: Descreve o sistema de logging e sua utilização.
 
 ## Descrição dos Arquivos de SEO
 

@@ -5,6 +5,7 @@
 
 import Image from "next/image";
 import { CSSProperties } from "react";
+import { clientLogger } from "@/lib/logger";
 
 interface OptimizedImageProps {
   src: string;
@@ -37,7 +38,7 @@ export function OptimizedImage({
 }: OptimizedImageProps) {
   // Validar que alt text é descritivo
   if (!alt || alt.length < 3) {
-    console.warn(`Alt text muito curto para imagem: ${src}`);
+    clientLogger.warn(`⚠️ Alt text muito curto para imagem: ${src}`);
   }
 
   return (

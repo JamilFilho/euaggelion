@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { clientLogger } from '@/lib/logger'
 
 interface WebmentionAuthor {
   name: string
@@ -40,7 +41,7 @@ export function Webmentions({ target }: WebmentionsProps) {
         const data = await response.json()
         setMentions(data.mentions || [])
       } catch (error) {
-        console.error('Erro ao carregar webmentions:', error)
+        clientLogger.error('❌ Erro ao carregar webmentions:', error)
       } finally {
         setLoading(false)
       }

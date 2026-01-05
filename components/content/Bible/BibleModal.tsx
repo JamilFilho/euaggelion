@@ -7,6 +7,7 @@ import {
   DrawerTitle,
 } from "@/components/ui/drawer";
 import { useEffect, useState } from "react";
+import { clientLogger } from "@/lib/logger";
 import { useBibleVersion } from "@/lib/context/BibleVersionContext";
 
 interface BibleModalProps {
@@ -79,7 +80,7 @@ export default function BibleModal({ isOpen, onClose, reference }: BibleModalPro
       
       setContent(results);
     } catch (error) {
-      console.error("Erro ao carregar texto bíblico:", error);
+      clientLogger.error("❌ Erro ao carregar texto bíblico:", error);
     } finally {
       setLoading(false);
     }

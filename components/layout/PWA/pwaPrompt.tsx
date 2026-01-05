@@ -3,6 +3,7 @@
 import { TabletSmartphone } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { clientLogger } from '@/lib/logger'
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>
@@ -40,7 +41,7 @@ export function InstallButton() {
     const { outcome } = await deferredPrompt.userChoice
     
     if (outcome === 'accepted') {
-      console.log('PWA instalado com sucesso')
+      clientLogger.log('✅ PWA instalado com sucesso')
     }
 
     setDeferredPrompt(null)
