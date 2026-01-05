@@ -21,7 +21,6 @@ const nextConfig: NextConfig = {
 
   // Configurações de performance
   productionBrowserSourceMaps: false,
-  swcMinify: true,
 
   async rewrites() {
     return [
