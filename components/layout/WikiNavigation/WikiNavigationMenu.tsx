@@ -57,7 +57,7 @@ const wikiLinks: WikiLink[] = [
 
 export default function WikiNavigationMenu() {
     return(
-        <div className="hidden md:flex">
+        <div className="ml-auto hidden md:flex">
             <NavigationMenu>
                 <NavigationMenuList>
                     {wikiLinks.map((link) => (

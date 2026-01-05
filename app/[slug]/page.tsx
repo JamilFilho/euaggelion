@@ -19,6 +19,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import BibliaLink from '@/components/content/Bible/BibliaLink';
+import Breadcrumb from '@/components/ui/breadcrumb';
 
 interface Params {
   slug: string;
@@ -148,7 +149,6 @@ export default async function ArticlePage({
 
   return (
     <>
-      {/* Schema Estruturado */}
       <ArticleSchema
         title={found.title}
         description={found.description}
@@ -167,85 +167,77 @@ export default async function ArticlePage({
       />
 
       <Article.Root>
-      <Article.Header>
-        <Article.Group>
-          <Link 
-            className="w-fit py-1 px-2 text-background bg-accent mb-2 font-bold"
-            href={`/s/${found.category}`}
-            title={typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name}
-          >
-            {typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name}
-          </Link>
-          <Article.Title content={found.title} />
-          <Article.Description content={found.description} />
-        </Article.Group>
+        <Breadcrumb
+          className="sticky top-0 left-0"
+          items={[
+            { label: "Home", href: "/" },
+            { label: typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name, href: `/s/${found.category}` },
+            { label: found.title, href: `/${found.slug}` },
+          ]} />
+        <Article.Header>
+          <Article.Group>
+            <Link 
+              className="w-fit py-1 px-2 text-background bg-accent mb-2 font-bold"
+              href={`/s/${found.category}`}
+              title={typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name}
+            >
+              {typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name}
+            </Link>
+            <Article.Title content={found.title} />
+            <Article.Description content={found.description} />
+          </Article.Group>
 
-        <Article.Meta>
-            <Article.PublishedAt content={found.date} />
-            <Article.ReadTime content={readingTime} />
-        </Article.Meta>
-          {found.reference && found.reference.length > 0 && (
-            <div className="flex flex-col md:flex-row gap-4 py-8 px-10 w-full border-t border-foreground/20">
-              <span className="text-lg font-semibold text-foreground/60">Leia também:</span>
-              <ul className="flex flex-row flex-wrap justify-start gap-2">
-                {found.reference.map((ref, index) => (
-                  <li key={index}>
-                    <BibliaLink variant="link">
-                      {ref}
-                    </BibliaLink>
-                  </li>
-                ))}
-                </ul>
-            </div>
-          )}
-      </Article.Header>
+          <Article.Meta>
+              <Article.PublishedAt content={found.date} />
+              <Article.ReadTime content={readingTime} />
+          </Article.Meta>
+            {found.reference && found.reference.length > 0 && (
+              <div className="flex flex-col md:flex-row gap-4 py-8 px-10 w-full border-t border-foreground/20">
+                <span className="text-lg font-semibold text-foreground/60">Leia também:</span>
+                <ul className="flex flex-row flex-wrap justify-start gap-2">
+                  {found.reference.map((ref, index) => (
+                    <li key={index}>
+                      <BibliaLink variant="link">
+                        {ref}
+                      </BibliaLink>
+                    </li>
+                  ))}
+                  </ul>
+              </div>
+            )}
+        </Article.Header>
 
-      <Article.Content>
-        <BibliaLink>
-          <MDXRemote 
-            source={content}
-            options={mdxOptions}
-          />
-        </BibliaLink>
-      </Article.Content>
-      
-      <Article.Footer>
-        <Article.Tags tags={tags}/>
-
+        <Article.Content>
+          <BibliaLink>
+            <MDXRemote 
+              source={content}
+              options={mdxOptions}
+            />
+          </BibliaLink>
+        </Article.Content>
         
-        <Article.Actions
-          excerpt={found.description}
-          link={`https://euaggelion.com.br/${found.slug}`}
-          headline={found.title}
-        />
+        <Article.Footer>
+          <Article.Tags tags={tags}/>
+          
+          <Article.Actions
+            excerpt={found.description}
+            link={`https://euaggelion.com.br/${found.slug}`}
+            headline={found.title}
+          />
 
-        <Webmentions target={`https://euaggelion.com.br/${found.slug}`} />
-      </Article.Footer>
+          <Webmentions target={`https://euaggelion.com.br/${found.slug}`} />
 
-      {/* Artigos relacionados */}
-      <RelatedArticles
-        currentArticle={{
-          slug: found.slug,
-          title: found.title,
-          category: found.category,
-          tags: found.tags || [],
-        }}
-      />
+          <RelatedArticles currentSlug={found.slug} />
+        </Article.Footer>
 
-      <Newsletter.Root>
-        <Newsletter.Header>
-          <Newsletter.Title content="NewsGelion"/>
-          <Newsletter.Headline content="Gostou deste conteúdo? Inscreva-se gratuitamente e receba materiais como este em seu e-mail." />
-        </Newsletter.Header>
-        <Newsletter.Form />
-        <Newsletter.Footer />
-      </Newsletter.Root>
-
-      <Article.Navigation
-        prev={navigation.prev}
-        next={navigation.next}
-        category={found.category}
-      />
+        <Newsletter.Root>
+          <Newsletter.Header>
+            <Newsletter.Title content="NewsGelion"/>
+            <Newsletter.Headline content="Gostou deste conteúdo? Inscreva-se gratuitamente e receba materiais como este em seu e-mail." />
+          </Newsletter.Header>
+          <Newsletter.Form />
+          <Newsletter.Footer />
+        </Newsletter.Root>
       </Article.Root>
     </>
   );

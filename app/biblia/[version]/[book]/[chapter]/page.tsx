@@ -30,12 +30,12 @@ export default async function BibleChapterPage({ params }: Props) {
   const navigation = {
     prev: hasPrev ? {
       slug: `biblia/${versionId}/${bookSlug}/${chapterNum - 1}`,
-      title: `Capítulo ${chapterNum - 1}`,
+      title: `${book?.name === "Salmos" ? "Salmo" : "Capítulo"} ${chapterNum - 1}`,
       description: `Capítulo anterior: ${chapterNum - 1}`
     } : null,
     next: hasNext ? {
       slug: `biblia/${versionId}/${bookSlug}/${chapterNum + 1}`,
-      title: `Capítulo ${chapterNum + 1}`,
+      title: `${book?.name === "Salmos" ? "Salmo" : "Capítulo"} ${chapterNum + 1}`,
       description: `Próximo capítulo: ${chapterNum + 1}`
     } : null
   };

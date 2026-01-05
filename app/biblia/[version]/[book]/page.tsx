@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { Bible } from "@/components/content/Bible";
+import Breadcrumb from "@/components/ui/breadcrumb";
 
 interface Props {
   params: Promise<{
@@ -45,6 +46,14 @@ export default async function BibleBookPage({ params }: Props) {
 
   return (
     <Bible.Root>
+      <Breadcrumb
+        className="sticky top-14 z-[800] bg-secondary"
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Bíblia", href: "/biblia" },
+          { label: book.name, href: `/biblia/${versionId}/${bookSlug}` },
+        ]}
+      />
       <Bible.Header>
         <Bible.Group>
           <Bible.Title content={book.name} />
@@ -66,7 +75,7 @@ export default async function BibleBookPage({ params }: Props) {
         </div>
       </Bible.Header>
 
-      <Link className="w-full flex flex-row justify-between items-center px-10 py-4 border-b border-ring/20 bg-black/20 hover:bg-black/30 disabled:bg-black/10 disabled:cursor-not-allowed text-foreground transition-all ease-in-out hover:pr-8 font-semibold" href={`/wiki/biblia/${bookSlug}`}>
+      <Link className="w-full flex flex-row justify-between items-center px-10 py-4 border-t border-ring/20 bg-black/20 hover:bg-black/30 disabled:bg-black/10 disabled:cursor-not-allowed text-foreground transition-all ease-in-out hover:pr-8 font-semibold" href={`/wiki/biblia/${bookSlug}`}>
         Estudar livro
         <ArrowRight className="size-4"/>
       </Link>

@@ -96,14 +96,13 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         itemCount={articlesInCategory.length}
       />
 
-      {/* Breadcrumbs */}
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
           { label: "Seções", href: "/s" },
           { label: categoryName, href: `/s/${category}` },
         ]}
-        className="container mx-auto px-4 md:px-20 py-6"
+        className="sticky top-0 z-[800] bg-secondary"
       />
 
       <Page.Root>

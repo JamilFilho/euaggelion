@@ -126,13 +126,12 @@ export default async function WikiPage({ params }: WikiPageProps) {
     <>
       {/* Schema estruturado de artigo */}
       <ArticleSchema
-        headline={article.title}
+        title={article.title}
         description={article.description}
         datePublished={article.date}
-        dateModified={article.lastmod || article.date}
+        dateModified={article.date}
         imageUrl={`https://euaggelion.com.br/api/og?slug=${article.slug}`}
         url={`https://euaggelion.com.br/wiki/${article.category}/${article.slug}`}
-        tags={article.tags}
       />
       
       {/* Schema de breadcrumbs */}
@@ -145,7 +144,6 @@ export default async function WikiPage({ params }: WikiPageProps) {
         ]}
       />
       
-      {/* Breadcrumbs visuais */}
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -153,7 +151,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
           { label: categoryName, href: `/wiki/${category}` },
           { label: article.title, href: `/wiki/${category}/${slug}` },
         ]}
-        className="container mx-auto px-4 md:px-20 py-6"
+        className="sticky top-14 z-[800] bg-secondary"
       />
       
       <Article.Root>

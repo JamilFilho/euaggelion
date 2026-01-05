@@ -64,13 +64,12 @@ export default async function BibleIndexPage({ searchParams }: Props) {
         itemCount={66}
       />
       
-      {/* Breadcrumbs */}
       <Breadcrumb
+        className="sticky top-14 z-[800] bg-secondary"
         items={[
           { label: "Home", href: "/" },
           { label: "Bíblia", href: "/biblia" },
         ]}
-        className="container mx-auto px-4 md:px-20 py-6"
       />
       
       <Bible.Root>

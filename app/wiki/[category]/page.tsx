@@ -98,14 +98,13 @@ export default async function WikiCategoryPage({ params }: WikiCategoryPageProps
             itemCount={articlesInCategory.length}
           />
           
-          {/* Breadcrumbs */}
           <Breadcrumb
             items={[
               { label: "Home", href: "/" },
               { label: "Wiki", href: "/wiki" },
               { label: categoryName, href: `/wiki/${category}` },
             ]}
-            className="container mx-auto px-4 md:px-20 py-6"
+            className="sticky top-14 z-[800] bg-secondary"
           />
           
           <Page.Root>

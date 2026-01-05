@@ -4,14 +4,15 @@ import { Page } from "@/components/content/Page";
 import { Metadata } from "next";
 import { Feed } from "@/components/content/Feed";
 import { CollectionPageSchema } from "@/lib/schema";
+import Breadcrumb from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
-    title: "Seções | Euaggelion",
+    title: "Seções de Conteúdo | Materiais Cristãos | Euaggelion",
     description: "Navegue por nossas seções temáticas de conteúdo cristão e edifique sua fé com artigos, estudos bíblicos e devocionais.",
     keywords: ["categorias", "seções", "artigos", "estudos bíblicos", "devocionais"],
     openGraph: {
-        title: "Seções | Euaggelion",
-        description: "Navegue por nossas seções temáticas de conteúdo cristão",
+        title: "Seções de Conteúdo | Materiais Cristãos | Euaggelion",
+        description: "Navegue por nossas seções temáticas de conteúdo cristão e edifique sua fé com artigos, estudos bíblicos e devocionais.",
         url: "https://euaggelion.com.br/s/",
         type: 'website',
         siteName: "Euaggelion",
@@ -57,27 +58,34 @@ export default function CategoriesPage() {
     
     return(
         <>
-            <CollectionPageSchema
-                name="Seções - Euaggelion"
-                description="Navegue por nossas seções temáticas de conteúdo cristão"
-                url="https://euaggelion.com.br/s/"
-                itemCount={categories.length}
+        <CollectionPageSchema
+            name="Seções de Conteúdo | Materiais Cristãos | Euaggelion"
+            description="Navegue por nossas seções temáticas de conteúdo cristão e edifique sua fé com artigos, estudos bíblicos e devocionais."
+            url="https://euaggelion.com.br/s/"
+            itemCount={categories.length}
+        />
+        <Page.Root>
+            <Breadcrumb
+                items={[
+                { label: "Home", href: "/" },
+                { label: "Seções", href: "/s" },
+                ]}
+                className="sticky top-0 z-[800] bg-secondary"
             />
-            <Page.Root>
-                <Page.Header>
-                    <Page.Title content="Seções" />
-                    <Page.Description content="Navegue por nossas seções de conteúdos" />
-                </Page.Header>
-                <Page.Content>
-                    <Feed.Root articles={articles} category={category}>
-                        <Feed.Group>
-                            <Feed.Articles category={category} />
-                        </Feed.Group>
-            
-                        <Feed.Pagination />
-                    </Feed.Root>
-                </Page.Content>
-            </Page.Root>
+            <Page.Header>
+                <Page.Title content="Seções" />
+                <Page.Description content="Navegue por nossas seções de conteúdos" />
+            </Page.Header>
+            <Page.Content>
+                <Feed.Root articles={articles} category={category}>
+                    <Feed.Group>
+                        <Feed.Articles category={category} />
+                    </Feed.Group>
+        
+                    <Feed.Pagination />
+                </Feed.Root>
+            </Page.Content>
+        </Page.Root>
         </>
     )
 }

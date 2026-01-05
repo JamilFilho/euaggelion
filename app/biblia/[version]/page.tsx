@@ -72,7 +72,7 @@ export default async function BibleVersionPage({ params }: Props) {
       {/* Schema estruturado */}
       <CollectionPageSchema
         name={version.name}
-        description={version.description}
+        description={version.description ?? ""}
         url={`https://euaggelion.com.br/biblia/${versionId}`}
         itemCount={66}
       />
@@ -84,14 +84,14 @@ export default async function BibleVersionPage({ params }: Props) {
           { label: "Bíblia", href: "/biblia" },
           { label: version.name, href: `/biblia/${versionId}` },
         ]}
-        className="container mx-auto px-4 md:px-20 py-6"
+        className="sticky top-14 z-[800] bg-secondary"
       />
       
       <Bible.Root>
       <Bible.Header>
         <Bible.Group>
           <Bible.Title content={version.name} />
-          <Bible.Description content={version.description} />
+          <Bible.Description content={version.description ?? ""} />
         </Bible.Group>
       </Bible.Header>
 

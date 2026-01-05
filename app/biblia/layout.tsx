@@ -25,13 +25,13 @@ export const metadata: Metadata = {
 
 export default function BibleLayout({ children }: Readonly<{children: React.ReactNode;}>) {
     return(
-        <section className="mt-20 md:mt-0">
-            <header className="print:hidden px-10 flex flex-row justify-between items-center gap-2 border-b border-ring/20">
-                <BibleHomeLink />
-                <BibleVersionSelector />
-            </header>
+      <section>
+          <header className="sticky top-0 left-0 print:hidden px-10 flex flex-row justify-between items-center gap-2 border-b border-ring/20 bg-secondary z-[900]">
+              <BibleHomeLink />
+              <BibleVersionSelector />
+          </header>
 
-            {children}
-        </section>
+          {children}
+      </section>
     )
 }

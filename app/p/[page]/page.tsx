@@ -122,7 +122,7 @@ export default async function StaticPage({
           { label: "Home", href: "/" },
           { label: page.title, href: `/p/${page.slug}` },
         ]}
-        className="container mx-auto px-4 md:px-20 py-6"
+        className="sticky top-0 z-[800] bg-secondary"
       />
       
       <div className="site-page">
