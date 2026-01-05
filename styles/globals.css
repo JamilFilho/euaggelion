@@ -82,6 +82,24 @@
     @apply text-accent underline decoration-dotted break-words font-bold;
   }
 
+  .article-content a.heading-anchor {
+    @apply absolute top-1/2 -translate-y-1/2 opacity-0 inline-flex items-center justify-center p-1 rounded text-primary no-underline decoration-transparent transition-all duration-150 ease-in-out;
+    left: -1.75rem;
+  }
+
+  .article-content :is(h2, h3, h4, h5, h6):hover a.heading-anchor,
+  .article-content :is(h2, h3, h4, h5, h6):focus-within a.heading-anchor {
+    @apply opacity-100 text-accent -translate-x-1 -translate-y-1/2;
+  }
+
+  .article-content a.heading-anchor:focus-visible {
+    @apply outline-none ring-2 ring-accent/60;
+  }
+
+  .article-content .heading-link-icon {
+    @apply block;
+  }
+
   .article-content blockquote {
     @apply border-l-4 border-accent my-8 pl-6 py-4 flex flex-col gap-4;
   }
