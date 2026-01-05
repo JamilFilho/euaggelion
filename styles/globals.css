@@ -32,6 +32,9 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --sb-track-color:var(--secondary);
+    --sb-thumb-color: #7b7b7b;
+    --sb-size: 6px;
   }
 
   .article-content {
