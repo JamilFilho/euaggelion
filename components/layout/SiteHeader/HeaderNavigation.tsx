@@ -37,7 +37,7 @@ export function SiteHeaderNavigation({icon: Icon}: SiteHeaderNavigationProps) {
                                     {section.items.map((item) => (
                                         <li key={item.href}>
                                             <DrawerClose asChild>
-                                            <Link href={item.href} title={item.label} className="text-accent underline decoration-dashed font-bold">
+                                            <Link href={item.href} title={item.label} className="text-accent underline decoration-dotted underline-offset-4">
                                                 {item.label}
                                             </Link>
                                             </DrawerClose>
