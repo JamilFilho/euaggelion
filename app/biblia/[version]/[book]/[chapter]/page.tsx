@@ -45,11 +45,13 @@ export default async function BibleChapterPage({ params }: Props) {
       <VerseHighlighter />
       <Bible.Content>
           {verses.map((verse, index) => (
-            <p id={`verse-${index + 1}`} key={index} className="p-4 hover:bg-black/20 transition-colors">
-              <sup className="text-sm font-bold text-accent mt-1 mr-2">
-                {index + 1}
-              </sup>
-              <span className="text-lg">{verse}</span>
+            <p id={`verse-${index + 1}`} key={index} className="hover:bg-black/20 transition-colors">
+              <span className="inline-block p-4">
+                <sup className="text-sm font-bold text-accent mt-1 mr-2">
+                  {index + 1}
+                </sup>
+                <span className="text-lg">{verse}</span>
+              </span>
             </p>
           ))}
       </Bible.Content>

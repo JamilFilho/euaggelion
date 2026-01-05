@@ -13,23 +13,49 @@ export default function VerseHighlighter() {
     const ids = param.split(",").map(s => s.trim()).filter(Boolean);
     if (ids.length === 0) return;
 
-    // Apply highlight classes (background + text color)
+    // Apply highlight classes (marker style, line by line)
     ids.forEach(id => {
       const el = document.getElementById(id);
       if (el) {
-        el.classList.add("bg-yellow-600");
-        el.classList.add("hover:text-foreground");
-        el.classList.add("text-secondary");
+        // Apply marker-style highlighting to the span with the actual text content
+        const textSpan = el.querySelector("span.text-lg");
+        if (textSpan) {
+          textSpan.classList.add("highlight-marker");
+        }
       }
     });
+
+    // Scroll to first highlighted element with top margin to prevent navbar overlap
+    if (ids.length > 0) {
+      const firstId = ids[0];
+      const firstEl = document.getElementById(firstId);
+      if (firstEl) {
+        setTimeout(() => {
+          // Calculate navbar height dynamically
+          const header = document.querySelector("header");
+          const navHeight = header ? header.offsetHeight : 80; // Fallback to 80px if header not found
+          
+          // Add extra margin for breathing room and breadcrumb/navigation (120px)
+          const totalOffset = navHeight + 120;
+          const elementPosition = firstEl.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - totalOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }, 100);
+      }
+    }
 
     return () => {
       ids.forEach(id => {
         const el = document.getElementById(id);
         if (el) {
-          el.classList.remove("bg-yellow-600");
-          el.classList.remove("hover:text-foreground");
-          el.classList.remove("text-secondary");
+          const textSpan = el.querySelector("span.text-lg");
+          if (textSpan) {
+            textSpan.classList.remove("highlight-marker");
+          }
         }
       });
     };
