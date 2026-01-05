@@ -17,13 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: article.date ? new Date(article.date) : new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
-      images: [
-        {
-          url: `${baseUrl}/api/og?slug=${article.slug}`,
-          title: article.title,
-          caption: article.description,
-        },
-      ],
+      images: [`${baseUrl}/api/og?slug=${article.slug}`],
     }));
 
   const pageEntries: MetadataRoute.Sitemap = pages.map((page) => ({
