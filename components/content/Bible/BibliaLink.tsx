@@ -14,7 +14,7 @@ interface BibliaLinkProps {
 import { useBibleVersion } from '@/lib/context/BibleVersionContext';
 
 export default function BibliaLink({ children, variant = "modal" }: BibliaLinkProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [selectedRef, setSelectedRef] = useState<BibleReference | null>(null);
   const [processedContent, setProcessedContent] = useState<ReactNode>(children);
   const { currentVersion } = useBibleVersion();
@@ -23,7 +23,7 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
     e.preventDefault();
     setSelectedRef(ref);
     if (variant !== "link") {
-      setIsModalOpen(true);
+      setIsDrawerOpen(true);
     }
   };
 
@@ -403,8 +403,8 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
     <>
       {processedContent}
       <BibleModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        isOpen={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
         reference={selectedRef}
       />
     </>
