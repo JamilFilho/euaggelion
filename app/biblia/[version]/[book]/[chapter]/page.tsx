@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { Article } from "@/components/content/Article";
 import VerseHighlighter from '@/components/content/Bible/VerseHighlighter';
 import { Bible } from "@/components/content/Bible";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import VerseActions from "@/components/content/Bible/VerseActions";
 
 interface Props {
   params: Promise<{
@@ -45,7 +47,9 @@ export default async function BibleChapterPage({ params }: Props) {
       <VerseHighlighter />
       <Bible.Content>
           {verses.map((verse, index) => (
-            <p id={`verse-${index + 1}`} key={index} className="hover:bg-black/20 transition-colors">
+            <Popover key={index}>
+            <PopoverTrigger asChild>
+            <p id={`verse-${index + 1}`} className="hover:bg-black/20 transition-colors cursor-pointer">
               <span className="inline-block p-4">
                 <sup className="text-sm font-bold text-accent mt-1 mr-2">
                   {index + 1}
@@ -53,6 +57,17 @@ export default async function BibleChapterPage({ params }: Props) {
                 <span className="text-lg">{verse}</span>
               </span>
             </p>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto">
+              <VerseActions
+                verse={verse}
+                bookName={book.name}
+                chapter={chapterNum}
+                verseNumber={index + 1}
+                version={version.name}
+              />
+            </PopoverContent>
+          </Popover>
           ))}
       </Bible.Content>
 
