@@ -9,6 +9,7 @@ export interface BibleBookMeta {
   slug: string;
   abbrev: string;
   chapters: number;
+  testament?: "AT" | "NT";
   description?: string;
   author?: string;
   date?: string;
