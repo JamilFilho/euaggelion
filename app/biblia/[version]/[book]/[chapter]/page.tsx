@@ -51,7 +51,7 @@ export default async function BibleChapterPage({ params }: Props) {
             <PopoverTrigger asChild>
             <p id={`verse-${index + 1}`} className="hover:bg-black/20 transition-colors cursor-pointer">
               <span className="inline-block p-4">
-                <sup className="text-sm font-bold text-accent mt-1 mr-2">
+                <sup className="relative text-sm font-bold text-accent mt-1 mr-2">
                   {index + 1}
                 </sup>
                 <span className="text-lg">{verse}</span>

@@ -83,7 +83,7 @@ export default function RootLayout({ children }: Readonly<{children: React.React
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="bg-secondary selection:bg-accent selection:text-secondary black:selection:text-foreground">
+      <body className="bg-secondary selection:bg-accent selection:text-secondary black:selection:text-foreground md:border-r md:border-ring/20">
         <Suspense fallback={null}>
           <BibleVersionProvider versions={versions}>
             <SiteHeader.Root>

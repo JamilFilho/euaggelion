@@ -65,7 +65,7 @@ export default async function BibleIndexPage({ searchParams }: Props) {
       />
       
       <Breadcrumb
-        className="sticky top-14 z-[600] bg-secondary"
+        className="sticky top-14 !z-[600] bg-secondary"
         items={[
           { label: "Home", href: "/" },
           { label: "Bíblia", href: "/biblia" },

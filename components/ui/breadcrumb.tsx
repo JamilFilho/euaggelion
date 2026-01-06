@@ -30,7 +30,7 @@ export function Breadcrumb({ items,  className = "" }: BreadcrumbProps) {
 
       <nav
         aria-label="breadcrumb"
-        className={`print:hidden px-10 py-6 border-b border-ring/20 flex items-center gap-2 text-sm overflow-hidden min-w-0 z-[500] bg-secondary ${className}`}
+        className={`z-[800] print:hidden px-10 py-6 border-b border-ring/20 flex items-center gap-2 text-sm overflow-hidden min-w-0 bg-secondary ${className}`}
       >
         <ol className="flex items-center gap-2 min-w-0 whitespace-nowrap overflow-hidden">
           {items.map((item, index) => (

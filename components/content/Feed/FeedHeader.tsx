@@ -38,7 +38,7 @@ export default function FeedHeader({
     // Se apenas versículos (verso-a-verso)
     if (!allowDateFilter && !allowAuthorFilter) {
         return (
-            <header className="md:col-span-3 flex items-center justify-between md:justify-end md:gap-4 border-b border-ring/20 py-4 px-10">
+            <section className="sticky top-16 md:col-span-3 flex items-center justify-between md:justify-end md:gap-4 border-b border-ring/20 py-4 px-10 bg-secondary">
                 <span className="text-foreground/60">Filtrar conteúdo:</span>
                 <Select value={filter} onValueChange={onFilterChange}>
                     <SelectTrigger className="w-fit">
@@ -52,13 +52,13 @@ export default function FeedHeader({
                         ))}
                     </SelectContent>
                 </Select>
-            </header>
+            </section>
         );
     }
 
     // Se permite filtro por data e/ou autor
     return (
-        <header className="md:col-span-3 flex flex-col md:flex-row flex-start md:items-center justify-between gap-4 border-b border-ring/20 py-4 px-10">
+        <section className="sticky top-16 md:col-span-3 flex flex-col md:flex-row flex-start md:items-center justify-between gap-4 border-b border-ring/20 py-4 px-6 md:px-10 bg-secondary">
             <span className="text-foreground/60">Filtrar conteúdo:</span>
             
             <div className="flex flex-row gap-2">
@@ -99,6 +99,6 @@ export default function FeedHeader({
                 </Select>
             )}
             </div>
-        </header>
+        </section>
     );
 }

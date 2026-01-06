@@ -4,6 +4,6 @@ interface ArticleReadTimeProps {
 
 export function ArticleReadTime({content}: ArticleReadTimeProps) {
     return(
-        <span className="col-span-2 md:col-span-3 font-semibold black:font-normal">{content}</span>
+        <span className="col-span-2 font-semibold black:font-normal">{content}</span>
     )
 }

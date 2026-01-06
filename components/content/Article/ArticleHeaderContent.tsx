@@ -6,7 +6,7 @@ interface ArticleHeaderContentProps {
 
 export function ArticleHeaderContent({children}: ArticleHeaderContentProps) {
     return(
-        <div className="md:h-96 px-10 py-12 flex flex-col justify-center gap-4 print:border-none border-b border-ring/20">
+        <div className="w-full md:w-2/3 md:mx-auto md:h-[32rem] px-10 py-12 flex flex-col justify-center gap-4">
             {children}
         </div>
     )

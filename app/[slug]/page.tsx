@@ -20,6 +20,8 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import BibliaLink from '@/components/content/Bible/BibliaLink';
 import Breadcrumb from '@/components/ui/breadcrumb';
+import { Chronology } from '@/components/content/Chronology';
+import { ChronologyProvider } from '@/lib/context/ChronologyContext';
 
 const headingLinkIcon = {
   type: 'element',
@@ -239,7 +241,7 @@ export default async function ArticlePage({
           </Article.Group>
 
           <Article.Meta>
-              <div className="col-span-2 border-b border-r border-ring/20">Publicado por</div>
+              <div className="col-span-2 border-b border-r border-ring/20">Escrito por</div>
               <div className="col-span-2 border-b border-ring/20">{found.author}</div>
 
               <Article.PublishedAt content={found.date} />
@@ -248,20 +250,33 @@ export default async function ArticlePage({
           </Article.Meta>
 
           {found.reference && found.reference.length > 0 && (
-            <div className="flex flex-col md:flex-row gap-4 py-8 px-10 w-full border-t border-foreground/20">
-              <span className="text-lg font-semibold text-foreground/60">Leia também:</span>
-              <ul className="flex flex-row flex-wrap justify-start gap-2">
-                {found.reference.map((ref, index) => (
-                  <li key={index}>
-                    <BibliaLink variant="link">
-                      {ref}
-                    </BibliaLink>
-                  </li>
-                ))}
+            <div className="py-8 w-full border-t border-foreground/20">
+              <div className="md:w-2/3 px-10 md:px-12 md:mx-auto flex flex-col md:flex-row gap-4">
+                <span className="text-lg font-semibold text-foreground/60">Leia também:</span>
+                <ul className="flex flex-row flex-wrap justify-start gap-2">
+                  {found.reference.map((ref, index) => (
+                    <li key={index}>
+                      <BibliaLink variant="link">
+                        {ref}
+                      </BibliaLink>
+                    </li>
+                  ))}
                 </ul>
+              </div>
             </div>
           )}
         </Article.Header>
+
+        {found.chronology && found.chronology.length > 0 && (
+          <ChronologyProvider 
+            chronology={found.chronology}
+            dataset={found.chronologyDataset}
+          >
+            <Chronology.Root>
+              <Chronology.Timeline />
+            </Chronology.Root>
+          </ChronologyProvider>
+        )}
 
         <Article.Content>
           <BibliaLink>
