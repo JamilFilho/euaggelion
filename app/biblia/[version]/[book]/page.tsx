@@ -46,7 +46,7 @@ export default async function BibleBookPage({ params }: Props) {
 
   const chronologyDatasetSlug = bookSlug;
   const hasChronologyDataset = fs.existsSync(
-    path.join(process.cwd(), "content", "chronology", `${chronologyDatasetSlug}.json`)
+    path.join(process.cwd(), "content", "chronology", "bible", `${chronologyDatasetSlug}.json`)
   );
 
   if (!version || !book) {

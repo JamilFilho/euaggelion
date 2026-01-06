@@ -22,6 +22,7 @@ export async function GET(
       process.cwd(),
       'content',
       'chronology',
+      'bible',
       `${dataset}.json`
     );
 
