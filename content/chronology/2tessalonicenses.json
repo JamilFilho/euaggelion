@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de 2 Tessalonicenses",
+  "description": "Panorama da segunda carta aos tessalonicenses, corrigindo expectativas apocalípticas e chamando à firmeza.",
+  "period": {
+    "start": 51,
+    "end": 52
+  },
+  "events": [
+    {
+      "yearStart": 51,
+      "yearEnd": 52,
+      "event": "Confusão sobre a chegada do Dia do Senhor",
+      "description": "Relatos ou cartas atribuídas a Paulo geram alarme escatológico; 2 Tessalonicenses esclarece sinais e ordem dos eventos.",
+      "reference": ["2 Tessalonicenses 2.1-3"]
+    },
+    {
+      "yearStart": 51,
+      "yearEnd": 52,
+      "event": "Pressão social e econômica",
+      "description": "Perseguição local e ociosidade entre membros levam Paulo a reforçar trabalho digno e disciplina comunitária.",
+      "reference": ["2 Tessalonicenses 1.4-7", "2 Tessalonicenses 3.6-12"]
+    },
+    {
+      "yearStart": 50,
+      "yearEnd": 52,
+      "event": "Ambiente político sob Cláudio/Nero inicial",
+      "description": "Administração romana mantém relativa estabilidade na Macedônia, permitindo circulação de cartas e mensageiros.",
+      "reference": ["Contexto provincial romano da Macedônia"]
+    }
+  ]
+}

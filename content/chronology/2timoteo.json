@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de 2 Timóteo",
+  "description": "Panorama da segunda carta a Timóteo, testamento pastoral de Paulo em prisão severa sob Nero.",
+  "period": {
+    "start": 66,
+    "end": 67
+  },
+  "events": [
+    {
+      "yearStart": 66,
+      "yearEnd": 67,
+      "event": "Segunda prisão de Paulo em Roma",
+      "description": "Paulo algemado como criminoso aguarda sentença; relata deserções e busca encorajar Timóteo à fidelidade.",
+      "reference": ["2 Timóteo 1.8", "2 Timóteo 2.9"]
+    },
+    {
+      "yearStart": 64,
+      "yearEnd": 67,
+      "event": "Perseguição neroniana continuada",
+      "description": "Após 64, ambiente hostil persiste; Paulo vislumbra martírio iminente e afirma ter combatido o bom combate.",
+      "reference": ["Tacito, Anais 15.44", "2 Timóteo 4.6-8"]
+    },
+    {
+      "yearStart": 66,
+      "yearEnd": 67,
+      "event": "Ciclo de cooperação e abandono",
+      "description": "Amigos como Lucas permanecem, outros abandonam; a carta pede que Timóteo venha depressa com Marcos e os pergaminhos.",
+      "reference": ["2 Timóteo 4.9-13"]
+    }
+  ]
+}

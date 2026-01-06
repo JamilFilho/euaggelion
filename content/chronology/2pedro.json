@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de 2 Pedro",
+  "description": "Panorama da segunda carta de Pedro, respondendo a falsos mestres e reforçando a esperança escatológica.",
+  "period": {
+    "start": 64,
+    "end": 68
+  },
+  "events": [
+    {
+      "yearStart": 64,
+      "yearEnd": 65,
+      "event": "Ameaça de falsos mestres libertinos",
+      "description": "Grupos negam a volta de Cristo e promovem imoralidade; a carta reafirma profecias e juízo futuro.",
+      "reference": ["2 Pedro 2", "2 Pedro 3.3-4"]
+    },
+    {
+      "yearStart": 64,
+      "yearEnd": 67,
+      "event": "Memória do testemunho apostólico",
+      "description": "Autor evoca Transfiguração e cartas de Paulo como Escrituras, buscando preservar tradição antes do fim dos apóstolos.",
+      "reference": ["2 Pedro 1.16-18", "2 Pedro 3.15-16"]
+    },
+    {
+      "yearStart": 67,
+      "yearEnd": 68,
+      "event": "Contexto de martírio apostólico",
+      "description": "Pedro prevê sua partida, possivelmente próximo ao martírio sob Nero, motivando exortação final.",
+      "reference": ["2 Pedro 1.13-15", "Tradição do martírio de Pedro"]
+    }
+  ]
+}

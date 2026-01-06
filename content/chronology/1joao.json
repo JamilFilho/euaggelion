@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de 1 João",
+  "description": "Panorama de 1 João, escrito a comunidades joaninas enfrentando cismas e debates sobre a encarnação.",
+  "period": {
+    "start": 90,
+    "end": 95
+  },
+  "events": [
+    {
+      "yearStart": 90,
+      "yearEnd": 92,
+      "event": "Saída de cismáticos da comunidade",
+      "description": "Grupo se separa negando que Jesus veio em carne; carta responde chamando-os de anticristos.",
+      "reference": ["1 João 2.18-19", "1 João 4.2-3"]
+    },
+    {
+      "yearStart": 92,
+      "yearEnd": 94,
+      "event": "Ênfase no amor e na obediência",
+      "description": "Autor reforça mandamento antigo e novo do amor como critério de autenticidade contra pretensões gnósticas.",
+      "reference": ["1 João 2.7-11", "1 João 3.11-18"]
+    },
+    {
+      "yearStart": 93,
+      "yearEnd": 95,
+      "event": "Pressão do ambiente joanino sob Domiciano",
+      "description": "Culto imperial e tensões com sinagogas formam pano de fundo para insistência em confessar Jesus publicamente.",
+      "reference": ["Suetônio, Domiciano 13", "João 16.2 ecoado"]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de 1 Crônicas",
+  "description": "Genealogias e reinado de Davi com foco cultual.",
+  "period": {"start": -1010, "end": -970},
+  "events": [
+    {"yearStart": -1010, "yearEnd": -1003, "event": "Unificação sob Davi em Hebrom", "description": "Crônicas relembra a ascensão davídica e a adesão das tribos.", "reference": ["1 Crônicas 11-12"]},
+    {"yearStart": -1003, "yearEnd": -990, "event": "Arca levada a Jerusalém e organização levítica", "description": "Davi estrutura turnos sacerdotais e músicos para o culto.", "reference": ["1 Crônicas 15-16", "1 Crônicas 23-25"]},
+    {"yearStart": -990, "yearEnd": -970, "event": "Preparativos para o Templo", "description": "Davi reúne recursos, materiais e planos que Salomão executará.", "reference": ["1 Crônicas 28-29"]}
+  ]
+}

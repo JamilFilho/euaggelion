@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de Colossenses",
+  "description": "Panorama da carta aos colossenses, respondendo a ensinos sincréticos e afirmando a supremacia de Cristo.",
+  "period": {
+    "start": 60,
+    "end": 62
+  },
+  "events": [
+    {
+      "yearStart": 60,
+      "yearEnd": 62,
+      "event": "Prisão de Paulo e mediação de Epafras",
+      "description": "Epafras informa Paulo sobre a igreja em Colossos; Paulo escreve de prisão para fortalecer fé e ordem comunitária.",
+      "reference": ["Colossenses 1.7-8", "Colossenses 4.3"]
+    },
+    {
+      "yearStart": 60,
+      "yearEnd": 62,
+      "event": "Enfrentamento de ensinamentos mistos",
+      "description": "Sincretismo de práticas judaicas, ascetismo e culto a anjos ameaça a centralidade de Cristo; carta afirma sua preeminência.",
+      "reference": ["Colossenses 2.16-23"]
+    },
+    {
+      "yearStart": 61,
+      "yearEnd": 62,
+      "event": "Circularidade com Laodiceia",
+      "description": "Carta deve ser trocada com Laodiceia, indicando rede de comunidades na Frígia e Licaônia.",
+      "reference": ["Colossenses 4.16"]
+    }
+  ]
+}

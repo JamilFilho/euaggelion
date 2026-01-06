@@ -1,0 +1,14 @@
+{
+  "name": "Contexto Histórico de Jonas",
+  "description": "Missão profética a Nínive em meio ao crescimento assírio e ao reinado próspero de Jeroboão II em Israel.",
+  "period": {"start": -800, "end": -740},
+  "events": [
+    {"yearStart": -793, "yearEnd": -753, "event": "Reinado de Jeroboão II em Israel", "description": "Expansão territorial e prosperidade sob Jeroboão II, enquanto injustiças sociais crescem.", "reference": ["2 Reis 14:23-27"]},
+    {"yearStart": -810, "yearEnd": -760, "event": "Recuperação e campanhas assírias para oeste", "description": "Após crises internas, Assíria retoma força (Adade-Nirari III, Salmaneser IV), cobrando tributos de regiões siro-palestinas.", "reference": ["Anais assírios", "Inscrição de Adade-Nirari III"]},
+    {"yearStart": -780, "yearEnd": -760, "event": "Surgimento de movimentos proféticos no norte", "description": "Contemporâneo a Jonas, prosperidade fomenta denúncias de injustiça (contexto próximo a Amós e Oséias).", "reference": ["Amós 1:1", "Oséias 1:1"]},
+    {"yearStart": -775, "yearEnd": -750, "event": "Crises naturais e eclipses na Assíria", "description": "Registros mencionam pragas e o eclipse de Bur-Sagale (763), possivelmente reforçando clima de arrependimento em Nínive.", "reference": ["Crônica assíria", "Astronomical Diaries"]},
+    {"yearStart": -770, "yearEnd": -760, "event": "Comissão de Jonas e arrependimento de Nínive", "description": "Jonas é enviado a Nínive; a cidade responde com jejum e lamento, adiando o juízo anunciado.", "reference": ["Jonas 1-4"]},
+    {"yearStart": -760, "yearEnd": -750, "event": "Avanço assírio sobre Aram-Damasco e tributos israelitas", "description": "Assíria pressiona Damasco e recebe tributo de reis siro-palestinos, incluindo possivelmente Menaém mais tarde; cenário de dependência crescente.", "reference": ["Inscrições assírias", "2 Reis 15:19"]},
+    {"yearStart": -760, "yearEnd": -740, "event": "Declínio pós-Jeroboão II e instabilidade em Israel", "description": "Após Jeroboão II, golpes e sucessões rápidas enfraquecem o reino, abrindo caminho para domínio assírio futuro.", "reference": ["2 Reis 14:29", "2 Reis 15:8-15"]}
+  ]
+}

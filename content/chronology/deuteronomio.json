@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Deuteronômio",
+  "description": "Panorama dos discursos de Moisés nas planícies de Moabe antes da entrada em Canaã.",
+  "period": {"start": -1407, "end": -1406},
+  "events": [
+    {"yearStart": -1407, "yearEnd": -1407, "event": "Releitura da Lei e renovação da aliança", "description": "Moisés recapitula a Lei para a nova geração, reforçando fidelidade exclusiva ao Senhor.", "reference": ["Deuteronômio 1-30"]},
+    {"yearStart": -1407, "yearEnd": -1407, "event": "Bênçãos e maldições em Moabe", "description": "Cerimônia que apresenta consequências da obediência e desobediência ao pacto.", "reference": ["Deuteronômio 27-30"]},
+    {"yearStart": -1406, "yearEnd": -1406, "event": "Morte de Moisés e comissão a Josué", "description": "Moisés vê a terra, é sepultado, e Josué recebe liderança para a conquista.", "reference": ["Deuteronômio 31-34"]}
+  ]
+}

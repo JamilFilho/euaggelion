@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de Gálatas",
+  "description": "Panorama da carta aos gálatas em meio à controvérsia sobre Lei, circuncisão e inclusão de gentios.",
+  "period": {
+    "start": 48,
+    "end": 49
+  },
+  "events": [
+    {
+      "yearStart": 48,
+      "yearEnd": 48,
+      "event": "Missão de Paulo no sul da Galácia",
+      "description": "Comunidades recém-formadas enfrentam influência de mestres que exigem circuncisão; Paulo responde energicamente sobre justificação pela fé.",
+      "reference": ["Atos 13-14"]
+    },
+    {
+      "yearStart": 49,
+      "yearEnd": 49,
+      "event": "Concílio de Jerusalém",
+      "description": "Debate sobre gentios e Lei culmina em acordo de não impor circuncisão, reforçando a posição paulina.",
+      "reference": ["Atos 15", "Gálatas 2.1-10"]
+    },
+    {
+      "yearStart": 49,
+      "yearEnd": 49,
+      "event": "Confronto em Antioquia",
+      "description": "Paulo resiste a Pedro por separação de mesas; episódio ilustra tensão que motivou a carta.",
+      "reference": ["Gálatas 2.11-14"]
+    }
+  ]
+}

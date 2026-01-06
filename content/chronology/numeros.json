@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Números",
+  "description": "Panorama da jornada de Israel do Sinai a Moabe, com censos, rebeliões e organização tribal.",
+  "period": {"start": -1446, "end": -1406},
+  "events": [
+    {"yearStart": -1446, "yearEnd": -1446, "event": "Censo inicial e arranjo do acampamento", "description": "Tribos são numeradas e dispostas ao redor do Tabernáculo para marchar e acampar.", "reference": ["Números 1-4"]},
+    {"yearStart": -1445, "yearEnd": -1407, "event": "Rebeliões no deserto e 40 anos de peregrinação", "description": "Episódios de incredulidade (Cades, Corá) levam à sentença de geração perecendo no deserto.", "reference": ["Números 13-21"]},
+    {"yearStart": -1407, "yearEnd": -1406, "event": "Censo final e preparação em Moabe", "description": "Nova contagem, leis finais e conquista de Moabe/siomitas preparam entrada em Canaã.", "reference": ["Números 26-36"]}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Gênesis",
+  "description": "Panorama dos relatos primevos e patriarcais, situando a migração de Abraão e a formação das famílias de Israel.",
+  "period": {"start": -2100, "end": -1700},
+  "events": [
+    {"yearStart": -2100, "yearEnd": -2000, "event": "Migração de Abraão de Ur/Harã para Canaã", "description": "Movimento de clãs semitas rumo ao Crescente Fértil ocidental, em meio a cidades-estado cananeias.", "reference": ["Gênesis 12", "Contexto patriarcal do Oriente Antigo"]},
+    {"yearStart": -1900, "yearEnd": -1850, "event": "Alianças tribais e conflito regional", "description": "Narrativas de Abraão, Isaque e Jacó ocorrem durante rivalidades entre cidades-estado e potências mesopotâmicas (e.g., campanha dos quatro reis).", "reference": ["Gênesis 14", "Textos de Mari e Nuzi"]},
+    {"yearStart": -1750, "yearEnd": -1700, "event": "José no Egito e assentamento em Gósen", "description": "Fome leva Jacó e seus filhos ao Egito, sob um regime que acolhe pastores asiáticos (hipótese hicso).", "reference": ["Gênesis 37-50", "Contexto de entrada de semitas no Delta"]}
+  ]
+}

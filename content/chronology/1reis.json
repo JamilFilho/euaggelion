@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de 1 Reis",
+  "description": "Reinado de Salomão e divisão do reino em Israel (norte) e Judá (sul).",
+  "period": {"start": -970, "end": -850},
+  "events": [
+    {"yearStart": -970, "yearEnd": -931, "event": "Reino de Salomão e construção do Templo", "description": "Centralização do culto em Jerusalém e alianças internacionais com fardo tributário pesado.", "reference": ["1 Reis 3-10"]},
+    {"yearStart": -931, "yearEnd": -925, "event": "Divisão do reino e cisma religioso", "description": "Roboão mantém jugo, Jeroboão erige bezerros em Betel e Dã; duas monarquias emergem.", "reference": ["1 Reis 12-14"]},
+    {"yearStart": -875, "yearEnd": -850, "event": "Conflitos com Acabe e Jezabel", "description": "Profeta Elias confronta idolatria baalita em Israel e seca devasta a região.", "reference": ["1 Reis 17-22"]}
+  ]
+}

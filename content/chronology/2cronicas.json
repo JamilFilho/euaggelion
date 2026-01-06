@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de 2 Crônicas",
+  "description": "Reinos de Judá até o exílio e o edito de Ciro.",
+  "period": {"start": -970, "end": -538},
+  "events": [
+    {"yearStart": -970, "yearEnd": -931, "event": "Salomão e a dedicação do Templo", "description": "Ênfase na glória cultual e no compromisso davídico-salomônico.", "reference": ["2 Crônicas 5-7"]},
+    {"yearStart": -715, "yearEnd": -640, "event": "Reformas de Ezequias e Josias", "description": "Crônicas destaca purificação do Templo, Páscoa nacional e retorno à Lei.", "reference": ["2 Crônicas 29-31", "2 Crônicas 34-35"]},
+    {"yearStart": -586, "yearEnd": -538, "event": "Exílio babilônico e edito de Ciro", "description": "Queda de Jerusalém, cativeiro e anúncio da reconstrução autorizado por Ciro.", "reference": ["2 Crônicas 36.15-23"]}
+  ]
+}

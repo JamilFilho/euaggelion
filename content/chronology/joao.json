@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de João",
+  "description": "Panorama da redação do Evangelho de João em ambiente joanino tardio, com debates cristológicos e separação de sinagogas.",
+  "period": {
+    "start": 90,
+    "end": 95
+  },
+  "events": [
+    {
+      "yearStart": 85,
+      "yearEnd": 90,
+      "event": "Expulsões de cristãos das sinagogas",
+      "description": "Aplicação da Birkat ha-Minim afasta confessores de Jesus das sinagogas, marcando identidade joanina e linguagem de oposição ao ""mundo"".",
+      "reference": ["Fontes rabínicas sobre Yavne", "João 9.22; 16.2 (eco comunitário)"]
+    },
+    {
+      "yearStart": 90,
+      "yearEnd": 93,
+      "event": "Debates cristológicos na Ásia Menor",
+      "description": "Conflitos com correntes docetizantes e gnósticas iniciais motivam ênfase em encarnação (Logos que se fez carne) e testemunho ocular.",
+      "reference": ["1 João 4.2-3", "Irineu, Contra Heresias 3.11"]
+    },
+    {
+      "yearStart": 93,
+      "yearEnd": 95,
+      "event": "Pressão do culto imperial sob Domiciano",
+      "description": "Comunidades da Ásia vivem tensão com exigências de culto imperial; o evangelho exalta Jesus como Kyrios em contraste a Roma.",
+      "reference": ["Suetônio, Domiciano 13", "Cassius Dio 67.4"]
+    }
+  ]
+}

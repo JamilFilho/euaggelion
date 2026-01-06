@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de Filipenses",
+  "description": "Panorama da carta aos filipenses, escrita em prisão e marcada por parceria missionária e alegria em meio a oposição.",
+  "period": {
+    "start": 60,
+    "end": 62
+  },
+  "events": [
+    {
+      "yearStart": 60,
+      "yearEnd": 62,
+      "event": "Cativeiro de Paulo",
+      "description": "Paulo escreve como prisioneiro (Roma ou Cesareia), ressaltando que cadeias servem ao progresso do evangelho.",
+      "reference": ["Filipenses 1.12-14"]
+    },
+    {
+      "yearStart": 61,
+      "yearEnd": 61,
+      "event": "Envio de Epafrodito",
+      "description": "A igreja envia apoio financeiro e Epafrodito adoece; Paulo devolve o cooperador com elogio e instruções de unidade.",
+      "reference": ["Filipenses 2.25-30", "Filipenses 4.18"]
+    },
+    {
+      "yearStart": 62,
+      "yearEnd": 62,
+      "event": "Pressão de opositores judaizantes e antinomianos",
+      "description": "Paulo adverte contra circuncisão como confiança na carne e contra libertinismo, reafirmando cidadania celestial.",
+      "reference": ["Filipenses 3.2-20"]
+    }
+  ]
+}

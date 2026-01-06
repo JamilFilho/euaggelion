@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Jó",
+  "description": "Narrativa sapiencial ambientada em época patriarcal com cenário fora de Israel (Uz).",
+  "period": {"start": -2000, "end": -1800},
+  "events": [
+    {"yearStart": -2000, "yearEnd": -1900, "event": "Prosperidade patriarcal no Oriente", "description": "Jó é descrito como grande do Oriente, com rebanhos e servos, típico de chefes tribais.", "reference": ["Jó 1-2"]},
+    {"yearStart": -1900, "yearEnd": -1850, "event": "Debates sobre justiça e sofrimento", "description": "Amigos de Jó discutem retribuição divina numa estrutura de discursos poéticos.", "reference": ["Jó 3-37"]},
+    {"yearStart": -1850, "yearEnd": -1850, "event": "Teofania e restauração", "description": "Deus responde do redemoinho, corrige percepções e restaura a sorte de Jó.", "reference": ["Jó 38-42"]}
+  ]
+}

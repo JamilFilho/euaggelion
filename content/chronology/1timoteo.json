@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de 1 Timóteo",
+  "description": "Panorama da carta pastoral a Timóteo, tratando de organização e ensino saudável em Éfeso.",
+  "period": {
+    "start": 63,
+    "end": 65
+  },
+  "events": [
+    {
+      "yearStart": 63,
+      "yearEnd": 64,
+      "event": "Reorganização após libertação de Paulo",
+      "description": "Após primeira prisão, Paulo retoma viagens e deixa Timóteo em Éfeso para enfrentar ensinos desviados e ordenar presbíteros.",
+      "reference": ["1 Timóteo 1.3-4"]
+    },
+    {
+      "yearStart": 64,
+      "yearEnd": 64,
+      "event": "Incêndio de Roma e clima anti-cristão",
+      "description": "Hostilidade crescente reforça necessidade de boa reputação, oração pelas autoridades e vida piedosa.",
+      "reference": ["1 Timóteo 2.1-2", "Tacito, Anais 15.44"]
+    },
+    {
+      "yearStart": 64,
+      "yearEnd": 65,
+      "event": "Combate a especulações e ascetismo",
+      "description": "Circulam mitos e genealogias, bem como proibições alimentares e ao casamento; Paulo orienta preservação da sã doutrina.",
+      "reference": ["1 Timóteo 4.1-5"]
+    }
+  ]
+}

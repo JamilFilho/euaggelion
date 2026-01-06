@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de Judas",
+  "description": "Panorama da carta de Judas, denunciando intrusos ímpios e chamando a preservar a fé transmitida.",
+  "period": {
+    "start": 65,
+    "end": 80
+  },
+  "events": [
+    {
+      "yearStart": 65,
+      "yearEnd": 70,
+      "event": "Entrada de mestres imorais nas assembleias",
+      "description": "Intrusos transformam graça em libertinagem e negam o senhorio de Jesus; Judas usa exemplos de juízo para advertir a comunidade.",
+      "reference": ["Judas 1.4", "Judas 1.5-7"]
+    },
+    {
+      "yearStart": 70,
+      "yearEnd": 75,
+      "event": "Uso de tradições judaicas extracanônicas",
+      "description": "Citações de 1 Enoque e Assunção de Moisés mostram público familiarizado com literatura judaica apocalíptica.",
+      "reference": ["Judas 1.9", "Judas 1.14-15"]
+    },
+    {
+      "yearStart": 75,
+      "yearEnd": 80,
+      "event": "Integração com tradição petrina",
+      "description": "Conteúdo paralelo a 2 Pedro 2 sugere circulação conjunta ou dependência literária, situando a carta em debates pós-apostólicos.",
+      "reference": ["Comparação com 2 Pedro 2"]
+    }
+  ]
+}

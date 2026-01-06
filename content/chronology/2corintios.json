@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de 2 Coríntios",
+  "description": "Panorama da segunda carta aos coríntios, com foco na reconciliação de Paulo com a igreja e defesa de seu ministério.",
+  "period": {
+    "start": 55,
+    "end": 56
+  },
+  "events": [
+    {
+      "yearStart": 55,
+      "yearEnd": 55,
+      "event": "Visita dolorosa e carta severa",
+      "description": "Paulo enfrenta opositores e escreve uma carta dura (não preservada) antes de reenviar 2 Coríntios para restaurar confiança.",
+      "reference": ["2 Coríntios 2.1-4"]
+    },
+    {
+      "yearStart": 55,
+      "yearEnd": 56,
+      "event": "Ofertas para os santos em Jerusalém",
+      "description": "Coleta para Jerusalém reforça unidade entre gentios e judeus; Paulo apela à generosidade macedônica e coríntia.",
+      "reference": ["2 Coríntios 8-9", "Romanos 15.25-27"]
+    },
+    {
+      "yearStart": 56,
+      "yearEnd": 56,
+      "event": "Conflito com os 'superapóstolos'",
+      "description": "Líderes rivais questionam autoridade de Paulo; a carta afirma fraqueza apostólica como sinal de poder de Cristo.",
+      "reference": ["2 Coríntios 10-13"]
+    }
+  ]
+}

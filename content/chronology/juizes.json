@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Juízes",
+  "description": "Ciclos de opressão e libertação em Israel antes da monarquia.",
+  "period": {"start": -1380, "end": -1050},
+  "events": [
+    {"yearStart": -1350, "yearEnd": -1300, "event": "Primeiras opressões cananeias e libertações", "description": "Débora/Baraque e outros juízes enfrentam coalizões locais e asseguram repouso temporário.", "reference": ["Juízes 4-5"]},
+    {"yearStart": -1200, "yearEnd": -1150, "event": "Conflitos com midianitas e filisteus", "description": "Gideão derrota Midã; Sansão inicia resistência contra filisteus na Sefelá.", "reference": ["Juízes 6-8", "Juízes 13-16"]},
+    {"yearStart": -1100, "yearEnd": -1050, "event": "Fragmentação tribal e crise moral", "description": "Narrativas de Mica e da guerra contra Benjamim ilustram desordem sem rei em Israel.", "reference": ["Juízes 17-21"]}
+  ]
+}

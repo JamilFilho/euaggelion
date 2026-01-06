@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Ester",
+  "description": "Evento de livramento dos judeus no império persa sob Xerxes/Ahasuerus.",
+  "period": {"start": -486, "end": -465},
+  "events": [
+    {"yearStart": -483, "yearEnd": -479, "event": "Ascensão de Ester à rainha", "description": "Ester é escolhida entre as jovens do harém de Xerxes.", "reference": ["Ester 1-2"]},
+    {"yearStart": -474, "yearEnd": -473, "event": "Decreto de extermínio e contra-decreto", "description": "Hamã trama contra os judeus; Mordecai e Ester obtêm permissão de defesa e reversão do massacre.", "reference": ["Ester 3-8"]},
+    {"yearStart": -473, "yearEnd": -473, "event": "Vitória dos judeus e estabelecimento de Purim", "description": "Judeus se defendem, derrotam inimigos e instituem a festa de Purim.", "reference": ["Ester 9-10"]}
+  ]
+}

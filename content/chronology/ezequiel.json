@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Ezequiel",
+  "description": "Profecias no exílio babilônico entre deportados de Judá.",
+  "period": {"start": -593, "end": -571},
+  "events": [
+    {"yearStart": -593, "yearEnd": -588, "event": "Oráculos antes da queda", "description": "Ezequiel, entre exilados, anuncia juízo iminente sobre Jerusalém.", "reference": ["Ezequiel 1-24"]},
+    {"yearStart": -587, "yearEnd": -585, "event": "Oráculos contra nações", "description": "Sentenças contra Amom, Tiro, Egito e outras potências.", "reference": ["Ezequiel 25-32"]},
+    {"yearStart": -585, "yearEnd": -571, "event": "Visões de restauração e novo templo", "description": "Vale de ossos secos, promessa do pastor único e visão do templo ideal.", "reference": ["Ezequiel 34-48"]}
+  ]
+}

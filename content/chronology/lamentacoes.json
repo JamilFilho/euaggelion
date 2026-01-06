@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Lamentações",
+  "description": "Poemas de lamento pela queda de Jerusalém e do Templo.",
+  "period": {"start": -586, "end": -580},
+  "events": [
+    {"yearStart": -586, "yearEnd": -586, "event": "Destruição de Jerusalém por Babilônia", "description": "Cidade e Templo arrasados; fome, exílio e ruína descritos nos poemas.", "reference": ["Lamentações 1-2"]},
+    {"yearStart": -585, "yearEnd": -584, "event": "Luto e teologia do juízo", "description": "Lamentos reconhecem pecado nacional e clamam por misericórdia.", "reference": ["Lamentações 3-4"]},
+    {"yearStart": -584, "yearEnd": -580, "event": "Súplica por restauração", "description": "Pedido para que Deus renove os dias como dantes apesar da ira.", "reference": ["Lamentações 5"]}
+  ]
+}

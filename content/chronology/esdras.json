@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Esdras",
+  "description": "Retorno do exílio e restauração da Torá sob liderança sacerdotal.",
+  "period": {"start": -538, "end": -450},
+  "events": [
+    {"yearStart": -538, "yearEnd": -515, "event": "Retorno com Zorobabel e reconstrução do Templo", "description": "Primeira leva retorna pela ordem de Ciro; Templo é concluído em Dario I.", "reference": ["Esdras 1-6"]},
+    {"yearStart": -458, "yearEnd": -458, "event": "Missão de Esdras a Jerusalém", "description": "Esdras chega com autoridade persa para ensinar a Lei e organizar comunidade.", "reference": ["Esdras 7-8"]},
+    {"yearStart": -458, "yearEnd": -450, "event": "Reformas de pureza e separação", "description": "Casamentos mistos são tratados e a comunidade reafirma o pacto.", "reference": ["Esdras 9-10"]}
+  ]
+}

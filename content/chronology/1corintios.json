@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de 1 Coríntios",
+  "description": "Panorama da primeira carta aos coríntios, abordando divisões internas, ética comunitária e culto em uma cidade portuária cosmopolita.",
+  "period": {
+    "start": 53,
+    "end": 55
+  },
+  "events": [
+    {
+      "yearStart": 51,
+      "yearEnd": 51,
+      "event": "Caso diante do procônsul Gálio",
+      "description": "Tribunal em Corinto estabelece precedente de tolerância inicial ao movimento cristão, mas evidencia rivalidades com líderes de sinagoga.",
+      "reference": ["Atos 18.12-17", "Inscrição de Delfos sobre Gálio"]
+    },
+    {
+      "yearStart": 53,
+      "yearEnd": 54,
+      "event": "Relato da casa de Cloé sobre divisões",
+      "description": "Informes a Paulo revelam facções em torno de Apolo, Cefas e do próprio Paulo, demandando resposta apostólica sobre unidade e cruz.",
+      "reference": ["1 Coríntios 1.11-12"]
+    },
+    {
+      "yearStart": 54,
+      "yearEnd": 55,
+      "event": "Questões de culto e ética em contexto greco-romano",
+      "description": "Práticas de banquetes, prostitutas cultuais e tribunais seculares desafiam a nova comunidade; Paulo oferece instruções sobre corpo, ceia e dons.",
+      "reference": ["1 Coríntios 5-11"]
+    }
+  ]
+}

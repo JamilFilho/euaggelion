@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de Tito",
+  "description": "Panorama da carta a Tito, orientando a organização de igrejas em Creta e combate a falsos ensinos.",
+  "period": {
+    "start": 63,
+    "end": 65
+  },
+  "events": [
+    {
+      "yearStart": 63,
+      "yearEnd": 64,
+      "event": "Estadia de Tito em Creta",
+      "description": "Paulo deixa Tito para estabelecer presbíteros em cidades cretenses, conhecidas por reputação de engano e violência.",
+      "reference": ["Tito 1.5", "Tito 1.12"]
+    },
+    {
+      "yearStart": 64,
+      "yearEnd": 65,
+      "event": "Ensinos judaizantes e especulações genealógicas",
+      "description": "Grupo insiste em mitos e leis humanas; carta ordena silenciar mestres insubordinados e afirmar boas obras.",
+      "reference": ["Tito 1.10-14", "Tito 3.9"]
+    },
+    {
+      "yearStart": 64,
+      "yearEnd": 65,
+      "event": "Rede de colaboradores no Egeu",
+      "description": "Planejamento de Paulo envolve enviar Ártemas ou Tíquico e pedir que Tito encontre-o em Nicópolis para um inverno.",
+      "reference": ["Tito 3.12"]
+    }
+  ]
+}

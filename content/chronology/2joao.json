@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de 2 João",
+  "description": "Panorama de 2 João, bilhete curto advertindo contra mestres que negam a encarnação e abusam da hospitalidade cristã.",
+  "period": {
+    "start": 90,
+    "end": 95
+  },
+  "events": [
+    {
+      "yearStart": 90,
+      "yearEnd": 93,
+      "event": "Comunidades-casa e hospitalidade itinerante",
+      "description": "Líderes itinerantes dependem de hospedagem; carta orienta recusar aqueles que não trazem a doutrina de Cristo em carne.",
+      "reference": ["2 João 1.10-11"]
+    },
+    {
+      "yearStart": 92,
+      "yearEnd": 95,
+      "event": "Perigo de doutrina docética",
+      "description": "Negação do Cristo encarnado é vista como engano; João exorta à vigilância e perseverança no mandamento do amor.",
+      "reference": ["2 João 1.7"]
+    },
+    {
+      "yearStart": 92,
+      "yearEnd": 95,
+      "event": "Coordenação com a tradição joanina maior",
+      "description": "Tom e temas alinham-se a 1 João e ao evangelho, reforçando coesão doutrinária em meio a cisma.",
+      "reference": ["Paralelos com 1 João 2-4"]
+    }
+  ]
+}

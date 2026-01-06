@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de Efésios",
+  "description": "Panorama da carta aos efésios (possivelmente circular), escrita em prisão e focada na unidade cósmica em Cristo.",
+  "period": {
+    "start": 60,
+    "end": 62
+  },
+  "events": [
+    {
+      "yearStart": 60,
+      "yearEnd": 62,
+      "event": "Prisão de Paulo sob custódia romana",
+      "description": "Paulo escreve de Roma ou Cesareia; status de prisioneiro molda a linguagem sobre embaixadores em cadeias e intercessão.",
+      "reference": ["Efésios 3.1", "Efésios 6.20"]
+    },
+    {
+      "yearStart": 55,
+      "yearEnd": 55,
+      "event": "Memória do conflito com o culto de Ártemis",
+      "description": "Distúrbio dos ourives em Éfeso (At 19) permanece vivo, destacando o confronto entre culto imperial/ídolos e o senhorio de Cristo.",
+      "reference": ["Atos 19.23-41"]
+    },
+    {
+      "yearStart": 61,
+      "yearEnd": 62,
+      "event": "Circularidade para igrejas da Ásia",
+      "description": "A carta parece projetada para múltiplas comunidades (Éfeso, Laodiceia, Colossos), reforçando identidade e ética comum.",
+      "reference": ["Colossenses 4.16", "Tradição paulina tardia"]
+    }
+  ]
+}
