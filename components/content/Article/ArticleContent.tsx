@@ -53,7 +53,7 @@ export function ArticleContent({children}: ArticleContentProps) {
     }, [])
 
     return(
-        <section ref={containerRef} className="md:w-2/3 md:mx-auto px-10 md:px-20 article-content">
+        <section ref={containerRef} className="md:w-2/3 md:mx-auto px-10 md:px-20 article-content overflow-visible">
             {children}
         </section>
     )

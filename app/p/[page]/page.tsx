@@ -11,6 +11,7 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock';
 
 const headingLinkIcon = {
   type: 'element',
@@ -153,9 +154,11 @@ export default async function StaticPage({
   const mdxOptions = {
     mdxOptions: {
       remarkPlugins: [
+        remarkChronologyParser,
         remarkGfm, // Suporte para tabelas, strikethrough, tasklists, etc.
       ],
       rehypePlugins: [
+        rehypeChronologyParser,
         rehypeSlug, // Adiciona IDs aos headings
         [
           rehypeAutolinkHeadings,
@@ -163,6 +166,10 @@ export default async function StaticPage({
         ] as any,
       ],
     },
+  };
+
+  const mdxComponents = {
+    ChronologyBlock: ChronologyBlock as any,
   };
 
   return (
@@ -189,6 +196,7 @@ export default async function StaticPage({
           <MDXRemote 
             source={content}
             options={mdxOptions}
+            components={mdxComponents}
           />
         </Article.Content>
       </Article.Root>

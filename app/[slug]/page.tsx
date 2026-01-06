@@ -18,9 +18,12 @@ import { RelatedArticles } from "@/components/content/RelatedArticles";
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { remarkChronologyParser } from '@/lib/remarkChronologyParser';
+import { rehypeChronologyParser } from '@/lib/rehypeChronologyParser';
 import BibliaLink from '@/components/content/Bible/BibliaLink';
 import Breadcrumb from '@/components/ui/breadcrumb';
 import { Chronology } from '@/components/content/Chronology';
+import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock';
 import { ChronologyProvider } from '@/lib/context/ChronologyContext';
 
 const headingLinkIcon = {
@@ -188,9 +191,11 @@ export default async function ArticlePage({
   const mdxOptions = {
     mdxOptions: {
       remarkPlugins: [
+        remarkChronologyParser,
         remarkGfm, // Suporte para tabelas, strikethrough, tasklists, etc.
       ],
       rehypePlugins: [
+        rehypeChronologyParser,
         rehypeSlug, // Adiciona IDs aos headings
         [
           rehypeAutolinkHeadings,
@@ -198,6 +203,10 @@ export default async function ArticlePage({
         ] as any,
       ],
     },
+  };
+
+  const mdxComponents = {
+    ChronologyBlock: ChronologyBlock as any,
   };
 
   return (
@@ -283,6 +292,7 @@ export default async function ArticlePage({
             <MDXRemote 
               source={content}
               options={mdxOptions}
+              components={mdxComponents}
             />
           </BibliaLink>
         </Article.Content>

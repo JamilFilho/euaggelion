@@ -3,12 +3,17 @@
 import { createContext, useContext, ReactNode, useState } from "react";
 
 interface ChronologyEvent {
-  year: number;
+  year?: number;
+  yearStart?: number;
+  yearEnd?: number;
   month?: string;
+  monthStart?: string;
+  monthEnd?: string;
   day?: string;
   event: string;
   description: string;
   reference?: string[];
+  track?: number;
 }
 
 interface ChronologyContextType {

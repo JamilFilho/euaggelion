@@ -16,7 +16,10 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { remarkChronologyParser } from '@/lib/remarkChronologyParser';
+import { rehypeChronologyParser } from '@/lib/rehypeChronologyParser';
 import BibliaLink from '@/components/content/Bible/BibliaLink';
+import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock';
 
 const headingLinkIcon = {
   type: 'element',
@@ -156,9 +159,11 @@ export default async function WikiPage({ params }: WikiPageProps) {
   const mdxOptions = {
     mdxOptions: {
       remarkPlugins: [
+        remarkChronologyParser,
         remarkGfm, // Suporte para tabelas, strikethrough, tasklists, etc.
       ],
       rehypePlugins: [
+        rehypeChronologyParser,
         rehypeSlug, // Adiciona IDs aos headings
         [
           rehypeAutolinkHeadings,
@@ -166,6 +171,10 @@ export default async function WikiPage({ params }: WikiPageProps) {
         ] as any,
       ],
     },
+  };
+
+  const mdxComponents = {
+    ChronologyBlock: ChronologyBlock as any,
   };
 
   // Verifica se o artigo existe, está publicado e a categoria bate
@@ -261,6 +270,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
           <MDXRemote 
             source={content}
             options={mdxOptions}
+            components={mdxComponents}
           />
         </BibliaLink>
       </Article.Content>

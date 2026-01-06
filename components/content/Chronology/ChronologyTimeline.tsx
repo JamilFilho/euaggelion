@@ -296,12 +296,12 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
             })}
           </div>
 
-          <div className="my-8">
+          <div className="my-8 space-y-3">
           {/* Tracks de Eventos */}
           {Array.from({ length: maxTracks }).map((_, trackIndex) => (
-            <div key={trackIndex} className="mb-2">
+            <div key={trackIndex} className="mb-4">
               {/* Container de Eventos */}
-              <div className="relative h-8">
+              <div className="relative h-10">
                 {events
                   .filter(event => (trackAssignments.get(event) || 0) === trackIndex)
                   .map((event, index) => {
@@ -321,10 +321,10 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
                       <Popover key={`${event.yearStart || event.year}-${index}`}>
                         <PopoverTrigger asChild>
                           <button
-                            className={`absolute h-8 ${colorClass} transition-all cursor-pointer hover:z-10`}
+                            className={`absolute h-10 ${colorClass} transition-all cursor-pointer hover:z-10 rounded-sm border border-white/20`}
                             style={style}
                           >
-                            <span className="text-xs text-white font-medium px-2 truncate block">
+                            <span className="text-xs text-white font-medium px-2 truncate block leading-10">
                               {event.event}
                             </span>
                           </button>
