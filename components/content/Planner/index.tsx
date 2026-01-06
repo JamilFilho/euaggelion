@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
+import { Skeleton } from "@/components/ui/skeleton";
 import { generateReadingPlan, PlanScope, PlanSpan, THEMATIC_GROUPS } from "@/lib/readingPlan";
 import { Album, CalendarDays, Info, Printer, Sparkles } from "lucide-react";
 
@@ -86,6 +87,7 @@ export function PlannerGenerator() {
   const [group, setGroup] = useState<string>(fallbackGroup);
   const [startDateValue, setStartDateValue] = useState<string>(toInputDate(today));
   const [isGenerated, setIsGenerated] = useState<boolean>(false);
+  const [isGenerating, setIsGenerating] = useState<boolean>(false);
 
   const chaptersPerDay = useMemo(() => {
     const parsed = Number(chaptersPerDayInput);
@@ -104,7 +106,11 @@ export function PlannerGenerator() {
   }, [chaptersPerDay, scope, span, group, startDateValue]);
 
   const handleGeneratePlan = () => {
-    setIsGenerated(true);
+    setIsGenerating(true);
+    setTimeout(() => {
+      setIsGenerated(true);
+      setIsGenerating(false);
+    }, 300);
   };
 
   const handlePrint = () => {
@@ -235,6 +241,30 @@ export function PlannerGenerator() {
       {!isGenerated && (
         <div className="col-span-1 md:col-span-2 flex items-center justify-center text-center px-10 mx:px-20 py-10 border-t borer-ring/20 md:border-t-0 text-foreground/60">
           Preencha os campos e clique em &quot;Gerar plano&quot;
+        </div>
+      )}
+
+      {isGenerating && (
+        <div className="md:h-[calc(100vh-5rem)] border-t md:border-t-0 border-ring/20 col-span-1 md:col-span-2 print:overflow-visible print:h-auto">
+          <div className="space-y-3">
+            <Skeleton className="h-4 w-32" />
+            <Skeleton className="h-6 w-64" />
+          </div>
+
+          <Skeleton className="h-px w-full" />
+
+          <div className="grid gap-3">
+            <Skeleton className="h-10 w-full" />
+            <Skeleton className="h-10 w-full" />
+            <Skeleton className="h-10 w-full" />
+            <Skeleton className="h-10 w-full" />
+            <Skeleton className="h-10 w-full" />
+            <Skeleton className="h-10 w-full" />
+          </div>
+
+          <Skeleton className="h-px w-full" />
+
+          <Skeleton className="h-12 w-full" />
         </div>
       )}
 

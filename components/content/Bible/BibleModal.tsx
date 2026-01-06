@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/drawer";
 import { useEffect, useState } from "react";
 import { clientLogger } from "@/lib/logger";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useBibleVersion } from "@/lib/context/BibleVersionContext";
 
 interface BibleModalProps {
@@ -100,8 +101,15 @@ export default function BibleModal({ isOpen, onClose, reference }: BibleModalPro
 
         <div className="mt-6 space-y-6">
           {loading ? (
-            <div className="flex justify-center py-10">
-              <div className="h-8 w-8 animate-spin rounded-full border-b-2 border-accent" />
+            <div className="space-y-4 px-4">
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-5/6" />
+              <Skeleton className="h-4 w-4/6" />
+              <div className="mt-6 space-y-3">
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-3/4" />
+              </div>
             </div>
           ) : (
             content.map((c, idx) => (

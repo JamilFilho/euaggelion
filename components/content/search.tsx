@@ -11,6 +11,7 @@ import {
   DialogTrigger,
   DialogClose
 } from "@/components/ui/dialog";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Search } from "lucide-react";
 import { CATEGORIES } from "@/lib/categories";
 
@@ -73,6 +74,16 @@ export function SearchContent() {
             <p className="px-4 py-6 text-sm text-foreground/60">
               Nenhum resultado encontrado.
             </p>
+          ) : query === "" ? (
+            <div className="space-y-3 p-6">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className="space-y-2">
+                  <Skeleton className="h-4 w-24" />
+                  <Skeleton className="h-6 w-full" />
+                  <Skeleton className="h-4 w-4/5" />
+                </div>
+              ))}
+            </div>
           ) : (
             <p className="px-4 py-6 text-sm text-foreground/60">
               Digite um termo para procurar em nosso conteúdo.
