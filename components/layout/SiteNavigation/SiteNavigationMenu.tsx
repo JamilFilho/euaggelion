@@ -34,11 +34,6 @@ const siteLinks: SiteLink[] = [
         href: "/biblia"
     },
     {
-        title: "Blog",
-        alt:"Leia nossos artigos do blog",
-        href: "/s/blog"
-    },
-    {
         title: "Devocionais",
         alt:"Medite em nossos devocionais diários",
         href: "/s/cada-manha"
@@ -56,26 +51,11 @@ const siteLinks: SiteLink[] = [
                 color: "bg-accent"
             },
             {
-                title: "[eBook] Como se parecer com Jesus",
-                href: "/como-se-parecer-com-jesus",
-                description: "Imitando a Cristo a partir das bem-aventuranças"
-            },
-            {
-                title: "[eBook] O Fruto do Espírito",
-                href: "/o-fruto-do-espirito",
-                description: "Meditações nas nove virtudes do Espírito"
-            },
-            {
-                title: "[Planner] Devocional",
-                href: "/planner-leitura-biblica",
+                title: "Planner de Leitura Bíblica",
+                href: "/planners",
                 description: "Organize sua leitura devocional com nosso planner de leitura gratuito"
             }
         ]
-    },
-    {
-        title: "Estudos",
-        alt:"Fortaleça sua fé com nossos estudos bíblicos",
-        href: "/s/estudos"
     },
     {
         title: "TEOleigo",
@@ -116,7 +96,7 @@ const siteLinks: SiteLink[] = [
 
 export function SiteNavigationMenu() {
     return(
-        <div className="hidden md:flex">
+        <div className="hidden md:flex z-[810]">
             <NavigationMenu>
                 <NavigationMenuList>
                     {siteLinks.map((link) => (
