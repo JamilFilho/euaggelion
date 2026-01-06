@@ -19,6 +19,7 @@ Este documento serve como um índice para a documentação do projeto, facilitan
 - [Logger Utilitário](22%20-%20logger-utilitario.md)
 - [Sistema de Filtragem de Conteúdo](23%20-%20sistema-filtragem-conteudo.md)
 - [Sistema de Cronologia Bíblica](24%20-%20sistema-cronologia-biblica.md)
+- [Sistema de Cronologia MDX](25%20-%20sistema-cronologia-mdx.md)
 
 ## Otimizações de SEO (2026)
 
@@ -38,6 +39,7 @@ As memories documentam as implementações, correções e melhorias realizadas n
 
 - **2026-01-02T00-00-00.md**: Integração do sistema de notificações WebPush com TinaCMS
 - **2026-01-02T12-00-00.md**: Correções no parsing de referências bíblicas (issue #9) e suporte para múltiplos capítulos com links separados
+- **2026-01-06T00-00-00-cronologia-mdx-parser.md**: Implementação do sistema de cronologia MDX com plugins Remark/Rehype
 
 ## Descrição dos Arquivos
 
@@ -54,6 +56,8 @@ As memories documentam as implementações, correções e melhorias realizadas n
 - **criacao-memorias.md**: Guia para criação de arquivos de memória (memories).
 - **logger-utilitario.md**: Descreve o sistema de logging e sua utilização.
 - **sistema-filtragem-conteudo.md**: Documenta o sistema de filtragem de artigos por data e autor.
+- **sistema-cronologia-biblica.md**: Documenta o sistema de cronologia baseado em datasets JSON.
+- **sistema-cronologia-mdx.md**: Documenta o sistema de cronologia inline em arquivos MDX com blocos YAML.
 
 ## Descrição dos Arquivos de SEO
 
