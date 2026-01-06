@@ -34,7 +34,7 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
   const [events, setEvents] = useState<ChronologyEvent[]>([]);
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(1); // Escala de zoom (1 = 100%)
+  const [scale, setScale] = useState(0.3); // Escala de zoom (1 = 100%)
 
   // Configurar pinch-to-zoom com use-gesture
   usePinch(
@@ -229,7 +229,7 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
   }
 
   return (
-    <div className="relative -mt-12">
+    <div className="relative -mt-12 border-t border-ring/20">
       {/* Zoom Controls (Desktop) */}
       <div className="hidden md:flex absolute right-2 top-2 gap-2 items-center bg-secondary/80 backdrop-blur-sm border border-ring/20 rounded-lg p-1 z-[5]">
         <button
