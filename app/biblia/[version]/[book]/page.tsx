@@ -1,9 +1,13 @@
+import fs from "fs";
+import path from "path";
 import { getBibleBook, getBibleVersion } from "@/lib/getBible";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { Bible } from "@/components/content/Bible";
 import Breadcrumb from "@/components/ui/breadcrumb";
+import { Chronology } from "@/components/content/Chronology";
+import { ChronologyProvider } from "@/lib/context/ChronologyContext";
 
 interface Props {
   params: Promise<{
@@ -40,6 +44,11 @@ export default async function BibleBookPage({ params }: Props) {
   const version = getBibleVersion(versionId);
   const book = getBibleBook(versionId, bookSlug);
 
+  const chronologyDatasetSlug = bookSlug;
+  const hasChronologyDataset = fs.existsSync(
+    path.join(process.cwd(), "content", "chronology", `${chronologyDatasetSlug}.json`)
+  );
+
   if (!version || !book) {
     notFound();
   }
@@ -74,6 +83,18 @@ export default async function BibleBookPage({ params }: Props) {
           
         </div>
       </Bible.Header>
+
+      {hasChronologyDataset && (
+        <div className="h-fit mt-12 -mb-10">
+          <ChronologyProvider 
+            datasets={[chronologyDatasetSlug]}
+          >
+            <Chronology.Root>
+              <Chronology.Timeline />
+            </Chronology.Root>
+          </ChronologyProvider>
+        </div>
+      )}
 
       <Link className="w-full flex flex-row justify-between items-center px-10 py-4 border-t border-ring/20 bg-black/20 hover:bg-black/30 disabled:bg-black/10 disabled:cursor-not-allowed text-foreground transition-all ease-in-out hover:pr-8 font-semibold" href={`/wiki/biblia/${bookSlug}`}>
         Estudar livro
