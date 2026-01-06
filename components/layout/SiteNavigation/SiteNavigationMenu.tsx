@@ -7,6 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger
 } from "@/components/ui/navigation-menu"
+import { ChartBarStacked, type LucideIcon } from "lucide-react";
 import Link from "next/link"
 
 interface SiteLink {
@@ -19,6 +20,7 @@ interface SiteLink {
     description?: string;
     isFeatured?: boolean;
     color?: string;
+            icon?: LucideIcon;
   }[];
 }
 
@@ -72,7 +74,8 @@ const siteLinks: SiteLink[] = [
                 href: "/wiki/cronologia",
                 description: "Estude os eventos bíblicos em ordem cronológica",
                 isFeatured: true,
-                color: "bg-zinc-800"
+                color: "bg-zinc-800",
+                icon: ChartBarStacked
             },
             {
                 title: "Credos cristãos",
@@ -96,7 +99,7 @@ const siteLinks: SiteLink[] = [
 
 export function SiteNavigationMenu() {
     return(
-        <div className="hidden md:flex z-[810]">
+        <div className="hidden md:flex z-[830]">
             <NavigationMenu>
                 <NavigationMenuList>
                     {siteLinks.map((link) => (
@@ -114,6 +117,9 @@ export function SiteNavigationMenu() {
                                                         className={`h-full flex flex-col justify-end rounded-md no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6 ${sublink.color ? sublink.color : "bg-accent"} `}
                                                         href={sublink.href}
                                                     >
+                                                        {sublink.icon ? (
+                                                            <sublink.icon className="h-5 w-5 text-foreground/80 mb-3" aria-hidden />
+                                                        ) : null}
                                                         <div className="mb-2 text-lg text-foreground font-medium">
                                                             {sublink.title}
                                                         </div>
