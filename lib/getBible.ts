@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import type { ChronologyEvent } from "./getArticles";
 
 const BIBLE_PATH = path.join(process.cwd(), "content", "bible");
 
@@ -36,6 +37,8 @@ export interface BibleBookContent {
   description?: string;
   author: string;
   date: string;
+  chronology?: ChronologyEvent[];
+  chronologyDataset?: string[];
 }
 
 function readJsonFile<T>(filePath: string): T | null {
