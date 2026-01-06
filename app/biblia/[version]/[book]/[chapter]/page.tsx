@@ -70,20 +70,6 @@ export default async function BibleChapterPage({ params }: Props) {
           </Popover>
           ))}
       </Bible.Content>
-
-      <Article.Footer>
-        <Article.Actions
-          excerpt=""
-          link=""
-          headline={`Bíblia Sagrada - ${book.name} ${chapterNum}`}
-        />
-      </Article.Footer>
-      
-      <Article.Navigation
-        prev={navigation.prev}
-        next={navigation.next}
-        category={book.name}
-      />
     </Bible.Root>
   );
 }

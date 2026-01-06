@@ -1,3 +1,4 @@
+import { Bible } from "@/components/content/Bible";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import { getBibleBook } from "@/lib/getBible";
 import Link from "next/link";
@@ -18,7 +19,6 @@ export default async function BibleLayout({ children, params }: { children: Reac
     return(
         <>
         <Breadcrumb
-          className="sticky top-14 bg-secondary"
           items={[
             { label: "Home", href: "/" },
             { label: "Bíblia", href: "/biblia" },
@@ -26,13 +26,23 @@ export default async function BibleLayout({ children, params }: { children: Reac
             { label: `${book?.name === "Salmos" ? "Salmo" : "Capítulo"} ${chapterNum}`, href: `/biblia/${versionId}/${bookSlug}/${chapterNum}` },
           ]}
         />
-        <div className="print:hidden px-10 flex flex-row justify-between items-center gap-2 border-b border-ring/20">
+        <div className="sticky top-14 bg-secondary print:hidden px-10 flex flex-row justify-between items-center gap-2 border-b border-ring/20 z-[800]">
             <Link href={`/biblia/${versionId}/${bookSlug}`} title={book ? book.name : "Bíblia Sagrada"} className="text-lg font-bold">
-              <h3 className="py-4">{book ? `${book.name} - ${chapterNum}` : "Bíblia Sagrada"}</h3>
+              <h3 className="py-4">{book ? `${book.name} ${chapterNum}` : "Bíblia Sagrada"}</h3>
             </Link>
         </div>
 
         {children}
+
+        {book && (
+          <aside className="mt-10 print:hidden border-t border-ring/20 bg-secondary/80">
+            <header className="py-6 px-10 border-b border-ring/20">
+              <span className="text-base font-bold">{book.name}</span>
+            </header>
+
+            <Bible.BookChapters bookChapters={book} versionId={versionId} bookSlug={bookSlug} />
+          </aside>
+        )}
         </>
     )
 }
