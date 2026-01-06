@@ -9,6 +9,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import BibliaLink from "../Bible/BibliaLink";
 
 interface ChronologyEvent {
   year?: number;
@@ -365,32 +366,34 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
 
                             {/* Referências */}
                             {event.reference && event.reference.length > 0 && (
-                              <div className="flex flex-wrap gap-1 pt-2 border-t border-ring/20">
-                                {event.reference.map((ref, refIndex) => {
-                                  const isObject = typeof ref === 'object';
-                                  const text = isObject ? ref.text : ref;
-                                  const url = isObject ? ref.url : undefined;
-                                  
-                                  return (
-                                    <div key={refIndex}>
-                                      {url ? (
-                                        <a
-                                          href={url}
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                          className="text-xs bg-accent/10 text-accent px-2 py-1 rounded hover:bg-accent/20 hover:text-accent-foreground transition-colors inline-block"
-                                        >
-                                          {text} ↗
-                                        </a>
-                                      ) : (
-                                        <span className="text-xs bg-accent/10 text-accent px-2 py-1 rounded inline-block">
-                                          {text}
-                                        </span>
-                                      )}
-                                    </div>
-                                  );
-                                })}
-                              </div>
+                                <div className="flex flex-wrap gap-1 pt-2 border-t border-ring/20">
+                                  {event.reference.map((ref, refIndex) => {
+                                    const isObject = typeof ref === 'object';
+                                    const text = isObject ? ref.text : ref;
+                                    const url = isObject ? ref.url : undefined;
+                                    
+                                    return (
+                                      <div key={refIndex}>
+                                        {url ? (
+                                          <a
+                                            href={url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-xs bg-accent/10 text-accent px-2 py-1 rounded hover:bg-accent/20 hover:text-accent-foreground transition-colors inline-block"
+                                          >
+                                            {text} ↗
+                                          </a>
+                                        ) : (
+                                          <span className="text-xs bg-accent/10 text-accent px-2 py-1 rounded inline-block">
+                                            <BibliaLink>
+                                              {text}
+                                            </BibliaLink>
+                                          </span>
+                                        )}
+                                      </div>
+                                    );
+                                  })}
+                                </div>
                             )}
                           </div>
                         </PopoverContent>
