@@ -26,9 +26,16 @@ export interface ArticleMeta {
   reference?: string[];
   testament?: "at" | "nt";
   chronology?: ChronologyEvent[];
-  chronologyDataset?: string;
+  chronologyDataset?: string[];
   content: string;
   search?: boolean;
+}
+
+type ChronologyDatasetInput = string | string[] | undefined;
+
+function normalizeChronologyDataset(value: ChronologyDatasetInput): string[] | undefined {
+  if (!value) return undefined;
+  return Array.isArray(value) ? value : [value];
 }
 
 export interface ArticleNavigation {
@@ -63,7 +70,9 @@ function readArticlesFromDirectory(dirPath: string, category: string): ArticleMe
         reference: data.reference ?? [],
         testament: data.testament,
         chronology: data.chronology ?? [],
-        chronologyDataset: data.chronologyDataset ?? data.chronology_dataset,
+        chronologyDataset: normalizeChronologyDataset(
+          data.chronologyDataset ?? data.chronology_dataset
+        ),
         content,
         search: data.search ?? true,
       } satisfies ArticleMeta;
