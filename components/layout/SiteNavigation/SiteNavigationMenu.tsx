@@ -68,9 +68,9 @@ const siteLinks: SiteLink[] = [
         href: "/wiki",
         submenu: [
             {
-                title: "Glossário Teológico",
-                href: "/wiki/glossario",
-                description: "Glossário de referência de termos e conceitos teológicos",
+                title: "Cronologia bíblica",
+                href: "/wiki/cronologia",
+                description: "Estude os eventos bíblicos em ordem cronológica",
                 isFeatured: true,
                 color: "bg-zinc-800"
             },

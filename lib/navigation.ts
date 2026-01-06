@@ -40,6 +40,7 @@ export const navigationLinks = {
         items: [
             { href: "/wiki/biblia", label: "Bíblia Sagrada" },
             { href: "/wiki/credos", label: "Credos Cristãos" },
+            {href: "/wiki/cronologia", label: "Cronologia Bíblica" },
             { href: "/wiki/glossario", label: "Glossário Teológico" },
             { href: "/wiki/historia-cristianismo", label: "História do Cristianismo" },
             { href: "/wiki/patristica", label: "Patrística" },
