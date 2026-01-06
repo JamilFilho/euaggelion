@@ -18,8 +18,11 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { remarkChronologyParser } from '@/lib/remarkChronologyParser';
 import { rehypeChronologyParser } from '@/lib/rehypeChronologyParser';
+import { remarkTimelineParser } from '@/lib/remarkTimelineParser';
+import { rehypeTimelineParser } from '@/lib/rehypeTimelineParser';
 import BibliaLink from '@/components/content/Bible/BibliaLink';
 import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock';
+import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
 
 const headingLinkIcon = {
   type: 'element',
@@ -160,10 +163,12 @@ export default async function WikiPage({ params }: WikiPageProps) {
     mdxOptions: {
       remarkPlugins: [
         remarkChronologyParser,
+        remarkTimelineParser,
         remarkGfm, // Suporte para tabelas, strikethrough, tasklists, etc.
       ],
       rehypePlugins: [
         rehypeChronologyParser,
+        rehypeTimelineParser,
         rehypeSlug, // Adiciona IDs aos headings
         [
           rehypeAutolinkHeadings,
@@ -175,6 +180,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
 
   const mdxComponents = {
     ChronologyBlock: ChronologyBlock as any,
+    TimelineBlock: TimelineBlock as any,
   };
 
   // Verifica se o artigo existe, está publicado e a categoria bate
