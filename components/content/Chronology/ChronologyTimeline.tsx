@@ -217,7 +217,7 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
   return (
     <div className="relative -mt-12">
       {/* Zoom Controls (Desktop) */}
-      <div className="hidden md:flex absolute right-2 top-2 z-10 gap-2 items-center bg-secondary/80 backdrop-blur-sm border border-ring/20 rounded-lg p-1">
+      <div className="hidden md:flex absolute right-2 top-2 gap-2 items-center bg-secondary/80 backdrop-blur-sm border border-ring/20 rounded-lg p-1 z-[5]">
         <button
           onClick={() => setScale(Math.max(0.3, scale - 0.2))}
           className="w-8 h-8 flex items-center justify-center rounded hover:bg-ring/20 transition-colors text-sm font-bold"

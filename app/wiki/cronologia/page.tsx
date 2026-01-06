@@ -60,7 +60,7 @@ export default function CronologiaPage() {
       />
       <Page.Root>
         <ChronologyProvider datasets={datasets} activeFilter="all">
-            <div className="sticky top-12 z-[900] bg-secondary">
+            <div className="sticky top-12 z-10 bg-secondary">
                 <CronologyFilterSelect />
             </div>
         
