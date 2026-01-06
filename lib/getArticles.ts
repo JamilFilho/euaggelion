@@ -4,6 +4,15 @@ import matter from "gray-matter";
 
 const CONTENT_PATH = path.join(process.cwd(), "content", "articles");
 
+export interface ChronologyEvent {
+  year: number;
+  month?: string;
+  day?: string;
+  event: string;
+  description: string;
+  reference?: string[];
+}
+
 export interface ArticleMeta {
   slug: string;
   fileName: string;
@@ -16,6 +25,8 @@ export interface ArticleMeta {
   tags?: string[];
   reference?: string[];
   testament?: "at" | "nt";
+  chronology?: ChronologyEvent[];
+  chronologyDataset?: string;
   content: string;
   search?: boolean;
 }
@@ -51,6 +62,8 @@ function readArticlesFromDirectory(dirPath: string, category: string): ArticleMe
         tags: data.tags ?? [],
         reference: data.reference ?? [],
         testament: data.testament,
+        chronology: data.chronology ?? [],
+        chronologyDataset: data.chronologyDataset ?? data.chronology_dataset,
         content,
         search: data.search ?? true,
       } satisfies ArticleMeta;
