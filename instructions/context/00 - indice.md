@@ -17,6 +17,8 @@ Este documento serve como um índice para a documentação do projeto, facilitan
 - [Scripts e Automação](11%20-%20scripts-automacao.md)
 - [Criação de Memórias](12%20-%20criacao-memorias.md)
 - [Logger Utilitário](22%20-%20logger-utilitario.md)
+- [Sistema de Filtragem de Conteúdo](23%20-%20sistema-filtragem-conteudo.md)
+- [Sistema de Cronologia Bíblica](24%20-%20sistema-cronologia-biblica.md)
 
 ## Otimizações de SEO (2026)
 
@@ -51,6 +53,7 @@ As memories documentam as implementações, correções e melhorias realizadas n
 - **hooks-utilitarios.md**: Documenta os hooks e utilitários personalizados.
 - **criacao-memorias.md**: Guia para criação de arquivos de memória (memories).
 - **logger-utilitario.md**: Descreve o sistema de logging e sua utilização.
+- **sistema-filtragem-conteudo.md**: Documenta o sistema de filtragem de artigos por data e autor.
 
 ## Descrição dos Arquivos de SEO
 
