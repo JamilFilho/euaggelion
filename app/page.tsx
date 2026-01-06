@@ -8,6 +8,13 @@ import { getAllWikiCategory } from "@/lib/getWiki";
 import { Bookmark, BookMarked, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { WebsiteSchema } from "@/lib/schema";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://euaggelion.com.br/",
+  },
+};
 
 export default async function Home() {
   const firstFeed = [

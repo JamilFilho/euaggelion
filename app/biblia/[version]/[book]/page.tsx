@@ -27,13 +27,42 @@ export async function generateMetadata({ params }: Props) {
     };
   }
 
+  const pageUrl = `https://euaggelion.com.br/biblia/${versionId}/${bookSlug}`;
+
   return {
     title: `${book.name} | ${version.name} | Euaggelion`,
     description: book.description,
+    keywords: [book.name, version.name, "bíblia", "livro da bíblia"],
     openGraph: {
       title: `${book.name} | ${version.name} | Euaggelion`,
       description: book.description,
-      url: `https://euaggelion.com.br/biblia/${versionId}/${bookSlug}`,
+      type: 'website',
+      url: pageUrl,
+      siteName: "Euaggelion",
+      locale: "pt_BR",
+      images: [
+        {
+          url: "https://euaggelion.com.br/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: `${book.name} - ${version.name}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${book.name} | ${version.name} | Euaggelion`,
+      description: book.description,
+      images: ["https://euaggelion.com.br/og-image.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+    },
+    alternates: {
+      canonical: pageUrl,
     },
   };
 }
