@@ -34,18 +34,18 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
   const [events, setEvents] = useState<ChronologyEvent[]>([]);
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(0.3); // Escala de zoom (1 = 100%)
+  const [scale, setScale] = useState(0.1); // Escala de zoom (1 = 100%)
 
   // Configurar pinch-to-zoom com use-gesture
   usePinch(
     ({ offset: [d] }) => {
-      const newScale = Math.max(0.3, Math.min(3, d));
+      const newScale = Math.max(0.05, Math.min(3, d));
       setScale(newScale);
     },
     {
       target: scrollRef,
       eventOptions: { passive: false },
-      scaleBounds: { min: 0.3, max: 3 },
+      scaleBounds: { min: 0.05, max: 3 },
       from: () => [scale, 0],
     }
   );
@@ -299,7 +299,7 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
           <div className="my-8 space-y-3">
           {/* Tracks de Eventos */}
           {Array.from({ length: maxTracks }).map((_, trackIndex) => (
-            <div key={trackIndex} className="mb-4">
+            <div key={trackIndex}>
               {/* Container de Eventos */}
               <div className="relative h-10">
                 {events
@@ -314,6 +314,21 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
                       'bg-pink-500/80 hover:bg-pink-500',
                       'bg-red-500/80 hover:bg-red-500',
                       'bg-indigo-500/80 hover:bg-indigo-500',
+                      'bg-sky-500/80 hover:bg-sky-500',
+                      'bg-cyan-500/80 hover:bg-cyan-500',
+                      'bg-teal-500/80 hover:bg-teal-500',
+                      'bg-emerald-500/80 hover:bg-emerald-500',
+                      'bg-lime-600/80 hover:bg-lime-600',
+                      'bg-yellow-600/80 hover:bg-yellow-600',
+                      'bg-amber-600/80 hover:bg-amber-600',
+                      'bg-rose-500/80 hover:bg-rose-500',
+                      'bg-fuchsia-500/80 hover:bg-fuchsia-500',
+                      'bg-violet-500/80 hover:bg-violet-500',
+                      'bg-slate-500/80 hover:bg-slate-500',
+                      'bg-gray-500/80 hover:bg-gray-500',
+                      'bg-stone-500/80 hover:bg-stone-500',
+                      'bg-neutral-500/80 hover:bg-neutral-500',
+                      'bg-zinc-500/80 hover:bg-zinc-500',
                     ];
                     const colorClass = colorClasses[events.indexOf(event) % colorClasses.length];
 
@@ -321,10 +336,10 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
                       <Popover key={`${event.yearStart || event.year}-${index}`}>
                         <PopoverTrigger asChild>
                           <button
-                            className={`absolute h-10 ${colorClass} transition-all cursor-pointer hover:z-10 rounded-sm border border-white/20`}
+                            className={`absolute h-10 ${colorClass} transition-all cursor-pointer hover:z-10`}
                             style={style}
                           >
-                            <span className="text-xs text-white font-medium px-2 truncate block leading-10">
+                            <span className="text-left text-xs text-white font-medium px-2 truncate block leading-10">
                               {event.event}
                             </span>
                           </button>
