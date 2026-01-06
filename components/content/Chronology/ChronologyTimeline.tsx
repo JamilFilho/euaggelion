@@ -29,7 +29,7 @@ interface ChronologyTimelineProps {
 }
 
 export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
-  const { chronology: contextChronology, dataset: contextDataset } = useChronology();
+  const { chronology: contextChronology, datasets: contextDatasets = [], activeFilter } = useChronology();
   const [events, setEvents] = useState<ChronologyEvent[]>([]);
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -49,49 +49,57 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
     }
   );
 
-  // Priorizar dataset do prop, depois do contexto
-  const activeDataset = dataset || contextDataset;
-
   useEffect(() => {
     const loadEvents = async () => {
-      if (activeDataset) {
-        setLoading(true);
-        try {
-          const response = await fetch(`/api/chronology/${activeDataset}`);
-          const data = await response.json();
-          
-          // Combinar eventos do dataset com chronology do contexto se ambos existirem
-          const datasetEvents = data.events || [];
-          const contextEvents = contextChronology || [];
-          
-          if (contextEvents.length > 0 && datasetEvents.length > 0) {
-            // Combinar ambos e ordenar por ano
-            const combined = [...datasetEvents, ...contextEvents].sort((a, b) => {
-              const aStart = a.yearStart || a.year || 0;
-              const bStart = b.yearStart || b.year || 0;
-              if (aStart !== bStart) return aStart - bStart;
-              // Se tiverem o mesmo ano, manter a ordem de inserção
-              return 0;
-            });
-            setEvents(combined);
-          } else if (datasetEvents.length > 0) {
-            setEvents(datasetEvents);
-          } else {
-            setEvents(contextEvents);
+      // Determine which datasets to load
+      let datasetIdsToLoad: string[] = [];
+      
+      if (activeFilter === "all" || !activeFilter) {
+        datasetIdsToLoad = contextDatasets || [];
+      } else if (activeFilter) {
+        datasetIdsToLoad = [activeFilter];
+      }
+
+      if (datasetIdsToLoad.length === 0) {
+        setEvents(contextChronology || []);
+        return;
+      }
+
+      setLoading(true);
+      try {
+        const allEvents: ChronologyEvent[] = [...(contextChronology || [])];
+
+        // Carregar todos os datasets selecionados
+        for (const datasetId of datasetIdsToLoad) {
+          try {
+            const response = await fetch(`/api/chronology/${datasetId}`);
+            const data = await response.json();
+            const datasetEvents = data.events || [];
+            allEvents.push(...datasetEvents);
+          } catch (error) {
+            console.error(`Erro ao carregar dataset ${datasetId}:`, error);
           }
-        } catch (error) {
-          console.error("Erro ao carregar dataset:", error);
-          setEvents(contextChronology || []);
-        } finally {
-          setLoading(false);
         }
-      } else if (contextChronology) {
-        setEvents(contextChronology);
+
+        // Ordenar todos os eventos por ano
+        allEvents.sort((a, b) => {
+          const aStart = a.yearStart || a.year || 0;
+          const bStart = b.yearStart || b.year || 0;
+          if (aStart !== bStart) return aStart - bStart;
+          return 0;
+        });
+
+        setEvents(allEvents);
+      } catch (error) {
+        console.error("Erro ao carregar datasets:", error);
+        setEvents(contextChronology || []);
+      } finally {
+        setLoading(false);
       }
     };
 
     loadEvents();
-  }, [activeDataset, contextChronology]);
+  }, [activeFilter, contextDatasets, contextChronology]);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {

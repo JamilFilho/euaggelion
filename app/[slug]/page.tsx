@@ -270,7 +270,7 @@ export default async function ArticlePage({
         {found.chronology && found.chronology.length > 0 && (
           <ChronologyProvider 
             chronology={found.chronology}
-            dataset={found.chronologyDataset}
+            datasets={found.chronologyDataset}
           >
             <Chronology.Root>
               <Chronology.Timeline />
