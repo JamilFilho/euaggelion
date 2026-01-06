@@ -139,29 +139,42 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
   const yearRange = maxYear - minYear || 1;
   const pixelsPerYear = 100 * scale; // Pixels por ano na timeline (ajustado pelo zoom)
 
-  // Função para detectar sobreposição de eventos
+  // Função para detectar sobreposição de eventos (com margem de segurança visual)
   const doesEventOverlap = (event1: ChronologyEvent, event2: ChronologyEvent): boolean => {
     const e1Start = getDecimalDate(event1.yearStart || event1.year, event1.monthStart || event1.month);
     const e1End = getDecimalDate(event1.yearEnd || event1.year, event1.monthEnd || event1.month);
     const e2Start = getDecimalDate(event2.yearStart || event2.year, event2.monthStart || event2.month);
     const e2End = getDecimalDate(event2.yearEnd || event2.year, event2.monthEnd || event2.month);
     
-    // Retorna true se há sobreposição
-    return !(e1End < e2Start || e2End < e1Start);
+    // Calcular margem visual (aproximadamente 2% do intervalo total para dar espaço entre eventos)
+    const visualMargin = yearRange * 0.02;
+    
+    // Retorna true se há sobreposição considerando a margem visual
+    return !(e1End + visualMargin < e2Start || e2End + visualMargin < e1Start);
   };
 
   // Distribuir eventos em pistas (tracks) baseado em sobreposição
   const trackAssignments: Map<ChronologyEvent, number> = new Map();
-  const maxTracksNeeded: number[] = [];
   
   events.forEach((event, index) => {
+    // Encontrar a primeira pista disponível onde não há sobreposição
     let assignedTrack = 0;
+    let trackFound = false;
     
-    // Verificar sobreposição com eventos anteriores
-    for (let i = 0; i < index; i++) {
-      if (doesEventOverlap(event, events[i])) {
-        const previousTrack = trackAssignments.get(events[i]) || 0;
-        assignedTrack = Math.max(assignedTrack, previousTrack + 1);
+    while (!trackFound) {
+      trackFound = true;
+      
+      // Verificar se existe sobreposição com algum evento já atribuído nesta pista
+      for (let i = 0; i < index; i++) {
+        const otherEvent = events[i];
+        const otherTrack = trackAssignments.get(otherEvent);
+        
+        if (otherTrack === assignedTrack && doesEventOverlap(event, otherEvent)) {
+          // Há sobreposição nesta pista, tentar a próxima
+          assignedTrack++;
+          trackFound = false;
+          break;
+        }
       }
     }
     
@@ -285,7 +298,7 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
           <div className="my-8">
           {/* Tracks de Eventos */}
           {Array.from({ length: maxTracks }).map((_, trackIndex) => (
-            <div key={trackIndex}>
+            <div key={trackIndex} className="mb-2">
               {/* Container de Eventos */}
               <div className="relative h-8">
                 {events
