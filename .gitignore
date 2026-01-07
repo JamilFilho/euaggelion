@@ -195,3 +195,5 @@ dist
 node_modules
 .env
 certificates
+
+/lib/__tests__
