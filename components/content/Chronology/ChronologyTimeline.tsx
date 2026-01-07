@@ -9,6 +9,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { Skeleton } from "@/components/ui/skeleton";
 import BibliaLink from "../Bible/BibliaLink";
 
 interface ChronologyEvent {
@@ -27,14 +28,16 @@ interface ChronologyEvent {
 
 interface ChronologyTimelineProps {
   dataset?: string;
+  loadAll?: boolean; // Quando true, carrega todos os datasets disponíveis
 }
 
-export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
+export function ChronologyTimeline({ dataset, loadAll = false }: ChronologyTimelineProps) {
   const { chronology: contextChronology, datasets: contextDatasets = [], activeFilter } = useChronology();
   const [events, setEvents] = useState<ChronologyEvent[]>([]);
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(0.1); // Escala de zoom (1 = 100%)
+  const [containerHeight, setContainerHeight] = useState<number>(0);
 
   // Configurar pinch-to-zoom com use-gesture
   usePinch(
@@ -45,7 +48,7 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
     {
       target: scrollRef,
       eventOptions: { passive: false },
-      scaleBounds: { min: 0.05, max: 3 },
+      scaleBounds: { min: 0.7, max: 3 },
       from: () => [scale, 0],
     }
   );
@@ -55,7 +58,28 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
       // Determine which datasets to load
       let datasetIdsToLoad: string[] = [];
       
-      if (activeFilter === "all" || !activeFilter) {
+      // Se loadAll é true, buscar todos os datasets disponíveis ou filtrado
+      if (loadAll) {
+        setLoading(true);
+        try {
+          const response = await fetch('/api/chronology');
+          const data = await response.json();
+          const allDatasets = data.datasets || [];
+          
+          // Se activeFilter é "all" ou vazio, carregar todos
+          // Senão, carregar apenas o dataset filtrado
+          if (activeFilter === "all" || !activeFilter) {
+            datasetIdsToLoad = allDatasets;
+          } else {
+            datasetIdsToLoad = [activeFilter];
+          }
+        } catch (error) {
+          console.error('Erro ao buscar lista de datasets:', error);
+          setEvents(contextChronology || []);
+          setLoading(false);
+          return;
+        }
+      } else if (activeFilter === "all" || !activeFilter) {
         datasetIdsToLoad = contextDatasets || [];
       } else if (activeFilter) {
         datasetIdsToLoad = [activeFilter];
@@ -63,6 +87,7 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
 
       if (datasetIdsToLoad.length === 0) {
         setEvents(contextChronology || []);
+        setLoading(false);
         return;
       }
 
@@ -100,17 +125,7 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
     };
 
     loadEvents();
-  }, [activeFilter, contextDatasets, contextChronology]);
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = 400;
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
+  }, [activeFilter, contextDatasets, contextChronology, loadAll]);
 
   // Função auxiliar para converter mês em valor decimal (0.0 a 0.916)
   const monthToDecimal = (monthName?: string): number => {
@@ -128,6 +143,78 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
   const getDecimalDate = (year?: number, month?: string): number => {
     const y = year || 0;
     return y + monthToDecimal(month);
+  };
+
+  // Calcular altura dinâmica baseada no número de tracks
+  useEffect(() => {
+    if (events.length === 0) {
+      setContainerHeight(0);
+      return;
+    }
+
+    // Distribuir eventos em pistas (tracks) baseado em sobreposição
+    const trackAssignments: Map<ChronologyEvent, number> = new Map();
+    
+    // Calcular intervalo de anos para detecção de sobreposição
+    const minYear = Math.min(...events.map(e => getDecimalDate(e.yearStart || e.year, e.monthStart || e.month))) 
+    const maxYear = Math.max(...events.map(e => getDecimalDate(e.yearEnd || e.year, e.monthEnd || e.month))) 
+    const yearRange = maxYear - minYear || 1;
+    
+    events.forEach((event, index) => {
+      let assignedTrack = 0;
+      let trackFound = false;
+      
+      while (!trackFound) {
+        trackFound = true;
+        
+        for (let i = 0; i < index; i++) {
+          const otherEvent = events[i];
+          const otherTrack = trackAssignments.get(otherEvent);
+          
+          if (otherTrack === assignedTrack) {
+            const e1Start = getDecimalDate(event.yearStart || event.year, event.monthStart || event.month);
+            const e1End = getDecimalDate(event.yearEnd || event.year, event.monthEnd || event.month);
+            const e2Start = getDecimalDate(otherEvent.yearStart || otherEvent.year, otherEvent.monthStart || otherEvent.month);
+            const e2End = getDecimalDate(otherEvent.yearEnd || otherEvent.year, otherEvent.monthEnd || otherEvent.month);
+            
+            const visualMargin = yearRange * 0.02;
+            const hasOverlap = !(e1End + visualMargin < e2Start || e2End + visualMargin < e1Start);
+            
+            if (hasOverlap) {
+              assignedTrack++;
+              trackFound = false;
+              break;
+            }
+          }
+        }
+      }
+      
+      trackAssignments.set(event, assignedTrack);
+    });
+
+    // Calcular número máximo de pistas necessárias
+    const maxTracks = Math.max(...Array.from(trackAssignments.values()), 0) + 1;
+    
+    // Calcular altura total:
+    // - h-12 (48px) para a régua de anos
+    // - h-10 (40px) por track
+    // - space-y-3 (12px) entre tracks (12px * (maxTracks - 1))
+    const ruleHeight = 48;
+    const trackHeight = 40;
+    const spaceBetweenTracks = 12;
+    
+    const totalHeight = ruleHeight + (maxTracks * trackHeight) + ((maxTracks - 1) * spaceBetweenTracks);
+    setContainerHeight(totalHeight);
+  }, [events, getDecimalDate]);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = 400;
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
   };
 
   // Calcular intervalo de anos (considerando meses)
@@ -214,8 +301,16 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
 
   if (loading) {
     return (
-      <div className="px-10 py-12 flex items-center justify-center text-muted-foreground">
-        Carregando cronologia...
+      <div className="px-10 py-12 space-y-4">
+        <div className="space-y-2">
+          <Skeleton className="h-12 w-full" />
+        </div>
+        <div className="space-y-3">
+          <Skeleton className="h-10 w-full" />
+          <Skeleton className="h-10 w-full" />
+          <Skeleton className="h-10 w-full" />
+          <Skeleton className="h-10 w-full" />
+        </div>
       </div>
     );
   }
@@ -271,7 +366,7 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
       {/* Timeline Container */}
       <div
         ref={scrollRef}
-        className="overflow-x-auto scrollbar-thin scrollbar-thumb-ring/20 scrollbar-track-transparent touch-pan-x"
+        className="h-fit overflow-x-auto scrollbar-thin scrollbar-thumb-ring/20 scrollbar-track-transparent touch-pan-x"
         style={{ 
           scrollbarWidth: "thin"
         }}
@@ -296,7 +391,10 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
             })}
           </div>
 
-          <div className="my-8 space-y-3">
+          <div 
+            className="space-y-3 transition-all duration-300"
+            style={{ height: `${containerHeight}px` }}
+          >
           {/* Tracks de Eventos */}
           {Array.from({ length: maxTracks }).map((_, trackIndex) => (
             <div key={trackIndex}>
@@ -324,11 +422,7 @@ export function ChronologyTimeline({ dataset }: ChronologyTimelineProps) {
                       'bg-rose-500/80 hover:bg-rose-500',
                       'bg-fuchsia-500/80 hover:bg-fuchsia-500',
                       'bg-violet-500/80 hover:bg-violet-500',
-                      'bg-slate-500/80 hover:bg-slate-500',
-                      'bg-gray-500/80 hover:bg-gray-500',
-                      'bg-stone-500/80 hover:bg-stone-500',
-                      'bg-neutral-500/80 hover:bg-neutral-500',
-                      'bg-zinc-500/80 hover:bg-zinc-500',
+                      'bg-slate-500/80 hover:bg-slate-500'
                     ];
                     const colorClass = colorClasses[events.indexOf(event) % colorClasses.length];
 
