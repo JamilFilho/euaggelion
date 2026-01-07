@@ -64,15 +64,15 @@ export default function CategoriesPage() {
             url="https://euaggelion.com.br/s/"
             itemCount={categories.length}
         />
+        <Breadcrumb
+            items={[
+            { label: "Home", href: "/" },
+            { label: "Seções", href: "/s" },
+            ]}
+            sticky={true}
+            topOffset={0}
+        />
         <Page.Root>
-            <Breadcrumb
-                items={[
-                { label: "Home", href: "/" },
-                { label: "Seções", href: "/s" },
-                ]}
-                sticky={true}
-                className=""
-            />
             <Page.Header>
                 <Page.Title content="Seções" />
                 <Page.Description content="Navegue por nossas seções de conteúdos" />
@@ -82,7 +82,6 @@ export default function CategoriesPage() {
                     <Feed.Group>
                         <Feed.Articles category={category} />
                     </Feed.Group>
-        
                     <Feed.Pagination />
                 </Feed.Root>
             </Page.Content>

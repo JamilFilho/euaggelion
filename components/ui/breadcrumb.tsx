@@ -9,6 +9,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { BreadcrumbSchema } from "@/lib/schema";
 import { useSticky } from "@/hooks/useSticky";
+import { usePathname } from "next/navigation";
 
 interface BreadcrumbItem {
   label: string;
@@ -19,16 +20,27 @@ interface BreadcrumbProps {
   items: BreadcrumbItem[];
   className?: string;
   sticky?: boolean;
+  topOffset?: number;
 }
 
-export function Breadcrumb({ items, className = "", sticky = false }: BreadcrumbProps) {
-  const { ref, placeholderRef } = useSticky({ topOffset: 0, id: 'sticky-breadcrumb' });
-  const navRef = sticky ? ref : null;
-  const placeholderDiv = sticky ? placeholderRef : null;
+export function Breadcrumb({ items, className = "", sticky = false, topOffset = 0 }: BreadcrumbProps) {
+  const pathname = usePathname();
+  const isProblematicRoute = pathname.startsWith('/s');
+  
+  const { ref, placeholderRef } = useSticky({ topOffset, id: 'sticky-breadcrumb' });
+  
+  // Use CSS sticky for problematic routes, useSticky for others
+  const navRef = sticky && !isProblematicRoute ? ref : null;
+  const placeholderDiv = sticky && !isProblematicRoute ? placeholderRef : null;
+  const stickyStyle = sticky && isProblematicRoute ? { 
+    position: 'sticky' as const, 
+    top: `${topOffset}px`, 
+    zIndex: 800 
+  } : {};
 
   return (
     <>
-      {sticky && <div ref={placeholderDiv} className="m-0 p-0 h-0" />}
+      {sticky && !isProblematicRoute && <div ref={placeholderDiv} className="m-0 p-0 h-0" />}
       {/* Schema JSON-LD */}
       <BreadcrumbSchema
         items={items.map((item) => ({
@@ -39,6 +51,7 @@ export function Breadcrumb({ items, className = "", sticky = false }: Breadcrumb
 
       <nav
         ref={navRef}
+        style={stickyStyle}
         aria-label="breadcrumb"
         className={`z-[800] print:hidden px-10 py-6 -mt-[1px] border-t border-b border-ring/20 flex items-center gap-2 text-sm overflow-hidden min-w-0 bg-secondary transition-all duration-300 ease-in-out ${className}`}
       >

@@ -103,39 +103,40 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           { label: categoryName, href: `/s/${category}` },
         ]}
         sticky={true}
+        topOffset={0}
         className=""
       />
 
       <Page.Root>
-      <Page.Header>
-        <Page.Title content={categoryMeta.name} />
-        {categoryMeta.description && (
-          <Page.Description content={categoryMeta.description} />
-        )}
-      </Page.Header>
+        <Page.Header>
+          <Page.Title content={categoryMeta.name} />
+          {categoryMeta.description && (
+            <Page.Description content={categoryMeta.description} />
+          )}
+        </Page.Header>
 
-      <Page.Content>    
-        <Feed.Root articles={articlesInCategory} category={category}>
-            <Feed.Header 
-                show={true}
-                allowDateFilter={category !== "verso-a-verso"}
-                allowAuthorFilter={category !== "verso-a-verso"}
-            />
-            <Feed.Group>
-              <Feed.Articles category={category} />
-            </Feed.Group>
-            <Feed.Pagination />
-        </Feed.Root>
-      </Page.Content>
-      
-      <Newsletter.Root>
-        <Newsletter.Header>
-          <Newsletter.Title content="NewsGelion"/>
-          <Newsletter.Headline content="Receba nossos materiais, gratuitamente, em seu e-mail." />
-        </Newsletter.Header>
-        <Newsletter.Form />
-        <Newsletter.Footer />
-      </Newsletter.Root>
+        <Page.Content>    
+          <Feed.Root articles={articlesInCategory} category={category}>
+              <Feed.Header 
+                  show={true}
+                  allowDateFilter={category !== "verso-a-verso"}
+                  allowAuthorFilter={category !== "verso-a-verso"}
+              />
+              <Feed.Group>
+                <Feed.Articles category={category} />
+              </Feed.Group>
+              <Feed.Pagination />
+          </Feed.Root>
+        </Page.Content>
+        
+        <Newsletter.Root>
+          <Newsletter.Header>
+            <Newsletter.Title content="NewsGelion"/>
+            <Newsletter.Headline content="Receba nossos materiais, gratuitamente, em seu e-mail." />
+          </Newsletter.Header>
+          <Newsletter.Form />
+          <Newsletter.Footer />
+        </Newsletter.Root>
       </Page.Root>
     </>
   );
