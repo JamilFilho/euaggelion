@@ -3,7 +3,6 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useFeedContext } from "./FeedProvider";
 import { ReactNode, useRef } from "react";
-import { useSticky } from "@/hooks/useSticky";
 
 interface FeedHeaderProps {
     children?: ReactNode;
@@ -27,7 +26,6 @@ export default function FeedHeader({
     allowAuthorFilter = false,
 }: FeedHeaderProps) {
     const { filter, filterType, authorFilter, onFilterChange, onFilterTypeChange, onAuthorFilterChange, authors } = useFeedContext();
-    const { ref, placeholderRef } = useSticky({ topOffset: 64 }); // 64px = 4rem (top-16)
 
     if (home) {
         return <header className="md:col-span-3 flex flex-col justify-center border-b border-ring/20 py-6 px-10">{children}</header>;
@@ -41,8 +39,7 @@ export default function FeedHeader({
     if (!allowDateFilter && !allowAuthorFilter) {
         return (
             <>
-                <div ref={placeholderRef} />
-                <section ref={ref} className="md:col-span-3 flex items-center justify-between md:justify-end md:gap-4 border-b border-ring/20 py-4 px-10 bg-secondary">
+                <section  className="md:col-span-3 flex items-center justify-between md:justify-end md:gap-4 border-b border-ring/20 py-4 px-10 bg-secondary">
                     <span className="text-foreground/60">Filtrar conteúdo:</span>
                     <Select value={filter} onValueChange={onFilterChange}>
                         <SelectTrigger className="w-fit">
@@ -64,8 +61,7 @@ export default function FeedHeader({
     // Se permite filtro por data e/ou autor
     return (
         <>
-            <div ref={placeholderRef} />
-            <section ref={ref} className="md:col-span-3 flex flex-col md:flex-row flex-start md:items-center justify-between gap-4 border-b border-ring/20 py-4 px-6 md:px-10 bg-secondary">
+            <section className="md:col-span-3 flex flex-col md:flex-row flex-start md:items-center justify-between gap-4 border-b border-ring/20 py-4 px-6 md:px-10 bg-secondary">
                 <span className="text-foreground/60">Filtrar conteúdo:</span>
                 
                 <div className="flex flex-row gap-2">
