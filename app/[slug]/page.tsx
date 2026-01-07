@@ -237,7 +237,8 @@ export default async function ArticlePage({
 
       <Article.Root>
         <Breadcrumb
-          className="sticky top-0 left-0"
+          sticky={true}
+          className=""
           items={[
             { label: "Home", href: "/" },
             { label: typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name, href: `/s/${found.category}` },

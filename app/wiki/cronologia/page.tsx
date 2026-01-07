@@ -6,6 +6,7 @@ import { CronologyFilterSelect } from "@/components/content/Chronology/Cronology
 import { ArticleSchema, BreadcrumbSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Page } from '@/components/content/Page';
+import { StickySection } from '@/components/layout/StickySection';
 
 export const metadata: Metadata = {
   title: "Cronologia Bíblica | Wiki | Euaggelion",
@@ -27,15 +28,6 @@ export const metadata: Metadata = {
     canonical: `https://euaggelion.com.br/wiki/cronologia`,
   },
 };
-
-const datasets = [
-  "moses-life",
-  "david-kingdom",
-  "babylonian-exile",
-  "inter-testament-period",
-  "jesus-ministry",
-  "early-church",
-];
 
 export default function CronologiaPage() {
   return (
@@ -59,14 +51,14 @@ export default function CronologiaPage() {
         ]}
       />
       <Page.Root>
-        <ChronologyProvider datasets={datasets} activeFilter="all">
-            <div className="sticky top-12 z-10 bg-secondary">
+        <ChronologyProvider activeFilter="all">
+            <StickySection as="div" topOffset={48} className="z-10 bg-secondary">
                 <CronologyFilterSelect />
-            </div>
+            </StickySection>
         
         <Page.Content>
             <div className="relative mt-12 pb-2">
-                <ChronologyTimeline />
+                <ChronologyTimeline loadAll={true} />
             </div>
         </Page.Content>
         </ChronologyProvider>

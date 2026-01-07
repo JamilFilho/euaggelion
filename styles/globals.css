@@ -38,7 +38,12 @@
   }
 
   html {
-    @apply scroll-smooth overflow-x-hidden;
+    @apply overflow-x-hidden;
+  }
+
+  /* Permite que o portal do Select escape do overflow-x-hidden */
+  [data-radix-select-content] {
+    clip-path: none !important;
   }
 
   .article-content {
@@ -203,9 +208,6 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --sb-track-color:var(--secondary);
-    --sb-thumb-color: #7b7b7b;
-    --sb-size: 6px;
   }
 
   .article-content p {
@@ -219,7 +221,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground w-screen;
   }
   
   input[type="search"]::-webkit-search-cancel-button {
@@ -238,23 +240,14 @@
 }
 
 *::-webkit-scrollbar {
-  width: var(--sb-size)
+  width: 6px;
+  height: 6px;
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 29px;
+  @apply bg-secondary;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 29px;
-  
-}
-
-@supports not selector(::-webkit-scrollbar) {
-  * {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
-  }
+  @apply bg-[#7b7b7b] rounded-[29px];
 }

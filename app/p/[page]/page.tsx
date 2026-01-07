@@ -188,7 +188,8 @@ export default async function StaticPage({
           { label: "Home", href: "/" },
           { label: page.title, href: `/p/${page.slug}` },
         ]}
-        className="sticky top-0 z-[800] bg-secondary"
+        sticky={true}
+        className=""
       />
       
       <div className="site-page">

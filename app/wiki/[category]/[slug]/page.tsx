@@ -230,7 +230,8 @@ export default async function WikiPage({ params }: WikiPageProps) {
           { label: categoryName, href: `/wiki/${category}` },
           { label: article.title, href: `/wiki/${category}/${slug}` },
         ]}
-        className="sticky top-14 z-[800] bg-secondary"
+        sticky={true}
+        className=""
       />
       
       <Article.Root>
@@ -246,7 +247,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
         <Article.Meta>
           {article.related && article.related.length > 0 && (
             <>
-              <div className="col-span-1 items-center">
+              <div className="col-span-2 items-center border-r border-ring/20">
                 <p className="text-lg font-semibold">Tópicos</p>
               </div>
               <ul className="px-4 col-span-2 flex flex-row !justify-start items-start flex-wrap gap-2">

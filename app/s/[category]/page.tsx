@@ -102,7 +102,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           { label: "Seções", href: "/s" },
           { label: categoryName, href: `/s/${category}` },
         ]}
-        className="sticky top-0 z-[800] bg-secondary"
+        sticky={true}
+        className=""
       />
 
       <Page.Root>

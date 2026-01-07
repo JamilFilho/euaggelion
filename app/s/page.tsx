@@ -70,7 +70,8 @@ export default function CategoriesPage() {
                 { label: "Home", href: "/" },
                 { label: "Seções", href: "/s" },
                 ]}
-                className="sticky top-0 z-[800] bg-secondary"
+                sticky={true}
+                className=""
             />
             <Page.Header>
                 <Page.Title content="Seções" />

@@ -104,7 +104,8 @@ export default async function WikiCategoryPage({ params }: WikiCategoryPageProps
               { label: "Wiki", href: "/wiki" },
               { label: categoryName, href: `/wiki/${category}` },
             ]}
-            className="sticky top-14 z-[600] bg-secondary"
+            sticky={true}
+            className=""
           />
           
           <Page.Root>

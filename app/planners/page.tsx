@@ -95,7 +95,8 @@ export default function PlannersPage() {
 
             <Page.Root>
                 <Breadcrumb
-                    className="sticky top-0 bg-secondary"
+                    sticky={true}
+                    className=""
                     items={[
                         { label: "Home", href: "/" },
                         { label: "Planners", href: "/planners" },

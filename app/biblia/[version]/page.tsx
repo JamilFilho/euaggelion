@@ -84,7 +84,8 @@ export default async function BibleVersionPage({ params }: Props) {
           { label: "Bíblia", href: "/biblia" },
           { label: version.name, href: `/biblia/${versionId}` },
         ]}
-        className="sticky top-14 z-[800] bg-secondary"
+        sticky={true}
+        className=""
       />
       
       <Bible.Root>
