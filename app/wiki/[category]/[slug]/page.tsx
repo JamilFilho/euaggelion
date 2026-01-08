@@ -290,6 +290,8 @@ export default async function WikiPage({ params }: WikiPageProps) {
         />
 
         <Webmentions target={`https://euaggelion.com.br/wiki/${article.category}/${article.slug}`} />
+
+        <Article.Related currentSlug={article.slug} includeWiki={true} />
       </Article.Footer>
     </Article.Root>
     </>
