@@ -78,7 +78,10 @@ interface WikiCategoryPageProps {
 export default async function WikiCategoryPage({ params }: WikiCategoryPageProps) {
     const { category } = await params;
     const categoryMeta = CATEGORIES[category] ?? { name: category };
-    const articlesInCategory = getAllWikiCategory(category).map(article => ({...article}));
+    const articlesInCategory = getAllWikiCategory(category).map(article => ({
+      ...article,
+      isWiki: true, // Marca como wiki para o FeedLink construir a URL corretamente
+    }));
     
     const categoryName = typeof categoryMeta === 'string' 
       ? categoryMeta 
