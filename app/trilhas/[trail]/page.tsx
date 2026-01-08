@@ -3,6 +3,51 @@ import { Feed } from '@/components/content/Feed';
 import { getTrailSteps } from '@/lib/getTrails';
 import { TRAILS } from '@/lib/trails';
 import Breadcrumb from '@/components/ui/breadcrumb';
+import type { Metadata } from 'next';
+import { CollectionPageSchema, BreadcrumbSchema } from '@/lib/schema';
+
+export async function generateMetadata({ params }: { params: Promise<{ trail: string }> }): Promise<Metadata> {
+  const { trail } = await params;
+  const trailMeta = TRAILS[trail] ?? { name: trail, description: '' };
+
+  const title = `${trailMeta.name} | Trilhas | Euaggelion`;
+  const description = trailMeta.description || `Explore os conteúdos da trilha ${trailMeta.name}.`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      url: `https://euaggelion.com.br/trilhas/${trail}`,
+      siteName: 'Euaggelion',
+      locale: 'pt_BR',
+      images: [
+        {
+          url: 'https://euaggelion.com.br/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: trailMeta.name,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+    },
+    alternates: {
+      canonical: `https://euaggelion.com.br/trilhas/${trail}`,
+    },
+  };
+}
 
 export default async function TrailPage({ params }: { params: Promise<{ trail: string }> }) {
   const { trail } = await params;
@@ -11,6 +56,19 @@ export default async function TrailPage({ params }: { params: Promise<{ trail: s
   
   return (
     <Page.Root>
+      <CollectionPageSchema
+        name={trailMeta.name}
+        description={trailMeta.description || `Explore os conteúdos da trilha ${trailMeta.name}.`}
+        url={`https://euaggelion.com.br/trilhas/${trail}`}
+        itemCount={steps.length}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://euaggelion.com.br' },
+          { name: 'Trilhas', url: 'https://euaggelion.com.br/trilhas' },
+          { name: trailMeta.name, url: `https://euaggelion.com.br/trilhas/${trail}` },
+        ]}
+      />
       <Breadcrumb
           items={[
             { label: "Home", href: "/" },

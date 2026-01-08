@@ -15,6 +15,64 @@ import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
 import { Skeleton } from '@/components/ui/skeleton';
 import { TRAILS } from "@/lib/trails";
 import Breadcrumb from '@/components/ui/breadcrumb';
+import type { Metadata } from 'next';
+import { ArticleSchema, BreadcrumbSchema } from '@/lib/schema';
+
+export async function generateMetadata({ params }: { params: Promise<{ trail: string; step: string }> }): Promise<Metadata> {
+    const { trail, step } = await params;
+    const stepData = await getTrailStep(trail, step);
+
+    if (!stepData) {
+        return {
+            title: 'Conteúdo não encontrado | Euaggelion',
+            description: 'O conteúdo solicitado não foi encontrado.',
+        };
+    }
+
+    const title = `${stepData.title} | Trilhas | Euaggelion`;
+    const description = stepData.description || stepData.summary || '';
+    const url = `https://euaggelion.com.br/trilhas/${trail}/${stepData.slug}`;
+    const imageUrl = `https://euaggelion.com.br/api/og?slug=${stepData.slug}`;
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            type: 'article',
+            publishedTime: stepData.date,
+            authors: stepData.author ? [stepData.author] : ['Euaggelion'],
+            tags: [],
+            url,
+            siteName: 'Euaggelion',
+            locale: 'pt_BR',
+            images: [
+                {
+                    url: imageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: stepData.title,
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description,
+            images: [imageUrl],
+        },
+        robots: {
+            index: true,
+            follow: true,
+            'max-snippet': -1,
+            'max-image-preview': 'large',
+        },
+        alternates: {
+            canonical: url,
+        },
+    };
+}
 
 export default async function StepPage({ params }: { params: Promise<{ trail: string; step: string }> }) {
     const { trail, step } = await params;
@@ -49,11 +107,30 @@ export default async function StepPage({ params }: { params: Promise<{ trail: st
     
     return (
         <Trail.Root>
+            <ArticleSchema
+                title={stepData.title}
+                description={stepData.description || stepData.summary || ''}
+                imageUrl={`https://euaggelion.com.br/api/og?slug=${stepData.slug}`}
+                datePublished={stepData.date || ''}
+                dateModified={stepData.date || ''}
+                authorName={stepData.author || 'Euaggelion'}
+                url={`https://euaggelion.com.br/trilhas/${stepData.trail}/${stepData.slug}`}
+                category={'trilhas'}
+            />
+            <BreadcrumbSchema
+                items={[
+                    { name: 'Home', url: 'https://euaggelion.com.br' },
+                    { name: 'Trilhas', url: 'https://euaggelion.com.br/trilhas' },
+                    { name: typeof trailMeta === 'string' ? trailMeta : trailMeta.name, url: `https://euaggelion.com.br/trilhas/${stepData.trail}` },
+                    { name: stepData.title, url: `https://euaggelion.com.br/trilhas/${stepData.trail}/${stepData.slug}` },
+                ]}
+            />
             <Breadcrumb
                 sticky={true}
                 className=""
                 items={[
                 { label: "Home", href: "/" },
+                { label: "Trilhas", href: "/trilhas" },
                 { label: typeof trailMeta === 'string' ? trailMeta : trailMeta.name, href: `/trilhas/${stepData.trail}` },
                 { label: stepData.title, href: `/trilhas/${stepData.trail}/${stepData.slug}` },
                 ]}
@@ -79,10 +156,13 @@ export default async function StepPage({ params }: { params: Promise<{ trail: st
 
             <section className="w-full grid grid-cols-1 md:grid-cols-3">
                 <div className="md:col-span-2 md:border-r border-ring/20">
+                    {stepData.summary && (
                     <div className="p-10 flex flex-col gap-4 border-b border-ring/20">
                         <span className="text-xl text-foreground font-bold">Resumo do conteúdo</span>
                         <p className="text-foreground/70 text-lg">{stepData.summary}</p>
                     </div>
+                    )}
+
                     <div className="p-10 article-content border-b border-ring/20">
                         <MDXRemote 
                             source={stepData.content}
