@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useChronology } from "@/lib/context/ChronologyContext";
 import {
   Select,
@@ -13,20 +13,86 @@ import {
 interface DatasetOption {
   id: string;
   name: string;
+  period?: { start: number; end: number };
 }
 
-const datasetOptions: DatasetOption[] = [
-  { id: "all", name: "Todos os Períodos" },
-  { id: "moses-life", name: "Vida de Moisés (1520-1405 a.C.)" },
-  { id: "david-kingdom", name: "Reino de Davi (1050-970 a.C.)" },
-  { id: "babylonian-exile", name: "Exílio na Babilônia (605-538 a.C.)" },
-  { id: "inter-testament-period", name: "Período Intertestamentário (400-0 a.C.)" },
-  { id: "jesus-ministry", name: "Ministério de Jesus (27-30 d.C.)" },
-  { id: "early-church", name: "Igreja Primitiva (30-100 d.C.)" },
-];
+interface DatasetInfo {
+  name: string;
+  description: string;
+  period: { start: number; end: number };
+}
 
 export function CronologyFilterSelect() {
   const { activeFilter, setActiveFilter } = useChronology();
+  const [datasetOptions, setDatasetOptions] = useState<DatasetOption[]>([
+    { id: "all", name: "Todos os Livros Bíblicos" }
+  ]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadDatasets = async () => {
+      try {
+        // Buscar lista de todos os datasets
+        const response = await fetch('/api/chronology');
+        const data = await response.json();
+        const datasets = data.datasets || [];
+
+        // Carregar informações de cada dataset
+        const optionsPromises = datasets.map(async (datasetId: string) => {
+          try {
+            const res = await fetch(`/api/chronology/${datasetId}`);
+            const info: DatasetInfo = await res.json();
+            
+            // Formatar o nome do livro (primeira letra maiúscula)
+            const bookName = datasetId
+              .split('-')
+              .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(' ');
+            
+            // Formatar período
+            const formatYear = (year: number) => {
+              if (year < 0) return `${Math.abs(year)} a.C.`;
+              if (year === 0) return '0';
+              return `${year} d.C.`;
+            };
+
+            const periodStr = info.period 
+              ? `(${formatYear(info.period.start)} - ${formatYear(info.period.end)})`
+              : '';
+
+            return {
+              id: datasetId,
+              name: `${info.name || bookName} ${periodStr}`.trim(),
+              period: info.period
+            };
+          } catch (error) {
+            console.error(`Erro ao carregar dataset ${datasetId}:`, error);
+            return null;
+          }
+        });
+
+        const options = await Promise.all(optionsPromises);
+        const validOptions = options.filter((opt): opt is DatasetOption => opt !== null);
+        
+        // Ordenar por período (do mais antigo ao mais recente)
+        validOptions.sort((a, b) => {
+          if (!a.period || !b.period) return 0;
+          return a.period.start - b.period.start;
+        });
+
+        setDatasetOptions([
+          { id: "all", name: "Todos os Livros Bíblicos" },
+          ...validOptions
+        ]);
+      } catch (error) {
+        console.error('Erro ao carregar datasets:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadDatasets();
+  }, []);
 
   const handleFilterChange = useCallback((value: string) => {
     setActiveFilter?.(value);
@@ -37,11 +103,11 @@ export function CronologyFilterSelect() {
   return (
     <div className="py-6 px-10 border-b border-ring/20 flex flex-col md:flex-row md:justify-between md:items-center gap-3">
       <label htmlFor="dataset-filter" className="w-full text-sm font-medium">
-        Filtrar por Período
+        Filtrar por Livro Bíblico
       </label>
-      <Select value={displayValue} onValueChange={handleFilterChange}>
+      <Select value={displayValue} onValueChange={handleFilterChange} disabled={loading}>
         <SelectTrigger id="dataset-filter" className="w-full">
-          <SelectValue placeholder="Selecione um período..." />
+          <SelectValue placeholder={loading ? "Carregando..." : "Selecione um livro..."} />
         </SelectTrigger>
         <SelectContent>
           {datasetOptions.map((option) => (
