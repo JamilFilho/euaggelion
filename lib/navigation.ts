@@ -27,6 +27,7 @@ export const navigationLinks = {
         title: "Ferramentas de Estudo",
         items: [
             { href: "/biblia", label: "Bíblia Sagrada" },
+            { href: "/trilhas", label: "Trilhas de Estudo" },
         ]
     },
     opiniao: {

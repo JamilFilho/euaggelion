@@ -5,17 +5,22 @@ interface FeedLinkProps {
     slug: string;
     category: string;
     articleCategory?: string;
+    trailSlug?: string;
     isWiki?: boolean;
     isCategoryPage?: boolean;
 }
 
-export default function FeedLink({ slug, category, articleCategory, isWiki = false, isCategoryPage = false }: FeedLinkProps) {
+export default function FeedLink({ slug, category, articleCategory, trailSlug, isWiki = false, isCategoryPage = false }: FeedLinkProps) {
     const href = isWiki || category === "wiki"
         ? isCategoryPage
             ? `/wiki/${articleCategory}/${slug}`
             : `/wiki/${articleCategory}`
         : category === "articles"
             ? `/s/${slug}`
+            : category === "trilhas"
+            ? `/trilhas/${slug}`
+            : category === "steps"
+            ? `/trilhas/${trailSlug}/${slug}`
             : `/${slug}`;
 
     const content = isWiki
@@ -24,6 +29,10 @@ export default function FeedLink({ slug, category, articleCategory, isWiki = fal
             : "Continuar lendo"
         : category === "articles"
             ? "Ver artigos"
+            : category === "trilhas"
+            ? "Ver Trilha"
+            : category === "steps"
+            ? "Ver Passo"
             : "Continuar lendo";
 
     return (

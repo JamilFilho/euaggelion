@@ -25,7 +25,7 @@ interface BreadcrumbProps {
 
 export function Breadcrumb({ items, className = "", sticky = false, topOffset = 0 }: BreadcrumbProps) {
   const pathname = usePathname();
-  const isProblematicRoute = pathname.startsWith('/s');
+  const isProblematicRoute = pathname.startsWith('/s') || pathname.startsWith('/trilhas');
   
   const { ref, placeholderRef } = useSticky({ topOffset, id: 'sticky-breadcrumb' });
   

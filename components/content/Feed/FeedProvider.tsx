@@ -12,6 +12,7 @@ interface Article {
     count?: number;
     author?: string;
     date?: string;
+    step?: number; // usado para ordenar passos de trilhas
 }
 
 type FilterType = "testament" | "date" | "author";
@@ -26,6 +27,7 @@ interface FeedContextType {
     totalPages: number;
     itemsPerPage: number;
     authors: string[];
+    trailSlug?: string;
     onFilterChange: (value: string) => void;
     onFilterTypeChange: (type: FilterType) => void;
     onAuthorFilterChange: (author: string) => void;
@@ -46,12 +48,14 @@ interface FeedProviderProps {
     articles: Article[];
     itemsPerPage?: number;
     category?: string;
+    trailSlug?: string;
     children: ReactNode;
 }
 
-export default function FeedProvider({ articles, itemsPerPage = 12, category, children }: FeedProviderProps) {
+export default function FeedProvider({ articles, itemsPerPage = 12, category, trailSlug, children }: FeedProviderProps) {
     // Definir estado inicial baseado na categoria
     const isVersoAVerso = category === "verso-a-verso";
+    const isSteps = category === "steps";
     const [filterType, setFilterType] = useState<FilterType>(isVersoAVerso ? "testament" : "date");
     const [filter, setFilter] = useState<string>(isVersoAVerso ? "all" : "desc");
     const [authorFilter, setAuthorFilter] = useState<string>();
@@ -86,6 +90,14 @@ export default function FeedProvider({ articles, itemsPerPage = 12, category, ch
         
         return true;
     }).sort((a, b) => {
+        // Para páginas de trilhas (lista de passos), ordenar pelo "step" crescente
+        if (isSteps) {
+            const sa = a.step ?? Number.MAX_SAFE_INTEGER;
+            const sb = b.step ?? Number.MAX_SAFE_INTEGER;
+            if (sa !== sb) return sa - sb;
+            return a.title.localeCompare(b.title, "pt-BR");
+        }
+
         // Ordenação por data
         if (filterType === "date" || filterType === "author") {
             const dateA = a.date ? new Date(a.date).getTime() : 0;
@@ -142,6 +154,7 @@ export default function FeedProvider({ articles, itemsPerPage = 12, category, ch
                 totalPages,
                 itemsPerPage,
                 authors,
+                trailSlug,
                 onFilterChange: handleFilterChange,
                 onFilterTypeChange: handleFilterTypeChange,
                 onAuthorFilterChange: handleAuthorFilterChange,

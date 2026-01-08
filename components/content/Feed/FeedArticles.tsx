@@ -9,7 +9,7 @@ interface FeedArticlesProps {
 }
 
 export default function FeedArticles({ category, isCategoryPage = false }: FeedArticlesProps) {
-    const { paginatedArticles } = useFeedContext();
+    const { paginatedArticles, trailSlug } = useFeedContext();
     
     return (
         <>
@@ -28,6 +28,7 @@ export default function FeedArticles({ category, isCategoryPage = false }: FeedA
                         slug={article.slug}
                         category={category}
                         articleCategory={article.category}
+                        trailSlug={trailSlug}
                         isWiki={article.isWiki}
                         isCategoryPage={isCategoryPage}
                     />
