@@ -196,12 +196,16 @@ export default defineConfig({
             required: true,
             options: [
               { value: "apologetica", label: "Apologética" },
+              { value: "biblia", label: "Bíblia" },
               { value: "credos", label: "Credos" },
               { value: "escatologia", label: "Escatologia" },
               { value: "glossario", label: "Glossário" },
               { value: "historia", label: "História" },
+              { value: "historia-da-teologia", label: "História da Teologia" },
+              { value: "igreja", label: "Igreja" },
               { value: "igreja-primitiva", label: "Igreja Primitiva" },
               { value: "patristica", label: "Patrística" },
+              { value: "pentateuco", label: "Pentateuco" },
               { value: "teologia", label: "Teologia" },
               { value: "teologos", label: "Teólogos" },
             ],
@@ -232,6 +236,66 @@ export default defineConfig({
             type: "boolean",
             name: "search",
             label: "Incluir na Busca",
+          },
+          {
+            type: "object",
+            name: "chronology",
+            label: "Cronologia",
+            list: true,
+            fields: [
+              {
+                type: "number",
+                name: "yearStart",
+                label: "Ano Inicial",
+              },
+              {
+                type: "string",
+                name: "monthStart",
+                label: "Mês Inicial",
+              },
+              {
+                type: "number",
+                name: "yearEnd",
+                label: "Ano Final",
+              },
+              {
+                type: "string",
+                name: "monthEnd",
+                label: "Mês Final",
+              },
+              {
+                type: "string",
+                name: "event",
+                label: "Evento",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descrição",
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "object",
+                name: "reference",
+                label: "Referências",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "text",
+                    label: "Texto",
+                  },
+                  {
+                    type: "string",
+                    name: "url",
+                    label: "URL",
+                  },
+                ],
+              },
+            ],
           },
           {
             type: "rich-text",
@@ -280,6 +344,119 @@ export default defineConfig({
             name: "published",
             label: "Publicado",
             required: true,
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Conteúdo",
+            isBody: true,
+          },
+        ],
+      },
+
+      // Trilhas
+      {
+        name: "trail",
+        label: "Trilhas",
+        path: "content/trails",
+        format: "md",
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) => {
+              return `${values?.title
+                ?.toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/(^-|-$)/g, '')}`;
+            },
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Título",
+            required: true,
+            isTitle: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Descrição",
+            required: true,
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
+            type: "datetime",
+            name: "date",
+            label: "Data de Publicação",
+            required: true,
+            ui: {
+              dateFormat: "YYYY-MM-DD",
+            },
+          },
+          {
+            type: "string",
+            name: "author",
+            label: "Autor",
+            options: ["Jamil Filho", "Outro"],
+          },
+          {
+            type: "boolean",
+            name: "published",
+            label: "Publicado",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "trail",
+            label: "Nome da Trilha",
+            required: true,
+            description: "Identificador único da trilha (ex: example_trail)",
+          },
+          {
+            type: "number",
+            name: "step",
+            label: "Etapa",
+            required: true,
+            description: "Número da etapa na trilha",
+          },
+          {
+            type: "string",
+            name: "tags",
+            label: "Tags",
+            list: true,
+            ui: {
+              component: "tags",
+            },
+          },
+          {
+            type: "boolean",
+            name: "search",
+            label: "Incluir na Busca",
+          },
+          {
+            type: "string",
+            name: "video",
+            label: "URL do Vídeo",
+            description: "Link para vídeo relacionado (ex: YouTube)",
+          },
+          {
+            type: "string",
+            name: "file",
+            label: "Arquivos para Download",
+            list: true,
+            description: "URLs dos arquivos relacionados (PDF, etc)",
+          },
+          {
+            type: "string",
+            name: "summary",
+            label: "Resumo",
+            ui: {
+              component: "textarea",
+            },
           },
           {
             type: "rich-text",
