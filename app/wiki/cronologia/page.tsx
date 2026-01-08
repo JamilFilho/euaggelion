@@ -52,7 +52,7 @@ export default function CronologiaPage() {
       />
       <Page.Root>
         <ChronologyProvider activeFilter="all">
-            <StickySection as="div" topOffset={48} className="z-10 bg-secondary">
+            <StickySection as="div" topOffset={0} className="z-10 bg-secondary">
                 <CronologyFilterSelect />
             </StickySection>
         
