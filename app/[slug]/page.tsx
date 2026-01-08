@@ -27,7 +27,6 @@ import Breadcrumb from '@/components/ui/breadcrumb';
 import { Chronology } from '@/components/content/Chronology';
 import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock';
 import { ChronologyProvider } from '@/lib/context/ChronologyContext';
-import { Timeline } from '@/components/content/Timeline';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
 
 const headingLinkIcon = {
