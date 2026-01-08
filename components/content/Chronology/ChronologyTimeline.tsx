@@ -36,7 +36,7 @@ export function ChronologyTimeline({ dataset, loadAll = false }: ChronologyTimel
   const [events, setEvents] = useState<ChronologyEvent[]>([]);
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(0.1); // Escala de zoom (1 = 100%)
+  const [scale, setScale] = useState(0.3); // Escala de zoom (1 = 100%)
   const [containerHeight, setContainerHeight] = useState<number>(0);
 
   // Configurar pinch-to-zoom com use-gesture
@@ -48,7 +48,7 @@ export function ChronologyTimeline({ dataset, loadAll = false }: ChronologyTimel
     {
       target: scrollRef,
       eventOptions: { passive: false },
-      scaleBounds: { min: 0.7, max: 3 },
+      scaleBounds: { min: 0.05, max: 3 },
       from: () => [scale, 0],
     }
   );
@@ -328,7 +328,7 @@ export function ChronologyTimeline({ dataset, loadAll = false }: ChronologyTimel
       {/* Zoom Controls (Desktop) */}
       <div className="hidden md:flex absolute right-2 top-2 gap-2 items-center bg-secondary/80 backdrop-blur-sm border border-ring/20 rounded-lg p-1 z-[5]">
         <button
-          onClick={() => setScale(Math.max(0.3, scale - 0.2))}
+          onClick={() => setScale(Math.max(0.05, scale - 0.05))}
           className="w-8 h-8 flex items-center justify-center rounded hover:bg-ring/20 transition-colors text-sm font-bold"
           aria-label="Diminuir zoom"
         >
@@ -338,7 +338,7 @@ export function ChronologyTimeline({ dataset, loadAll = false }: ChronologyTimel
           {Math.round(scale * 100)}%
         </span>
         <button
-          onClick={() => setScale(Math.min(3, scale + 0.2))}
+          onClick={() => setScale(Math.min(3, scale + 0.05))}
           className="w-8 h-8 flex items-center justify-center rounded hover:bg-ring/20 transition-colors text-sm font-bold"
           aria-label="Aumentar zoom"
         >

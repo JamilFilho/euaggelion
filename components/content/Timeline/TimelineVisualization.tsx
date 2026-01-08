@@ -44,18 +44,18 @@ interface TimelineVisualizationProps {
 
 export function TimelineVisualization({ data }: TimelineVisualizationProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(0.5);
+  const [scale, setScale] = useState(0.3);
 
   // Configurar pinch-to-zoom com use-gesture
   usePinch(
     ({ offset: [d] }) => {
-      const newScale = Math.max(1, Math.min(3, d));
+      const newScale = Math.max(0.05, Math.min(3, d));
       setScale(newScale);
     },
     {
       target: scrollRef,
       eventOptions: { passive: false },
-      scaleBounds: { min: 0.03, max: 3 },
+      scaleBounds: { min: 0.05, max: 3 },
       from: () => [scale, 0],
     }
   );
@@ -144,6 +144,12 @@ export function TimelineVisualization({ data }: TimelineVisualizationProps) {
   }, {} as Record<number, typeof processedEvents>);
 
   const maxTrack = Math.max(...Object.keys(eventsByTrack).map(Number));
+  
+  // Calcular altura dinâmica baseada no número de tracks
+  const trackHeight = 80; // Altura de cada track
+  const trackSpacing = 20; // Espaçamento entre tracks
+  const containerPadding = 40; // Padding superior e inferior
+  const dynamicHeight = (maxTrack + 1) * trackHeight + maxTrack * trackSpacing + containerPadding;
 
   if (!data || !data.events || data.events.length === 0) {
     return (
@@ -171,7 +177,7 @@ export function TimelineVisualization({ data }: TimelineVisualizationProps) {
       {/* Zoom Controls (Desktop) */}
       <div className="hidden md:flex absolute right-2 top-2 gap-2 items-center bg-secondary/80 backdrop-blur-sm border border-ring/20 rounded-lg p-1 z-[5]">
         <button
-          onClick={() => setScale(Math.max(0.05, scale - 0.2))}
+          onClick={() => setScale(Math.max(0.05, scale - 0.05))}
           className="w-8 h-8 flex items-center justify-center rounded hover:bg-ring/20 transition-colors text-sm font-bold"
           aria-label="Diminuir zoom"
         >
@@ -181,7 +187,7 @@ export function TimelineVisualization({ data }: TimelineVisualizationProps) {
           {Math.round(scale * 100)}%
         </span>
         <button
-          onClick={() => setScale(Math.min(3, scale + 0.2))}
+          onClick={() => setScale(Math.min(3, scale + 0.05))}
           className="w-8 h-8 flex items-center justify-center rounded hover:bg-ring/20 transition-colors text-sm font-bold"
           aria-label="Aumentar zoom"
         >
@@ -192,7 +198,8 @@ export function TimelineVisualization({ data }: TimelineVisualizationProps) {
       {/* Scroll Buttons */}
       <button
         onClick={() => scroll("left")}
-        className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-secondary border border-ring/20 rounded-full p-2 hover:bg-ring/20 transition-colors"
+        className="hidden md:flex absolute left-2 z-10 bg-secondary border border-ring/20 rounded-full p-2 hover:bg-ring/20 transition-colors"
+        style={{ top: `${(dynamicHeight / 2) + 24}px`, transform: 'translateY(-50%)' }}
         aria-label="Rolar para esquerda"
       >
         <ChevronLeft className="w-5 h-5" />
@@ -200,7 +207,8 @@ export function TimelineVisualization({ data }: TimelineVisualizationProps) {
       
       <button
         onClick={() => scroll("right")}
-        className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-secondary border border-ring/20 rounded-full p-2 hover:bg-ring/20 transition-colors"
+        className="hidden md:flex absolute right-2 z-10 bg-secondary border border-ring/20 rounded-full p-2 hover:bg-ring/20 transition-colors"
+        style={{ top: `${(dynamicHeight / 2) + 24}px`, transform: 'translateY(-50%)' }}
         aria-label="Rolar para direita"
       >
         <ChevronRight className="w-5 h-5" />
@@ -211,12 +219,13 @@ export function TimelineVisualization({ data }: TimelineVisualizationProps) {
         ref={scrollRef}
         className="py-6 overflow-x-auto overflow-y-hidden scrollbar-thin scrollbar-thumb-ring/20 scrollbar-track-transparent touch-pan-x"
         style={{ 
-          scrollbarWidth: "thin"
+          scrollbarWidth: "thin",
+          minHeight: `${dynamicHeight + 48}px` // 48px para o padding do container
         }}
       >
-        <div className="px-4 md:px-20 py-8 relative" style={{ minWidth: `${totalUnits * pixelsPerUnit}px` }}>
+        <div className="px-4 md:px-20 py-8 relative" style={{ minWidth: `${totalUnits * pixelsPerUnit}px`, height: `${dynamicHeight}px` }}>
           {/* Timeline Track */}
-          <div className="relative" style={{ minHeight: `${(maxTrack + 1) * 60}px` }}>
+          <div className="relative w-full" style={{ height: `${dynamicHeight}px` }}>
             {/* Eventos */}
             {Object.entries(eventsByTrack).map(([trackNum, trackEvents]) => {
               const trackIndex = Number(trackNum);
@@ -233,18 +242,19 @@ export function TimelineVisualization({ data }: TimelineVisualizationProps) {
                     className="absolute"
                     style={{
                       left: `${startPosition * pixelsPerUnit}px`,
-                      top: `${trackIndex * 80}px`,
+                      top: `${trackIndex * (trackHeight + trackSpacing)}px`,
                       width: `${eventWidth}px`,
-                      height: '60px'
+                      height: `${trackHeight}px`
                     }}
                   >
                     {/* Barra do evento com nome */}
                     <Popover>
                       <PopoverTrigger asChild>
                         <button
-                          className={`absolute top-1/2 -translate-y-1/2 w-full h-10 ${colorClass} transition-all cursor-pointer`}
+                          className={`absolute top-1/2 -translate-y-1/2 w-full ${colorClass} transition-all cursor-pointer`}
+                          style={{ height: '50px' }}
                         >
-                          <span className="text-left text-xs text-white font-medium px-2 truncate block leading-10">
+                          <span className="text-left text-xs text-white font-medium px-2 truncate block" style={{ lineHeight: '50px' }}>
                             {event.name || event.start?.event || event.end?.event || 'Evento'}
                           </span>
                         </button>
@@ -285,7 +295,7 @@ export function TimelineVisualization({ data }: TimelineVisualizationProps) {
                       return (
                         <div key={pinIndex} style={{ position: 'absolute', left: `${pinRelativePosition}px`, top: '0', transform: 'translateX(-50%)', height: '100%' }}>
                           {/* Linha do pin até embaixo da track */}
-                          <div className="absolute left-[50%] top-[8px] w-[2px] h-[80%] bg-foreground -translate-x-[50%] z-[400]" />
+                          <div className="absolute left-[50%] top-[8px] w-[2px] bg-foreground -translate-x-[50%] z-[400]" style={{ height: `${trackHeight - 16}px` }} />
                           <Popover>
                             <PopoverTrigger asChild>
                               <button
