@@ -11,10 +11,7 @@ import Link from "next/link";
 import { getReadingTime } from "@/lib/timeReader";
 import { Newsletter } from '@/components/layout/Newsletter';
 import { Webmentions } from '@/components/webMentions';
-import { Badge } from '@/components/ui/badge';
 import { ArticleSchema, BreadcrumbSchema } from "@/lib/schema";
-import { RelatedArticles } from "@/components/content/RelatedArticles";
-
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -315,7 +312,7 @@ export default async function ArticlePage({
 
           <Webmentions target={`https://euaggelion.com.br/${found.slug}`} />
 
-          <RelatedArticles currentSlug={found.slug} />
+          <Article.Related currentSlug={found.slug} />
         </Article.Footer>
 
         <Newsletter.Root>
