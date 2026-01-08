@@ -22,6 +22,7 @@ export interface ArticleMeta {
   date: string;
   author?: string;
   category: string;
+  categories?: string[]; // Todas as categorias do conteúdo
   tags?: string[];
   reference?: string[];
   testament?: "at" | "nt";
@@ -43,7 +44,7 @@ export interface ArticleNavigation {
   next: ArticleMeta | null;
 }
 
-function readArticlesFromDirectory(dirPath: string, category: string): ArticleMeta[] {
+function readArticlesFromDirectory(dirPath: string, primaryCategory: string): ArticleMeta[] {
   if (!fs.existsSync(dirPath)) {
     return [];
   }
@@ -57,6 +58,17 @@ function readArticlesFromDirectory(dirPath: string, category: string): ArticleMe
       const raw = fs.readFileSync(filePath, "utf-8");
       const { data, content } = matter(raw);
       
+      // Normalizar categorias: pode ser string ou array
+      let categories: string[] = [];
+      if (data.category) {
+        categories = Array.isArray(data.category)
+          ? (data.category as string[]).map(c => String(c).toLowerCase())
+          : [String(data.category).toLowerCase()];
+      }
+      if (categories.length === 0) {
+        categories = [primaryCategory.toLowerCase()];
+      }
+
       return {
         slug: file.replace(/\.mdx$/, "").toLowerCase(),
         fileName: file,
@@ -65,7 +77,8 @@ function readArticlesFromDirectory(dirPath: string, category: string): ArticleMe
         date: data.date ?? "",
         author: data.author ?? "",
         published: data.published ?? false,
-        category: category.toLowerCase(),
+        category: categories[0], // primeira categoria é a principal
+        categories: categories,
         tags: data.tags ?? [],
         reference: data.reference ?? [],
         testament: data.testament,
@@ -105,8 +118,9 @@ export function getArticlesByCategory(category?: string, limit?: number ): Artic
   let filteredArticles = allArticles.filter(article => article.published);
   
   if (category) {
+    const categoryLower = category.toLowerCase();
     filteredArticles = filteredArticles.filter(
-      (article) => article.category === category.toLowerCase()
+      (article) => article.categories?.includes(categoryLower) || article.category === categoryLower
     );
   }
 
@@ -131,12 +145,15 @@ export function getArticleCategoriesWithCount(): { category: string; count: numb
   const categoryCounts: Record<string, number> = {};
 
   articles.forEach((article) => {
-    const category = article.category;
-    if (categoryCounts[category]) {
-      categoryCounts[category]++;
-    } else {
-      categoryCounts[category] = 1;
-    }
+    // Contar em todas as categorias do artigo
+    const cats = article.categories || [article.category];
+    cats.forEach((cat) => {
+      if (categoryCounts[cat]) {
+        categoryCounts[cat]++;
+      } else {
+        categoryCounts[cat] = 1;
+      }
+    });
   });
 
   return Object.keys(categoryCounts).map((category) => ({

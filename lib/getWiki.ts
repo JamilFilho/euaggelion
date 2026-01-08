@@ -13,6 +13,7 @@ export interface WikiMeta {
   description: string;
   date: string;
   category: string;
+  categories?: string[]; // Todas as categorias do conteúdo
   tags?: string[];
   related?: string[];
   content: string;
@@ -24,7 +25,7 @@ export interface ArticleNavigation {
   next: WikiMeta | null;
 }
 
-function readWikiFromDirectory(dirPath: string, category: string): WikiMeta[] {
+function readWikiFromDirectory(dirPath: string, primaryCategory: string): WikiMeta[] {
   if (!fs.existsSync(dirPath)) {
     return [];
   }
@@ -38,6 +39,17 @@ function readWikiFromDirectory(dirPath: string, category: string): WikiMeta[] {
       const raw = fs.readFileSync(filePath, "utf-8");
       const { data, content } = matter(raw);
       
+      // Normalizar categorias: pode ser string ou array
+      let categories: string[] = [];
+      if (data.category) {
+        categories = Array.isArray(data.category)
+          ? (data.category as string[]).map(c => String(c).toLowerCase())
+          : [String(data.category).toLowerCase()];
+      }
+      if (categories.length === 0) {
+        categories = [primaryCategory.toLowerCase()];
+      }
+
       return {
         slug: file.replace(/\.mdx$/, "").toLowerCase(),
         fileName: file,
@@ -46,7 +58,8 @@ function readWikiFromDirectory(dirPath: string, category: string): WikiMeta[] {
         description: data.description ?? "",
         date: data.date ?? "",
         published: data.published ?? false,
-        category: category.toLowerCase(),
+        category: categories[0], // primeira categoria é a principal
+        categories: categories,
         tags: data.tags ?? [],
         related: data.related ?? [],
         content,
@@ -88,7 +101,12 @@ export function getAllWikiCategory(category?: string): WikiMeta[] {
   
   return allArticles
     .filter(
-      (article) => article.category === category.toLowerCase() && article.published
+      (article) => {
+        const categoryLower = category.toLowerCase();
+        // Buscar por todas as categorias do artigo
+        return (article.categories?.includes(categoryLower) || article.category === categoryLower)
+          && article.published;
+      }
     )
     .sort((a, b) => {
       if (!a.date || !b.date) return 0;
@@ -102,6 +120,6 @@ export function getWikiSlug(slug: string): WikiMeta | undefined {
 
 export function getWikiCategories(): string[] {
   const articles = getAllWikiArticles();
-  const categories = articles.map(article => article.category);
+  const categories = articles.flatMap(article => article.categories || [article.category]);
   return [...new Set(categories)];
 }
