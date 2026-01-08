@@ -1,13 +1,12 @@
 "use client";
 
-import { ReactNode, useMemo } from "react";
+import { useMemo } from "react";
 import { ChronologyProvider } from "@/lib/context/ChronologyContext";
 import { Chronology } from "./index";
 
 interface ChronologyBlockProps {
   dataChronology?: string;
   "data-chronology"?: string;
-  children?: ReactNode;
 }
 
 interface MDXChronologyEvent {
@@ -75,7 +74,6 @@ function normalizeEvents(mdxEvents: MDXChronologyEvent[]): ChronologyEvent[] {
 export function ChronologyBlock({
   dataChronology,
   "data-chronology": dataChrono,
-  children,
 }: ChronologyBlockProps) {
   const events = useMemo<ChronologyEvent[]>(() => {
     const data = dataChronology || dataChrono;
