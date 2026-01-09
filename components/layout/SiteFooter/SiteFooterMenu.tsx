@@ -7,6 +7,7 @@ export function SiteFooterMenu() {
         navigationLinks.download,
         navigationLinks.estudoBiblico,
         navigationLinks.ferramentasEstudo,
+        navigationLinks.literaturaCrista,
         navigationLinks.opiniao,
         navigationLinks.wiki,
         navigationLinks.institucional,

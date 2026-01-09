@@ -7,7 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger
 } from "@/components/ui/navigation-menu"
-import { ChartBarStacked, type LucideIcon } from "lucide-react";
+import { ChartBarStacked, Swords, type LucideIcon } from "lucide-react";
 import Link from "next/link"
 
 interface SiteLink {
@@ -41,28 +41,34 @@ const siteLinks: SiteLink[] = [
         href: "/s/cada-manha"
     },
     {
-        title: "Download",
-        alt:"Baixe nossos materiais gratuitos",
+        title: "Literatura Cristã",
+        alt:"Explore nossa biblioteca de literatura cristã",
         href: "#",
         submenu: [
             {
-                title: "eBooks",
-                href: "/s/ebook",
-                description: "Estudos, devocionais e outros materiais gratuitos para download.",
+                title: "Cavaleiros da Aurora",
+                href: "/s/cavaleiros-da-aurora",
+                description: "Embarque nesta saga de fantasia cristã",
                 isFeatured: true,
-                color: "bg-accent"
+                color: "bg-zinc-700",
+                icon: Swords
             },
             {
-                title: "Planner de Leitura Bíblica",
-                href: "/planners",
-                description: "Organize sua leitura devocional com nosso planner de leitura gratuito"
+                title: "Ficção Cristã",
+                href: "/s/ficcao-crista",
+                description: "A fé cristã e seus valores expressos em narrativas e histórias ficcionais"
+            },
+            {
+                title: "Ensaios de um Peregrino",
+                href: "/s/ensaios-de-um-peregrino",
+                description: "Esaios diários de um peregrino refletindo sobre a vida enquanto caminha pelos desertos da existência"
             }
         ]
     },
     {
-        title: "TEOleigo",
-        alt:"Reflita sobre questões teológicas",
-        href: "/s/teoleigo"
+        title: "Trilhas de Conteúdo",
+        alt:"Siga nossas trilhas de estudo e conteúdo",
+        href: "/trilhas"
     },
     {
         title: "Wiki",
