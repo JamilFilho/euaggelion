@@ -4,6 +4,22 @@ export interface CategoryMeta {
 }
 
 export const CATEGORIES: Record<string, CategoryMeta> = {
+  "ensaios-de-um-peregrino": {
+    name: "Ensaios de um Peregrino",
+    description: "Ensaios diários de um peregrino refletindo sobre a vida enquanto caminha pelos desertos da existência",
+  },
+  "cavaleiros-da-aurora": {
+    name: "Cavaleiros da Aurora",
+    description:""
+  },
+  "de-ca-da-eternidade": {
+    name: "De cá da eternidade",
+    description: "Contos autobiográficos, e outros nem tanto, de um peregrino caminhando do lado de cá da eternidade",
+  },
+  "ficcao-crista": {
+    name: "Ficção Cristã",
+    description: "A fé cristã e seus valores expressos em narrativas e histórias ficcionais",
+  },
   pentateuco: {
     name: "Pentateuco",
     description: "Estudo dos cinco primeiros livros da Bíblia Sagrada: Gênesis, Êxodo, Levítico, Números e Deuteronômio",
@@ -69,7 +85,7 @@ export const CATEGORIES: Record<string, CategoryMeta> = {
     description: "Artigos, dicas e reflexões sobre diversos assuntos",
   },
   "cada-manha": {
-    name: "Novas de Cada Manhã",
+    name: "Cada Manhã",
     description: "Devocionais diários para edificar sua fé",
   },
   ebook: {
