@@ -95,7 +95,7 @@
   }
 
   .article-content a {
-    @apply text-accent underline decoration-dotted break-words font-bold;
+    @apply text-accent underline decoration-dotted underline-offset-4 break-words font-bold;
   }
 
   .article-content a.heading-anchor {
@@ -133,7 +133,40 @@
   }
 
   .article-content img {
-    @apply rounded my-6 w-full;
+    @apply my-6 w-full max-w-none;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+
+  .article-content > figure:first-child .image-wrapper,
+  .article-content > p:first-child figure:only-child.image-wrapper {
+    position:absolute;
+    top:0;
+    left:0;
+    margin-left: 0;
+    opacity: .5;
+    z-index:-10;
+    @apply h-[80vh] md:h-[140vh] w-full;
+  }
+
+  .article-content > figure:first-child .image-wrapper img,
+  .article-content > p:first-child figure:only-child.image-wrapper img {
+    @apply h-[70vh] md:h-[130vh] w-full;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .article-content > figure:first-child .image-wrapper::before,
+  .article-content > p:first-child figure:only-child.image-wrapper::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, hsl(var(--secondary)), transparent);
+    z-index: 1;
+    pointer-events: none;
+    @apply h-[69vh] md:h-[130vh] w-full;
   }
 
   .article-content ul,
@@ -150,7 +183,7 @@
   }
 
   .site-footer ul li a {
-    @apply text-accent underline decoration-dotted;
+    @apply text-accent underline decoration-dotted underline-offset-4;
   }
 
   .article-content table {
@@ -176,6 +209,23 @@
   /* Para tabelas em telas muito pequenas, adicione scroll horizontal */
   .article-content {
     @apply overflow-x-auto;
+  }
+
+  /* Estilos para poesia */
+  .poetry-container {
+    @apply pl-6 font-serif text-lg italic leading-relaxed;
+  }
+
+  .poetry-stanza {
+    @apply relative;
+  }
+
+  .poetry-verse {
+    @apply text-primary/90 leading-7;
+  }
+
+  .poetry-container .poetry-verse:not(:last-child) {
+    @apply mb-1;
   }
 
 }

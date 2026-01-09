@@ -8,6 +8,7 @@ import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { CATEGORIES } from "@/lib/categories";
 import Link from "next/link";
+import Image from "next/image";
 import { getReadingTime } from "@/lib/timeReader";
 import { Newsletter } from '@/components/layout/Newsletter';
 import { Webmentions } from '@/components/webMentions';
@@ -25,6 +26,7 @@ import { Chronology } from '@/components/content/Chronology';
 import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock';
 import { ChronologyProvider } from '@/lib/context/ChronologyContext';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
+import { Poetry } from '@/components/content/Poetry';
 
 const headingLinkIcon = {
   type: 'element',
@@ -73,6 +75,43 @@ const headingAutolinkOptions = {
   },
   content: [headingLinkIcon],
 } as any;
+
+// Componente otimizado para imagens do MDX
+function OptimizedImage({ src, alt, ...props }: { src: string; alt: string; [key: string]: any }) {
+  // Para imagens externas ou com domínios diferentes
+  if (src.startsWith('https')) {
+    return (
+      <figure className="relative">
+        <Image
+          src={src}
+          alt={alt || ''}
+          width={1200}
+          height={630}
+          className="w-full h-auto"
+          priority={false}
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+          {...props}
+        />
+      </figure>
+    );
+  }
+  return (
+    <figure className="relative image-wrapper">
+      <Image
+        src={src}
+        alt={alt || ''}
+        width={1200}
+        height={630}
+        className="w-full h-auto"
+        priority={false}
+        {...props}
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+      />
+    </figure>
+  );
+}
 
 interface Params {
   slug: string;
@@ -210,6 +249,10 @@ export default async function ArticlePage({
   const mdxComponents = {
     ChronologyBlock: ChronologyBlock as any,
     TimelineBlock: TimelineBlock as any,
+    img: OptimizedImage,
+    Poetry: Poetry.Root,
+    Stanza: Poetry.Stanza,
+    Verse: Poetry.Verse,
   };
 
   return (
