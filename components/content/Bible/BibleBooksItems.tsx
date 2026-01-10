@@ -39,7 +39,7 @@ export default function BibleBooksItems({ version, testament = "at", currentVers
                 href={`/biblia/${versionPath}/${book.slug}`}
                 className={`p-4 text-center flex items-center justify-center border-b border-r border-l border-ring/20 hover:bg-black/20 transition-colors ease-in-out ${colSpan} ${mobileColSpan}`}
             >
-                <span className="text-foreground/80 text-lg font-medium">{book.name}</span>
+                <span className="text-foreground/80 text-lg font-medium">{book.short_name}</span>
             </Link>
             );
         })}

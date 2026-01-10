@@ -6,6 +6,7 @@ const BIBLE_PATH = path.join(process.cwd(), "content", "bible");
 
 export interface BibleBookMeta {
   name: string;
+  short_name: string;
   slug: string;
   abbrev: string;
   chapters: number;
