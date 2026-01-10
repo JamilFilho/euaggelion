@@ -4,7 +4,7 @@ import { Page } from "@/components/content/Page";
 import { Metadata } from "next";
 import { Feed } from "@/components/content/Feed";
 import { CollectionPageSchema } from "@/lib/schema";
-import { SectionsBreadcrumb } from './SectionsBreadcrumb';
+import Breadcrumb from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
     title: "Seções de Conteúdo | Materiais Cristãos | Euaggelion",
@@ -57,12 +57,20 @@ export default function CategoriesPage() {
     const category = "articles";
     
     return(
-        <SectionsBreadcrumb>
+        <>
         <CollectionPageSchema
             name="Seções de Conteúdo | Materiais Cristãos | Euaggelion"
             description="Navegue por nossas seções temáticas de conteúdo cristão e edifique sua fé com artigos, estudos bíblicos e devocionais."
             url="https://euaggelion.com.br/s/"
             itemCount={categories.length}
+        />
+        <Breadcrumb
+            items={[
+            { label: "Home", href: "/" },
+            { label: "Seções", href: "/s" },
+            ]}
+            sticky={true}
+            topOffset={0}
         />
         <Page.Root>
             <Page.Header>
@@ -78,6 +86,6 @@ export default function CategoriesPage() {
                 </Feed.Root>
             </Page.Content>
         </Page.Root>
-        </SectionsBreadcrumb>
+        </>
     )
 }

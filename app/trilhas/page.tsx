@@ -2,9 +2,9 @@ import { getTrails } from '@/lib/getTrails';
 import { Page } from '@/components/content/Page';
 import { Feed } from '@/components/content/Feed';
 import Link from 'next/link';
-import { TrailsBreadcrumb } from './TrailsBreadcrumb';
+import Breadcrumb from '@/components/ui/breadcrumb';
 import type { Metadata } from 'next';
-import { CollectionPageSchema } from '@/lib/schema';
+import { CollectionPageSchema, BreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Trilhas de Conteúdo | Euaggelion',
@@ -45,27 +45,39 @@ export default async function TrilhasPage() {
   const trails = await getTrails();
   
   return (
-    <TrailsBreadcrumb>
+    <Page.Root>
       <CollectionPageSchema
         name="Trilhas de Conteúdo"
         description="Explore nossas trilhas de estudo, com conteúdos organizados para auxiliar em seu crescimento na fé."
         url={`https://euaggelion.com.br/trilhas`}
         itemCount={trails.length}
       />
-      <Page.Root>
-        <Page.Header>
-          <Page.Title content="Trilhas" />
-          <Page.Description content="Explore nossas trilhas de estudo, com conteúdos organizados para auxiliar em seu crescimento na fé" />
-        </Page.Header>
-        <Page.Content>
-          <Feed.Root articles={trails as any} category="trilhas">
-            <Feed.Group>
-              <Feed.Articles category="trilhas" />
-            </Feed.Group>
-            <Feed.Pagination />
-          </Feed.Root>
-        </Page.Content>
-      </Page.Root>
-    </TrailsBreadcrumb>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://euaggelion.com.br' },
+          { name: 'Trilhas', url: 'https://euaggelion.com.br/trilhas' },
+        ]}
+      />
+      <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Trilhas", href: "/trilhas" }
+          ]}
+          sticky={true}
+          topOffset={0}
+      />
+      <Page.Header>
+        <Page.Title content="Trilhas" />
+        <Page.Description content="Explore nossas trilhas de estudo, com conteúdos organizados para auxiliar em seu crescimento na fé" />
+      </Page.Header>
+      <Page.Content>
+        <Feed.Root articles={trails as any} category="trilhas">
+          <Feed.Group>
+            <Feed.Articles category="trilhas" />
+          </Feed.Group>
+          <Feed.Pagination />
+        </Feed.Root>
+      </Page.Content>
+    </Page.Root>
   );
 }

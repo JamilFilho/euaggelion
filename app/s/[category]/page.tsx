@@ -5,7 +5,7 @@ import { Page } from "@/components/content/Page";
 import  { Newsletter } from "@/components/layout/Newsletter";
 import { Feed } from '@/components/content/Feed';
 import { CollectionPageSchema } from "@/lib/schema";
-import { CategoryBreadcrumb } from './CategoryBreadcrumb';
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 
 interface Params {
   category: string;
@@ -87,13 +87,24 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     : `Explore artigos sobre ${categoryName}`;
 
   return (
-    <CategoryBreadcrumb category={category} categoryName={categoryName}>
+    <>
       {/* Schema Estruturado */}
       <CollectionPageSchema
         name={categoryName}
         description={categoryDescription}
         url={`https://euaggelion.com.br/s/${category}`}
         itemCount={articlesInCategory.length}
+      />
+
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Seções", href: "/s" },
+          { label: categoryName, href: `/s/${category}` },
+        ]}
+        sticky={true}
+        topOffset={0}
+        className=""
       />
 
       <Page.Root>
@@ -127,6 +138,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           <Newsletter.Footer />
         </Newsletter.Root>
       </Page.Root>
-    </CategoryBreadcrumb>
+    </>
   );
 }

@@ -25,16 +25,22 @@ interface BreadcrumbProps {
 
 export function Breadcrumb({ items, className = "", sticky = false, topOffset = 0 }: BreadcrumbProps) {
   const pathname = usePathname();
+  const isProblematicRoute = pathname.startsWith('/s') || pathname.startsWith('/trilhas');
   
   const { ref, placeholderRef } = useSticky({ topOffset, id: 'sticky-breadcrumb' });
   
-  // Always use useSticky when sticky is enabled
-  const navRef = sticky ? ref : null;
-  const placeholderDiv = sticky ? placeholderRef : null;
+  // Use CSS sticky for problematic routes, useSticky for others
+  const navRef = sticky && !isProblematicRoute ? ref : null;
+  const placeholderDiv = sticky && !isProblematicRoute ? placeholderRef : null;
+  const stickyStyle = sticky && isProblematicRoute ? { 
+    position: 'sticky' as const, 
+    top: `${topOffset}px`, 
+    zIndex: 800 
+  } : {};
 
   return (
     <>
-      {sticky && <div ref={placeholderDiv} className="m-0 p-0 h-0" />}
+      {sticky && !isProblematicRoute && <div ref={placeholderDiv} className="m-0 p-0 h-0" />}
       {/* Schema JSON-LD */}
       <BreadcrumbSchema
         items={items.map((item) => ({
@@ -45,6 +51,7 @@ export function Breadcrumb({ items, className = "", sticky = false, topOffset = 
 
       <nav
         ref={navRef}
+        style={stickyStyle}
         aria-label="breadcrumb"
         className={`z-[800] print:hidden px-10 py-6 -mt-[1px] border-t border-b border-ring/20 flex items-center gap-2 text-sm overflow-hidden min-w-0 bg-secondary transition-all duration-300 ease-in-out ${className}`}
       >

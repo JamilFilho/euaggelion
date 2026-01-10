@@ -14,9 +14,9 @@ import { rehypeTimelineParser } from '@/lib/rehypeTimelineParser';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
 import { Skeleton } from '@/components/ui/skeleton';
 import { TRAILS } from "@/lib/trails";
-import { TrailStepBreadcrumb } from './TrailStepBreadcrumb';
+import Breadcrumb from '@/components/ui/breadcrumb';
 import type { Metadata } from 'next';
-import { ArticleSchema } from '@/lib/schema';
+import { ArticleSchema, BreadcrumbSchema } from '@/lib/schema';
 
 export async function generateMetadata({ params }: { params: Promise<{ trail: string; step: string }> }): Promise<Metadata> {
     const { trail, step } = await params;
@@ -106,12 +106,7 @@ export default async function StepPage({ params }: { params: Promise<{ trail: st
     const trailMeta = TRAILS[stepData.trail] ?? { name: stepData.trail };
     
     return (
-        <TrailStepBreadcrumb 
-            trailSlug={stepData.trail} 
-            trailName={typeof trailMeta === 'string' ? trailMeta : trailMeta.name}
-            stepTitle={stepData.title}
-            stepSlug={stepData.slug}
-        >
+        <Trail.Root>
             <ArticleSchema
                 title={stepData.title}
                 description={stepData.description || stepData.summary || ''}
@@ -122,7 +117,24 @@ export default async function StepPage({ params }: { params: Promise<{ trail: st
                 url={`https://euaggelion.com.br/trilhas/${stepData.trail}/${stepData.slug}`}
                 category={'trilhas'}
             />
-            <Trail.Root>
+            <BreadcrumbSchema
+                items={[
+                    { name: 'Home', url: 'https://euaggelion.com.br' },
+                    { name: 'Trilhas', url: 'https://euaggelion.com.br/trilhas' },
+                    { name: typeof trailMeta === 'string' ? trailMeta : trailMeta.name, url: `https://euaggelion.com.br/trilhas/${stepData.trail}` },
+                    { name: stepData.title, url: `https://euaggelion.com.br/trilhas/${stepData.trail}/${stepData.slug}` },
+                ]}
+            />
+            <Breadcrumb
+                sticky={true}
+                className=""
+                items={[
+                { label: "Home", href: "/" },
+                { label: "Trilhas", href: "/trilhas" },
+                { label: typeof trailMeta === 'string' ? trailMeta : trailMeta.name, href: `/trilhas/${stepData.trail}` },
+                { label: stepData.title, href: `/trilhas/${stepData.trail}/${stepData.slug}` },
+                ]}
+            />
 
             {stepData.video && (
                 <Suspense fallback={<Skeleton className="w-full h-64 mb-8 rounded-lg" />}>
@@ -201,6 +213,5 @@ export default async function StepPage({ params }: { params: Promise<{ trail: st
                 </div>
             </section>
         </Trail.Root>
-        </TrailStepBreadcrumb>
     );
 }

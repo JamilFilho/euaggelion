@@ -4,7 +4,7 @@ import { CATEGORIES } from "@/lib/categories";
 import { Page } from "@/components/content/Page";
 import { Feed } from '@/components/content/Feed';
 import { CollectionPageSchema } from "@/lib/schema";
-import { WikiCategoryBreadcrumb } from './WikiCategoryBreadcrumb';
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 
 interface Params {
   category: string;
@@ -92,13 +92,23 @@ export default async function WikiCategoryPage({ params }: WikiCategoryPageProps
       : `Explore artigos sobre ${categoryName}`;
   
   return(
-        <WikiCategoryBreadcrumb categorySlug={category} categoryName={categoryName}>
+        <>
           {/* Schema estruturado */}
           <CollectionPageSchema
             name={categoryName}
             description={categoryDescription}
             url={`https://euaggelion.com.br/wiki/${category}`}
             itemCount={articlesInCategory.length}
+          />
+          
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Wiki", href: "/wiki" },
+              { label: categoryName, href: `/wiki/${category}` },
+            ]}
+            sticky={true}
+            className=""
           />
           
           <Page.Root>
@@ -117,6 +127,6 @@ export default async function WikiCategoryPage({ params }: WikiCategoryPageProps
               </Feed.Root>
             </Page.Content> 
         </Page.Root>
-        </WikiCategoryBreadcrumb>
+        </>
   )
 }

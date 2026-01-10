@@ -2,9 +2,9 @@ import { Page } from '@/components/content/Page';
 import { Feed } from '@/components/content/Feed';
 import { getTrailSteps } from '@/lib/getTrails';
 import { TRAILS } from '@/lib/trails';
-import { TrailBreadcrumb } from './TrailBreadcrumb';
+import Breadcrumb from '@/components/ui/breadcrumb';
 import type { Metadata } from 'next';
-import { CollectionPageSchema } from '@/lib/schema';
+import { CollectionPageSchema, BreadcrumbSchema } from '@/lib/schema';
 
 export async function generateMetadata({ params }: { params: Promise<{ trail: string }> }): Promise<Metadata> {
   const { trail } = await params;
@@ -55,29 +55,43 @@ export default async function TrailPage({ params }: { params: Promise<{ trail: s
   const trailMeta = TRAILS[trail] ?? { name: trail, description: '' };
   
   return (
-    <TrailBreadcrumb trailSlug={trail} trailName={trailMeta.name}>
+    <Page.Root>
       <CollectionPageSchema
         name={trailMeta.name}
         description={trailMeta.description || `Explore os conteúdos da trilha ${trailMeta.name}.`}
         url={`https://euaggelion.com.br/trilhas/${trail}`}
         itemCount={steps.length}
       />
-      <Page.Root>
-        <Page.Header>
-          <Page.Title content={trailMeta.name} />
-          {trailMeta.description && (
-            <Page.Description content={trailMeta.description} />
-          )}
-        </Page.Header>
-        <Page.Content>
-          <Feed.Root articles={steps as any} category="steps" trailSlug={trail}>
-            <Feed.Group>
-              <Feed.Articles category="steps" />
-            </Feed.Group>
-            <Feed.Pagination />
-          </Feed.Root>
-        </Page.Content>
-      </Page.Root>
-    </TrailBreadcrumb>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://euaggelion.com.br' },
+          { name: 'Trilhas', url: 'https://euaggelion.com.br/trilhas' },
+          { name: trailMeta.name, url: `https://euaggelion.com.br/trilhas/${trail}` },
+        ]}
+      />
+      <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Trilhas", href: "/trilhas" },
+            { label: trailMeta.name, href: `/trilhas/${trail}` },
+          ]}
+          sticky={true}
+          topOffset={0}
+      />
+      <Page.Header>
+        <Page.Title content={trailMeta.name} />
+        {trailMeta.description && (
+          <Page.Description content={trailMeta.description} />
+        )}
+      </Page.Header>
+      <Page.Content>
+        <Feed.Root articles={steps as any} category="steps" trailSlug={trail}>
+          <Feed.Group>
+            <Feed.Articles category="steps" />
+          </Feed.Group>
+          <Feed.Pagination />
+        </Feed.Root>
+      </Page.Content>
+    </Page.Root>
   );
 }
