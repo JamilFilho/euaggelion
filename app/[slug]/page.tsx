@@ -21,12 +21,12 @@ import { rehypeChronologyParser } from '@/lib/rehypeChronologyParser';
 import { remarkTimelineParser } from '@/lib/remarkTimelineParser';
 import { rehypeTimelineParser } from '@/lib/rehypeTimelineParser';
 import BibliaLink from '@/components/content/Bible/BibliaLink';
-import Breadcrumb from '@/components/ui/breadcrumb';
 import { Chronology } from '@/components/content/Chronology';
 import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock';
 import { ChronologyProvider } from '@/lib/context/ChronologyContext';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
 import { Poetry } from '@/components/content/Poetry';
+import { ArticleBreadcrumb } from './ArticleBreadcrumb';
 
 const headingLinkIcon = {
   type: 'element',
@@ -274,15 +274,8 @@ export default async function ArticlePage({
         ]}
       />
 
-      <Article.Root>
-        <Breadcrumb
-          sticky={true}
-          className=""
-          items={[
-            { label: "Home", href: "/" },
-            { label: typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name, href: `/s/${found.category}` },
-            { label: found.title, href: `/${found.slug}` },
-          ]} />
+      <ArticleBreadcrumb articleTitle={found.title} articleSlug={found.slug}>
+        <Article.Root>
         <Article.Header>
           <Article.Group>
             <Link 
@@ -367,6 +360,7 @@ export default async function ArticlePage({
           <Newsletter.Footer />
         </Newsletter.Root>
       </Article.Root>
+      </ArticleBreadcrumb>
     </>
   );
 }

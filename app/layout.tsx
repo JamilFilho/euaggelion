@@ -9,6 +9,8 @@ import { SiteNavigation } from "@/components/layout/SiteNavigation";
 import { PushNotificationManager } from "@/components/pushNotification";
 import { BibleVersionProvider } from "@/lib/context/BibleVersionContext";
 import { StickyProvider } from "@/lib/context/StickyContext";
+import { NavigationProvider } from "@/lib/context/NavigationContext";
+import { NavigationLayer } from "@/components/layout/NavigationLayer";
 import { getBibleVersions } from "@/lib/getBible";
 import { Suspense } from "react";
 import { InstallButton } from "@/components/layout/PWA/pwaPrompt";
@@ -86,27 +88,31 @@ export default function RootLayout({ children }: Readonly<{children: React.React
       </head>
       <body className="bg-secondary selection:bg-accent selection:text-secondary black:selection:text-foreground">
         <Suspense fallback={null}>
-          <StickyProvider>
-            <BibleVersionProvider versions={versions}>
-              <SiteHeader.Root>
-                <SiteHeader.Title text="Euaggelion" logo="/euaggelion-logo.svg" />
-                
-                <SiteNavigation.Root>
-                  <SiteNavigation.Menu />
-                  <div className="h-full flex items-center justify-center gap-4 ml-auto">
-                    <PushNotificationManager />
-                    <SearchContent />
-                  </div>
-                </SiteNavigation.Root>
+          <NavigationProvider>
+            <StickyProvider>
+              <BibleVersionProvider versions={versions}>
+                <SiteHeader.Root>
+                  <SiteHeader.Title text="Euaggelion" logo="/euaggelion-logo.svg" />
+                  
+                  <SiteNavigation.Root>
+                    <SiteNavigation.Menu />
+                    <div className="h-full flex items-center justify-center gap-4 ml-auto">
+                      <PushNotificationManager />
+                      <SearchContent />
+                    </div>
+                  </SiteNavigation.Root>
 
-                <SiteHeader.Navigation icon={Menu} />
-              </SiteHeader.Root>
+                  <SiteHeader.Navigation icon={Menu} />
+                </SiteHeader.Root>
 
-              <main>
-                {children}
-              </main>
-            </BibleVersionProvider>
-          </StickyProvider>
+                <NavigationLayer />
+
+                <main>
+                  {children}
+                </main>
+              </BibleVersionProvider>
+            </StickyProvider>
+          </NavigationProvider>
         </Suspense>
         
         <SiteFooter.Root>

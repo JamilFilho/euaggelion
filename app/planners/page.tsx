@@ -1,6 +1,6 @@
 import { Page } from "@/components/content/Page";
 import PlannerGenerator from "@/components/content/Planner";
-import Breadcrumb from "@/components/ui/breadcrumb";
+import { PlannersBreadcrumb } from './PlannersBreadcrumb';
 import { FAQSchema, SchemaScript } from "@/lib/schema";
 import { Metadata } from "next";
 
@@ -89,20 +89,11 @@ export const metadata: Metadata = {
 
 export default function PlannersPage() {
     return (
-        <>
+        <PlannersBreadcrumb>
             <SchemaScript schema={plannerWebAppSchema} />
             <FAQSchema faqs={faqItems} />
 
             <Page.Root>
-                <Breadcrumb
-                    sticky={true}
-                    className=""
-                    items={[
-                        { label: "Home", href: "/" },
-                        { label: "Planners", href: "/planners" },
-                    ]}
-                />
-
                 <Page.Content>
                     <PlannerGenerator />
 
@@ -123,6 +114,6 @@ export default function PlannersPage() {
                     </section>
                 </Page.Content>
             </Page.Root>
-        </>
+        </PlannersBreadcrumb>
     );
 }
