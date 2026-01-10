@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/confissao-de-fe/page.tsx", "lib/generateSearchIndex.js"  ],
+, "app/confissao-de-fe/page.tsx", "lib/generateSearchIndex.ts"  ],
   "exclude": ["node_modules"]
 }

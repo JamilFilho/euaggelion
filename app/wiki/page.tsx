@@ -24,15 +24,18 @@ export const metadata: Metadata = {
 };
 
 export default function WikiPage() {
-    const categories = getAllWikiCategory().sort((a, b) => a.category.localeCompare(b.category));
-    
-    const articles = categories.map(({ category }) => ({
-        slug: category,
-        title: CATEGORIES[category]?.name || category,
-        description: CATEGORIES[category]?.description || "",
-        category: category,
-        isWiki: true,
-    }));
+  const publishedArticles = getAllWikiCategory();
+  const categories = Array.from(
+    new Set(publishedArticles.map(a => a.category).filter(Boolean))
+  ).sort((a, b) => a.localeCompare(b));
+
+  const articles = categories.map((category) => ({
+    slug: category,
+    title: CATEGORIES[category]?.name || category,
+    description: CATEGORIES[category]?.description || "",
+    category,
+    isWiki: true,
+  }));
 
     const category = "wiki"
     

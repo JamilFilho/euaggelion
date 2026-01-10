@@ -19,13 +19,15 @@ export function BibleVersionProvider({ children, versions }: { children: ReactNo
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    // Extract version from the URL path
+    // Extract version from the URL path, but only if it matches a known version id
     const pathSegments = pathname.split("/");
     const versionIndex = pathSegments.indexOf("biblia");
-    const versionFromUrl = versionIndex !== -1 ? pathSegments[versionIndex + 1] : null;
+    const potentialVersion = versionIndex !== -1 ? pathSegments[versionIndex + 1] : null;
+    const versionFromUrl = potentialVersion && versions.some(v => v.id === potentialVersion) ? potentialVersion : null;
     
-    // Extract version from query parameters
-    const versionFromQuery = searchParams.get("version");
+    // Extract version from query parameters (validate against known versions)
+    const rawVersionFromQuery = searchParams.get("version");
+    const versionFromQuery = rawVersionFromQuery && versions.some(v => v.id === rawVersionFromQuery) ? rawVersionFromQuery : null;
     
     // Only set the version from URL if it exists; otherwise, use query params, localStorage, or default
     if (versionFromUrl && versionFromUrl !== currentVersion) {
@@ -35,9 +37,10 @@ export function BibleVersionProvider({ children, versions }: { children: ReactNo
       setCurrentVersion(versionFromQuery);
       localStorage.setItem("bibleVersion", versionFromQuery);
     } else if (currentVersion === null) {
-      // Try to get the version from localStorage, or default to NVT
+      // Try to get the version from localStorage, validate it, or default to NVT
       const storedVersion = localStorage.getItem("bibleVersion");
-      const defaultVersion = storedVersion || "nvt";
+      const storedValid = storedVersion && versions.some(v => v.id === storedVersion) ? storedVersion : null;
+      const defaultVersion = storedValid || "nvt";
       setCurrentVersion(defaultVersion);
       
       // If we are at /biblia without a version, we might want to redirect or just set the state
@@ -45,7 +48,7 @@ export function BibleVersionProvider({ children, versions }: { children: ReactNo
         // Optional: router.push(`/biblia?version=${defaultVersion}`);
       }
     }
-  }, [pathname, searchParams, currentVersion]);
+  }, [pathname, searchParams, currentVersion, versions]);
 
   const handleVersionChange = (versionId: string | null) => {
     if (!versionId) return;

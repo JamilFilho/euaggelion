@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import Link from "next/link"
 
-interface SiteLink {
+interface WikiLink {
   title: string;
   href: string;
   alt: string;
@@ -22,104 +22,45 @@ interface SiteLink {
   }[];
 }
 
-const siteLinks: SiteLink[] = [
+const wikiLinks: WikiLink[] = [
     {
-        title:"Início",
-        alt:"Página Inicial",
-        href:"/"
+        title:"Bíblia Sagrada",
+        alt:"Bíblia Sagrada",
+        href:"/wiki/biblia"
     },
     {
-        title: "Bíblia Online",
-        alt:"Leia a Bíblia Sagrada online",
-        href: "/biblia"
+        title:"Credos Cristãos",
+        alt:"Credos Cristãos",
+        href:"/wiki/credos"
     },
     {
-        title: "Blog",
-        alt:"Leia nossos artigos do blog",
-        href: "/s/blog"
+        title:"Glossário Teológico",
+        alt:"Glossário Teológico",
+        href:"/wiki/glossario"
     },
     {
-        title: "Devocionais",
-        alt:"Medite em nossos devocionais diários",
-        href: "/s/cada-manha"
+        title:"História do Cristianismo",
+        alt:"História do Cristianismo",
+        href:"/wiki/historia-cristianismo"
     },
     {
-        title: "Download",
-        alt:"Baixe nossos materiais gratuitos",
-        href: "#",
-        submenu: [
-            {
-                title: "eBooks",
-                href: "/s/ebook",
-                description: "Estudos, devocionais e outros materiais gratuitos para download.",
-                isFeatured: true,
-                color: "bg-accent"
-            },
-            {
-                title: "[eBook] Como se parecer com Jesus",
-                href: "/como-se-parecer-com-jesus",
-                description: "Imitando a Cristo a partir das bem-aventuranças"
-            },
-            {
-                title: "[eBook] O Fruto do Espírito",
-                href: "/o-fruto-do-espirito",
-                description: "Meditações nas nove virtudes do Espírito"
-            },
-            {
-                title: "[Planner] Devocional",
-                href: "/planner-leitura-biblica",
-                description: "Organize sua leitura devocional com nosso planner de leitura gratuito"
-            }
-        ]
+        title:"Patrística",
+        alt:"Patrística",
+        href:"/wiki/patristica"
     },
     {
-        title: "Estudos",
-        alt:"Fortaleça sua fé com nossos estudos bíblicos",
-        href: "/s/estudos"
-    },
-    {
-        title: "TEOleigo",
-        alt:"Reflita sobre questões teológicas",
-        href: "/s/teoleigo"
-    },
-    {
-        title: "Wiki",
-        alt:"Acesse nosso repositório de referência",
-        href: "/wiki",
-        submenu: [
-            {
-                title: "Glossário Teológico",
-                href: "/wiki/glossario",
-                description: "Glossário de referência de termos e conceitos teológicos",
-                isFeatured: true,
-                color: "bg-zinc-800"
-            },
-            {
-                title: "Credos cristãos",
-                href: "/wiki/credos",
-                description: "Declarações e documentos de fé"
-            },
-            {
-                title: "Escatologia",
-                href: "/wiki/escatologia",
-                description: "Escolas escatológicas e interpretações proféticas"
-            },
-            {
-                title: "Teólogos",
-                href: "/wiki/teologos",
-                description: "Homens e mulheres que marcaram a história da teologia cristã"
-            }
-            
-        ]
+        title:"Teólogos",
+        alt:"Teólogos",
+        href:"/wiki/teologos"
     }
 ];
 
-export function SiteNavigationMenu() {
+export default function WikiNavigationMenu() {
     return(
         <div className="hidden md:flex">
             <NavigationMenu>
                 <NavigationMenuList>
-                    {siteLinks.map((link) => (
+                    {wikiLinks.map((link) => (
                         <NavigationMenuItem key={link.href}>
                             {link.submenu ? (
                                 <>

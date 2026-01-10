@@ -49,7 +49,7 @@ export default async function BibleChapterPage({ params }: Props) {
               <sup className="text-sm font-bold text-accent mt-1 mr-2">
                 {index + 1}
               </sup>
-              <span>{verse}</span>
+              <span className="text-lg">{verse}</span>
             </p>
           ))}
       </Bible.Content>
