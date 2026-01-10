@@ -1,11 +1,13 @@
 import { MetadataRoute } from "next";
 import { getAllArticles } from "@/lib/getArticles";
 import { getAllPages } from "@/lib/getPages";
+import { getTrails } from "@/lib/getTrails";
 export const dynamic = "force-static";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const articles = getAllArticles();
   const pages = getAllPages();
+  const trails = await getTrails();
 
   const categories = [...new Set(articles.map((article) => article.category))];
   const baseUrl = "https://euaggelion.com.br";
@@ -34,6 +36,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
+  const trailEntries: MetadataRoute.Sitemap = trails.map((trail) => ({
+    url: `${baseUrl}/trilhas/${trail.slug}`,
+    lastModified: trail.date ? new Date(trail.date) : new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -41,8 +50,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 1,
     },
+    {
+      url: `${baseUrl}/trilhas`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.75,
+    },
     ...articleEntries,
     ...pageEntries,
     ...categoryEntries,
+    ...trailEntries,
   ];
 }

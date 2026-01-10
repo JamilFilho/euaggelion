@@ -1,5 +1,6 @@
 import { Feed } from "feed";
 import { getAllArticles } from "@/lib/getArticles";
+import { getTrails, getTrailSteps } from "@/lib/getTrails";
 import { CATEGORIES } from "@/lib/categories";
 export const dynamic = "force-static";
 
@@ -64,6 +65,64 @@ export async function GET() {
       published: new Date(article.date!),
     });
   });
+
+  // Adicionar trilhas ao feed
+  const trails = await getTrails();
+  trails
+    .filter(trail => trail.date)
+    .forEach((trail) => {
+      feed.addItem({
+        title: trail.title,
+        id: `${siteURL}/trilhas/${trail.slug}`,
+        link: `${siteURL}/trilhas/${trail.slug}`,
+        description: trail.description,
+        content: trail.description,
+        author: [
+          {
+            name: trail.author || "Euaggelion",
+            link: siteURL,
+          },
+        ],
+        date: new Date(trail.date!),
+        category: [
+          {
+            name: "Trilhas",
+            domain: `${siteURL}/trilhas`,
+          },
+        ],
+        published: new Date(trail.date!),
+      });
+    });
+
+  // Adicionar steps das trilhas ao feed
+  for (const trail of trails) {
+    const steps = await getTrailSteps(trail.slug);
+    steps
+      .filter(step => step.date)
+      .forEach((step) => {
+        feed.addItem({
+          title: `${trail.title} - ${step.title}`,
+          id: `${siteURL}/trilhas/${trail.slug}/${step.slug}`,
+          link: `${siteURL}/trilhas/${trail.slug}/${step.slug}`,
+          description: step.description,
+          content: step.description,
+          author: [
+            {
+              name: step.author || trail.author || "Euaggelion",
+              link: siteURL,
+            },
+          ],
+          date: new Date(step.date!),
+          category: [
+            {
+              name: `Trilhas - ${trail.title}`,
+              domain: `${siteURL}/trilhas/${trail.slug}`,
+            },
+          ],
+          published: new Date(step.date!),
+        });
+      });
+  }
 
   return new Response(feed.rss2(), {
     headers: {
