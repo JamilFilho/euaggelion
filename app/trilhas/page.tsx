@@ -9,6 +9,7 @@ import { CollectionPageSchema, BreadcrumbSchema } from '@/lib/schema';
 export const metadata: Metadata = {
   title: 'Trilhas de Conteúdo | Euaggelion',
   description: 'Explore nossas trilhas de estudo, com conteúdos organizados para auxiliar em seu crescimento na fé.',
+  keywords: ['trilhas', 'estudos bíblicos', 'crescimento espiritual', 'discipulado', 'conteúdo cristão'],
   openGraph: {
     title: 'Trilhas de Conteúdo | Euaggelion',
     description: 'Explore nossas trilhas de estudo, com conteúdos organizados para auxiliar em seu crescimento na fé.',

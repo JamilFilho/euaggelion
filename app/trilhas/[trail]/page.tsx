@@ -1,10 +1,17 @@
 import { Page } from '@/components/content/Page';
 import { Feed } from '@/components/content/Feed';
-import { getTrailSteps } from '@/lib/getTrails';
+import { getTrailSteps, getTrails } from '@/lib/getTrails';
 import { TRAILS } from '@/lib/trails';
 import Breadcrumb from '@/components/ui/breadcrumb';
 import type { Metadata } from 'next';
 import { CollectionPageSchema, BreadcrumbSchema } from '@/lib/schema';
+
+export async function generateStaticParams() {
+  const trails = await getTrails();
+  return trails.map((trail) => ({
+    trail: trail.slug,
+  }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ trail: string }> }): Promise<Metadata> {
   const { trail } = await params;
@@ -16,6 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ trail: st
   return {
     title,
     description,
+    keywords: ['trilha', trailMeta.name, 'estudo bíblico', 'crescimento espiritual', 'discipulado'],
     openGraph: {
       title,
       description,
