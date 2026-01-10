@@ -1,0 +1,117 @@
+---
+title: "Atualização do Projeto Euaggelion (Q2 2026 Release)"
+description: "Changelog de atualizações e novidades do Projeto Euaggelion - primeiro semestre de 2026"
+date: "2026-01-30"
+author: "Jamil Filho"
+published: true
+category: "editorial"
+tags:
+    - euaggelion
+    - atualização
+    - editorial
+---
+
+Graça e paz, meu irmão(ã). É com grande alegria que compartilho com você as últimas atualizações do Projeto Euaggelion. Desde a sua retomada em 2025, temos trabalhado arduamente para expandir nosso alcance e melhorar a qualidade do conteúdo oferecido.
+
+A atualização do projeto lançada em Janeiro de 2026 (Q2 2026 Release) inclue algumas novas funcionalidades e recursos. A seguir trataremos mais detalhadamente sobre cada um deles.
+
+### Reestruturação do projeto
+
+Entre o final do ano de 2025 e o início de 2026, iniciamos uma reestruturação completa do Projeto Euaggelion. Parte desta reestruturação foi motivada tanto por questões técnicas[^1], quanto por objetivos estratégicos de longo prazo[^2] dentre eles a garantia de que o projeto permaneça totalmente gratuito e acessível a todos os públicos.
+
+Para isso demos o primeiro passo na migração. Saímos do Ghost CMS e adotamos uma arquitetura baseada em Next.js, utilizando o poder do Jamstack para entregar conteúdos de forma rápida, segura e escalável.
+
+Além disso tornamos o código fonte do Euaggelion totalmente open source, permitindo que qualquer pessoa possa [contribuir com o projeto](https://github.com/JamilFilho/euaggelion), seja por meio de sugestões, correções ou até mesmo desenvolvendo novas funcionalidades. Essa decisão se baseia na convicção de que o evangelho deve ser proclamado de forma aberta, colaborativa e gratuita ([Leia nosso Manifesto](/p/manifesto)).
+
+A primeira atualização ([Q1 2026 Release](https://github.com/JamilFilho/euaggelion/pull/10)) foi nosso mínimo produto viável (MVP) e incluiu a migração dos artigos já publicados, a implementação de um novo design responsivo, a criação de uma nova estrutura de navegação, além das primeiras ferramentas de apoio ao estudo bíblico (Gerador de Plano de Leitura, Wiki, leitor bíblico e BibliaLink) e a possibilidade de você instalar o Euaggelion como um aplicativo PWA (Progressive Web App) em seu dispositivo móvel ou desktop.
+
+Nesta segunda atualização, o foco foi a melhoria das funcionalidades já existentes, correção de bugs, implementação de novas ferramentas e o lançammento oficial do Euaggelion como uma plataforma de estudo bíblico e teológico.
+
+### Ferramentas de apoio
+
+A principal mudança na filosofia editorial do Euaggelion foi avançar de um simples blog para uma plataforma de estudo bíblico e teológico. Para isso, desenvolvemos diversas ferramentas de apoio que visam facilitar o estudo e a compreensão das Escrituras Sagradas.
+
+#### Gerador de Plano de Leitura
+
+Para lhe auxiliar em seu hábito de leitura bíblica, desenvolvemos um [gerador de Plano de Leitura](/planner). 
+
+Nossa ferramenta permite que você defina a quantidade de capítulos que pretende ler por dia, o tipo de leitura (Bíblia toda, leitura temática) e a data de início.
+
+A partir destas informações o gerador cria seu plano em pdf definindo quais capítulos você deve ler e te apresenta um resumo da leitura: precisão de término, quantidade de capítulos a serem lidos e se, no prazo e número de capítulos por dia definidos, o plano será cumprido ou não.
+
+#### BibliaLink
+
+O BibliaLink é o nosso script que cria, automaticamente, links a partir das referências bíblicas citadas permitindo que você possa conferir os textos bíblicos sem precisar sair da página (faça o teste: João 3:16). Nesta atualização aprimoramos o desempenho do script e corrigimos alguns bugs.
+
+Por enquanto, o BibliaLink suporta apenas as seguintes versões bíblicas: 
+
+- ACF (Almeida Corrigida Fiel);
+- ARA (Almeida Revista e Atualizada);
+- ARC (Almeida Revista e Corrigida);
+- AS21 (Almeida Século XXI);
+- JFAA (João Ferreira de Almeida Atualizada);
+- KJA (King James Atualizada);
+- KJF (King James Fiel);
+- NAA (Nova Almeida Atualizada);
+- NBV (Nova Bíblia Viva);
+- NTLH (Nova Tradução na Linguagem de Hoje);
+- NVI (Nova Versão Internacional);
+- NVT (Nova Versão Transformadora);
+- TB (Tradução Brasileira). 
+
+Pretendemos, futuramente, adicionar suporte a outras versões bíblicas, incluindo traduções em outros idiomas.
+
+#### Eventos bíblicos: cronologia e timeline
+
+Desenvolvemos dois componentes visuais para auxiliar no entendimento dos eventos bíblicos em seu contexto histórico: a cronologia e a timeline
+
+##### Cronologia
+
+O componente de cronologia é um recurso que exibe os eventos bíblicos em uma linha do tempo interativa, permitindo que você visualize a sequência dos acontecimentos e compreenda melhor o contexto histórico das Escrituras.
+
+![Componente de Cronologia Bíblica](/banners/cronologia_q2-2026.png)
+
+##### Timeline
+
+Já o timeline é um recurso que nos permite apresentar eventos serializados, mas que, ao contrário da cronologia, não necessariamente seguem uma ordem cronológica rígida. Isso é especialmente útil para temas que envolvem profecias, genealogias ou eventos que se repetem ao longo da história bíblica.
+
+![Componente de Timeline Bíblica](/banners/timeline_q2-2026.png)
+
+Por padrão, os componentes carrega os eventos com zoom de 10%, mas você pode ajustar o nível de acordo com a sua preferência. Use os botões de "+" e "-" para aumentar ou diminuir o zoom, respectivamente, ou faça movimento de pinça no touchpad ou tela sensível ao toque. Você também pode arrastar a linha do tempo para explorar diferentes períodos históricos.
+
+Ao clicar em um evento, uma janela pop-up será exibida com mais informações sobre o acontecimento, incluindo uma descrição detalhada e referências relacionadas que você pode consultar para obter mais detalhes.
+
+Ambos os componentes adicionam uma camada a mais de compreensão ao estudo bíblico, facilitando a visualização e o entendimento dos textos sagrados.
+
+
+#### Bíblia Sagrada
+
+A base de funcionamento do BibliaLink é o leitor da [Bíblia Sagrada](/biblia) de maneira que, por enquanto, para você alterar a versão do BibliaLink precisa selecionar a versão desejada no leitor bíblico.
+
+Nessa atualização fizemos alguns ajustes de interface, melhoramos a navegação entre livros e capítulos, e integramos o leitor bíblico com nossos datasets de eventos cronológicos permitindo que você compreenda, de forma visual, os eventos bíblicos em sua ordem e contexto histórico.
+
+### Trilhas de conteúdo
+
+Além das ferramentas de apoio, também desenvolvemos as [trilhas de conteúdo](/trilhas). As trilhas são sequências de conteúdos temáticos organizados de forma lógica e progressiva, permitindo que você possa aprofundar seus conhecimentos em áreas específicas da teologia e do estudo bíblico.
+
+Ao longo dos próximos meses, planejamos lançar nossas primeiras trilhas, cada uma composta por uma série de artigos, vídeos, podcasts e outros recursos que abordam um tema central, como por exemplo: "Introdução à Teologia Sistemática", "Estudo dos Evangelhos", "História da Igreja Primitiva", entre outros.
+
+### WikiGelion
+
+Outro recurso desenvolvido e implementado ao Projeto Euaggelion é a [WikiGelion](/wiki), uma enciclopédia online focada em temas bíblicos e teológicos. O objetivo é, por meio de nossa wiki, garantir que você tenha acesso gratuito à conteúdo teológico e de referência.
+
+### Recursos e atualizações menores
+
+Além das principais novidades apresentadas, também incorporamos ao projeto Euaggelion outros recursos e conteúdos, tais como:
+
+#### Conteúdos e materiais
+
+- Fusão das newsletters "Novas de Cada Manhã" e "Jamil Filho | Ficção cristã", anteriormente publicadas no Substack, ao Euaggelion. Agora os devocionais publicados no Novas de Cada Manhã e os contos cristãos publicados no Jamil Filho | Ficção Cristã estão disponíveis diretamente no Euaggelion.
+
+---
+
+#### Notas
+
+[^1]: Em 2025 o projeto estava hospedado em um servidor dedicado, embora isso nos permitisse total controle sobre o ambiente e a implementação de novos recursos e funcionalidades, o custo de operação começou a exceder nosso orçamento mensal.
+
+[^2]: 
