@@ -1,6 +1,6 @@
 {
   "name": "euaggelion",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "tsx lib/generateSearchIndex.ts && npx tinacms dev -c \"next dev --webpack\"",
@@ -56,7 +56,7 @@
   "devDependencies": {
     "@tinacms/cli": "^2.0.6",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^20.19.27",
+    "@types/node": "^20.19.28",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/web-push": "^3.6.4",
