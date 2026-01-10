@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "tsx lib/generateSearchIndex.ts && npx tinacms dev -c \"next dev --webpack\"",
     "dev:pwa": "tsx lib/generateSearchIndex.ts && next dev --experimental-https",
-    "build": "tinacms build && next build --webpack && npm run search",
+    "build": "tinacms build --skip-cloud-checks && next build --webpack && npm run search",
     "build:vercel": "next build",
     "start": "tinacms build && next start",
     "lint": "eslint",
