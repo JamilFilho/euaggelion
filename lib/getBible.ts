@@ -105,10 +105,14 @@ export function getBibleBook(versionId: string, bookSlug: string): BibleBookCont
   
   if (!book) return undefined;
   
+  // Sempre pegar informações do books.json
   const allBooks = getBibleBooks();
   const bookMeta = allBooks.find(b => b.slug === bookSlug);
   
   if (bookMeta) {
+    // Substituir o nome pelo do books.json
+    book.name = bookMeta.name;
+    
     if (bookMeta.description) {
       book.description = bookMeta.description;
     }
