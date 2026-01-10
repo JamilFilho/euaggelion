@@ -4,8 +4,8 @@ export interface TrailMeta {
 }
 
 export const TRAILS: Record<string, TrailMeta> = {
-    example_trail: {
-        name: "Teste de Trilha",
-        description: "Trilha de exemplo para demonstração",
+    "introducao-bibliologia": {
+        name: "Introdução à Bibliologia",
+        description: "Dê os seus primeiros passos no estudo da bibliologia, explorando a natureza, a origem e a transmissão das Escrituras Sagradas.",
     },
 }
