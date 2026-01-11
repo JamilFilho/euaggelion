@@ -39,7 +39,7 @@ export default function FeedHeader({
     if (!allowDateFilter && !allowAuthorFilter) {
         return (
             <>
-                <section  className="md:col-span-3 flex items-center justify-between md:justify-end md:gap-4 border-b border-ring/20 py-4 px-10 bg-secondary">
+                <section  className="md:col-span-3 flex items-center justify-end md:justify-end md:gap-4 border-t border-b border-ring/20 py-4 px-10 bg-secondary">
                     <span className="text-foreground/60">Filtrar conteúdo:</span>
                     <Select value={filter} onValueChange={onFilterChange}>
                         <SelectTrigger className="w-fit">
@@ -61,7 +61,7 @@ export default function FeedHeader({
     // Se permite filtro por data e/ou autor
     return (
         <>
-            <section className="md:col-span-3 flex flex-col md:flex-row flex-start md:items-center justify-between gap-4 border-b border-ring/20 py-4 px-6 md:px-10 bg-secondary">
+            <section className="md:col-span-3 flex flex-col md:flex-row flex-start md:items-center justify-end gap-4 border-t border-b border-ring/20 py-4 px-6 md:px-10 bg-secondary">
                 <span className="text-foreground/60">Filtrar conteúdo:</span>
                 
                 <div className="flex flex-row gap-2">
