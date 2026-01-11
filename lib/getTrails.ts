@@ -109,8 +109,12 @@ export async function getTrails(): Promise<TrailListItem[]> {
     } satisfies TrailListItem;
   });
 
+  // Filtrar apenas trilhas com data igual ou anterior ao dia atual
+  const today = new Date().toISOString().slice(0, 10);
+  const filteredItems = items.filter(item => item.date && item.date <= today);
+
   // Ordena por título para estabilidade
-  return items.sort((a, b) => a.title.localeCompare(b.title, "pt-BR"));
+  return filteredItems.sort((a, b) => a.title.localeCompare(b.title, "pt-BR"));
 }
 
 export async function getTrailSteps(trail: string): Promise<TrailStepMeta[]> {
