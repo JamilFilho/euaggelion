@@ -120,7 +120,6 @@ export default async function GlossarioPage() {
               { label: categoryName, href: `/wiki/${CATEGORY}` },
             ]}
             sticky={true}
-            className=""
           />
           
             <Page.Root>

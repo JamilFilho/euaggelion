@@ -12,7 +12,7 @@ interface FeedListProps {
 
 const LetterGroup = ({ letter, articles, category, isCategoryPage, trailSlug }: { letter: string, articles: any[], category: string, isCategoryPage: boolean, trailSlug?: string }) => {
     const stickyId = `sticky-glossary-${letter}`;
-    const { ref } = useSticky({ id: stickyId, topOffset: 0 });
+    const { ref } = useSticky({ id: stickyId, topOffset: -2 });
     return (
         <div>
             <div ref={ref} className="-mt-[1px] border-t bg-secondary border-b border-ring/10 px-10 py-2">
