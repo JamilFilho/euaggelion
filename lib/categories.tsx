@@ -4,6 +4,10 @@ export interface CategoryMeta {
 }
 
 export const CATEGORIES: Record<string, CategoryMeta> = {
+  comentarios: {
+    name: "Comentários Bíblicos",
+    description: "Comentários clássicos de grandes teólogos e estudiosos da Bíblia"
+  },
   "ensaios-de-um-peregrino": {
     name: "Ensaios de um Peregrino",
     description: "Ensaios diários de um peregrino refletindo sobre a vida enquanto caminha pelos desertos da existência",
