@@ -24,6 +24,8 @@ import BibliaLink from '@/components/content/Bible/BibliaLink';
 import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
 
+const CATEGORY = "glossario";
+
 const headingLinkIcon = {
   type: 'element',
   tagName: 'svg',
@@ -74,7 +76,6 @@ const headingAutolinkOptions = {
 
 interface WikiPageProps {
   params: Promise<{
-    category: string;
     slug: string;
   }>;
 }
@@ -87,9 +88,8 @@ export async function generateStaticParams() {
   const articles = getAllWikiArticles();
   
   return articles
-    .filter((article) => article.published)
+    .filter((article) => article.published && article.category === CATEGORY)
     .map((article) => ({
-      category: article.category,
       slug: article.slug,
     }));
 }
@@ -109,7 +109,7 @@ export async function generateMetadata({
     };
   }
 
-  const categoryMeta = CATEGORIES[article.category] ?? { name: article.category };
+  const categoryMeta = CATEGORIES[CATEGORY] ?? { name: CATEGORY };
   const categoryName = typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name;
 
   return {
@@ -125,7 +125,7 @@ export async function generateMetadata({
       publishedTime: article.date,
       authors: ["Euaggelion"],
       tags: article.tags,
-      url: `https://euaggelion.com.br/wiki/${article.category}/${article.slug}`,
+      url: `https://euaggelion.com.br/wiki/${CATEGORY}/${slug}`,
       siteName: "Euaggelion",
       locale: "pt_BR",
       images: [
@@ -141,7 +141,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
-      images: [`https://euaggelion.com.br/api/og?slug=${article.slug}`],
+      images: [`https://euaggelion.com.br/api/og?slug=${slug}`],
     },
     robots: {
       index: true,
@@ -150,13 +150,13 @@ export async function generateMetadata({
       "max-image-preview": "large",
     },
     alternates: {
-      canonical: `https://euaggelion.com.br/wiki/${article.category}/${article.slug}`,
+      canonical: `https://euaggelion.com.br/wiki/${CATEGORY}/${slug}`,
     },
   };
 }
 
-export default async function WikiPage({ params }: WikiPageProps) {
-  const { slug, category } = await params;
+export default async function GlossarioArticlePage({ params }: WikiPageProps) {
+  const { slug } = await params;
   const article = getWikiSlug(slug);
 
   const mdxOptions = {
@@ -183,12 +183,13 @@ export default async function WikiPage({ params }: WikiPageProps) {
     TimelineBlock: TimelineBlock as any,
   };
 
-  // Verifica se o artigo existe, está publicado e a categoria bate
-  if (!article || !article.published || article.category !== category) {
+  // Verificar se o artigo existe, está publicado e pertence ao glossário
+  if (!article || !article.published || article.category !== CATEGORY) {
     notFound();
   }
   
-  const filePath = path.join(process.cwd(), "content", "wiki", article.category, article.fileName);
+  // Construir caminho do arquivo
+  const filePath = path.join(process.cwd(), "content", "wiki", CATEGORY, `${article.slug}.mdx`);
   
   if (!fs.existsSync(filePath)) {
     console.error(`Arquivo não encontrado: ${filePath}`);
@@ -198,7 +199,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { content } = matter(fileContent);
   
-  const categoryMeta = CATEGORIES[article.category] ?? { name: article.category };
+  const categoryMeta = CATEGORIES[CATEGORY] ?? { name: CATEGORY };
   const categoryName = typeof categoryMeta === 'string' ? categoryMeta : categoryMeta.name;
   
   return (
@@ -209,8 +210,8 @@ export default async function WikiPage({ params }: WikiPageProps) {
         description={article.description}
         datePublished={article.date}
         dateModified={article.date}
-        imageUrl={`https://euaggelion.com.br/api/og?slug=${article.slug}`}
-        url={`https://euaggelion.com.br/wiki/${article.category}/${article.slug}`}
+        imageUrl={`https://euaggelion.com.br/api/og?slug=${slug}`}
+        url={`https://euaggelion.com.br/wiki/${CATEGORY}/${slug}`}
       />
       
       {/* Schema de breadcrumbs */}
@@ -218,8 +219,8 @@ export default async function WikiPage({ params }: WikiPageProps) {
         items={[
           { name: "Home", url: "https://euaggelion.com.br" },
           { name: "Wiki", url: "https://euaggelion.com.br/wiki" },
-          { name: categoryName, url: `https://euaggelion.com.br/wiki/${article.category}` },
-          { name: article.title, url: `https://euaggelion.com.br/wiki/${article.category}/${article.slug}` },
+          { name: categoryName, url: `https://euaggelion.com.br/wiki/${CATEGORY}` },
+          { name: article.title, url: `https://euaggelion.com.br/wiki/${CATEGORY}/${slug}` },
         ]}
       />
       
@@ -227,49 +228,18 @@ export default async function WikiPage({ params }: WikiPageProps) {
         items={[
           { label: "Home", href: "/" },
           { label: "Wiki", href: "/wiki" },
-          { label: categoryName, href: `/wiki/${category}` },
-          { label: article.title, href: `/wiki/${category}/${slug}` },
+          { label: categoryName, href: `/wiki/${CATEGORY}` },
+          { label: article.title, href: `/wiki/${CATEGORY}/${slug}` },
         ]}
         sticky={true}
         className=""
       />
       
       <Article.Root>
-      <Article.Header variant="wiki">
-        <Article.Group>
-          {article.status && (
-            <Badge className="w-fit" variant="destructive">{article.status}</Badge>
-          )}
+      <Article.Header>
+        <div className="p-10">
           <Article.Title content={article.title} variant="wiki" />
-          <Article.Description content={article.description}/>
-        </Article.Group>
-
-        <Article.Meta>
-          {article.related && article.related.length > 0 && (
-            <>
-              <div className="col-span-2 items-center border-r border-ring/20">
-                <p className="text-lg font-semibold">Tópicos</p>
-              </div>
-              <ul className="px-4 col-span-2 flex flex-row !justify-start items-start flex-wrap gap-2">
-                {article.related.map((relatedCategory) => {
-                  
-                  const categoryInfo = CATEGORIES[relatedCategory];
-                  const categoryName = typeof categoryInfo === 'string' ? categoryInfo : categoryInfo?.name ?? relatedCategory;                  
-
-                  return (
-                    <li key={relatedCategory}>
-                      <Link href={`/wiki/${relatedCategory}`} title={categoryName}>
-                        <Badge>
-                          {categoryName}
-                        </Badge>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </>
-          )}
-        </Article.Meta>
+        </div>
       </Article.Header>
 
       <Article.Content>
@@ -286,12 +256,8 @@ export default async function WikiPage({ params }: WikiPageProps) {
         <Article.Actions 
           headline={article.title} 
           excerpt={article.description} 
-          link={`https://euaggelion.com.br/wiki/${article.category}/${article.slug}`}
+          link={`https://euaggelion.com.br/wiki/${CATEGORY}/${slug}`}
         />
-
-        <Webmentions target={`https://euaggelion.com.br/wiki/${article.category}/${article.slug}`} />
-
-        <Article.Related currentSlug={article.slug} includeWiki={true} />
       </Article.Footer>
     </Article.Root>
     </>
