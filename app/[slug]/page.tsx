@@ -297,8 +297,12 @@ export default async function ArticlePage({
           </Article.Group>
 
           <Article.Meta>
-              <div className="col-span-2 border-b border-r border-ring/20">Escrito por</div>
-              <div className="col-span-2 border-b border-ring/20">{found.author}</div>
+            {found.author &&(
+              <>
+                <div className="col-span-2 border-b border-r border-ring/20">Escrito por</div>
+                <div className="col-span-2 border-b border-ring/20">{found.author}</div>
+              </>
+            )}
 
               <Article.PublishedAt content={found.date} />
               <Article.ReadTime content={readingTime} />
