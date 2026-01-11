@@ -27,6 +27,7 @@ import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock
 import { ChronologyProvider } from '@/lib/context/ChronologyContext';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
 import { Poetry } from '@/components/content/Poetry';
+import LightboxWrapper from '@/components/LightboxInitializer';
 
 const headingLinkIcon = {
   type: 'element',
@@ -76,12 +77,10 @@ const headingAutolinkOptions = {
   content: [headingLinkIcon],
 } as any;
 
-// Componente otimizado para imagens do MDX
 function OptimizedImage({ src, alt, ...props }: { src: string; alt: string; [key: string]: any }) {
-  // Para imagens externas ou com domínios diferentes
-  if (src.startsWith('https')) {
-    return (
-      <figure className="relative">
+  return (
+    <figure className="relative">
+      <LightboxWrapper src={src} alt={alt}>
         <Image
           src={src}
           alt={alt || ''}
@@ -93,22 +92,7 @@ function OptimizedImage({ src, alt, ...props }: { src: string; alt: string; [key
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
           {...props}
         />
-      </figure>
-    );
-  }
-  return (
-    <figure className="relative image-wrapper">
-      <Image
-        src={src}
-        alt={alt || ''}
-        width={1200}
-        height={630}
-        className="w-full h-auto"
-        priority={false}
-        {...props}
-        placeholder="blur"
-        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-      />
+      </LightboxWrapper>
     </figure>
   );
 }
