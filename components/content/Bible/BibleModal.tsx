@@ -1,11 +1,11 @@
 "use client";
 
 import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-} from "@/components/ui/drawer";
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { useEffect, useState } from "react";
 import { clientLogger } from "@/lib/logger";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -88,16 +88,16 @@ export default function BibleModal({ isOpen, onClose, reference }: BibleModalPro
   };
 
   return (
-    <Drawer open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DrawerContent className="bg-background text-foreground">
-        <DrawerHeader className="text-left">
-          <DrawerTitle className="text-2xl font-bold text-accent">
+    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
+      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-background border-ring/20 fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] shadow-2xl">
+        <DialogHeader className="text-left">
+          <DialogTitle className="text-2xl font-bold text-accent">
             {reference?.fullMatch}
-          </DrawerTitle>
+          </DialogTitle>
           <p className="text-sm text-muted-foreground uppercase tracking-widest">
             {currentVersion?.toUpperCase()}
           </p>
-        </DrawerHeader>
+        </DialogHeader>
 
         <div className="mt-6 space-y-6">
           {loading ? (
@@ -113,7 +113,7 @@ export default function BibleModal({ isOpen, onClose, reference }: BibleModalPro
             </div>
           ) : (
             content.map((c, idx) => (
-              <div key={idx} className="space-y-2">
+              <div key={idx} className="space-y-2 px-4">
                 {content.length > 1 && (
                   <h3 className="border-b border-ring/10 pb-1 text-lg font-semibold">
                     Capítulo {c.chapter}
@@ -136,7 +136,7 @@ export default function BibleModal({ isOpen, onClose, reference }: BibleModalPro
             </p>
           )}
         </div>
-      </DrawerContent>
-    </Drawer>
+      </DialogContent>
+    </Dialog>
   );
 }
