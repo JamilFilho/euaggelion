@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { getBibleVersions } from "@/lib/getBible";
 import BibleVersionSelector from "@/components/content/Bible/BibleVersionSelector";
 import BibleHomeLink from "@/components/content/Bible/BibleHomeLink";
+import { StickyHeader } from "@/components/layout/StickyHeader";
 
 export const metadata: Metadata = {
   title: "Bíblia | Euaggelion",
@@ -25,13 +26,13 @@ export const metadata: Metadata = {
 
 export default function BibleLayout({ children }: Readonly<{children: React.ReactNode;}>) {
     return(
-        <section className="mt-20 md:mt-0">
-            <header className="print:hidden px-10 flex flex-row justify-between items-center gap-2 border-b border-ring/20">
-                <BibleHomeLink />
-                <BibleVersionSelector />
-            </header>
+      <section>
+          <StickyHeader topOffset={0} className="left-0 px-10 flex flex-row justify-between items-center gap-2 border-b border-ring/20 bg-secondary z-[810]">
+              <BibleHomeLink />
+              <BibleVersionSelector />
+          </StickyHeader>
 
-            {children}
-        </section>
+          {children}
+      </section>
     )
 }

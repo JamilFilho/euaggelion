@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Levítico",
+  "description": "Panorama das leis cultuais dadas no Sinai para organizar o sacerdócio e a vida santa de Israel.",
+  "period": {"start": -1446, "end": -1445},
+  "events": [
+    {"yearStart": -1446, "yearEnd": -1446, "event": "Instituição do sacerdócio aarônico", "description": "Consagração de Arão e seus filhos para ministrar no Tabernáculo.", "reference": ["Levítico 8-9"]},
+    {"yearStart": -1446, "yearEnd": -1445, "event": "Codificação de leis de pureza e santidade", "description": "Normas sobre alimentos, impureza, sexualidade e justiça social estruturam a vida comunitária.", "reference": ["Levítico 11-20"]},
+    {"yearStart": -1446, "yearEnd": -1445, "event": "Estabelecimento do Dia da Expiação", "description": "Ritual anual com sacrifício e bode emissário para purificar povo e santuário.", "reference": ["Levítico 16"]}
+  ]
+}

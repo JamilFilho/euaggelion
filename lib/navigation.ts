@@ -26,7 +26,16 @@ export const navigationLinks = {
     ferramentasEstudo: {
         title: "Ferramentas de Estudo",
         items: [
-            { href: "/biblia", label: "Bíblia Sagrada" },
+            { href: "/biblia", label: "Bíblia Online" },
+            { href: "/trilhas", label: "Trilhas de Estudo" },
+        ]
+    },
+    literaturaCrista: {
+        title: "Literatura Cristã",
+        items: [
+            { href: "/s/ensaios-de-um-peregrino", label: "Ensaios de um Peregrino" },
+            { href: "/s/ficcao-crista", label: "Ficção Cristã" },
+            { href: "/s/cavaleiros-da-aurora", label: "Cavaleiros da Aurora" },
         ]
     },
     opiniao: {
@@ -40,6 +49,7 @@ export const navigationLinks = {
         items: [
             { href: "/wiki/biblia", label: "Bíblia Sagrada" },
             { href: "/wiki/credos", label: "Credos Cristãos" },
+            {href: "/wiki/cronologia", label: "Cronologia Bíblica" },
             { href: "/wiki/glossario", label: "Glossário Teológico" },
             { href: "/wiki/historia-cristianismo", label: "História do Cristianismo" },
             { href: "/wiki/patristica", label: "Patrística" },

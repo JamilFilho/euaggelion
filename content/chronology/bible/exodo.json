@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Êxodo",
+  "description": "Panorama da opressão israelita no Egito e da saída rumo ao Sinai.",
+  "period": {"start": -1450, "end": -1400},
+  "events": [
+    {"yearStart": -1450, "yearEnd": -1440, "event": "Opressão de hebreus no Delta oriental", "description": "Populações semitas servem em projetos de armazenamento e tijolos sob um faraó do Novo Reino.", "reference": ["Êxodo 1", "Contexto do Novo Reino egípcio"]},
+    {"yearStart": -1446, "yearEnd": -1446, "event": "Libertação e travessia do mar", "description": "Israel sai do Egito após pragas e atravessa o mar em fuga rumo ao Sinai.", "reference": ["Êxodo 12-14"]},
+    {"yearStart": -1446, "yearEnd": -1445, "event": "Aliança no Sinai e construção do Tabernáculo", "description": "Entrega da Lei, formação do culto central e construção do santuário móvel.", "reference": ["Êxodo 19-40"]}
+  ]
+}

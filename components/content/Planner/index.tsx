@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
+import { Skeleton } from "@/components/ui/skeleton";
 import { generateReadingPlan, PlanScope, PlanSpan, THEMATIC_GROUPS } from "@/lib/readingPlan";
-import { CalendarDays, Info, Printer, Sparkles } from "lucide-react";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { Album, CalendarDays, Info, Printer, Sparkles } from "lucide-react";
+
 
 const scopeLabels: Record<PlanScope, string> = {
   ot: "Antigo Testamento",
@@ -86,6 +87,7 @@ export function PlannerGenerator() {
   const [group, setGroup] = useState<string>(fallbackGroup);
   const [startDateValue, setStartDateValue] = useState<string>(toInputDate(today));
   const [isGenerated, setIsGenerated] = useState<boolean>(false);
+  const [isGenerating, setIsGenerating] = useState<boolean>(false);
 
   const chaptersPerDay = useMemo(() => {
     const parsed = Number(chaptersPerDayInput);
@@ -104,7 +106,11 @@ export function PlannerGenerator() {
   }, [chaptersPerDay, scope, span, group, startDateValue]);
 
   const handleGeneratePlan = () => {
-    setIsGenerated(true);
+    setIsGenerating(true);
+    setTimeout(() => {
+      setIsGenerated(true);
+      setIsGenerating(false);
+    }, 300);
   };
 
   const handlePrint = () => {
@@ -129,48 +135,17 @@ export function PlannerGenerator() {
   }, [startDateValue, span]);
 
   return (
-    <div className="mt-20 md:mt-0 min-h-fit border-t border-ring/20 grid grid-cols-1 md:grid-cols-3 md:divide-x divide-ring/20">
+    <div className="min-h-fit border-t border-ring/20 grid grid-cols-1 md:grid-cols-3 md:divide-x divide-ring/20">
 
       <div className="min-h-fit print:hidden col-span-1 flex flex-col gap-4">
         <div className="my-6 flex items-center gap-4 px-8">
           <span className="p-2 rounded-lg bg-primary/10 text-primary">
-            <Sparkles className="h-4 w-4" />
+            <Album className="size-5" />
           </span>
           <div>
             <p className="text-sm text-muted-foreground">Monte seu plano</p>
             <p className="text-lg font-semibold">Escolha como deseja ler</p>
           </div>
-
-          {isGenerated && (
-            <Popover>
-              <PopoverTrigger asChild>
-                <span className="ml-auto p-2 rounded-lg bg-primary/10 text-primary">
-                  <Info className="size-4" />
-                </span>
-              </PopoverTrigger>
-              <PopoverContent>
-                <div className="grid gap-2 mb-6">
-                  <SummaryItem label="Capítulos selecionados" value={`${plan.totalChapters}`} />
-                  <SummaryItem label="Dias necessários" value={`${plan.totalDays} dias`} />
-                  <SummaryItem label="Início previsto" value={formatDateLabel(plan.startDate)} />
-                  <SummaryItem label="Fim previsto" value={formatDateLabel(plan.endDate)} />
-                  <SummaryItem label="Período escolhido" value={`${spanLabels[span]} (${plan.targetDays} dias)`} />
-                  <SummaryItem label="Término do período" value={formatDateLabel(targetEnd)} />
-                </div>
-                {!plan.fitsInSpan && (
-                  <p className="text-sm text-amber-600 bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
-                    Para concluir dentro do período selecionado, aumente os capítulos diários para pelo menos {Math.ceil(plan.totalChapters / plan.targetDays)}.
-                  </p>
-                )}
-                {plan.fitsInSpan && plan.extraDays > 0 && (
-                  <p className="text-sm text-emerald-600 bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-3">
-                    Você finalizará {plan.extraDays} dias antes do término do período.
-                  </p>
-                )}
-              </PopoverContent>
-            </Popover>
-          )}
-
         </div>
 
         <div className="space-y-4 px-8">
@@ -255,7 +230,7 @@ export function PlannerGenerator() {
             Gerar plano
           </Button>
           {isGenerated && (
-            <Button className="bg-accent text-foreground hover:bg-accent/60" onClick={handlePrint} type="button">
+            <Button onClick={handlePrint} type="button">
               <Printer className="mr-2 h-4 w-4" />
               Imprimir/Salvar PDF
             </Button>
@@ -265,42 +240,102 @@ export function PlannerGenerator() {
 
       {!isGenerated && (
         <div className="col-span-1 md:col-span-2 flex items-center justify-center text-center px-10 mx:px-20 py-10 border-t borer-ring/20 md:border-t-0 text-foreground/60">
-          Preencha o formulário e gere seu plano de leitura bíblica aqui.
+          Preencha os campos e clique em &quot;Gerar plano&quot;
+        </div>
+      )}
+
+      {isGenerating && (
+        <div className="md:h-[calc(100vh-5rem)] border-t md:border-t-0 border-ring/20 col-span-1 md:col-span-2 print:overflow-visible print:h-auto">
+          <div className="space-y-3">
+            <Skeleton className="h-4 w-32" />
+            <Skeleton className="h-6 w-64" />
+          </div>
+
+          <Skeleton className="h-px w-full" />
+
+          <div className="grid gap-3">
+            <Skeleton className="h-10 w-full" />
+            <Skeleton className="h-10 w-full" />
+            <Skeleton className="h-10 w-full" />
+            <Skeleton className="h-10 w-full" />
+            <Skeleton className="h-10 w-full" />
+            <Skeleton className="h-10 w-full" />
+          </div>
+
+          <Skeleton className="h-px w-full" />
+
+          <Skeleton className="h-12 w-full" />
         </div>
       )}
 
       {isGenerated && (
-        <div className="md:h-[calc(100vh-5rem)] border-t md:border-t-0 border-ring/20 col-span-1 md:col-span-2 overflow-y-auto print:overflow-visible print:h-auto" id="planner-print">
+        <div className="md:h-[calc(100vh-5rem)] border-t md:border-t-0 border-ring/20 col-span-1 md:col-span-2 print:overflow-visible print:h-auto" id="planner-print">
+          {/* Conteúdo visível na tela (detalhes do plano) */}
+          <div className="hidden print:block">
+            <div className="border-l border-r border-ring/20 w-full px-10 grid grid-cols-4 gap-3 divide-x divide-ring/20">
+              <div className="col-span-2 md:col-span-3 py-6">
+                <p className="text-sm text-muted-foreground">Plano gerado</p>
+                <p className="text-lg font-semibold">
+                  {scopeLabels[scope]} - {spanLabels[span]}
+                </p>
+              </div>
 
-          <div className="border-l border-r border-ring/20 w-full px-10 grid grid-cols-4 gap-3 divide-x divide-ring/20">
-            <div className="col-span-2 md:col-span-3 py-6">
+              <div className="col-span-2 md:col-span-1 py-6 flex items-center justify-center">
+                {chaptersPerDay} capítulos/dia
+              </div>
+            </div>
+
+            <Separator className="bg-ring/20" />
+
+            {plan.days.length === 0 ? (
+              <p className="text-sm text-muted-foreground">Nenhum plano disponível com os filtros escolhidos.</p>
+            ) : (
+              <div className="grid grid-cols-2 md:grid-cols-3 print:grid-cols-3">
+                {plan.days.map((day) => (
+                  <ReadingDay
+                    key={day.dayNumber}
+                    dayNumber={day.dayNumber}
+                    date={day.date}
+                    readings={day.readings}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Detalhes do plano visíveis na tela (conteúdo anterior do popover) */}
+          <div className="print:hidden p-8 space-y-6">
+            <div className="space-y-2">
               <p className="text-sm text-muted-foreground">Plano gerado</p>
               <p className="text-lg font-semibold">
                 {scopeLabels[scope]} - {spanLabels[span]}
               </p>
             </div>
 
-            <div className="col-span-2 md:col-span-1 py-6 flex items-center justify-center">
-              {chaptersPerDay} capítulos/dia
+            <Separator className="bg-ring/20" />
+
+            <div className="grid gap-2">
+              <SummaryItem label="Capítulos selecionados" value={`${plan.totalChapters}`} />
+              <SummaryItem label="Dias necessários" value={`${plan.totalDays} dias`} />
+              <SummaryItem label="Início previsto" value={formatDateLabel(plan.startDate)} />
+              <SummaryItem label="Fim previsto" value={formatDateLabel(plan.endDate)} />
+              <SummaryItem label="Período escolhido" value={`${spanLabels[span]} (${plan.targetDays} dias)`} />
+              <SummaryItem label="Término do período" value={formatDateLabel(targetEnd)} />
             </div>
+
+            <Separator className="bg-ring/20" />
+
+            {!plan.fitsInSpan && (
+              <p className="text-sm text-amber-600 bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
+                Para concluir dentro do período selecionado, aumente os capítulos diários para pelo menos {Math.ceil(plan.totalChapters / plan.targetDays)}.
+              </p>
+            )}
+            {plan.fitsInSpan && plan.extraDays > 0 && (
+              <p className="text-sm text-emerald-600 bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-3">
+                Você finalizará {plan.extraDays} dias antes do término do período.
+              </p>
+            )}
           </div>
-
-          <Separator className="bg-ring/20" />
-
-          {plan.days.length === 0 ? (
-            <p className="text-sm text-muted-foreground">Nenhum plano disponível com os filtros escolhidos.</p>
-          ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 print:grid-cols-3">
-              {plan.days.map((day) => (
-                <ReadingDay
-                  key={day.dayNumber}
-                  dayNumber={day.dayNumber}
-                  date={day.date}
-                  readings={day.readings}
-                />
-              ))}
-            </div>
-          )}
         </div>
       )}      
     </div>

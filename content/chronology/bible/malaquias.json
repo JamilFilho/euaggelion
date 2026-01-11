@@ -1,0 +1,16 @@
+{
+  "name": "Contexto Histórico de Malaquias",
+  "description": "Profecias pós-exílicas em Yehud sob domínio persa, corrigindo culto e alianças familiares.",
+  "period": {"start": -460, "end": -430},
+  "events": [
+    {"yearStart": -465, "yearEnd": -424, "event": "Domínio de Artaxerxes I e administração persa", "description": "Centralização persa mantém satrapia da Transeufratênia; Yehud permanece pequena província tributária com governador local.", "reference": ["Carta de Artaxerxes a Esdras", "Papiros de Elefantina"]},
+    {"yearStart": -460, "yearEnd": -454, "event": "Revolta de Inaros e campanha persa no Egito", "description": "Levantamento egípcio apoiado por Atenas é reprimido; Persas reafirmam controle do Nilo, repercutindo no comércio levantino.", "reference": ["Heródoto III", "Diodoro XI"]},
+    {"yearStart": -458, "yearEnd": -445, "event": "Reformas de Esdras e Neemias em Yehud", "description": "Retornos autorizados por Artaxerxes I impulsionam ensino da Torah, reconstrução do muro e renovação do pacto.", "reference": ["Esdras 7-10", "Neemias 1-10"]},
+    {"yearStart": -450, "yearEnd": -430, "event": "Tensões Samaria–Jerusalém", "description": "Elites samaritanas resistem à centralização em Jerusalém; rivalidade por controle de fronteiras e tributos provinciais.", "reference": ["Neemias 4", "Neemias 13:28"]},
+    {"yearStart": -450, "yearEnd": -440, "event": "Crescimento árabe e edomita ao sul", "description": "Grupos árabes e edomitas (Idumeia) ocupam rotas do Neguebe, impactando passagem de caravanas e segurança de Yehud.", "reference": ["Neemias 2:19", "Incrições edomitas tardias"]},
+    {"yearStart": -445, "yearEnd": -435, "event": "Restauração do muro e organização administrativa", "description": "Neemias completa o muro, organiza portões, turnos levíticos, combate usura e protege camponeses.", "reference": ["Neemias 3-7", "Neemias 5"]},
+    {"yearStart": -440, "yearEnd": -432, "event": "Correspondência judaica em Elefantina", "description": "Comunidade judaica no Egito mantém templo próprio e busca apoio de Jerusalém e Samaria, ilustrando redes diáspora.", "reference": ["Papiros de Elefantina"]},
+    {"yearStart": -439, "yearEnd": -431, "event": "Conflitos persas no Egeu e pressão fiscal", "description": "Guerras contra coalizões gregas elevam tributos e exigências logísticas nas satrapias, afetando Yehud.", "reference": ["Tucídides I", "Inscrições reais persas"]},
+    {"yearStart": -435, "yearEnd": -430, "event": "Exortações de Malaquias ao culto e à aliança", "description": "Profeta denuncia sacerdotes negligentes, casamentos mistos e sonegação de dízimos, chamando à fidelidade ao Senhor.", "reference": ["Malaquias 1-4"]}
+  ]
+}

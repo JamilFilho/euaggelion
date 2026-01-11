@@ -1,44 +1,64 @@
 import { MetadataRoute } from "next";
 import { getAllArticles } from "@/lib/getArticles";
 import { getAllPages } from "@/lib/getPages";
+import { getTrails } from "@/lib/getTrails";
 export const dynamic = "force-static";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const articles = getAllArticles();
   const pages = getAllPages();
+  const trails = await getTrails();
 
   const categories = [...new Set(articles.map((article) => article.category))];
+  const baseUrl = "https://euaggelion.com.br";
 
-  const articleEntries: MetadataRoute.Sitemap = articles.map((article) => ({
-    url: `https://euaggelion.com.br/${article.slug}`,
-    lastModified: article.date,
-    changeFrequency: "weekly",
-    priority: 0.7,
-  }));
+  const articleEntries: MetadataRoute.Sitemap = articles
+    .filter(article => article.published)
+    .map((article) => ({
+      url: `${baseUrl}/${article.slug}`,
+      lastModified: article.date ? new Date(article.date) : new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+      images: [`${baseUrl}/api/og?slug=${article.slug}`],
+    }));
 
   const pageEntries: MetadataRoute.Sitemap = pages.map((page) => ({
-    url: `https://euaggelion.com.br/p/${page.slug}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: "monthly",
-    priority: 0.5,
+    url: `${baseUrl}/p/${page.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
   }));
 
   const categoryEntries: MetadataRoute.Sitemap = categories.map((category) => ({
-    url: `https://euaggelion.com.br/s/${category}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: "weekly",
-    priority: 0.8,
+    url: `${baseUrl}/s/${category}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.75,
+  }));
+
+  const trailEntries: MetadataRoute.Sitemap = trails.map((trail) => ({
+    url: `${baseUrl}/trilhas/${trail.slug}`,
+    lastModified: trail.date ? new Date(trail.date) : new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
   }));
 
   return [
     {
-      url: "https://euaggelion.com.br",
-      lastModified: new Date().toISOString(),
-      changeFrequency: "yearly",
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/trilhas`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.75,
     },
     ...articleEntries,
     ...pageEntries,
     ...categoryEntries,
+    ...trailEntries,
   ];
 }

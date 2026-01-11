@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Rute",
+  "description": "Panorama da história de Rute no tempo dos juízes, mostrando lealdade e redenção em Belém.",
+  "period": {"start": -1150, "end": -1100},
+  "events": [
+    {"yearStart": -1150, "yearEnd": -1145, "event": "Fome leva família de Elimeleque a Moabe", "description": "Migração por escassez; Rute, moabita, une-se à família israelita.", "reference": ["Rute 1"]},
+    {"yearStart": -1145, "yearEnd": -1140, "event": "Trabalho nos campos de Boaz", "description": "Leis de respigar permitem sustento; Boaz reconhece lealdade de Rute.", "reference": ["Rute 2"]},
+    {"yearStart": -1140, "yearEnd": -1140, "event": "Resgate e linhagem davídica", "description": "Boaz age como resgatador, e Obede nasce, antepassado de Davi.", "reference": ["Rute 3-4"]}
+  ]
+}

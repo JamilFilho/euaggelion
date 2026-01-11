@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { clientLogger } from '@/lib/logger'
+import { Skeleton } from '@/components/ui/skeleton'
 
 interface WebmentionAuthor {
   name: string
@@ -40,7 +42,7 @@ export function Webmentions({ target }: WebmentionsProps) {
         const data = await response.json()
         setMentions(data.mentions || [])
       } catch (error) {
-        console.error('Erro ao carregar webmentions:', error)
+        clientLogger.error('❌ Erro ao carregar webmentions:', error)
       } finally {
         setLoading(false)
       }
@@ -62,8 +64,13 @@ export function Webmentions({ target }: WebmentionsProps) {
 
   if (loading) {
     return (
-      <div className="py-8 text-center text-foreground/60">
-        Carregando menções...
+      <div className="py-8 px-10 border-t border-ring/20 space-y-4">
+        <Skeleton className="h-6 w-32" />
+        <div className="space-y-3">
+          <Skeleton className="h-16 w-full" />
+          <Skeleton className="h-16 w-full" />
+          <Skeleton className="h-16 w-full" />
+        </div>
       </div>
     )
   }

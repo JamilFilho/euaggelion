@@ -1,4 +1,36 @@
 User-agent: *
-Disallow: 
+Allow: /
 Disallow: /admin
+Disallow: /api/
+Crawl-delay: 1
+Request-rate: 30/60
+
+# Google (Googlebot)
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Crawl-delay: 0
+Request-rate: 60/60
+
+# Bing (Bingbot)
+User-agent: Bingbot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Crawl-delay: 1
+Request-rate: 30/60
+
+# Social Media Bots
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Sitemaps
 Sitemap: https://euaggelion.com.br/sitemap.xml
+Sitemap: https://euaggelion.com.br/feed

@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de Romanos",
+  "description": "Panorama da carta aos Romanos escrita por Paulo para preparar sua visita e unir judeus e gentios no evangelho.",
+  "period": {
+    "start": 56,
+    "end": 57
+  },
+  "events": [
+    {
+      "yearStart": 49,
+      "yearEnd": 49,
+      "event": "Edito de Cláudio e expulsão de judeus de Roma",
+      "description": "Ordem imperial remove judeus (At 18.2), afetando comunidades cristãs; o retorno sob Nero cria tensões identitárias abordadas por Paulo.",
+      "reference": ["Suetônio, Cláudio 25", "Atos 18.2"]
+    },
+    {
+      "yearStart": 56,
+      "yearEnd": 57,
+      "event": "Permanência de Paulo em Corinto",
+      "description": "Durante o inverno em Corinto, Paulo redige Romanos com apoio de Febe (de Cencreia) e coleta para Jerusalém, visando unidade das igrejas.",
+      "reference": ["Romanos 16.1-2", "Atos 20.2-3"]
+    },
+    {
+      "yearStart": 57,
+      "yearEnd": 57,
+      "event": "Estradas e paz relativa sob Nero inicial",
+      "description": "Período de estabilidade e rede viária facilita circulação da carta, que endereça disputas sobre Lei, alimentação e autoridade imperial.",
+      "reference": ["Romanos 13", "Estrutura viária romana (contexto histórico)"]
+    }
+  ]
+}

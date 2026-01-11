@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de Hebreus",
+  "description": "Panorama da carta aos hebreus, encorajando perseverança e destacando Cristo como sumo sacerdote superior.",
+  "period": {
+    "start": 60,
+    "end": 70
+  },
+  "events": [
+    {
+      "yearStart": 60,
+      "yearEnd": 64,
+      "event": "Comunidade sob cansaço e possível perseguição",
+      "description": "Leitores sofreram esbulho de bens e ameaças, mas ainda não resistiram até o sangue; precisam renovar confiança.",
+      "reference": ["Hebreus 10.32-36", "Hebreus 12.4"]
+    },
+    {
+      "yearStart": 62,
+      "yearEnd": 66,
+      "event": "Culto levítico ainda em funcionamento",
+      "description": "Argumentos assumem Templo e sacerdócio ativos, sugerindo data pré-70 e urgência em mostrar a obsolescência das sombras levíticas.",
+      "reference": ["Hebreus 8-10"]
+    },
+    {
+      "yearStart": 67,
+      "yearEnd": 70,
+      "event": "Proximidade da guerra judaica",
+      "description": "Tensões em Jerusalém e expectativa de juízo reforçam o chamado a sair do acampamento e buscar a cidade por vir.",
+      "reference": ["Hebreus 13.13-14", "Josefo, Guerra 2"]
+    }
+  ]
+}

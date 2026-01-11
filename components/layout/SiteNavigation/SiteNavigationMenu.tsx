@@ -7,6 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger
 } from "@/components/ui/navigation-menu"
+import { ChartBarStacked, Swords, type LucideIcon } from "lucide-react";
 import Link from "next/link"
 
 interface SiteLink {
@@ -19,6 +20,7 @@ interface SiteLink {
     description?: string;
     isFeatured?: boolean;
     color?: string;
+            icon?: LucideIcon;
   }[];
 }
 
@@ -34,53 +36,39 @@ const siteLinks: SiteLink[] = [
         href: "/biblia"
     },
     {
-        title: "Blog",
-        alt:"Leia nossos artigos do blog",
-        href: "/s/blog"
-    },
-    {
         title: "Devocionais",
         alt:"Medite em nossos devocionais diários",
         href: "/s/cada-manha"
     },
     {
-        title: "Download",
-        alt:"Baixe nossos materiais gratuitos",
+        title: "Literatura Cristã",
+        alt:"Explore nossa biblioteca de literatura cristã",
         href: "#",
         submenu: [
             {
-                title: "eBooks",
-                href: "/s/ebook",
-                description: "Estudos, devocionais e outros materiais gratuitos para download.",
+                title: "Cavaleiros da Aurora",
+                href: "/s/cavaleiros-da-aurora",
+                description: "Embarque nesta saga de fantasia cristã",
                 isFeatured: true,
-                color: "bg-accent"
+                color: "bg-zinc-700",
+                icon: Swords
             },
             {
-                title: "[eBook] Como se parecer com Jesus",
-                href: "/como-se-parecer-com-jesus",
-                description: "Imitando a Cristo a partir das bem-aventuranças"
+                title: "Ficção Cristã",
+                href: "/s/ficcao-crista",
+                description: "A fé cristã e seus valores expressos em narrativas e histórias ficcionais"
             },
             {
-                title: "[eBook] O Fruto do Espírito",
-                href: "/o-fruto-do-espirito",
-                description: "Meditações nas nove virtudes do Espírito"
-            },
-            {
-                title: "[Planner] Devocional",
-                href: "/planner-leitura-biblica",
-                description: "Organize sua leitura devocional com nosso planner de leitura gratuito"
+                title: "Ensaios de um Peregrino",
+                href: "/s/ensaios-de-um-peregrino",
+                description: "Esaios diários de um peregrino refletindo sobre a vida enquanto caminha pelos desertos da existência"
             }
         ]
     },
     {
-        title: "Estudos",
-        alt:"Fortaleça sua fé com nossos estudos bíblicos",
-        href: "/s/estudos"
-    },
-    {
-        title: "TEOleigo",
-        alt:"Reflita sobre questões teológicas",
-        href: "/s/teoleigo"
+        title: "Trilhas de Conteúdo",
+        alt:"Siga nossas trilhas de estudo e conteúdo",
+        href: "/trilhas"
     },
     {
         title: "Wiki",
@@ -88,11 +76,12 @@ const siteLinks: SiteLink[] = [
         href: "/wiki",
         submenu: [
             {
-                title: "Glossário Teológico",
-                href: "/wiki/glossario",
-                description: "Glossário de referência de termos e conceitos teológicos",
+                title: "Cronologia bíblica",
+                href: "/wiki/cronologia",
+                description: "Estude os eventos bíblicos em ordem cronológica",
                 isFeatured: true,
-                color: "bg-zinc-800"
+                color: "bg-zinc-800",
+                icon: ChartBarStacked
             },
             {
                 title: "Credos cristãos",
@@ -100,9 +89,9 @@ const siteLinks: SiteLink[] = [
                 description: "Declarações e documentos de fé"
             },
             {
-                title: "Escatologia",
-                href: "/wiki/escatologia",
-                description: "Escolas escatológicas e interpretações proféticas"
+                title: "Glossário Teológico",
+                href: "/wiki/glossario",
+                description: "Termos e definições teológicas para aprofundar seu conhecimento"
             },
             {
                 title: "Teólogos",
@@ -116,7 +105,7 @@ const siteLinks: SiteLink[] = [
 
 export function SiteNavigationMenu() {
     return(
-        <div className="hidden md:flex">
+        <div className="hidden md:flex z-[830]">
             <NavigationMenu>
                 <NavigationMenuList>
                     {siteLinks.map((link) => (
@@ -134,6 +123,9 @@ export function SiteNavigationMenu() {
                                                         className={`h-full flex flex-col justify-end rounded-md no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6 ${sublink.color ? sublink.color : "bg-accent"} `}
                                                         href={sublink.href}
                                                     >
+                                                        {sublink.icon ? (
+                                                            <sublink.icon className="h-5 w-5 text-foreground/80 mb-3" aria-hidden />
+                                                        ) : null}
                                                         <div className="mb-2 text-lg text-foreground font-medium">
                                                             {sublink.title}
                                                         </div>

@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de 3 João",
+  "description": "Panorama de 3 João, tratando de hospitalidade e autoridade local entre líderes itinerantes e Diótrefes.",
+  "period": {
+    "start": 90,
+    "end": 95
+  },
+  "events": [
+    {
+      "yearStart": 90,
+      "yearEnd": 93,
+      "event": "Conflito com Diótrefes",
+      "description": "Líder local recusa irmãos viajantes e expulsa apoiadores; carta pede acolhida a Demétrio e corrige abuso de autoridade.",
+      "reference": ["3 João 1.9-12"]
+    },
+    {
+      "yearStart": 92,
+      "yearEnd": 95,
+      "event": "Rede de missionários itinerantes joaninos",
+      "description": "Sistema de envio depende de patronos fiéis como Gaio; carta reforça cooperação pela verdade.",
+      "reference": ["3 João 1.5-8"]
+    },
+    {
+      "yearStart": 92,
+      "yearEnd": 95,
+      "event": "Continuidade das disputas doutrinárias locais",
+      "description": "Mesmo contexto de 1 e 2 João, mas enfoque em hospitalidade e legitimidade de líderes reconhecidos pelo presbítero.",
+      "reference": ["Temas paralelos a 1-2 João"]
+    }
+  ]
+}

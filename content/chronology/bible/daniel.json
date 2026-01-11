@@ -1,0 +1,23 @@
+{
+  "name": "Contexto Histórico de Daniel",
+  "description": "Narrativas e visões no contexto das cortes babilônica e persa.",
+  "period": {"start": -605, "end": -530},
+  "panorama": "Do auge babilônico após Carquemis (605 a.C.) à consolidação persa inicial, o período inclui deportações judaítas, queda de Jerusalém (586 a.C.), crise interna em Babilônia, expansão de Ciro sobre Média, Lídia e Babilônia (539 a.C.), edito de retorno (538 a.C.) e reorganização em satrapias até a morte de Ciro (530 a.C.).",
+  "events": [
+    {"yearStart": -605, "yearEnd": -605, "event": "Vitória de Babilônia em Carquemis", "description": "Nabucodonosor derrota Egito e Assíria, garantindo hegemonia na Síria-Palestina.", "reference": ["Jeremias 46:2"]},
+    {"yearStart": -605, "yearEnd": -586, "event": "Deportações sucessivas de Judá", "description": "Elites judaícas levadas a Babilônia (605/597) culminam na destruição do Templo e exílio amplo (586).", "reference": ["2 Reis 24-25", "Daniel 1:1-6"]},
+    {"yearStart": -605, "yearEnd": -536, "event": "Ministério de Daniel", "description": "Daniel serve como sábio e administrador de Nabucodonosor a Ciro, interpreta sonhos, visões e permanece fiel em sucessivas mudanças de regime.", "reference": ["Daniel 1-12"]},
+    {"yearStart": -586, "yearEnd": -586, "event": "Queda de Jerusalém e ruína do Templo", "description": "Babilônia devasta Judá; lamentações e crise teológica marcam o período.", "reference": ["2 Reis 25", "Lamentações 1-2"]},
+    {"yearStart": -586, "yearEnd": -582, "event": "Governadoria de Gedalias e fuga ao Egito", "description": "Babilônia instala Gedalias em Mispá; seu assassinato gera migração forçada ao Egito, ampliando a diáspora.", "reference": ["Jeremias 40-44"]},
+    {"yearStart": -582, "yearEnd": -568, "event": "Campanhas babilônicas no Levante e contra o Egito", "description": "Nabucodonosor reprime focos de revolta (inclusive Judá remanescente) e marcha contra o Egito (c. 568).", "reference": ["Jeremias 52:30", "Berlim Papyrus 13044"]},
+    {"yearStart": -585, "yearEnd": -573, "event": "Cerco de Tiro por Babilônia", "description": "Longo bloqueio de Nabucodonosor enfraquece Tiro continental e reorienta o comércio fenício.", "reference": ["Ezequiel 26-29", "Josefo, Contra Apion 1.156"]},
+    {"yearStart": -575, "yearEnd": -562, "event": "Grandes obras babilônicas em Babilônia", "description": "Portão de Istar, Processional Way e Etemenanki são restaurados, simbolizando poder e propaganda real.", "reference": ["Inscrições de Nabucodonosor II"]},
+    {"yearStart": -562, "yearEnd": -556, "event": "Crise sucessória babilônica", "description": "Após Nabucodonosor, reinados breves (Evil-Merodaque, Neriglissar, Labashi) revelam instabilidade.", "reference": ["Crônicas Babilônicas"]},
+    {"yearStart": -556, "yearEnd": -539, "event": "Reinado de Nabonido e co-regência de Belsazar", "description": "Nabonido ausenta-se em Tema; Belsazar administra Babilônia, enquanto o império perde fôlego militar.", "reference": ["Daniel 5", "Crônica de Nabonido"]},
+    {"yearStart": -550, "yearEnd": -539, "event": "Expansão de Ciro o Grande", "description": "Ciro conquista Média (c. 550), Lídia (c. 546) e toma Babilônia (539), inaugurando hegemonia persa.", "reference": ["Inscrição de Ciro", "Heródoto I"]},
+    {"yearStart": -539, "yearEnd": -539, "event": "Batalha de Ópis e rendição de Babilônia", "description": "Exército babilônico é derrotado no Tigre; subsequente entrada persa em Babilônia ocorre sem grande resistência.", "reference": ["Crônica de Nabonido", "Heródoto I"]},
+    {"yearStart": -539, "yearEnd": -538, "event": "Queda de Babilônia e ascensão persa", "description": "Babilônia é capturada sem grande resistência; administração passa a sátrapas persas.", "reference": ["Daniel 5", "Crônica de Nabonido"]},
+    {"yearStart": -538, "yearEnd": -536, "event": "Primeira leva de retorno e altar reconstruído", "description": "Grupos liderados por Sesbazar/Zorobabel retornam, levantam o altar e lançam fundamentos do Segundo Templo.", "reference": ["Esdras 1-3"]},
+    {"yearStart": -536, "yearEnd": -530, "event": "Reorganização persa em satrapias e campanhas orientais", "description": "Yehud é incorporada à satrapia da Transeufratênia; Ciro conduz campanhas ao leste e morre em combate (c. 530).", "reference": ["Inscrição de Ciro", "Heródoto I"]}
+  ]
+}

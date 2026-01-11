@@ -10,7 +10,7 @@ interface BibleBookChaptersProps {
 
 export default function BibleBookChapters({ bookChapters, versionId, bookSlug }: BibleBookChaptersProps) {
     const book = bookChapters;
-    return <div className="grid grid-cols-5 md:grid-cols-10 divide-x divide-y divide-foreground/20">
+    return <div className="grid grid-cols-5 md:grid-cols-10">
           {book.chapters.map((_, index) => {
             const chapterNum = index + 1;
             const isLastChapter = index === book.chapters.length - 1;
@@ -51,7 +51,7 @@ export default function BibleBookChapters({ bookChapters, versionId, bookSlug }:
               <Link 
                 key={chapterNum} 
                 href={`/biblia/${versionId}/${bookSlug}/${chapterNum}`} 
-                className={`p-4 text-center flex items-center justify-center hover:bg-black/20 transition-colors ease-in-out ${colSpan} ${mobileColSpan}`}
+                className={`p-4 text-center border-b border-r border-l border-ring/20 flex items-center justify-center hover:bg-black/20 transition-colors ease-in-out ${colSpan} ${mobileColSpan}`}
               >
                 <span className="text-lg font-medium">{chapterNum}</span>
               </Link>

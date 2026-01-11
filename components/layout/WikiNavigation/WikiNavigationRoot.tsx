@@ -1,9 +1,14 @@
 import { ReactNode } from "react"
+import WikiNavigationDrawer from "./WikiNavigationDrawer"
 
 interface WikiNavigationProps {
     children:ReactNode
 }
 
 export default function WikiNavigationRoot({children}:WikiNavigationProps) {
-    return <nav className="w-1/2 md:w-[85%] h-full gap-4 flex flex-row">{children}</nav>
+    return (
+        <div className="w-full flex flex-row items-center">
+            {children}
+        </div>
+    )
 }

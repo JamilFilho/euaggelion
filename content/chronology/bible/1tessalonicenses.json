@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de 1 Tessalonicenses",
+  "description": "Panorama da primeira carta aos tessalonicenses, uma das mais antigas, para encorajar uma igreja jovem sob perseguição.",
+  "period": {
+    "start": 50,
+    "end": 51
+  },
+  "events": [
+    {
+      "yearStart": 50,
+      "yearEnd": 50,
+      "event": "Fundação da igreja em Tessalônica",
+      "description": "Paulo, Silas e Timóteo plantam a igreja e enfrentam oposição judaica e civil, sendo enviados a Bereia.",
+      "reference": ["Atos 17.1-10"]
+    },
+    {
+      "yearStart": 51,
+      "yearEnd": 51,
+      "event": "Procônsul Gálio em Corinto como marcador cronológico",
+      "description": "Estadia de Paulo em Corinto (sob Gálio) situa a redação de 1 Tessalonicenses antes ou durante esse período.",
+      "reference": ["Atos 18.12-17", "Inscrição de Delfos"]
+    },
+    {
+      "yearStart": 51,
+      "yearEnd": 51,
+      "event": "Preocupação com crentes falecidos e parousia",
+      "description": "Membros mortos geram dúvidas sobre a esperança; Paulo escreve para assegurar a ressurreição e a vinda de Cristo.",
+      "reference": ["1 Tessalonicenses 4.13-18"]
+    }
+  ]
+}

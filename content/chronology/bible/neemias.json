@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Neemias",
+  "description": "Reconstrução dos muros de Jerusalém e reformas civis no período persa.",
+  "period": {"start": -445, "end": -420},
+  "events": [
+    {"yearStart": -445, "yearEnd": -445, "event": "Comissão de Neemias por Artaxerxes I", "description": "Neemias recebe permissão, cartas e recursos para reedificar Jerusalém.", "reference": ["Neemias 2"]},
+    {"yearStart": -444, "yearEnd": -444, "event": "Reconstrução dos muros em 52 dias", "description": "Com oposição de Sambalate e Tobias, o muro é completado rapidamente.", "reference": ["Neemias 3-6"]},
+    {"yearStart": -444, "yearEnd": -430, "event": "Reformas civis e religiosas", "description": "Leitura da Lei, pacto renovado, correções de abusos e santificação do sábado.", "reference": ["Neemias 8-13"]}
+  ]
+}

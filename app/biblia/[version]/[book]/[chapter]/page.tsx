@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { Article } from "@/components/content/Article";
 import VerseHighlighter from '@/components/content/Bible/VerseHighlighter';
 import { Bible } from "@/components/content/Bible";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import VerseActions from "@/components/content/Bible/VerseActions";
 
 interface Props {
   params: Promise<{
@@ -27,46 +29,34 @@ export default async function BibleChapterPage({ params }: Props) {
   const hasPrev = chapterNum > 1;
   const hasNext = chapterNum < book.chapters.length;
 
-  const navigation = {
-    prev: hasPrev ? {
-      slug: `biblia/${versionId}/${bookSlug}/${chapterNum - 1}`,
-      title: `Capítulo ${chapterNum - 1}`,
-      description: `Capítulo anterior: ${chapterNum - 1}`
-    } : null,
-    next: hasNext ? {
-      slug: `biblia/${versionId}/${bookSlug}/${chapterNum + 1}`,
-      title: `Capítulo ${chapterNum + 1}`,
-      description: `Próximo capítulo: ${chapterNum + 1}`
-    } : null
-  };
-
   return (
     <Bible.Root>
       <VerseHighlighter />
       <Bible.Content>
           {verses.map((verse, index) => (
-            <p id={`verse-${index + 1}`} key={index} className="p-4 hover:bg-black/20 transition-colors">
-              <sup className="text-sm font-bold text-accent mt-1 mr-2">
-                {index + 1}
-              </sup>
-              <span className="text-lg">{verse}</span>
+            <Popover key={index}>
+            <PopoverTrigger asChild>
+            <p id={`verse-${index + 1}`} className="hover:bg-black/20 transition-colors cursor-pointer">
+              <span className="inline-block p-4">
+                <sup className="relative text-sm font-bold text-accent mt-1 mr-2">
+                  {index + 1}
+                </sup>
+                <span className="text-lg">{verse}</span>
+              </span>
             </p>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto">
+              <VerseActions
+                verse={verse}
+                bookName={book.name}
+                chapter={chapterNum}
+                verseNumber={index + 1}
+                version={version.name}
+              />
+            </PopoverContent>
+          </Popover>
           ))}
       </Bible.Content>
-
-      <Article.Footer>
-        <Article.Actions
-          excerpt=""
-          link=""
-          headline={`Bíblia Sagrada - ${book.name} ${chapterNum}`}
-        />
-      </Article.Footer>
-      
-      <Article.Navigation
-        prev={navigation.prev}
-        next={navigation.next}
-        category={book.name}
-      />
     </Bible.Root>
   );
 }

@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Eclesiastes",
+  "description": "Reflexões sapienciais atribuídas ao Qohelet, em período monárquico tardio ou pós-exílico.",
+  "period": {"start": -450, "end": -400},
+  "events": [
+    {"yearStart": -450, "yearEnd": -430, "event": "Busca por sentido sob domínio estrangeiro", "description": "Texto reflete ceticismo frente a trabalho e governo em contexto pós-exílico.", "reference": ["Eclesiastes 1-2"]},
+    {"yearStart": -440, "yearEnd": -420, "event": "Observação da injustiça e da mortalidade", "description": "Críticas a tribunais e ao ciclo de vida sugerem sociedade hierarquizada.", "reference": ["Eclesiastes 3-5"]},
+    {"yearStart": -420, "yearEnd": -400, "event": "Conclusão ética sobre temor a Deus", "description": "Fecho exorta a temer a Deus e guardar mandamentos como dever humano.", "reference": ["Eclesiastes 12.13"]}
+  ]
+}

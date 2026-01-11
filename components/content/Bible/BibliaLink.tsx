@@ -14,7 +14,7 @@ interface BibliaLinkProps {
 import { useBibleVersion } from '@/lib/context/BibleVersionContext';
 
 export default function BibliaLink({ children, variant = "modal" }: BibliaLinkProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [selectedRef, setSelectedRef] = useState<BibleReference | null>(null);
   const [processedContent, setProcessedContent] = useState<ReactNode>(children);
   const { currentVersion } = useBibleVersion();
@@ -23,7 +23,7 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
     e.preventDefault();
     setSelectedRef(ref);
     if (variant !== "link") {
-      setIsModalOpen(true);
+      setIsDrawerOpen(true);
     }
   };
 
@@ -224,19 +224,24 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
 
                   if (variant === "link") {
                     const version = currentVersion || "nvt";
+                    const shouldHighlight = !isWholeChapter && (
+                      (chapterData.verses && chapterData.verses.length > 0) ||
+                      (chapterData.ranges && chapterData.ranges.length > 0)
+                    );
+
                     const highlights: string[] = [];
                     
-                    if (chapterData.verses && chapterData.verses.length > 0) {
+                    if (shouldHighlight && chapterData.verses && chapterData.verses.length > 0) {
                       chapterData.verses.forEach(v => highlights.push(`verse-${v}`));
                     }
-                    if (chapterData.ranges && chapterData.ranges.length > 0) {
+                    if (shouldHighlight && chapterData.ranges && chapterData.ranges.length > 0) {
                       chapterData.ranges.forEach(([s, e]) => {
                         for (let i = s; i <= e; i++) highlights.push(`verse-${i}`);
                       });
                     }
 
                     const uniqueHighlights = Array.from(new Set(highlights));
-                    const highlightParam = uniqueHighlights.join(",");
+                    const highlightParam = shouldHighlight ? uniqueHighlights.join(",") : "";
                     const hasHighlights = highlightParam && highlightParam.length > 0;
                     const href = hasHighlights
                       ? `/biblia/${version}/${bookSlug}/${chapterNum}?highlight=${encodeURIComponent(highlightParam)}#verse-${verseNum}`
@@ -297,13 +302,21 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
 
                   // Build highlight param for the full interval in this chapter
                   const highlights: string[] = [];
-                  if (reference.chapters && reference.chapters.length > 0) {
-                    const c = reference.chapters[0];
-                    // individual verses
+                  const c = reference.chapters && reference.chapters.length > 0 ? reference.chapters[0] : null;
+
+                  const isWholeChapter = !!c && c.ranges && c.ranges.length === 1 &&
+                    c.ranges[0][0] === 1 && c.ranges[0][1] === 999 &&
+                    (!c.verses || c.verses.length === 0);
+
+                  const shouldHighlight = !reference.isWholeChapterRange && !isWholeChapter && !!c && (
+                    (c.verses && c.verses.length > 0) ||
+                    (c.ranges && c.ranges.length > 0)
+                  );
+
+                  if (shouldHighlight && c) {
                     if (c.verses && c.verses.length > 0) {
                       c.verses.forEach(v => highlights.push(`verse-${v}`));
                     }
-                    // ranges
                     if (c.ranges && c.ranges.length > 0) {
                       c.ranges.forEach(([s, e]) => {
                         for (let i = s; i <= e; i++) highlights.push(`verse-${i}`);
@@ -312,7 +325,7 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
                   }
 
                   const uniqueHighlights = Array.from(new Set(highlights));
-                  const highlightParam = uniqueHighlights.join(",");
+                  const highlightParam = shouldHighlight ? uniqueHighlights.join(",") : "";
 
                   // If there are no verse highlights, link to the chapter page without anchor or highlight
                   const hasHighlights = highlightParam && highlightParam.length > 0;
@@ -403,8 +416,8 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
     <>
       {processedContent}
       <BibleModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        isOpen={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
         reference={selectedRef}
       />
     </>

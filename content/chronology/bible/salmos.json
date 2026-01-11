@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Salmos",
+  "description": "Coleção de cânticos compostos do período davídico ao pós-exílio.",
+  "period": {"start": -1000, "end": -400},
+  "events": [
+    {"yearStart": -1000, "yearEnd": -970, "event": "Salmos davídicos em contexto de fuga e realeza", "description": "Composições refletem perseguição por Saul e depois celebração do reinado.", "reference": ["Salmos 3; 18; 51"]},
+    {"yearStart": -970, "yearEnd": -930, "event": "Cânticos cultuais do Templo de Salomão", "description": "Louvores de coros levíticos vinculados ao culto centralizado.", "reference": ["Salmos 24; 122"]},
+    {"yearStart": -600, "yearEnd": -400, "event": "Salmos do exílio e pós-exílio", "description": "Lamentos e esperança durante e após o cativeiro babilônico.", "reference": ["Salmos 137; 126"]}
+  ]
+}

@@ -10,6 +10,7 @@ import FeedPagination from "./FeedPagination";
 import FeedFooter from "./FeedFooter";
 import FeedName from "./FeedName";
 import FeedDescription from "./FeedDescription";
+import FeedList from "./FeedList";
 
 export const Feed = {
     Root: FeedRoot,
@@ -19,6 +20,7 @@ export const Feed = {
     Group: FeedGroup,
     Articles: FeedArticles,
     Item: FeedItem,
+    List: FeedList,
     Title: FeedTitle,
     Excerpt: FeedExcerpt,
     Link: FeedLink,

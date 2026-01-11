@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Isaías",
+  "description": "Profecias no reino de Judá durante crises assírias e esperança pós-exílica.",
+  "period": {"start": -740, "end": -520},
+  "events": [
+    {"yearStart": -740, "yearEnd": -701, "event": "Crises com a Assíria (Uzias a Ezequias)", "description": "Invasões e cerco de Senaqueribe moldam oráculos sobre juízo e livramento.", "reference": ["Isaías 7-39", "2 Reis 18-19"]},
+    {"yearStart": -701, "yearEnd": -640, "event": "Anúncios de restauração e Sião purificada", "description": "Após livramento de Jerusalém, mensagens visam justiça, culto e esperança messiânica.", "reference": ["Isaías 32-35"]},
+    {"yearStart": -540, "yearEnd": -520, "event": "Consolo ao exílio e retorno", "description": "Oráculos sobre Ciro, servo do Senhor, e nova saída de Babilônia.", "reference": ["Isaías 40-55"]}
+  ]
+}

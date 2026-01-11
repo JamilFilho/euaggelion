@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de 1 Pedro",
+  "description": "Panorama da primeira carta de Pedro às comunidades da Ásia Menor, encorajando firmeza em meio a sofrimento social.",
+  "period": {
+    "start": 62,
+    "end": 64
+  },
+  "events": [
+    {
+      "yearStart": 62,
+      "yearEnd": 63,
+      "event": "Peregrinos e forasteiros nas províncias do Ponto ao Bitínia",
+      "description": "Cristãos enfrentam difamação e ostracismo; a carta os chama a viver como sacerdócio santo e cidadãos exemplares.",
+      "reference": ["1 Pedro 1.1", "1 Pedro 2.11-12"]
+    },
+    {
+      "yearStart": 64,
+      "yearEnd": 64,
+      "event": "Clima pós-incêndio de Roma",
+      "description": "Se Roma está sob suspeita, o temor de repressão alcança províncias; Pedro escreve para preparar igrejas para provar sua fé.",
+      "reference": ["1 Pedro 4.12-16", "Tacito, Anais 15.44"]
+    },
+    {
+      "yearStart": 63,
+      "yearEnd": 64,
+      "event": "Colaboração com Silvano e Marcos",
+      "description": "Silvano atua como secretário/portador e Marcos é mencionado, ligando a tradição petrina a Roma e à missão itinerante.",
+      "reference": ["1 Pedro 5.12-13"]
+    }
+  ]
+}

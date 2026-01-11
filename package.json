@@ -1,6 +1,6 @@
 {
   "name": "euaggelion",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "tsx lib/generateSearchIndex.ts && npx tinacms dev -c \"next dev --webpack\"",
@@ -26,7 +26,8 @@
     "@radix-ui/react-slot": "^1.2.4",
     "@types/mdx": "^2.0.13",
     "@upstash/ratelimit": "^2.0.0",
-    "@upstash/redis": "^1.36.1",
+    "@upstash/redis": "^1.36.0",
+    "@use-gesture/react": "^10.3.1",
     "archiver": "^7.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -34,6 +35,7 @@
     "feed": "^5.1.0",
     "fuse.js": "^7.1.0",
     "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.1",
     "lucide-react": "^0.561.0",
     "next": "16.0.10",
     "next-mdx-remote": "^5.0.0",
@@ -47,11 +49,14 @@
     "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
     "tinacms": "^3.1.3",
+    "unist-util-visit": "^5.0.0",
     "vaul": "^1.1.2",
-    "web-push": "^3.6.7"
+    "web-push": "^3.6.7",
+    "yet-another-react-lightbox": "^3.28.0"
   },
   "devDependencies": {
-    "@tinacms/cli": "^2.0.7",
+    "@tinacms/cli": "^2.0.6",
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.19.28",
     "@types/react": "^19",
     "@types/react-dom": "^19",

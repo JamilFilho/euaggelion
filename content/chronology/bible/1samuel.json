@@ -1,0 +1,20 @@
+{
+  "name": "Contexto Histórico de 1 Samuel",
+  "description": "Transição de juízes para a monarquia sob Saul e o surgimento de Davi.",
+  "period": {"start": -1105, "end": -1010},
+  "events": [
+    {"yearStart": -1114, "yearEnd": -1076, "event": "Expansão assíria sob Tiglate-Pileser I", "description": "Assíria avança sobre o Eufrates superior, pressionando redes comerciais siro-anatólias e afetando rotas ao Levante.", "reference": ["Anais de Tiglate-Pileser I"]},
+    {"yearStart": -1105, "yearEnd": -1085, "event": "Pressão filisteia e juizado de Eli", "description": "Filisteus controlam ferraria e rotas costeiras; sacerdócio em Siló se corrompe sob Eli e seus filhos.", "reference": ["1 Samuel 1-4"]},
+    {"yearStart": -1090, "yearEnd": -1070, "event": "Declínio egípcio no Levante", "description": "Após Ramessés XI, influência egípcia recua; cidades-estado cananeias buscam novos patronos, abrindo espaço filisteu e arameu.", "reference": ["Papiro Harris", "Terceiro Período Intermediário"]},
+    {"yearStart": -1085, "yearEnd": -1075, "event": "Captura da Arca e queda de Siló", "description": "Filisteus tomam a Arca em Ebenézer; Siló perde centralidade cultual, marcando ruptura religiosa e política.", "reference": ["1 Samuel 4-6", "Salmos 78:60"]},
+    {"yearStart": -1075, "yearEnd": -1055, "event": "Ministério de Samuel e renovação do pacto", "description": "Samuel julga em Mispá, convoca arrependimento, derrota filisteus em Ebenezer e reorganiza lideranças tribais.", "reference": ["1 Samuel 7"]},
+    {"yearStart": -1060, "yearEnd": -1040, "event": "Pressão arameia no norte", "description": "Bandos arameus avançam sobre o norte de Israel e Síria, fragmentando cidades-estado e tensionando rotas internas.", "reference": ["1 Samuel 14:47", "Fontes arameias iniciais"]},
+    {"yearStart": -1055, "yearEnd": -1048, "event": "Pedido por um rei e unção de Saul", "description": "Anciãos pedem monarquia para enfrentar ameaças regionais; Saul é ungido e confirma liderança ao salvar Jabes-Gileade do cerco amonita.", "reference": ["1 Samuel 8-12"]},
+    {"yearStart": -1048, "yearEnd": -1038, "event": "Guerras de Saul contra filisteus e moabitas", "description": "Saul trava batalha em Micmás, amplia recrutamento e repele incursões a leste e oeste, mas acumula tensões com Samuel.", "reference": ["1 Samuel 13-14"]},
+    {"yearStart": -1038, "yearEnd": -1030, "event": "Campanha contra Amaleque e rejeição profética", "description": "Saul poupa o rei amalequita e rebanhos; Samuel o confronta e anuncia sua rejeição como rei.", "reference": ["1 Samuel 15"]},
+    {"yearStart": -1030, "yearEnd": -1025, "event": "Unção de Davi e rivalidade na corte", "description": "Davi é ungido, derrota Golias, torna-se músico e comandante; ciúmes de Saul iniciam perseguições.", "reference": ["1 Samuel 16-18"]},
+    {"yearStart": -1025, "yearEnd": -1018, "event": "Fuga de Davi, redes de apoio e Nob", "description": "Davi forma milícia, recebe apoio sacerdotal em Nob (depois massacrada por Saul), refugia-se em Gate e Adulão.", "reference": ["1 Samuel 19-22"]},
+    {"yearStart": -1018, "yearEnd": -1015, "event": "Aliança com filisteus e conflitos internos", "description": "Davi recebe Ziclague de Aquis, pilha tribos do sul e mantém neutralidade ambígua enquanto Saul busca oráculo em En-Dor.", "reference": ["1 Samuel 27-28"]},
+    {"yearStart": -1015, "yearEnd": -1010, "event": "Queda da casa de Saul e ascensão de Davi", "description": "Batalha de Gilboa mata Saul e Jônatas; Isbosete governa Israel, Judá unge Davi em Hebrom; guerra civil termina com Davi consolidando Judá.", "reference": ["1 Samuel 29-31", "2 Samuel 1-4"]}
+  ]
+}

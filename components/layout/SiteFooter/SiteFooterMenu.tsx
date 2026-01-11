@@ -7,6 +7,7 @@ export function SiteFooterMenu() {
         navigationLinks.download,
         navigationLinks.estudoBiblico,
         navigationLinks.ferramentasEstudo,
+        navigationLinks.literaturaCrista,
         navigationLinks.opiniao,
         navigationLinks.wiki,
         navigationLinks.institucional,
@@ -19,7 +20,7 @@ export function SiteFooterMenu() {
                 <li className="text-lg font-bold mb-4">{section.title}</li>
                 {section.items.map((item, itemIndex) => (
                     <li key={itemIndex}>
-                        <Link href={item.href} title={item.label}>
+                        <Link href={item.href} title={item.label} className="text-accent underline decoration-dotted underline-offset-4">
                             {item.label}
                         </Link>
                     </li>

@@ -1,0 +1,52 @@
+{
+  "name": "Contexto Histórico do Apocalipse",
+  "description": "Panorama histórico do período em que o Apocalipse foi escrito, destacando eventos significativos que influenciaram sua mensagem.",
+  "period": {
+    "start": 90,
+    "end": 96
+  },
+  "events": [
+    {
+      "yearStart": 90,
+      "yearEnd": 90,
+      "event": "Consolidação do judaísmo rabínico em Jâmnia",
+      "description": "Rabis em Jâmnia (Yavne) fortalecem a reorganização religiosa judaica após a destruição do Templo, definindo práticas litúrgicas e reforçando a Birkat ha-Minim, que marca a ruptura crescente com comunidades cristãs judaicas.",
+      "reference": ["Josefo, História dos Judeus (contexto pós-70)", "Fontes rabínicas sobre Yavne"]
+    },
+    {
+      "yearStart": 92,
+      "yearEnd": 92,
+      "event": "Édito de Domiciano sobre vinhedos e tributos",
+      "description": "Domiciano emite medidas de controle agrícola e tributário (inclusive o fiscus judaicus), pressionando províncias da Ásia Menor e criando tensões econômicas que afetam comunidades cristãs e judaicas.",
+      "reference": ["Suetônio, Domiciano 7", "Cassius Dio 67.14"]
+    },
+    {
+      "yearStart": 93,
+      "yearEnd": 95,
+      "event": "Repressão e culto imperial sob Domiciano",
+      "description": "O imperador intensifica o culto imperial exigindo títulos como ‘Dominus et Deus’; denúncias por impiedade e recusa ao culto levam à perseguição a cristãos e judeus, especialmente na Ásia Menor.",
+      "reference": ["Suetônio, Domiciano 13", "Cassius Dio 67.4"]
+    },
+    {
+      "yearStart": 95,
+      "yearEnd": 95,
+      "event": "Martírio de Flávio Clemente e exílio de Flávia Domitila",
+      "description": "O senador Flávio Clemente é executado e sua esposa Flávia Domitila é exilada acusados de ‘ateísmo’ por rejeitar o culto imperial, evidenciando hostilidade oficial a grupos monoteístas.",
+      "reference": ["Cassius Dio 67.14", "Eusébio, HE 3.18"]
+    },
+    {
+      "yearStart": 95,
+      "yearEnd": 95,
+      "event": "Exílio de João na ilha de Patmos",
+      "description": "Tradição cristã associa a redação do Apocalipse ao exílio de João em Patmos durante a repressão de Domiciano; o cenário insular explica a circulação de visões endereçadas às sete igrejas da Ásia.",
+      "reference": ["Eusébio, HE 3.18-20", "Irineu, Contra Heresias 5.30.3"]
+    },
+    {
+      "yearStart": 96,
+      "yearEnd": 96,
+      "event": "Assassinato de Domiciano e sucessão de Nerva",
+      "description": "Domiciano é morto em conspiração no Palácio; Nerva assume, encerra parte dos processos por impiedade e concede anistias, aliviando a pressão imediata sobre comunidades cristãs na Ásia Menor.",
+      "reference": ["Suetônio, Domiciano 17", "Cassius Dio 68.1"]
+    }
+    ]
+}

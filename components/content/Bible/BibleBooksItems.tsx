@@ -10,7 +10,7 @@ interface BibleBooksItemsProps {
 export default function BibleBooksItems({ version, testament = "at", currentVersionId }: BibleBooksItemsProps) {
     const books = testament === "at" ? version.books.slice(0, 39) : version.books.slice(39);
     
-    return <div className="grid grid-cols-2 md:grid-cols-5 divide-x divide-y divide-foreground/20">
+    return <div className="grid grid-cols-2 md:grid-cols-5">
         {books.map((book, index) => {
             const isLastBook = index === books.length - 1;
             const remainder = books.length % 5;
@@ -37,9 +37,9 @@ export default function BibleBooksItems({ version, testament = "at", currentVers
             <Link
                 key={book.slug}
                 href={`/biblia/${versionPath}/${book.slug}`}
-                className={`p-4 text-center flex items-center justify-center hover:bg-black/20 transition-colors ease-in-out ${colSpan} ${mobileColSpan}`}
+                className={`p-4 text-center flex items-center justify-center border-b border-r border-l border-ring/20 hover:bg-black/20 transition-colors ease-in-out ${colSpan} ${mobileColSpan}`}
             >
-                <span className="text-foreground/80 text-lg font-medium">{book.name}</span>
+                <span className="text-foreground/80 text-lg font-medium">{book.short_name}</span>
             </Link>
             );
         })}

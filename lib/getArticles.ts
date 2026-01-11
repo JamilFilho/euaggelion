@@ -4,6 +4,15 @@ import matter from "gray-matter";
 
 const CONTENT_PATH = path.join(process.cwd(), "content", "articles");
 
+export interface ChronologyEvent {
+  year: number;
+  month?: string;
+  day?: string;
+  event: string;
+  description: string;
+  reference?: string[];
+}
+
 export interface ArticleMeta {
   slug: string;
   fileName: string;
@@ -13,11 +22,21 @@ export interface ArticleMeta {
   date: string;
   author?: string;
   category: string;
+  categories?: string[]; // Todas as categorias do conteúdo
   tags?: string[];
   reference?: string[];
   testament?: "at" | "nt";
+  chronology?: ChronologyEvent[];
+  chronologyDataset?: string[];
   content: string;
   search?: boolean;
+}
+
+type ChronologyDatasetInput = string | string[] | undefined;
+
+function normalizeChronologyDataset(value: ChronologyDatasetInput): string[] | undefined {
+  if (!value) return undefined;
+  return Array.isArray(value) ? value : [value];
 }
 
 export interface ArticleNavigation {
@@ -25,21 +44,31 @@ export interface ArticleNavigation {
   next: ArticleMeta | null;
 }
 
-export function getAllArticles(): ArticleMeta[] {
-  if (!fs.existsSync(CONTENT_PATH)) {
-    console.warn(`Diretório ${CONTENT_PATH} não encontrado`);
+function readArticlesFromDirectory(dirPath: string, primaryCategory: string): ArticleMeta[] {
+  if (!fs.existsSync(dirPath)) {
     return [];
   }
 
-  const files = fs.readdirSync(CONTENT_PATH);
+  const files = fs.readdirSync(dirPath);
   
   return files
-  .filter((file) => file.endsWith(".mdx"))
-  .map((file) => {
-    const filePath = path.join(CONTENT_PATH, file);
-    const raw = fs.readFileSync(filePath, "utf-8");
-    const { data, content } = matter(raw);
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => {
+      const filePath = path.join(dirPath, file);
+      const raw = fs.readFileSync(filePath, "utf-8");
+      const { data, content } = matter(raw);
       
+      // Normalizar categorias: pode ser string ou array
+      let categories: string[] = [];
+      if (data.category) {
+        categories = Array.isArray(data.category)
+          ? (data.category as string[]).map(c => String(c).toLowerCase())
+          : [String(data.category).toLowerCase()];
+      }
+      if (categories.length === 0) {
+        categories = [primaryCategory.toLowerCase()];
+      }
+
       return {
         slug: file.replace(/\.mdx$/, "").toLowerCase(),
         fileName: file,
@@ -48,14 +77,39 @@ export function getAllArticles(): ArticleMeta[] {
         date: data.date ?? "",
         author: data.author ?? "",
         published: data.published ?? false,
-        category: (data.category ?? "").toLowerCase(),
+        category: categories[0], // primeira categoria é a principal
+        categories: categories,
         tags: data.tags ?? [],
         reference: data.reference ?? [],
         testament: data.testament,
+        chronology: data.chronology ?? [],
+        chronologyDataset: normalizeChronologyDataset(
+          data.chronologyDataset ?? data.chronology_dataset
+        ),
         content,
         search: data.search ?? true,
       } satisfies ArticleMeta;
     });
+}
+
+export function getAllArticles(): ArticleMeta[] {
+  if (!fs.existsSync(CONTENT_PATH)) {
+    console.warn(`Diretório ${CONTENT_PATH} não encontrado`);
+    return [];
+  }
+
+  const allArticles: ArticleMeta[] = [];
+  const categories = fs.readdirSync(CONTENT_PATH, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name);
+
+  categories.forEach((category) => {
+    const categoryPath = path.join(CONTENT_PATH, category);
+    const articles = readArticlesFromDirectory(categoryPath, category);
+    allArticles.push(...articles);
+  });
+
+  return allArticles;
 }
 
 export function getArticlesByCategory(category?: string, limit?: number ): ArticleMeta[] {
@@ -63,9 +117,14 @@ export function getArticlesByCategory(category?: string, limit?: number ): Artic
   
   let filteredArticles = allArticles.filter(article => article.published);
   
+  // Filtrar apenas artigos com data igual ou anterior ao dia atual
+  const today = new Date().toISOString().slice(0, 10);
+  filteredArticles = filteredArticles.filter(article => article.date && article.date <= today);
+  
   if (category) {
+    const categoryLower = category.toLowerCase();
     filteredArticles = filteredArticles.filter(
-      (article) => article.category === category.toLowerCase()
+      (article) => article.categories?.includes(categoryLower) || article.category === categoryLower
     );
   }
 
@@ -90,12 +149,15 @@ export function getArticleCategoriesWithCount(): { category: string; count: numb
   const categoryCounts: Record<string, number> = {};
 
   articles.forEach((article) => {
-    const category = article.category;
-    if (categoryCounts[category]) {
-      categoryCounts[category]++;
-    } else {
-      categoryCounts[category] = 1;
-    }
+    // Contar em todas as categorias do artigo
+    const cats = article.categories || [article.category];
+    cats.forEach((cat) => {
+      if (categoryCounts[cat]) {
+        categoryCounts[cat]++;
+      } else {
+        categoryCounts[cat] = 1;
+      }
+    });
   });
 
   return Object.keys(categoryCounts).map((category) => ({

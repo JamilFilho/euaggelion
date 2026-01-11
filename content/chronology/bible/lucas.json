@@ -1,0 +1,101 @@
+{
+  "name": "Contexto Histórico de Lucas",
+  "description": "Panorama histórico narrado por Lucas, do nascimento de Jesus à ascensão, com marcos políticos e religiosos na Judeia e Galileia.",
+  "period": {
+    "start": -6,
+    "end": 30
+  },
+  "events": [
+    {
+      "yearStart": -6,
+      "yearEnd": -4,
+      "event": "Nascimento de Jesus no reinado de Herodes, o Grande",
+      "description": "Jesus nasce em Belém enquanto Herodes governa; anúncio angelical e pastores situam o evento em contexto de domínio herodiano e expectativa messiânica.",
+      "reference": ["Lucas 2.1-20", "Josefo, Antiguidades 17.191-199"]
+    },
+    {
+      "yearStart": -4,
+      "yearEnd": -4,
+      "event": "Morte de Herodes e divisão do reino",
+      "description": "Herodes morre e o território é repartido; Nazaré fica sob Herodes Antipas, onde Jesus cresce.",
+      "reference": ["Lucas 2.39-40", "Josefo, Antiguidades 17.317-320"]
+    },
+    {
+      "yearStart": 6,
+      "yearEnd": 6,
+      "event": "Censo de Quirino na Judeia",
+      "description": "Censo sob Quirino integra Judeia como província; Lucas o menciona ao situar o recenseamento ligado ao nascimento de Jesus.",
+      "reference": ["Lucas 2.1-2", "Josefo, Antiguidades 18.1-4"]
+    },
+    {
+      "yearStart": 6,
+      "yearEnd": 14,
+      "event": "Prefeitos romanos iniciais e sumo-sacerdócio de Anás",
+      "description": "Série de prefeitos e o longo peso político de Anás (6-15) moldam o ambiente sacerdotal que mais tarde interrogará Jesus e os apóstolos.",
+      "reference": ["Lucas 3.1-2", "Josefo, Antiguidades 18.26-35"]
+    },
+    {
+      "yearStart": 14,
+      "yearEnd": 26,
+      "event": "Reinado de Tibério e vigilância imperial",
+      "description": "Tibério sucede Augusto; estabilidade administrativa sustenta cobrança de impostos e nomeação de Pilatos em 26.",
+      "reference": ["Lucas 3.1", "Tácito, Anais 1.3"]
+    },
+    {
+      "yearStart": 19,
+      "yearEnd": 20,
+      "event": "Fundação de Tiberíades por Herodes Antipas",
+      "description": "Antipas ergue Tiberíades às margens do lago; urbanização helenista e questões de pureza criam tensões nas aldeias galileias.",
+      "reference": ["Josefo, Antiguidades 18.36-38"]
+    },
+    {
+      "yearStart": 26,
+      "yearEnd": 26,
+      "event": "Pôncio Pilatos assume a Judeia",
+      "description": "Pilatos traz confrontos com líderes judaicos; mais tarde presidirá o julgamento de Jesus.",
+      "reference": ["Josefo, Antiguidades 18.55", "Filão, Legatio ad Gaium"]
+    },
+    {
+      "yearStart": 27,
+      "yearEnd": 29,
+      "event": "Ministério de João Batista e seu martírio",
+      "description": "João prega arrependimento no Jordão, batiza Jesus e é preso/executado por Antipas, prenunciando rejeição profética.",
+      "reference": ["Lucas 3.1-22", "Josefo, Antiguidades 18.116-119"]
+    },
+    {
+      "yearStart": 27,
+      "yearEnd": 30,
+      "event": "Presença de facções judaicas e conflitos de autoridade",
+      "description": "Fariseus, saduceus, essênios e zelotas disputam liderança religiosa e política; confrontos com Jesus sobre Lei, Templo e tributo emergem desse quadro.",
+      "reference": ["Josefo, Guerra 2.119-166", "Antiguidades 18.11-23"]
+    },
+    {
+      "yearStart": 29,
+      "yearEnd": 30,
+      "event": "Tributação e debates sobre César e o Templo",
+      "description": "Questões sobre o denário e o didracma refletem tensão entre submissão imperial e fidelidade a Deus, pano de fundo das controvérsias em Jerusalém.",
+      "reference": ["Lucas 20.20-26", "Mateus 17.24-27"]
+    },
+    {
+      "yearStart": 27,
+      "yearEnd": 30,
+      "event": "Reforma do Templo herodiano e centralidade do culto",
+      "description": "Obras do Templo seguem em andamento; peregrinações festivas aumentam fricções entre autoridades do Templo e pregadores populares.",
+      "reference": ["João 2.20", "Josefo, Antiguidades 15.380-425"]
+    },
+    {
+      "yearStart": 30,
+      "yearEnd": 30,
+      "event": "Crucificação na Páscoa em Jerusalém",
+      "description": "Jesus é julgado por Pilatos e crucificado sob acusação de pretensão real; inscrição ‘rei dos judeus’ vincula o caso à ordem imperial.",
+      "reference": ["Lucas 23", "Tacito, Anais 15.44 (menção a Cristo)"]
+    },
+    {
+      "yearStart": 30,
+      "yearEnd": 30,
+      "event": "Ressurreição, aparições e ascensão",
+      "description": "Relatos de tumba vazia, aparições e instruções aos discípulos culminam na ascensão em Betânia, abrindo o tempo da missão e do Espírito (Atos).",
+      "reference": ["Lucas 24.1-53", "Atos 1.1-11"]
+    }
+  ]
+}

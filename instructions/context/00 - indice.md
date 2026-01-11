@@ -16,6 +16,22 @@ Este documento serve como um índice para a documentação do projeto, facilitan
 - [Hooks e Utilitários](10%20-%20hooks-utilitarios.md)
 - [Scripts e Automação](11%20-%20scripts-automacao.md)
 - [Criação de Memórias](12%20-%20criacao-memorias.md)
+- [Logger Utilitário](22%20-%20logger-utilitario.md)
+- [Sistema de Filtragem de Conteúdo](23%20-%20sistema-filtragem-conteudo.md)
+- [Sistema de Cronologia Bíblica](24%20-%20sistema-cronologia-biblica.md)
+- [Sistema de Cronologia MDX](25%20-%20sistema-cronologia-mdx.md)
+
+## Otimizações de SEO (2026)
+
+- [Resumo Rápido de SEO](13%20-%20seo-resumo-rapido.md)
+- [Análise e Diagnóstico de SEO](14%20-%20seo-analise-diagnostico.md)
+- [Implementação Técnica de SEO](15%20-%20seo-implementacao-tecnica.md)
+- [Guia de Integração de SEO](16%20-%20seo-guia-integracao.md)
+- [Checklist Prático de SEO](17%20-%20seo-checklist-pratico.md)
+- [Perguntas Frequentes sobre SEO](18%20-%20seo-perguntas-frequentes.md)
+- [Leiame Rápido de SEO](19%20-%20seo-leiame-rapido.md)
+- [Sumário de Implementações de SEO](20%20-%20seo-sumario-implementacoes.md)
+- [Síntese de Melhorias de SEO](21%20-%20seo-melhorias-sintese.md)
 
 ## Histórico de Implementações (Memories)
 
@@ -23,6 +39,7 @@ As memories documentam as implementações, correções e melhorias realizadas n
 
 - **2026-01-02T00-00-00.md**: Integração do sistema de notificações WebPush com TinaCMS
 - **2026-01-02T12-00-00.md**: Correções no parsing de referências bíblicas (issue #9) e suporte para múltiplos capítulos com links separados
+- **2026-01-06T00-00-00-cronologia-mdx-parser.md**: Implementação do sistema de cronologia MDX com plugins Remark/Rehype
 
 ## Descrição dos Arquivos
 
@@ -36,7 +53,23 @@ As memories documentam as implementações, correções e melhorias realizadas n
 - **estilos-ui.md**: Detalha os estilos e componentes de UI.
 - **conteudo-mdx.md**: Explica o uso de MDX para conteúdo.
 - **hooks-utilitarios.md**: Documenta os hooks e utilitários personalizados.
-- **scripts-automacao.md**: Descreve scripts e automações utilizadas no projeto.
+- **criacao-memorias.md**: Guia para criação de arquivos de memória (memories).
+- **logger-utilitario.md**: Descreve o sistema de logging e sua utilização.
+- **sistema-filtragem-conteudo.md**: Documenta o sistema de filtragem de artigos por data e autor.
+- **sistema-cronologia-biblica.md**: Documenta o sistema de cronologia baseado em datasets JSON.
+- **sistema-cronologia-mdx.md**: Documenta o sistema de cronologia inline em arquivos MDX com blocos YAML.
+
+## Descrição dos Arquivos de SEO
+
+- **seo-resumo-rapido.md**: Resumo executivo rápido das melhorias de SEO implementadas.
+- **seo-analise-diagnostico.md**: Análise detalhada do diagnóstico de SEO do projeto.
+- **seo-implementacao-tecnica.md**: Guia técnico com detalhes de como cada melhoria foi implementada.
+- **seo-guia-integracao.md**: Passo-a-passo prático para integração dos componentes de SEO.
+- **seo-checklist-pratico.md**: Checklist prático para validação e implementação.
+- **seo-perguntas-frequentes.md**: 40+ perguntas frequentes e respostas sobre SEO.
+- **seo-leiame-rapido.md**: Guia rápido de como usar componentes e utilidades de SEO.
+- **seo-sumario-implementacoes.md**: Sumário completo de todas as implementações realizadas.
+- **seo-melhorias-sintese.md**: Síntese executiva das 10 melhorias principais implementadas.
 
 ## Como Usar
 

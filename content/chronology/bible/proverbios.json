@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Provérbios",
+  "description": "Coleção de ditos sapienciais atribuídos a Salomão e sábios posteriores.",
+  "period": {"start": -970, "end": -500},
+  "events": [
+    {"yearStart": -970, "yearEnd": -930, "event": "Provérbios salomônicos iniciais", "description": "Ditados de corte refletem vida administrativa e familiar no reino unido.", "reference": ["Provérbios 10-22"]},
+    {"yearStart": -700, "yearEnd": -600, "event": "Coletas de Ezequias", "description": "Homens de Ezequias transcrevem e preservam ditos salomônicos.", "reference": ["Provérbios 25.1"]},
+    {"yearStart": -600, "yearEnd": -500, "event": "Seções sapienciais tardias", "description": "Palavras de Agur e Lemuel indicam origem diversa e uso pedagógico prolongado.", "reference": ["Provérbios 30-31"]}
+  ]
+}

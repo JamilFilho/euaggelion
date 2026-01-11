@@ -195,3 +195,9 @@ dist
 node_modules
 .env
 certificates
+
+/lib/__tests__
+node_modules
+.env
+public/search-index.json
+package-lock.json

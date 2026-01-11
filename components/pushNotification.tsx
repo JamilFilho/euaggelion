@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { subscribeUser, unsubscribeUser } from '@/app/actions'
+import { clientLogger } from '@/lib/logger'
 import { BellOff, BellPlus } from 'lucide-react'
 
 function urlBase64ToUint8Array(base64String: string) {
@@ -27,7 +28,7 @@ export function PushNotificationManager() {
       setIsSupported(true)
       registerServiceWorker()
     } else {
-      console.log('🚫 Push notifications not supported in this browser')
+      clientLogger.log('🚫 Push notifications not supported in this browser')
     }
   }, [])
 
@@ -44,11 +45,11 @@ export function PushNotificationManager() {
       
       // Se existir subscription, verificar se está salva no servidor
       if (sub) {
-        console.log('🔄 Subscription existente encontrada, verificando no servidor')
+        clientLogger.log('🔄 Subscription existente encontrada, verificando no servidor')
         // Você poderia adicionar uma verificação no servidor aqui se necessário
       }
     } catch (error) {
-      console.error('Erro ao registrar service worker:', error)
+      clientLogger.error('❌ Erro ao registrar service worker:', error)
     }
   }
 
@@ -74,15 +75,15 @@ export function PushNotificationManager() {
       
       if (result.success) {
         setSubscription(sub)
-        console.log('✅ Inscrição realizada com sucesso')
+        clientLogger.log('✅ Inscrição realizada com sucesso')
       } else {
-        console.error('Falha ao salvar subscription no servidor')
+        clientLogger.error('❌ Falha ao salvar subscription no servidor')
         await sub.unsubscribe()
         setSubscription(null)
         throw new Error('Falha ao salvar inscrição')
       }
     } catch (error) {
-      console.error('Erro ao se inscrever:', error)
+      clientLogger.error('❌ Erro ao se inscrever:', error)
       // Forçar atualização do estado para garantir consistência
       const registration = await navigator.serviceWorker.ready
       const currentSub = await registration.pushManager.getSubscription()
@@ -103,14 +104,14 @@ export function PushNotificationManager() {
           // Depois desinscrever no browser
           await subscription.unsubscribe()
           setSubscription(null)
-          console.log('✅ Desinscrição realizada com sucesso')
+          clientLogger.log('✅ Desinscrição realizada com sucesso')
         } else {
-          console.error('Falha ao remover subscription no servidor')
+          clientLogger.error('❌ Falha ao remover subscription no servidor')
           throw new Error('Falha ao remover inscrição')
         }
       }
     } catch (error) {
-      console.error('Erro ao desinscrever:', error)
+      clientLogger.error('❌ Erro ao desinscrever:', error)
       // Forçar atualização do estado para garantir consistência
       const registration = await navigator.serviceWorker.ready
       const currentSub = await registration.pushManager.getSubscription()

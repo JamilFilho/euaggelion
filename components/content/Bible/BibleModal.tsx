@@ -7,6 +7,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useEffect, useState } from "react";
+import { clientLogger } from "@/lib/logger";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useBibleVersion } from "@/lib/context/BibleVersionContext";
 
 interface BibleModalProps {
@@ -79,7 +81,7 @@ export default function BibleModal({ isOpen, onClose, reference }: BibleModalPro
       
       setContent(results);
     } catch (error) {
-      console.error("Erro ao carregar texto bíblico:", error);
+      clientLogger.error("❌ Erro ao carregar texto bíblico:", error);
     } finally {
       setLoading(false);
     }
@@ -87,49 +89,53 @@ export default function BibleModal({ isOpen, onClose, reference }: BibleModalPro
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      {isOpen && (
-        <div className="fixed inset-0 bg-black/80 z-[940]" onClick={onClose} />
-      )}
-      <DialogContent className="z-[950] w-[85%] mx-auto top-[50%] -translate-y-[50%] h-fit max-h-[90%] p-10 overflow-y-auto bg-background rounded-md">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-accent">
-              {reference?.fullMatch}
-            </DialogTitle>
-            <p className="text-sm text-muted-foreground uppercase tracking-widest">
-              {currentVersion?.toUpperCase()}
-            </p>
-          </DialogHeader>
+      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-background border-ring/20 fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] shadow-2xl">
+        <DialogHeader className="text-left">
+          <DialogTitle className="text-2xl font-bold text-accent">
+            {reference?.fullMatch}
+          </DialogTitle>
+          <p className="text-sm text-muted-foreground uppercase tracking-widest">
+            {currentVersion?.toUpperCase()}
+          </p>
+        </DialogHeader>
 
-          <div className="mt-12 space-y-6">
-            {loading ? (
-              <div className="flex justify-center py-10">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent"></div>
+        <div className="mt-6 space-y-6">
+          {loading ? (
+            <div className="space-y-4 px-4">
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-5/6" />
+              <Skeleton className="h-4 w-4/6" />
+              <div className="mt-6 space-y-3">
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-3/4" />
               </div>
-            ) : (
-              content.map((c, idx) => (
-                <div key={idx} className="space-y-2">
-                  {content.length > 1 && (
-                    <h3 className="text-lg font-semibold border-b border-ring/10 pb-1">
-                      Capítulo {c.chapter}
-                    </h3>
-                  )}
-                  <div className="space-y-4">
-                    {c.verses.map((v) => (
-                      <p key={v.num} className="leading-relaxed">
-                        <sup className="text-accent font-bold mr-2">{v.num}</sup>
-                        {v.text}
-                      </p>
-                    ))}
-                  </div>
+            </div>
+          ) : (
+            content.map((c, idx) => (
+              <div key={idx} className="space-y-2 px-4">
+                {content.length > 1 && (
+                  <h3 className="border-b border-ring/10 pb-1 text-lg font-semibold">
+                    Capítulo {c.chapter}
+                  </h3>
+                )}
+                <div className="space-y-4">
+                  {c.verses.map((v) => (
+                    <p key={v.num} className="leading-relaxed">
+                      <sup className="mr-2 font-bold text-accent">{v.num}</sup>
+                      {v.text}
+                    </p>
+                  ))}
                 </div>
-              ))
-            )}
-            {!loading && content.every(c => c.verses.length === 0) && (
-              <p className="text-center text-muted-foreground py-10">
-                Texto não encontrado para esta versão.
-              </p>
-            )}
-          </div>
+              </div>
+            ))
+          )}
+          {!loading && content.every((c) => c.verses.length === 0) && (
+            <p className="py-10 text-center text-muted-foreground">
+              Texto não encontrado para esta versão.
+            </p>
+          )}
+        </div>
       </DialogContent>
     </Dialog>
   );

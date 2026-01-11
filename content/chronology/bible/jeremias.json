@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Jeremias",
+  "description": "Profecias em Judá às vésperas da queda de Jerusalém e no exílio inicial.",
+  "period": {"start": -627, "end": -580},
+  "events": [
+    {"yearStart": -627, "yearEnd": -609, "event": "Reformas de Josias e chamada de Jeremias", "description": "Profeta denuncia idolatria apesar da reforma e anuncia juízo.", "reference": ["Jeremias 1-6", "2 Reis 22-23"]},
+    {"yearStart": -605, "yearEnd": -597, "event": "Primeiras deportações e conflito com falsos profetas", "description": "Jeremias envia cartas ao exílio e alerta sobre submissão a Babilônia.", "reference": ["Jeremias 25-29"]},
+    {"yearStart": -589, "yearEnd": -586, "event": "Cerco e queda de Jerusalém", "description": "Profeta testemunha a destruição, é levado ao Egito por remanescentes.", "reference": ["Jeremias 39-44"]}
+  ]
+}

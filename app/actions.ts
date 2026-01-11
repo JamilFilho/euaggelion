@@ -1,6 +1,7 @@
 'use server'
 
 import webpush from 'web-push'
+import { logger } from '@/lib/logger'
 import { 
   saveSubscription, 
   removeSubscription, 
@@ -36,6 +37,30 @@ function arrayBufferToBase64(buffer: ArrayBuffer): string {
 }
 
 /**
+ * Envia notificação de confirmação de inscrição
+ */
+async function sendConfirmationNotification(subscription: PushSubscriptionData) {
+  try {
+    await webpush.sendNotification(
+      subscription as any,
+      JSON.stringify({
+        title: 'Inscrição Confirmada',
+        body: 'Você agora receberá notificações sobre novos artigos e atualizações do Euaggelion!',
+        icon: '/pwa/icon-192x192.png',
+        badge: '/pwa/badge-72x72.png',
+        tag: 'confirmation-notification',
+      })
+    )
+    
+    await updateLastNotified(subscription.endpoint)
+    logger.log('✅ Notificação de confirmação enviada:', subscription.endpoint.substring(0, 50))
+  } catch (error) {
+    logger.error('⚠️ Falha ao enviar notificação de confirmação:', error)
+    // Não falhar a inscrição se a notificação de confirmação não for enviada
+  }
+}
+
+/**
  * Inscreve um usuário para receber notificações push
  */
 export async function subscribeUser(sub: any) {
@@ -55,11 +80,16 @@ export async function subscribeUser(sub: any) {
     
     await saveSubscription(subscriptionData)
     
-    console.log('✅ Subscription salva com sucesso:', sub.endpoint.substring(0, 50))
+    logger.log('✅ Subscription salva com sucesso:', sub.endpoint.substring(0, 50))
+    
+    // Enviar notificação de confirmação de forma assíncrona
+    sendConfirmationNotification(subscriptionData).catch(error => {
+      logger.error('❌ Erro ao enviar confirmação:', error)
+    })
     
     return { success: true }
   } catch (error) {
-    console.error('❌ Erro ao salvar subscription:', error)
+    logger.error('❌ Erro ao salvar subscription:', error)
     return { success: false, error: 'Falha ao salvar inscrição' }
   }
 }
@@ -71,11 +101,11 @@ export async function unsubscribeUser(endpoint: string) {
   try {
     await removeSubscription(endpoint)
     
-    console.log('✅ Subscription removida:', endpoint.substring(0, 50))
+    logger.log('✅ Subscription removida:', endpoint.substring(0, 50))
     
     return { success: true }
   } catch (error) {
-    console.error('❌ Erro ao remover subscription:', error)
+    logger.error('❌ Erro ao remover subscription:', error)
     return { success: false, error: 'Falha ao remover inscrição' }
   }
 }
@@ -115,7 +145,7 @@ export async function sendNotification(message: string, endpoint?: string) {
     
     return { success: true }
   } catch (error) {
-    console.error('❌ Erro ao enviar notificação push:', error)
+    logger.error('❌ Erro ao enviar notificação push:', error)
     return { success: false, error: 'Falha ao enviar notificação' }
   }
 }
@@ -164,7 +194,7 @@ export async function sendNotificationToAll(
           return { success: false, removed: true, endpoint: subscription.endpoint }
         }
         
-        console.error(`Falha ao enviar para ${subscription.endpoint.substring(0, 50)}:`, error)
+        logger.error(`❌ Falha ao enviar para ${subscription.endpoint.substring(0, 50)}:`, error)
         return { success: false, removed: false, endpoint: subscription.endpoint }
       }
     })
@@ -185,7 +215,7 @@ export async function sendNotificationToAll(
     }
   })
   
-  console.log(`📊 Notificações enviadas: ${sent} | Falharam: ${failed} | Removidas: ${removed}`)
+  logger.log(`📊 Notificações enviadas: ${sent} | Falharam: ${failed} | Removidas: ${removed}`)
   
   return {
     success: sent > 0,

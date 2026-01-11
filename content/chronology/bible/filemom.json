@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de Filemom",
+  "description": "Panorama da carta curta a Filemom, intercedendo por Onésimo e modelando reconciliação em contexto de escravidão romana.",
+  "period": {
+    "start": 60,
+    "end": 62
+  },
+  "events": [
+    {
+      "yearStart": 60,
+      "yearEnd": 62,
+      "event": "Prisão de Paulo e encontro com Onésimo",
+      "description": "Onésimo, escravo de Filemom, encontra Paulo preso; converte-se e é enviado de volta como irmão amado.",
+      "reference": ["Filemom 1.9-16"]
+    },
+    {
+      "yearStart": 60,
+      "yearEnd": 62,
+      "event": "Rede de correspondência com Colossos",
+      "description": "Carta via Tíquico e Onésimo acompanha ou segue junto de Colossenses, indicando coordenação pastoral.",
+      "reference": ["Colossenses 4.7-9"]
+    },
+    {
+      "yearStart": 60,
+      "yearEnd": 62,
+      "event": "Escravidão doméstica no império",
+      "description": "Estrutura social romana permite cartas pessoais negociarem misericórdia dentro do direito de propriedade, sem romper de imediato o sistema.",
+      "reference": ["Contexto do direito romano privado"]
+    }
+  ]
+}

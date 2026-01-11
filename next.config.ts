@@ -10,7 +10,17 @@ const nextConfig: NextConfig = {
 
   images: {
     unoptimized: true,
+    // Habilitar otimização remota se necessário
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
+
+  // Configurações de performance
+  productionBrowserSourceMaps: false,
 
   async rewrites() {
     return [
@@ -66,6 +76,15 @@ const nextConfig: NextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
+          },
+          // Headers para SEO
+          {
+            key: 'Vary',
+            value: 'Accept-Encoding, Accept',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
           },
         ],
       },

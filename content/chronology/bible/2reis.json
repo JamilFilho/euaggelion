@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de 2 Reis",
+  "description": "História dos reinos divididos até as quedas de Samaria e Jerusalém.",
+  "period": {"start": -850, "end": -586},
+  "events": [
+    {"yearStart": -850, "yearEnd": -790, "event": "Ministério de Eliseu e conflitos siro-efraimitas", "description": "Israel e Judá enfrentam Arã-Damasco; Eliseu intervém em crises militares e sociais.", "reference": ["2 Reis 6-8"]},
+    {"yearStart": -722, "yearEnd": -722, "event": "Queda de Samaria para a Assíria", "description": "Reino do norte é conquistado; elites são deportadas e povos são reassentados.", "reference": ["2 Reis 17"]},
+    {"yearStart": -701, "yearEnd": -586, "event": "Crises de Judá até a queda de Jerusalém", "description": "Reformas de Ezequias e Josias não evitam invasões assírias e depois babilônicas; Jerusalém cai em -586.", "reference": ["2 Reis 18-25"]}
+  ]
+}

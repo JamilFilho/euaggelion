@@ -1,0 +1,10 @@
+{
+  "name": "Contexto Histórico de Cantares",
+  "description": "Canções de amor atribuídas a Salomão, refletindo poesia nupcial do antigo Oriente.",
+  "period": {"start": -970, "end": -930},
+  "events": [
+    {"yearStart": -970, "yearEnd": -950, "event": "Composição de cânticos de corte", "description": "Imagética rural e luxuosa sugere ambiente de corte e festividades.", "reference": ["Cantares 1-4"]},
+    {"yearStart": -950, "yearEnd": -940, "event": "Processões e celebrações nupciais", "description": "Referência a liteiras, guardas e coroações evocam cerimônias reais.", "reference": ["Cantares 3.6-11"]},
+    {"yearStart": -940, "yearEnd": -930, "event": "Circulação de poesia amorosa em Israel", "description": "Coleção preserva diálogo de noiva e noivo como expressão de fidelidade e desejo.", "reference": ["Cantares 5-8"]}
+  ]
+}

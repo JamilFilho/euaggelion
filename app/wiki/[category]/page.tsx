@@ -3,6 +3,8 @@ import { getAllWikiCategory, getWikiCategories } from "@/lib/getWiki";
 import { CATEGORIES } from "@/lib/categories";
 import { Page } from "@/components/content/Page";
 import { Feed } from '@/components/content/Feed';
+import { CollectionPageSchema } from "@/lib/schema";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 
 interface Params {
   category: string;
@@ -35,16 +37,33 @@ export async function generateMetadata({
   return {
     title: `${categoryName} | Wiki | Euaggelion`,
     description: `${categoryDescription}. ${articleCount} ${articleCount === 1 ? 'conteúdo disponível' : 'conteúdos disponíveis'}.`,
+    keywords: [categoryName, "wiki", "teologia", "cristianismo"],
     openGraph: {
       title: `${categoryName} | Wiki | Euaggelion`,
       description: categoryDescription,
       type: 'website',
       url: `https://euaggelion.com.br/wiki/${category}`,
+      siteName: "Euaggelion",
+      locale: "pt_BR",
+      images: [
+        {
+          url: "https://euaggelion.com.br/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: categoryName,
+        },
+      ],
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title: `${categoryName} | Wiki | Euaggelion`,
       description: categoryDescription,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
     },
     alternates: {
       canonical: `https://euaggelion.com.br/wiki/${category}`,
@@ -59,10 +78,40 @@ interface WikiCategoryPageProps {
 export default async function WikiCategoryPage({ params }: WikiCategoryPageProps) {
     const { category } = await params;
     const categoryMeta = CATEGORIES[category] ?? { name: category };
-    const articlesInCategory = getAllWikiCategory(category).map(article => ({...article}));
+    const articlesInCategory = getAllWikiCategory(category).map(article => ({
+      ...article,
+      isWiki: true, // Marca como wiki para o FeedLink construir a URL corretamente
+    }));
+    
+    const categoryName = typeof categoryMeta === 'string' 
+      ? categoryMeta 
+      : categoryMeta.name;
+    
+    const categoryDescription = typeof categoryMeta === 'object' && categoryMeta.description
+      ? categoryMeta.description
+      : `Explore artigos sobre ${categoryName}`;
   
   return(
-        <Page.Root>
+        <>
+          {/* Schema estruturado */}
+          <CollectionPageSchema
+            name={categoryName}
+            description={categoryDescription}
+            url={`https://euaggelion.com.br/wiki/${category}`}
+            itemCount={articlesInCategory.length}
+          />
+          
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Wiki", href: "/wiki" },
+              { label: categoryName, href: `/wiki/${category}` },
+            ]}
+            sticky={true}
+            className=""
+          />
+          
+          <Page.Root>
             <Page.Header variant="wiki">
                 <Page.Title content={categoryMeta.name} />
                 {categoryMeta.description && (
@@ -78,5 +127,6 @@ export default async function WikiCategoryPage({ params }: WikiCategoryPageProps
               </Feed.Root>
             </Page.Content> 
         </Page.Root>
+        </>
   )
 }

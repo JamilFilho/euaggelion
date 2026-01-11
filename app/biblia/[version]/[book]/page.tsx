@@ -1,8 +1,13 @@
+import fs from "fs";
+import path from "path";
 import { getBibleBook, getBibleVersion } from "@/lib/getBible";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { Bible } from "@/components/content/Bible";
+import Breadcrumb from "@/components/ui/breadcrumb";
+import { Chronology } from "@/components/content/Chronology";
+import { ChronologyProvider } from "@/lib/context/ChronologyContext";
 
 interface Props {
   params: Promise<{
@@ -22,13 +27,42 @@ export async function generateMetadata({ params }: Props) {
     };
   }
 
+  const pageUrl = `https://euaggelion.com.br/biblia/${versionId}/${bookSlug}`;
+
   return {
     title: `${book.name} | ${version.name} | Euaggelion`,
     description: book.description,
+    keywords: [book.name, version.name, "bíblia", "livro da bíblia"],
     openGraph: {
       title: `${book.name} | ${version.name} | Euaggelion`,
       description: book.description,
-      url: `https://euaggelion.com.br/biblia/${versionId}/${bookSlug}`,
+      type: 'website',
+      url: pageUrl,
+      siteName: "Euaggelion",
+      locale: "pt_BR",
+      images: [
+        {
+          url: "https://euaggelion.com.br/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: `${book.name} - ${version.name}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${book.name} | ${version.name} | Euaggelion`,
+      description: book.description,
+      images: ["https://euaggelion.com.br/og-image.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+    },
+    alternates: {
+      canonical: pageUrl,
     },
   };
 }
@@ -39,12 +73,26 @@ export default async function BibleBookPage({ params }: Props) {
   const version = getBibleVersion(versionId);
   const book = getBibleBook(versionId, bookSlug);
 
+  const chronologyDatasetSlug = bookSlug;
+  const hasChronologyDataset = fs.existsSync(
+    path.join(process.cwd(), "content", "chronology", "bible", `${chronologyDatasetSlug}.json`)
+  );
+
   if (!version || !book) {
     notFound();
   }
 
   return (
     <Bible.Root>
+      <Breadcrumb
+        sticky={false}
+        className=""
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Bíblia", href: "/biblia" },
+          { label: book.name, href: `/biblia/${versionId}/${bookSlug}` },
+        ]}
+      />
       <Bible.Header>
         <Bible.Group>
           <Bible.Title content={book.name} />
@@ -66,7 +114,19 @@ export default async function BibleBookPage({ params }: Props) {
         </div>
       </Bible.Header>
 
-      <Link className="w-full flex flex-row justify-between items-center px-10 py-4 border-b border-ring/20 bg-black/20 hover:bg-black/30 disabled:bg-black/10 disabled:cursor-not-allowed text-foreground transition-all ease-in-out hover:pr-8 font-semibold" href={`/wiki/biblia/${bookSlug}`}>
+      {hasChronologyDataset && (
+        <div className="h-fit mt-12 -mb-10">
+          <ChronologyProvider 
+            datasets={[chronologyDatasetSlug]}
+          >
+            <Chronology.Root>
+              <Chronology.Timeline />
+            </Chronology.Root>
+          </ChronologyProvider>
+        </div>
+      )}
+
+      <Link className="w-full flex flex-row justify-between items-center px-10 py-4 border-t border-ring/20 bg-black/20 hover:bg-black/30 disabled:bg-black/10 disabled:cursor-not-allowed text-foreground transition-all ease-in-out hover:pr-8 font-semibold" href={`/wiki/biblia/${bookSlug}`}>
         Estudar livro
         <ArrowRight className="size-4"/>
       </Link>

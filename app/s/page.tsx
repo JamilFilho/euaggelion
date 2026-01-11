@@ -3,20 +3,39 @@ import { CATEGORIES } from "@/lib/categories";
 import { Page } from "@/components/content/Page";
 import { Metadata } from "next";
 import { Feed } from "@/components/content/Feed";
+import { CollectionPageSchema } from "@/lib/schema";
+import Breadcrumb from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
-    title: "Seções | Euaggelion",
-    description: "Navegue por nossas seções temáticas e edifique sua fé com nossos conteúdos.",
+    title: "Seções de Conteúdo | Materiais Cristãos | Euaggelion",
+    description: "Navegue por nossas seções temáticas de conteúdo cristão e edifique sua fé com artigos, estudos bíblicos e devocionais.",
+    keywords: ["categorias", "seções", "artigos", "estudos bíblicos", "devocionais"],
     openGraph: {
-        title: "Seções | Euaggelion",
-        description: "Navegue por nossas seções temáticas e edifique sua fé com nossos conteúdos.",
+        title: "Seções de Conteúdo | Materiais Cristãos | Euaggelion",
+        description: "Navegue por nossas seções temáticas de conteúdo cristão e edifique sua fé com artigos, estudos bíblicos e devocionais.",
         url: "https://euaggelion.com.br/s/",
         type: 'website',
+        siteName: "Euaggelion",
+        locale: "pt_BR",
+        images: [
+            {
+                url: "https://euaggelion.com.br/og-image.png",
+                width: 1200,
+                height: 630,
+                alt: "Seções - Euaggelion",
+            },
+        ],
     },
     twitter: {
-        card: 'summary',
+        card: 'summary_large_image',
         title: "Seções | Euaggelion",
-        description: "Navegue por nossas seções temáticas e edifique sua fé com nossos conteúdos.",
+        description: "Navegue por nossas seções temáticas de conteúdo cristão",
+    },
+    robots: {
+        index: true,
+        follow: true,
+        "max-snippet": -1,
+        "max-image-preview": "large",
     },
     alternates: {
         canonical: "https://euaggelion.com.br/s/",
@@ -38,6 +57,21 @@ export default function CategoriesPage() {
     const category = "articles";
     
     return(
+        <>
+        <CollectionPageSchema
+            name="Seções de Conteúdo | Materiais Cristãos | Euaggelion"
+            description="Navegue por nossas seções temáticas de conteúdo cristão e edifique sua fé com artigos, estudos bíblicos e devocionais."
+            url="https://euaggelion.com.br/s/"
+            itemCount={categories.length}
+        />
+        <Breadcrumb
+            items={[
+            { label: "Home", href: "/" },
+            { label: "Seções", href: "/s" },
+            ]}
+            sticky={true}
+            topOffset={0}
+        />
         <Page.Root>
             <Page.Header>
                 <Page.Title content="Seções" />
@@ -48,10 +82,10 @@ export default function CategoriesPage() {
                     <Feed.Group>
                         <Feed.Articles category={category} />
                     </Feed.Group>
-        
                     <Feed.Pagination />
                 </Feed.Root>
             </Page.Content>
         </Page.Root>
+        </>
     )
 }

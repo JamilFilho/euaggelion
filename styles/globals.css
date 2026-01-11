@@ -32,6 +32,18 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --sb-track-color:var(--secondary);
+    --sb-thumb-color: #7b7b7b;
+    --sb-size: 6px;
+  }
+
+  html {
+    @apply overflow-x-hidden;
+  }
+
+  /* Permite que o portal do Select escape do overflow-x-hidden */
+  [data-radix-select-content] {
+    clip-path: none !important;
   }
 
   .article-content {
@@ -70,6 +82,10 @@
     @apply text-xl uppercase;
   }
 
+  .article-content :is(h2, h3, h4, h5, h6) {
+    @apply relative scroll-mt-24;
+  }
+
   .article-content p {
     @apply text-lg text-primary;
   }
@@ -79,7 +95,25 @@
   }
 
   .article-content a {
-    @apply text-accent underline decoration-dotted break-words font-bold;
+    @apply text-accent underline decoration-dotted underline-offset-4 break-words font-bold;
+  }
+
+  .article-content a.heading-anchor {
+    @apply absolute top-1/2 -translate-y-1/2 opacity-0 inline-flex items-center justify-center p-1 rounded text-primary no-underline decoration-transparent transition-all duration-150 ease-in-out;
+    left: -1.75rem;
+  }
+
+  .article-content :is(h2, h3, h4, h5, h6):hover a.heading-anchor,
+  .article-content :is(h2, h3, h4, h5, h6):focus-within a.heading-anchor {
+    @apply opacity-100 text-accent -translate-x-1 -translate-y-1/2;
+  }
+
+  .article-content a.heading-anchor:focus-visible {
+    @apply outline-none ring-2 ring-accent/60;
+  }
+
+  .article-content .heading-link-icon {
+    @apply block;
   }
 
   .article-content blockquote {
@@ -99,7 +133,40 @@
   }
 
   .article-content img {
-    @apply rounded my-6 w-full;
+    @apply my-6 w-full max-w-none;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+
+  .article-content > figure:first-child .image-wrapper,
+  .article-content > p:first-child figure:only-child.image-wrapper {
+    position:absolute;
+    top:0;
+    left:0;
+    margin-left: 0;
+    opacity: .5;
+    z-index:-10;
+    @apply h-[80vh] md:h-[140vh] w-full;
+  }
+
+  .article-content > figure:first-child .image-wrapper img,
+  .article-content > p:first-child figure:only-child.image-wrapper img {
+    @apply h-[70vh] md:h-[130vh] w-full;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .article-content > figure:first-child .image-wrapper::before,
+  .article-content > p:first-child figure:only-child.image-wrapper::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, hsl(var(--secondary)), transparent);
+    z-index: 1;
+    pointer-events: none;
+    @apply h-[69vh] md:h-[130vh] w-full;
   }
 
   .article-content ul,
@@ -116,7 +183,7 @@
   }
 
   .site-footer ul li a {
-    @apply text-accent underline decoration-dotted;
+    @apply text-accent underline decoration-dotted underline-offset-4;
   }
 
   .article-content table {
@@ -142,6 +209,23 @@
   /* Para tabelas em telas muito pequenas, adicione scroll horizontal */
   .article-content {
     @apply overflow-x-auto;
+  }
+
+  /* Estilos para poesia */
+  .poetry-container {
+    @apply pl-6 font-serif text-lg italic leading-relaxed;
+  }
+
+  .poetry-stanza {
+    @apply relative;
+  }
+
+  .poetry-verse {
+    @apply text-primary/90 leading-7;
+  }
+
+  .poetry-container .poetry-verse:not(:last-child) {
+    @apply mb-1;
   }
 
 }
@@ -187,11 +271,50 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground w-screen;
   }
   
   input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
     appearance: none;
   }
+}
+
+/* Marker-style highlighting for Bible verses */
+.highlight-marker {
+  display: inline;
+  background: linear-gradient(120deg, rgba(250, 204, 21, 0.5) 0%, rgba(250, 204, 21, 0.5) 100%);
+  padding: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-[#7b7b7b] rounded-[29px];
+}
+
+/* Melhorar estabilidade do breadcrumb sticky */
+.sticky-breadcrumb {
+  position: sticky !important;
+  top: 0px !important;
+  z-index: 800 !important;
+  background-color: hsl(var(--secondary)) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  will-change: transform;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+/* Evitar que mudanças no DOM afetem elementos sticky */
+.feed-container {
+  contain: layout style;
 }

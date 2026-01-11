@@ -1,0 +1,24 @@
+{
+  "name": "Contexto Histórico de 2 Samuel",
+  "description": "Reinado de Davi sobre Judá e Israel, com conquistas e crises internas.",
+  "period": {"start": -1010, "end": -970},
+  "events": [
+    {"yearStart": -1010, "yearEnd": -1003, "event": "Davi reina em Hebrom sobre Judá", "description": "Guerra civil contra a casa de Saul; Abner sustenta Isbosete, depois negocia com Davi; Joabe mata Abner, abrindo caminho para unificação.", "reference": ["2 Samuel 2-4"]},
+    {"yearStart": -1005, "yearEnd": -1003, "event": "Assassinato de Isbosete e pacto tribal", "description": "Isbosete cai e os anciãos de Israel pedem Davi como rei; bases para reino unido.", "reference": ["2 Samuel 4-5:3"]},
+    {"yearStart": -1003, "yearEnd": -998, "event": "Conquista de Jerusalém e guerras filisteias", "description": "Davi toma Sião, enfrenta filisteus no vale de Refaim, estabelece capital política.", "reference": ["2 Samuel 5"]},
+    {"yearStart": -1003, "yearEnd": -996, "event": "Arca levada a Jerusalém e promessa davídica", "description": "Arca é trazida à cidade; oráculo de Natã anuncia casa duradoura a Davi.", "reference": ["2 Samuel 6-7"]},
+    {"yearStart": -998, "yearEnd": -992, "event": "Aliança com Tiro e fortalecimento comercial", "description": "Hirão de Tiro envia madeira e artesãos; surge parceria fenícia que impulsiona construção e rotas de suprimento.", "reference": ["2 Samuel 5:11"]},
+    {"yearStart": -1000, "yearEnd": -980, "event": "Expansão fenícia e redes mediterrâneas", "description": "Tiro e Sidom ampliam portos e navegação, reforçando comércio de madeira, vinho e púrpura; provável apoio logístico às obras em Jerusalém.", "reference": ["Inscrições fenícias", "Cronista fenício tardio"]},
+    {"yearStart": -995, "yearEnd": -988, "event": "Campanhas contra moabitas, edomitas e arameus", "description": "Davi subjuga Moabe e Edom; derrota Hadadezer de Zobá e arameus de Damasco, instalando guarnições e tributo.", "reference": ["2 Samuel 8"]},
+    {"yearStart": -992, "yearEnd": -988, "event": "Guerra com Amom e coalizão arameia", "description": "Embargo com Hanum de Amom leva a alianças arameias; vitória israelita em Helã.", "reference": ["2 Samuel 10"]},
+    {"yearStart": -990, "yearEnd": -975, "event": "Consolidação arameia em Damasco e Hamate", "description": "Pequenos reinos arameus se fortalecem após derrotas iniciais, retomando influência no norte sírio e rotas para o Eufrates.", "reference": ["Fontes arameias iniciais", "2 Samuel 8:5-6"]},
+    {"yearStart": -990, "yearEnd": -985, "event": "Caso Bate-Seba e queda de Urias", "description": "Adultério e homicídio expõem abuso de poder; Natã profetiza juízo interno.", "reference": ["2 Samuel 11-12"]},
+    {"yearStart": -985, "yearEnd": -980, "event": "Revolta de Absalão", "description": "Absalão conquista apoio em Hebrom, toma Jerusalém; Davi foge e retorna após batalha em Efraim.", "reference": ["2 Samuel 15-18"]},
+    {"yearStart": -980, "yearEnd": -978, "event": "Revolta de Seba e reorganização militar", "description": "Seba tenta cisma do norte; Joabe retoma comando após eliminar Amasa.", "reference": ["2 Samuel 19-20"]},
+    {"yearStart": -978, "yearEnd": -975, "event": "Fome e reparação aos gibeonitas", "description": "Três anos de fome atribuídos à violência de Saul; acordos são feitos para cessar a calamidade.", "reference": ["2 Samuel 21"]},
+    {"yearStart": -975, "yearEnd": -972, "event": "Poemas reais e feitos de guerreiros", "description": "Cânticos de Davi e lista dos valentes consolidam memória militar e teológica do reino.", "reference": ["2 Samuel 22-23"]},
+    {"yearStart": -972, "yearEnd": -970, "event": "Censo, praga e preparação de sucessão", "description": "Censo provoca praga; altar na eira de Araúna é erguido; tensões sucessórias se avizinham (Adonias/Salomão).", "reference": ["2 Samuel 24", "1 Reis 1-2"]},
+    {"yearStart": -980, "yearEnd": -970, "event": "Quadro regional: Arameus e fenícios ganham fôlego; Egito em retração", "description": "Reinos arameus e cidades fenícias expandem comércio e influência; Egito da 21ª dinastia atua via Tanis/Bubástis com presença limitada no Levante.", "reference": ["Fontes arameias iniciais", "Inscrições fenícias", "Terceiro Período Intermediário"]},
+    {"yearStart": -1000, "yearEnd": -970, "event": "Mesopotâmia em baixa e rotas caraveleiras árabes", "description": "Assíria e Babilônia atravessam fase fraca, permitindo maior autonomia local; rotas de incenso via Arábia ganham importância para Levante e Mediterrâneo.", "reference": ["Crônicas neoassírias iniciais", "Tradicação árabe precoce"]}
+  ]
+}

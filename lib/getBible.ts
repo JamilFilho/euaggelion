@@ -1,13 +1,16 @@
 import fs from "fs";
 import path from "path";
+import type { ChronologyEvent } from "./getArticles";
 
 const BIBLE_PATH = path.join(process.cwd(), "content", "bible");
 
 export interface BibleBookMeta {
   name: string;
+  short_name: string;
   slug: string;
   abbrev: string;
   chapters: number;
+  testament?: "AT" | "NT";
   description?: string;
   author?: string;
   date?: string;
@@ -36,6 +39,8 @@ export interface BibleBookContent {
   description?: string;
   author: string;
   date: string;
+  chronology?: ChronologyEvent[];
+  chronologyDataset?: string[];
 }
 
 function readJsonFile<T>(filePath: string): T | null {
@@ -100,10 +105,14 @@ export function getBibleBook(versionId: string, bookSlug: string): BibleBookCont
   
   if (!book) return undefined;
   
+  // Sempre pegar informações do books.json
   const allBooks = getBibleBooks();
   const bookMeta = allBooks.find(b => b.slug === bookSlug);
   
   if (bookMeta) {
+    // Substituir o nome pelo do books.json
+    book.name = bookMeta.name;
+    
     if (bookMeta.description) {
       book.description = bookMeta.description;
     }

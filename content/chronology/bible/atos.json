@@ -1,0 +1,220 @@
+{
+  "name": "Contexto Histórico de Atos",
+  "description": "Panorama histórico narrado em Atos, do pós-ressurreição à prisão domiciliar de Paulo em Roma, com marcos da expansão da igreja.",
+  "period": {
+    "start": 30,
+    "end": 62
+  },
+  "events": [
+    {
+      "yearStart": 30,
+      "yearEnd": 30,
+      "event": "Ascensão de Jesus e Pentecostes em Jerusalém",
+      "description": "A comunidade recebe o Espírito e anuncia em várias línguas, inaugurando o testemunho público de Jesus ressuscitado.",
+      "reference": ["Atos 1-2"]
+    },
+    {
+      "yearStart": 31,
+      "yearEnd": 34,
+      "event": "Crescimento em Jerusalém e martírio de Estêvão",
+      "description": "Sinais apostólicos atraem adesão e oposição; Estêvão é apedrejado, gerando dispersão que leva o evangelho à Judeia e Samaria.",
+      "reference": ["Atos 4-8"]
+    },
+    {
+      "yearStart": 34,
+      "yearEnd": 36,
+      "event": "Conversão de Saulo e início do ministério gentílico",
+      "description": "Saulo encontra o Cristo no caminho de Damasco e começa a proclamar que Jesus é o Filho de Deus, após acolhida hesitante em Jerusalém.",
+      "reference": ["Atos 9.1-31"]
+    },
+    {
+      "yearStart": 36,
+      "yearEnd": 38,
+      "event": "Expansão para a Síria e consolidação em Antioquia",
+      "description": "Dispersos após Estêvão anunciam em Fenícia, Chipre e Antioquia; Barnabé é enviado, chama Saulo, e a igreja cresce com ensino por um ano.",
+      "reference": ["Atos 11.19-26"]
+    },
+    {
+      "yearStart": 38,
+      "yearEnd": 40,
+      "event": "Pentecostes gentílico na casa de Cornélio",
+      "description": "Pedro testemunha o Espírito sobre incircuncisos em Cesareia, abrindo caminho para a inclusão plena de gentios.",
+      "reference": ["Atos 10-11"]
+    },
+    {
+      "yearStart": 39,
+      "yearEnd": 40,
+      "event": "Crise da estátua de Calígula no Templo",
+      "description": "Calígula ordena colocar sua estátua no Templo de Jerusalém; a ameaça de profanação aprofunda tensões judaico-romanas e revela a volatilidade do cenário político.",
+      "reference": ["Fílon, Legatio ad Gaium", "Josefo, Guerra 2.184-203"]
+    },
+    {
+      "yearStart": 41,
+      "yearEnd": 43,
+      "event": "Ministério em Antioquia e envio de ajuda a Jerusalém",
+      "description": "Profetas anunciam fome; a igreja de Antioquia envia socorro por meio de Barnabé e Saulo, fortalecendo laços entre judeus e gentios.",
+      "reference": ["Atos 11.27-30"]
+    },
+    {
+      "yearStart": 30,
+      "yearEnd": 60,
+      "event": "Rede de sinagogas da diáspora",
+      "description": "Sinagogas funcionam como centros de ensino, justiça local e hospitalidade; Paulo e outros missionários frequentemente iniciam nelas o anúncio, refletindo sua capilaridade no império.",
+      "reference": ["Atos 13.5", "Atos 17.1-2"]
+    },
+    {
+      "yearStart": 47,
+      "yearEnd": 48,
+      "event": "Fome sob Cláudio e resposta das províncias",
+      "description": "Escassez relatada por Josefo atinge Judeia e regiões do império; esforços de socorro reforçam redes entre Jerusalém e igrejas da diáspora.",
+      "reference": ["Atos 11.28-30", "Josefo, Antiguidades 20.49-53"]
+    },
+    {
+      "yearStart": 46,
+      "yearEnd": 48,
+      "event": "Doações de Helena de Adiabene ao Templo e aos famintos",
+      "description": "A rainha convertida ao Judaísmo envia cereais e recursos durante a fome e financia obras no Templo, evidenciando atração de prosélitos e apoio internacional a Jerusalém.",
+      "reference": ["Josefo, Antiguidades 20.51-53"]
+    },
+    {
+      "yearStart": 43,
+      "yearEnd": 47,
+      "event": "Conquista romana da Britânia sob Cláudio",
+      "description": "Campanhas na Britânia expandem fronteiras imperiais e mobilizam legiões, ilustrando o alcance militar de Roma durante o período de Atos.",
+      "reference": ["Dio Cássio 60.19-22", "Inscrições militares romanas"]
+    },
+    {
+      "yearStart": 44,
+      "yearEnd": 44,
+      "event": "Restituição da Acaia ao Senado e reforço cívico nas póleis gregas",
+      "description": "Cláudio devolve Acaia e Macedônia à administração senatorial, fortalecendo assembleias e magistraturas locais que acolhem Paulo em cidades como Corinto e Atenas.",
+      "reference": ["Suetônio, Cláudio 25", "Contexto provincial da Acaia"]
+    },
+    {
+      "yearStart": 44,
+      "yearEnd": 44,
+      "event": "Martírio de Tiago e prisão de Pedro sob Herodes Agripa I",
+      "description": "Agripa executa Tiago e prende Pedro, mostrando a vulnerabilidade da liderança; Pedro é libertado milagrosamente.",
+      "reference": ["Atos 12.1-19"]
+    },
+    {
+      "yearStart": 46,
+      "yearEnd": 49,
+      "event": "Primeira viagem missionária e Concílio de Jerusalém",
+      "description": "Paulo e Barnabé evangelizam Chipre e Galácia; o concílio define que gentios não precisam da circuncisão, estabelecendo diretrizes mínimas.",
+      "reference": ["Atos 13-15"]
+    },
+    {
+      "yearStart": 49,
+      "yearEnd": 49,
+      "event": "Edito de Cláudio expulsando judeus de Roma",
+      "description": "Cláudio ordena a saída de judeus por tumultos em Roma; Áquila e Priscila chegam a Corinto, impactando redes missionárias.",
+      "reference": ["Atos 18.2", "Suetônio, Cláudio 25"]
+    },
+    {
+      "yearStart": 50,
+      "yearEnd": 52,
+      "event": "Uso da Via Egnatia e rede viária romana",
+      "description": "A estrada que liga o Adriático ao Egeu facilita deslocamentos de Paulo pela Macedônia (Filipos, Tessalônica, Bereia), mostrando infraestrutura imperial a serviço da mobilidade missionária.",
+      "reference": ["Atos 16-17", "Contexto viário romano"]
+    },
+    {
+      "yearStart": 51,
+      "yearEnd": 52,
+      "event": "Jogos Ístmicos em Corinto e fluxo helênico",
+      "description": "Os Jogos Ístmicos próximos a Corinto atraem peregrinos e atletas; o contexto de competição e patronagem cívica ajuda a explicar a presença de multidões durante o ministério de Paulo.",
+      "reference": ["Contexto pan-helênico dos Jogos Ístmicos", "Atos 18.1-18 (período coríntio)"]
+    },
+    {
+      "yearStart": 52,
+      "yearEnd": 54,
+      "event": "Procuradoria de Galio na Acaia e projetos urbanos sob Cláudio",
+      "description": "Além do caso de Paulo, Gálio representa administração provincial estável; o período de Cláudio vê obras públicas (aquedutos, portos) reforçando o controle romano.",
+      "reference": ["Inscrição de Delfos", "Suetônio, Cláudio 20"]
+    },
+    {
+      "yearStart": 52,
+      "yearEnd": 60,
+      "event": "Crescimento do culto imperial e templos na Ásia (Éfeso, Esmirna)",
+      "description": "Cidades da Ásia competem por neocoros e erigem templos ao imperador; o ambiente helênico-cívico molda a recepção de Paulo e a tensão com artesãos ligados a deuses locais (como Ártemis).",
+      "reference": ["Atos 19.23-41", "Inscrições de neocoros na Ásia Menor"]
+    },
+    {
+      "yearStart": 52,
+      "yearEnd": 62,
+      "event": "Sucessões sumo-sacerdotais e influência da elite saduceia",
+      "description": "Nomeações e deposições frequentes de sumos sacerdotes (família de Anás, depois Anano, Jesus ben Damneu, etc.) mostram o peso político do sumo-sacerdócio e sua negociação com procuradores romanos.",
+      "reference": ["Josefo, Antiguidades 20.179-203"]
+    },
+    {
+      "yearStart": 49,
+      "yearEnd": 52,
+      "event": "Viagem à Macedônia e Grécia e o caso diante de Gálio",
+      "description": "Chamado macedônio leva Paulo a Filipos, Tessalônica e Corinto; o tribunal de Gálio fornece precedente de tolerância jurídica ao movimento cristão.",
+      "reference": ["Atos 16-18", "Inscrição de Delfos (data de Gálio)"]
+    },
+    {
+      "yearStart": 52,
+      "yearEnd": 53,
+      "event": "Apolo em Éfeso e Corinto; Paulo retorna a Antioquia",
+      "description": "Apolo prega em Éfeso e Corinto; Paulo encerra a segunda viagem, passa por Cesareia e Antioquia, preparando a terceira jornada.",
+      "reference": ["Atos 18.18-28"]
+    },
+    {
+      "yearStart": 54,
+      "yearEnd": 54,
+      "event": "Nero sucede Cláudio",
+      "description": "Transição imperial altera patronos e políticas; início do governo de Nero cria novo horizonte político para missionários e comunidades.",
+      "reference": ["Tacito, Anais 12-13", "Suetônio, Nero 8"]
+    },
+    {
+      "yearStart": 58,
+      "yearEnd": 60,
+      "event": "Campanhas de Corbulão contra os partas na Armênia",
+      "description": "Corbulão lidera legiões no leste, reforçando prestígio militar de Nero e a importância estratégica da fronteira oriental durante as viagens de Paulo.",
+      "reference": ["Tacito, Anais 13.34-41", "Anais 15.1-6"]
+    },
+    {
+      "yearStart": 58,
+      "yearEnd": 59,
+      "event": "Agitação na Judeia sob Félix (sicários e profetas)",
+      "description": "Crescem ações de sicários e de um “egípcio” profeta; o clima de segurança se deteriora enquanto Paulo está ativo entre as igrejas.",
+      "reference": ["Josefo, Guerra 2.254-263", "Atos 21.38"]
+    },
+    {
+      "yearStart": 53,
+      "yearEnd": 57,
+      "event": "Terceira viagem e o tumulto em Éfeso",
+      "description": "Paulo passa anos em Éfeso; o confronto com ourives de Ártemis mostra impacto econômico do evangelho nas práticas idolátricas.",
+      "reference": ["Atos 19"]
+    },
+    {
+      "yearStart": 57,
+      "yearEnd": 59,
+      "event": "Prisão em Jerusalém e audiências em Cesareia",
+      "description": "Paulo é preso no Templo, defendido por tribunos, e ouvido por Félix e Festo; apela a César para julgamento em Roma.",
+      "reference": ["Atos 21-26"]
+    },
+    {
+      "yearStart": 59,
+      "yearEnd": 60,
+      "event": "Viagem marítima e naufrágio em Malta",
+      "description": "A rota a Roma enfrenta tempestade e naufrágio; Paulo chega salvo, reforçando o tema da providência divina na missão.",
+      "reference": ["Atos 27-28.16"]
+    },
+    {
+      "yearStart": 60,
+      "yearEnd": 62,
+      "event": "Prisão domiciliar em Roma",
+      "description": "Paulo passa dois anos recebendo e ensinando em Roma, proclamando o Reino de Deus com liberdade vigiada, encerrando a narrativa de Atos.",
+      "reference": ["Atos 28.30-31"]
+    },
+    {
+      "yearStart": 62,
+      "yearEnd": 62,
+      "event": "Execução de Tiago, irmão de Jesus, em Jerusalém",
+      "description": "O sumo sacerdote Anano convoca o Sinédrio e manda apedrejar Tiago, refletindo tensões internas no Judaísmo e hostilidade a líderes da igreja.",
+      "reference": ["Josefo, Antiguidades 20.197-203"]
+    }
+  ]
+}

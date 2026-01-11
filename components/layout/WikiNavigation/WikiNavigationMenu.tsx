@@ -34,6 +34,11 @@ const wikiLinks: WikiLink[] = [
         href:"/wiki/credos"
     },
     {
+        title: "Cronologia Bíblica",
+        alt: "Cronologia Bíblica",
+        href: "/wiki/cronologia",
+    },
+    {
         title:"Glossário Teológico",
         alt:"Glossário Teológico",
         href:"/wiki/glossario"
@@ -44,20 +49,15 @@ const wikiLinks: WikiLink[] = [
         href:"/wiki/historia-cristianismo"
     },
     {
-        title:"Patrística",
-        alt:"Patrística",
-        href:"/wiki/patristica"
-    },
-    {
-        title:"Teólogos",
-        alt:"Teólogos",
-        href:"/wiki/teologos"
+        title:"Todos os temas",
+        alt:"Todos os temas",
+        href:"/wiki/temas"
     }
 ];
 
 export default function WikiNavigationMenu() {
     return(
-        <div className="hidden md:flex">
+        <div className="ml-auto hidden md:flex">
             <NavigationMenu>
                 <NavigationMenuList>
                     {wikiLinks.map((link) => (

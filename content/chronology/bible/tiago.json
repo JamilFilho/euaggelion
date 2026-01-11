@@ -1,0 +1,31 @@
+{
+  "name": "Contexto Histórico de Tiago",
+  "description": "Panorama da carta de Tiago, dirigida à diáspora e enfatizando fé prática e justiça para os pobres.",
+  "period": {
+    "start": 44,
+    "end": 62
+  },
+  "events": [
+    {
+      "yearStart": 44,
+      "yearEnd": 49,
+      "event": "Dispersão e pressões econômicas sobre judeus cristãos",
+      "description": "Comunidades dispersas enfrentam opressão de ricos e necessidade de perseverança; carta aborda favoritismo e salários retidos.",
+      "reference": ["Tiago 1.1", "Tiago 5.1-6"]
+    },
+    {
+      "yearStart": 49,
+      "yearEnd": 49,
+      "event": "Participação no Concílio de Jerusalém",
+      "description": "Tiago lidera consenso sobre gentios, destacando prática ética e abstinência de idolatria e sangue.",
+      "reference": ["Atos 15.13-21"]
+    },
+    {
+      "yearStart": 62,
+      "yearEnd": 62,
+      "event": "Martírio de Tiago, irmão do Senhor",
+      "description": "Segundo Josefo e Hegésipo, Tiago é morto em Jerusalém, encerrando sua liderança e servindo de marcador para datação da carta.",
+      "reference": ["Josefo, Antiguidades 20.200", "Eusébio, HE 2.23"]
+    }
+  ]
+}
