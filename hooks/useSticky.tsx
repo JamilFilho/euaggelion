@@ -38,7 +38,7 @@ export const useSticky = ({ topOffset = 0, onStick, id }: UseStickyOptions = {})
       const scrollTop = window.scrollY;
       
       // Encontra o footer
-      const footerElement = document.querySelector('footer');
+      const footerElement = document.querySelector('.site-footer');
       const footerTop = footerElement?.getBoundingClientRect().top ?? window.innerHeight + 1;
 
       // Should be sticky when not overlapping footer
