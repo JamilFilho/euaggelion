@@ -28,7 +28,7 @@ export default function FeedHeader({
     const { filter, filterType, authorFilter, onFilterChange, onFilterTypeChange, onAuthorFilterChange, authors } = useFeedContext();
 
     if (home) {
-        return <header className="md:col-span-3 flex flex-col justify-center border-b border-ring/20 py-6 px-10">{children}</header>;
+        return <header className="md:col-span-3 flex flex-col justify-center border-t border-ring/20 py-6 px-10">{children}</header>;
     }
 
     if (!show) {

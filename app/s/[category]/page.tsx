@@ -104,7 +104,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         ]}
         sticky={true}
         topOffset={0}
-        className=""
       />
 
       <Page.Root>
