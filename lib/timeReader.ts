@@ -34,6 +34,12 @@ export function getReadingTime(
   
   const wordCount = words.length;
   const minutes = Math.ceil(wordCount / wordsPerMinute);
+  const hours = Math.floor(minutes / 60);
+  
+  // Retorna horas se maior que 60 minutos
+  if (hours > 0) {
+    return `Leia em ${hours} hora${hours > 1 ? 's' : ''}`;
+  }
   
   // Retorna formatado
   if (minutes === 1) {
