@@ -27,6 +27,10 @@ export function getRelatedArticles({
     (article) => article.published && article.slug !== currentSlug
   );
 
+  // Filtrar apenas artigos com data igual ou anterior ao dia atual
+  const today = new Date().toISOString().slice(0, 10);
+  const filteredArticles = allArticles.filter(article => article.date && article.date <= today);
+
   const currentArticle = getAllArticles().find(
     (article) => article.slug === currentSlug
   );
@@ -35,7 +39,7 @@ export function getRelatedArticles({
     return [];
   }
 
-  const scored = allArticles.map((article) => {
+  const scored = filteredArticles.map((article) => {
     let score = 0;
 
     // Estratégia por tags (40% do score)
@@ -95,10 +99,17 @@ export function getRelatedContent({
     (article) => article.published && article.slug !== currentSlug
   );
 
+  // Filtrar apenas artigos com data igual ou anterior ao dia atual
+  const today = new Date().toISOString().slice(0, 10);
+  const filteredArticles = allArticles.filter(article => article.date && article.date <= today);
+
   // Buscar em wiki
   const allWiki = getAllWikiArticles().filter(
     (wiki) => wiki.published && wiki.slug !== currentSlug
   );
+
+  // Filtrar apenas wiki com data igual ou anterior ao dia atual
+  const filteredWiki = allWiki.filter(wiki => wiki.date && wiki.date <= today);
 
   // Encontrar o conteúdo atual (pode ser artigo ou wiki)
   const currentArticle = getAllArticles().find(
@@ -115,7 +126,7 @@ export function getRelatedContent({
     return [];
   }
 
-  const allContent: ContentItem[] = [...allArticles, ...allWiki];
+  const allContent: ContentItem[] = [...filteredArticles, ...filteredWiki];
 
   const scored = allContent.map((item) => {
     let score = 0;
@@ -172,12 +183,17 @@ export function getArticlesFromSameCategory(
   maxResults: number = 3
 ): ArticleMeta[] {
   const currentCats = currentArticle.categories || [currentArticle.category];
-  return getAllArticles()
+  const allArticles = getAllArticles().filter(article => article.published);
+
+  // Filtrar apenas artigos com data igual ou anterior ao dia atual
+  const today = new Date().toISOString().slice(0, 10);
+  const filteredArticles = allArticles.filter(article => article.date && article.date <= today);
+
+  return filteredArticles
     .filter(
       (article) => {
         const articleCats = article.categories || [article.category];
         return (
-          article.published &&
           currentCats.some(cat => articleCats.includes(cat)) &&
           article.slug !== currentArticle.slug
         );
@@ -194,8 +210,14 @@ export function getArticlesFromSameCategory(
  * Encontra artigos por uma tag específica
  */
 export function getArticlesByTag(tag: string, maxResults: number = 5): ArticleMeta[] {
-  return getAllArticles()
-    .filter((article) => article.published && article.tags?.includes(tag))
+  const allArticles = getAllArticles().filter(article => article.published);
+
+  // Filtrar apenas artigos com data igual ou anterior ao dia atual
+  const today = new Date().toISOString().slice(0, 10);
+  const filteredArticles = allArticles.filter(article => article.date && article.date <= today);
+
+  return filteredArticles
+    .filter((article) => article.tags?.includes(tag))
     .sort((a, b) => {
       if (!a.date || !b.date) return 0;
       return new Date(b.date).getTime() - new Date(a.date).getTime();
@@ -220,9 +242,13 @@ export function analyzeLinkingStrategy(): {
   const allArticles = getAllArticles();
   const publishedArticles = allArticles.filter((a) => a.published);
 
+  // Filtrar apenas artigos com data igual ou anterior ao dia atual
+  const today = new Date().toISOString().slice(0, 10);
+  const filteredPublishedArticles = publishedArticles.filter(article => article.date && article.date <= today);
+
   const linkCountMap = new Map<string, number>();
 
-  publishedArticles.forEach((article) => {
+  filteredPublishedArticles.forEach((article) => {
     const relatedCount = getRelatedArticles({
       currentSlug: article.slug,
       maxResults: 100,
@@ -230,11 +256,11 @@ export function analyzeLinkingStrategy(): {
     linkCountMap.set(article.slug, relatedCount);
   });
 
-  const orphanArticles = publishedArticles.filter(
+  const orphanArticles = filteredPublishedArticles.filter(
     (a) => (linkCountMap.get(a.slug) || 0) === 0
   );
 
-  const heavilyLinkedArticles = publishedArticles
+  const heavilyLinkedArticles = filteredPublishedArticles
     .map((a) => ({
       article: a,
       count: linkCountMap.get(a.slug) || 0,
@@ -242,7 +268,7 @@ export function analyzeLinkingStrategy(): {
     .filter(({ count }) => count > 10)
     .map(({ article }) => article);
 
-  const unreachableArticles = publishedArticles.filter((a) => {
+  const unreachableArticles = filteredPublishedArticles.filter((a) => {
     // Simula navegação a partir da home
     return (
       !getRelatedArticles({
@@ -253,7 +279,7 @@ export function analyzeLinkingStrategy(): {
 
   const avgLinksPerArticle =
     Array.from(linkCountMap.values()).reduce((a, b) => a + b, 0) /
-    publishedArticles.length;
+    filteredPublishedArticles.length;
 
   return {
     orphanArticles,
@@ -261,9 +287,9 @@ export function analyzeLinkingStrategy(): {
     unreachableArticles,
     statistics: {
       totalArticles: allArticles.length,
-      publishedArticles: publishedArticles.length,
+      publishedArticles: filteredPublishedArticles.length,
       avgLinksPerArticle,
-      totalPotentialLinks: publishedArticles.length * (publishedArticles.length - 1),
+      totalPotentialLinks: filteredPublishedArticles.length * (filteredPublishedArticles.length - 1),
     },
   };
 }

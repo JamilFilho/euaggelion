@@ -117,6 +117,10 @@ export function getArticlesByCategory(category?: string, limit?: number ): Artic
   
   let filteredArticles = allArticles.filter(article => article.published);
   
+  // Filtrar apenas artigos com data igual ou anterior ao dia atual
+  const today = new Date().toISOString().slice(0, 10);
+  filteredArticles = filteredArticles.filter(article => article.date && article.date <= today);
+  
   if (category) {
     const categoryLower = category.toLowerCase();
     filteredArticles = filteredArticles.filter(
