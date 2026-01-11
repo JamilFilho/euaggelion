@@ -89,9 +89,9 @@ const siteLinks: SiteLink[] = [
                 description: "Declarações e documentos de fé"
             },
             {
-                title: "Escatologia",
-                href: "/wiki/escatologia",
-                description: "Escolas escatológicas e interpretações proféticas"
+                title: "Glossário Teológico",
+                href: "/wiki/glossario",
+                description: "Termos e definições teológicas para aprofundar seu conhecimento"
             },
             {
                 title: "Teólogos",
