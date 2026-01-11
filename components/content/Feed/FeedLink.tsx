@@ -15,10 +15,10 @@ export default function FeedLink({ slug, category, articleCategory, trailSlug, i
     if (category === "wiki" && !isCategoryPage) {
         return (
             <Link href={`/wiki/${slug}`} className="flex flex-col gap-4">
-                <footer className="px-10 py-4 hover:pr-8 flex flex-row justify-between items-center border-t border-ring/20 md:border-b bg-black/10 hover:bg-black/20 transition-all ease-in-out text-sm text-foreground font-semibold">
+                <div className="px-10 py-4 hover:pr-8 flex flex-row justify-between items-center border-t border-ring/20 md:border-b bg-black/10 hover:bg-black/20 transition-all ease-in-out text-sm text-foreground font-semibold">
                     Ver artigos
                     <ArrowRight />
-                </footer>
+                </div>
             </Link>
         );
     }
@@ -49,10 +49,10 @@ export default function FeedLink({ slug, category, articleCategory, trailSlug, i
 
     return (
         <Link href={href} className="flex flex-col gap-4">
-            <footer className="px-10 py-4 hover:pr-8 flex flex-row justify-between items-center border-t border-ring/20 md:border-b bg-black/10 hover:bg-black/20 transition-all ease-in-out text-sm text-foreground font-semibold">
+            <div className="px-10 py-4 hover:pr-8 flex flex-row justify-between items-center border-t border-ring/20 md:border-b bg-black/10 hover:bg-black/20 transition-all ease-in-out text-sm text-foreground font-semibold">
                 {content}
                 <ArrowRight />
-            </footer>
+            </div>
         </Link>
     );
 }

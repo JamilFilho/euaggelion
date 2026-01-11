@@ -10,14 +10,11 @@ interface StickyWrapperProps {
 }
 
 export function StickyWrapper({ children, topOffset = 0, className = '' }: StickyWrapperProps) {
-  const { ref, placeholderRef } = useSticky({ topOffset });
+  const { ref } = useSticky({ topOffset });
 
   return (
-    <>
-      <div ref={placeholderRef} />
-      <div ref={ref} className={className}>
-        {children}
-      </div>
-    </>
+    <div ref={ref} className={className}>
+      {children}
+    </div>
   );
 }

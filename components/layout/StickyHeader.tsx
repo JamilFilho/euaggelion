@@ -10,14 +10,11 @@ interface StickyHeaderProps {
 }
 
 export function StickyHeader({ children, topOffset = 0, className = '' }: StickyHeaderProps) {
-  const { ref, placeholderRef } = useSticky({ topOffset, id: 'sticky-header' });
+  const { ref } = useSticky({ topOffset, id: 'sticky-header' });
 
   return (
-    <>
-      <div ref={placeholderRef} className="m-0 p-0 h-0" />
-      <header ref={ref} className={`print:hidden transition-all duration-300 ease-in-out ${className}`}>
-        {children}
-      </header>
-    </>
+    <header ref={ref} className={`print:hidden transition-all duration-300 ease-in-out ${className}`}>
+      {children}
+    </header>
   );
 }
