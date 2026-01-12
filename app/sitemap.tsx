@@ -2,12 +2,14 @@ import { MetadataRoute } from "next";
 import { getAllArticles } from "@/lib/getArticles";
 import { getAllPages } from "@/lib/getPages";
 import { getTrails } from "@/lib/getTrails";
+import { getAuthors } from "@/lib/getAuthor";
 export const dynamic = "force-static";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const articles = getAllArticles();
   const pages = getAllPages();
   const trails = await getTrails();
+  const authors = getAuthors().filter(author => author.articles.length > 0);
 
   const categories = [...new Set(articles.map((article) => article.category))];
   const baseUrl = "https://euaggelion.com.br";
@@ -43,6 +45,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  const authorEntries: MetadataRoute.Sitemap = authors.map((author) => ({
+    url: `${baseUrl}/autores/${author.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -56,9 +65,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly" as const,
       priority: 0.75,
     },
+    {
+      url: `${baseUrl}/autores`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.75,
+    },
     ...articleEntries,
     ...pageEntries,
     ...categoryEntries,
     ...trailEntries,
+    ...authorEntries,
   ];
 }

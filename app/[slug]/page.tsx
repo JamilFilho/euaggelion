@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Article } from "@/components/content/Article";
+import { getAuthors } from "@/lib/getAuthor";
 import { getAllArticles, getArticleBySlug, getArticleNavigation } from "@/lib/getArticles";
 import { notFound } from "next/navigation";
 import fs from "fs";
@@ -28,6 +29,8 @@ import { ChronologyProvider } from '@/lib/context/ChronologyContext';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
 import { Poetry } from '@/components/content/Poetry';
 import LightboxWrapper from '@/components/LightboxInitializer';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const headingLinkIcon = {
   type: 'element',
@@ -196,6 +199,9 @@ export default async function ArticlePage({
     notFound();
   }
 
+  const authors = getAuthors();
+  const author = found.author ? authors.find(a => a.name === found.author) : null;
+
   const filePath = path.join(process.cwd(), "content", "articles", found.category, found.fileName);
   
   if (!fs.existsSync(filePath)) {
@@ -283,8 +289,22 @@ export default async function ArticlePage({
           <Article.Meta>
             {found.author &&(
               <>
-                <div className="col-span-2 border-b border-r border-ring/20">Escrito por</div>
-                <div className="col-span-2 border-b border-ring/20">{found.author}</div>
+                <div className="flex items-center col-span-2 border-b border-r border-ring/20">Escrito por</div>
+                <div className="col-span-2 border-b border-ring/20">
+                  {author ? (
+                    <Link href={`/autores/${author.slug}`} className="hover:underline flex flex-row items-center gap-4">
+                      <Avatar className="w-10 h-10 rounded-full">
+                        <AvatarImage src={author.avatar} />
+                        <AvatarFallback>
+                            <Skeleton className="h-10 w-10 rounded-full" />
+                        </AvatarFallback>
+                      </Avatar>
+                      {found.author}
+                    </Link>
+                  ) : (
+                    found.author
+                  )}
+                </div>
               </>
             )}
 

@@ -28,7 +28,9 @@ export default function FeedLink({ slug, category, articleCategory, trailSlug, i
         : isCategoryPage || category === "wiki"
             ? `/wiki/${articleCategory}`
             : category === "articles"
-                ? `/s/${slug}`
+                ? `/${slug}`
+                : category === "authors"
+                ? `/autores/${slug}`
                 : category === "trilhas"
                 ? `/trilhas/${slug}`
                 : category === "steps"
@@ -40,6 +42,8 @@ export default function FeedLink({ slug, category, articleCategory, trailSlug, i
             ? "Continuar lendo"
             : "Continuar lendo"
         : category === "articles"
+            ? "Continuar lendo"
+            : category === "authors"
             ? "Ver artigos"
             : category === "trilhas"
             ? "Ver Trilha"
