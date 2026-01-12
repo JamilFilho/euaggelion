@@ -238,15 +238,15 @@ export function PlannerGenerator() {
         </div>
       </div>
 
-      {!isGenerated && (
+      {!isGenerating && !isGenerated && (
         <div className="col-span-1 md:col-span-2 flex items-center justify-center text-center px-10 mx:px-20 py-10 border-t borer-ring/20 md:border-t-0 text-foreground/60">
           Preencha os campos e clique em &quot;Gerar plano&quot;
         </div>
       )}
 
       {isGenerating && (
-        <div className="md:h-[calc(100vh-5rem)] border-t md:border-t-0 border-ring/20 col-span-1 md:col-span-2 print:overflow-visible print:h-auto">
-          <div className="space-y-3">
+        <div className="md:h-[calc(100vh-5rem)] border-t md:border-t-0 border-ring/20 col-span-1 md:col-span-2 print:overflow-visible print:h-auto p-10 space-y-2">
+          <div className="space-y-4">
             <Skeleton className="h-4 w-32" />
             <Skeleton className="h-6 w-64" />
           </div>
