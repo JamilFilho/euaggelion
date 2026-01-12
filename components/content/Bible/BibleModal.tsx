@@ -1,11 +1,11 @@
 "use client";
 
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/ui/drawer";
 import { useEffect, useState } from "react";
 import { clientLogger } from "@/lib/logger";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -88,16 +88,16 @@ export default function BibleModal({ isOpen, onClose, reference }: BibleModalPro
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-background border-ring/20 fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] shadow-2xl">
-        <DialogHeader className="text-left">
-          <DialogTitle className="text-2xl font-bold text-accent">
+    <Drawer open={isOpen} onOpenChange={(open) => !open && onClose()}>
+      <DrawerContent className="bg-background border-ring/20">
+        <DrawerHeader className="text-left">
+          <DrawerTitle className="text-2xl font-bold text-accent">
             {reference?.fullMatch}
-          </DialogTitle>
+          </DrawerTitle>
           <p className="text-sm text-muted-foreground uppercase tracking-widest">
             {currentVersion?.toUpperCase()}
           </p>
-        </DialogHeader>
+        </DrawerHeader>
 
         <div className="mt-6 space-y-6">
           {loading ? (
@@ -136,7 +136,7 @@ export default function BibleModal({ isOpen, onClose, reference }: BibleModalPro
             </p>
           )}
         </div>
-      </DialogContent>
-    </Dialog>
+      </DrawerContent>
+    </Drawer>
   );
 }
