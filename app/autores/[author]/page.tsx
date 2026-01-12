@@ -104,6 +104,7 @@ export default async function AutorPage({ params }: { params: Promise<{ author: 
             sticky={true}
             className=""
         />
+        <div className="overflow-x-hidden">
         <Page.Root>
             <Page.Header>
                 <Avatar className="w-32 h-32">
@@ -117,14 +118,13 @@ export default async function AutorPage({ params }: { params: Promise<{ author: 
                     <Page.Description content={author.description || `Artigos escritos por ${author.name}`} />
                 </div>
             </Page.Header>
-        </Page.Root>
         <Page.Content>
             <Feed.Root articles={author.articles} category="articles">
                 {author.articles .length > 2 && (
                     <Feed.Header 
                     show={true}
-                    allowDateFilter={category == "authors"}
-                    allowAuthorFilter={false}
+                        allowDateFilter={category == "authors"}
+                        allowAuthorFilter={false}
                     />
                 )}
                 <Feed.Group>
@@ -133,6 +133,8 @@ export default async function AutorPage({ params }: { params: Promise<{ author: 
                 <Feed.Pagination />
             </Feed.Root>
         </Page.Content>
+        </Page.Root>
+        </div>
     </>
     )
 }
