@@ -62,7 +62,8 @@ export const metadata: Metadata = {
   other: {
     'webmention': 'https://webmention.io/euaggelion.com.br/webmention',
     'pingback': 'https://webmention.io/euaggelion.com.br/xmlrpc',
-  }
+  },
+  manifest: '/manifest.webmanifest'
 };
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {
