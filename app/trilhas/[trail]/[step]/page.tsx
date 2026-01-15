@@ -13,6 +13,7 @@ import { remarkTimelineParser } from '@/lib/remarkTimelineParser';
 import { rehypeTimelineParser } from '@/lib/rehypeTimelineParser';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover';
 import { TRAILS } from "@/lib/trails";
 import Breadcrumb from '@/components/ui/breadcrumb';
 import type { Metadata } from 'next';
@@ -101,6 +102,9 @@ export default async function StepPage({ params }: { params: Promise<{ trail: st
     const mdxComponents = {
       ChronologyBlock: ChronologyBlock as any,
       TimelineBlock: TimelineBlock as any,
+      Popover: Popover as any,
+      PopoverTrigger: PopoverTrigger as any,
+      PopoverContent: PopoverContent as any,
     };
 
     const trailMeta = TRAILS[stepData.trail] ?? { name: stepData.trail };

@@ -24,6 +24,7 @@ import { rehypeTimelineParser } from '@/lib/rehypeTimelineParser';
 import BibliaLink from '@/components/content/Bible/BibliaLink';
 import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
+import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover';
 
 const CATEGORY = "glossario";
 
@@ -182,6 +183,9 @@ export default async function GlossarioArticlePage({ params }: WikiPageProps) {
   const mdxComponents = {
     ChronologyBlock: ChronologyBlock as any,
     TimelineBlock: TimelineBlock as any,
+    Popover: Popover as any,
+    PopoverTrigger: PopoverTrigger as any,
+    PopoverContent: PopoverContent as any,
   };
 
   // Verificar se o artigo existe, está publicado e pertence ao glossário
@@ -241,17 +245,44 @@ export default async function GlossarioArticlePage({ params }: WikiPageProps) {
         <div className="p-10">
           <Article.Title content={article.title} variant="wiki" />
         </div>
+
+        <Article.Meta>
+          {article.tags && article.tags.length > 0 && (
+            <>
+              <div className="col-span-1 items-center border-r border-ring/20">
+                <p className="text-lg font-semibold">Veja também</p>
+              </div>
+              <ul className="px-4 col-span-3 flex flex-row !justify-start items-start flex-wrap gap-2">
+                {article.tags.map((tag) => (
+                  <li key={tag}>
+                    <Link href={`/wiki/glossario/${slugify(tag)}`}>
+                      <Badge>
+                      {tag}
+                      </Badge>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </Article.Meta>
       </Article.Header>
 
+      <div className="mb-12">
       <Article.Content>
-        <BibliaLink>
-          <MDXRemote 
-            source={content}
-            options={mdxOptions}
-            components={mdxComponents}
-          />
-        </BibliaLink>
+        {content ? (
+          <BibliaLink>
+            <MDXRemote 
+              source={content}
+              options={mdxOptions}
+              components={mdxComponents}
+            />
+          </BibliaLink>
+        ) : (
+          <center>Este verbete ainda não foi escrito. Aguarde mais um pouco, em breve estará disponível.</center>
+        )}
       </Article.Content>
+      </div>
       
       <Article.Footer>
         <Article.Actions 

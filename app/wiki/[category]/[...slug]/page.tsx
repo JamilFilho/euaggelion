@@ -27,6 +27,7 @@ import { rehypeTimelineParser } from '@/lib/rehypeTimelineParser';
 import BibliaLink from '@/components/content/Bible/BibliaLink';
 import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
+import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover';
 
 const headingLinkIcon = {
   type: 'element',
@@ -242,6 +243,9 @@ export default async function WikiPage({ params }: WikiPageProps) {
   const mdxComponents = {
     ChronologyBlock: ChronologyBlock as any,
     TimelineBlock: TimelineBlock as any,
+    Popover: Popover as any,
+    PopoverTrigger: PopoverTrigger as any,
+    PopoverContent: PopoverContent as any,
   };
 
   // Se não é um artigo, verificar se é um subgrupo

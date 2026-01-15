@@ -28,9 +28,19 @@ import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock
 import { ChronologyProvider } from '@/lib/context/ChronologyContext';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
 import { Poetry } from '@/components/content/Poetry';
+import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover';
 import LightboxWrapper from '@/components/LightboxInitializer';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Skeleton } from '@/components/ui/skeleton';
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemMedia,
+  ItemTitle,
+} from "@/components/ui/item"
+import { Button } from '@/components/ui/button';
 
 const headingLinkIcon = {
   type: 'element',
@@ -243,6 +253,9 @@ export default async function ArticlePage({
     Poetry: Poetry.Root,
     Stanza: Poetry.Stanza,
     Verse: Poetry.Verse,
+    Popover: Popover as any,
+    PopoverTrigger: PopoverTrigger as any,
+    PopoverContent: PopoverContent as any,
   };
 
   return (
@@ -287,29 +300,8 @@ export default async function ArticlePage({
           </Article.Group>
 
           <Article.Meta>
-            {found.author &&(
-              <>
-                <div className="flex items-center col-span-2 border-b border-r border-ring/20">Escrito por</div>
-                <div className="col-span-2 border-b border-ring/20">
-                  {author ? (
-                    <Link href={`/autores/${author.slug}`} className="hover:underline flex flex-row items-center gap-4">
-                      <Avatar className="w-10 h-10 rounded-full">
-                        <AvatarImage src={author.avatar} />
-                        <AvatarFallback>
-                            <Skeleton className="h-10 w-10 rounded-full" />
-                        </AvatarFallback>
-                      </Avatar>
-                      {found.author}
-                    </Link>
-                  ) : (
-                    found.author
-                  )}
-                </div>
-              </>
-            )}
-
-              <Article.PublishedAt content={found.date} />
-              <Article.ReadTime content={readingTime} />
+            <Article.PublishedAt content={found.date} />
+            <Article.ReadTime content={readingTime} />
 
           </Article.Meta>
 
@@ -351,10 +343,32 @@ export default async function ArticlePage({
             />
           </BibliaLink>
         </Article.Content>
+
+        <Article.Tags tags={tags}/>
+
+        {found.author &&(
+          <div className="border-t border-ring/20 mt-20">
+            <div className="pt-10 md:border-l md:border-r border-ring/20 md:w-3/5 md:mx-auto grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-0">
+              <div className="px-10 md:px-0 flex items-center justify-center col-span-1">
+                <Avatar className="w-20 h-20">
+                    <AvatarImage src={author?.avatar || "/pwa/icon-512x512.png"} />
+                    <AvatarFallback>
+                        <Skeleton className="h-20 w-20 rounded-full" />
+                    </AvatarFallback>
+                </Avatar>
+              </div>
+              <div className="px-10 md:px-0 md:pr-10 col-span-1 md:col-span-4 text-center md:text-left">
+                <h3 className="text-2xl font-semibold">{author?.name}</h3>
+                <p className="text-foreground/70 mt-2">{author?.description}</p>
+              </div>
+              <Link href={`/autores/${author?.slug}`} className="mt-10 px-10 py-6 col-span-1 md:col-span-5 text-center bg-black/20 border-t border-ring/20">
+                Mais artigos de {author?.name}
+              </Link>
+            </div>
+          </div>
+        )}
         
-        <Article.Footer>
-          <Article.Tags tags={tags}/>
-          
+        <Article.Footer> 
           <Article.Actions
             excerpt={found.description}
             link={`https://euaggelion.com.br/${found.slug}`}
@@ -365,15 +379,6 @@ export default async function ArticlePage({
 
           <Article.Related currentSlug={found.slug} />
         </Article.Footer>
-
-        <Newsletter.Root>
-          <Newsletter.Header>
-            <Newsletter.Title content="NewsGelion"/>
-            <Newsletter.Headline content="Gostou deste conteúdo? Inscreva-se gratuitamente e receba materiais como este em seu e-mail." />
-          </Newsletter.Header>
-          <Newsletter.Form />
-          <Newsletter.Footer />
-        </Newsletter.Root>
       </Article.Root>
     </>
   );

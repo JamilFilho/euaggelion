@@ -17,6 +17,7 @@ import { remarkTimelineParser } from '@/lib/remarkTimelineParser';
 import { rehypeTimelineParser } from '@/lib/rehypeTimelineParser';
 import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
+import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover';
 
 const headingLinkIcon = {
   type: 'element',
@@ -178,6 +179,9 @@ export default async function StaticPage({
   const mdxComponents = {
     ChronologyBlock: ChronologyBlock as any,
     TimelineBlock: TimelineBlock as any,
+    Popover: Popover as any,
+    PopoverTrigger: PopoverTrigger as any,
+    PopoverContent: PopoverContent as any,
   };
 
   return (
