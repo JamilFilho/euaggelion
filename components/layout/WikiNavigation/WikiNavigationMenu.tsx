@@ -29,24 +29,19 @@ const wikiLinks: WikiLink[] = [
         href:"/wiki/biblia"
     },
     {
-        title:"Credos Cristãos",
-        alt:"Credos Cristãos",
-        href:"/wiki/credos"
-    },
-    {
         title: "Cronologia Bíblica",
         alt: "Cronologia Bíblica",
         href: "/wiki/cronologia",
     },
     {
+        title:"Dicionário Teológico",
+        alt:"Dicionário Teológico",
+        href:"/wiki/dicionario"
+    },
+    {
         title:"Glossário Teológico",
         alt:"Glossário Teológico",
         href:"/wiki/glossario"
-    },
-    {
-        title:"História do Cristianismo",
-        alt:"História do Cristianismo",
-        href:"/wiki/historia-cristianismo"
     },
     {
         title:"Todos os temas",

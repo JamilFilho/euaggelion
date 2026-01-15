@@ -72,6 +72,10 @@ export const CATEGORIES: Record<string, CategoryMeta> = {
     name: "Glossário Teológico",
     description: "Termos e conceitos biblicos e teológicos",
   },
+  "dicionario": {
+    name: "Dicionário Bíblico",
+    description: "Verbetes bíblicos e teológicos organizados alfabeticamente",
+  },
   teologos: {
     name: "Teólogos",
     description: "Vida e obra dos homens e mulheres que contribuiram para a teologia cristã",

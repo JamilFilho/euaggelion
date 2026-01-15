@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import DictionaryLink from "@/components/content/DictionaryLink";
 
 interface FeedLinkProps {
     slug: string;
@@ -20,6 +21,19 @@ export default function FeedLink({ slug, category, articleCategory, trailSlug, i
                     <ArrowRight />
                 </div>
             </Link>
+        );
+    }
+
+    // Para dicionário, usar popover em vez de navegação
+    if (articleCategory === "dicionario") {
+        const term = slug.split('/')[1]; // slug é "a/termo"
+        return (
+            <div className="flex flex-col gap-4">
+                <div className="px-10 py-4 hover:pr-8 flex flex-row justify-between items-center border-t border-ring/20 md:border-b bg-black/10 hover:bg-black/20 transition-all ease-in-out text-sm text-foreground font-semibold">
+                    <DictionaryLink text="Ver definição" verbete={term} />
+                    <ArrowRight />
+                </div>
+            </div>
         );
     }
 
