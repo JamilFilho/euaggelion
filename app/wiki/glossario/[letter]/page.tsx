@@ -7,6 +7,7 @@ import { CollectionPageSchema, FAQSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import Link from 'next/link';
 import { Github, X } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 const CATEGORY = "glossario";
 
@@ -34,9 +35,22 @@ const faqItems = [
     }
 ];
 
-export async function generateMetadata(): Promise<Metadata> {
+interface GlossarioLetterPageProps {
+  params: Promise<{
+    letter: string;
+  }>;
+}
+
+export async function generateStaticParams() {
+  const articles = getAllWikiCategory(CATEGORY);
+  const letters = [...new Set(articles.map(article => article.slug.split('/')[0]))];
+  return letters.map(letter => ({ letter }));
+}
+
+export async function generateMetadata({ params }: GlossarioLetterPageProps): Promise<Metadata> {
+  const { letter } = await params;
   const categoryMeta = CATEGORIES[CATEGORY] ?? { name: CATEGORY };
-  const articlesInCategory = getAllWikiCategory(CATEGORY);
+  const articlesInCategory = getAllWikiCategory(CATEGORY).filter(article => article.slug.startsWith(`${letter}/`));
   
   const categoryName = typeof categoryMeta === 'string' 
     ? categoryMeta 
@@ -49,14 +63,14 @@ export async function generateMetadata(): Promise<Metadata> {
   const articleCount = articlesInCategory.length;
 
   return {
-    title: `${categoryName} | Wiki | Euaggelion`,
-    description: `${categoryDescription}. ${articleCount} ${articleCount === 1 ? 'conteúdo disponível' : 'conteúdos disponíveis'}.`,
-    keywords: [categoryName, "wiki", "teologia", "cristianismo"],
+    title: `${categoryName} - ${letter.toUpperCase()} | Wiki | Euaggelion`,
+    description: `${categoryDescription}. ${articleCount} ${articleCount === 1 ? 'conteúdo disponível' : 'conteúdos disponíveis'} para a letra ${letter.toUpperCase()}.`,
+    keywords: [categoryName, "wiki", "teologia", "cristianismo", letter.toUpperCase()],
     openGraph: {
-      title: `${categoryName} | Wiki | Euaggelion`,
+      title: `${categoryName} - ${letter.toUpperCase()} | Wiki | Euaggelion`,
       description: categoryDescription,
       type: 'website',
-      url: `https://euaggelion.com.br/wiki/${CATEGORY}`,
+      url: `https://euaggelion.com.br/wiki/${CATEGORY}/${letter}`,
       siteName: "Euaggelion",
       locale: "pt_BR",
       images: [
@@ -70,7 +84,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${categoryName} | Wiki | Euaggelion`,
+      title: `${categoryName} - ${letter.toUpperCase()} | Wiki | Euaggelion`,
       description: categoryDescription,
     },
     robots: {
@@ -80,19 +94,25 @@ export async function generateMetadata(): Promise<Metadata> {
       "max-image-preview": "large",
     },
     alternates: {
-      canonical: `https://euaggelion.com.br/wiki/${CATEGORY}`,
+      canonical: `https://euaggelion.com.br/wiki/${CATEGORY}/${letter}`,
     },
   };
 }
 
-export default async function GlossarioPage() {
+export default async function GlossarioLetterPage({ params }: GlossarioLetterPageProps) {
+    const { letter } = await params;
     const categoryMeta = CATEGORIES[CATEGORY] ?? { name: CATEGORY };
     const articlesInCategory = getAllWikiCategory(CATEGORY)
+      .filter(article => article.slug.startsWith(`${letter}/`))
       .sort((a, b) => a.title.localeCompare(b.title, 'pt-BR'))
       .map(article => ({
         ...article,
         isWiki: true, // Marca como wiki para o FeedLink construir a URL corretamente
       }));
+    
+    if (articlesInCategory.length === 0) {
+      notFound();
+    }
     
     const categoryName = typeof categoryMeta === 'string' 
       ? categoryMeta 
@@ -101,14 +121,14 @@ export default async function GlossarioPage() {
     const categoryDescription = typeof categoryMeta === 'object' && categoryMeta.description
       ? categoryMeta.description
       : `Explore artigos sobre ${categoryName}`;
-  
+
   return(
         <>
           {/* Schema estruturado */}
           <CollectionPageSchema
-            name={categoryName}
+            name={`${categoryName} - ${letter.toUpperCase()}`}
             description={categoryDescription}
-            url={`https://euaggelion.com.br/wiki/${CATEGORY}`}
+            url={`https://euaggelion.com.br/wiki/${CATEGORY}/${letter}`}
             itemCount={articlesInCategory.length}
           />
           <FAQSchema faqs={faqItems} />
@@ -118,21 +138,22 @@ export default async function GlossarioPage() {
               { label: "Home", href: "/" },
               { label: "Wiki", href: "/wiki" },
               { label: categoryName, href: `/wiki/${CATEGORY}` },
+              { label: letter.toUpperCase(), href: `/wiki/${CATEGORY}/${letter}` },
             ]}
             sticky={true}
           />
           
             <Page.Root>
             <header className="p-10 flex flex-col gap-4">
-              <Page.Title content={categoryMeta.name} />
-              {categoryMeta.description && (
-                <Page.Description content={categoryMeta.description} />
-              )}
+                <Page.Title content={`Verbetes teológicos - ${letter.toUpperCase()}`} />
+                {categoryMeta.description && (
+                <Page.Description content="Glossário teológico"/>
+                )}
             </header>
             <Page.Content>
                 <Feed.Root articles={articlesInCategory} category="wiki" itemsPerPage={72}>
                 <div className="border-t border-ring/20">
-                  <Feed.List category={CATEGORY} isCategoryPage={true} />
+                    <Feed.List category="wiki" isCategoryPage={true} />
                 </div>
                 <Feed.Pagination />
                 </Feed.Root>

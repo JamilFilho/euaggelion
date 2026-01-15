@@ -21,10 +21,13 @@ import { remarkChronologyParser } from '@/lib/remarkChronologyParser';
 import { rehypeChronologyParser } from '@/lib/rehypeChronologyParser';
 import { remarkTimelineParser } from '@/lib/remarkTimelineParser';
 import { rehypeTimelineParser } from '@/lib/rehypeTimelineParser';
+import { remarkDictionaryParser } from '@/lib/remarkDictionaryParser';
+import { rehypeDictionaryParser } from '@/lib/rehypeDictionaryParser';
 import BibliaLink from '@/components/content/Bible/BibliaLink';
 import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
 import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover';
+import DictionaryLink from '@/components/content/DictionaryLink';
 
 const CATEGORY = "glossario";
 
@@ -78,11 +81,13 @@ const headingAutolinkOptions = {
 
 interface WikiPageProps {
   params: Promise<{
+    letter: string;
     slug: string;
   }>;
 }
 
 interface Params {
+    letter: string;
     slug: string;
 }
 
@@ -91,9 +96,13 @@ export async function generateStaticParams() {
   
   return articles
     .filter((article) => article.published && article.category === CATEGORY)
-    .map((article) => ({
-      slug: article.slug,
-    }));
+    .map((article) => {
+      const [letter, slug] = article.slug.split('/');
+      return {
+        letter,
+        slug,
+      };
+    });
 }
 
 export async function generateMetadata({ 
@@ -101,8 +110,9 @@ export async function generateMetadata({
 }: { 
   params: Promise<Params> 
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const article = getWikiSlug(slug);
+  const { letter, slug } = await params;
+  const fullSlug = `${letter}/${slug}`;
+  const article = getWikiSlug(fullSlug);
 
   if (!article) {
     return {
@@ -127,12 +137,12 @@ export async function generateMetadata({
       publishedTime: article.date,
       authors: ["Euaggelion"],
       tags: article.tags,
-      url: `https://euaggelion.com.br/wiki/${CATEGORY}/${slug}`,
+      url: `https://euaggelion.com.br/wiki/${CATEGORY}/${letter}/${slug}`,
       siteName: "Euaggelion",
       locale: "pt_BR",
       images: [
         {
-          url: `https://euaggelion.com.br/api/og?slug=${article.slug}`,
+          url: `https://euaggelion.com.br/api/og?slug=${fullSlug}`,
           width: 1200,
           height: 630,
           alt: article.title,
@@ -143,7 +153,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
-      images: [`https://euaggelion.com.br/api/og?slug=${slug}`],
+      images: [`https://euaggelion.com.br/api/og?slug=${fullSlug}`],
     },
     robots: {
       index: true,
@@ -152,25 +162,28 @@ export async function generateMetadata({
       "max-image-preview": "large",
     },
     alternates: {
-      canonical: `https://euaggelion.com.br/wiki/${CATEGORY}/${slug}`,
+      canonical: `https://euaggelion.com.br/wiki/${CATEGORY}/${letter}/${slug}`,
     },
   };
 }
 
 export default async function GlossarioArticlePage({ params }: WikiPageProps) {
-  const { slug } = await params;
-  const article = getWikiSlug(slug);
+  const { letter, slug } = await params;
+  const fullSlug = `${letter}/${slug}`;
+  const article = getWikiSlug(fullSlug);
 
   const mdxOptions = {
     mdxOptions: {
       remarkPlugins: [
         remarkChronologyParser,
         remarkTimelineParser,
+        remarkDictionaryParser,
         remarkGfm, // Suporte para tabelas, strikethrough, tasklists, etc.
       ],
       rehypePlugins: [
         rehypeChronologyParser,
         rehypeTimelineParser,
+        rehypeDictionaryParser,
         rehypeSlug, // Adiciona IDs aos headings
         [
           rehypeAutolinkHeadings,
@@ -186,6 +199,7 @@ export default async function GlossarioArticlePage({ params }: WikiPageProps) {
     Popover: Popover as any,
     PopoverTrigger: PopoverTrigger as any,
     PopoverContent: PopoverContent as any,
+    DictionaryLink: DictionaryLink as any,
   };
 
   // Verificar se o artigo existe, está publicado e pertence ao glossário
@@ -194,7 +208,7 @@ export default async function GlossarioArticlePage({ params }: WikiPageProps) {
   }
   
   // Construir caminho do arquivo
-  const filePath = path.join(process.cwd(), "content", "wiki", CATEGORY, `${article.slug}.mdx`);
+  const filePath = path.join(process.cwd(), "content", "wiki", CATEGORY, `${fullSlug}.mdx`);
   
   if (!fs.existsSync(filePath)) {
     console.error(`Arquivo não encontrado: ${filePath}`);
@@ -215,8 +229,8 @@ export default async function GlossarioArticlePage({ params }: WikiPageProps) {
         description={article.description}
         datePublished={article.date}
         dateModified={article.date}
-        imageUrl={`https://euaggelion.com.br/api/og?slug=${slug}`}
-        url={`https://euaggelion.com.br/wiki/${CATEGORY}/${slug}`}
+        imageUrl={`https://euaggelion.com.br/api/og?slug=${fullSlug}`}
+        url={`https://euaggelion.com.br/wiki/${CATEGORY}/${letter}/${slug}`}
       />
       
       {/* Schema de breadcrumbs */}
@@ -225,7 +239,8 @@ export default async function GlossarioArticlePage({ params }: WikiPageProps) {
           { name: "Home", url: "https://euaggelion.com.br" },
           { name: "Wiki", url: "https://euaggelion.com.br/wiki" },
           { name: categoryName, url: `https://euaggelion.com.br/wiki/${CATEGORY}` },
-          { name: article.title, url: `https://euaggelion.com.br/wiki/${CATEGORY}/${slug}` },
+          { name: letter.toUpperCase(), url: `https://euaggelion.com.br/wiki/${CATEGORY}/${letter}` },
+          { name: article.title, url: `https://euaggelion.com.br/wiki/${CATEGORY}/${letter}/${slug}` },
         ]}
       />
       
@@ -234,7 +249,8 @@ export default async function GlossarioArticlePage({ params }: WikiPageProps) {
           { label: "Home", href: "/" },
           { label: "Wiki", href: "/wiki" },
           { label: categoryName, href: `/wiki/${CATEGORY}` },
-          { label: article.title, href: `/wiki/${CATEGORY}/${slug}` },
+          { label: letter.toUpperCase(), href: `/wiki/${CATEGORY}/${letter}` },
+          { label: article.title, href: `/wiki/${CATEGORY}/${letter}/${slug}` },
         ]}
         sticky={true}
         className=""
@@ -288,7 +304,7 @@ export default async function GlossarioArticlePage({ params }: WikiPageProps) {
         <Article.Actions 
           headline={article.title} 
           excerpt={article.description} 
-          link={`https://euaggelion.com.br/wiki/${CATEGORY}/${slug}`}
+          link={`https://euaggelion.com.br/wiki/${CATEGORY}/${letter}/${slug}`}
         />
       </Article.Footer>
     </Article.Root>
