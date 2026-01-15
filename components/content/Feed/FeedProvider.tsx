@@ -56,6 +56,7 @@ export default function FeedProvider({ articles, itemsPerPage = 12, category, tr
     // Definir estado inicial baseado na categoria
     const isVersoAVerso = category === "verso-a-verso";
     const isSteps = category === "steps";
+    const isDictionary = category === "dicionario";
     const [filterType, setFilterType] = useState<FilterType>(isVersoAVerso ? "testament" : "date");
     const [filter, setFilter] = useState<string>(isVersoAVerso ? "all" : "desc");
     const [authorFilter, setAuthorFilter] = useState<string>();
@@ -95,6 +96,11 @@ export default function FeedProvider({ articles, itemsPerPage = 12, category, tr
             const sa = a.step ?? Number.MAX_SAFE_INTEGER;
             const sb = b.step ?? Number.MAX_SAFE_INTEGER;
             if (sa !== sb) return sa - sb;
+            return a.title.localeCompare(b.title, "pt-BR");
+        }
+
+        // Para dicionário, ordenar alfabeticamente por título
+        if (isDictionary) {
             return a.title.localeCompare(b.title, "pt-BR");
         }
 

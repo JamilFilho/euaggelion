@@ -16,7 +16,9 @@ const LetterGroup = ({ letter, articles, category, isCategoryPage, trailSlug }: 
     return (
         <div>
             <div ref={ref} className="-mt-[1px] border-t bg-secondary border-b border-ring/10 px-10 py-2">
-                <span className="text-xl font-bold text-accent tracking-widest">{letter}</span>
+                <Link href={`/wiki/${category}/${letter}`}>
+                    <span className="text-xl font-bold text-accent tracking-widest">{letter}</span>
+                </Link>
             </div>
             <div className="divide-y divide-ring/20">
                 {articles.map((article) => {
