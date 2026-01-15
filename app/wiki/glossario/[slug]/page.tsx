@@ -249,10 +249,10 @@ export default async function GlossarioArticlePage({ params }: WikiPageProps) {
         <Article.Meta>
           {article.tags && article.tags.length > 0 && (
             <>
-              <div className="col-span-1 items-center border-r border-ring/20">
+              <div className="col-span-2 md:col-span-1 items-center border-r border-ring/20">
                 <p className="text-lg font-semibold">Veja também</p>
               </div>
-              <ul className="px-4 col-span-3 flex flex-row !justify-start items-start flex-wrap gap-2">
+              <ul className="px-4 col-span-2 md:col-span-3 flex flex-row !justify-start items-start flex-wrap gap-2">
                 {article.tags.map((tag) => (
                   <li key={tag}>
                     <Link href={`/wiki/glossario/${slugify(tag)}`}>
