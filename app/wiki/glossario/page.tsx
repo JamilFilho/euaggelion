@@ -132,7 +132,7 @@ export default async function GlossarioPage() {
                 </div>
             </Page.Header>
             <Page.Content>
-                <Feed.Root articles={articlesInCategory} category="wiki" itemsPerPage={20}>
+                <Feed.Root articles={articlesInCategory} category="wiki" itemsPerPage={72}>
                 <div className="border-t border-ring/20">
                     <Feed.List category="wiki" isCategoryPage={true} />
                 </div>
