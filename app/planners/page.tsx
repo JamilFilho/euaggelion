@@ -1,5 +1,5 @@
 import { Page } from "@/components/content/Page";
-import PlannerGenerator from "@/components/content/Planner";
+import { Planner } from "@/components/content/Planner";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import { FAQSchema, SchemaScript } from "@/lib/schema";
 import { Metadata } from "next";
@@ -104,7 +104,7 @@ export default function PlannersPage() {
                 />
 
                 <Page.Content>
-                    <PlannerGenerator />
+                    <Planner.Root />
 
                     <section className="border-t border-ring/20" aria-labelledby="planner-faq-title">
                         <header className="px-10 py-10 border-b border-ring/20">
