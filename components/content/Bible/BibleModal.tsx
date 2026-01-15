@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import { clientLogger } from "@/lib/logger";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useBibleVersion } from "@/lib/context/BibleVersionContext";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 interface BibleModalProps {
   isOpen: boolean;
@@ -91,8 +93,13 @@ export default function BibleModal({ isOpen, onClose, reference }: BibleModalPro
     <Drawer open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DrawerContent className="bg-background border-ring/20">
         <DrawerHeader className="text-left">
-          <DrawerTitle className="text-2xl font-bold text-accent">
+          <DrawerTitle className="flex flex-row justify-between items-center text-2xl font-bold text-accent">
             {reference?.fullMatch}
+            <Button variant="outline" size="sm" asChild>
+              <Link href={`/biblia/${currentVersion}/${reference?.bookSlug}/${reference?.chapters[0].chapter}`}>
+                Ler capítulo
+              </Link>
+            </Button>
           </DrawerTitle>
           <p className="text-sm text-muted-foreground uppercase tracking-widest">
             {currentVersion?.toUpperCase()}
