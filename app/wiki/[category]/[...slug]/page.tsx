@@ -24,10 +24,13 @@ import { remarkChronologyParser } from '@/lib/remarkChronologyParser';
 import { rehypeChronologyParser } from '@/lib/rehypeChronologyParser';
 import { remarkTimelineParser } from '@/lib/remarkTimelineParser';
 import { rehypeTimelineParser } from '@/lib/rehypeTimelineParser';
+import { remarkDictionaryParser } from '@/lib/remarkDictionaryParser';
+import { rehypeDictionaryParser } from '@/lib/rehypeDictionaryParser';
 import BibliaLink from '@/components/content/Bible/BibliaLink';
 import { ChronologyBlock } from '@/components/content/Chronology/ChronologyBlock';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
 import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover';
+import DictionaryLink from '@/components/content/DictionaryLink';
 
 const headingLinkIcon = {
   type: 'element',
@@ -226,11 +229,13 @@ export default async function WikiPage({ params }: WikiPageProps) {
       remarkPlugins: [
         remarkChronologyParser,
         remarkTimelineParser,
+        remarkDictionaryParser,
         remarkGfm, // Suporte para tabelas, strikethrough, tasklists, etc.
       ],
       rehypePlugins: [
         rehypeChronologyParser,
         rehypeTimelineParser,
+        rehypeDictionaryParser,
         rehypeSlug, // Adiciona IDs aos headings
         [
           rehypeAutolinkHeadings,
@@ -246,6 +251,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
     Popover: Popover as any,
     PopoverTrigger: PopoverTrigger as any,
     PopoverContent: PopoverContent as any,
+    DictionaryLink: DictionaryLink as any,
   };
 
   // Se não é um artigo, verificar se é um subgrupo

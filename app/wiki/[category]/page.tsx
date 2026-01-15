@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getAllWikiCategory, getWikiCategories } from "@/lib/getWiki";
+import { getAllDictionaryEntries } from "@/lib/getDictionary";
 import { CATEGORIES } from "@/lib/categories";
 import { Page } from "@/components/content/Page";
 import { Feed } from '@/components/content/Feed';
@@ -12,6 +13,10 @@ interface Params {
 
 export async function generateStaticParams() {
   const categories = getWikiCategories();
+  // Adicionar dicionario se não estiver nas categorias do wiki
+  if (!categories.includes('dicionario')) {
+    categories.push('dicionario');
+  }
   return categories.map(category => ({ category }));
 }
 
@@ -22,7 +27,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { category } = await params;
   const categoryMeta = CATEGORIES[category] ?? { name: category };
-  const articlesInCategory = getAllWikiCategory(category);
+  const articlesInCategory = category === 'dicionario' 
+    ? getAllDictionaryEntries().map(entry => ({ title: entry.title, description: entry.description }))
+    : getAllWikiCategory(category);
   
   const categoryName = typeof categoryMeta === 'string' 
     ? categoryMeta 
@@ -78,10 +85,25 @@ interface WikiCategoryPageProps {
 export default async function WikiCategoryPage({ params }: WikiCategoryPageProps) {
     const { category } = await params;
     const categoryMeta = CATEGORIES[category] ?? { name: category };
-    const articlesInCategory = getAllWikiCategory(category).map(article => ({
-      ...article,
-      isWiki: true, // Marca como wiki para o FeedLink construir a URL corretamente
-    }));
+    
+    let articlesInCategory;
+    if (category === 'dicionario') {
+      const dictionaryEntries = getAllDictionaryEntries();
+      articlesInCategory = dictionaryEntries.map(entry => ({
+        slug: entry.slug,
+        title: entry.title,
+        description: entry.description,
+        category: 'dicionario',
+        isWiki: true,
+        content: entry.content,
+        references: entry.references,
+      }));
+    } else {
+      articlesInCategory = getAllWikiCategory(category).map(article => ({
+        ...article,
+        isWiki: true, // Marca como wiki para o FeedLink construir a URL corretamente
+      }));
+    }
     
     const categoryName = typeof categoryMeta === 'string' 
       ? categoryMeta 
@@ -112,12 +134,12 @@ export default async function WikiCategoryPage({ params }: WikiCategoryPageProps
           />
           
           <Page.Root>
-            <Page.Header variant="wiki">
+            <header className="p-10 flex flex-col gap-4">
                 <Page.Title content={categoryMeta.name} />
                 {categoryMeta.description && (
                 <Page.Description content={categoryMeta.description} />
                 )}
-            </Page.Header>
+            </header>
             <Page.Content>
               <Feed.Root articles={articlesInCategory} category="wiki">
                 <Feed.Group>

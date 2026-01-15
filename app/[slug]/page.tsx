@@ -11,8 +11,6 @@ import { CATEGORIES } from "@/lib/categories";
 import Link from "next/link";
 import Image from "next/image";
 import { getReadingTime } from "@/lib/timeReader";
-import { Newsletter } from '@/components/layout/Newsletter';
-import { Webmentions } from '@/components/webMentions';
 import { ArticleSchema, BreadcrumbSchema } from "@/lib/schema";
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
@@ -21,6 +19,8 @@ import { remarkChronologyParser } from '@/lib/remarkChronologyParser';
 import { rehypeChronologyParser } from '@/lib/rehypeChronologyParser';
 import { remarkTimelineParser } from '@/lib/remarkTimelineParser';
 import { rehypeTimelineParser } from '@/lib/rehypeTimelineParser';
+import { remarkDictionaryParser } from '@/lib/remarkDictionaryParser';
+import { rehypeDictionaryParser } from '@/lib/rehypeDictionaryParser';
 import BibliaLink from '@/components/content/Bible/BibliaLink';
 import Breadcrumb from '@/components/ui/breadcrumb';
 import { Chronology } from '@/components/content/Chronology';
@@ -32,15 +32,7 @@ import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover
 import LightboxWrapper from '@/components/LightboxInitializer';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Skeleton } from '@/components/ui/skeleton';
-import {
-  Item,
-  ItemActions,
-  ItemContent,
-  ItemDescription,
-  ItemMedia,
-  ItemTitle,
-} from "@/components/ui/item"
-import { Button } from '@/components/ui/button';
+import DictionaryLink from '@/components/content/DictionaryLink';
 
 const headingLinkIcon = {
   type: 'element',
@@ -232,11 +224,13 @@ export default async function ArticlePage({
       remarkPlugins: [
         remarkChronologyParser,
         remarkTimelineParser,
+        remarkDictionaryParser,
         remarkGfm, // Suporte para tabelas, strikethrough, tasklists, etc.
       ],
       rehypePlugins: [
         rehypeChronologyParser,
         rehypeTimelineParser,
+        rehypeDictionaryParser,
         rehypeSlug, // Adiciona IDs aos headings
         [
           rehypeAutolinkHeadings,
@@ -256,6 +250,7 @@ export default async function ArticlePage({
     Popover: Popover as any,
     PopoverTrigger: PopoverTrigger as any,
     PopoverContent: PopoverContent as any,
+    DictionaryLink: DictionaryLink as any,
   };
 
   return (
@@ -374,8 +369,6 @@ export default async function ArticlePage({
             link={`https://euaggelion.com.br/${found.slug}`}
             headline={found.title}
           />
-
-          <Webmentions target={`https://euaggelion.com.br/${found.slug}`} />
 
           <Article.Related currentSlug={found.slug} />
         </Article.Footer>

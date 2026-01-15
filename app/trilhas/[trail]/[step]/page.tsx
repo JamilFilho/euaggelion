@@ -11,6 +11,8 @@ import { remarkChronologyParser } from '@/lib/remarkChronologyParser';
 import { rehypeChronologyParser } from '@/lib/rehypeChronologyParser';
 import { remarkTimelineParser } from '@/lib/remarkTimelineParser';
 import { rehypeTimelineParser } from '@/lib/rehypeTimelineParser';
+import { remarkDictionaryParser } from '@/lib/remarkDictionaryParser';
+import { rehypeDictionaryParser } from '@/lib/rehypeDictionaryParser';
 import { TimelineBlock } from '@/components/content/Timeline/TimelineBlock';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover';
@@ -18,6 +20,7 @@ import { TRAILS } from "@/lib/trails";
 import Breadcrumb from '@/components/ui/breadcrumb';
 import type { Metadata } from 'next';
 import { ArticleSchema, BreadcrumbSchema } from '@/lib/schema';
+import DictionaryLink from '@/components/content/DictionaryLink';
 
 export async function generateMetadata({ params }: { params: Promise<{ trail: string; step: string }> }): Promise<Metadata> {
     const { trail, step } = await params;
@@ -90,11 +93,13 @@ export default async function StepPage({ params }: { params: Promise<{ trail: st
             remarkPlugins: [
                 remarkChronologyParser,
                 remarkTimelineParser,
+                remarkDictionaryParser,
                 remarkGfm, // Suporte para tabelas, strikethrough, tasklists, etc.
             ],
             rehypePlugins: [
                 rehypeChronologyParser,
                 rehypeTimelineParser,
+                rehypeDictionaryParser,
             ]
         },
     };
@@ -105,6 +110,7 @@ export default async function StepPage({ params }: { params: Promise<{ trail: st
       Popover: Popover as any,
       PopoverTrigger: PopoverTrigger as any,
       PopoverContent: PopoverContent as any,
+      DictionaryLink: DictionaryLink as any,
     };
 
     const trailMeta = TRAILS[stepData.trail] ?? { name: stepData.trail };
