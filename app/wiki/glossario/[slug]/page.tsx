@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { ArticleSchema, BreadcrumbSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
+import { slugify } from '@/lib/utils';
 
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
