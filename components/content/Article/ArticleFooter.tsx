@@ -6,7 +6,7 @@ interface ArticleFooterProps {
 
 export function ArticleFooter({children}: ArticleFooterProps) {
     return(
-        <footer className="print:hidden border-t border-b border-ring/20 mt-6 md:mt-20">
+        <footer className="print:hidden border-t border-b border-ring/20">
             {children}
         </footer>
     )

@@ -52,7 +52,7 @@ export default function FeedPagination() {
   };
 
   return (
-    <div className="col-span-1 md:col-span-3 w-[60%] mx-auto md:w-full py-8">
+    <div className="col-span-1 md:col-span-3 md:w-full py-8">
       <Pagination>
         <PaginationContent>
           <PaginationItem>
