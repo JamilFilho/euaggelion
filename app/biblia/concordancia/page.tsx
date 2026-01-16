@@ -7,6 +7,8 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 import Link from 'next/link';
 import { Github, X } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 const faqItems = [
     {
         question: "O que é uma concordância bíblica?",
