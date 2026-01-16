@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 
 const withMDX = createMDX({
-  extension: /\.mdx?$/
+  extension: /\.mdx?$/,
 });
 
 const nextConfig: NextConfig = {
@@ -109,12 +109,12 @@ const nextConfig: NextConfig = {
   },
 
   experimental: {
-    mdxRs: false,
+    // mdxRs: false,
   },
 
   poweredByHeader: false,
   compress: true,
-  reactStrictMode: true,
+  reactStrictMode: true
 };
 
 export default withMDX(nextConfig);

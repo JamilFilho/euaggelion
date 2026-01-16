@@ -8,13 +8,11 @@ import { slugify } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import BibliaLink from '@/components/content/Bible/BibliaLink';
 
-import { Params } from 'next/dist/server/request/params';
-
 type ConcordancePageProps = {
-  params: {
+  params: Promise<{
     letter: string;
     entry: string;
-  };
+  }>;
 };
 
 export const revalidate = 3600; // Revalidar a cada 1 hora
@@ -22,7 +20,7 @@ export const revalidate = 3600; // Revalidar a cada 1 hora
 export async function generateMetadata({
   params
 }: {
-  params: Promise<Params>
+  params: Promise<{ letter: string; entry: string; }>
 }): Promise<Metadata> {
   const { letter, entry } = await params;
   // Ensure letter and entry are strings and not undefined
@@ -84,7 +82,7 @@ export async function generateMetadata({
 }
 
 export default async function ConcordanceEntryPage({ params }: ConcordancePageProps) {
-  const { letter, entry } = params;
+  const { letter, entry } = await params;
   // Ensure letter and entry are strings and not undefined
   if (typeof letter !== 'string' || typeof entry !== 'string') {
     notFound();

@@ -11,8 +11,6 @@ export function rehypeDictionaryParser() {
         return;
       }
 
-      console.log('Found DICTIONARY_LINK:', node.value);
-
       const parts = node.value.split(":");
       if (parts.length !== 3) {
         return;

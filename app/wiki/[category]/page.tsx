@@ -12,7 +12,7 @@ export const revalidate = 3600; // Revalidar a cada 1 hora
 export async function generateMetadata({ 
   params 
 }: { 
-  params: Promise<Params> 
+  params: Promise<{ category: string; }> 
 }): Promise<Metadata> {
   const { category } = await params;
   const categoryMeta = CATEGORIES[category] ?? { name: category };
@@ -68,7 +68,7 @@ export async function generateMetadata({
 }
 
 interface WikiCategoryPageProps {
-  params: Promise<Params>;
+  params: Promise<{ category: string; }>;
 }
 
 export default async function WikiCategoryPage({ params }: WikiCategoryPageProps) {

@@ -9,8 +9,6 @@ import { Root, Link, Text } from "mdast";
 export function remarkDictionaryParser() {
   return (tree: Root) => {
     visit(tree, "link", (node: Link, index: number | undefined, parent: any) => {
-      console.log('Link found:', node.url, node.children);
-
       // Verifica se o url começa com dict:
       if (!node.url.startsWith("dict:")) {
         return;
@@ -22,8 +20,6 @@ export function remarkDictionaryParser() {
         .join("");
 
       const verbete = node.url.slice(5);
-
-      console.log('Processing dictionary link:', text, verbete);
 
       const marker = `DICTIONARY_LINK:${text}:${verbete}`;
 
