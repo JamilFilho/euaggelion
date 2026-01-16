@@ -13,10 +13,18 @@ interface FeedListProps {
 const LetterGroup = ({ letter, articles, category, isCategoryPage, trailSlug }: { letter: string, articles: any[], category: string, isCategoryPage: boolean, trailSlug?: string }) => {
     const stickyId = `sticky-glossary-${letter}`;
     const { ref } = useSticky({ id: stickyId, topOffset: -2 });
+
+    let letterHref = "";
+    if (category === "concordancia") {
+        letterHref = `/biblia/concordancia/${letter.toLowerCase()}`;
+    } else {
+        letterHref = `/wiki/${category}/${letter}`;
+    }
+
     return (
         <div>
             <div ref={ref} className="-mt-[1px] border-t bg-secondary border-b border-ring/10 px-10 py-2">
-                <Link href={`/wiki/${category}/${letter}`}>
+                <Link href={letterHref}>
                     <span className="text-xl font-bold text-accent tracking-widest">{letter}</span>
                 </Link>
             </div>
@@ -25,6 +33,8 @@ const LetterGroup = ({ letter, articles, category, isCategoryPage, trailSlug }: 
                     let href = "";
                     if (article.isWiki) {
                         href = `/wiki/${article.category}/${article.slug}`;
+                    } else if (article.isConcordance) {
+                        href = `/biblia/concordancia/${article.slug}`;
                     } else if (trailSlug) {
                         href = `/trilhas/${trailSlug}/${article.slug}`;
                     } else if (isCategoryPage) {
