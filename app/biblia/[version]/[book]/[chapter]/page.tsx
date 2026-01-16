@@ -1,5 +1,6 @@
 import { getBibleChapter, getBibleBook, getBibleVersion, getConcordancesForVerse } from "@/lib/getBible";
 import { notFound } from "next/navigation";
+import React, { JSX } from 'react';
 import VerseHighlighter from '@/components/content/Bible/VerseHighlighter';
 import { Bible } from "@/components/content/Bible";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";

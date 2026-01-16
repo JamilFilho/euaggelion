@@ -12,7 +12,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { letter: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ letter: string }> }): Promise<Metadata> {
   const { letter } = await params;
   const entries = getConcordanceEntriesByLetter(letter);
 
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: { params: { letter: string } 
   };
 }
 
-export default async function ConcordanceLetterPage({ params }: { params: { letter: string } }) {
+export default async function ConcordanceLetterPage({ params }: { params: Promise<{ letter: string }> }) {
     const { letter } = await params;
     const entries = getConcordanceEntriesByLetter(letter)
       .sort((a, b) => a.title.localeCompare(b.title, 'pt-BR'))

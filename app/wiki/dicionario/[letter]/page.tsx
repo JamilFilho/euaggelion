@@ -16,7 +16,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { letter: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ letter: string }> }): Promise<Metadata> {
   const { letter } = await params;
   const categoryMeta = CATEGORIES[CATEGORY] ?? { name: CATEGORY };
   const entries = getDictionaryEntriesByLetter(letter);
@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: { params: { letter: string } 
   };
 }
 
-export default async function DictionaryLetterPage({ params }: { params: { letter: string } }) {
+export default async function DictionaryLetterPage({ params }: { params: Promise<{ letter: string }> }) {
     const { letter } = await params;
     const categoryMeta = CATEGORIES[CATEGORY] ?? { name: CATEGORY };
     const entries = getDictionaryEntriesByLetter(letter)
