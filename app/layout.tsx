@@ -103,9 +103,9 @@ export default function RootLayout({ children }: Readonly<{children: React.React
                 <SiteHeader.Navigation icon={Menu} />
               </SiteHeader.Root>
 
-              <main>
-                {children}
-              </main>
+                <main>
+                  {children}
+                </main>
             </BibleVersionProvider>
           </StickyProvider>
         </Suspense>
