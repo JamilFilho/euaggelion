@@ -34,7 +34,8 @@ export function generateSearchIndex() {
       description: item.description ?? "",
       content: (item.content ?? item.description ?? "")
         .replace(/\n/g, " ")
-        .replace(/\s+/g, " "),
+        .replace(/\s+/g, " ")
+        .slice(0, 1000), // Limit content to first 1000 characters
       category: isWikiArticle 
         ? `wiki > ${item.category ?? ""}` 
         : item.category ?? "",
