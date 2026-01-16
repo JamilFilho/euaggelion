@@ -5,6 +5,8 @@ import { CollectionPageSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import type { Metadata } from "next";
 
+export const revalidate = 3600; // Revalidar a cada 1 hora
+
 export const metadata: Metadata = {
   title: "Bíblia Online | Euaggelion",
   description: "Leia a Bíblia Sagrada online em português com diferentes versões disponíveis. Acesse o Antigo e Novo Testamento gratuitamente.",

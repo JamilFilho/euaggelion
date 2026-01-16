@@ -8,26 +8,16 @@ import { slugify } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import BibliaLink from '@/components/content/Bible/BibliaLink';
 
-interface ConcordancePageProps {
-  params: Promise<{
+import { Params } from 'next/dist/server/request/params';
+
+type ConcordancePageProps = {
+  params: {
     letter: string;
     entry: string;
-  }>;
-}
+  };
+};
 
-interface Params {
-    letter: string;
-    entry: string;
-}
-
-export async function generateStaticParams() {
-  const entries = getAllConcordanceEntries();
-
-  return entries.map((entry) => ({
-    letter: entry.letter,
-    entry: slugify(entry.title),
-  }));
-}
+export const revalidate = 3600; // Revalidar a cada 1 hora
 
 export async function generateMetadata({
   params
@@ -35,6 +25,13 @@ export async function generateMetadata({
   params: Promise<Params>
 }): Promise<Metadata> {
   const { letter, entry } = await params;
+  // Ensure letter and entry are strings and not undefined
+  if (typeof letter !== 'string' || typeof entry !== 'string') {
+    return {
+      title: "Palavra não encontrada | Euaggelion",
+      description: "A palavra solicitada não foi encontrada na concordância.",
+    };
+  }
   const article = getConcordanceEntry(letter, entry);
 
   if (!article) {
@@ -87,7 +84,11 @@ export async function generateMetadata({
 }
 
 export default async function ConcordanceEntryPage({ params }: ConcordancePageProps) {
-  const { letter, entry } = await params;
+  const { letter, entry } = params;
+  // Ensure letter and entry are strings and not undefined
+  if (typeof letter !== 'string' || typeof entry !== 'string') {
+    notFound();
+  }
   const article = getConcordanceEntry(letter, entry);
 
   // Verificar se a palavra existe

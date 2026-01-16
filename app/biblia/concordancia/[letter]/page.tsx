@@ -5,12 +5,7 @@ import { Feed } from '@/components/content/Feed';
 import { CollectionPageSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 
-export async function generateStaticParams() {
-  const letters = getConcordanceLetters();
-  return letters.map((letter) => ({
-    letter,
-  }));
-}
+export const revalidate = 3600; // Revalidar a cada 1 hora
 
 export async function generateMetadata({ params }: { params: Promise<{ letter: string }> }): Promise<Metadata> {
   const { letter } = await params;

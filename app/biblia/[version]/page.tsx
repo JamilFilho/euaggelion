@@ -7,6 +7,8 @@ import { Metadata } from "next";
 import { CollectionPageSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 
+export const revalidate = 3600; // Revalidar a cada 1 hora
+
 interface Props {
   params: Promise<{ version: string }>;
 }

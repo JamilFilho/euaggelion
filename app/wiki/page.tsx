@@ -5,6 +5,8 @@ import { Metadata } from "next";
 import { Feed } from "@/components/content/Feed";
 import { CollectionPageSchema } from "@/lib/schema";
 
+export const revalidate = 3600; // Revalidar a cada 1 hora
+
 export const metadata: Metadata = {
   title: "WikiGelion | Euaggelion",
   description: "História do cristianismo, glossário teológico e artigos de referência para edificar sua fé.",

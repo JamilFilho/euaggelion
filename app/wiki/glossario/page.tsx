@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 import Link from 'next/link';
 import { Github, X } from 'lucide-react';
 
+export const revalidate = 3600; // Revalidar a cada 1 hora
+
 const CATEGORY = "glossario";
 
 const faqItems = [

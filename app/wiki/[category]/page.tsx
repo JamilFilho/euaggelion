@@ -7,18 +7,7 @@ import { Feed } from '@/components/content/Feed';
 import { CollectionPageSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 
-interface Params {
-  category: string;
-}
-
-export async function generateStaticParams() {
-  const categories = getWikiCategories();
-  // Adicionar dicionario se não estiver nas categorias do wiki
-  if (!categories.includes('dicionario')) {
-    categories.push('dicionario');
-  }
-  return categories.map(category => ({ category }));
-}
+export const revalidate = 3600; // Revalidar a cada 1 hora
 
 export async function generateMetadata({ 
   params 

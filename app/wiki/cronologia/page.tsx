@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Page } from '@/components/content/Page';
 import { StickySection } from '@/components/layout/StickySection';
 
+export const revalidate = 3600; // Revalidar a cada 1 hora
+
 export const metadata: Metadata = {
   title: "Cronologia Bíblica | Wiki | Euaggelion",
   description: "Explore a cronologia bíblica com múltiplas perspectivas: Vida de Moisés, Reino de Davi, Exílio na Babilônia, Período Intertestamentário e Igreja Primitiva.",
