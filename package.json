@@ -55,7 +55,7 @@
     "yet-another-react-lightbox": "^3.28.0"
   },
   "devDependencies": {
-    "@tinacms/cli": "^2.0.6",
+    "@tinacms/cli": "^2.1.1",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.19.28",
     "@types/react": "^19",
