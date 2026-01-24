@@ -2,7 +2,8 @@
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useFeedContext } from "./FeedProvider";
-import { ReactNode, useRef } from "react";
+import { ReactNode, useRef, useState, useEffect } from "react";
+import { getCategoryNames, getAuthorNames } from "@/app/actions";
 
 interface FeedHeaderProps {
     children?: ReactNode;
@@ -11,21 +12,28 @@ interface FeedHeaderProps {
     testamentOptions?: { value: string; label: string }[];
     allowDateFilter?: boolean;
     allowAuthorFilter?: boolean;
+    allowCategoryFilter?: boolean;
 }
 
-export default function FeedHeader({
-    children,
-    show = true, 
-    home = false,
-    testamentOptions = [
-        { value: "all", label: "Todos" },
-        { value: "at", label: "Antigo Testamento" },
-        { value: "nt", label: "Novo Testamento" }
-    ],
-    allowDateFilter = false,
-    allowAuthorFilter = false,
-}: FeedHeaderProps) {
-    const { filter, filterType, authorFilter, onFilterChange, onFilterTypeChange, onAuthorFilterChange, authors } = useFeedContext();
+export default function FeedHeader({ children, show = true,  home = false, testamentOptions = [{ value: "all", label: "Todos" }, { value: "at", label: "Antigo Testamento" }, { value: "nt", label: "Novo Testamento" }], allowDateFilter = false, allowAuthorFilter = false, allowCategoryFilter = false }: FeedHeaderProps) {
+    const { filter, filterType, authorFilter, onFilterChange, onFilterTypeChange, onAuthorFilterChange, authors, categories } = useFeedContext();
+
+    const [categoryNames, setCategoryNames] = useState<Record<string, string>>({});
+    const [authorNames, setAuthorNames] = useState<Record<string, string>>({});
+
+    useEffect(() => {
+        const fetchNames = async () => {
+            if (categories.length > 0) {
+                const catNames = await getCategoryNames(categories);
+                setCategoryNames(catNames);
+            }
+            if (authors.length > 0) {
+                const authNames = await getAuthorNames(authors);
+                setAuthorNames(authNames);
+            }
+        };
+        fetchNames();
+    }, [categories, authors]);
 
     if (home) {
         return <header className="md:col-span-3 flex flex-col justify-center border-t border-ring/20 py-6 px-10">{children}</header>;
@@ -65,13 +73,14 @@ export default function FeedHeader({
                 <span className="text-foreground/60">Filtrar conteúdo:</span>
                 
                 <div className="flex flex-row gap-2">
-                <Select value={filterType} onValueChange={(value) => onFilterTypeChange(value as "date" | "author")}>
+                <Select value={filterType} onValueChange={(value) => onFilterTypeChange(value as "date" | "author" | "category")}>
                     <SelectTrigger className="w-fit">
                         <SelectValue placeholder="Selecionar filtro..." />
                     </SelectTrigger>
                     <SelectContent>
                         <SelectItem value="date">Data de Publicação</SelectItem>
                         {allowAuthorFilter && <SelectItem value="author">Autor</SelectItem>}
+                        {allowCategoryFilter && <SelectItem value="category">Categoria</SelectItem>}
                     </SelectContent>
                 </Select>
 
@@ -95,7 +104,23 @@ export default function FeedHeader({
                         <SelectContent>
                             {authors.map((author) => (
                                 <SelectItem key={author} value={author}>
-                                    {author}
+                                    {authorNames[author] || author}
+                                </SelectItem>
+                            ))}
+                        </SelectContent>
+                    </Select>
+                )}
+
+                {filterType === "category" && allowCategoryFilter && (
+                    <Select value={filter} onValueChange={onFilterChange}>
+                        <SelectTrigger className="w-fit">
+                            <SelectValue placeholder="Selecionar categoria..." />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="all">Todas</SelectItem>
+                            {categories.map((category) => (
+                                <SelectItem key={category} value={category}>
+                                    {categoryNames[category] || category}
                                 </SelectItem>
                             ))}
                         </SelectContent>

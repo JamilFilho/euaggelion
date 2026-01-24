@@ -9,6 +9,21 @@ import {
   updateLastNotified,
   type PushSubscriptionData 
 } from '@/lib/kv'
+import { createReader } from "@keystatic/core/reader";
+import keystaticConfig from "@/keystatic.config";
+
+interface PushSubscriptionLike {
+  getKey: (key: string) => ArrayBuffer | null;
+  endpoint: string;
+}
+
+interface SerializedSubscription {
+  keys: {
+    p256dh: string;
+    auth: string;
+  };
+  endpoint: string;
+}
 
 webpush.setVapidDetails(
   'mailto:contato@euaggelion.com.br',
@@ -42,7 +57,7 @@ function arrayBufferToBase64(buffer: ArrayBuffer): string {
 async function sendConfirmationNotification(subscription: PushSubscriptionData) {
   try {
     await webpush.sendNotification(
-      subscription as any,
+      subscription as WebPushSubscription,
       JSON.stringify({
         title: 'Inscrição Confirmada',
         body: 'Você agora receberá notificações sobre novos artigos e atualizações do Euaggelion!',
@@ -63,14 +78,30 @@ async function sendConfirmationNotification(subscription: PushSubscriptionData) 
 /**
  * Inscreve um usuário para receber notificações push
  */
-export async function subscribeUser(sub: any) {
+export async function subscribeUser(sub: unknown) {
   try {
     // Handle both PushSubscription object and serialized subscription
-    const p256dh = sub.getKey ? arrayBufferToBase64(sub.getKey('p256dh')!) : sub.keys.p256dh
-    const auth = sub.getKey ? arrayBufferToBase64(sub.getKey('auth')!) : sub.keys.auth
+    const isPushSubscription = (s: unknown): s is PushSubscriptionLike => {
+      return typeof s === 'object' && s !== null && 'getKey' in s && typeof (s as any).getKey === 'function';
+    };
+
+    let p256dh: string | ArrayBuffer;
+    let auth: string | ArrayBuffer;
+    let endpoint: string;
+
+    if (isPushSubscription(sub)) {
+      p256dh = arrayBufferToBase64(sub.getKey('p256dh')!);
+      auth = arrayBufferToBase64(sub.getKey('auth')!);
+      endpoint = sub.endpoint;
+    } else {
+      const serialized = sub as SerializedSubscription;
+      p256dh = serialized.keys.p256dh;
+      auth = serialized.keys.auth;
+      endpoint = serialized.endpoint;
+    }
     
     const subscriptionData: PushSubscriptionData = {
-      endpoint: sub.endpoint,
+      endpoint,
       keys: {
         p256dh: typeof p256dh === 'string' ? p256dh : arrayBufferToBase64(p256dh),
         auth: typeof auth === 'string' ? auth : arrayBufferToBase64(auth)
@@ -80,7 +111,7 @@ export async function subscribeUser(sub: any) {
     
     await saveSubscription(subscriptionData)
     
-    logger.log('✅ Subscription salva com sucesso:', sub.endpoint.substring(0, 50))
+    logger.log('✅ Subscription salva com sucesso:', endpoint.substring(0, 50))
     
     // Enviar notificação de confirmação de forma assíncrona
     sendConfirmationNotification(subscriptionData).catch(error => {
@@ -133,7 +164,7 @@ export async function sendNotification(message: string, endpoint?: string) {
     const subscription = targetSubscriptions[0]
     
     await webpush.sendNotification(
-      subscription as any,
+      subscription as WebPushSubscription,
       JSON.stringify({
         title: 'Euaggelion',
         body: message,
@@ -184,12 +215,12 @@ export async function sendNotificationToAll(
   const results = await Promise.allSettled(
     subscriptions.map(async (subscription) => {
       try {
-        await webpush.sendNotification(subscription as any, payload)
+        await webpush.sendNotification(subscription as WebPushSubscription, payload)
         await updateLastNotified(subscription.endpoint)
         return { success: true, endpoint: subscription.endpoint }
-      } catch (error: any) {
+      } catch (error: unknown) {
         // Se a subscription expirou (410 Gone), remover do banco
-        if (error.statusCode === 410) {
+        if ((error as { statusCode?: number }).statusCode === 410) {
           await removeSubscription(subscription.endpoint)
           return { success: false, removed: true, endpoint: subscription.endpoint }
         }
@@ -223,4 +254,32 @@ export async function sendNotificationToAll(
     failed,
     removed
   }
+}
+
+export async function getCategoryNames(slugs: string[]) {
+    const reader = createReader(process.cwd(), keystaticConfig);
+    const names: Record<string, string> = {};
+    for (const slug of slugs) {
+        try {
+            const cat = await reader.collections.categories.read(slug);
+            names[slug] = cat?.name || slug;
+        } catch {
+            names[slug] = slug;
+        }
+    }
+    return names;
+}
+
+export async function getAuthorNames(slugs: string[]) {
+    const reader = createReader(process.cwd(), keystaticConfig);
+    const names: Record<string, string> = {};
+    for (const slug of slugs) {
+        try {
+            const author = await reader.collections.authors.read(slug);
+            names[slug] = author?.name || slug;
+        } catch {
+            names[slug] = slug;
+        }
+    }
+    return names;
 }

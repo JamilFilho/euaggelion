@@ -15,7 +15,7 @@ interface Article {
     step?: number; // usado para ordenar passos de trilhas
 }
 
-type FilterType = "testament" | "date" | "author";
+type FilterType = "testament" | "date" | "author" | "category";
 
 interface FeedContextType {
     filteredArticles: Article[];
@@ -27,7 +27,9 @@ interface FeedContextType {
     totalPages: number;
     itemsPerPage: number;
     authors: string[];
+    categories: string[];
     trailSlug?: string;
+    emptyMessage?: string;
     onFilterChange: (value: string) => void;
     onFilterTypeChange: (type: FilterType) => void;
     onAuthorFilterChange: (author: string) => void;
@@ -49,13 +51,15 @@ interface FeedProviderProps {
     itemsPerPage?: number;
     category?: string;
     trailSlug?: string;
+    emptyMessage?: string;
     children: ReactNode;
 }
 
-export default function FeedProvider({ articles, itemsPerPage = 12, category, trailSlug, children }: FeedProviderProps) {
+export default function FeedProvider({ articles, itemsPerPage = 12, category, trailSlug, emptyMessage, children }: FeedProviderProps) {
     // Definir estado inicial baseado na categoria
     const isVersoAVerso = category === "verso-a-verso";
     const isSteps = category === "steps";
+    const isDictionary = category === "dicionario";
     const [filterType, setFilterType] = useState<FilterType>(isVersoAVerso ? "testament" : "date");
     const [filter, setFilter] = useState<string>(isVersoAVerso ? "all" : "desc");
     const [authorFilter, setAuthorFilter] = useState<string>();
@@ -67,6 +71,9 @@ export default function FeedProvider({ articles, itemsPerPage = 12, category, tr
             .filter(a => a.author)
             .map(a => a.author!)
     )).sort();
+
+    // Extrair lista única de categorias
+    const categories = Array.from(new Set(articles.map(a => a.category))).sort();
 
     // Filtra e ordena os artigos baseado no tipo de filtro
     const filteredArticles = articles.filter((article) => {
@@ -80,6 +87,12 @@ export default function FeedProvider({ articles, itemsPerPage = 12, category, tr
         if (filterType === "author") {
             if (!authorFilter) return true;
             return article.author === authorFilter;
+        }
+
+        // Se está filtrando por categoria
+        if (filterType === "category") {
+            if (filter === "all") return true;
+            return article.category === filter;
         }
         
         // Padrão: filtro por testament
@@ -95,6 +108,11 @@ export default function FeedProvider({ articles, itemsPerPage = 12, category, tr
             const sa = a.step ?? Number.MAX_SAFE_INTEGER;
             const sb = b.step ?? Number.MAX_SAFE_INTEGER;
             if (sa !== sb) return sa - sb;
+            return a.title.localeCompare(b.title, "pt-BR");
+        }
+
+        // Para dicionário, ordenar alfabeticamente por título
+        if (isDictionary) {
             return a.title.localeCompare(b.title, "pt-BR");
         }
 
@@ -154,7 +172,9 @@ export default function FeedProvider({ articles, itemsPerPage = 12, category, tr
                 totalPages,
                 itemsPerPage,
                 authors,
+                categories,
                 trailSlug,
+                emptyMessage,
                 onFilterChange: handleFilterChange,
                 onFilterTypeChange: handleFilterTypeChange,
                 onAuthorFilterChange: handleAuthorFilterChange,

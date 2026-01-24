@@ -138,7 +138,9 @@ export function BreadcrumbSchema({
     "@type": "ListItem",
     position: index + 1,
     name: item.name,
-    item: item.url,
+    item: {
+      "@id": item.url,
+    },
   }));
 
   const schema = {

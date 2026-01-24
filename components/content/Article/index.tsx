@@ -11,7 +11,7 @@ import { ArticleRoot } from "./ArticleRoot";
 import { ArticleTags } from "./ArticleTags";
 import { ArticleTitle } from "./ArticleTitle";
 import { ArticleNavigation } from "./ArticleNavigation";
-import ArticleRelated from "./ArticleRelated";
+// import ArticleRelated from "./ArticleRelated";
 
 
 export const Article = {
@@ -26,7 +26,7 @@ export const Article = {
     Content: ArticleContent,
     Tags: ArticleTags,
     Actions: ArticleActions,
-    Related: ArticleRelated,
+    // Related: ArticleRelated,
     Navigation: ArticleNavigation,
     Footer: ArticleFooter
 }

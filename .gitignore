@@ -201,3 +201,5 @@ node_modules
 .env
 public/search-index.json
 package-lock.json
+
+/data

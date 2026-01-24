@@ -19,7 +19,6 @@ const ratelimit = new Ratelimit({
 // Protected routes that require authentication
 const protectedRoutes = [
   '/api/manual-notify',
-  '/api/tina-webhook',
 ]
 
 // Allowed origins for CORS
@@ -89,19 +88,14 @@ export async function proxy(request: NextRequest) {
     })
   }
 
-// 3. Authentication - Check for API Key, Tina CMS Token, or Webhook Secret
+// 3. Authentication - Check for API Key
   const authHeader = request.headers.get('Authorization')
   const webhookSecret = request.headers.get('x-webhook-secret')
-  const apiKey = process.env.WEBPUSH_API_KEY || process.env.TINA_TOKEN
+  const apiKey = process.env.WEBPUSH_API_KEY
 
-  // Allow requests from Tina CMS with valid token
+  // Allow requests with valid API key
   if (authHeader?.startsWith('Bearer ')) {
     const token = authHeader.substring(7)
-    
-    // Check if it's the Tina CMS token
-    if (token === process.env.TINA_TOKEN) {
-      return NextResponse.next()
-    } 
     
     // Check if it's a custom API key
     if (apiKey && token === apiKey) {
@@ -125,7 +119,7 @@ export async function proxy(request: NextRequest) {
   }
 
   // 6. Allow in development if no secret is configured (for webhook)
-  if (process.env.NODE_ENV === 'development' && pathname.includes('/api/tina-webhook')) {
+  if (process.env.NODE_ENV === 'development' && pathname.includes('/api/webhook')) {
     console.warn('🔓 Development mode: allowing webhook without secret')
     return NextResponse.next()
   }
@@ -146,7 +140,6 @@ export async function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     '/api/manual-notify',
-    '/api/tina-webhook',
     '/api/webmentions',
   ],
 }

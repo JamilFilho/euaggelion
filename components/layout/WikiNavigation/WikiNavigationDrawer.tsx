@@ -48,6 +48,11 @@ const wikiLinks: WikiLink[] = [
         title:"Teólogos",
         alt:"Teólogos",
         href:"/wiki/teologos"
+    },
+    {
+        title: "Buscar",
+        alt: "Buscar na Wiki",
+        href: "/wiki/search"
     }
 ];
 

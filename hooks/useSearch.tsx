@@ -1,5 +1,5 @@
-import Fuse from "fuse.js";
-import { useEffect, useMemo, useState } from "react";
+import algoliasearch from 'algoliasearch';
+import { useEffect, useState } from "react";
 
 interface SearchItem {
   slug: string;
@@ -8,32 +8,69 @@ interface SearchItem {
   content: string;
   category: string;
   date: string;
+  author: string;
 }
 
+const appId = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID || 'YOUR_APP_ID';
+const searchKey = process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_KEY || process.env.ALGOLIA_ADMIN_KEY || 'YOUR_SEARCH_KEY';
+const client = algoliasearch(appId, searchKey);
+
 export function useSearch(query: string) {
-  const [items, setItems] = useState<SearchItem[]>([]);
+  const [results, setResults] = useState<SearchItem[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetch("/search-index.json")
-      .then((res) => res.json())
-      .then(setItems);
-  }, []);
+    if (!query.trim()) {
+      setResults([]);
+      setIsLoading(false);
+      return;
+    }
 
-  const fuse = useMemo(() => {
-    if (!items.length) return null;
+    setIsLoading(true);
+    const searchIndexes = async () => {
+      try {
+        const [wikiResults, articlesResults] = await Promise.all([
+          client.initIndex('wiki').search(query),
+          client.initIndex('articles').search(query),
+        ]);
 
-    return new Fuse(items, {
-      keys: [
-        { name: "title", weight: 0.5 },
-        { name: "description", weight: 0.3 },
-        { name: "content", weight: 0.2 },
-      ],
-      threshold: 0.3,
-      ignoreLocation: true,
-    });
-  }, [items]);
+        const combined = [
+          ...wikiResults.hits.map((hit: any) => ({
+            slug: hit.slug,
+            title: hit.title,
+            description: hit.description,
+            content: hit.content,
+            category: hit.category,
+            date: hit.date,
+            author: hit.author || '',
+          })),
+          ...articlesResults.hits.map((hit: any) => ({
+            slug: hit.slug,
+            title: hit.title,
+            description: hit.description,
+            content: hit.content,
+            category: hit.category,
+            date: hit.date,
+            author: hit.author || '',
+          })),
+        ];
 
-  if (!query || !fuse) return [];
+        // Remove duplicates based on slug
+        const uniqueResults = combined.filter((item, index, self) =>
+          index === self.findIndex((t) => t.slug === item.slug)
+        );
 
-  return fuse.search(query).map((result) => result.item);
+        setResults(uniqueResults);
+      } catch (error) {
+        console.error('Erro na busca:', error);
+        setResults([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    searchIndexes();
+  }, [query]);
+
+  return { results, isLoading };
 }

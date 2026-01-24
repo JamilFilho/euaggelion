@@ -52,7 +52,7 @@ export default function FeedPagination() {
   };
 
   return (
-    <div className="md:col-span-3 w-full py-8 border-t border-ring/20">
+    <div className="col-span-1 md:col-span-3 md:w-full py-8 border-t border-ring/20">
       <Pagination>
         <PaginationContent>
           <PaginationItem>

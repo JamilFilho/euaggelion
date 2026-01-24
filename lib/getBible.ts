@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import type { ChronologyEvent } from "./getArticles";
+import { slugify } from "./utils";
 
 const BIBLE_PATH = path.join(process.cwd(), "content", "bible");
 
@@ -39,8 +39,22 @@ export interface BibleBookContent {
   description?: string;
   author: string;
   date: string;
-  chronology?: ChronologyEvent[];
-  chronologyDataset?: string[];
+}
+
+export interface ConcordanceEntry {
+  palavra: string;
+  "veja tambem"?: string[];
+  ocorrencias: number;
+  fonte: string;
+  concordancias: {
+    referencia: string;
+    texto: string;
+  }[];
+  slug: string;
+}
+
+export interface ConcordanceData {
+  [key: string]: ConcordanceEntry[];
 }
 
 function readJsonFile<T>(filePath: string): T | null {
@@ -132,4 +146,45 @@ export function getBibleChapter(versionId: string, bookSlug: string, chapter: nu
   if (!book || !book.chapters[chapter - 1]) return undefined;
   
   return book.chapters[chapter - 1];
+}
+
+export function getConcordanceData(): ConcordanceData {
+  const concordancePath = path.join(BIBLE_PATH, "concordance");
+  const concordanceData: ConcordanceData = {};
+  
+  // List of concordance files
+  const files = ['a.json', 'b.json', 'c.json', 'd.json', 'e.json', 'f.json', 'g.json', 'h.json', 'i.json', 'j.json', 'l.json', 'm.json', 'n.json', 'o.json', 'p.json', 'q.json', 'r.json', 's.json', 't.json', 'y.json'];
+  
+  for (const file of files) {
+    const filePath = path.join(concordancePath, file);
+    const data = readJsonFile<ConcordanceData>(filePath);
+    if (data) {
+      Object.assign(concordanceData, data);
+    }
+  }
+  
+  return concordanceData;
+}
+
+export function getConcordancesForVerse(versionId: string, bookSlug: string, chapter: number, verseNumber: number): ConcordanceEntry[] {
+  const book = getBibleBooks().find(b => b.slug === bookSlug);
+  if (!book) return [];
+  
+  const reference = `${book.abbrev} ${chapter}.${verseNumber}`;
+  const concordanceData = getConcordanceData();
+  const concordances: ConcordanceEntry[] = [];
+  
+  // Iterate through all concordance entries to find matches
+  for (const letter in concordanceData) {
+    for (const entry of concordanceData[letter]) {
+      if (entry.concordancias.some(c => c.referencia === reference)) {
+        concordances.push({
+          ...entry,
+          slug: `${letter}/${slugify(entry.palavra)}`
+        });
+      }
+    }
+  }
+  
+  return concordances;
 }

@@ -29,11 +29,6 @@ const wikiLinks: WikiLink[] = [
         href:"/wiki/biblia"
     },
     {
-        title:"Credos Cristãos",
-        alt:"Credos Cristãos",
-        href:"/wiki/credos"
-    },
-    {
         title: "Cronologia Bíblica",
         alt: "Cronologia Bíblica",
         href: "/wiki/cronologia",
@@ -43,21 +38,16 @@ const wikiLinks: WikiLink[] = [
         alt:"Glossário Teológico",
         href:"/wiki/glossario"
     },
-    {
-        title:"História do Cristianismo",
-        alt:"História do Cristianismo",
-        href:"/wiki/historia-cristianismo"
-    },
-    {
-        title:"Todos os temas",
-        alt:"Todos os temas",
-        href:"/wiki/temas"
-    }
+    // {
+    //     title:"Todos os temas",
+    //     alt:"Todos os temas",
+    //     href:"/wiki/temas"
+    // }
 ];
 
 export default function WikiNavigationMenu() {
     return(
-        <div className="ml-auto hidden md:flex">
+        <div className="hidden md:flex">
             <NavigationMenu>
                 <NavigationMenuList>
                     {wikiLinks.map((link) => (

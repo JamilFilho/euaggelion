@@ -1,9 +1,4 @@
 import type { NextConfig } from "next";
-import createMDX from "@next/mdx";
-
-const withMDX = createMDX({
-  extension: /\.mdx?$/
-});
 
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
@@ -23,12 +18,7 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: false,
 
   async rewrites() {
-    return [
-      {
-        source: "/admin",
-        destination: "/admin/index.html",
-      },
-    ];
+    return [];
   },
 
   async headers() {
@@ -108,13 +98,9 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  experimental: {
-    mdxRs: false,
-  },
-
   poweredByHeader: false,
   compress: true,
-  reactStrictMode: true,
+  reactStrictMode: true
 };
 
-export default withMDX(nextConfig);
+export default nextConfig;
