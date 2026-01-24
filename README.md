@@ -38,5 +38,3 @@ Para verificar, inspecione a aba Network do seu navegador ao navegar pelo site.
 - Páginas internas: `/p/[page]`
 - Categorias de conteúdos (seções): `/s/[category]`
 - Wiki: `/wiki`
-
-[Dicionário e concordância bíblica](https://github.com/WagnerFFreitas/biblia/tree/main)

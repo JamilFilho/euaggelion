@@ -10,6 +10,13 @@ import { notFound } from "next/navigation";
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
+export async function generateStaticParams() {
+  const categories = await reader.collections.categories.all();
+  return categories.map((category) => ({
+    category: category.slug,
+  }));
+}
+
 interface Params {
   category: string;
 }

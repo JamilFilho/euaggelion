@@ -14,12 +14,7 @@ const LetterGroup = ({ letter, articles, category, isCategoryPage, trailSlug }: 
     const stickyId = `sticky-glossary-${letter}`;
     const { ref } = useSticky({ id: stickyId, topOffset: -2 });
 
-    let letterHref = "";
-    if (category === "concordancia") {
-        letterHref = `/biblia/concordancia/${letter.toLowerCase()}`;
-    } else {
-        letterHref = `/wiki/${category}/${letter}`;
-    }
+    let letterHref = `/wiki/${category}/${letter}`;
 
     return (
         <div>
@@ -33,8 +28,6 @@ const LetterGroup = ({ letter, articles, category, isCategoryPage, trailSlug }: 
                     let href = "";
                     if (article.isWiki) {
                         href = `/wiki/${article.category}/${article.slug}`;
-                    } else if (article.isConcordance) {
-                        href = `/biblia/concordancia/${article.slug}`;
                     } else if (trailSlug) {
                         href = `/trilhas/${trailSlug}/${article.slug}`;
                     } else if (isCategoryPage) {
