@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 async function getCategoriesPublications(categorySlug: string) {
   const publications = [];
 
-  for (const collectionName of collections) {
+  for (const collectionName of [...collections]) {
     try {
       const items = await reader.collections[collectionName].all();
       const filteredItems = items.filter((item) => {
@@ -76,10 +76,11 @@ async function getCategoriesPublications(categorySlug: string) {
       const mappedItems = filteredItems.map(item => ({
         slug: item.slug,
         title: item.entry.title,
-        description: item.entry.description,
+        description: 'description' in item.entry ? item.entry.description : '',
         category: slugify(item.entry.category || ''),
-        author: item.entry.author ?? undefined,
+        author: 'author' in item.entry ? item.entry.author ?? undefined : undefined,
         date: item.entry.date ?? undefined,
+        isWiki: false
       }));
       publications.push(...mappedItems);
     } catch (error) {

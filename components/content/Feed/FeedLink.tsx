@@ -39,21 +39,25 @@ export default function FeedLink({ slug, category, articleCategory, trailSlug, i
 
     const href = isCategoryPage && category === "wiki"
         ? `/wiki/${articleCategory}/${slug}`
-        : isWiki
-            ? `/wiki/${slug}`
-            : category === "articles"
+        : isCategoryPage && category === "sections" && isWiki
+            ? `/wiki/${articleCategory}/${slug}`
+            : isCategoryPage && category === "sections"
                 ? `/${slug}`
-                : category === "sections"
-                ? `/s/${slug}`
-                : category === "authors"
-                ? `/autores/${slug}`
-                : category === "trilhas"
-                ? `/trilhas/${slug}`
-                : category === "concordancia"
-                ? `/biblia/concordancia/${slug}`
-                : category === "steps"
-                ? `/trilhas/${trailSlug}/${slug}`
-                : `/${slug}`;
+                : isWiki
+                    ? `/wiki/${slug}`
+                    : category === "sections"
+                    ? `/s/${slug}`
+                    : category === "articles"
+                        ? `/${slug}`
+                        : category === "authors"
+                        ? `/autores/${slug}`
+                        : category === "trilhas"
+                        ? `/trilhas/${slug}`
+                        : category === "concordancia"
+                        ? `/biblia/concordancia/${slug}`
+                        : category === "steps"
+                        ? `/trilhas/${trailSlug}/${slug}`
+                        : `/${slug}`;
 
     const content = isWiki
         ? category === "wiki"
