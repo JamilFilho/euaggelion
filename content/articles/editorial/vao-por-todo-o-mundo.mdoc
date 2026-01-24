@@ -8,41 +8,132 @@ author: jamil-filho
 category: editorial
 tags: []
 ---
-Ao discípulo não é dada outra alternativa a não ser anunciar o Evangelho de Jesus Cristo. Dentre todas as atividades e realizações, pregar o evangelho é a missão e o propósito mais importante.
+Graça e paz, meu irmão(ã). É com grande alegria que compartilho com você as últimas atualizações do Projeto Euaggelion.
 
-#### Alguns anos depois, aqui estamos novamente
+Desde nossa retomada em 2025, temos trabalhado arduamente para expandir nosso alcance e melhorar a qualidade do conteúdo aqui publicado.
 
-O ano era 2012… Na época, no auge dos meus 16 anos de idade, despretensiosamente criava o meu primeiro blog. Desde então minha trajetória de vida cristã tem sido marcada pelo desejo em contribuir, de alguma forma, com o anúncio do evangelho de Jesus.
+A atualização do projeto lançada em Janeiro de 2026 (Q2 2026 Release) incluí algumas novas funcionalidades e recursos. A seguir trataremos mais detalhadamente sobre cada um deles.
 
-No início ainda não tinha muita ideia de qual caminho seguiria, não havia traçado nenhum plano ou estabelecido nenhuma meta, apenas comecei. O tempo passou e o projeto Euaggelion foi, aos poucos, se desfazendo.
+### Reestruturação do Euaggelion
 
-Confesso que tentei retomar algumas vezes a publicação de materiais e conteúdos, entretanto, nenhuma iniciativa rendeu frutos significativos, seja pelo desânimo pessoal, ou até mesmo por meu próprio desinteresse em continuar a trabalhar neste projeto.
+Entre o final do ano de 2025 e o início de 2026, iniciamos uma reestruturação completa do Projeto Euaggelion.
 
-E, por longos anos, o Euaggelion simplesmente ficou engavetado. Podemos dizer que agi tal como o servo da parábola dos talentos. Simplesmente enterrei o talento recebido de Cristo e continuei vivendo a minha vida.
+Parte desta reestruturação foi motivada tanto por questões técnicas[^1], quanto por objetivos estratégicos de longo prazo[^2] dentre eles a garantia de que todo o conteúdo aqui publicado permaneça totalmente gratuito e acessível a todos os públicos.
 
-Porém, o chamado de Cristo sempre é mais forte. Seus desígnios sempre são mais poderosos do que qualquer tentativa humana de seguir por outro caminho e, alguns anos depois do primeiro artigo publicado no Euaggelion, aqui estamos nós novamente.
+Para isso demos o primeiro passo na migração. Saímos do Ghost CMS (tecnologia que até utilizávamos) e adotamos uma arquitetura baseada em Next.js, utilizando o poder do Jamstack para entregar conteúdos de forma rápida, segura e escalável.
 
-### O que é o Projeto Euaggelion?
+Além disso tornamos o código fonte do Euaggelion totalmente open source, permitindo que qualquer pessoa possa [contribuir com o projeto](https://github.com/JamilFilho/euaggelion), seja por meio de sugestões, correções ou até mesmo desenvolvendo novas funcionalidades. Essa decisão se baseia na convicção de que o evangelho deve ser proclamado de forma aberta, colaborativa e gratuita ([Leia nosso Manifesto](/p/manifesto)).
 
-O Euaggelion é uma iniciativa autônoma que tem por objetivo utilizar a internet como plataforma de proclamação do evangelho de Jesus.
+A primeira atualização ([Q1 2026 Release](https://github.com/JamilFilho/euaggelion/pull/10)) foi nosso mínimo produto viável (MVP) e incluiu a migração dos artigos já publicados, a implementação de um novo design responsivo, a criação de uma nova estrutura de navegação, além das primeiras ferramentas de apoio ao estudo bíblico (Gerador de Plano de Leitura, Wiki, leitor bíblico e BibliaLink) e a possibilidade de você instalar o Euaggelion como um aplicativo PWA (Progressive Web App) em seu dispositivo móvel ou desktop.
 
-Para isso partimos de algumas verticais de conteúdo:
+**Nesta segunda atualização**, o foco foi a melhoria das funcionalidades já existentes, correção de bugs, implementação de novas ferramentas e o lançammento oficial do Euaggelion como uma plataforma de estudo bíblico e teológico.
 
-- Artigos semanais
-- Devocionais
-- Estudos bíblicos e teológicos.
-- Materiais bíblicos, evangelísticos e teológicos.
+### Ferramentas de apoio
 
-Embora subscrevamos as confissões de fé e os credos históricos, não somos um projeto vinculado, diretamente, à uma instituição ou convenção. Nosso propósito é proclamar o evangelho de Cristo e não, necessariamente, um modelo de doutrina institucional ou denominacional.
+A principal mudança na filosofia editorial do Euaggelion foi avançar de um simples blog para uma plataforma de estudo bíblico. Para isso, desenvolvemos diversas ferramentas de apoio que visam facilitar o estudo e a compreensão das Escrituras Sagradas.
 
-Mesmo que creiamos que as instituições cristãs contenham o corpo de Cristo Jesus entendemos que elas não são, necessariamente, a totalidade do corpo. Compreendemos e defendemos a necessidade da comunhão entre os fiéis, entretanto, não tornaremos o projeto em uma espécie de plataforma para proselitismo institucional.
+#### Gerador de Plano de Leitura
 
-Tal como naquela tarde de sábado, em meados de 2013, enquanto escrevo esse primeiro artigo para a retomada do Euaggelion, meu coração é tomado por boas expectativas sobre o que Deus poderá fazer por meio dessa pequena iniciativa.
+Para lhe auxiliar em seu hábito de leitura bíblica, desenvolvemos um [gerador de Plano de Leitura](/planner).
 
-Espero que possamos juntos caminhar em direção ao nosso lar eterno crescendo na graça e no conhecimento de Cristo Jesus e anunciando aos perdidos o evangelho da salvação.
+Nossa ferramenta permite que você defina a quantidade de capítulos que pretende ler por dia, o tipo de leitura (Bíblia toda, leitura temática) e a data de início.
 
-Muito obrigado por sua leitura.
+A partir destas informações o gerador cria seu plano em pdf definindo quais capítulos você deve ler e te apresenta um resumo da leitura: precisão de término, quantidade de capítulos a serem lidos e se, no prazo e número de capítulos por dia definidos, o plano será cumprido ou não.
 
-Que Deus lhe abençoe.
+#### BibliaLink
 
-Em Cristo.
+A primeira versão do BibliaLink foi desenvolvida ainda no começo de 2025 com o propósito de permitir a conferência rápida e acessível das citações bíblicas nos artigos (faça o teste: João 3:16).
+
+Nesta atualização aprimoramos o desempenho do script e corrigimos alguns bugs.
+
+Por enquanto, o BibliaLink suporta apenas as seguintes versões bíblicas:
+
+- ACF (Almeida Corrigida Fiel);
+- ARA (Almeida Revista e Atualizada);
+- ARC (Almeida Revista e Corrigida);
+- AS21 (Almeida Século XXI);
+- JFAA (João Ferreira de Almeida Atualizada);
+- KJA (King James Atualizada);
+- KJF (King James Fiel);
+- NAA (Nova Almeida Atualizada);
+- NBV (Nova Bíblia Viva);
+- NTLH (Nova Tradução na Linguagem de Hoje);
+- NVI (Nova Versão Internacional);
+- NVT (Nova Versão Transformadora);
+- TB (Tradução Brasileira).
+
+Pretendemos, futuramente, adicionar suporte a outras versões bíblicas, incluindo traduções em outros idiomas e há a possiblidade de disponibilizarmos o código para que qualquer pessoa possa utilizá-lo em seu próprio site/blog.
+
+#### Bíblia Sagrada
+
+A base de funcionamento do BibliaLink é o leitor da [Bíblia Sagrada](/biblia) de maneira que, por enquanto, para você alterar a versão do BibliaLink precisa selecionar a versão desejada no leitor bíblico através do seletor no canto superior direito.
+
+Nessa atualização fizemos alguns ajustes de interface, melhoramos a navegação entre livros e capítulos, e integramos o leitor bíblico com nossos datasets de eventos cronológicos permitindo que você compreenda, de forma visual, os eventos bíblicos em sua ordem e contexto histórico.
+
+#### Eventos bíblicos: cronologia e timeline
+
+Para auxiliar no estudo e na compreensão dos eventos bíblicos e históricos abordados em nossos artigos e materiais, desenvolvemos dois componentes interativos: a cronologia e a timeline.
+
+##### Cronologia
+
+O componente de cronologia é um recurso que exibe os eventos bíblicos e/ou históricos em uma linha do tempo interativa, permitindo que você visualize a sequência dos acontecimentos e compreenda melhor o contexto em que eles aconteceram.
+
+![Componente de Cronologia Bíblica](/banners/cronologia_q2-2026.png)
+
+Além disso, cada evento na cronologia é clicável, permitindo que você acesse uma janela pop-up com mais informações sobre o acontecimento, incluindo uma descrição detalhada e referências relacionadas que você pode consultar para se aprofundar em seus estudos.
+
+##### Timeline
+
+Já o timeline é um recurso que nos permite trabalhar com eventos serializados, mas que, ao contrário da cronologia, não possuem datas. Esse componente é ideal para representar eventos como profecias, genealogias ou, até mesmo, conceitos teológicos.
+
+![Componente de Timeline Bíblica](/banners/timeline_q2-2026.png)
+
+Por padrão, os componentes carregam os eventos com zoom em 10%, mas você pode ajustar o nível de acordo com a sua preferência. Para isso, use os botões de "+" e "-" para aumentar ou diminuir o zoom, respectivamente, ou faça movimento de pinça no touchpad ou tela sensível ao toque. Você também pode arrastar a linha do tempo para explorar diferentes períodos históricos.
+
+### Trilhas de conteúdo
+
+Além das ferramentas de apoio, também desenvolvemos as [trilhas de conteúdo](/trilhas). As trilhas são sequências de conteúdos temáticos organizados de forma lógica e progressiva, permitindo que você possa aprofundar seus conhecimentos em áreas específicas da teologia e do estudo bíblico.
+
+Ao longo dos próximos meses, planejamos lançar nossas primeiras trilhas, cada uma composta por uma série de artigos, vídeos, podcasts e outros recursos que abordam um tema central, como por exemplo: "Introdução à Teologia Sistemática", "Estudo dos Evangelhos", "História da Igreja Primitiva", entre outros.
+
+### WikiGelion
+
+Outro recurso desenvolvido e implementado ao Projeto Euaggelion é a [WikiGelion](/wiki), uma enciclopédia online focada em temas bíblicos e teológicos. O objetivo é, por meio de nossa wiki, garantir que você tenha acesso gratuito à conteúdo teológico e de referência. Entre os conteúdos já disponíveis estão:
+
+- [Estudos panorâmicos dos livros bíblicos](/wiki/biblia);
+- [Glossário de termos teológicos e bíblicos](/wiki/glossario);
+- [Confissões de fé históricas](/wiki/credos);
+
+### Recursos e atualizações menores
+
+Além das principais novidades incorporadas ao projeto nesta atualização, também trabalhamos outros recursos e conteúdos, tais como:
+
+#### Fusão de newsletters ao Euaggelion
+
+- Devocionais do [Novas de Cada Manhã](/s/cada-manha) agora disponíveis no Euaggelion;
+- Textos do projeto [Little Son](/s/devocionais) também estão disponíveis aqui no projeto;
+- E os contos cristãos da newsletter [Jamil Filho | Ficção Cristã](/s/ficcao-crista) também foram incorporados ao Euaggelion.
+
+### Futuro do Projeto
+
+Essa atualização estabelece um marco importante para o projeto e posiciona o projeto na direção de um crescimento sólido e sustentável. Ainda temos uma série de funcionalidades, melhorias e atualizações planejadas para o fim do semestre, entre elas:
+
+- Ferramentas de anotações e marcações no leitor bíblico;
+- Melhorias no gerador de plano de leitura;
+- Ajustes da interface;
+
+Neste ínterim nossas energias serão direcionadas em aumentar nossa base de conteúdo, desenvolver novas trilhas de estudo e em ampliar os materiais que temos disponíveis.
+
+Minha oração é que o Euaggelion seja uma ferramenta de bênção e edificação em sua vida e caminhada cristã.
+
+Que Deus lhe abençoe. Em Cristo,
+
+Jamil Filho.
+
+---
+
+#### Notas
+
+[^1]: Em 2025 o projeto estava hospedado em um servidor dedicado, embora isso nos permitisse total controle sobre o ambiente e a implementação de novos recursos e funcionalidades, o custo de operação começou a exceder nosso orçamento mensal.
+
+[^2]: A prioridade do Euaggelion para os próximos anos é, com a ajuda de Deus, fornecer de forma gratuita e acessível conteúdos bíblicos e teológicos para todas as pessoas. Para garantir a sustentabilidade do projeto a longo prazo, decidimos adotar uma arquitetura baseada em tecnologias modernas e de baixo custo operacional, como o Jamstack, que nos permite escalar o projeto conforme a demanda sem comprometer a qualidade ou acessibilidade do conteúdo oferecido.
