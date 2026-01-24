@@ -14,10 +14,6 @@ export default function WikiSearchPage() {
   const router = useRouter();
   const [query, setQuery] = useState(searchParams.get("q") || "");
 
-  useEffect(() => {
-    setQuery(searchParams.get("q") || "");
-  }, [searchParams]);
-
   const { results, loading } = useWikiSearch(query);
 
   const articles = results.map((item) => ({

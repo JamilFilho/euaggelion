@@ -1,11 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from "next/navigation";
 import { Article } from "@/components/content/Article";
-import { getConcordanceEntry, getAllConcordanceEntries } from "@/lib/getConcordance";
+import { getConcordanceEntry } from "@/lib/getConcordance";
 import { ArticleSchema, BreadcrumbSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { slugify } from '@/lib/utils';
-import { Badge } from '@/components/ui/badge';
 import BibliaLink from '@/components/content/Bible/BibliaLink';
 
 type ConcordancePageProps = {

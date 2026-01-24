@@ -7,7 +7,7 @@ export default config({
     brand: {
       name: 'Euaggelion',
       mark: ({ colorScheme }) => {
-        let path = colorScheme === 'dark'
+        const path = colorScheme === 'dark'
           ? '/pwa/icon-512x512.png'
           : '/pwa/icon-512x512.png';
         

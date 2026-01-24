@@ -42,9 +42,9 @@ export default function BibliaLink({ children, variant = "modal" }: BibliaLinkPr
           regex.lastIndex = 0;
 
           while ((match = regex.exec(node)) !== null) {
-            let fullMatch = match[0];
-            let bookNameMatch = match[1];
-            let refDetails = match[2];
+            const fullMatch = match[0];
+            const bookNameMatch = match[1];
+            const refDetails = match[2];
             
             // Limpeza de pontuação no final da referência (detalhes)
             // Remove parênteses, pontos, vírgulas, espaços e travessões extras no final

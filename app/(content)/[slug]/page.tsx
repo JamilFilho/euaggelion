@@ -52,7 +52,7 @@ async function getAllSlugs() {
       items.forEach((item) => {
         slugs.add(item.slug);
       });
-    } catch (error) {
+    } catch {
       continue;
     }
   }
@@ -72,7 +72,7 @@ const getPostBySlug = cache(async (slug: string) => {
       if (post) {
         return post;
       }
-    } catch (error) {
+    } catch {
       continue;
     }
   }
@@ -111,22 +111,22 @@ export async function generateMetadata({params}: {params: Promise<Params>}): Pro
       authors: article.author ? [article.author] : ["Euaggelion"],
       tags: article.tags?.filter((tag): tag is string => tag !== null) ?? undefined,
       url: `https://euaggelion.com.br/${slug}`,
-      images: [
-        {
-          url: `https://euaggelion.com.br/api/og?slug=${slug}`,
-          width: 1200,
-          height: 630,
-          alt: article.title,
-          type: "image/png",
-        },
-      ],
+      // images: [
+      //   {
+      //     url: `https://euaggelion.com.br/api/og?slug=${slug}`,
+      //     width: 1200,
+      //     height: 630,
+      //     alt: article.title,
+      //     type: "image/png",
+      //   },
+      // ],
     },
     twitter: {
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
       creator: article.author || "@euaggelion",
-      images: [`https://euaggelion.com.br/api/og?slug=${slug}`],
+      // images: [`https://euaggelion.com.br/api/og?slug=${slug}`],
     },
     robots: {
       index: true,
@@ -185,17 +185,17 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
       <ArticleSchema
         title={post.title}
         description={post.description}
-        imageUrl={`https://euaggelion.com.br/api/og?slug=${post.slug}`}
+        // imageUrl={`https://euaggelion.com.br/api/og?slug=${slug}`}
         datePublished={post.date || ""}
         authorName={post.author || ""}
-        url={`https://euaggelion.com.br/${post.slug}`}
+        url={`https://euaggelion.com.br/${slug}`}
         category={category?.name || post.category || ""}
       />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://euaggelion.com.br" },
           { name: category?.name || "", url: `https://euaggelion.com.br/s/${slugify(post.category || "")}` },
-          { name: post.title, url: `https://euaggelion.com.br/${post.slug}` },
+          { name: post.title, url: `https://euaggelion.com.br/${slug}` },
         ]}
       />
       

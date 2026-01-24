@@ -5,8 +5,16 @@ import { Feed } from 'feed';
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
+interface Post {
+  title: string;
+  description: string;
+  date: string;
+  slug: string;
+  collection: string;
+}
+
 async function getAllPosts() {
-  const posts: any[] = [];
+  const posts: Post[] = [];
 
   for (const collectionName of collections) {
     try {
@@ -15,7 +23,7 @@ async function getAllPosts() {
         const post = await reader.collections[collectionName].read(item.slug);
         if (post && post.date) {
           posts.push({
-            ...post,
+            ...(post as Omit<Post, 'collection' | 'slug'>),
             collection: collectionName,
             slug: item.slug,
           });

@@ -23,7 +23,7 @@ async function getAuthorPublications(authorSlug: string) {
         return itemAuthorSlug === authorSlug;
       });
       publications.push(...filteredItems);
-    } catch (error) {
+    } catch {
       continue;
     }
   }

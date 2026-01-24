@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { getBibleVersions } from "@/lib/getBible";
 import BibleVersionSelector from "@/components/content/Bible/BibleVersionSelector";
 import BibleHomeLink from "@/components/content/Bible/BibleHomeLink";
 import { StickyHeader } from "@/components/layout/StickyHeader";

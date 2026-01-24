@@ -8,6 +8,16 @@ import Link from "next/link";
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
+type GlossaryItem = {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  date?: Date;
+  tags?: string[];
+  isWiki?: boolean;
+};
+
 async function getGlossaryItems(categorySlug: string) {
   const publications = [];
 
@@ -23,8 +33,8 @@ async function getGlossaryItems(categorySlug: string) {
         title: item.entry.title,
         description: '',
         category: slugify(item.entry.category || ''),
-        date: item.entry.date ?? undefined,
-        tags: 'tags' in item.entry ? item.entry.tags ?? undefined : undefined,
+        date: item.entry.date ? new Date(item.entry.date) : undefined,
+        tags: 'tags' in item.entry ? (item.entry.tags?.filter((tag): tag is string => tag !== null) ?? undefined) : undefined,
       }));
       publications.push(...mappedItems);
     } catch (error) {
@@ -63,8 +73,9 @@ export default async function GlossaryPage() {
     const categoryData = await reader.collections.categories.read(category);
     const articlesInCategory = (await getGlossaryItems(category))
         .sort((a, b) => a.title.localeCompare(b.title, 'pt-BR'))
-        .map((article: any) => ({
+        .map((article) => ({
         ...article,
+        date: article.date ? article.date.toISOString() : undefined,
         isWiki: true, // Marca como wiki para o FeedLink construir a URL corretamente
     }));
 

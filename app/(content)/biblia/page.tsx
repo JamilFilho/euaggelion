@@ -1,5 +1,4 @@
-import { getBibleVersion, getBibleVersions } from "@/lib/getBible";
-import Link from "next/link";
+import { getBibleVersion } from "@/lib/getBible";
 import { Bible } from "@/components/content/Bible";
 import { CollectionPageSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/ui/breadcrumb";

@@ -8,6 +8,17 @@ import { createReader } from "@keystatic/core/reader";
 import { collections } from "@/lib/utils";
 import { Feed } from "@/components/content/Feed";
 
+type KeystaticItem = {
+  slug: string;
+  entry: {
+    title: string;
+    description?: string;
+    category: string;
+    date: string;
+    author?: string;
+  };
+};
+
 export const metadata: Metadata = {
   alternates: {
     canonical: "https://euaggelion.com.br/",
@@ -41,7 +52,7 @@ async function getLatestContent() {
           });
         }
       });
-    } catch (error) {
+    } catch {
       continue;
     }
   }
@@ -63,20 +74,21 @@ async function getContent(collectionName: string) {
   }> = [];
 
   try {
-    const items: any[] = await (reader.collections as any)[collectionName].all();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const items = await (reader.collections as any)[collectionName].all() as KeystaticItem[];
     items.forEach((item) => {
       if (item.slug && item.entry.date) {
         allItems.push({
           slug: item.slug,
           title: item.entry.title,
-          description: item.entry.description,
+          description: item.entry.description as string,
           category: item.entry.category as string,
           date: item.entry.date,
           author: item.entry.author as string | undefined,
         });
       }
     });
-  } catch (error) {
+  } catch {
     // Handle error if needed
   }
 

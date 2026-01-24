@@ -5,7 +5,7 @@ import { Feed } from '@/components/content/Feed';
 import { CollectionPageSchema, FAQSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import Link from 'next/link';
-import { Github, X } from 'lucide-react';
+import { Github } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 

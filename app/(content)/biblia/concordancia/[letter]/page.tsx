@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getConcordanceEntriesByLetter, getConcordanceLetters } from "@/lib/getConcordance";
+import { getConcordanceEntriesByLetter } from "@/lib/getConcordance";
 import { Page } from "@/components/content/Page";
 import { Feed } from '@/components/content/Feed';
 import { CollectionPageSchema } from "@/lib/schema";

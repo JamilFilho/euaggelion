@@ -125,9 +125,6 @@ export default async function BibleChapterPage({ params }: Props) {
     notFound();
   }
 
-  const hasPrev = chapterNum > 1;
-  const hasNext = chapterNum < book.chapters.length;
-
   return (
     <Bible.Root>
       <VerseHighlighter />

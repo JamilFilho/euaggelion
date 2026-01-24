@@ -37,10 +37,10 @@ export default function FeedLink({ slug, category, articleCategory, trailSlug, i
         );
     }
 
-    const href = isWiki
-        ? `/wiki/${slug}`
-        : isCategoryPage || category === "wiki"
-            ? `/wiki/${articleCategory}`
+    const href = isCategoryPage && category === "wiki"
+        ? `/wiki/${articleCategory}/${slug}`
+        : isWiki
+            ? `/wiki/${slug}`
             : category === "articles"
                 ? `/${slug}`
                 : category === "sections"

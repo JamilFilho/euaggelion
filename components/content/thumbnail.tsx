@@ -95,7 +95,7 @@ export function ThumbnailGradient({
     ) => {
       const imageData = ctx.getImageData(0, 0, width, height);
       for (let i = 0; i < imageData.data.length; i += 4) {
-        let noise = Math.random() * 255 * alpha;
+        const noise = Math.random() * 255 * alpha;
         imageData.data[i] += noise;
         imageData.data[i + 1] += noise;
         imageData.data[i + 2] += noise;
@@ -136,7 +136,7 @@ export function ThumbnailGradient({
       // Criar blob irregular
       const path = new Path2D();
       const numPoints = 5 + Math.floor(Math.random() * 5);
-      let points = [];
+      const points = [];
 
       for (let i = 0; i < numPoints; i++) {
         const angle = Math.random() * Math.PI * 2;

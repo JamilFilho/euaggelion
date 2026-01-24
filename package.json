@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --webpack",
     "build": "tsx lib/indexWikiToAlgolia.ts && tsx lib/indexArticlesToAlgolia.ts && next build --webpack",
+    "local:build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "index-wiki": "tsx lib/indexWikiToAlgolia.ts",
