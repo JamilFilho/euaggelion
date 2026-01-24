@@ -42,26 +42,32 @@ function Dictionary({ entry, children }: DictionaryProps) {
 const reader = createReader(process.cwd(), keystaticConfig);
 
 async function getAllSlugs() {
-  const slugs: string[] = [];
+  const slugs: { category: string; slug: string }[] = [];
 
   for (const collectionName of wiki) {
     try {
       const items = await reader.collections[collectionName].all();
-      items.forEach((item) => {
-        slugs.push(item.slug);
-      });
+      for (const item of items) {
+        const post = await reader.collections[collectionName].read(item.slug);
+        if (post && post.category) {
+          slugs.push({
+            category: slugify(post.category),
+            slug: item.slug,
+          });
+        }
+      }
     } catch (error) {
       continue;
     }
   }
 
-  return slugs.sort();
+  return slugs;
 }
 
 export async function generateStaticParams() {
   const slugs = await getAllSlugs();
   // Generate only the first 10 pages at build time
-  return slugs.slice(0, 10).map((slug) => ({ slug }));
+  return slugs.slice(0, 10);
 }
 
 // Allow generation of pages not in generateStaticParams on demand
