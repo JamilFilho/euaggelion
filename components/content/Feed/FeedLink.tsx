@@ -53,8 +53,6 @@ export default function FeedLink({ slug, category, articleCategory, trailSlug, i
                         ? `/autores/${slug}`
                         : category === "trilhas"
                         ? `/trilhas/${slug}`
-                        : category === "concordancia"
-                        ? `/biblia/concordancia/${slug}`
                         : category === "steps"
                         ? `/trilhas/${trailSlug}/${slug}`
                         : `/${slug}`;
