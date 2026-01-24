@@ -2,15 +2,15 @@ import { ReactNode } from "react"
 
 interface PageHeaderProps {
     children: ReactNode;
-    variant?: "default" | "home" | "wiki";
+    variant?: "default" | "home" | "wiki" | "center";
 }
 
 export function PageHeader({children, variant = "default"}: PageHeaderProps) {
-    const bgColor = variant === "home" ? "bg-black/10" : "";
-    const sizeHeight = variant === "wiki" ? "h-56 md:h-96" : "h-96";
+    const bgColor = variant === "home" ? "items-center text-center bg-black/10" : "";
+    const center = variant === "center" ? "items-center text-center md:text-left md:items-start" : "";
 
     return(
-        <header className={`${bgColor} ${sizeHeight} px-10 flex flex-col justify-center gap-4`}>
+        <header className={`${bgColor} ${center} px-10 py-20 flex flex-col justify-center gap-4`}>
             {children}
         </header>
     )

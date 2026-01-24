@@ -38,11 +38,13 @@ export default function FeedLink({ slug, category, articleCategory, trailSlug, i
     }
 
     const href = isWiki
-        ? `/wiki/${articleCategory}/${slug}`
+        ? `/wiki/${slug}`
         : isCategoryPage || category === "wiki"
             ? `/wiki/${articleCategory}`
             : category === "articles"
                 ? `/${slug}`
+                : category === "sections"
+                ? `/s/${slug}`
                 : category === "authors"
                 ? `/autores/${slug}`
                 : category === "trilhas"
@@ -61,6 +63,8 @@ export default function FeedLink({ slug, category, articleCategory, trailSlug, i
             ? "Continuar lendo"
             : category === "authors"
             ? "Ver artigos"
+            : category === "sections"
+            ? "Ver artigos da seção"
             : category === "trilhas"
             ? "Ver Trilha"
             : category === "steps"

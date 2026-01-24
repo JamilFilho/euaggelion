@@ -5,9 +5,9 @@ interface PageContentProps {
 }
 
 export function PageContent({children}: PageContentProps) {
-    return(
-        <div>
+    return (
+        <section className="flex flex-col">
             {children}
-        </div>
+        </section>
     )
 }

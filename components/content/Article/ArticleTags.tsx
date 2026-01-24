@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 
 interface ArticleTagsProps {
-    tags?: Array<string>
+  tags?: string[];
 }
 
 export function ArticleTags({tags}:ArticleTagsProps) {

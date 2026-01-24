@@ -15,7 +15,7 @@ interface Article {
     step?: number; // usado para ordenar passos de trilhas
 }
 
-type FilterType = "testament" | "date" | "author";
+type FilterType = "testament" | "date" | "author" | "category";
 
 interface FeedContextType {
     filteredArticles: Article[];
@@ -27,7 +27,9 @@ interface FeedContextType {
     totalPages: number;
     itemsPerPage: number;
     authors: string[];
+    categories: string[];
     trailSlug?: string;
+    emptyMessage?: string;
     onFilterChange: (value: string) => void;
     onFilterTypeChange: (type: FilterType) => void;
     onAuthorFilterChange: (author: string) => void;
@@ -49,10 +51,11 @@ interface FeedProviderProps {
     itemsPerPage?: number;
     category?: string;
     trailSlug?: string;
+    emptyMessage?: string;
     children: ReactNode;
 }
 
-export default function FeedProvider({ articles, itemsPerPage = 12, category, trailSlug, children }: FeedProviderProps) {
+export default function FeedProvider({ articles, itemsPerPage = 12, category, trailSlug, emptyMessage, children }: FeedProviderProps) {
     // Definir estado inicial baseado na categoria
     const isVersoAVerso = category === "verso-a-verso";
     const isSteps = category === "steps";
@@ -69,6 +72,9 @@ export default function FeedProvider({ articles, itemsPerPage = 12, category, tr
             .map(a => a.author!)
     )).sort();
 
+    // Extrair lista única de categorias
+    const categories = Array.from(new Set(articles.map(a => a.category))).sort();
+
     // Filtra e ordena os artigos baseado no tipo de filtro
     const filteredArticles = articles.filter((article) => {
         // Se está filtrando por testament (verso-a-verso)
@@ -81,6 +87,12 @@ export default function FeedProvider({ articles, itemsPerPage = 12, category, tr
         if (filterType === "author") {
             if (!authorFilter) return true;
             return article.author === authorFilter;
+        }
+
+        // Se está filtrando por categoria
+        if (filterType === "category") {
+            if (filter === "all") return true;
+            return article.category === filter;
         }
         
         // Padrão: filtro por testament
@@ -160,7 +172,9 @@ export default function FeedProvider({ articles, itemsPerPage = 12, category, tr
                 totalPages,
                 itemsPerPage,
                 authors,
+                categories,
                 trailSlug,
+                emptyMessage,
                 onFilterChange: handleFilterChange,
                 onFilterTypeChange: handleFilterTypeChange,
                 onAuthorFilterChange: handleAuthorFilterChange,

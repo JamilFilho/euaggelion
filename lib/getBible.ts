@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import type { ChronologyEvent } from "./getArticles";
 import { slugify } from "./utils";
 
 const BIBLE_PATH = path.join(process.cwd(), "content", "bible");
@@ -40,8 +39,6 @@ export interface BibleBookContent {
   description?: string;
   author: string;
   date: string;
-  chronology?: ChronologyEvent[];
-  chronologyDataset?: string[];
 }
 
 export interface ConcordanceEntry {

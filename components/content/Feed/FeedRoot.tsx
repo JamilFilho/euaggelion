@@ -18,13 +18,14 @@ interface FeedRootProps {
     category: string;
     trailSlug?: string;
     itemsPerPage?: number;
+    emptyMessage?: string;
     children: ReactNode;
 }
 
-export default function FeedRoot({ articles, category, trailSlug, itemsPerPage, children }: FeedRootProps) {
+export default function FeedRoot({ articles, category, trailSlug, itemsPerPage, emptyMessage, children }: FeedRootProps) {
     return (
-        <FeedProvider articles={articles} category={category} trailSlug={trailSlug} itemsPerPage={itemsPerPage}>
-            <div className="flex flex-col">
+        <FeedProvider articles={articles} category={category} trailSlug={trailSlug} itemsPerPage={itemsPerPage} emptyMessage={emptyMessage}>
+            <div className="flex flex-col border-b border-ring/20">
                 {children}
             </div>
         </FeedProvider>

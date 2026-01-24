@@ -5,7 +5,7 @@ interface ArticleHeaderProps {
 }
 
 export function ArticleRoot({children}: ArticleHeaderProps) {
-    return(
+    return (
         <article>
             {children}
         </article>

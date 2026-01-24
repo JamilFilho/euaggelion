@@ -34,25 +34,20 @@ const wikiLinks: WikiLink[] = [
         href: "/wiki/cronologia",
     },
     {
-        title:"Dicionário Teológico",
-        alt:"Dicionário Teológico",
-        href:"/wiki/dicionario"
-    },
-    {
         title:"Glossário Teológico",
         alt:"Glossário Teológico",
         href:"/wiki/glossario"
     },
-    {
-        title:"Todos os temas",
-        alt:"Todos os temas",
-        href:"/wiki/temas"
-    }
+    // {
+    //     title:"Todos os temas",
+    //     alt:"Todos os temas",
+    //     href:"/wiki/temas"
+    // }
 ];
 
 export default function WikiNavigationMenu() {
     return(
-        <div className="ml-auto hidden md:flex">
+        <div className="hidden md:flex">
             <NavigationMenu>
                 <NavigationMenuList>
                     {wikiLinks.map((link) => (

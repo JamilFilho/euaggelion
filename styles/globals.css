@@ -45,143 +45,111 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  html {
+  html,
+  body {
     @apply overflow-x-hidden;
   }
 
-  .article-content {
+  .article-content article {
     @apply flex flex-col gap-6;
   }
 
-  .site-page .article-content {
+  .site-page .article-content article {
     @apply mb-12;
   }
 
-  .article-content h1,
-  .article-content h2,
-  .article-content h3,
-  .article-content h4,
-  .article-content h5 {
+  .article-content article h1,
+  .article-content article h2,
+  .article-content article h3,
+  .article-content article h4,
+  .article-content article h5 {
     @apply text-primary my-2 font-bold;
   }
 
-  .article-content h1 {
+  .article-content article h1 {
     @apply text-5xl;
   }
 
-  .article-content h2 {
+  .article-content article h2 {
     @apply text-4xl;
   }
 
-  .article-content h3 {
+  .article-content article h3 {
     @apply text-3xl;
   }
 
-  .article-content h4 {
+  .article-content article h4 {
     @apply text-2xl;
   }
 
-  .article-content h5 {
+  .article-content article h5 {
     @apply text-xl uppercase;
   }
 
-  .article-content :is(h2, h3, h4, h5, h6) {
+  .article-content article :is(h2, h3, h4, h5, h6) {
     @apply relative scroll-mt-24;
   }
 
-  .article-content p {
+  .article-content article p {
     @apply text-lg text-primary;
   }
 
-  .article-content  > p:first-of-type:not(blockquote p):not(:has(sup))::first-letter {
+  .article-content article  > p:first-of-type:not(blockquote p):not(:has(sup))::first-letter {
     @apply float-left text-6xl mr-4 font-bold leading-snug;
   }
 
-  .article-content a {
+  .article-content article a {
     @apply text-accent underline decoration-dotted underline-offset-4 break-words font-bold;
   }
 
-  .article-content a.heading-anchor {
+  .article-content article a.heading-anchor {
     @apply absolute top-1/2 -translate-y-1/2 opacity-0 inline-flex items-center justify-center p-1 rounded text-primary no-underline decoration-transparent transition-all duration-150 ease-in-out;
     left: -1.75rem;
   }
 
-  .article-content :is(h2, h3, h4, h5, h6):hover a.heading-anchor,
-  .article-content :is(h2, h3, h4, h5, h6):focus-within a.heading-anchor {
+  .article-content article :is(h2, h3, h4, h5, h6):hover a.heading-anchor,
+  .article-content article :is(h2, h3, h4, h5, h6):focus-within a.heading-anchor {
     @apply opacity-100 text-accent -translate-x-1 -translate-y-1/2;
   }
 
-  .article-content a.heading-anchor:focus-visible {
+  .article-content article a.heading-anchor:focus-visible {
     @apply outline-none ring-2 ring-accent/60;
   }
 
-  .article-content .heading-link-icon {
+  .article-content article .heading-link-icon {
     @apply block;
   }
 
-  .article-content blockquote {
+  .article-content article blockquote {
     @apply border-l-4 border-accent my-8 pl-6 py-4 flex flex-col gap-4;
   }
 
-  .article-content code:not(pre code) {
+  .article-content article code:not(pre code) {
     @apply bg-zinc-500 p-1;
   }
 
-  .article-content pre  {
+  .article-content article pre  {
     @apply text-lg text-center my-10 p-4 rounded-xl bg-black/20 overflow-x-hidden text-foreground/60 break-words;
   }
 
-  .article-content hr {
+  .article-content article hr {
     @apply border-ring/20 my-8;
   }
 
-  .article-content img {
+  .article-content article img {
     @apply my-6 w-full max-w-none;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
   }
 
-  .article-content > figure:first-child .image-wrapper,
-  .article-content > p:first-child figure:only-child.image-wrapper {
-    position:absolute;
-    top:0;
-    left:0;
-    margin-left: 0;
-    opacity: .5;
-    z-index:-10;
-    @apply h-[80vh] md:h-[140vh] w-full;
-  }
-
-  .article-content > figure:first-child .image-wrapper img,
-  .article-content > p:first-child figure:only-child.image-wrapper img {
-    @apply h-[70vh] md:h-[130vh] w-full;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .article-content > figure:first-child .image-wrapper::before,
-  .article-content > p:first-child figure:only-child.image-wrapper::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, hsl(var(--secondary)), transparent);
-    z-index: 1;
-    pointer-events: none;
-    @apply h-[69vh] md:h-[130vh] w-full;
-  }
-
-  .article-content ul,
-  .article-content ol {
+  .article-content article ul,
+  .article-content article ol {
     @apply pl-4 py-6 flex flex-col gap-2 text-lg text-content;
   }
 
-  .article-content ul {
+  .article-content article ul {
     @apply list-disc;
   }
 
-  .article-content ol {
+  .article-content article ol {
     @apply list-decimal;
   }
 
@@ -189,28 +157,28 @@
     @apply text-accent underline decoration-dotted underline-offset-4;
   }
 
-  .article-content table {
+  .article-content article table {
     @apply w-full border-collapse text-sm md:text-base;
   }
 
-  .article-content thead {
+  .article-content article thead {
     @apply bg-black/20;
   }
 
-  .article-content th {
+  .article-content article th {
     @apply border border-border px-3 py-2 text-left font-semibold md:px-4 md:py-3;
   }
 
-  .article-content td {
+  .article-content article td {
     @apply border border-border px-3 py-2 md:px-4 md:py-3;
   }
 
-  .article-content tbody tr:hover {
+  .article-content article tbody tr:hover {
     @apply bg-muted/50 transition-colors;
   }
 
   /* Para tabelas em telas muito pequenas, adicione scroll horizontal */
-  .article-content {
+  .article-content article {
     @apply overflow-x-auto;
   }
 
@@ -274,7 +242,7 @@
     --chart-5: 340 75% 55%;
   }
 
-  .article-content p {
+  .article-content article p {
     @apply text-lg text-primary/80;
   }
 }
@@ -326,21 +294,4 @@
   -webkit-backdrop-filter: blur(8px) !important;
   will-change: transform;
   transform: translateZ(0); /* Force hardware acceleration */
-}
-
-/* Evitar que mudanças no DOM afetem elementos sticky */
-.feed-container {
-  contain: layout style;
-}
-
-@layer base {
-  * {
-    @apply border-border;
-
-  }
-  body {
-    @apply bg-background text-foreground;
-
-  }
-
 }

@@ -1,0 +1,17 @@
+{
+  "name": "Cruzadas Cristãs",
+  "description": "As Cruzadas Cristãs foram uma série de expedições militares sancionadas pela Igreja Católica durante a Idade Média, com o objetivo principal de recuperar Jerusalém e outros territórios considerados sagrados para o cristianismo, que estavam sob controle muçulmano.",
+  "period": {
+    "start": 1096,
+    "end": 1272
+  },
+  "events": [
+        {
+            "yearStart": 1096,
+            "yearEnd": 1099,
+            "event": "A Primeira Cruzada",
+            "description": "A Primeira Cruzada foi convocada pelo Papa Urbano II em 1095, resultando na captura de Jerusalém pelos cruzados em 1099 e na criação dos Estados Cruzados.",
+            "reference": [""]
+        }
+    ]
+}

@@ -9,6 +9,8 @@ import {
   updateLastNotified,
   type PushSubscriptionData 
 } from '@/lib/kv'
+import { createReader } from "@keystatic/core/reader";
+import keystaticConfig from "@/keystatic.config";
 
 webpush.setVapidDetails(
   'mailto:contato@euaggelion.com.br',
@@ -223,4 +225,32 @@ export async function sendNotificationToAll(
     failed,
     removed
   }
+}
+
+export async function getCategoryNames(slugs: string[]) {
+    const reader = createReader(process.cwd(), keystaticConfig);
+    const names: Record<string, string> = {};
+    for (const slug of slugs) {
+        try {
+            const cat = await reader.collections.categories.read(slug);
+            names[slug] = cat?.name || slug;
+        } catch {
+            names[slug] = slug;
+        }
+    }
+    return names;
+}
+
+export async function getAuthorNames(slugs: string[]) {
+    const reader = createReader(process.cwd(), keystaticConfig);
+    const names: Record<string, string> = {};
+    for (const slug of slugs) {
+        try {
+            const author = await reader.collections.authors.read(slug);
+            names[slug] = author?.name || slug;
+        } catch {
+            names[slug] = slug;
+        }
+    }
+    return names;
 }
