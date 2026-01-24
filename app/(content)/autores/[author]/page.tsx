@@ -9,8 +9,16 @@ import { BreadcrumbSchema, CollectionPageSchema } from "@/lib/schema";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import { Facebook, Globe, Instagram, Twitter } from "lucide-react";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 const reader = createReader(process.cwd(), keystaticConfig);
+
+export async function generateStaticParams() {
+  const authors = await reader.collections.authors.all();
+  return authors.map((author) => ({
+    author: author.slug,
+  }));
+}
 
 async function getAuthorPublications(authorSlug: string) {
   const publications = [];
@@ -93,6 +101,9 @@ export async function generateMetadata({
 export default async function AuthorPage({ params }: { params: Promise<{ author: string }> }) {
     const { author } = await params;
     const authorData = await reader.collections.authors.read(author);
+    if (!authorData) {
+        notFound();
+    }
     const authorPublications = await getAuthorPublications(author);
 
     const articles = authorPublications.map((pub) => ({

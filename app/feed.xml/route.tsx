@@ -1,9 +1,11 @@
-import { collections } from '@/lib/utils';
+import { collections, wiki } from '@/lib/utils';
 import { createReader } from '@keystatic/core/reader';
-import keystaticConfig from '../../keystatic.config';
+import keystaticConfig from '@/keystatic.config';
 import { Feed } from 'feed';
 
 const reader = createReader(process.cwd(), keystaticConfig);
+
+export const revalidate = 86400; // Revalidar a cada 24 horas
 
 interface Post {
   title: string;
@@ -16,7 +18,9 @@ interface Post {
 async function getAllPosts() {
   const posts: Post[] = [];
 
-  for (const collectionName of collections) {
+  const allCollections = [...collections, ...wiki];
+
+  for (const collectionName of allCollections) {
     try {
       const items = await reader.collections[collectionName].all();
       for (const item of items) {
@@ -58,7 +62,13 @@ export async function GET() {
   });
 
   posts.forEach((post) => {
-    const link = `https://euaggelion.com.br/${post.slug}`;
+    let link: string;
+    if (wiki.includes(post.collection as any)) {
+      const category = post.collection.replace('Wiki', '').toLowerCase();
+      link = `https://euaggelion.com.br/wiki/${category}/${post.slug}`;
+    } else {
+      link = `https://euaggelion.com.br/${post.slug}`;
+    }
     feed.addItem({
       title: post.title,
       id: link,
