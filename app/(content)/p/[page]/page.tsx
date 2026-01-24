@@ -10,6 +10,13 @@ import { BreadcrumbSchema } from "@/lib/schema";
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
+export async function generateStaticParams() {
+  const pages = await reader.collections.page.all();
+  return pages.map((page) => ({
+    page: page.slug,
+  }));
+}
+
 interface Params {
   page: string;
 }
