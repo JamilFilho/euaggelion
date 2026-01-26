@@ -284,18 +284,14 @@
   @apply bg-[#7b7b7b] rounded-[29px];
 }
 
-/* Melhorar estabilidade do breadcrumb sticky */
-.sticky-breadcrumb {
-  position: sticky !important;
-  top: 0px !important;
-  z-index: 800 !important;
-  background-color: hsl(var(--secondary)) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  will-change: transform;
-  transform: translateZ(0); /* Force hardware acceleration */
+/* Sticky classes */
+.sticky-active {
+  position: fixed !important;
+  z-index: 10000 !important;
+  width: 100% !important;
+  transition: top 0.3s ease-in-out;
 }
 
-.feed-container {
-  contain: layout style;
+.sticky-high-z {
+  z-index: 10000 !important;
 }
