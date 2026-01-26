@@ -295,3 +295,7 @@
   will-change: transform;
   transform: translateZ(0); /* Force hardware acceleration */
 }
+
+.feed-container {
+  contain: layout style;
+}

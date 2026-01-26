@@ -58,7 +58,7 @@ export async function generateMetadata({params}: {params: Promise<Params>}): Pro
       url: `https://euaggelion.com.br/wiki/glossario/${slug}`,
       images: [
         {
-          url: `https://euaggelion.com.br/api/og?slug=${slug}`,
+          url: `/images/thumbnails/${slug}/thumbnail.jpg`,
           width: 1200,
           height: 630,
           alt: article.title,
@@ -71,7 +71,7 @@ export async function generateMetadata({params}: {params: Promise<Params>}): Pro
       title: article.title,
       description: `O que é ${article.title}? Estude seobre o tema no Glossário WikiGelion`,
       creator: "@euaggelion",
-      images: [`https://euaggelion.com.br/api/og?slug=${slug}`],
+      images: [`/images/thumbnails/${slug}/thumbnail.jpg`],
     },
     robots: {
       index: true,

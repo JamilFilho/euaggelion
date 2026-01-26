@@ -42,7 +42,7 @@ export const useSticky = ({ topOffset = 0, onStick, id }: UseStickyOptions = {})
       const footerTop = footerElement?.getBoundingClientRect().top ?? window.innerHeight + 1;
 
       // Should be sticky when not overlapping footer
-      const shouldBeSticky = (currentOffset + currentHeight) < footerTop;
+      const shouldBeSticky = (currentOffset + currentHeight) < (scrollTop + footerTop);
 
       if (shouldBeSticky && !isStuckyRef.current) {
         // Aplicar sticky
