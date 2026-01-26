@@ -12,6 +12,8 @@ interface StickyContextType {
   registerStickyElement: (id: string, height: number) => void;
   unregisterStickyElement: (id: string) => void;
   getStickyOffset: (id: string, baseOffset: number) => number;
+  setElementSticky: (id: string, isSticky: boolean) => void;
+  getTotalStickyHeight: () => number;
   elements: StickyElement[];
 }
 
@@ -27,6 +29,7 @@ const getOrderPriority = (id: string): number => {
 
 export function StickyProvider({ children }: { children: ReactNode }) {
   const elementsRef = useRef<Map<string, StickyElement>>(new Map());
+  const activeStickyRef = useRef<Set<string>>(new Set());
 
   const registerStickyElement = useCallback((id: string, height: number) => {
     const newMap = new Map(elementsRef.current);
@@ -39,6 +42,26 @@ export function StickyProvider({ children }: { children: ReactNode }) {
     const newMap = new Map(elementsRef.current);
     newMap.delete(id);
     elementsRef.current = newMap;
+    activeStickyRef.current.delete(id);
+  }, []);
+
+  const setElementSticky = useCallback((id: string, isSticky: boolean) => {
+    if (isSticky) {
+      activeStickyRef.current.add(id);
+    } else {
+      activeStickyRef.current.delete(id);
+    }
+  }, []);
+
+  const getTotalStickyHeight = useCallback(() => {
+    let total = 0;
+    for (const id of activeStickyRef.current) {
+      const element = elementsRef.current.get(id);
+      if (element) {
+        total += element.height;
+      }
+    }
+    return total;
   }, []);
 
   const getStickyOffset = useCallback((id: string, baseOffset: number): number => {
@@ -59,7 +82,7 @@ export function StickyProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <StickyContext.Provider value={{ registerStickyElement, unregisterStickyElement, getStickyOffset, elements: Array.from(elementsRef.current.values()) }}>
+    <StickyContext.Provider value={{ registerStickyElement, unregisterStickyElement, getStickyOffset, setElementSticky, getTotalStickyHeight, elements: Array.from(elementsRef.current.values()) }}>
       {children}
     </StickyContext.Provider>
   );

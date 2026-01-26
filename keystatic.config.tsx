@@ -26,9 +26,11 @@ export default config({
       'Configurações': ['settings', 'social']
     },
   },
-  storage: {
+  storage: process.env.NODE_ENV === 'development' ? {
     kind: 'github',
     repo: `JamilFilho/euaggelion`
+  } : {
+    kind: 'local'
   },
 
   collections: {
@@ -40,6 +42,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -79,6 +85,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -112,6 +122,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -143,6 +157,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -176,6 +194,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -194,6 +216,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -225,6 +251,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -256,6 +286,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -274,6 +308,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -305,6 +343,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -321,6 +363,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -345,6 +391,7 @@ export default config({
         ),
       },
     }),
+    
     trails: collection({
       label: 'Trilhas',
       slugField: 'title',
@@ -352,6 +399,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -370,6 +421,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -389,6 +444,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -404,6 +463,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -434,6 +497,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         date: fields.date({ label: 'Data de Publicação' }),
         category: fields.relationship({ label: 'Categoria', collection: 'categories' }),
@@ -448,6 +515,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -463,6 +534,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         date: fields.date({ label: 'Data de Publicação' }),
@@ -480,6 +555,10 @@ export default config({
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
+        thumbnail: fields.image({ 
+          label: 'Foto',
+          directory: 'public/images/thumbnails'
+        }),
         title: fields.slug({ name: { label: 'Título' } }),
         description: fields.text({ label: 'Descrição', multiline: true, validation: { length: { min: 1 } } }),
         content: fields.markdoc({ label: 'Conteúdo' }),

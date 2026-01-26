@@ -12,8 +12,9 @@ export const useSticky = ({ topOffset = 0, onStick, id }: UseStickyOptions = {})
   const isStuckyRef = useRef(false);
   const elementHeightRef = useRef(0);
   const elementIdRef = useRef(id || `sticky-${Math.random().toString(36).substr(2, 9)}`);
+  const initialTopRef = useRef(0);
   
-  const { registerStickyElement, unregisterStickyElement, getStickyOffset } = useStickContext();
+  const { registerStickyElement, unregisterStickyElement, getStickyOffset, setElementSticky, getTotalStickyHeight } = useStickContext();
 
   useEffect(() => {
     const element = ref.current;
@@ -25,6 +26,7 @@ export const useSticky = ({ topOffset = 0, onStick, id }: UseStickyOptions = {})
     // Registrar altura inicial
     const height = element.offsetHeight;
     elementHeightRef.current = height;
+    initialTopRef.current = element.offsetTop;
     registerStickyElement(elementId, height);
 
     const handleScroll = () => {
@@ -37,23 +39,31 @@ export const useSticky = ({ topOffset = 0, onStick, id }: UseStickyOptions = {})
       const currentOffset = getStickyOffset(elementId, topOffset);
       const scrollTop = window.scrollY;
       
-      // Encontra o footer
-      const footerElement = document.querySelector('.site-footer');
-      const footerTop = footerElement?.getBoundingClientRect().top ?? window.innerHeight + 1;
+      const shouldBeSticky = scrollTop > initialTopRef.current && !isStuckyRef.current;
+      const shouldUnstick = scrollTop <= initialTopRef.current && isStuckyRef.current;
 
-      // Should be sticky when not overlapping footer
-      const shouldBeSticky = (currentOffset + currentHeight) < footerTop;
-
-      if (shouldBeSticky && !isStuckyRef.current) {
-        // Aplicar sticky
-        element.style.position = 'sticky';
+      if (shouldBeSticky) {
+        element.classList.add('sticky-active', 'sticky-high-z');
         element.style.top = `${currentOffset}px`;
+        element.style.zIndex = '10000';
+        
+        setElementSticky(elementId, true);
+        
+        // Compensar espaço perdido no body
+        document.body.style.marginTop = `${getTotalStickyHeight()}px`;
+        
         isStuckyRef.current = true;
         onStick?.(true);
-      } else if (!shouldBeSticky && isStuckyRef.current) {
-        // Remover sticky
-        element.style.position = 'relative';
-        element.style.top = 'auto';
+      } else if (shouldUnstick) {
+        element.classList.remove('sticky-active', 'sticky-high-z');
+        element.style.top = '';
+        element.style.zIndex = '';
+        
+        setElementSticky(elementId, false);
+        
+        // Atualizar compensação no body
+        document.body.style.marginTop = `${getTotalStickyHeight()}px`;
+        
         isStuckyRef.current = false;
         onStick?.(false);
       }

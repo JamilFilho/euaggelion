@@ -111,22 +111,22 @@ export async function generateMetadata({params}: {params: Promise<Params>}): Pro
       authors: article.author ? [article.author] : ["Euaggelion"],
       tags: article.tags?.filter((tag): tag is string => tag !== null) ?? undefined,
       url: `https://euaggelion.com.br/${slug}`,
-      // images: [
-      //   {
-      //     url: `https://euaggelion.com.br/api/og?slug=${slug}`,
-      //     width: 1200,
-      //     height: 630,
-      //     alt: article.title,
-      //     type: "image/png",
-      //   },
-      // ],
+      images: [
+        {
+          url: `/images/thumbnails/${slug}/thumbnail.jpg`,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+          type: "image/png",
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
       creator: article.author || "@euaggelion",
-      // images: [`https://euaggelion.com.br/api/og?slug=${slug}`],
+      images: [`/images/thumbnails/${slug}/thumbnail.jpg`],
     },
     robots: {
       index: true,
@@ -185,7 +185,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
       <ArticleSchema
         title={post.title}
         description={post.description}
-        // imageUrl={`https://euaggelion.com.br/api/og?slug=${slug}`}
+        imageUrl={post?.thumbnail || ""}
         datePublished={post.date || ""}
         authorName={post.author || ""}
         url={`https://euaggelion.com.br/${slug}`}
