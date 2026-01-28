@@ -1,6 +1,5 @@
 import { config, fields, collection, singleton } from '@keystatic/core';
 import { inline } from '@keystatic/core/content-components';
-export const showAdminUI = process.env.NODE_ENV === "development";
 
 export default config({
   ui: {
@@ -26,11 +25,9 @@ export default config({
       'Configurações': ['settings', 'social']
     },
   },
-  storage: process.env.NODE_ENV === 'development' ? {
+  storage: {
     kind: 'github',
     repo: `JamilFilho/euaggelion`
-  } : {
-    kind: 'local'
   },
 
   collections: {
