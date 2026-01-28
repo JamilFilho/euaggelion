@@ -8,10 +8,12 @@ import { getReadingTime } from "@/lib/timeReader";
 import { Article } from "@/components/content/Article";
 import { Author } from "@/components/content/Author";
 import Link from "next/link";
+import { draftMode } from "next/headers";
 import BibliaLink from "@/components/content/Bible/BibliaLink";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import { Metadata } from "next";
 import { ArticleSchema, BreadcrumbSchema } from "@/lib/schema";
+import { reader } from "@/lib/reader";
 
 interface DictionaryProps {
   entry: string;
@@ -41,14 +43,13 @@ function Dictionary({ entry, children }: DictionaryProps) {
   );
 }
 
-const reader = createReader(process.cwd(), keystaticConfig);
-
 async function getAllSlugs() {
+  const readerInstance = await reader();
   const slugs = new Set<string>();
 
   for (const collectionName of collections) {
     try {
-      const items = await reader.collections[collectionName].all();
+      const items = await readerInstance.collections[collectionName].all();
       items.forEach((item) => {
         slugs.add(item.slug);
       });
@@ -66,9 +67,10 @@ export async function generateStaticParams() {
 }
 
 const getPostBySlug = cache(async (slug: string) => {
+  const readerInstance = await reader();
   for (const collectionName of collections) {
     try {
-      const post = await reader.collections[collectionName].read(slug);
+      const post = await readerInstance.collections[collectionName].read(slug);
       if (post) {
         return post;
       }
@@ -86,8 +88,9 @@ interface Params {
 
 export async function generateMetadata({params}: {params: Promise<Params>}): Promise<Metadata> {
   const { slug } = await params;
+  const readerInstance = await reader();
   const article = await getPostBySlug(slug);
-  const category = article?.category ? await reader.collections.categories.read(article.category) : null;
+  const category = article?.category ? await readerInstance.collections.categories.read(article.category) : null;
 
   if (!article) {
     return {
@@ -153,8 +156,10 @@ export async function generateMetadata({params}: {params: Promise<Params>}): Pro
 export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
-  const author = post?.author ? await reader.collections.authors.read(post.author) : null;
-  const category = post?.category ? await reader.collections.categories.read(post.category) : null;
+  const readerInstance = await reader();
+  const author = post?.author ? await readerInstance.collections.authors.read(post.author) : null;
+  const category = post?.category ? await readerInstance.collections.categories.read(post.category) : null;
+  const isDraft = (await draftMode()).isEnabled;
 
   if (!post) {
     return notFound();
@@ -208,6 +213,12 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
         sticky={true}
         className=""
       />
+
+      {isDraft && (
+        <div className="bg-yellow-500 text-black text-center py-2 font-bold">
+          MODO RASCUNHO - Visualizando conteúdo não publicado
+        </div>
+      )}
 
       <Article.Root>
           <Article.Header>

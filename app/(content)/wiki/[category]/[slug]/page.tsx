@@ -8,8 +8,10 @@ import { getReadingTime } from "@/lib/timeReader";
 import { Article } from "@/components/content/Article";
 import Link from "next/link";
 import BibliaLink from "@/components/content/Bible/BibliaLink";
+import { draftMode } from "next/headers";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import { Metadata } from "next";
+import { reader } from "@/lib/reader";
 
 interface DictionaryProps {
   entry: string;
@@ -39,16 +41,15 @@ function Dictionary({ entry, children }: DictionaryProps) {
   );
 }
 
-const reader = createReader(process.cwd(), keystaticConfig);
-
 async function getAllSlugs() {
+  const readerInstance = await reader();
   const slugs: { category: string; slug: string }[] = [];
 
   for (const collectionName of wiki) {
     try {
-      const items = await reader.collections[collectionName].all();
+      const items = await readerInstance.collections[collectionName].all();
       for (const item of items) {
-        const post = await reader.collections[collectionName].read(item.slug);
+        const post = await readerInstance.collections[collectionName].read(item.slug);
         if (post && post.category) {
           slugs.push({
             category: slugify(post.category),
@@ -77,9 +78,10 @@ export const dynamicParams = true;
 export const revalidate = 3600;
 
 const getPostBySlug = cache(async (slug: string) => {
+  const readerInstance = await reader();
   for (const collectionName of wiki) {
     try {
-      const post = await reader.collections[collectionName].read(slug);
+      const post = await readerInstance.collections[collectionName].read(slug);
       if (post) {
         return post;
       }
@@ -97,8 +99,9 @@ interface Params {
 
 export async function generateMetadata({params}: {params: Promise<Params>}): Promise<Metadata> {
   const { slug } = await params;
+  const readerInstance = await reader();
   const article = await getPostBySlug(slug);
-  const category = article?.category ? await reader.collections.categories.read(article.category) : null;
+  const category = article?.category ? await readerInstance.collections.categories.read(article.category) : null;
 
   if (!article) {
     return {
@@ -167,7 +170,9 @@ export async function generateMetadata({params}: {params: Promise<Params>}): Pro
 export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
-  const category = post?.category ? await reader.collections.categories.read(post.category) : null;
+  const readerInstance = await reader();
+  const category = post?.category ? await readerInstance.collections.categories.read(post.category) : null;
+  const isDraft = (await draftMode()).isEnabled;
 
   if (!post) {
     return notFound();
@@ -206,6 +211,13 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
         sticky={true}
         className=""
       />
+
+      {isDraft && (
+        <div className="bg-yellow-500 text-black text-center py-2 font-bold">
+          MODO RASCUNHO - Visualizando conteúdo não publicado
+        </div>
+      )}
+
       <Article.Root>
           <Article.Header>
             <div className="md:w-2/3 md:mx-auto px-10 py-20 space-y-4">
