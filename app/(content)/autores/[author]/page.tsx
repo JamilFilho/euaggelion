@@ -3,7 +3,7 @@ import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../../../keystatic.config";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Skeleton } from "@/components/ui/skeleton";
-import { slugify, collections} from "@/lib/utils";
+import { slugify, collections, isPublished} from "@/lib/utils";
 import { Feed } from "@/components/content/Feed";
 import { BreadcrumbSchema, CollectionPageSchema } from "@/lib/schema";
 import Breadcrumb from "@/components/ui/breadcrumb";
@@ -26,10 +26,14 @@ async function getAuthorPublications(authorSlug: string) {
   for (const collectionName of collections) {
     try {
       const items = await reader.collections[collectionName].all();
+
       const filteredItems = items.filter((item) => {
         const itemAuthorSlug = slugify(item.entry.author || '');
-        return itemAuthorSlug === authorSlug;
+        const date = item.entry.date ?? undefined;
+
+        return itemAuthorSlug === authorSlug && isPublished(date);
       });
+
       publications.push(...filteredItems);
     } catch {
       continue;

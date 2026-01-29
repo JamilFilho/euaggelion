@@ -1,9 +1,7 @@
 import React, { cache } from "react";
 import Markdoc from "@markdoc/markdoc";
 import { notFound } from "next/navigation";
-import { createReader } from "@keystatic/core/reader";
 import { slugify, collections } from "@/lib/utils";
-import keystaticConfig from "../../../keystatic.config";
 import { getReadingTime } from "@/lib/timeReader";
 import { Article } from "@/components/content/Article";
 import { Author } from "@/components/content/Author";
@@ -14,6 +12,7 @@ import Breadcrumb from "@/components/ui/breadcrumb";
 import { Metadata } from "next";
 import { ArticleSchema, BreadcrumbSchema } from "@/lib/schema";
 import { reader } from "@/lib/reader";
+import Image from "next/image";
 
 interface DictionaryProps {
   entry: string;
@@ -91,6 +90,7 @@ export async function generateMetadata({params}: {params: Promise<Params>}): Pro
   const readerInstance = await reader();
   const article = await getPostBySlug(slug);
   const category = article?.category ? await readerInstance.collections.categories.read(article.category) : null;
+  const thumbnail = article?.thumbnail ? `/images/thumbnails/${slug}/thumbnail.jpg` : `/${slug}/opengraph-image`;
 
   if (!article) {
     return {
@@ -116,7 +116,7 @@ export async function generateMetadata({params}: {params: Promise<Params>}): Pro
       url: `https://euaggelion.com.br/${slug}`,
       images: [
         {
-          url: `/images/thumbnails/${slug}/thumbnail.jpg`,
+          url: thumbnail,
           width: 1200,
           height: 630,
           alt: article.title,
@@ -129,7 +129,7 @@ export async function generateMetadata({params}: {params: Promise<Params>}): Pro
       title: article.title,
       description: article.description,
       creator: article.author || "@euaggelion",
-      images: [`/images/thumbnails/${slug}/thumbnail.jpg`],
+      images: [thumbnail],
     },
     robots: {
       index: true,
