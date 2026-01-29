@@ -5,7 +5,7 @@ import { FAQSchema, WebsiteSchema } from "@/lib/schema";
 import type { Metadata } from "next";
 import keystaticConfig from "@/keystatic.config";
 import { createReader } from "@keystatic/core/reader";
-import { collections } from "@/lib/utils";
+import { collections, isPublished, parseLocalDate } from "@/lib/utils";
 import { Feed } from "@/components/content/Feed";
 
 type KeystaticItem = {
@@ -41,7 +41,7 @@ async function getLatestContent() {
     try {
       const items = await reader.collections[collectionName].all();
       items.forEach((item) => {
-        if (item.slug && item.entry.date) {
+        if (item.slug && item.entry.date && isPublished(item.entry.date)) {
           allItems.push({
             slug: item.slug,
             title: item.entry.title,
@@ -57,7 +57,7 @@ async function getLatestContent() {
     }
   }
 
-  allItems.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  allItems.sort((a, b) => parseLocalDate(b.date) - parseLocalDate(a.date));
 
   // Return the last 4 items
   return allItems.slice(0, 3);
@@ -77,7 +77,7 @@ async function getContent(collectionName: string) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const items = await (reader.collections as any)[collectionName].all() as KeystaticItem[];
     items.forEach((item) => {
-      if (item.slug && item.entry.date) {
+      if (item.slug && item.entry.date && isPublished(item.entry.date)) {
         allItems.push({
           slug: item.slug,
           title: item.entry.title,
@@ -92,7 +92,7 @@ async function getContent(collectionName: string) {
     // Handle error if needed
   }
 
-  allItems.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  allItems.sort((a, b) => parseLocalDate(b.date) - parseLocalDate(a.date));
 
   // Return the last items
   return allItems.slice(0, 6);

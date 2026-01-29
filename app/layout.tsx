@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { OrganizationSchema, WebsiteSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://euaggelion.com.br'),
   title: "Euaggelion | Semeando as boas novas da salvação",
   description: "Semeando as boas novas da salvação. Artigos, estudos bíblicos, devocionais e meditações sobre as temáticas da fé cristã.",
   keywords: ["bíblia", "cristianismo", "teologia", "devocionais", "estudos bíblicos"],

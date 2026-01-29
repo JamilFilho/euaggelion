@@ -3,7 +3,7 @@ import { Page } from "@/components/content/Page";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import keystaticConfig from "@/keystatic.config";
 import { BreadcrumbSchema, CollectionPageSchema } from "@/lib/schema";
-import { slugify, collections} from "@/lib/utils";
+import { slugify, collections, isPublished} from "@/lib/utils";
 import { createReader } from "@keystatic/core/reader";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -76,10 +76,16 @@ async function getCategoriesPublications(categorySlug: string) {
   for (const collectionName of [...collections]) {
     try {
       const items = await reader.collections[collectionName].all();
+
       const filteredItems = items.filter((item) => {
         const itemCategorySlug = slugify(item.entry.category || '');
-        return itemCategorySlug === categorySlug;
+        const date = item.entry.date ?? undefined;
+
+        return (
+            itemCategorySlug === categorySlug && isPublished(date)
+        );
       });
+
       const mappedItems = filteredItems.map(item => ({
         slug: item.slug,
         title: item.entry.title,

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createReader } from '@keystatic/core/reader';
 import keystaticConfig from '@/keystatic.config';
-import { collections, wiki } from '@/lib/utils';
+import { collections, isPublished, wiki } from '@/lib/utils';
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
@@ -11,8 +11,17 @@ async function getSlugsFromCollections(collectionNames: readonly string[]) {
     try {
       const collection = (reader.collections as any)[collectionName];
       const items = await collection.all();
-      items.forEach((item: { slug: string; }) => {
-        slugs.add(item.slug);
+      items.forEach((item: any) => {
+        const date = item.entry?.date;
+
+        if (!date || isPublished(date)) {
+          slugs.add(JSON.stringify({
+            slug: item.slug,
+            lastmod: date
+              ? new Date(date).toISOString()
+              : new Date().toISOString()
+          }));
+        }
       });
     } catch {
       continue;
@@ -22,7 +31,7 @@ async function getSlugsFromCollections(collectionNames: readonly string[]) {
 }
 
 export async function GET() {
-  const baseUrl = 'https://euaggelion.com'; // Replace with your actual domain
+  const baseUrl = 'https://euaggelion.com.br'; // Replace with your actual domain
 
   const contentSlugs = await getSlugsFromCollections(collections);
   const authorSlugs = await getSlugsFromCollections(['authors']);

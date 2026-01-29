@@ -1,11 +1,11 @@
-import { collections, wiki } from '@/lib/utils';
+import { collections, isPublished, wiki } from '@/lib/utils';
 import { createReader } from '@keystatic/core/reader';
 import keystaticConfig from '@/keystatic.config';
 import { Feed } from 'feed';
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
-export const revalidate = 86400; // Revalidar a cada 24 horas
+export const revalidate = 3600;
 
 interface Post {
   title: string;
@@ -13,6 +13,11 @@ interface Post {
   date: string;
   slug: string;
   collection: string;
+}
+
+function parseLocalDate(date: string): number {
+  const [year, month, day] = date.split("-").map(Number);
+  return new Date(year, month - 1, day).getTime();
 }
 
 async function getAllPosts() {
@@ -25,7 +30,7 @@ async function getAllPosts() {
       const items = await reader.collections[collectionName].all();
       for (const item of items) {
         const post = await reader.collections[collectionName].read(item.slug);
-        if (post && post.date) {
+        if (post && post.date && isPublished(post.date)) {
           posts.push({
             ...(post as Omit<Post, 'collection' | 'slug'>),
             collection: collectionName,
@@ -38,8 +43,7 @@ async function getAllPosts() {
     }
   }
 
-  // Ordenar por data decrescente
-  posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  posts.sort((a, b) => parseLocalDate(b.date) - parseLocalDate(a.date));
 
   return posts;
 }
@@ -55,7 +59,9 @@ export async function GET() {
     language: 'pt-BR',
     favicon: 'https://euaggelion.com.br/favicon.ico',
     copyright: 'All rights reserved 2026, Euaggelion',
-    updated: new Date(),
+    updated: posts.length
+      ? new Date(posts[0].date)
+      : new Date(),
     feedLinks: {
       rss2: 'https://euaggelion.com.br/feed.xml',
     },
