@@ -36,7 +36,6 @@ export default config({
       label: 'Novas de Cada Manhã',
       slugField: 'title',
       path: 'content/articles/devocionais/cada-manha/*',
-      previewUrl: `/preview/start?branch={branch}&slug={slug}`,
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
@@ -80,7 +79,6 @@ export default config({
       label: 'Ecos da Eternidade',
       slugField: 'title',
       path: 'content/articles/devocionais/ecos-da-eternidade/*',
-      previewUrl: `/preview/start?branch={branch}&slug={slug}`,
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
@@ -118,7 +116,6 @@ export default config({
       label: 'Blog',
       slugField: 'title',
       path: 'content/articles/blog/*',
-      previewUrl: `/preview/start?branch={branch}&slug={slug}`,
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
@@ -154,7 +151,6 @@ export default config({
       label: 'Editorial',
       slugField: 'title',
       path: 'content/articles/editorial/*',
-      previewUrl: `/preview/start?branch={branch}&slug={slug}`,
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
@@ -192,7 +188,6 @@ export default config({
       label: 'Biblioteca Cristã',
       slugField: 'title',
       path: 'content/articles/biblioteca-crista/*',
-      previewUrl: `/preview/start?branch={branch}&slug={slug}`,
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
@@ -215,7 +210,6 @@ export default config({
       label: 'TEOleigo',
       slugField: 'title',
       path: 'content/articles/estudos/teoleigo/*',
-      previewUrl: `/preview/start?branch={branch}&slug={slug}`,
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
@@ -251,7 +245,6 @@ export default config({
       label: 'Verso a Verso',
       slugField: 'title',
       path: 'content/articles/estudos/verso-a-verso/*',
-      previewUrl: `/preview/start?branch={branch}&slug={slug}`,
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
@@ -287,7 +280,6 @@ export default config({
       label: 'Sermões Históricos',
       slugField: 'title',
       path: 'content/articles/sermoes-historicos/*',
-      previewUrl: `/preview/start?branch={branch}&slug={slug}`,
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
@@ -310,7 +302,6 @@ export default config({
       label: 'De cá da eternidade',
       slugField: 'title',
       path: 'content/articles/ficcao-crista/de-ca-da-eternidade/*',
-      previewUrl: `/preview/start?branch={branch}&slug={slug}`,
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
@@ -346,7 +337,6 @@ export default config({
       label: 'Ensaios de um Peregrino',
       slugField: 'title',
       path: 'content/articles/ensaios-de-um-peregrino/*',
-      previewUrl: `/preview/start?branch={branch}&slug={slug}`,
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
@@ -367,7 +357,6 @@ export default config({
       label: 'Cavaleiros da Aurora',
       slugField: 'title',
       path: 'content/articles/ficcao-crista/cavaleiros-da-aurora/*',
-      previewUrl: `/preview/start?branch={branch}&slug={slug}`,
       entryLayout: 'content',
       format: { contentField: 'content' },
       schema: {
