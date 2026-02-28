@@ -30,7 +30,7 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "@types/mdx": "^2.0.13",
     "@upstash/ratelimit": "^2.0.0",
-    "@upstash/redis": "^1.36.0",
+    "@upstash/redis": "1.36.3",
     "@use-gesture/react": "^10.3.1",
     "algoliasearch": "^4.24.0",
     "archiver": "^7.0.1",
