@@ -66,9 +66,9 @@ const siteLinks: SiteLink[] = [
         ]
     },
     {
-        title: "Trilhas de Conteúdo",
-        alt:"Siga nossas trilhas de estudo e conteúdo",
-        href: "/trilhas"
+        title: "Comentário Bíblico",
+        alt:"Comentário Bíblico online e gratuito para você estudar as Escrituras Sagradas verso a verso.",
+        href: "https://comentariobiblicopopular.com.br"
     },
     {
         title: "Wiki",
