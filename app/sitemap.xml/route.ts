@@ -6,7 +6,9 @@ import { collections, isPublished, wiki } from '@/lib/utils';
 const reader = createReader(process.cwd(), keystaticConfig);
 
 async function getSlugsFromCollections(collectionNames: readonly string[]) {
-  const slugs = new Set<string>();
+  const seen = new Set<string>();
+  const results: { slug: string; lastmod: string }[] = [];
+
   for (const collectionName of collectionNames) {
     try {
       const collection = (reader.collections as any)[collectionName];
@@ -15,23 +17,26 @@ async function getSlugsFromCollections(collectionNames: readonly string[]) {
         const date = item.entry?.date;
 
         if (!date || isPublished(date)) {
-          slugs.add(JSON.stringify({
-            slug: item.slug,
-            lastmod: date
-              ? new Date(date).toISOString()
-              : new Date().toISOString()
-          }));
+          if (!seen.has(item.slug)) {
+            seen.add(item.slug);
+            results.push({
+              slug: item.slug,
+              lastmod: date
+                ? new Date(date).toISOString()
+                : new Date().toISOString(),
+            });
+          }
         }
       });
     } catch {
       continue;
     }
   }
-  return Array.from(slugs);
+  return results;
 }
 
 export async function GET() {
-  const baseUrl = 'https://euaggelion.com.br'; // Replace with your actual domain
+  const baseUrl = 'https://euaggelion.com.br';
 
   const contentSlugs = await getSlugsFromCollections(collections);
   const authorSlugs = await getSlugsFromCollections(['authors']);
@@ -47,11 +52,11 @@ export async function GET() {
     { url: '/search', lastmod: new Date().toISOString() },
     { url: '/trilhas', lastmod: new Date().toISOString() },
     { url: '/wiki', lastmod: new Date().toISOString() },
-    ...contentSlugs.map(slug => ({ url: `/content/${slug}`, lastmod: new Date().toISOString() })),
-    ...authorSlugs.map(slug => ({ url: `/autores/${slug}`, lastmod: new Date().toISOString() })),
-    ...wikiSlugs.map(slug => ({ url: `/wiki/${slug}`, lastmod: new Date().toISOString() })),
-    ...pageSlugs.map(slug => ({ url: `/p/${slug}`, lastmod: new Date().toISOString() })),
-    ...trailSlugs.map(slug => ({ url: `/trilhas/${slug}`, lastmod: new Date().toISOString() })),
+    ...contentSlugs.map(({ slug, lastmod }) => ({ url: `/content/${slug}`, lastmod })),
+    ...authorSlugs.map(({ slug, lastmod }) => ({ url: `/autores/${slug}`, lastmod })),
+    ...wikiSlugs.map(({ slug, lastmod }) => ({ url: `/wiki/${slug}`, lastmod })),
+    ...pageSlugs.map(({ slug, lastmod }) => ({ url: `/p/${slug}`, lastmod })),
+    ...trailSlugs.map(({ slug, lastmod }) => ({ url: `/trilhas/${slug}`, lastmod })),
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
