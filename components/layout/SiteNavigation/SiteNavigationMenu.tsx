@@ -36,9 +36,9 @@ const siteLinks: SiteLink[] = [
         href: "/biblia"
     },
     {
-        title: "Devocionais",
-        alt:"Medite em nossos devocionais diários",
-        href: "/s/cada-manha"
+        title: "Devocional WhatsApp",
+        alt:"Receba nossos devocionais, gratuitamente, em seu WhatsApp.",
+        href: "https://www.devocionalnowhatsapp.com.br"
     },
     {
         title: "Literatura Cristã",
