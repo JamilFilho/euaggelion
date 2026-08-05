@@ -16,7 +16,7 @@
     "@keystatic/core": "^0.5.48",
     "@keystatic/next": "^5.0.4",
     "@mailerlite/mailerlite-nodejs": "^1.5.0",
-    "@markdoc/markdoc": "^0.5.4",
+    "@markdoc/markdoc": "0.5.9",
     "@mdx-js/react": "^3.1.1",
     "@next/mdx": "^16.1.1",
     "@radix-ui/react-avatar": "^1.1.11",
