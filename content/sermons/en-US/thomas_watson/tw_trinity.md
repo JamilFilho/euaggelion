@@ -1,0 +1,220 @@
+# The Trinity -- Thomas Watson
+
+Fonte: http://www.biblebb.com/files/TW/tw-trinity.htm
+
+---
+
+***The Trinity***
+
+**by
+
+ Thomas Watson**
+
+**(1620-1686)**
+
+ 
+
+**Q. VI: HOW MANY PERSONS ARE THERE
+IN THE GODHEAD?**
+
+A: Three persons, yet but one God.
+
+‘There are three that bear record in heaven, the
+Father, the Word, and the Holy Ghost, and these three are one.’ i John v
+7.
+
+God is but one, yet are there three distinct persons
+subsisting in one Godhead. This is a sacred mystery, which the light
+within man could never have discovered. As the two natures in Christ, yet
+but one person, is a wonder; so three persons, yet but one Godhead. Here
+is a great deep, the Father God, the Son God, the Holy Ghost God; yet not
+three Gods, but one God. The three persons in the blessed Trinity are
+distinguished, but not divided; three substances, but one essence. This is
+a divine riddle, where one makes three, and three make one. Our narrow
+thoughts can no more comprehend the Trinity in Unity, than a nut-shell
+will hold all the water in the sea. Let me shadow it out by a similitude.
+In the body of the sun, there are the substance of the sun, the beams, and
+the heat; the beams are begotten of the sun, the heat proceeds both from
+the sun and the beams; but these three, though different, are not divided;
+they all three make but one sun: so in the blessed Trinity, the Son is
+begotten of the Father, the Holy Ghost proceeds from both; yet though they
+are three distinct persons, they are but one God. First, let me speak of
+the Unity in Trinity; then of the Trinity in Unity.
+
+I. *Of the Unity in Trinity.* The Unity of the
+persons in the Godhead consists of two things.
+
+[1] The identity of essence. In the Trinity there is a
+oneness in essence. The three persons are of the same divine nature and
+substance; so that *in Deo nonest* magis *et minus*,‘there are no degrees in the Godhead’; one person is not God more than
+another.
+
+[2] Unity of the persons in the Godhead consists in the
+mutual inbeing of them, or their being in one together. The three persons
+are so united that one person is in another, and with another. ‘Thou,
+Father, art in me, and I in thee.’ John xvii 21.
+
+II. *Let me speak of the Trinity in Unity.*
+
+[1] The first person in the Trinity is God the Father. He
+is called the first person, in respect of *order,* not *dignity:*
+for God the Father has no essential perfection which the other persons
+have not; he is not more wise, more holy, more powerful than the other
+persons are. There is a priority, not a superiority.
+
+[2] The second person in the Trinity is Jesus Christ, who
+is begotten of the Father before all time. ‘I was set up from everlasting,
+from the beginning, or ever the earth was. When there were no depths I was
+brought forth; when there were no fountains abounding with water. Before
+the mountains were settled, before the hills, was I brought forth.’ Prov
+viii 23-25. This Scripture declares the eternal generation of the Son of
+God. This second person in the Trinity, who is Jehovah, is become our
+Jesus. The Scripture calls him the branch of David, Jer xxiii 5, and I may
+call him the flower of our nature. ‘By him all that believe are
+justified.’ Acts xiii 39.
+
+[3] The third person in the Trinity is the Holy Ghost,
+who proceeds from the Father and the Son, whose work is to illuminate the
+mind, and enkindle sacred motions. The essence of the Spirit is in heaven,
+and everywhere; but the influence of it is in the hearts of believers.
+This is that blessed Spirit who gives us the holy unction. I John ii 20.
+Though Christ merits grace for us, it is the Holy Ghost that works it in
+us. Though Christ makes the purchase, it is the Holy Ghost that makes the
+assurance, and seals us to the day of redemption. Thus I have spoken of
+all the three persons. The Trinity of persons may be proved out of Matt
+iii 16. ‘Jesus, when he was baptized, went up straightway out of the
+water, and he saw the Spirit of God descending like a dove, and lighting
+upon him; and lo, a voice from heaven, saying, This is my beloved Son.’
+Here are three names given to the three persons. He who spake with a voice
+from heaven was God the Father; he who was baptized in Jordan was God the
+Son; he who descended in the likeness of a dove was God the Holy Ghost.
+Thus I have shown you the Unity of essence, and the Trinity of
+persons.
+
+*Use one:* For confutation. (I.) This confutes the
+Jews and Turks, who believe only the first person in the Godhead. Take
+away the distinction of the persons in the Trinity, and you overthrow
+man’s redemption; for God the Father being offended with man for sin, how
+shall he be pacified without a mediator? This mediator is Christ, who
+makes our peace. Christ having died, and shed his blood, how shall this
+blood be applied but by the Holy Ghost? Therefore, if there be not three
+persons in the Godhead, man’s salvation cannot be wrought out; if there be
+no second person in the Trinity, there is no redeemer; if no third person,
+there is no comforter. Thus the plank is taken away by which we get to
+heaven.
+
+(2.) It confutes the execrable opinion of the Socinians,
+who deny the Divinity of the Lord Jesus, and make him to be a creature
+only, but of a higher rank. As the Papists blot out the second
+commandment, so the Socinians do the second person in the Trinity. If to
+oppose Christ’s members be a sin, what is it to oppose Christ himself?
+Jesus Christ is co-equal with God the Father. He thought it no robbery to
+be equal with God. Phil ii 6. He is co-eternal with God the Father: ‘I was
+from the beginning,’ Prov viii 23: if not, there was a time when God was
+without a Son, and so he would be no Father; nay, there was a time when
+God was without his glory, for Christ is ‘the brightness of his Father’s
+glory.’ Heb i 3. He is co-essential with God the Father. The Godhead
+subsists in Christ. ‘In whom dwells all the fulness of the Godhead
+bodily.’ Col ii 9. It is said; not only that Christ was with God before
+the beginning, but that he was God. John i 1, and I Tim iii 16. ‘God
+manifest in the flesh.’ The title of Lord, so often given to Christ, in
+the New Testament, answers to the tide of Jehovah in the Old. Deut vi 5;
+Matt xxii 37. Christ has a co-eternity, and co-substantiality with his
+Father. ‘I and my Father are one.’ John x 30. It were blasphemy for an
+angel to speak thus. Yet further to prove Christ’s Godhead, consider (i)
+The glorious incommunicable attributes belonging to God the Father are
+ascribed to Christ. Is God the Father omnipotent? So is Jesus Christ. He
+is the almighty, Rev i 8, and he creates, Col i 16. Is God the Father
+infinitely immense, filling all places? Jer xxiii 24. So is Jesus Christ.
+While Christ was on the earth by his bodily presence, he was at the same
+time in the bosom of the Father by his divine presence. John iii 13. (ii)
+The same *jura regalia*,or prerogatives royal, which belong
+to God the Father, belong also to Christ. Does God the Father seal
+pardons? This is a flower of Christ’s crown. ‘Thy sins be forgiven thee.’
+Matt ix 2. Nor does Christ remit sin *organice* only, as ministers
+do, by virtue of a power delegated to them from God; but he does it by his
+own power and authority. Is God the Father the adequate object of faith?
+Is he to be believed in? So is his Son. John xiv 1. Does adoration belong
+to God the Father? So it does to the Son. ‘Let all the angels of God
+worship him.’ Heb i 6. How sacrilegious therefore is the Socinian, who
+would rob Christ of his Godhead, the best flower of his crown. They that
+deny Christ to be God, must greatly wrest, or else deny the Scripture to
+be the Word of God.
+
+(3.) It confutes the Arians, who deny the Holy Ghost to
+be God. The eternal Godhead subsists in the Holy Ghost. ‘He shall guide
+you into all truth.’ John xvi 13. Christ speaks not there of an attribute,
+but of a person. That the Godhead subsists in the person of the Holy Ghost
+appears in this; that the Spirit, who gives diversity of gifts, is said to
+be the same Lord, and the same God. I Cor xii 5, 6. The black and
+unpardonable sin is said, in a special manner, to be committed against the
+Godhead subsisting in the Holy Ghost. Matt xii 32. The mighty power of God
+is made manifest by the Holy Ghost; for he changes the hearts of men. The
+devil would have Christ prove himself to be God, by turning stones into
+bread; but the Holy Ghost shows his Godhead by turning stones into flesh.
+‘I will take away the stony heart; and give you a heart of flesh.’ Ezek
+xxxvi 26. Yet further, the power and Godhead of the Holy Ghost appeared in
+effecting the glorious conception of our Lord Jesus Christ. The very
+shadow of the Holy Ghost made a virgin conceive. Luke i 35. The Holy Ghost
+works miracles, which transcend the sphere of nature; as raising the dead.
+Rom viii 11. To him belongs divine worship; our souls and bodies are the
+temples of the Holy Ghost, I Cor vi 19, in which temples he is to be
+worshipped, verse 20. We are baptized in the name of the Holy Ghost;
+therefore we must believe his Godhead, or renounce our baptism in his
+name. Methinks it were better for such men not to have so much as heard
+whether there be any Holy Ghost, Acts xix 2, than to deny his Deity. They
+who would wittingly and willingly blot out the third person, shall have
+their names blotted out of the book of life.
+
+*Use two:* For exhortation. (I.) Believe this
+doctrine of the Trinity of persons in the unity of essence. The Trinity is
+purely an object of faith; the plumbline of reason is too short to fathom
+this mystery; but where reason cannot wade, there faith may swim. There
+are some truths in religion that may be demonstrated by reason; as that
+there is a God: but the Trinity of persons in the Unity of essence is
+wholly supernatural, and must be believed by faith. This sacred doctrine
+is not against reason, but above it. Those illuminated philosophers, that
+could find out the causes of things, and discourse of the magnitude and
+influence of the stars, the nature of minerals, could never, by their
+deepest search, find out the mystery of the Trinity. This is of divine
+revelation, and must be adored with humble believing. We can be no good
+Christians, without the firm belief of the Trinity. How can we pray to God
+the Father but in the name of Christ, and through the help of the Spirit?
+How believe the glorious Trinity? How are the Quakers to be abhorred, who
+go under the name of Christians, and yet undervalue and renounce Jesus
+Christ! I have read of some Quakers who speak thus: ‘We deny the person of
+him whom you call Christ, and affirm, That they who expect to be saved by
+that Christ without works, will be damned in that faith!’ Could the devil
+himself speak worse blasphemy? They would pull up all religion by the
+roots, and take away that corner stone, on which the hope of our salvation
+is built.
+
+(2.) If there be one God subsisting in three persons,
+then let us give equal reverence to all the persons in the Trinity. There
+is not more or less in the Trinity; the Father is not more God than the
+Son and Holy Ghost. There is an order in the Godhead, but no degrees; one
+person has not a majority or super eminence above another, therefore we
+must give equal worship to all the persons. ‘That all men should honour
+the Son even as they honour the Father’ John v 23. Adore Unity in
+Trinity.
+
+(3.) Obey all the persons in the blessed Trinity; for all
+of them are God. Obey God the Father. Christ himself as man, obeyed God
+the Father, John iv much more must we. Deut xxvii 10.
+
+Obey God the Son. ‘Kiss the Son, lest he be angry.’ Psa
+ii 12. Kiss him with a kiss of obedience. Christ’s commands are not
+grievous. I John v 3. Whatever he commands is for our interest and
+benefit. Oh then kiss the Son! Why do the elders throw down their
+crowns at the feet of Christ, and fall down before the Lamb? Rev iv 10,
+11. To testify their subjection, and to profess their readiness to serve
+and obey him.
+
+Obey God the Holy Ghost. Our souls are breathed into us
+by the glorious Spirit. ‘The Spirit of God hath made me.’ Job xxxiii 4.
+Our souls are adorned by the blessed Spirit. Every grace is a divine spark
+lighted in the soul by the Holy Ghost. Nay, more, the Spirit of God
+sanctified Christ’s human nature; he united it with the divine, and fitted
+the man Christ to be our Meditator. Well then does this third person in
+the Trinity, the Holy Ghost, deserve to be obeyed; for he is God, and this
+tribute of homage and obedience is due to him from us.

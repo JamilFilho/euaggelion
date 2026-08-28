@@ -1,0 +1,14 @@
+# The Church of England the Bulwark of Our Liberties (?) -- C. H. Spurgeon
+
+Fonte: http://www.biblebb.com/files/spurgeon/tract31.htm
+
+---
+
+## *The Church of England the Bulwark of Our Liberties (?)*
+
+**Article
+from C. H. Spurgeon's (1834-1892), The Sword and the Trowel,
+Published Monthly**
+ 
+
+We have been very courteously admonished in the "Standard" Newspaper for taking any part in the agitation for disestablishing and disendowing the Irish church, and for expressing the hope that the like justice might, ere long, be measured out to the Establishment in England. We are thankful for the advice, but can assure our friend that it does not strike us as valuable. Our friend evidently thinks that if we and other Dissenters were better advised we should rally round the present Establishment, since its existence has been and is the great security for religious liberty; and if it were removed the Romanists would soon be in the ascendant, and persecution would follow. To this our reply is ready—we do not believe that the church of England is any more the protector of our liberties than are the Beef-eaters at the Tower, or the cream-colored horses in the royal stable. There is no sort of connection between the two by way of promotion, but very much in the way of hindrance. Historically, it will hardly be contended that Episcopacy, which hanged and imprisoned our forefathers in Elizabeth's day, was then the bulwark of Dissenting liberty; nor can it be pretended that, under James I. and Charles I., it guarded sacredly the freedom of consciences. Clipped ears, slit noses, and branded cheeks were not very convincing proofs that an established church was tender and tolerant, and careful to give freedom to Dissenters. Nonconformists would hardly have dealt out such severe measures to Episcopacy in the time of Cromwell, if they had found it to be their shield and bulwark. Did the Act of Uniformity tenderly respect the liberty of Dissenters, or the Five Mile Act, and other such edicts? Were Claverhouse, and other butchers, the advocates and promoters of liberty? Does Scotland owe her liberty to Episcopacy or to the Covenanters? Was the act of Catholic emancipation the work of bishops and deans? The fact is that the existence of a sect, fondled by the state and supported by its wealth, in proportion as it dignifies the favored church, is an insult to the honor of all other, and a shackle to their freedom. It is an idle tale that the Episcopal sect guards our liberties as a body; in its midst are many noble and liberal men, who are always on the people's side, but the bulk of its adherents incline in an opposite direction, and, as a church, it is almost always obstructive and disinclined to reform. Dissenters do not owe it, in political matters, the turn of a brass farthing, and have long enough been duped by the pretension that it is their friend and guardian.

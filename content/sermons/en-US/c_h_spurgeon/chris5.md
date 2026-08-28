@@ -1,0 +1,620 @@
+# God Incarnate, the End of Fear -- C. H. Spurgeon
+
+Fonte: http://www.biblebb.com/files/spurgeon/chris5.htm
+
+---
+
+**God Incarnate, the End of Fear
+
+December 23, 1866
+by
+
+C. H. SPURGEON
+(1834-1892)
+
+© Copyright 2002 by Tony Capoccia.  This updated file may
+be freely copied, printed out, and distributed as
+long as copyright and source statements remain intact, and that it is not sold. 
+All rights reserved.
+Verses quoted, unless otherwise noted, are taken from the HOLY
+BIBLE: NEW INTERNATIONAL VERSION 
+©1978 by the New
+York Bible Society, used by permission of Zondervan Bible Publishers.
+
+This sermon,
+preached by Tony Capoccia, is now available on Audio Cassette or CD:
+
+www.gospelgems.com**
+
+***“The angel said to them, `Do not be afraid.'“ Luke 2:10***
+
+As soon as the angel of the Lord appeared to the shepherds, and the glory of
+the Lord shone around them, they were terrified. It had come to this, that man
+was afraid of his God, and when God sent down His loving messengers with tidings
+of great joy, men were filled with as much fear as though the angel of death had
+appeared with an uplifted sword. The silence of the night and its dreary gloom
+caused no fear in the shepherds' hearts, but the joyful herald of the skies,
+robed in the glories of grace, terrified them. We must not condemn the shepherds
+on this account as though they were timid or uneducated, for they were only
+acting as every other person in that age would have done under the same
+circumstances.
+
+It was not because they were simple shepherds that they were overcome with
+fear, but it is probable that if they had been well-instructed prophets they
+would have displayed the same feeling; for there are many instances recorded in
+Scripture, in which the leading men of their time trembled and felt the horror
+of great darkness when special manifestations of God were given to them. In
+fact, a cringing fear of God was so common, that a tradition had grown out of
+it, which was all but universally received as absolute truth. It was generally
+believed that every supernatural manifestation was to be regarded as a token of
+speedy death, “We are doomed to die! We have seen God!” was not only Manoah's
+conclusion, but that of most men of his period. Indeed there were only a few who
+had contented minds like Manoah's wife, who could reason in a more encouraging
+style, she said, “If the LORD had meant to kill us, He would not have accepted a
+burnt offering and grain offering from our hands, nor shown us all these things
+or now told us this.”
+
+It became “the settled conviction” of all men, whether wise or uneducated,
+whether good or bad, that a manifestation of God was not so much to be rejoiced
+in as to be dreaded; even as Jacob said, “How awesome [how frightening] is this
+place! This is none other than the house of God; this is the gate of heaven.”
+Without a doubt the spirit which originated this tradition was fostered by the
+“legal dispensation,” which is better fitted for trembling servants than for
+rejoicing sons. The solemn night in which its greatest institution was ordained
+was a night of trembling, death was there in the slaughter of the lamb; blood
+was then sprinkled on a conspicuous part of the house: fire was there to roast
+the lamb, all the emblems of judgment were there to strike the mind with dread.
+It was at the dreaded hour of midnight when the solemn family conclave was
+assembled; the door was shut; the guests themselves standing in an uneasy
+attitude, and stricken with fright, for their hearts and minds could hear the
+wings of the destroying angel as he passed by the house.
+
+Afterwards, when Israel came into the wilderness, and the law was proclaimed,
+we read that the people stood afar off and that boundaries were established
+around the mountain, and even if an animal touched the mountain, then it must be
+stoned, or killed with a sword? It was a day of fear and trembling when God
+spoke to them out of the fire. God's law did not come to His people's ears with
+the soft notes of harps; there were no soft wings of angels bringing the
+message, and no sunny smiles of heaven sweetened it to the mind, but it came
+with sounds of loud trumpets and thunder, out of the midst of blazing
+lightnings, with Mount Sinai smoking, the law was given. The law's voice was,
+“Do not go near it!” The spirit of Sinai is fear and trembling.
+
+The legal ceremonies were designed to inspire fear rather than to generate
+trust. The worshiper at the temple saw bloodshed from the first of the year to
+the end of the year; the morning was ushered in with the shedding of the blood
+of the lamb, and the evening could not pass without blood again being spilled on
+the altar. God was in the midst of the camp, but the pillar of cloud and fire
+was His unapproachable retreat. The emblem of His glory was concealed behind the
+curtain of blue and scarlet and fine linen, behind which only one person was
+allowed to pass, and that only once a year. Men spoke of the God of Israel with
+bated breath, and with hushed and solemn voices. They had not learned to say,
+“Our Father in heaven.” They had not received the spirit of adoption, and were
+not able to say “Abba”; they smarted under the spirit of bondage, which made
+them terrified when the glory of the Lord's presence was displayed among them.
+
+At the bottom of all this cringing dread lay “sin.” We never find Adam afraid
+of God, nor of any manifestation of Deity while he was in Paradise as an
+obedient creature, but no sooner had he touched the forbidden fruit than he
+found out that he was naked, and hid himself when he heard the voice of the Lord
+God walking in the garden in the cool of the day, Adam was afraid and hid
+himself from the presence of the Lord God among the trees of the garden. Sin
+makes miserable cowards of us all. See the man who once could hold delightful
+conversation with his Maker, now dreading to hear his Maker's voice and sneaking
+around in the garden like a felon, who knows his guilt, and is afraid to meet
+the officers of justice.
+
+Beloved, in order to remove this dreaded nightmare of slavish fear from the
+heart of humanity, where its horrible influence represses all the noblest
+aspirations of the soul, our Lord Jesus Christ came in the flesh. This is one of
+the works of the devil which Jesus had come to destroy. Angels came to proclaim
+the good news of the coming of the incarnate God, and the very first note of
+their song was a foretaste of the sweet result of His coming to all those who
+will receive him. The angel said, “Do not be afraid!” as though the times of
+fear were over, and the days of hope and joy had arrived. “Do not be afraid!”
+These words were not meant for those trembling shepherds only, but were intended
+for you and for me, yes, to all nations to whom the glad tidings would come. “Do
+not be afraid!” Let God no longer be the object of your slavish dread! Do not
+stand at a distance from Him any more. The Word is made flesh. God has descended
+to live among men, that there may be no wall of restraining fire, no gulf
+between God and man.
+
+I wish to dwell on this subject this morning as God would help me. I am aware
+of the value of the theme, and am very conscious that I cannot do it justice. I
+earnestly ask God the Holy Spirit to make you drink of the golden cup of the
+incarnation of Christ, which I have enjoyed in my quiet meditations. I desire
+this delight for my dearest friends. There is no better cure for fear than the
+subject of that midnight song, the first and best of Christmas choruses, which
+from its first word to its last note chimes out the sweet message, which begins
+with, “Do not be afraid!”
+
+It is my sweetest comfort, Lord,
+
+And will forever be,
+
+To ponder on the gracious truth
+
+Of Your humanity.
+
+Oh joy! there dwells in our flesh,
+
+On a throne of light
+
+One of a human mother, born,
+
+In perfect Godhead bright!
+
+“Though earth's foundations should be moved,
+
+Down to their lowest deep;
+
+Though all the trembling universe
+
+Into destruction sweep;
+
+Forever God, forever man,
+
+My Jesus will endure;
+
+And fixed on Him, my hope remains
+
+Eternally secure.”
+
+Dear friends, I will first call your attention to the subject of “the fear”
+which I have already spoken; then, secondly, we shall invite your earnest
+attention to “the remedy” which the angels came to proclaim; and then, thirdly,
+we will endeavor to make an application of this remedy to various cases.
+
+**I. First let us turn to THE FEAR of the text.
+There is a kind of fear towards God from which we must not wish to be freed
+from.**
+
+There is that lawful, necessary, admirable, excellent fear which is always
+due from the creature to the Creator, from the subject to the king, yes, and
+from the child toward the parent. That holy, respectful fear of God, which makes
+us dread sin, and constrains us to be obedient to His command, is to be
+cultivated; “We have all had human fathers who disciplined us and we respected
+them for it. How much more should we submit to the Father of our spirits and
+live!” This is the “The fear of the LORD [which] is the beginning of wisdom.” To
+have a holy fear of our most holy, just, righteous, and tender God is a
+privilege, not a bondage. Godly fear is not the “fear [which] has to do with
+punishment;” perfect love does not cast aside fear, but dwells with it in joyful
+harmony. The angels perfectly love God, and yet with holy fear they veil their
+faces with their wings as they approach Him; and when we, in heaven, behold the
+face of God, and will be filled with all His fullness, we will not cease humbly
+and reverently to adore the Infinite Majesty. Holy fear is a work of the Holy
+Spirit, and woe be to the man or woman who does not possess it; let them boast
+as they may, his “eating with you without the slightest qualm [or fear]” is a
+mark of his hypocrisy.
+
+**The fear which is to be avoided is “cringing fear;” the fear which perfect
+love casts out, as Sarah cast out the slave woman and her son.**
+
+That trembling which keeps us at a distance from God, which makes us think of
+Him as a Spirit with whom we can have no communion; as a person who does not
+care for us except to punish us, and for whom consequently we have no care
+except to escape if possible from His terrible presence.
+
+**This fear sometimes arises in men's hearts from their “thoughts that dwell
+exclusively on the divine greatness.”**
+
+Is it possible to stare into the vast abyss of Infinity and not to be afraid?
+Can the mind yield itself up to the thought of the Eternal, Self-existent,
+Infinite One without being filled, first with awe and then with dread? What am
+I? An insect creeping on a rosebud is a more considerable creature in relation
+to the word of humans than I can be in comparison with God. What am I? A grain
+of dust that does not register on the most sensitive scale is a greater thing to
+man than a man is to the Lord God. At best we are less than nothing and vanity.
+
+But there is more to abase us than this. We have had the audacity to be
+disobedient to the will of this great One; and now the goodness and greatness of
+His nature are like a rushing current against which sinful humanity struggles in
+vain, for the irresistible torrent must run its course, and overwhelm every
+opponent. What does the great God seem to those without Christ but a stupendous
+rock, threatening to crush them, or a bottomless sea, rushing to swallow them
+up? The contemplation of the divine greatness may in itself fill man with
+horror, and cast him into unspeakable misery! Dwell a long time on such themes,
+and like Job you will tremble before the Living God, who shakes the earth.
+
+**“Each one of the severe attributes of God” will cause the fear.**
+
+Think of His power by which He rolls the stars along, and put your hand over
+your mouth. Think of His wisdom by which He numbers the clouds, and settles the
+physical laws of the universe. Meditate on any one of these attributes, but
+especially on His justice, and on that devouring fire which burns continuously
+against sin, and it is no wonder that the soul becomes full of fear. Meanwhile
+let “a sense of sin” with its great whip of wire, scourge the conscience, and
+man will dread the thought of God. For this is the concern of the voice of man's
+guilty conscience, “If you were a righteous man, this God would still be
+frightful to you, for if even the moon is not bright and the stars are not pure
+in His eyes, if God charges his angels with error. How can a mortal be righteous
+before God, or have any claims on Him, for you have offended, you have lifted
+your hand of rebellion against the infinite majesty of omnipotence--what can
+become of you? What can be your end but to be set up forever as a monument of
+his righteous wrath?”
+
+**Now such a fear as that is easily created in the thoughtful mind, and is the
+natural heritage of man, since the result of sin is most wretched and harmful.**
+
+For wherever there is a cringing dread of the Divine Person, it alienates man
+completely from his God. We are by our evil nature enemies to God, and the
+assumption that God is cruel, harsh, and horrifying, adds fuel to the fire of
+our hatred. We can't love those whom we dread. You could not make your child
+show love to you if its little heart was full of fear; if it dreaded to hear
+your footstep, and was alarmed at the sound of your voice, it could not love
+you. You might obey some huge monster because you were afraid of him, but it
+would be impossible to love him. It is one of the masterpieces of Satan to
+deceive man by presenting to his mind a hateful picture of God. He knows that
+man cannot love that which terrifies him, and therefore he paints the God of
+grace as a hard, unforgiving person who will not receive the repentant sinner
+and have pity on the sorrowful person. God is love! Surely if men only had the
+grace enough to see the beauty of that portrait of God—that was sketched with a
+single line, “God is love!” then they would willingly serve such a God. When the
+Holy Spirit enables the mind to perceive the character of God, the heart cannot
+refuse to love Him. Evil, fallen, depraved as men and women are, when they are
+illuminated by the Holy Spirit then they will have the right judgment of God,
+their hearts melt under the pleasant beams of divine love, and they love God
+because He has first loved them. But here is the masterpiece of Satan, that he
+will not let the understanding perceive the excellence of God's character, and
+then the heart cannot love that which the understanding does not perceive to be
+lovable.
+
+**In addition to alienating the heart from God, this fear “creates a prejudice
+against God's gospel of grace.”**
+
+There are persons in this church this morning who believe that if they were
+to become a Christian that they would be miserable. It is the settled conviction
+of some, that to trust in Jesus and to be obedient to God, which is the essence
+of true Christianity, would be miserable. “Oh,” says the worldly man, “I would
+have to give up my pleasure if I were to become a Christian.” Now, this is one
+of the biggest lies ever invented, and yet millions of people believe it. It is
+popular theology that to be an enemy of God is happiness, but to be the friend
+of God is misery. What a warped opinion men must have of God, when they believe
+that to love Him is to be wretched! Oh, I wish that they could truly understand
+Him. I wish that they could know how good God is instead of imagining that to be
+His servant would be slavery. I pray that they could only understand that to be
+His friends is to occupy the highest and happiest position which created beings
+can occupy.
+
+**This fear in some men “causes them to believe that can never be saved.”**
+
+They think God is a selfish Person, they keep at a distance from Him, and if
+they hear now and then, in a sermon, that God is Love and will save everyone
+that comes to Him, the right desire for Him never matures into the practical
+resolve to do something. They don’t say, “I will get up and go to my Father,”
+because they don’t know Him as a Father, they only know Him as a consuming fire.
+A man does not say, “I will get up and go into a consuming fire.” No, but, like
+Jonah, he would pay his money, regardless of the expense, and go to Tarshish to
+flee from the presence of the Lord. This is what makes man so miserable—the fact
+that they cannot get away from God, since they think that if they could only
+escape from His presence they would then wander into absolute happiness; but
+being doomed to be where God is, then they conceive that for them there remains
+only anguish and misery. The soft warnings of mercy and the thunderings of
+justice are powerless on men so long as their hearts are seared and rendered
+hardened by an unholy dread of God.
+
+**This depraved fear of God frequently drives men and women to the extremities
+of sin.**
+
+The man says, “There is no hope for me; I have made one fatal mistake by
+becoming God's enemy, and I am permanently ruined. There is no hope that I will
+ever be restored to happiness or peace. Then what will I do? I will unleash all
+my passions, I will defy fate and take my chance. I will get all the happiness
+that can be found in sin. If I cannot be reconciled to heaven I will become a
+servant of hell.” Consequently men and women have been known to rush from one
+crime to another with a spiteful rebellion against God, as if they could never
+be satisfied nor contented until they had heaped up more and more sins against
+the majesty of God whom in their hearts they dreaded with a burning Satanic
+dread mingled with hate. If they could only comprehend that He is still willing
+to receive the rebellious sinner, that His heart yearns to save sinners; if they
+could only believe that He is love and is not willing that any sinner should
+ever be lost forever, but would rather that the sinner would repent and submit
+to Him and live eternally in heaven, surely the course of their lives would be
+changed; but the god of this world blinds them, and slanders the Lord until the
+unbeliever considers it foolishness to repent and submit to Christ.
+
+**Dear friends, this evil of Satan operates in countless ways. It dishonors
+God.**
+
+Oh, it is notorious, it is evil to make out our God, who is light and in whom
+there is no darkness at all, to be an object of horrible fear. It is hellish; it
+is devilish to the highest degree to paint Him as a demon, who is the Holy God,
+the God of Love. Oh, the disrespect of the prince of darkness, and the madness
+of man to consent to the suggestion, that God should be depicted as being
+unwilling to forgive, unkind, harsh, hard, cruel, when in fact He is love;
+supremely and above all things, love. He is just, but all the more truly loving
+because He is just. He is true, and therefore sure to punish sin, yet even
+punishing sin because it is not being righteous to let sin go unpunished. This
+is vile ingratitude on the part of a creature who has received so much that he
+should slander God the giver of all things.
+
+**The evil which is therefore done to God recoils upon man, for this “fear
+brings torment.”**
+
+Nothing is more tormenting in the world than to think of God as being our
+unappeasable foe. You Christians who have lost for awhile the joy of your
+salvation [not your salvation, just the joy of it], you who have wandered a
+distance away from God, nothing can be more tormenting to you than the fear that
+the Lord has cast you away and will not receive you again. You backsliders,
+nothing can hold you back from your heavenly Father like a dread of Him. If you
+really knew that He is not to be dreaded with a cringing fear, you will come to
+him as your child does to you, and you would say, “My Father, I have offended
+You—have pity on me! My Father, I am irritated and grieved over my sin--forgive
+me, receive me again into Your arms, and help me, by Your mighty grace, that
+from this moment on I may walk in Your commandments, and be obedient to Your
+will.” My dear friends, you who know anything about spiritual life, don't you
+feel that when you have sweet thoughts of God breathed into you from above, and
+have your heart filled with His special love, that it is then that you are the
+holiest! Haven’t you perceived that the only way in which you can grow in that
+which is morally and spiritually lovely, is by highly esteeming your gracious
+God, and feeling His precious love filling your hearts?
+
+The very thing which God desires for His elect ones is that they may become
+like little children. It is this which His Spirit works in His chosen ones; it
+is to this that we must come if we are to be partakers of the inheritance of the
+saints. Cringing fear is so opposed to the childlike spirit that it is just like
+the poison of a cobra to it. Dread and fear brings out everything in us that is
+of the “man” rather than of the “child,” for it stirs us up to resist the object
+of our fear. An assured confidence in the goodness of God casts out fear and
+brings forth everything that is childlike in us. A child easily and naturally
+trusts in a good and generous father, and if I, a poor, weak, feeble child,
+conscious that I am such, knowing that I am all foolishness and weakness, can
+just believe in my good, great God, through Jesus Christ and come and trust
+myself with Him, and leave Him to do as He likes with me, believing that He will
+not be unkind, and cannot be unwise; If I can wholly rest in His love and be
+obedient to His will, only then will I have reached the highest point that the
+creature can reach; the Holy Spirit will then have brought about His finished
+work in me, and I will be fit for heaven. Beloved, it is because fear opposes
+this, and prevents this, that I would say with the angel, “Do not be afraid”
+
+**II. I am afraid that I will tire you while I speak on this somewhat sorrowful
+theme, and therefore with as much brevity as the abundance of the matter may
+permit, let us note in the second place, THE CURE FOR THIS FEAR, which the angel
+came to proclaim. It lies in this: “Today in the town of David a Savior has been
+born to you; He is Christ the Lord.”**
+
+Till God in human flesh I see,
+
+My thoughts no comfort find;
+
+The holy, just and sacred Three,
+
+Are terrors to my mind.
+
+But if Immanuel's face appear,
+
+My hope, my joy begins;
+
+His name forbids my slavish fear,
+
+His grace removes my sins.”
+
+That is the remedy—God with us—God made flesh. Let us try and show this from
+the angel's song.
+
+According to the text they were not to be afraid, first of all, because “the
+angel had come to bring them good news.” What does it say? It says, “I bring you
+good news of great joy.” But what was this gospel? Further on we are told that
+the gospel was the fact that Christ was born. So, then, it is good news to men
+that Christ is born, that God has come down and taken manhood into union with
+Himself. Truly this is good news. He who made the heavens sleeps in a manger.
+What does that mean? Why it means that God is not necessarily an enemy to man,
+because here is God actually taking manhood into union with Deity.
+
+There cannot be permanent, entrenched, immovable hatred between the two
+natures, or otherwise the divine nature could not have taken the human into
+hypostatical union with itself. Isn't there comfort in that? You are a
+destitute, wicked, feeble person, and that which makes you afraid of the Lord is
+this fear that there is hatred between God and man; but there need not be such
+animosity, for your Creator has actually taken manhood into union with Himself.
+
+Don't you see another thought? The Eternal seems to be so far away from us.
+He is infinite, and we are such little creatures. There appears to be a great
+gulf fixed between man and God—He is the Creator and we are the creature. But
+observe, He who is God has also become man. We never heard that God took the
+nature of angels into union with Himself, we may therefore say that between the
+Godhead and angels there must still be an infinite distance; but here the Lord
+has actually taken manhood into union with Himself, there is therefore no longer
+a great gulf fixed, on the contrary, here is a marvelous union; The Godhead has
+entered into marriage bonds with manhood. O my soul, you do not stand like a
+poor lonely orphan wailing across the deep sea after your Father who has gone
+far away and cannot hear you; you don’t sob and sigh like an infant left naked
+and helpless, its Creator having gone too far away to regard its needs or listen
+to its cries. No, your Creator has become like yourself. Is that too strong a
+word to use? He who created all things, and in Whom all things are held
+together, is that same Word who lived for a while among us and was made flesh,
+and made flesh in such a way that He was tempted in every way, just as we
+are—yet was without sin. O mankind, was there ever such good news as this for
+you!
+
+Inferior mankind, you weak worm of the dust, far lower than the angels, lift up
+your head, and don't be afraid! Inferior mankind, born in weakness, living a
+life of work and stress, covered with sweat, and then dying only to be eaten by
+the worms, don't you be ashamed even in the presence of Heaven's highest ranking
+angels, for next to God is man, and not even an archangel stands in position
+between God and man; no, not next to God, there is an absolute complete union
+between God and man, for Jesus who is God is also man; Jesus Christ, eternally
+God, was born, and lived and died as we also do. That is the first word of
+comfort to expel our fear.
+
+**The second point that takes away fear is that this Man Jesus who was also God
+was actually born. Observe the angel's word, “A Savior has been born to you.”**
+
+Our Lord Jesus Christ is in some senses more man than Adam. Adam was not
+born; Adam never had to struggle through the risks and weaknesses of infancy; he
+did not know what it was like to be a toddler or a little child—he was created
+full grown. Our earthly father Adam could not sympathize with me as a baby and a
+child. But how manlike is Jesus! He is cradled with us in the manger; He does
+not begin with us in mid-life, as Adam, but he accompanies us in the pains and
+feebleness and weaknesses of infancy, and He continues with us even to the
+grave. Beloved, this is such sweet comfort. He that is God today was once an
+infant: so that if my cares are little and even trivial and comparatively
+infantile, I may go to Him, for He once was a child. Though the great ones of
+the earth may sneer at the children living in poverty, and say, “You are too
+unimportant, and your trouble is too insignificant for pity;” I remember with
+humble joy, that the King of heaven nursed on a woman's breast, and was wrapped
+in rags, and therefore I can tell Him all my sorrows. How wonderful that He was
+an infant, and also was the Living God, blessed forever! I am not afraid of God
+anymore; this blessed link between me and God, the holy child Jesus, has taken
+all the fear away.
+
+**Observe, the angel told them something of His position, as well as His birth.
+“Today in the town of David a `Savior' has been born to you.” The very purpose
+for which He was born and came into this world was that He might deliver us from
+sin.**
+
+What, then, was it that made us afraid? Weren't we afraid of God because we felt
+that we were lost through sin? Well then, here is joy upon joy. Here not only
+has the Lord come among us as a man, but He was made man in order to save man
+from that which separated him from God. I feel as if I could burst into weeping
+for some here who have been racing through their lives unrestrained and are a
+great distance from God their Creator because of their evil ways. I know they
+are afraid to come to Him. They think that the Lord will not receive them, that
+there is no mercy for such sinners as they have been. Oh, but think of
+this—Jesus Christ has come to seek and to save that which was lost. He was born
+to save. If He does not save then He was born in vain, for the object of His
+birth was salvation. If He will not be a Savior, then the mission of God to
+earth has missed its objective, for its design was that lost sinners might be
+saved. Lost one, lost one, if there were news that an angel had come to save you
+there might be some cheer in it; but there are even better tidings. God has
+come; the Infinite, the Almighty, has stooped from the highest heaven that He
+may pick you up, a poor cursed and worthless worm. Isn't there comfort here?
+Doesn't the incarnate Savior take away the horrible dread which hangs over men
+like a gloomy darkness?
+
+**Note that the angel did not forget to describe “the person” of this Savior--
+“He is Christ the Lord.” There is His manhood. As man He was anointed. “The
+Lord.” There is His Godhead.**
+
+Yes, this is the solid truth upon which we plant our foot. Jesus of Nazareth is
+God; He who was conceived in the womb of the virgin and born in Bethlehem's
+manger is now, and always was, God over all, blessed forever. There is no gospel
+if He is not God. It is not good news to me to tell me that a great prophet is
+born. There have been great prophets before; but the world has never been
+redeemed from evil by mere testimony to the truth, and never will be. Tell me
+that God is born, that God Himself has taken up our nature, and taken it into
+union with Himself, then the bells of my heart ring with joy, for now I may come
+to God since God has come to me.
+
+**You will observe, dear friends, however, that the essence of what the angel
+said lay in this, “has been born to you.” You will never get true comfort from
+the incarnate Savior until you perceive your personal interest in Him.**
+
+Christ as man was a representative man. There were only two thoroughly
+representative men; the first is Adam: Adam was disobedient and the whole race
+fell. “In Adam all die.” Now, the man Jesus is the second great representative
+man. He does not represent the whole human race, He represents as many as His
+Father gave him; He represents a chosen company. Now, whatever Christ did, if
+you belong to those who are in Him—He did for you. So that Christ circumcised or
+Christ crucified, Christ dead or Christ living, Christ buried or Christ risen,
+you are a partaker of all that He did and all that He is, for you are considered
+to be one with Him. See then, the joy and comfort of the incarnation of Christ.
+Does Jesus, as man, take manhood up to heaven? He has taken me up there. Our
+earthly father Adam fell, and I fell too, for I was in him. The Lord Jesus
+Christ rises, and I rise if I am in Him. See, beloved, when Jesus Christ was
+nailed to the cross all His elect children were nailed there too, and they
+suffered and died in Him. When He was put into the grave the whole of His people
+lay slumbering there in Him, for they were in the loins of Jesus as Levi was in
+the loins of Abraham; and when He rose they rose and received the foretaste of
+their own future resurrection, because He lives they will also live; and now
+that He has gone up to heaven to claim the throne, He has claimed the throne for
+every soul that is in Him. Oh, this is joy indeed! Then how can I be afraid of
+God, for this day, by faith, I, a poor undeserving sinner, having put my trust
+in Jesus, can be bold and say that I sit upon the very throne of God. Don’t
+think that we have said too much, for in the person of Christ every believer is
+raised up together, and made to sit together in heavenly places in Christ Jesus.
+Because as Jesus is there, representatively, each one of us is there in Him.
+
+I wish that I had power to bring out this precious doctrine of the
+incarnation as I desire too, but the more one ponders it, the happier one
+becomes. Let us view it as an all-important truth, that Jesus, the Son of God,
+has really come in the flesh. It is such an important truth, that we have three
+witnesses appointed to keep it before us on earth. We have been insisting many
+times in this church on the spirituality of Christian worship. We have shown
+that the outward acts and deeds in Christianity, by itself, accomplishes
+nothing, it is the inward spirit that really means anything. I must confess that
+I have sometimes said to myself, and I hope not rebelliously, “What is Baptism
+for, and What is the Lord's Supper for?” These two outward ordinances, whatever
+may be their perfect purposes, have been the two things around which more errors
+have clustered than around anything else; and I have heard it said, by friends
+inclined to follow more fully the teachings of the Quakers, “Why not put aside
+the outward and visible altogether? Let it be the Spirit Baptism and not the
+water, let there be no bread and wine, but let there be fellowship with Christ
+without the outward sign. “I must confess, though I would never do it, because I
+am faithful to the plain testimony of Scripture, yet my heart has been somewhat
+tempted, and I have said to myself, “Men will always pervert these two
+ordinances, wouldn't it be better to just do away with them?”
+
+While I have struggled over this issue, I have always be conscious that the
+ordinances are right, and must be practiced faithfully, because I have rested on
+the text, “There are three that testify: the Spirit, the water and the blood;
+and the three are in agreement.” And what do they bear witness to? They bear
+witness to the mission of Jesus as the Christ, in other words to the real
+incarnation of God. They bear witness to the material nature of Christ. Have you
+ever noticed that when people have given up the two outward ordinances, they
+have usually betrayed a tendency to give up the literal fact that “God was made
+flesh!” The literal fact that Christ was really a man has generally been doubted
+or thrown into the background when the two outward ordinances have been given
+up, and I believe that these two symbolical ordinances, which are a link between
+the spiritual and the material, are set up on purpose to show that Christ Jesus,
+though most gloriously a spirit, was also a man clothed in a body of real flesh
+and blood like our own; so that He could be touched and handled even as He said,
+“Touch me and see; a ghost does not have flesh and bones, as you see I have.”
+When I think of the Holy Spirit who bears witness that Christ was really a man,
+I thank Him for that witness; then I turn to the water, and when I read that
+Christ was publicly baptized in Jordan, I perceive that He could not have been a
+phantom; He could not have been a mere supernatural appearance, for He was
+immersed in water, He must have been a solid substantial man. The preservation
+of the ordinance of baptism is a witness to the reality of the incarnate God.
+Then comes the blood, He could not have shed blood on Calvary if He had been
+only a vision. There could have been no blood streaming down from His side when
+the spear pierced Him if He had been only a ghostly appearance; He must have
+been solid flesh and blood like ourselves; and as often as we come to His table,
+and we take the cup and hear it said, “This cup is the New Covenant in my
+blood,” there is a third witness on earth to the fact that Jesus did appear in
+very flesh and blood among men. So that the Spirit, the water, and the blood,
+are the three standing testimonies in the church of God, that Christ was God,
+and that He was also really, solidly, and substantially man. I will delight in
+the ordinances all the more because of this. Those two ordinances serve to make
+us remember that Christ was really flesh and blood, and that Christianity has
+something to do with this flesh and blood of ours. This very body is to rise
+again from the tomb; Jesus came to deliver this weak flesh from corruption; and
+so, while we must always keep the spiritual uppermost, we are prevented from
+casting away the material body as though that were from the devil. Christ
+purified as well the realm of matter as the realm of spirit; and in both He
+reigns triumphant. There is great comfort here.
+
+**III. Lastly, we can only take a few moments in APPLYING THE CURE TO VARIOUS
+CASES.**
+
+Child of God, You say, “I dare not come to God today, I feel so weak.” Do not
+fear, for He that is born in Bethlehem said, “A bruised reed I will not break,
+and a smoldering wick I will not snuff out.” “I will never get to heaven,” says
+another; “I will never see acceptance on God's face; I am so tempted.” “Do not
+fear, For you do not have a high priest who is unable to sympathize with your
+weaknesses, but you have one who has been tempted in every way, just as you
+are—yet was without sin.” “But I am so lonely in the world,” says another, “No
+man cares about me.” Regardless, there is one man who does care; a true man like
+yourself. Furthermore, He is your fellow man, and does not forget the lonely
+spirit.
+
+But I hear a sinner say, “I am afraid to go to God this morning and confess
+that I am a sinner.” Well, don’t go to God alone, but go to the member of the
+Trinity who is truly God and who also is a man—the God/man Christ Jesus. Surely
+you cannot be afraid of Him. If you only knew Jesus you would go to Him at once;
+you would not be afraid to tell Him your sins, for you would know that He would
+say, “Go now and leave your life of sin.”
+
+“I can't pray,” one says, “I feel afraid to pray.” What, afraid to pray, when
+it is a man who listens to you! You might dread the face of God, but when it is
+God in human flesh why should you be alarmed? Go, weak sinner, go to Jesus.
+
+“I feel,” ones says, “unfit to come.” You may be unfit to come to God, but
+you cannot be unfit to come to Jesus. There is a fitness necessary to stand in
+the presence of the Holy God, but there is no fitness needed in coming to the
+Lord Jesus. Come as you are, guilty, and lost, and ruined. Come just as you are,
+and He will receive you.
+
+“Oh,” says another, “I cannot trust.” I can understand your not being able to
+trust the great invisible God, but can't you trust that dying, bleeding Son of
+Man who is also the Son of God?
