@@ -1,0 +1,150 @@
+{
+  "name": "Bíblia.academy Content Index",
+  "updatedAt": "2026-08-28T22:59:58Z",
+  "modules": [
+    {
+      "id": "sermons",
+      "dir": "./sermons",
+      "status": "dev",
+      "valid": false,
+      "version": "0.1.0",
+      "locales": [
+        {
+          "lang": "en-US",
+          "total": 1552
+        },
+        {
+          "lang": "pt-BR",
+          "total": 8
+        }
+      ],
+      "datasets": [
+        {
+          "id": "c_h_spurgeon",
+          "label": "C H Spurgeon",
+          "license": null,
+          "locales": [
+            {
+              "lang": "en-US",
+              "dir": "./en-US/c_h_spurgeon",
+              "total": 1074
+            }
+          ]
+        },
+        {
+          "id": "george_whitefield",
+          "label": "George Whitefield",
+          "license": null,
+          "locales": [
+            {
+              "lang": "en-US",
+              "dir": "./en-US/george_whitefield",
+              "total": 59
+            }
+          ]
+        },
+        {
+          "id": "j_c_philpot",
+          "label": "J C Philpot",
+          "license": null,
+          "locales": [
+            {
+              "lang": "en-US",
+              "dir": "./en-US/j_c_philpot",
+              "total": 74
+            }
+          ]
+        },
+        {
+          "id": "j_c_ryle",
+          "label": "J C Ryle",
+          "license": null,
+          "locales": [
+            {
+              "lang": "en-US",
+              "dir": "./en-US/j_c_ryle",
+              "total": 89
+            }
+          ]
+        },
+        {
+          "id": "john_bunyan",
+          "label": "John Bunyan",
+          "license": null,
+          "locales": [
+            {
+              "lang": "en-US",
+              "dir": "./en-US/john_bunyan",
+              "total": 32
+            }
+          ]
+        },
+        {
+          "id": "john_newton",
+          "label": "John Newton",
+          "license": null,
+          "locales": [
+            {
+              "lang": "en-US",
+              "dir": "./en-US/john_newton",
+              "total": 41
+            }
+          ]
+        },
+        {
+          "id": "john_owen",
+          "label": "John Owen",
+          "license": null,
+          "locales": [
+            {
+              "lang": "en-US",
+              "dir": "./en-US/john_owen",
+              "total": 8
+            },
+            {
+              "lang": "pt-BR",
+              "dir": "./pt-BR/john_owen",
+              "total": 8
+            }
+          ]
+        },
+        {
+          "id": "jonathan_edwards",
+          "label": "Jonathan Edwards",
+          "license": null,
+          "locales": [
+            {
+              "lang": "en-US",
+              "dir": "./en-US/jonathan_edwards",
+              "total": 94
+            }
+          ]
+        },
+        {
+          "id": "samuel_davies",
+          "label": "Samuel Davies",
+          "license": null,
+          "locales": [
+            {
+              "lang": "en-US",
+              "dir": "./en-US/samuel_davies",
+              "total": 66
+            }
+          ]
+        },
+        {
+          "id": "thomas_watson",
+          "label": "Thomas Watson",
+          "license": null,
+          "locales": [
+            {
+              "lang": "en-US",
+              "dir": "./en-US/thomas_watson",
+              "total": 15
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
