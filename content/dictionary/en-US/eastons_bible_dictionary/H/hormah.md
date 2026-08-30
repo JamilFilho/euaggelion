@@ -1,0 +1,7 @@
+# Hormah
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/hormah.html
+
+---
+
+**Hormah:** banning; i.e., placing under a "ban," or devoting to utter destruction. After the manifestation of God's anger against the Israelites, on account of their rebellion and their murmurings when the spies returned to the camp at Kadesh, in the wilderness of Paran, with an evil report of the land, they quickly repented of their conduct, and presumed to go up "to the head of the mountain," seeking to enter the Promised Land, but without the presence of the Lord, without the ark of the convenant, and without Moses. The Amalekites and the Canaanites came down and "smote and discomfited them even unto Hormah" (Numbers 14:45). This place, or perhaps the watch-tower commanding it, was originally called Zephath (Judges 1:17), the modern Sebaiteh. Afterwards (Numbers 21:1-3) Arad, the king of the Canaanites, at the close of the wanderings, when the Israelites were a second time encamped at Kadesh, "fought against them, and took some of them prisoners." But Israel vowed a vow unto the Lord utterly to destroy the cities of the Canaanites; they "banned" them, and hence the place was now called Hormah. But this "ban" was not fully executed till the time of Joshua, who finally conquered the king of this district, so that the ancient name Zephath became "Hormah" (Joshua 12:14; Judges 1:17).

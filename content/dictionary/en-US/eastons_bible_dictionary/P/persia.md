@@ -1,0 +1,8 @@
+# Persia
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Persia
+
+---
+
+**Persia**
+An ancient empire, extending from the Indus to Thrace, and from the Caspian Sea to the Red Sea and the Persian Gulf. The Persians were originally a Medic tribe which settled in Persia, on the eastern side of the Persian Gulf. They were Aryans, their language belonging to the eastern division of the Indo-European group. One of their chiefs, Teispes, conquered Elam in the time of the decay of the Assyrian Empire, and established himself in the district of Anzan. His descendants branched off into two lines, one line ruling in Anzan, while the other remained in Persia. Cyrus II., king of Anzan, finally united the divided power, conquered Media, Lydia, and Babylonia, and carried his arms into the far East. His son, Cambyses, added Egypt to the empire, which, however, fell to pieces after his death. It was reconquered and thoroughly organized by Darius, the son of Hystaspes, whose dominions extended from India to the Danube.

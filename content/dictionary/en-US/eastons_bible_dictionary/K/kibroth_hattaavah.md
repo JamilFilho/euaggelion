@@ -1,0 +1,9 @@
+# Kibroth-hattaavah
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/kibroth-hattaavah.html
+
+---
+
+**Kibroth-hattaavah:** the graves of the longing or of lust, one of the stations of the Israelites in the wilderness. It was probably in the Wady Murrah, and has been identified with the Erweis el-Ebeirig, where the remains of an ancient encampment have been found, about 30 miles north-east of Sinai, and exactly a day's journey from 'Ain Hudherah.
+
+"Here began the troubles of the journey. First, complaints broke out among the people, probably at the heat, the toil, and the privations of the march; and then God at once punished them by lightning, which fell on the hinder part of the camp, and killed many persons, but ceased at the intercession of Moses (Numbers 11:1,2). Then a disgust fell on the multitude at having nothing to eat but the manna day after day, no change, no flesh, no fish, no high-flavoured vegetables, no luscious fruits...The people loathed the 'light food,' and cried out to Moses, 'Give us flesh, give us flesh, that we may eat.'" In this emergency Moses, in despair, cried unto God. An answer came. God sent "a prodigious flight of quails, on which the people satiated their gluttonous appetite for a full month. Then punishment fell on them: they loathed the food which they had desired; it bred disease in them; the divine anger aggravated the disease into a plague, and a heavy mortality was the consequence. The dead were buried without the camp; and in memory of man's sin and of the divine wrath this name, Kibroth-hattaavah, the Graves of Lust, was given to the place of their sepulchre" (Numbers 11:34,35; 33:16,17; Deuteronomy 9:22; comp. Psalm 78:30,31)., Rawlinson's Moses, p. 175. From this encampment they journeyed in a north-eastern direction to Hazeroth.

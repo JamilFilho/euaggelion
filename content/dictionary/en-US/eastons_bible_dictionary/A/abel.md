@@ -1,0 +1,12 @@
+# Abel
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Abel
+
+---
+
+**Abel**
+(Heb. Hebhel), a breath, or vanity, the second son of Adam and Eve. He was put to death by his brother Cain (Gen. 4:1-16). Guided by the instruction of their father, the two brothers were trained in the duty of worshipping God. "And in process of time" (marg. "at the end of days", i.e., on the Sabbath) each of them offered up to God of the first-fruits of his labours. Cain, as a husbandman, offered the fruits of the field; Abel, as a shepherd, of the firstlings of his flock. "The Lord had respect unto Abel and his offering; but unto Cain and his offering he had not respect" (Gen. 4:3-5). On this account Cain was angry with his brother, and formed the design of putting him to death; a design which he at length found an opportunity of carrying into effect (Gen. 4:8, 9. Comp. 1 John 3:12). There are several references to Abel in the New Testament. Our Saviour speaks of him as "righteous" (Matt. 23:35). "The blood of sprinkling" is said to speak "better things than that of Abel" (Heb. 12:24); i.e., the blood of Jesus is the reality of which the blood of the offering made by Abel was only the type. The comparison here is between the sacrifice offered by Christ and that offered by Abel, and not between the blood of Christ calling for mercy and the blood of the murdered Abel calling for vengeance, as has sometimes been supposed. It is also said (Heb. 11:4) that "Abel offered unto God a more excellent sacrifice than Cain." This sacrifice was made "by faith;" this faith rested in God, not only as the Creator and the God of providence, but especially in God as the great Redeemer, whose sacrifice was typified by the sacrifices which, no doubt by the divine institution, were offered from the days of Adam downward. On account of that "faith" which looked forward to the great atoning sacrifice, Abel's offering was accepted of God. Cain's offering had no such reference, and therefore was rejected. Abel was the first martyr, as he was the first of our race to die.
+
+Abel (Heb. `abhel), lamentation (1 Sam. 6:18), the name given to the great stone in Joshua's field whereon the ark was "set down." The Revised Version, however, following the Targum and the LXX., reads in the Hebrew text 'ebhen (= a stone), and accordingly translates "unto the great stone, whereon they set down the ark." This reading is to be preferred.
+
+Abel (Heb. `abhel), a grassy place, a meadow. This word enters into the composition of the following words:

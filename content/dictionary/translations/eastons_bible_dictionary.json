@@ -1,0 +1,1607 @@
+{
+  "module": "dictionary",
+  "dataset": "eastons_bible_dictionary",
+  "updatedAt": "2026-08-29T17:10:04Z",
+  "items": {
+    "A/a": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/a.md",
+        "hash": "sha256:16baa86e7ca2370bff8025b8bd7ccd7ea4142815a94fbd600cfa7a103085d565"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/a.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:16baa86e7ca2370bff8025b8bd7ccd7ea4142815a94fbd600cfa7a103085d565",
+          "translatedAt": "2026-08-29T16:30:28Z"
+        }
+      }
+    },
+    "A/aaron": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/aaron.md",
+        "hash": "sha256:fbbef9b78ef6148b0b6a5b398a252c8ec343fc82ee8aea34278970068e26a5ac"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/arao.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:fbbef9b78ef6148b0b6a5b398a252c8ec343fc82ee8aea34278970068e26a5ac",
+          "translatedAt": "2026-08-29T16:32:55Z"
+        }
+      }
+    },
+    "A/aaronites": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/aaronites.md",
+        "hash": "sha256:67641a568b406e90d75544ada1f209ebfa0d938f85a8494c42fbe0ca6ee54d20"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/aronitas.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:67641a568b406e90d75544ada1f209ebfa0d938f85a8494c42fbe0ca6ee54d20",
+          "translatedAt": "2026-08-29T16:33:05Z"
+        }
+      }
+    },
+    "A/abaddon": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abaddon.md",
+        "hash": "sha256:a3e4a7e7f5599064c5a421782efeaabae42de67fa643d3818b0a2cc38fbc3694"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abaddon.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:a3e4a7e7f5599064c5a421782efeaabae42de67fa643d3818b0a2cc38fbc3694",
+          "translatedAt": "2026-08-29T16:33:36Z"
+        }
+      }
+    },
+    "A/abagtha": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abagtha.md",
+        "hash": "sha256:de162eb4973bb5d1e86825731eb7cd2b5d01eee9764501745b152376e78f95d8"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abagtha.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:de162eb4973bb5d1e86825731eb7cd2b5d01eee9764501745b152376e78f95d8",
+          "translatedAt": "2026-08-29T16:33:51Z"
+        }
+      }
+    },
+    "A/abana": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abana.md",
+        "hash": "sha256:f231f9bd5c2c3c83d6d95c357bffb7b51ba914594e58e26ab29e263d2eff6f46"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abana.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:f231f9bd5c2c3c83d6d95c357bffb7b51ba914594e58e26ab29e263d2eff6f46",
+          "translatedAt": "2026-08-29T16:34:09Z"
+        }
+      }
+    },
+    "A/abarim": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abarim.md",
+        "hash": "sha256:5851649e82903f29ac7fa5c20444070a4575ce447e50d1381467cbbf5efbee17"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abarim.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:5851649e82903f29ac7fa5c20444070a4575ce447e50d1381467cbbf5efbee17",
+          "translatedAt": "2026-08-29T16:34:32Z"
+        }
+      }
+    },
+    "A/abba": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abba.md",
+        "hash": "sha256:deaece46f9b59d41a10846f3f55ff2c2106a0632909d006ff5f7817f76bc9775"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abba.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:deaece46f9b59d41a10846f3f55ff2c2106a0632909d006ff5f7817f76bc9775",
+          "translatedAt": "2026-08-29T16:34:45Z"
+        }
+      }
+    },
+    "A/abda": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abda.md",
+        "hash": "sha256:0bbcc9aa46de269f3526928a4163182669467e7c1f648731c5f3d394621c56e0"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abda.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:0bbcc9aa46de269f3526928a4163182669467e7c1f648731c5f3d394621c56e0",
+          "translatedAt": "2026-08-29T16:34:52Z"
+        }
+      }
+    },
+    "A/abdeel": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abdeel.md",
+        "hash": "sha256:e4730cdfde208fe770a7c8fb3a77ed2543937df85e45f69bb30044761e5f0d77"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abdeel.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:e4730cdfde208fe770a7c8fb3a77ed2543937df85e45f69bb30044761e5f0d77",
+          "translatedAt": "2026-08-29T16:34:58Z"
+        }
+      }
+    },
+    "A/abdi": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abdi.md",
+        "hash": "sha256:3dff0937479c7647d4af4abcdaac125ae3ed3797d3376b85c79ea4313998870b"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abdi.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:3dff0937479c7647d4af4abcdaac125ae3ed3797d3376b85c79ea4313998870b",
+          "translatedAt": "2026-08-29T16:35:04Z"
+        }
+      }
+    },
+    "A/abdiel": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abdiel.md",
+        "hash": "sha256:26c24d1c4608023380288e49a12c83d3eebae05fe1a04de55cee4a83665f129f"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abdiel.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:26c24d1c4608023380288e49a12c83d3eebae05fe1a04de55cee4a83665f129f",
+          "translatedAt": "2026-08-29T16:35:11Z"
+        }
+      }
+    },
+    "A/abdon": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abdon.md",
+        "hash": "sha256:c5c9b1ed59d49db83c9afb559031042f04c2139409cc57f1560c5cb3d66b0249"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abdon.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:c5c9b1ed59d49db83c9afb559031042f04c2139409cc57f1560c5cb3d66b0249",
+          "translatedAt": "2026-08-29T16:35:35Z"
+        }
+      }
+    },
+    "A/abednego": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abednego.md",
+        "hash": "sha256:ad1fd93141080ea5472fd77becc229073bc2de04a4877066e6667f971db99fb3"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abednego.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:ad1fd93141080ea5472fd77becc229073bc2de04a4877066e6667f971db99fb3",
+          "translatedAt": "2026-08-29T16:35:42Z"
+        }
+      }
+    },
+    "A/abel": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abel.md",
+        "hash": "sha256:87508ad39ace1ea7c9e5ef0286cb0291e64a6998c7ea0361fd2473d348f25e31"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abel.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:87508ad39ace1ea7c9e5ef0286cb0291e64a6998c7ea0361fd2473d348f25e31",
+          "translatedAt": "2026-08-29T16:36:07Z"
+        }
+      }
+    },
+    "A/abel_beth_maachah": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abel_beth_maachah.md",
+        "hash": "sha256:3ab9d48819515bb9e6817d09ef72eb2eddfc31f8849b420bb20b3a0ec1c8af55"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abel-bete-maaca.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:3ab9d48819515bb9e6817d09ef72eb2eddfc31f8849b420bb20b3a0ec1c8af55",
+          "translatedAt": "2026-08-29T16:36:29Z"
+        }
+      }
+    },
+    "A/abel_cheramim": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abel_cheramim.md",
+        "hash": "sha256:a52777ba1d556f9df9c1b07f6067bcfaf8aa30aecb66fa0660e8e337e11f0ead"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abel-cheramim.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:a52777ba1d556f9df9c1b07f6067bcfaf8aa30aecb66fa0660e8e337e11f0ead",
+          "translatedAt": "2026-08-29T16:36:35Z"
+        }
+      }
+    },
+    "A/abel_meholah": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abel_meholah.md",
+        "hash": "sha256:52b9e940236703dc21413351a56727d70969058aaece8c9ca82b1f8f5467b6de"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abel-meola.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:52b9e940236703dc21413351a56727d70969058aaece8c9ca82b1f8f5467b6de",
+          "translatedAt": "2026-08-29T16:37:05Z"
+        }
+      }
+    },
+    "A/abel_mizraim": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abel_mizraim.md",
+        "hash": "sha256:96c7e6741d3949befab8c51bf34f8cceda0715e05dc59309bc002835874b9001"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abel-mizraim.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:96c7e6741d3949befab8c51bf34f8cceda0715e05dc59309bc002835874b9001",
+          "translatedAt": "2026-08-29T16:37:15Z"
+        }
+      }
+    },
+    "A/abel_shittim": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abel_shittim.md",
+        "hash": "sha256:4d1de85b8934dc6f1d42d59b0a45d51415741534694c531055a83bb029dd7ffa"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abel-shittim.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:4d1de85b8934dc6f1d42d59b0a45d51415741534694c531055a83bb029dd7ffa",
+          "translatedAt": "2026-08-29T16:37:24Z"
+        }
+      }
+    },
+    "A/abez": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abez.md",
+        "hash": "sha256:3f194f3a8142644d2f706b7828fbe7d7cd76608c786eac864e97b8c82f0e826d"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abez.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:3f194f3a8142644d2f706b7828fbe7d7cd76608c786eac864e97b8c82f0e826d",
+          "translatedAt": "2026-08-29T16:37:32Z"
+        }
+      }
+    },
+    "A/abi_albon": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abi_albon.md",
+        "hash": "sha256:d5e8769cd517910df5ed7f881567985d77dbcdf01df507ac295dfcdf4b50c82d"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abi-albon.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:d5e8769cd517910df5ed7f881567985d77dbcdf01df507ac295dfcdf4b50c82d",
+          "translatedAt": "2026-08-29T16:37:46Z"
+        }
+      }
+    },
+    "A/abia": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abia.md",
+        "hash": "sha256:40e681f8eb69d4cf4b4cb463a45ceada2b472432788adb41052c959a7494d747"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abia.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:40e681f8eb69d4cf4b4cb463a45ceada2b472432788adb41052c959a7494d747",
+          "translatedAt": "2026-08-29T16:37:49Z"
+        }
+      }
+    },
+    "A/abiasaph": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abiasaph.md",
+        "hash": "sha256:79338225acf0644893de0c91c369cf0dd694c3c430c9629f3201298be0950fd4"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abiasafe.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:79338225acf0644893de0c91c369cf0dd694c3c430c9629f3201298be0950fd4",
+          "translatedAt": "2026-08-29T16:38:00Z"
+        }
+      }
+    },
+    "A/abiathar": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abiathar.md",
+        "hash": "sha256:20f388183524e0a2902fa6ebd263a2c03b27c3d77a5acad4f76bb0652d68f2ab"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abiatar.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:20f388183524e0a2902fa6ebd263a2c03b27c3d77a5acad4f76bb0652d68f2ab",
+          "translatedAt": "2026-08-29T16:38:58Z"
+        }
+      }
+    },
+    "A/abib": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abib.md",
+        "hash": "sha256:a54695cfbaa529962e0b7e4ff75cd9095572521ad7ab601e2a278dcf289529b7"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abibe.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:a54695cfbaa529962e0b7e4ff75cd9095572521ad7ab601e2a278dcf289529b7",
+          "translatedAt": "2026-08-29T16:39:11Z"
+        }
+      }
+    },
+    "A/abida": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abida.md",
+        "hash": "sha256:097bd97f44b3f9a5c5a56d01fffb5f65e7b5defdbc36037f81809dfe5b251c58"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abida.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:097bd97f44b3f9a5c5a56d01fffb5f65e7b5defdbc36037f81809dfe5b251c58",
+          "translatedAt": "2026-08-29T16:39:26Z"
+        }
+      }
+    },
+    "A/abidan": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abidan.md",
+        "hash": "sha256:57eae45f4c3efc0a051c130f40bd0811c73625223b54cd7d64a8feadde4ba0e0"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abida-2.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:57eae45f4c3efc0a051c130f40bd0811c73625223b54cd7d64a8feadde4ba0e0",
+          "translatedAt": "2026-08-29T16:39:34Z"
+        }
+      }
+    },
+    "A/abieezer": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abieezer.md",
+        "hash": "sha256:2d118de5af1bf10b09ba1ba9e2c35c680b29839109897aee9abf157a86283b6f"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abieezer.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:2d118de5af1bf10b09ba1ba9e2c35c680b29839109897aee9abf157a86283b6f",
+          "translatedAt": "2026-08-29T16:39:51Z"
+        }
+      }
+    },
+    "A/abiel": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abiel.md",
+        "hash": "sha256:f35f79663a0c6a49bd2826adfa777c3f946776679ed381af6f1aa1f55ced92ad"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abiel.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:f35f79663a0c6a49bd2826adfa777c3f946776679ed381af6f1aa1f55ced92ad",
+          "translatedAt": "2026-08-29T16:39:55Z"
+        }
+      }
+    },
+    "A/abiezrite": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abiezrite.md",
+        "hash": "sha256:41a4139098740fb9fdd02a83b8fa7f4937abf87350fadd6379fbe267c09149aa"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abiezrita.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:41a4139098740fb9fdd02a83b8fa7f4937abf87350fadd6379fbe267c09149aa",
+          "translatedAt": "2026-08-29T16:40:21Z"
+        }
+      }
+    },
+    "A/abigail": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abigail.md",
+        "hash": "sha256:722ffc38fd883d9f3a4b4bdfd6f7a869c943cf2c8fe113cebbf09477858ebb0b"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abigail.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:722ffc38fd883d9f3a4b4bdfd6f7a869c943cf2c8fe113cebbf09477858ebb0b",
+          "translatedAt": "2026-08-29T16:40:57Z"
+        }
+      }
+    },
+    "A/abihail": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abihail.md",
+        "hash": "sha256:41b7b04c3e2e9703551766c924a4571c70c3fadaaed4a0a99c9253c196856286"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abiail.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:41b7b04c3e2e9703551766c924a4571c70c3fadaaed4a0a99c9253c196856286",
+          "translatedAt": "2026-08-29T16:41:13Z"
+        }
+      }
+    },
+    "A/abihu": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abihu.md",
+        "hash": "sha256:ca7ff33b7a0d23e79e64260f53dc000fc533da342e47a5cd635336e4d874bd55"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abiu.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:ca7ff33b7a0d23e79e64260f53dc000fc533da342e47a5cd635336e4d874bd55",
+          "translatedAt": "2026-08-29T16:41:59Z"
+        }
+      }
+    },
+    "A/abihud": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abihud.md",
+        "hash": "sha256:08e0be240bb3bddc82adc16675501d1e5799c415afd5764f00a1b90f8adc8149"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abiude.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:08e0be240bb3bddc82adc16675501d1e5799c415afd5764f00a1b90f8adc8149",
+          "translatedAt": "2026-08-29T16:42:15Z"
+        }
+      }
+    },
+    "A/abijah": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abijah.md",
+        "hash": "sha256:d3753a2ee69ccbc2e388188ef3e246d2ce6a0f2eaf755bdb7fd8854b1bf5b65a"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abias.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:d3753a2ee69ccbc2e388188ef3e246d2ce6a0f2eaf755bdb7fd8854b1bf5b65a",
+          "translatedAt": "2026-08-29T16:42:53Z"
+        }
+      }
+    },
+    "A/abijam": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abijam.md",
+        "hash": "sha256:490baa4da45c9ae377fb3eca5aa9ef03a52ca7e7c2091e6e2394ae6d858ccd46"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abiao.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:490baa4da45c9ae377fb3eca5aa9ef03a52ca7e7c2091e6e2394ae6d858ccd46",
+          "translatedAt": "2026-08-29T16:43:34Z"
+        }
+      }
+    },
+    "A/abilene": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abilene.md",
+        "hash": "sha256:bb4c6d5a0fc2bec29be7d2ad2bf3279e5bd28bd195a0fb9d21368c0bdb26ba61"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abilene.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:bb4c6d5a0fc2bec29be7d2ad2bf3279e5bd28bd195a0fb9d21368c0bdb26ba61",
+          "translatedAt": "2026-08-29T16:43:43Z"
+        }
+      }
+    },
+    "A/abimael": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abimael.md",
+        "hash": "sha256:beda698d16337c7f5d89aeccf7b5a6c69b8f2b46a2746527b4b77574af388c45"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abimael.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:beda698d16337c7f5d89aeccf7b5a6c69b8f2b46a2746527b4b77574af388c45",
+          "translatedAt": "2026-08-29T16:43:54Z"
+        }
+      }
+    },
+    "A/abimelech": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abimelech.md",
+        "hash": "sha256:0c810854dbfe6ed8511d58de1fcc9233f72dc33c31a655b39f2ea2e25e65a1ff"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abimeleque.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:0c810854dbfe6ed8511d58de1fcc9233f72dc33c31a655b39f2ea2e25e65a1ff",
+          "translatedAt": "2026-08-29T16:44:19Z"
+        }
+      }
+    },
+    "A/abinadab": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abinadab.md",
+        "hash": "sha256:6ace52dd823fb4270d66eb97a51fd67d2d4fc45cf3b9d6787352f29607adca0f"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abinadab.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:6ace52dd823fb4270d66eb97a51fd67d2d4fc45cf3b9d6787352f29607adca0f",
+          "translatedAt": "2026-08-29T16:44:33Z"
+        }
+      }
+    },
+    "A/abinoam": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abinoam.md",
+        "hash": "sha256:f136fb4fc30bef53fb2b1bbf9a2a570122b2f6af96ac763b51079216eeade38a"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abinoao.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:f136fb4fc30bef53fb2b1bbf9a2a570122b2f6af96ac763b51079216eeade38a",
+          "translatedAt": "2026-08-29T16:44:42Z"
+        }
+      }
+    },
+    "A/abiram": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abiram.md",
+        "hash": "sha256:6f506aaa0dd2ba5c00e897fe6cb4bf529303b8544dd96f4144fc68ff795f4f05"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abirao.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:6f506aaa0dd2ba5c00e897fe6cb4bf529303b8544dd96f4144fc68ff795f4f05",
+          "translatedAt": "2026-08-29T16:44:46Z"
+        }
+      }
+    },
+    "A/abishag": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abishag.md",
+        "hash": "sha256:9a348d2dc5c9fc613381adb5538e199d5b778b948fbb11b11a3bc091bfa8cfe5"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abisague.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:9a348d2dc5c9fc613381adb5538e199d5b778b948fbb11b11a3bc091bfa8cfe5",
+          "translatedAt": "2026-08-29T16:44:57Z"
+        }
+      }
+    },
+    "A/abishai": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abishai.md",
+        "hash": "sha256:09ea9b8a82113ebc4fbab90a79ca9485107aca5d890ef0be8fc0d33b8da59092"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abisai.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:09ea9b8a82113ebc4fbab90a79ca9485107aca5d890ef0be8fc0d33b8da59092",
+          "translatedAt": "2026-08-29T16:45:51Z"
+        }
+      }
+    },
+    "A/abishua": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abishua.md",
+        "hash": "sha256:cf3809b7db152760d29295460028b3dc57e7e68714030e6c5a05daffafbef9a6"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abisua.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:cf3809b7db152760d29295460028b3dc57e7e68714030e6c5a05daffafbef9a6",
+          "translatedAt": "2026-08-29T16:46:00Z"
+        }
+      }
+    },
+    "A/abishur": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abishur.md",
+        "hash": "sha256:e37b0b5c2dc5c634ed78255b31c07e080210e17bc0c6f1c3b4e19b54891062c5"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abishur.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:e37b0b5c2dc5c634ed78255b31c07e080210e17bc0c6f1c3b4e19b54891062c5",
+          "translatedAt": "2026-08-29T16:46:10Z"
+        }
+      }
+    },
+    "A/abital": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abital.md",
+        "hash": "sha256:883a0f16ee60c64917174f33e40ccbc16b9371a31e1bb4f192c16f9fe2873cf4"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abital.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:883a0f16ee60c64917174f33e40ccbc16b9371a31e1bb4f192c16f9fe2873cf4",
+          "translatedAt": "2026-08-29T16:46:17Z"
+        }
+      }
+    },
+    "A/abitub": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abitub.md",
+        "hash": "sha256:64e792478e3ce7e8486d41fe2e981970e6a082873745c024204a43173d8ddb5a"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abitub.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:64e792478e3ce7e8486d41fe2e981970e6a082873745c024204a43173d8ddb5a",
+          "translatedAt": "2026-08-29T16:46:26Z"
+        }
+      }
+    },
+    "A/abjects": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abjects.md",
+        "hash": "sha256:14000433a4f737888b0200b99b64484a14d3fb53c335949dc747e34ef54217db"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abjetos.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:14000433a4f737888b0200b99b64484a14d3fb53c335949dc747e34ef54217db",
+          "translatedAt": "2026-08-29T16:46:37Z"
+        }
+      }
+    },
+    "A/ablution": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/ablution.md",
+        "hash": "sha256:feff24b9d12e59d76d2524a62a62fd5d27deb1495a216b3873b9962c6d6e4392"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/ablucao.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:feff24b9d12e59d76d2524a62a62fd5d27deb1495a216b3873b9962c6d6e4392",
+          "translatedAt": "2026-08-29T16:47:42Z"
+        }
+      }
+    },
+    "A/abner": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abner.md",
+        "hash": "sha256:08155403885edc0b8165ccd8d449b3a564ccefc001eb58c8edc605b48462eff2"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abner.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:08155403885edc0b8165ccd8d449b3a564ccefc001eb58c8edc605b48462eff2",
+          "translatedAt": "2026-08-29T16:48:11Z"
+        }
+      }
+    },
+    "A/abomination": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abomination.md",
+        "hash": "sha256:a91d2bba15dfa6e114fd1636b7d9c96f1fa4a70a1fd4d0ffbe3147012706903b"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abominacao.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:a91d2bba15dfa6e114fd1636b7d9c96f1fa4a70a1fd4d0ffbe3147012706903b",
+          "translatedAt": "2026-08-29T16:48:47Z"
+        }
+      }
+    },
+    "A/abraham": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abraham.md",
+        "hash": "sha256:63078360b16423326a338c40d268505fe8b08d7a9ba362ba881af5ffb1c97ec9"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abraao.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:63078360b16423326a338c40d268505fe8b08d7a9ba362ba881af5ffb1c97ec9",
+          "translatedAt": "2026-08-29T16:50:04Z"
+        }
+      }
+    },
+    "A/abraham_s_bosom": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abraham_s_bosom.md",
+        "hash": "sha256:e4344a5d6c917b610fc916b309d282fd3ed1d2348f89d078347515fd14dd0a5d"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/seio-de-abraao.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:e4344a5d6c917b610fc916b309d282fd3ed1d2348f89d078347515fd14dd0a5d",
+          "translatedAt": "2026-08-29T16:50:26Z"
+        }
+      }
+    },
+    "A/abram": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abram.md",
+        "hash": "sha256:ca84445767f9ca5c140864a221ef47fabb5643255c3d9afd3f9291f1ab4a753b"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abram.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:ca84445767f9ca5c140864a221ef47fabb5643255c3d9afd3f9291f1ab4a753b",
+          "translatedAt": "2026-08-29T16:50:30Z"
+        }
+      }
+    },
+    "A/abronah": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/abronah.md",
+        "hash": "sha256:46fedc9c9fffbedf4c7def8bd7f5ff1d8b7eaa318c27769abf2b9e556f2bb411"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/abronah.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:46fedc9c9fffbedf4c7def8bd7f5ff1d8b7eaa318c27769abf2b9e556f2bb411",
+          "translatedAt": "2026-08-29T16:50:34Z"
+        }
+      }
+    },
+    "A/absalom": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/absalom.md",
+        "hash": "sha256:e33da9d6af943c5659a23df4daf0f79c6ea177e56a7c1b232c31a00013f637c4"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/absalao.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:e33da9d6af943c5659a23df4daf0f79c6ea177e56a7c1b232c31a00013f637c4",
+          "translatedAt": "2026-08-29T16:50:45Z"
+        }
+      }
+    },
+    "A/acacia": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/acacia.md",
+        "hash": "sha256:0ba7f4ed5a105a0ef43c0863811430c1f62d417b33621642310504e3611b0785"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/acacia.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:0ba7f4ed5a105a0ef43c0863811430c1f62d417b33621642310504e3611b0785",
+          "translatedAt": "2026-08-29T16:50:57Z"
+        }
+      }
+    },
+    "A/accad": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/accad.md",
+        "hash": "sha256:bece0d3bd69bacdcb25f894137a4f59a90c591bfa2cb0eb5c37b3f89af2605fe"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/accad.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:bece0d3bd69bacdcb25f894137a4f59a90c591bfa2cb0eb5c37b3f89af2605fe",
+          "translatedAt": "2026-08-29T16:51:57Z"
+        }
+      }
+    },
+    "A/accho": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/accho.md",
+        "hash": "sha256:024638cf927cc98ced2482adf0596a2f93d5ab0fc7ac6b2dac36db973c704067"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/accho.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:024638cf927cc98ced2482adf0596a2f93d5ab0fc7ac6b2dac36db973c704067",
+          "translatedAt": "2026-08-29T16:52:02Z"
+        }
+      }
+    },
+    "A/accuser": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/accuser.md",
+        "hash": "sha256:4f97a2b61c3b4d51ffa794701e61cbfa6e1c16a8d0d7ae138875b6863b5c04f3"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/acusador.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:4f97a2b61c3b4d51ffa794701e61cbfa6e1c16a8d0d7ae138875b6863b5c04f3",
+          "translatedAt": "2026-08-29T16:52:25Z"
+        }
+      }
+    },
+    "A/aceldama": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/aceldama.md",
+        "hash": "sha256:40359ef99248c792a6d9789b4724b57cb9150078e1cd16811611c56aeeab28b6"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/aceldama.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:40359ef99248c792a6d9789b4724b57cb9150078e1cd16811611c56aeeab28b6",
+          "translatedAt": "2026-08-29T16:52:35Z"
+        }
+      }
+    },
+    "A/achaia": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/achaia.md",
+        "hash": "sha256:87fea171c91a673d5b729b59a1d53e6fc12c011f9196ed8bcd364bf702748d9a"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/acaia.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:87fea171c91a673d5b729b59a1d53e6fc12c011f9196ed8bcd364bf702748d9a",
+          "translatedAt": "2026-08-29T16:53:04Z"
+        }
+      }
+    },
+    "A/achaichus": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/achaichus.md",
+        "hash": "sha256:acd4c40983ee8c4963d22b5a7b0e127061b424d13cfdf751179809e78d679c9f"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/achaichus.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:acd4c40983ee8c4963d22b5a7b0e127061b424d13cfdf751179809e78d679c9f",
+          "translatedAt": "2026-08-29T16:53:16Z"
+        }
+      }
+    },
+    "A/achan": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/achan.md",
+        "hash": "sha256:98dc39d67cb884b0e952fea5a9f4a98f6777de2c6f0586261cc652a1dcf177c9"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/aca.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:98dc39d67cb884b0e952fea5a9f4a98f6777de2c6f0586261cc652a1dcf177c9",
+          "translatedAt": "2026-08-29T16:53:29Z"
+        }
+      }
+    },
+    "A/achbor": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/achbor.md",
+        "hash": "sha256:68e8b7a4cab25a36744db2c7134e369c4722aa7d72c519c4405b589ff7fc98ad"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/acbor.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:68e8b7a4cab25a36744db2c7134e369c4722aa7d72c519c4405b589ff7fc98ad",
+          "translatedAt": "2026-08-29T16:54:01Z"
+        }
+      }
+    },
+    "A/achish": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/achish.md",
+        "hash": "sha256:4c37882912c2f0e0d1114ad7420116002b529c9e60fa5350a1dcc22c4e11c640"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/aquis.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:4c37882912c2f0e0d1114ad7420116002b529c9e60fa5350a1dcc22c4e11c640",
+          "translatedAt": "2026-08-29T16:54:30Z"
+        }
+      }
+    },
+    "A/achmetha": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/achmetha.md",
+        "hash": "sha256:edac94045f1c6f3a39e650d472f630625611788c95f7e8df5fe99d2be0d2a5a4"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/achmetha.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:edac94045f1c6f3a39e650d472f630625611788c95f7e8df5fe99d2be0d2a5a4",
+          "translatedAt": "2026-08-29T16:54:40Z"
+        }
+      }
+    },
+    "A/achor": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/achor.md",
+        "hash": "sha256:933e9fc37a7e2388ccf9ab8464792611bdf1db1d0559f349ce7dcb5b34445ae7"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/acor.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:933e9fc37a7e2388ccf9ab8464792611bdf1db1d0559f349ce7dcb5b34445ae7",
+          "translatedAt": "2026-08-29T16:55:01Z"
+        }
+      }
+    },
+    "A/achsah": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/achsah.md",
+        "hash": "sha256:44465ffe8ffd903eac003d3b1885afe3dc9111b9d6d8d80e038c024dc2b0370e"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/acsa.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:44465ffe8ffd903eac003d3b1885afe3dc9111b9d6d8d80e038c024dc2b0370e",
+          "translatedAt": "2026-08-29T16:55:24Z"
+        }
+      }
+    },
+    "A/achshaph": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/achshaph.md",
+        "hash": "sha256:b97fc228f5b937a8479b97d5bc40172aff8ab20752455a451e6b22331c8320f0"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/achshaph.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:b97fc228f5b937a8479b97d5bc40172aff8ab20752455a451e6b22331c8320f0",
+          "translatedAt": "2026-08-29T16:55:38Z"
+        }
+      }
+    },
+    "A/achzib": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/achzib.md",
+        "hash": "sha256:ed6c30503aa5f94b28908fc64ca3cd9226a28edddd34df596dcd802e9e291a65"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/achzib.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:ed6c30503aa5f94b28908fc64ca3cd9226a28edddd34df596dcd802e9e291a65",
+          "translatedAt": "2026-08-29T16:56:01Z"
+        }
+      }
+    },
+    "A/acre": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/acre.md",
+        "hash": "sha256:6f53a1bf84662f75ce27bb69bb102742068c7f59fc87eaf1e98b34506b63b04c"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/acre.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:6f53a1bf84662f75ce27bb69bb102742068c7f59fc87eaf1e98b34506b63b04c",
+          "translatedAt": "2026-08-29T16:56:10Z"
+        }
+      }
+    },
+    "A/acts_of_the_apostles": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/acts_of_the_apostles.md",
+        "hash": "sha256:80e28e326e0f5e5d00c391dbc07a674b73b1b46e4c56a266fc01166dbe21a0d5"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/atos-dos-apostolos.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:80e28e326e0f5e5d00c391dbc07a674b73b1b46e4c56a266fc01166dbe21a0d5",
+          "translatedAt": "2026-08-29T16:56:23Z"
+        }
+      }
+    },
+    "A/adah": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adah.md",
+        "hash": "sha256:8121422cb888a3b5b14ddcf75ff6fe33f4618d1dcd6c798657bd78c8ccd38591"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/ada.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:8121422cb888a3b5b14ddcf75ff6fe33f4618d1dcd6c798657bd78c8ccd38591",
+          "translatedAt": "2026-08-29T16:56:36Z"
+        }
+      }
+    },
+    "A/adam": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adam.md",
+        "hash": "sha256:699d5361062fc8a6b6c5c67381c640aac4af5e61755d42d463f2c79414f14037"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adao.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:699d5361062fc8a6b6c5c67381c640aac4af5e61755d42d463f2c79414f14037",
+          "translatedAt": "2026-08-29T16:57:45Z"
+        }
+      }
+    },
+    "A/adam_a_type": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adam_a_type.md",
+        "hash": "sha256:a6a089a378c0dec1a2d0db83c14cdf7505f2f3589bbb66a40ceef4e21cb5124c"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adao-um-tipo.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:a6a089a378c0dec1a2d0db83c14cdf7505f2f3589bbb66a40ceef4e21cb5124c",
+          "translatedAt": "2026-08-29T16:57:53Z"
+        }
+      }
+    },
+    "A/adam_the_city_of": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adam_the_city_of.md",
+        "hash": "sha256:0f8d1a16edb695aedca0c7ba011bce4a22edd6589c89f9db13d3b3151f9cc53e"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/ada-a-cidade.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:0f8d1a16edb695aedca0c7ba011bce4a22edd6589c89f9db13d3b3151f9cc53e",
+          "translatedAt": "2026-08-29T16:58:05Z"
+        }
+      }
+    },
+    "A/adamah": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adamah.md",
+        "hash": "sha256:8c9f1a3251b7f40214cc0a0788e83d948308a30332715c27367f3dbaaf98830c"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adamah.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:8c9f1a3251b7f40214cc0a0788e83d948308a30332715c27367f3dbaaf98830c",
+          "translatedAt": "2026-08-29T16:58:13Z"
+        }
+      }
+    },
+    "A/adamant": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adamant.md",
+        "hash": "sha256:888dd11d42ea872e27d6596587a25ea42fca1b8b2e436e74cd68a8dbaf0e8c06"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adamante.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:888dd11d42ea872e27d6596587a25ea42fca1b8b2e436e74cd68a8dbaf0e8c06",
+          "translatedAt": "2026-08-29T16:58:19Z"
+        }
+      }
+    },
+    "A/adar": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adar.md",
+        "hash": "sha256:5db7efd0cf850017909b3819c6750b76fd628111587968f1c68cc9d56fe917cb"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adar.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:5db7efd0cf850017909b3819c6750b76fd628111587968f1c68cc9d56fe917cb",
+          "translatedAt": "2026-08-29T16:58:24Z"
+        }
+      }
+    },
+    "A/adbeel": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adbeel.md",
+        "hash": "sha256:1f822e5af31c6cdd1414a95133933b20ece1ce7df01968361adb1e333cb72808"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adbeel.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:1f822e5af31c6cdd1414a95133933b20ece1ce7df01968361adb1e333cb72808",
+          "translatedAt": "2026-08-29T16:58:33Z"
+        }
+      }
+    },
+    "A/addar": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/addar.md",
+        "hash": "sha256:1a0978c3928573fd6a6339cccae3fac30d0a4c56f083feb1179fd84c84a8d5c5"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/addar.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:1a0978c3928573fd6a6339cccae3fac30d0a4c56f083feb1179fd84c84a8d5c5",
+          "translatedAt": "2026-08-29T16:58:39Z"
+        }
+      }
+    },
+    "A/adder": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adder.md",
+        "hash": "sha256:b1f0bee80de0c14fe46b7061f22a8eaff1064db0f371da5459c34ae25fe4f3c9"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/aspide.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:b1f0bee80de0c14fe46b7061f22a8eaff1064db0f371da5459c34ae25fe4f3c9",
+          "translatedAt": "2026-08-29T16:59:13Z"
+        }
+      }
+    },
+    "A/addi": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/addi.md",
+        "hash": "sha256:2a5ea7f7ed7069b7560c605117f5676f4f091917f947e1a20c8c6b631a89240f"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/addi.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:2a5ea7f7ed7069b7560c605117f5676f4f091917f947e1a20c8c6b631a89240f",
+          "translatedAt": "2026-08-29T16:59:18Z"
+        }
+      }
+    },
+    "A/addon": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/addon.md",
+        "hash": "sha256:c2a05f3284e491790e72dd1183b7e3d2be3b883b25540572975b3f429bbc8a0b"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/addon.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:c2a05f3284e491790e72dd1183b7e3d2be3b883b25540572975b3f429bbc8a0b",
+          "translatedAt": "2026-08-29T16:59:34Z"
+        }
+      }
+    },
+    "A/adiel": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adiel.md",
+        "hash": "sha256:6e3f14d7be9abd0fe36f58ac62b8533d21baefd3e4b0ec1e688f6b630505d839"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adiel.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:6e3f14d7be9abd0fe36f58ac62b8533d21baefd3e4b0ec1e688f6b630505d839",
+          "translatedAt": "2026-08-29T16:59:43Z"
+        }
+      }
+    },
+    "A/adin": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adin.md",
+        "hash": "sha256:e135e08b8f204c809043f827d4ab548421c37b47d0a14acc11a8ccc94111a2d1"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adin.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:e135e08b8f204c809043f827d4ab548421c37b47d0a14acc11a8ccc94111a2d1",
+          "translatedAt": "2026-08-29T16:59:47Z"
+        }
+      }
+    },
+    "A/adina": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adina.md",
+        "hash": "sha256:c119def623213a008480526d76e77fbae84aa5caa397188e987761221b6e4cf4"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adina.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:c119def623213a008480526d76e77fbae84aa5caa397188e987761221b6e4cf4",
+          "translatedAt": "2026-08-29T16:59:52Z"
+        }
+      }
+    },
+    "A/adino": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adino.md",
+        "hash": "sha256:8b1aad4ed7a8a0e726bfbf6f913456a927341fc264d93dc2517c21236d88ad2b"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adino.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:8b1aad4ed7a8a0e726bfbf6f913456a927341fc264d93dc2517c21236d88ad2b",
+          "translatedAt": "2026-08-29T16:59:59Z"
+        }
+      }
+    },
+    "A/adjuration": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adjuration.md",
+        "hash": "sha256:5634a6863e70f3bc91925cef5ba2e0aa215b28fe9ed0c692601c6abf85cdfe1f"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adjuracao.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:5634a6863e70f3bc91925cef5ba2e0aa215b28fe9ed0c692601c6abf85cdfe1f",
+          "translatedAt": "2026-08-29T17:00:08Z"
+        }
+      }
+    },
+    "A/admah": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/admah.md",
+        "hash": "sha256:db245a6cd0acae0e62aad171d5742810e2b92c020eaffa9a44d04ab078f78d4f"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adma.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:db245a6cd0acae0e62aad171d5742810e2b92c020eaffa9a44d04ab078f78d4f",
+          "translatedAt": "2026-08-29T17:00:24Z"
+        }
+      }
+    },
+    "A/adnah": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adnah.md",
+        "hash": "sha256:ccd18ca38085461fe8ac0ecfc3f317ed7258c80f041b54d8a10e3fa230d4dc46"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adnah.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:ccd18ca38085461fe8ac0ecfc3f317ed7258c80f041b54d8a10e3fa230d4dc46",
+          "translatedAt": "2026-08-29T17:00:30Z"
+        }
+      }
+    },
+    "A/adoni_zedec": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adoni_zedec.md",
+        "hash": "sha256:2d7d9e0c20a569a3f25944f82036f12accd9e08b72932fa3275ad79d6df43083"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adoni-zedeque.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:2d7d9e0c20a569a3f25944f82036f12accd9e08b72932fa3275ad79d6df43083",
+          "translatedAt": "2026-08-29T17:01:00Z"
+        }
+      }
+    },
+    "A/adonibezek": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adonibezek.md",
+        "hash": "sha256:72ee942173d3694a60d4c0b2f4d02540476efe612f9091941b809936c82f2b30"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adoni-bezeque.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:72ee942173d3694a60d4c0b2f4d02540476efe612f9091941b809936c82f2b30",
+          "translatedAt": "2026-08-29T17:01:12Z"
+        }
+      }
+    },
+    "A/adonijah": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adonijah.md",
+        "hash": "sha256:d0b1feb3123eab866fab9c968ae01ac16bd8f244a499d574ce80115cf25c6d86"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adonias.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:d0b1feb3123eab866fab9c968ae01ac16bd8f244a499d574ce80115cf25c6d86",
+          "translatedAt": "2026-08-29T17:01:43Z"
+        }
+      }
+    },
+    "A/adonikam": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adonikam.md",
+        "hash": "sha256:38b3e10f5ff925f121396d49a7420b3b6574980f44a7b2201614799c62a54c51"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adonikam.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:38b3e10f5ff925f121396d49a7420b3b6574980f44a7b2201614799c62a54c51",
+          "translatedAt": "2026-08-29T17:01:53Z"
+        }
+      }
+    },
+    "A/adoniram": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adoniram.md",
+        "hash": "sha256:f6228f6c7d9f38c8d97e84f40fb978c15a2a5278356b5ddc7dece787a05a48ca"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adoniram.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:f6228f6c7d9f38c8d97e84f40fb978c15a2a5278356b5ddc7dece787a05a48ca",
+          "translatedAt": "2026-08-29T17:01:58Z"
+        }
+      }
+    },
+    "A/adoption": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/eastons_bible_dictionary/A/adoption.md",
+        "hash": "sha256:ab133aca4e02e79a51a90cfd3261f47c6f968313c8ab9943c53eece305758abe"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/eastons_bible_dictionary/A/adocao.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:ab133aca4e02e79a51a90cfd3261f47c6f968313c8ab9943c53eece305758abe",
+          "translatedAt": "2026-08-29T17:02:08Z"
+        }
+      }
+    }
+  }
+}

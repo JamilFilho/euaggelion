@@ -1,0 +1,9 @@
+# Capernaum
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Capernaum
+
+---
+
+**Capernaum** : Nahum's town, a Galilean city frequently mentioned in the history of our Lord. It is not mentioned in the Old Testament. After our Lord's expulsion from Nazareth (Matt. 4:13-16; Luke 4:16-31), Capernaum became his "own city." It was the scene of many acts and incidents of his life (Matt. 8:5, 14, 15; 9:2-6, 10-17; 15:1-20; Mark 1:32-34, etc.). The impenitence and unbelief of its inhabitants after the many evidences our Lord gave among them of the truth of his mission, brought down upon them a heavy denunciation of judgement (Matt. 11:23).
+
+It stood on the western shore of the Sea of Galilee. The "land of Gennesaret," near, if not in, which it was situated, was one of the most prosperous and crowded districts of Palestine. This city lay on the great highway from Damascus to Acco and Tyre. It has been identified with Tell Hum, about two miles south-west of where the Jordan flows into the lake. Here are extensive ruins of walls and foundations, and also the remains of what must have been a beautiful synagogue, which it is conjectured may have been the one built by the centurion (Luke 7:5), in which our Lord frequently taught (John 6:59; Mark 1:21; Luke 4:33). Others have conjectured that the ruins of the city are to be found at Khan Minyeh, some three miles further to the south on the shore of the lake. "If Tell Hum be Capernaum, the remains spoken of are without doubt the ruins of the synagogue built by the Roman centurion, and one of the most sacred places on earth. It was in this building that our Lord gave the well-known discourse in John 6; and it was not without a certain strange feeling that on turning over a large block we found the pot of manna engraved on its face, and remembered the words, `I am that bread of life: your fathers did eat manna in the wilderness, and are dead.'", (The Recovery of Jerusalem.)

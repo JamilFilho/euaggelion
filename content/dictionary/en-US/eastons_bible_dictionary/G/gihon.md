@@ -1,0 +1,12 @@
+# Gihon
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/gihon.html
+
+---
+
+**Gihon:** a stream.
+
+1. One of the four rivers of Eden (Genesis 2:13). It has been identified with the Nile. Others regard it as the Oxus, or the Araxes, or the Ganges. But as, according to the sacred narrative, all these rivers of Eden took their origin from the head-waters of the Euphrates and the Trigris, it is probable that the Gihon is the ancient Araxes, which, under the modern name of the Arras, discharges itself into the Caspian Sea. It was the Asiatic and not the African "Cush" which the Gihon compassed (Genesis 10:7-10). (See EDEN.)
+2. The only natural spring of water in or near Jerusalem is the "Fountain of the Virgin" (which see), which rises outside the city walls on the west bank of the Kidron valley. On the occasion of the approach of the Assyrian army under Sennacherib, Hezekiah, in order to prevent the besiegers from finding water, "stopped the upper water course of Gihon, and brought it straight down to the west side of the city of David" (2 Chronicles 32:30; 33:14). This "fountain" or spring is therefore to be regarded as the "upper water course of Gihon." From this "fountain" a tunnel cut through the ridge which forms the south part of the temple hill conveys the water to the Pool of Siloam, which lies on the opposite side of this ridge at the head of the Tyropoeon ("cheesemakers'") valley, or valley of the son of Hinnom, now filled up by rubbish. The length of this tunnel is about 2 Chronicles 1,750 feet. In 1880 an inscription was accidentally discovered on the wall of the tunnel about nineteen feet from where it opens into the Pool of Siloam. This inscription was executed in all probability by Hezekiah's workmen. It briefly narrates the history of the excavation. It may, however, be possible that this tunnel was executed in the time of Solomon. If the "waters of Shiloah that go softly" (Isaiah 8:6) refers to the gentle stream that still flows through the tunnel into the Pool of Siloam, then this excavation must have existed before the time of Hezekiah.
+
+In the upper part of the Tyropoeoan valley there are two pools still existing, the first, called Birket el-Mamilla, to the west of the Jaffa gate; the second, to the south of the first, called Birket es-Sultan. It is the opinion of some that the former was the "upper" and the latter the "lower" Pool of Gihon (2 Kings 18:17; Isaiah 7:3; 36:2; 22:9). (See CONDUIT, SILOAM.)

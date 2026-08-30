@@ -1,0 +1,7 @@
+# Abana
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Abana
+
+---
+
+**Abana**, stony (Heb. marg. "Amanah," perennial), the chief river of Damascus 2Ki 5:12 Its modern name is Barada, the Chrysorrhoas, or "golden stream," of the Greeks. It rises in a cleft of the Anti-Lebanon range, about 23 miles north-west of Damascus, and after flowing southward for a little way parts into three smaller streams, the central one flowing through Damascus, and the other two on each side of the city, diffusing beauty and fertility where otherwise there would be barrenness.

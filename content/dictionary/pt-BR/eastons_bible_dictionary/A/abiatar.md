@@ -1,0 +1,9 @@
+# Abiatar
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Abiathar
+Tradução: deepseek-v4-flash — 2026-08-29T16:38:58Z
+
+---
+
+**Abiatar**
+pai de abundância, ou meu pai excede, filho de Aimeleque, o sumo sacerdote. Foi o décimo sumo sacerdote, e o quarto em descendência de Eli. Quando seu pai foi morto com os sacerdotes de Nobe, ele escapou e, trazendo consigo o éfode, juntou-se a Davi, que estava então na caverna de Adulão (1 Sm 22:20-23; 23:6). Permaneceu com Davi, e tornou-se sacerdote do partido do qual este era o líder (1 Sm 30:7). Quando Davi subiu ao trono de Judá, Abiatar foi nomeado sumo sacerdote (1 Cr 15:11; 1 Rs 2:26) e "companheiro do rei" (1 Cr 27:34). Enquanto isso, Zadoque, da casa de Eleazar, havia sido feito sumo sacerdote. Essas nomeações continuaram em vigor até o fim do reinado de Davi (1 Rs 4:4). Abiatar foi deposto (o único caso histórico de deposição de um sumo sacerdote) e banido para sua casa em Anatote por Salomão, porque participou da tentativa de elevar Adonias ao trono. O sacerdócio passou assim da casa de Itamar (1 Sm 2:30-36; 1 Rs 1:19; 2:26, 27). Zadoque tornou-se então o único sumo sacerdote. Em Marcos 2:26, faz-se referência a um acontecimento "nos dias do sumo sacerdote Abiatar". Mas, a partir de 1 Sm 22, aprendemos explicitamente que esse evento ocorreu quando Aimeleque, pai de Abiatar, era sumo sacerdote. A aparente discrepância é satisfatoriamente explicada interpretando as palavras em Marcos como referentes ao tempo de vida de Abiatar, e não ao período em que ele ocupou o cargo de sumo sacerdote. Não está implícito em Marcos que ele fosse de fato o sumo sacerdote na ocasião referida. Outros, contudo, pensam que os pães pertenciam a Abiatar, que era então (Lv 24:9) sacerdote, e que ele mesmo os deu a Davi, ou persuadiu seu pai a dá-los.

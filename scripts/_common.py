@@ -1,4 +1,4 @@
-"""Shared constants/helpers for the biblia.academy project scripts."""
+"""Shared constants/helpers for the Projeto Euaggelion project scripts."""
 
 from __future__ import annotations
 

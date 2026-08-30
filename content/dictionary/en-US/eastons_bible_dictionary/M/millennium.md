@@ -1,0 +1,7 @@
+# Millennium
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/millennium.html
+
+---
+
+**Millennium:** a thousand years; the name given to the era mentioned in Revelation 20:1-7. Some maintain that Christ will personally appear on earth for the purpose of establishing his kingdom at the beginning of this millennium. Those holding this view are usually called "millenarians." On the other hand, it is maintained, more in accordance with the teaching of Scripture, we think, that Christ's second advent will not be premillennial, and that the right conception of the prospects and destiny of his kingdom is that which is taught, e.g., in the parables of the leaven and the mustard-seed. The triumph of the gospel, it is held, must be looked for by the wider and more efficient operation of the very forces that are now at work in extending the gospel; and that Christ will only come again at the close of this dispensation to judge the world at the "last day." The millennium will thus precede his coming.

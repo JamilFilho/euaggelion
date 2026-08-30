@@ -1,0 +1,29 @@
+# Isaiah, The Book of
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/isaiah%2C+the+book+of.html
+
+---
+
+**Isaiah, The Book of:** consists of prophecies delivered
+
+1. in the reign of Uzziah (Isaiah 1-5),
+2. of Jotham (Isaiah 6),
+3. Ahaz (Isaiah 7-14:28),
+4. the first half of Hezekiah's reign (Isaiah 14:28-35),
+5. the second half of Hezekiah's reign (Isaiah 36-66). Thus, counting from the fourth year before Uzziah's death (B.C. 762) to the last year of Hezekiah (B.C. 698), Isaiah's ministry extended over a period of sixty-four years. He may, however, have survived Hezekiah, and may have perished in the way indicated above.
+
+The book, as a whole, has been divided into three main parts:
+
+1. The first thirty-five chapters, almost wholly prophetic, Israel's enemy Assyria, present the Messiah as a mighty Ruler and King.
+2. Four chapters are historical (Isaiah 36-39), relating to the times of Hezekiah.
+3. Prophetical (Isaiah 40-66), Israel's enemy Babylon, describing the Messiah as a suffering victim, meek and lowly.
+
+The genuineness of the section Isaiah 40-66 has been keenly opposed by able critics. They assert that it must be the production of a deutero-Isaiah, who lived toward the close of the Babylonian captivity. This theory was originated by Koppe, a German writer at the close of the last century. There are other portions of the book also (e.g., Isaiah 13; 24-27; and certain verses in 14 and 21) which they attribute to some other prophet than Isaiah. Thus they say that some five or seven, or even more, unknown prophets had a hand in the production of this book. The considerations which have led to such a result are various:
+
+1. They cannot, as some say, conceive it possible that Isaiah, living in B.C. 700, could foretell the appearance and the exploits of a prince called Cyrus, who would set the Jews free from captivity one hundred and seventy years after.
+2. It is alleged that the prophet takes the time of the Captivity as his standpoint, and speaks of it as then present; and
+3. that there is such a difference between the style and language of the closing section (Isaiah 40-66) and those of the preceding chapters as to necessitate a different authorship, and lead to the conclusion that there were at least two Isaiahs. But even granting the fact of a great diversity of style and language, this will not necessitate the conclusion attempted to be drawn from it. The diversity of subjects treated of and the peculiarities of the prophet's position at the time the prophecies were uttered will sufficiently account for this.
+
+The arguments in favour of the unity of the book are quite conclusive. When the LXX. version was made (about B.C. 250) the entire contents of the book were ascribed to Isaiah, the son of Amoz. It is not called in question, moreover, that in the time of our Lord the book existed in the form in which we now have it. Many prophecies in the disputed portions are quoted in the New Testament as the words of Isaiah (Matthew 3:3; Luke 3:4-6; 4:16-41; John 12:38; Acts 8:28; Romans 10:16-21). Universal and persistent tradition has ascribed the whole book to one author.
+
+Besides this, the internal evidence, the similarity in the language and style, in the thoughts and images and rhetorical ornaments, all points to the same conclusion; and its local colouring and allusions show that it is obviously of Palestinian origin. The theory therefore of a double authorship of the book, much less of a manifold authorship, cannot be maintained. The book, with all the diversity of its contents, is one, and is, we believe, the production of the great prophet whose name it bears.

@@ -1,0 +1,14 @@
+# Judah, Tribe of
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Judah,_Tribe_of
+
+---
+
+**Judah, Tribe of**
+Judah and his three surviving sons went down with Jacob into Egypt (Gen. 46:12; Ex. 1:2). At the time of the Exodus, when we meet with the family of Judah again, they have increased to the number of 74,000 males (Num. 1:26, 27). Its number increased in the wilderness (26:22). Caleb, the son of Jephunneh, represented the tribe as one of the spies (13:6; 34:19). This tribe marched at the van on the east of the tabernacle (Num. 2:3-9; 10:14), its standard, as is supposed, being a lion's whelp. Under Caleb, during the wars of conquest, they conquered that portion of the country which was afterwards assigned to them as their inheritance. This was the only case in which any tribe had its inheritance thus determined (Josh. 14:6-15; 15:13-19).
+
+The inheritance of the tribe of Judah was at first fully one-third of the whole country west of Jordan, in all about 2,300 square miles (Josh. 15). But there was a second distribution, when Simeon received an allotment, about 1,000 square miles, out of the portion of Judah (Josh. 19:9). That which remained to Judah was still very large in proportion to the inheritance of the other tribes. The boundaries of the territory are described in Josh. 15:20-63.
+
+This territory given to Judah was divided into four sections. (1.) The south (Heb. negeb), the undulating pasture-ground between the hills and the desert to the south (Josh. 15:21.) This extent of pasture-land became famous as the favourite camping-ground of the old patriarchs. (2.) The "valley" (15:33) or lowland (Heb. shephelah), a broad strip lying between the central highlands and the Mediterranean. This tract was the garden as well as the granary of the tribe. (3.) The "hill-country," or the mountains of Judah, an elevated plateau stretching from below Hebron northward to Jerusalem. "The towns and villages were generally perched on the tops of hills or on rocky slopes. The resources of the soil were great. The country was rich in corn, wine, oil, and fruit; and the daring shepherds were able to lead their flocks far out over the neighbouring plains and through the mountains." The number of towns in this district was thirty-eight (Josh. 15:48-60). (4.) The "wilderness," the sunken district next the Dead Sea (Josh. 15:61), "averaging 10 miles in breadth, a wild, barren, uninhabitable region, fit only to afford scanty pasturage for sheep and goats, and a secure home for leopards, bears, wild goats, and outlaws" (1 Sam. 17:34; 22:1; Mark 1:13). It was divided into the "wilderness of En-gedi" (1 Sam. 24:1), the "wilderness of Judah" (Judg. 1:16; Matt. 3:1), between the Hebron mountain range and the Dead Sea, the "wilderness of Maon" (1 Sam. 23:24). It contained only six cities.
+
+Nine of the cities of Judah were assigned to the priests (Josh. 21:9-19).

@@ -1,0 +1,8 @@
+# Almond
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Almond
+
+---
+
+**Almond**,
+a native of Syria and Palestine. In form, blossoms, and fruit it resembles the peach tree. Its blossoms are of a very pale pink colour, and appear before its leaves. Its Hebrew name, Shaked, signifying "wakeful, hastening", is given to it on account of its putting forth its blossoms so early, generally in February, and sometimes even in January. In Eccl. 12:5, it is referred to as illustrative, probably, of the haste with which old age comes. There are others, however, who still contend for the old interpretation here. "The almond tree bears its blossoms in the midst of winter, on a naked, leafless stem, and these blossoms (reddish or flesh-coloured in the beginning) seem at the time of their fall exactly like white snow-flakes. In this way the almond blossom is a very fitting symbol of old age, with its silvery hair and its wintry, dry, barren, unfruitful condition". In Jeremiah 1:11 "I see a rod of an almond tree [shaked]...for I will hasten [shaked] my word to perform it" the word is used as an emblem of promptitude. Jacob desired his sons (Genesis 43:11) to take with them into Egypt of the best fruits of the land, almonds, etc., as a present to Joseph, probably because this tree was not a native of Egypt. Aaron's rod yielded almonds (Numbers 17:8; Hebrews 9:4). Moses was directed to make certain parts of the candlestick for the ark of carved work "like unto almonds" (Exodus 25:33,34). The Hebrew word Luz, Translated "hazel" in the Authorized Version (Genesis 30:37), is rendered in the Revised Version "almond". It is probable that Luz denotes the wild almond, while Shaked denotes the cultivated variety.

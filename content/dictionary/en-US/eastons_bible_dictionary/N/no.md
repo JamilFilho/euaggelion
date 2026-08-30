@@ -1,0 +1,9 @@
+# No
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/no.html
+
+---
+
+**No:** or No-A'mon, the home of Amon, the name of Thebes, the ancient capital of what is called the Middle Empire, in Upper or Southern Egypt. "The multitude of No" (Jeremiah 46:25) is more correctly rendered, as in the Revised Version, "Amon of No", i.e., No, where Jupiter Amon had his temple. In Ezekiel 30:14,16 it is simply called "No;" but in 30:15 the name has the Hebrew Hamon prefixed to it, "Hamon No." This prefix is probably the name simply of the god usually styled Amon or Ammon. In Nahum 3:8 the "populous No" of the Authorized Version is in the Revised Version correctly rendered "No-Amon."
+
+It was the Diospolis or Thebes of the Greeks, celebrated for its hundred gates and its vast population. It stood on both sides of the Nile, and is by some supposed to have included Karnak and Luxor. In grandeur and extent it can only be compared to Nineveh. It is mentioned only in the prophecies referred to, which point to its total destruction. It was first taken by the Assyrians in the time of Sargon (Isaiah 20). It was afterwards "delivered into the hand" of Nebuchadnezzar and Assurbani-pal (Jeremiah 46:25,26). Cambyses, king of the Persians (B.C. 525), further laid it waste by fire. Its ruin was completed (B.C. 81) by Ptolemy Lathyrus. The ruins of this city are still among the most notable in the valley of the Nile. They have formed a great storehouse of interesting historic remains for more than two thousand years. "As I wandered day after day with ever-growing amazement amongst these relics of ancient magnificence, I felt that if all the ruins in Europe, classical, Celtic, and medieval, were brought together into one centre, they would fall far short both in extent and grandeur of those of this single Egyptian city." Manning, The Land of the Pharaohs.

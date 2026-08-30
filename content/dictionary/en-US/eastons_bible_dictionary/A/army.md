@@ -1,0 +1,8 @@
+# Army
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Army
+
+---
+
+**Army**
+The Israelites marched out of Egypt in military order (Ex. 13:18, "harnessed;" marg., "five in a rank"). Each tribe formed a battalion, with its own banner and leader (Num. 2:2; 10:14). In war the army was divided into thousands and hundreds under their several captains (Num. 31:14), and also into families (Num. 2:34; 2 Chr. 25:5; 26:12). From the time of their entering the land of Canaan to the time of the kings, the Israelites made little progress in military affairs, although often engaged in warfare. The kings introduced the custom of maintaining a bodyguard (the Gibborim; i.e., "heroes"), and thus the nucleus of a standing army was formed. Saul had an army of 3,000 select warriors (1 Sam. 13:2; 14:52; 24:2). David also had a band of soldiers around him (1 Sam. 23:13; 25:13). To this band he afterwards added the Cherethites and the Pelethites (2 Sam. 15:18; 20:7). At first the army consisted only of infantry (1 Sam. 4:10; 15:4), as the use of horses was prohibited (Deut. 17:16); but chariots and horses were afterwards added (2 Sam. 8:4; 1 Kings 10:26, 28, 29; 1 Kings 9:19). In 1 Kings 9:22 there is given a list of the various gradations of rank held by those who composed the army. The equipment and maintenance of the army were at the public expense (2 Sam. 17:28, 29; 1 Kings 4:27; 10:16, 17; Judg. 20:10). At the Exodus the number of males above twenty years capable of bearing arms was 600,000 (Ex. 12:37). In David's time it mounted to the number of 1,300,000 (2 Sam. 24:9).

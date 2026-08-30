@@ -1,0 +1,7 @@
+# Stoics
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/stoics.html
+
+---
+
+**Stoics:** a sect of Greek philosophers at Athens, so called from the Greek word stoa i.e., a "porch" or "portico," where they have been called "the Pharisees of Greek paganism." The founder of the Stoics was Zeno, who flourished about B.C. 300. He taught his disciples that a man's happiness consisted in bringing himself into harmony with the course of the universe. They were trained to bear evils with indifference, and so to be independent of externals. Materialism, pantheism, fatalism, and pride were the leading features of this philosophy.

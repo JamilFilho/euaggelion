@@ -1,0 +1,10 @@
+# Cain
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Cain
+
+---
+
+**Cain**: a possession; a spear.
+
+1. The first-born son of Adam and Eve (Genesis 4). He became a tiller of the ground, as his brother Abel followed the pursuits of pastoral life. He was "a sullen, self-willed, haughty, vindictive man; wanting the religious element in his character, and defiant even in his attitude towards God." It came to pass "in process of time" (marg. "at the end of days"), i.e., probably on the Sabbath, that the two brothers presented their offerings to the Lord. Abel's offering was of the "firstlings of his flock and of the fat," while Cain's was "of the fruit of the ground." Abel's sacrifice was "more excellent" (Hebrews 11:4) than Cain's, and was accepted by God. On this account Cain was "very wroth," and cherished feelings of murderous hatred against his brother, and was at length guilty of the desperate outrage of putting him to death (1 John 3:12). For this crime he was expelled from Eden, and henceforth led the life of an exile, bearing upon him some mark which God had set upon him in answer to his own cry for mercy, so that thereby he might be protected from the wrath of his fellow-men; or it may be that God only gave him some sign to assure him that he would not be slain (Genesis 4:15). Doomed to be a wanderer and a fugitive in the earth, he went forth into the "land of Nod", i.e., the land of "exile", which is said to have been in the "east of Eden," and there he built a city, the first we read of, and called it after his son's name, Enoch. His descendants are enumerated to the sixth generation. They gradually degenerated in their moral and spiritual condition till they became wholly corrupt before God. This corruption prevailed, and at length the Deluge was sent by God to prevent the final triumph of evil. (See ABEL.)
+2. A town of the Kenites, a branch of the Midianites (Joshua 15:57), on the east edge of the mountain above Engedi; probably the "nest in a rock" mentioned by Balaam (Numbers 24:21). It is identified with the modern Yekin, 3 miles south-east of Hebron.

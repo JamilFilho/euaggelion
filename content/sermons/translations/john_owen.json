@@ -1,0 +1,135 @@
+{
+  "module": "sermons",
+  "dataset": "john_owen",
+  "updatedAt": "2026-08-29T17:07:05Z",
+  "items": {
+    "dod": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/john_owen/dod.md",
+        "hash": "sha256:ed5a922a845891d7bdc8fb2d7da500f21f2e8baefec145d29dad1f998d2cf61c"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/john_owen/a-morte-da-morte-na-morte-de-cristo-john-owen.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:ed5a922a845891d7bdc8fb2d7da500f21f2e8baefec145d29dad1f998d2cf61c",
+          "translatedAt": "2026-08-28T19:43:13Z"
+        }
+      }
+    },
+    "owen_elect": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/john_owen/owen_elect.md",
+        "hash": "sha256:ce3f76576a0f87a2fd9baf3f4425f772b81a4747d87d4e0ce612c8d87c267cce"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/john_owen/a-fe-dos-eleitos-de-deus-john-owen.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:ce3f76576a0f87a2fd9baf3f4425f772b81a4747d87d4e0ce612c8d87c267cce",
+          "translatedAt": "2026-08-28T19:51:23Z"
+        }
+      }
+    },
+    "owen_justification": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/john_owen/owen_justification.md",
+        "hash": "sha256:56c7c7ab2904c1c58030e6709a1211aaa04ece8f99e871a8e8b3a22a466c9570"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/john_owen/a-doutrina-da-justificacao-pela-fe-john-owen.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:56c7c7ab2904c1c58030e6709a1211aaa04ece8f99e871a8e8b3a22a466c9570",
+          "translatedAt": "2026-08-28T19:59:39Z"
+        }
+      }
+    },
+    "owen_mortificationofsin": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/john_owen/owen_mortificationofsin.md",
+        "hash": "sha256:4c4db1a3a13750683f8a45bf4834b6739647ec991623661aed35f4cf9a27249f"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/john_owen/a-mortificacao-do-pecado-nos-crentes-john-owen.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:4c4db1a3a13750683f8a45bf4834b6739647ec991623661aed35f4cf9a27249f",
+          "translatedAt": "2026-08-28T20:08:05Z"
+        }
+      }
+    },
+    "owen_temptations": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/john_owen/owen_temptations.md",
+        "hash": "sha256:ca1ed4ee48f4508a012f279d32bae6590bc0246ae5ce9fa432eaad7dc717aa0b"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/john_owen/tentacao-john-owen.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:ca1ed4ee48f4508a012f279d32bae6590bc0246ae5ce9fa432eaad7dc717aa0b",
+          "translatedAt": "2026-08-28T20:15:26Z"
+        }
+      }
+    },
+    "owen_trinity": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/john_owen/owen_trinity.md",
+        "hash": "sha256:3dd70e90ff151413deba5f10b93aef06c6a48db05b8b01f8f03815ee1c4c4683"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/john_owen/uma-breve-declaracao-e-vindicacao-da-doutrina-da-trindade-e-tambem-da-pessoa-e-satisfacao-de-cristo.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:3dd70e90ff151413deba5f10b93aef06c6a48db05b8b01f8f03815ee1c4c4683",
+          "translatedAt": "2026-08-28T20:23:27Z"
+        }
+      }
+    },
+    "owen_twoshortcatechisms": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/john_owen/owen_twoshortcatechisms.md",
+        "hash": "sha256:e2a90da5c56ddbba0722c9687f8a20eb32fb05fca88b481cfca692a303455937"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/john_owen/dois-catecismos-breves-john-owen.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:e2a90da5c56ddbba0722c9687f8a20eb32fb05fca88b481cfca692a303455937",
+          "translatedAt": "2026-08-28T20:30:09Z"
+        }
+      }
+    },
+    "wog_owen": {
+      "source": {
+        "lang": "en-US",
+        "file": "./en-US/john_owen/wog_owen.md",
+        "hash": "sha256:4186e98c312a9615657a5036adda2f1a31ba5af26760b8ca03f0f4c2ffa61902"
+      },
+      "translations": {
+        "pt-BR": {
+          "file": "./pt-BR/john_owen/uma-breve-instrucao-no-culto-a-deus-john-owen.md",
+          "status": "ai",
+          "engine": "deepseek-v4-flash",
+          "sourceHashAtTranslation": "sha256:4186e98c312a9615657a5036adda2f1a31ba5af26760b8ca03f0f4c2ffa61902",
+          "translatedAt": "2026-08-28T20:37:56Z"
+        }
+      }
+    }
+  }
+}

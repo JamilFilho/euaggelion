@@ -1,0 +1,10 @@
+# Esther
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Esther
+
+---
+
+**Esther**
+The queen of Ahasuerus, and heroine of the book that bears her name. She was a Jewess named Hadas'sah (the myrtle), but when she entered the royal harem she received the name by which she henceforth became known (Esther 2:7). It is a Syro-Arabian modification of the Persian word satarah, which means a star. She was the daughter of Abihail, a Benjamite. Her family did not avail themselves of the permission granted by Cyrus to the exiles to return to Jerusalem; and she resided with her cousin Mordecai, who held some office in the household of the Persian king at "Shushan in the palace." Ahasuerus having divorced Vashti, chose Esther to be his wife. Soon after this he gave Haman the Agagite, his prime minister, power and authority to kill and extirpate all the Jews throughout the Persian empire. By the interposition of Esther this terrible catastrophe was averted. Haman was hanged on the gallows he had intended for Mordecai (Esther 7); and the Jews established an annual feast, the feast of Purim (q.v.), in memory of their wonderful deliverance. This took place about fifty-two years after the Return, the year of the great battles of Plataea and Mycale (B.C. 479).
+
+Esther appears in the Bible as a "woman of deep piety, faith, courage, patriotism, and caution, combined with resolution; a dutiful daughter to her adopted father, docile and obedient to his counsels, and anxious to share the king's favour with him for the good of the Jewish people. There must have been a singular grace and charm in her aspect and manners, since `she obtained favour in the sight of all them that looked upon her' (Esther 2:15). That she was raised up as an instrument in the hand of God to avert the destruction of the Jewish people, and to afford them protection and forward their wealth and peace in their captivity, is also manifest from the Scripture account."

@@ -1,0 +1,7 @@
+# Cherith
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Cherith
+
+---
+
+**Cherith** : A cutting; separation; a gorge, a torrent-bed or winter-stream, a "brook," in whose banks the prophet Elijah hid himself during the early part of the three years' drought (1 Kings 17:3, 5). It has by some been identified as the Wady el-Kelt behind Jericho, which is formed by the junction of many streams flowing from the mountains west of Jericho. It is dry in summer. Travellers have described it as one of the wildest ravines of this wild region, and peculiarly fitted to afford a secure asylum to the persecuted. But if the prophet's interview with Ahab was in Samaria, and he thence journeyed toward the east, it is probable that he crossed Jordan and found refuge in some of the ravines of Gilead. The "brook" is said to have been "before Jordan," which probably means that it opened toward that river, into which it flowed. This description would apply to the east as well as to the west of Jordan. Thus Elijah's hiding-place may have been the Jermuk, in the territory of the half-tribe of Manasseh.

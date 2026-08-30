@@ -1,0 +1,13 @@
+# Exodus, Book of
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Exodus,_Book_of
+
+---
+
+**Exodus, Book of**, Exodus is the name given in the LXX. to the second book of the Pentateuch (q.v.). It means "departure" or "outgoing." This name was adopted in the Latin translation, and thence passed into other languages. The Hebrews called it by the first words, according to their custom, Ve-eleh shemoth (i.e., "and these are the names").
+
+It contains, (1.) An account of the increase and growth of the Israelites in Egypt Ex 1:1 ... (2.) Preparations for their departure out of Egypt (2-12:36) (3.) Their journeyings from Egypt to Sinai (12:37-19:2) (4.) The giving of the law and the establishment of the institutions by which the organization of the people was completed, the theocracy, "a kingdom of priest and an holy nation" (19:3-ch. 40).
+
+The time comprised in this book, from the death of Joseph to the erection of the tabernacle in the wilderness, is about one hundred and forty-five years, on the supposition that the four hundred and thirty years Ex 12:40 are to be computed from the time of the promises made to Abraham Ga 3:17
+
+The authorship of this book, as well as of that of the other books of the Pentateuch, is to be ascribed to Moses. The unanimous voice of tradition and all internal evidences abundantly support this opinion.

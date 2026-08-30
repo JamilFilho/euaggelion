@@ -1,0 +1,16 @@
+# Jehu
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Jehu
+
+---
+
+**Jehu**
+Jehovah is he. (1.) The son of Obed, and father of Azariah (1 Chr. 2:38).
+
+(2.) One of the Benjamite slingers that joined David at Ziklag (1 Chr. 12:3).
+
+(3.) The son of Hanani, a prophet of Judah (1 Kings 16:1, 7; 2 Chr. 19:2; 20:34), who pronounced the sentence of God against Baasha, the king of Israel.
+
+(4.) King of Israel, the son of Jehoshaphat (2 Kings 9:2), and grandson of Nimshi. The story of his exaltation to the throne is deeply interesting. During the progress of a war against the Syrians, who were becoming more and more troublesome to Israel, in a battle at Ramoth-gilead Jehoram, the king of Israel, had been wounded; and leaving his army there, had returned to Jezreel, whither his ally, Ahaziah, king of Judah, had also gone on a visit of sympathy with him (2 Kings 8:28, 29). The commanders, being left in charge of the conduct of the war, met in council; and while engaged in their deliberations, a messenger from Elisha appeared in the camp, and taking Jehu from the council, led him into a secret chamber, and there anointed him king over Israel, and immediately retired and disappeared (2 Kings 9:5, 6). On being interrogated by his companions as to the object of this mysterious visitor, he informed them of what had been done, when immediately, with the utmost enthusiasm, they blew their trumpets and proclaimed him king (2 Kings 9:11-14). He then with a chosen band set forth with all speed to Jezreel, where, with his own hand, he slew Jehoram, shooting him through the heart with an arrow (9:24). The king of Judah, when trying to escape, was fatally wounded by one of Jehu's soldiers at Beth-gan. On entering the city, Jehu commanded the eunchs of the royal palace to cast down Jezebel into the street, where her mangled body was trodden under foot by the horses. Jehu was now master of Jezreel, whence he communicated with the persons in authority in Samaria the capital, commanding them to appear before him on the morrow with the heads of all the royal princes of Samaria. Accordingly on the morrow seventy heads were piled up in two heaps at his gate. At "the shearing-house" (2 Kings 10:12-14) other forty-two connected with the house of Ahab were put to death (2 Kings 10:14). As Jehu rode on toward Samaria, he met Jehonadab (q.v.), whom he took into his chariot, and they entered the capital together. By a cunning stratagem he cut off all the worshippers of Baal found in Samaria (2 Kings 10:19-25), and destroyed the temple of the idol (2 Kings 10:27).
+
+Notwithstanding all this apparent zeal for the worship of Jehovah, Jehu yet tolerated the worship of the golden calves at Dan and Bethel. For this the divine displeasure rested upon him, and his kingdom suffered disaster in war with the Syrians (2 Kings 10:29-33). He died after a reign of twenty-eight years (B.C. 884-856), and was buried in Samaria (10:34-36). "He was one of those decisive, terrible, and ambitious, yet prudent, calculating, and passionless men whom God from time to time raises up to change the fate of empires and execute his judgments on the earth." He was the first Jewish king who came in contact with the Assyrian power in the time of Shalmaneser II.

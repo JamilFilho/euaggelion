@@ -1,0 +1,10 @@
+# Syria
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Syria
+
+---
+
+**Syria**
+(Heb. Aram), the name in the Old Testament given to the whole country which lay to the north-east of Phoenicia, extending to beyond the Euphrates and the Tigris. Mesopotamia is called (Gen. 24:10; Deut. 23:4) Aram-naharain (=Syria of the two rivers), also Padan-aram (Gen. 25:20). Other portions of Syria were also known by separate names, as Aram-maahah (1 Chr. 19:6), Aram-beth-rehob (2 Sam. 10:6), Aram-zobah (2 Sam. 10:6, 8). All these separate little kingdoms afterwards became subject to Damascus. In the time of the Romans, Syria included also a part of Palestine and Asia Minor.
+
+"From the historic annals now accessible to us, the history of Syria may be divided into three periods: The first, the period when the power of the Pharaohs was dominant over the fertile fields or plains of Syria and the merchant cities of Tyre and Sidon, and when such mighty conquerors as Thothmes III. and Rameses II. could claim dominion and levy tribute from the nations from the banks of the Euphrates to the borders of the Libyan desert. Second, this was followed by a short period of independence, when the Jewish nation in the south was growing in power, until it reached its early zenith in the golden days of Solomon; and when Tyre and Sidon were rich cities, sending their traders far and wide, over land and sea, as missionaries of civilization, while in the north the confederate tribes of the Hittites held back the armies of the kings of Assyria. The third, and to us most interesting, period is that during which the kings of Assyria were dominant over the plains of Syria; when Tyre, Sidon, Ashdod, and Jerusalem bowed beneath the conquering armies of Shalmaneser, Malachigon, and Sennacherib; and when at last Memphis and Thebes yielded to the power of the rulers of Nineveh and Babylon, and the kings of Assyria completed with terrible fulness the bruising of the reed of Egypt so clearly foretold by the Hebrew prophets.", Boscawen.

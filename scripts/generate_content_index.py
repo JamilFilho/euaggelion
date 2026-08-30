@@ -12,6 +12,12 @@ Where <locale> follows the xx-XX pattern (e.g., en-US, pt-BR). A module that doe
 follow this convention is still included in the index (id/dir/status/valid/version),
 but without automatically discovered "datasets"—manual editing is required.
 
+A dataset may optionally organize its files under one extra grouping level instead of
+holding them directly (e.g. comments/<locale>/<dataset>/<bible_book>/<file>.md,
+dictionary/<locale>/<dataset>/<entry_letter>/<file>.md). This level is discovered
+generically as each dataset's "groups"—any subdirectory found directly under the
+dataset dir—without hardcoding what it represents per module.
+
 This script does not yet validate the structure/content of each module (schema,
 broken references, etc.)—it only discovers and counts them. Consequently, every
 module/dataset is always marked with valid=false. Fields defined manually in
@@ -44,6 +50,20 @@ def count_files(directory: Path) -> int:
     return sum(1 for path in directory.rglob("*") if path.is_file())
 
 
+def discover_groups(dataset_dir: Path) -> list[dict]:
+    """Discovers the subgroup breakdown one level below a dataset directory.
+
+    A dataset can either hold its files directly (e.g. sermons/<lang>/<dataset>/<file>.md)
+    or organize them under an extra grouping level (e.g. comments/<lang>/<dataset>/
+    <bible_book>/<file>.md, dictionary/<lang>/<dataset>/<entry_letter>/<file>.md). This
+    is discovered generically — any subdirectory found directly under the dataset dir is
+    treated as a group — rather than hardcoding what that level means per module.
+    Returns an empty list for datasets with no such grouping level.
+    """
+    subdirs = sorted(p for p in dataset_dir.iterdir() if p.is_dir())
+    return [{"id": d.name, "total": count_files(d)} for d in subdirs]
+
+
 def discover_module(module_dir: Path) -> dict:
     locale_dirs = sorted(
         p for p in module_dir.iterdir() if p.is_dir() and LOCALE_RE.match(p.name)
@@ -70,6 +90,7 @@ def discover_module(module_dir: Path) -> dict:
                     "lang": lang,
                     "dir": f"./{lang}/{dataset_id}",
                     "total": count_files(dataset_dir),
+                    "groups": discover_groups(dataset_dir),
                 }
             )
 
@@ -130,7 +151,7 @@ def generate() -> dict:
         )
 
     return {
-        "name": "Bíblia.academy Content Index",
+        "name": "Projeto Euaggelion Content Index",
         "updatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "modules": modules,
     }

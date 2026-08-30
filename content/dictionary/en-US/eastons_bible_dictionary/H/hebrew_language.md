@@ -1,0 +1,14 @@
+# Hebrew language
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Hebrew_language
+
+---
+
+**Hebrew language**
+The language of the Hebrew nation, and that in which the Old Testament is written, with the exception of a few portions in Chaldee. In the Old Testament it is only spoken of as "Jewish" (2 Kings 18:26, 28; Isa. 36:11, 13; 2 Chr 32:18). This name is first used by the Jews in times subsequent to the close of the Old Testament.
+
+It is one of the class of languages called Semitic, because they were chiefly spoken among the descendants of Shem.
+
+When Abraham entered Canaan it is obvious that he found the language of its inhabitants closely allied to his own. Isaiah (19:18) calls it "the language of Canaan." Whether this language, as seen in the earliest books of the Old Testament, was the very dialect which Abraham brought with him into Canaan, or whether it was the common tongue of the Canaanitish nations which he only adopted, is uncertain; probably the latter opinion is the correct one. For the thousand years between Moses and the Babylonian exile the Hebrew language underwent little or no modification. It preserves all through a remarkable uniformity of structure. From the first it appears in its full maturity of development. But through intercourse with Damascus, Assyria, and Babylon, from the time of David, and more particularly from the period of the Exile, it comes under the influence of the Aramaic idiom, and this is seen in the writings which date from this period. It was never spoken in its purity by the Jews after their return from Babylon. They now spoke Hebrew with a large admixture of Aramaic or Chaldee, which latterly became the predominant element in the national language.
+
+The Hebrew of the Old Testament has only about six thousand words, all derived from about five hundred roots. Hence the same word has sometimes a great variety of meanings. So long as it was a living language, and for ages after, only the consonants of the words were written. This also has been a source of difficulty in interpreting certain words, for the meaning varies according to the vowels which may be supplied. The Hebrew is one of the oldest languages of which we have any knowledge. It is essentially identical with the Phoenician language. (See MOABITE [265]STONE.) The Semitic languages, to which class the Hebrew and Phoenician belonged, were spoken over a very wide area: in Babylonia, Mesopotamia, Syria, Palestine and Arabia, in all the countries from the Mediterranean to the borders of Assyria, and from the mountains of Armenia to the Indian Ocean. The rounded form of the letters, as seen in the Moabite stone, was probably that in which the ancient Hebrew was written down to the time of the Exile, when the present square or Chaldean form was adopted.

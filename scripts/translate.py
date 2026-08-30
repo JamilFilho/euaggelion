@@ -17,12 +17,28 @@ Flow:
        an existing translation is only possible through manual selection, and
        even then requires an explicit confirmation.
     3. For each item translated: calls the DeepSeek API, writes the translated
-       Markdown file to content/<module>/<to>/<dataset>/<same file name>, and
-       records the result in content/<module>/translations/<dataset>.json (see
-       CLAUDE.md, "Script de tradução", for the registry's schema/semantics).
+       Markdown file to content/<module>/<to>/<dataset>/<group dir, if any>/<slug
+       of the translated title>.md, and records the result in
+       content/<module>/translations/<dataset>.json (see CLAUDE.md, "Script de
+       tradução", for the registry's schema/semantics). The destination filename
+       is derived from the translated title, not copied from the source file —
+       the item id used throughout (registry keys, selection list), however,
+       stays the *source* file path relative to the dataset dir (e.g.
+       "1-chronicles/1" or "A/aaron"), so it stays stable across re-runs and
+       renames. A dataset may hold files directly (e.g. sermons) or group them
+       one level deeper (e.g. comments/<dataset>/<bible_book>/<file>,
+       dictionary/<dataset>/<entry_letter>/<file>) — both are supported.
+
+Pass --onlyFileName=true to skip translation entirely and just fix the
+destination filename of items that already have a translation — reads the
+translated title already present in each existing pt-BR (or other target
+locale) file and renames it to match, updating the registry's recorded file
+path. Useful for datasets translated before this filename fix existed, without
+spending API calls to re-translate content that's already correct.
 
 Requires DEEPSEEK_API_KEY (see scripts/dev.py) and the `requests` package (see
-scripts/requirements.txt).
+scripts/requirements.txt) — except in --onlyFileName mode, which never calls
+the API.
 """
 
 from __future__ import annotations
@@ -31,6 +47,7 @@ import argparse
 import hashlib
 import re
 import sys
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -45,16 +62,20 @@ PAGE_SIZE = 20
 
 SYSTEM_PROMPT = (
     "You are a professional translator specialized in historical Christian "
-    "theological texts (18th/19th-century sermons and doctrinal writings). "
-    "Translate faithfully and completely, preserving the formal, "
-    "period-appropriate tone, scripture references, and any Markdown/plain-text "
-    "formatting (line breaks, emphasis, verse layout). Do not summarize, add "
+    "theological texts — sermons, commentaries, dictionaries, and doctrinal "
+    "writings ranging from the 16th/17th-century Reformers and Puritans through "
+    "the 18th and 19th centuries. Identify the source text's historical period "
+    "and register from its own language and content, and translate faithfully "
+    "and completely, preserving that period-appropriate tone and vocabulary — do "
+    "not normalize an older or younger text into a single default style. Also "
+    "preserve scripture references and any Markdown/plain-text formatting (line "
+    "breaks, emphasis, verse layout, headings). Do not summarize, add "
     "commentary, or explain anything — output only the requested translation, "
     "in exactly the format requested."
 )
 
 # content/<module>/<from>/<dataset>/<file> follows this fixed template (see
-# scripts-local/scraping_data.py): "# <title>\n\nFonte: <url>\n\n---\n\n<body>".
+# local/scripts/scraping_data.py): "# <title>\n\nFonte: <url>\n\n---\n\n<body>".
 HEADER_RE = re.compile(
     r"^#\s*(?P<title>.+?)\s*\n\n"
     r"Fonte:\s*(?P<source_url>\S+)\s*\n\n"
@@ -65,9 +86,41 @@ HEADER_RE = re.compile(
 
 RESPONSE_RE = re.compile(r"TITLE:\s*(?P<title>.*?)\n---BODY---\n(?P<body>.*)\Z", re.DOTALL)
 
+# Matches the same fixed header template as HEADER_RE, but title-only — used to
+# read the already-translated title back out of an existing destination file
+# (--onlyFileName mode), which may have been produced by an older version of
+# this script and needs no other part of the header.
+TITLE_RE = re.compile(r"^#\s*(?P<title>.+?)\s*\n")
+
+
+def slugify(text: str) -> str:
+    normalized = unicodedata.normalize("NFKD", text)
+    ascii_only = normalized.encode("ascii", "ignore").decode("ascii")
+    slug = re.sub(r"[^a-z0-9]+", "-", ascii_only.lower()).strip("-")
+    return slug or "untitled"
+
+
+def unique_dest_path(dest_dir: Path, rel_dir: Path, slug: str, suffix: str, used: set[str]) -> Path:
+    """Appends -2, -3, ... if `slug` collides with a path already used in this run."""
+    candidate = slug
+    n = 2
+    while str(rel_dir / candidate) in used:
+        candidate = f"{slug}-{n}"
+        n += 1
+    used.add(str(rel_dir / candidate))
+    return dest_dir / rel_dir / f"{candidate}{suffix}"
+
 
 class TranslationError(Exception):
     pass
+
+
+def str2bool(value: str) -> bool:
+    if value.lower() in ("true", "1", "yes", "y"):
+        return True
+    if value.lower() in ("false", "0", "no", "n"):
+        return False
+    raise argparse.ArgumentTypeError(f"expected true/false, got '{value}'")
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -81,6 +134,19 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--dataset",
         default=None,
         help="Restrict to a single dataset id. Omit to run over every dataset in the module.",
+    )
+    parser.add_argument(
+        "--onlyFileName",
+        dest="only_file_name",
+        type=str2bool,
+        nargs="?",
+        const=True,
+        default=False,
+        help=(
+            "Skip translation and just rename already-translated items' destination "
+            "files to match the translated title already in their content. No API "
+            "calls are made. E.g. --onlyFileName=true"
+        ),
     )
     return parser.parse_args(argv)
 
@@ -97,7 +163,26 @@ def resolve_datasets(module_dir: Path, from_lang: str, dataset: str | None) -> l
 
 
 def list_source_items(dataset_dir: Path) -> list[Path]:
-    return sorted(p for p in dataset_dir.iterdir() if p.is_file())
+    """Lists a dataset's content files.
+
+    Most datasets (e.g. sermons) hold files directly under the dataset dir. Others
+    group them one level deeper (e.g. comments/<dataset>/<bible_book>/<file>,
+    dictionary/<dataset>/<entry_letter>/<file> — see generate_content_index.py's
+    "groups" discovery for the same convention).
+    """
+    direct_files = sorted(p for p in dataset_dir.iterdir() if p.is_file())
+    if direct_files:
+        return direct_files
+    nested_files: list[Path] = []
+    for group_dir in sorted(p for p in dataset_dir.iterdir() if p.is_dir()):
+        nested_files.extend(sorted(p for p in group_dir.iterdir() if p.is_file()))
+    return nested_files
+
+
+def item_id_for(dataset_dir: Path, item_path: Path) -> str:
+    # Relative to the dataset dir (not just item_path.stem) so grouped datasets
+    # don't collide on the id — e.g. comments' "1-chronicles/1" vs "genesis/1".
+    return item_path.relative_to(dataset_dir).with_suffix("").as_posix()
 
 
 # --- translations.json (per-dataset translation registry) -------------------
@@ -150,7 +235,9 @@ def status_label(entry: dict | None) -> str:
     return "not translated" if entry is None else entry.get("status", "unknown")
 
 
-def paginate_and_select(items: list[Path], translations: dict, to_lang: str) -> list[Path]:
+def paginate_and_select(
+    items: list[Path], dataset_dir: Path, translations: dict, to_lang: str
+) -> list[Path]:
     selected_ids: set[str] = set()
     index = 0
 
@@ -158,7 +245,7 @@ def paginate_and_select(items: list[Path], translations: dict, to_lang: str) -> 
         page = items[index : index + PAGE_SIZE]
         print(f"\n-- items {index + 1}-{index + len(page)} of {len(items)} ({len(selected_ids)} selected) --")
         for offset, item_path in enumerate(page, start=1):
-            item_id = item_path.stem
+            item_id = item_id_for(dataset_dir, item_path)
             mark = "*" if item_id in selected_ids else " "
             entry = existing_translation(translations, item_id, to_lang)
             print(f" {mark} {index + offset:>4}. {item_id}  [{status_label(entry)}]")
@@ -181,7 +268,7 @@ def paginate_and_select(items: list[Path], translations: dict, to_lang: str) -> 
             index = max(0, index - PAGE_SIZE)
             continue
         if choice == "a":
-            selected_ids.update(p.stem for p in page)
+            selected_ids.update(item_id_for(dataset_dir, p) for p in page)
             continue
 
         for token in choice.split(","):
@@ -201,26 +288,31 @@ def paginate_and_select(items: list[Path], translations: dict, to_lang: str) -> 
                 continue
             for n in range(start, end + 1):
                 if 1 <= n <= len(items):
-                    selected_ids.add(items[n - 1].stem)
+                    selected_ids.add(item_id_for(dataset_dir, items[n - 1]))
 
-    return [p for p in items if p.stem in selected_ids]
+    return [p for p in items if item_id_for(dataset_dir, p) in selected_ids]
 
 
-def confirm_overwrites(selected: list[Path], translations: dict, to_lang: str) -> list[Path]:
-    existing = [p for p in selected if existing_translation(translations, p.stem, to_lang)]
+def confirm_overwrites(
+    selected: list[Path], dataset_dir: Path, translations: dict, to_lang: str
+) -> list[Path]:
+    existing = [
+        p for p in selected if existing_translation(translations, item_id_for(dataset_dir, p), to_lang)
+    ]
     if not existing:
         return selected
 
     print(f"\n{len(existing)} selected item(s) already have a '{to_lang}' translation:")
     for p in existing:
-        entry = existing_translation(translations, p.stem, to_lang)
-        print(f"  - {p.stem}  [{entry.get('status')}]")
+        item_id = item_id_for(dataset_dir, p)
+        entry = existing_translation(translations, item_id, to_lang)
+        print(f"  - {item_id}  [{entry.get('status')}]")
     choice = input("Overwrite these? [y/N] ").strip().lower()
     if choice == "y":
         return selected
 
-    existing_ids = {p.stem for p in existing}
-    return [p for p in selected if p.stem not in existing_ids]
+    existing_ids = {item_id_for(dataset_dir, p) for p in existing}
+    return [p for p in selected if item_id_for(dataset_dir, p) not in existing_ids]
 
 
 # --- DeepSeek call ------------------------------------------------------------
@@ -258,7 +350,15 @@ def call_deepseek(api_key: str, user_prompt: str) -> str:
     return data["choices"][0]["message"]["content"]
 
 
-def translate_item(api_key: str, from_lang: str, to_lang: str, source_path: Path, dest_path: Path) -> str:
+def translate_item(
+    api_key: str,
+    from_lang: str,
+    to_lang: str,
+    source_path: Path,
+    dest_dir: Path,
+    rel_path: Path,
+    used_dest_slugs: set[str],
+) -> tuple[str, Path]:
     raw = source_path.read_text(encoding="utf-8")
     match = HEADER_RE.match(raw)
     if match:
@@ -280,9 +380,65 @@ def translate_item(api_key: str, from_lang: str, to_lang: str, source_path: Path
     header.append(f"Tradução: {DEEPSEEK_MODEL} — {translated_at}")
     header += ["", "---", "", translated_body, ""]
 
+    dest_path = unique_dest_path(
+        dest_dir, rel_path.parent, slugify(translated_title), rel_path.suffix, used_dest_slugs
+    )
     dest_path.parent.mkdir(parents=True, exist_ok=True)
     dest_path.write_text("\n".join(header), encoding="utf-8")
-    return translated_at
+    return translated_at, dest_path
+
+
+def rename_only_for_dataset(
+    module_dir: Path, dataset_id: str, source_dir: Path, dest_dir: Path, to_lang: str, translations: dict
+) -> tuple[int, int]:
+    """Renames already-translated destination files to match their translated
+    title, without calling the API. Returns (renamed_count, skipped_count).
+
+    Locates each destination file via the registry's recorded `file` path, not
+    by assuming it's still named like the source — otherwise a second run
+    after files were already renamed (by this function or by translate_item())
+    would look for a filename that no longer exists.
+    """
+    renamed = 0
+    skipped = 0
+    used_dest_slugs: set[str] = set()
+
+    for source_path in list_source_items(source_dir):
+        item_id = item_id_for(source_dir, source_path)
+        entry = existing_translation(translations, item_id, to_lang)
+        if entry is None:
+            skipped += 1
+            continue
+
+        dest_path = module_dir / entry["file"].removeprefix("./")
+        if not dest_path.is_file():
+            print(f"  [warn] {item_id}: registry points to missing file {dest_path} — skipping.", file=sys.stderr)
+            skipped += 1
+            continue
+
+        raw = dest_path.read_text(encoding="utf-8")
+        title_match = TITLE_RE.match(raw)
+        if not title_match:
+            print(f"  [warn] {item_id}: no title header found in {dest_path.name} — skipping.", file=sys.stderr)
+            skipped += 1
+            continue
+
+        group_rel_dir = dest_path.relative_to(dest_dir).parent
+        new_path = unique_dest_path(
+            dest_dir, group_rel_dir, slugify(title_match["title"]), dest_path.suffix, used_dest_slugs
+        )
+        if new_path == dest_path:
+            skipped += 1
+            continue
+
+        new_path.parent.mkdir(parents=True, exist_ok=True)
+        dest_path.rename(new_path)
+        new_rel_path = new_path.relative_to(dest_dir)
+        entry["file"] = f"./{to_lang}/{dataset_id}/{new_rel_path.as_posix()}"
+        print(f"  {item_id}: {dest_path.name} -> {new_path.name}")
+        renamed += 1
+
+    return renamed, skipped
 
 
 # --- main ---------------------------------------------------------------------
@@ -295,12 +451,16 @@ def main() -> None:
     if not module_dir.is_dir():
         sys.exit(f"Module '{args.module}' not found at {module_dir}.")
 
+    dataset_ids = resolve_datasets(module_dir, args.from_lang, args.dataset)
+    print(f"Scope: module={args.module} from={args.from_lang} to={args.to_lang} datasets={dataset_ids}")
+
+    if args.only_file_name:
+        run_rename_only(module_dir, args, dataset_ids)
+        return
+
     api_key = get_env_var("DEEPSEEK_API_KEY")
     if not api_key:
         sys.exit("DEEPSEEK_API_KEY not set. Run 'python3 scripts/dev.py' or set it in .env.local.")
-
-    dataset_ids = resolve_datasets(module_dir, args.from_lang, args.dataset)
-    print(f"Scope: module={args.module} from={args.from_lang} to={args.to_lang} datasets={dataset_ids}")
 
     mode = prompt_mode()
 
@@ -317,7 +477,9 @@ def main() -> None:
 
         if mode == "all":
             to_translate = [
-                p for p in items if existing_translation(translations, p.stem, args.to_lang) is None
+                p
+                for p in items
+                if existing_translation(translations, item_id_for(source_dir, p), args.to_lang) is None
             ]
             print(
                 f"[{dataset_id}] {len(to_translate)} of {len(items)} item(s) will be translated "
@@ -328,8 +490,8 @@ def main() -> None:
                 proceed = input(f"\nSelect items in dataset '{dataset_id}'? [y/N] ").strip().lower()
                 if proceed != "y":
                     continue
-            to_translate = paginate_and_select(items, translations, args.to_lang)
-            to_translate = confirm_overwrites(to_translate, translations, args.to_lang)
+            to_translate = paginate_and_select(items, source_dir, translations, args.to_lang)
+            to_translate = confirm_overwrites(to_translate, source_dir, translations, args.to_lang)
 
         if not to_translate:
             print(f"[{dataset_id}] nothing to do.")
@@ -337,27 +499,31 @@ def main() -> None:
 
         translated_count = 0
         failed_count = 0
+        used_dest_slugs: set[str] = set()
         for source_path in to_translate:
-            item_id = source_path.stem
-            dest_path = dest_dir / source_path.name
+            item_id = item_id_for(source_dir, source_path)
+            rel_path = source_path.relative_to(source_dir)
             print(f"[{dataset_id}] translating {item_id}...")
 
             try:
-                translated_at = translate_item(api_key, args.from_lang, args.to_lang, source_path, dest_path)
+                translated_at, dest_path = translate_item(
+                    api_key, args.from_lang, args.to_lang, source_path, dest_dir, rel_path, used_dest_slugs
+                )
             except (TranslationError, requests.RequestException) as exc:
                 print(f"  [error] {item_id}: {exc}", file=sys.stderr)
                 failed_count += 1
                 continue
 
+            dest_rel_path = dest_path.relative_to(dest_dir)
             source_hash = file_hash(source_path)
             item_entry = translations["items"].setdefault(item_id, {})
             item_entry["source"] = {
                 "lang": args.from_lang,
-                "file": f"./{args.from_lang}/{dataset_id}/{source_path.name}",
+                "file": f"./{args.from_lang}/{dataset_id}/{rel_path.as_posix()}",
                 "hash": source_hash,
             }
             item_entry.setdefault("translations", {})[args.to_lang] = {
-                "file": f"./{args.to_lang}/{dataset_id}/{source_path.name}",
+                "file": f"./{args.to_lang}/{dataset_id}/{dest_rel_path.as_posix()}",
                 "status": "ai",
                 "engine": DEEPSEEK_MODEL,
                 "sourceHashAtTranslation": source_hash,
@@ -368,6 +534,28 @@ def main() -> None:
             save_translations(translations_path, translations)
 
         print(f"[{dataset_id}] done: {translated_count} translated, {failed_count} failed.")
+
+
+def run_rename_only(module_dir: Path, args: argparse.Namespace, dataset_ids: list[str]) -> None:
+    total_renamed = 0
+    total_skipped = 0
+    for dataset_id in dataset_ids:
+        source_dir = module_dir / args.from_lang / dataset_id
+        dest_dir = module_dir / args.to_lang / dataset_id
+        translations_path = translations_path_for(module_dir, dataset_id)
+        translations = load_translations(translations_path, args.module, dataset_id)
+
+        print(f"[{dataset_id}] fixing filenames for already-translated items...")
+        renamed, skipped = rename_only_for_dataset(
+            module_dir, dataset_id, source_dir, dest_dir, args.to_lang, translations
+        )
+        if renamed:
+            save_translations(translations_path, translations)
+        print(f"[{dataset_id}] done: {renamed} renamed, {skipped} skipped (no translation yet or already correct).")
+        total_renamed += renamed
+        total_skipped += skipped
+
+    print(f"\nTotal: {total_renamed} renamed, {total_skipped} skipped.")
 
 
 if __name__ == "__main__":

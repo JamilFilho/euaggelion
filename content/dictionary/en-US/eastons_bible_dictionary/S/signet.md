@@ -1,0 +1,9 @@
+# Signet
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/signet.html
+
+---
+
+**Signet:** a seal used to attest documents (Daniel 6:8-10,12). In 6:17, this word properly denotes a ring. The impression of a signet ring on fine clay has recently been discovered among the ruins at Nineveh. It bears the name and title of an Egyptian king. Two actual signet rings of ancient Egyptian monarchs (Cheops and Horus) have also been discovered.
+
+When digging a shaft close to the south wall of the temple area, the engineers of the Palestine Exploration Fund, at a depth of 12 feet below the surface, came upon a pavement of polished stones, formerly one of the streets of the city. Under this pavement they found a stratum of 16 feet of concrete, and among this concrete, 10 feet down, they found a signet stone bearing the inscription, in Old Hebrew characters, "Haggai, son of Shebaniah." It has been asked, Might not this be the actual seal of Haggai the prophet? We know that he was in Jerusalem after the Captivity; and it is somewhat singular that he alone of all the minor prophets makes mention of a signet (Haggai 2:23). (See SEAL.)

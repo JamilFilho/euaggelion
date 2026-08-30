@@ -1,0 +1,7 @@
+# Tophet
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/tophet.html
+
+---
+
+**Tophet:** =Topheth, from Heb. toph "a drum," because the cries of children here sacrificed by the priests of Moloch were drowned by the noise of such an instrument; or from taph or toph, meaning "to burn," and hence a place of burning, the name of a particular part in the valley of Hinnom. "Fire being the most destructive of all elements, is chosen by the sacred writers to symbolize the agency by which God punishes or destroys the wicked. We are not to assume from prophetical figures that material fire is the precise agent to be used. It was not the agency employed in the destruction of Sennacherib, mentioned in Isaiah 30:33...Tophet properly begins where the Vale of Hinnom bends round to the east, having the cliffs of Zion on the north, and the Hill of Evil Counsel on the south. It terminates at Beer 'Ayub, where it joins the Valley of Jehoshaphat. The cliffs on the southern side especially abound in ancient tombs. Here the dead carcasses of beasts and every offal and abomination were cast, and left to be either devoured by that worm that never died or consumed by that fire that was never quenched." Thus Tophet came to represent the place of punishment. (See HINNOM.)

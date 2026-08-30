@@ -1,0 +1,9 @@
+# Esarhaddon
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/esarhaddon.html
+
+---
+
+**Esarhaddon:** Assur has given a brother, successor of Sennacherib (2 Kings 19:37; Isaiah 37:38). He ascended the throne about B.C. 681. Nothing further is recorded of him in Scripture, except that he settled certain colonists in Samaria (Ezra 4:2). But from the monuments it appears that he was the most powerful of all the Assyrian monarchs. He built many temples and palaces, the most magnificent of which was the south-west palace at Nimrud, which is said to have been in its general design almost the same as Solomon's palace, only much larger (1 Kings 7:1-12).
+
+In December B.C. 681 Sennacherib was murdered by two of his sons, who, after holding Nineveh for forty-two days, were compelled to fly to Erimenas of Ararat, or Armenia. Their brother Esarhaddon, who had been engaged in a campaign against Armenia, led his army against them. They were utterly overthrown in a battle fought April B.C. 680, near Malatiyeh, and in the following month Esarhaddon was crowned at Nineveh. He restored Babylon, conquered Egypt, and received tribute from Manasseh of Judah. He died in October B.C. 668, while on the march to suppress an Egyptian revolt, and was succeeded by his son Assur-bani-pal, whose younger brother was made viceroy of Babylonia.

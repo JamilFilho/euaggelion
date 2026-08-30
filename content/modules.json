@@ -1,7 +1,507 @@
 {
-  "name": "Bíblia.academy Content Index",
-  "updatedAt": "2026-08-28T22:59:58Z",
+  "name": "Projeto Euaggelion Content Index",
+  "updatedAt": "2026-08-29T17:16:03Z",
   "modules": [
+    {
+      "id": "atlas",
+      "dir": "./atlas",
+      "status": "dev",
+      "valid": false,
+      "version": "0.1.0",
+      "locales": [],
+      "datasets": []
+    },
+    {
+      "id": "buildings",
+      "dir": "./buildings",
+      "status": "dev",
+      "valid": false,
+      "version": "0.1.0",
+      "locales": [],
+      "datasets": []
+    },
+    {
+      "id": "chronology",
+      "dir": "./chronology",
+      "status": "dev",
+      "valid": false,
+      "version": "0.1.0",
+      "locales": [],
+      "datasets": []
+    },
+    {
+      "id": "comments",
+      "dir": "./comments",
+      "status": "dev",
+      "valid": false,
+      "version": "0.1.0",
+      "locales": [
+        {
+          "lang": "en-US",
+          "total": 1255
+        }
+      ],
+      "datasets": [
+        {
+          "id": "kretzmanns_popular_commentary",
+          "label": "Kretzmanns Popular Commentary",
+          "license": null,
+          "locales": [
+            {
+              "lang": "en-US",
+              "dir": "./en-US/kretzmanns_popular_commentary",
+              "total": 1255,
+              "groups": [
+                {
+                  "id": "1-chronicles",
+                  "total": 30
+                },
+                {
+                  "id": "1-corinthians",
+                  "total": 17
+                },
+                {
+                  "id": "1-john",
+                  "total": 6
+                },
+                {
+                  "id": "1-kings",
+                  "total": 23
+                },
+                {
+                  "id": "1-peter",
+                  "total": 6
+                },
+                {
+                  "id": "1-samuel",
+                  "total": 32
+                },
+                {
+                  "id": "1-thessalonians",
+                  "total": 6
+                },
+                {
+                  "id": "1-timothy",
+                  "total": 7
+                },
+                {
+                  "id": "2-chronicles",
+                  "total": 37
+                },
+                {
+                  "id": "2-corinthians",
+                  "total": 14
+                },
+                {
+                  "id": "2-john",
+                  "total": 2
+                },
+                {
+                  "id": "2-kings",
+                  "total": 26
+                },
+                {
+                  "id": "2-peter",
+                  "total": 4
+                },
+                {
+                  "id": "2-samuel",
+                  "total": 25
+                },
+                {
+                  "id": "2-thessalonians",
+                  "total": 4
+                },
+                {
+                  "id": "2-timothy",
+                  "total": 5
+                },
+                {
+                  "id": "3-john",
+                  "total": 2
+                },
+                {
+                  "id": "acts",
+                  "total": 29
+                },
+                {
+                  "id": "amos",
+                  "total": 10
+                },
+                {
+                  "id": "colossians",
+                  "total": 5
+                },
+                {
+                  "id": "daniel",
+                  "total": 13
+                },
+                {
+                  "id": "deuteronomy",
+                  "total": 35
+                },
+                {
+                  "id": "ecclesiastes",
+                  "total": 13
+                },
+                {
+                  "id": "ephesians",
+                  "total": 7
+                },
+                {
+                  "id": "esther",
+                  "total": 11
+                },
+                {
+                  "id": "exodus",
+                  "total": 41
+                },
+                {
+                  "id": "ezekiel",
+                  "total": 49
+                },
+                {
+                  "id": "ezra",
+                  "total": 11
+                },
+                {
+                  "id": "galatians",
+                  "total": 7
+                },
+                {
+                  "id": "genesis",
+                  "total": 51
+                },
+                {
+                  "id": "habakkuk",
+                  "total": 4
+                },
+                {
+                  "id": "haggai",
+                  "total": 3
+                },
+                {
+                  "id": "hebrews",
+                  "total": 14
+                },
+                {
+                  "id": "hosea",
+                  "total": 15
+                },
+                {
+                  "id": "isaiah",
+                  "total": 67
+                },
+                {
+                  "id": "james",
+                  "total": 6
+                },
+                {
+                  "id": "jeremiah",
+                  "total": 53
+                },
+                {
+                  "id": "job",
+                  "total": 43
+                },
+                {
+                  "id": "joel",
+                  "total": 4
+                },
+                {
+                  "id": "john",
+                  "total": 22
+                },
+                {
+                  "id": "jonah",
+                  "total": 5
+                },
+                {
+                  "id": "joshua",
+                  "total": 25
+                },
+                {
+                  "id": "jude",
+                  "total": 2
+                },
+                {
+                  "id": "judges",
+                  "total": 22
+                },
+                {
+                  "id": "lamentations",
+                  "total": 6
+                },
+                {
+                  "id": "leviticus",
+                  "total": 28
+                },
+                {
+                  "id": "luke",
+                  "total": 25
+                },
+                {
+                  "id": "malachi",
+                  "total": 5
+                },
+                {
+                  "id": "mark",
+                  "total": 17
+                },
+                {
+                  "id": "matthew",
+                  "total": 29
+                },
+                {
+                  "id": "micah",
+                  "total": 8
+                },
+                {
+                  "id": "nahum",
+                  "total": 4
+                },
+                {
+                  "id": "nehemiah",
+                  "total": 14
+                },
+                {
+                  "id": "numbers",
+                  "total": 37
+                },
+                {
+                  "id": "obadiah",
+                  "total": 2
+                },
+                {
+                  "id": "philemon",
+                  "total": 2
+                },
+                {
+                  "id": "philippians",
+                  "total": 5
+                },
+                {
+                  "id": "proverbs",
+                  "total": 32
+                },
+                {
+                  "id": "psalms",
+                  "total": 151
+                },
+                {
+                  "id": "revelation",
+                  "total": 23
+                },
+                {
+                  "id": "romans",
+                  "total": 17
+                },
+                {
+                  "id": "ruth",
+                  "total": 5
+                },
+                {
+                  "id": "song-of-solomon",
+                  "total": 9
+                },
+                {
+                  "id": "titus",
+                  "total": 4
+                },
+                {
+                  "id": "zechariah",
+                  "total": 15
+                },
+                {
+                  "id": "zephaniah",
+                  "total": 4
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dictionary",
+      "dir": "./dictionary",
+      "status": "dev",
+      "valid": false,
+      "version": "0.1.0",
+      "locales": [
+        {
+          "lang": "en-US",
+          "total": 3986
+        },
+        {
+          "lang": "pt-BR",
+          "total": 100
+        }
+      ],
+      "datasets": [
+        {
+          "id": "eastons_bible_dictionary",
+          "label": "Eastons Bible Dictionary",
+          "license": null,
+          "locales": [
+            {
+              "lang": "en-US",
+              "dir": "./en-US/eastons_bible_dictionary",
+              "total": 3986,
+              "groups": [
+                {
+                  "id": "A",
+                  "total": 382
+                },
+                {
+                  "id": "B",
+                  "total": 300
+                },
+                {
+                  "id": "C",
+                  "total": 283
+                },
+                {
+                  "id": "D",
+                  "total": 147
+                },
+                {
+                  "id": "E",
+                  "total": 199
+                },
+                {
+                  "id": "F",
+                  "total": 103
+                },
+                {
+                  "id": "G",
+                  "total": 162
+                },
+                {
+                  "id": "H",
+                  "total": 294
+                },
+                {
+                  "id": "I",
+                  "total": 66
+                },
+                {
+                  "id": "J",
+                  "total": 230
+                },
+                {
+                  "id": "K",
+                  "total": 77
+                },
+                {
+                  "id": "L",
+                  "total": 116
+                },
+                {
+                  "id": "M",
+                  "total": 293
+                },
+                {
+                  "id": "N",
+                  "total": 122
+                },
+                {
+                  "id": "O",
+                  "total": 63
+                },
+                {
+                  "id": "P",
+                  "total": 210
+                },
+                {
+                  "id": "Q",
+                  "total": 10
+                },
+                {
+                  "id": "R",
+                  "total": 131
+                },
+                {
+                  "id": "S",
+                  "total": 382
+                },
+                {
+                  "id": "T",
+                  "total": 190
+                },
+                {
+                  "id": "U",
+                  "total": 23
+                },
+                {
+                  "id": "V",
+                  "total": 17
+                },
+                {
+                  "id": "W",
+                  "total": 63
+                },
+                {
+                  "id": "Y",
+                  "total": 5
+                },
+                {
+                  "id": "Z",
+                  "total": 118
+                }
+              ]
+            },
+            {
+              "lang": "pt-BR",
+              "dir": "./pt-BR/eastons_bible_dictionary",
+              "total": 100,
+              "groups": [
+                {
+                  "id": "A",
+                  "total": 100
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ebooks",
+      "dir": "./ebooks",
+      "status": "dev",
+      "valid": false,
+      "version": "0.1.0",
+      "locales": [],
+      "datasets": []
+    },
+    {
+      "id": "glossary",
+      "dir": "./glossary",
+      "status": "dev",
+      "valid": false,
+      "version": "0.1.0",
+      "locales": [],
+      "datasets": []
+    },
+    {
+      "id": "numismatics",
+      "dir": "./numismatics",
+      "status": "dev",
+      "valid": false,
+      "version": "0.1.0",
+      "locales": [],
+      "datasets": []
+    },
+    {
+      "id": "people",
+      "dir": "./people",
+      "status": "dev",
+      "valid": false,
+      "version": "0.1.0",
+      "locales": [],
+      "datasets": []
+    },
     {
       "id": "sermons",
       "dir": "./sermons",
@@ -27,7 +527,8 @@
             {
               "lang": "en-US",
               "dir": "./en-US/c_h_spurgeon",
-              "total": 1074
+              "total": 1074,
+              "groups": []
             }
           ]
         },
@@ -39,7 +540,8 @@
             {
               "lang": "en-US",
               "dir": "./en-US/george_whitefield",
-              "total": 59
+              "total": 59,
+              "groups": []
             }
           ]
         },
@@ -51,7 +553,8 @@
             {
               "lang": "en-US",
               "dir": "./en-US/j_c_philpot",
-              "total": 74
+              "total": 74,
+              "groups": []
             }
           ]
         },
@@ -63,7 +566,8 @@
             {
               "lang": "en-US",
               "dir": "./en-US/j_c_ryle",
-              "total": 89
+              "total": 89,
+              "groups": []
             }
           ]
         },
@@ -75,7 +579,8 @@
             {
               "lang": "en-US",
               "dir": "./en-US/john_bunyan",
-              "total": 32
+              "total": 32,
+              "groups": []
             }
           ]
         },
@@ -87,7 +592,8 @@
             {
               "lang": "en-US",
               "dir": "./en-US/john_newton",
-              "total": 41
+              "total": 41,
+              "groups": []
             }
           ]
         },
@@ -99,12 +605,14 @@
             {
               "lang": "en-US",
               "dir": "./en-US/john_owen",
-              "total": 8
+              "total": 8,
+              "groups": []
             },
             {
               "lang": "pt-BR",
               "dir": "./pt-BR/john_owen",
-              "total": 8
+              "total": 8,
+              "groups": []
             }
           ]
         },
@@ -116,7 +624,8 @@
             {
               "lang": "en-US",
               "dir": "./en-US/jonathan_edwards",
-              "total": 94
+              "total": 94,
+              "groups": []
             }
           ]
         },
@@ -128,7 +637,8 @@
             {
               "lang": "en-US",
               "dir": "./en-US/samuel_davies",
-              "total": 66
+              "total": 66,
+              "groups": []
             }
           ]
         },
@@ -140,7 +650,8 @@
             {
               "lang": "en-US",
               "dir": "./en-US/thomas_watson",
-              "total": 15
+              "total": 15,
+              "groups": []
             }
           ]
         }

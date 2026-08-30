@@ -1,0 +1,13 @@
+# Damnation
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Damnation
+
+---
+
+**Damnation**
+
+Damnation In Rom. 13:2, means "condemnation," which comes on those who withstand God's ordinance of magistracy. This sentence of condemnation comes not from the magistrate, but from God, whose authority is thus resisted.
+
+In 1 Cor. 11:29 (R.V., "judgment") this word means condemnation, in the sense of exposure to severe temporal judgements from God, as the following verse explains.
+
+In Rom. 14:23 the word "damned" means "condemned" by one's own conscience, as well as by the Word of God. The apostle shows here that many things which are lawful are not expedient; and that in using our Christian liberty the question should not simply be, Is this course I follow lawful? but also, Can I follow it without doing injury to the spiritual interests of a brother in Christ? He that "doubteth", i.e., is not clear in his conscience as to "meats", will violate his conscience "if he eat," and in eating is condemned; and thus one ought not so to use his liberty as to lead one who is "weak" to bring upon himself this condemnation.

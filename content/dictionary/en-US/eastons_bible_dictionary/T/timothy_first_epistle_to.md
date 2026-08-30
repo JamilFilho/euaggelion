@@ -1,0 +1,12 @@
+# Timothy, First Epistle to
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Timothy,_First_Epistle_to
+
+---
+
+**Timothy, First Epistle to**
+Paul in this epistle speaks of himself as having left Ephesus for Macedonia (1:3), and hence not Laodicea, as mentioned in the subscription; but probably Philippi, or some other city in that region, was the place where this epistle was written. During the interval between his first and second imprisonments he probably visited the scenes of his former labours in Greece and Asia, and then found his way into Macedonia, whence he wrote this letter to Timothy, whom he had left behind in Ephesus.
+
+It was probably written about A.D. 66 or 67.
+
+The epistle consists mainly, (1) of counsels to Timothy regarding the worship and organization of the Church, and the responsibilities resting on its several members; and (2) of exhortation to faithfulness in maintaining the truth amid surrounding errors.

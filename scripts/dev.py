@@ -1,5 +1,5 @@
 """
-Initializes the Bíblia.academy development environment.
+Initializes the Projeto Euaggelion development environment.
 
 Usage:
 python3 scripts/dev.py
@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import getpass
 import os
+import shutil
 import subprocess
 import sys
 
@@ -44,8 +45,15 @@ REQUIRED_ENV_VARS = [
 
 
 def run(cmd: list[str]) -> bool:
+    # No Windows, subprocess.run nao resolve shims .cmd/.ps1 (ex.: o pnpm
+    # instalado via npm/corepack) a menos que o executavel seja localizado
+    # explicitamente -- shutil.which ja resolve isso via PATHEXT.
+    executable = shutil.which(cmd[0])
+    if executable is None:
+        print(f"[erro] comando nao encontrado no PATH: {cmd[0]}", file=sys.stderr)
+        return False
     print(f"$ {' '.join(cmd)}")
-    result = subprocess.run(cmd, cwd=PROJECT_ROOT)
+    result = subprocess.run([executable, *cmd[1:]], cwd=PROJECT_ROOT)
     return result.returncode == 0
 
 
@@ -98,7 +106,7 @@ def is_interactive() -> bool:
     # getpass.getpass() reads straight from the console on Windows (via msvcrt),
     # bypassing a redirected stdin — isatty() alone can't detect that case, so CI
     # (or anything scripted) must opt out explicitly via one of these env vars.
-    if os.environ.get("CI") or os.environ.get("BIBLIA_ACADEMY_NONINTERACTIVE"):
+    if os.environ.get("CI") or os.environ.get("EUAGGELION_NONINTERACTIVE"):
         return False
     return sys.stdin.isatty() and sys.stdout.isatty()
 
@@ -158,7 +166,7 @@ def configure_env_tokens() -> None:
 def main() -> None:
     print("\033c", end="")
     print("===========================================================")
-    print("biblia.academy - development environment initialization")
+    print("Projeto Euaggelion - development environment initialization")
     print("===========================================================")
     print("\n")
     install_python_dependencies()

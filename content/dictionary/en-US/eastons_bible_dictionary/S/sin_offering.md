@@ -1,0 +1,7 @@
+# Sin-offering
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Sin-offering
+
+---
+
+**Sin-offering**: (Heb. hattath), the law of, is given in detail in Leviticus 4-6:13; 9:7-11,22-24; 12:6-8; 15:2,14,25-30; 14:19,31; Numbers 6:10-14. On the day of Atonement it was made with special solemnity (Leviticus 16:5,11,15). The blood was then carried into the holy of holies and sprinkled on the mercy-seat. Sin-offerings were also presented at the five annual festivals (Numbers 28,29), and on the occasion of the consecration of the priests (Exodus 29:10-14,36). As each individual, even the most private member of the congregation, as well as the congregation at large, and the high priest, was obliged, on being convicted by his conscience of any particular sin, to come with a sin-offering, we see thus impressively disclosed the need in which every sinner stands of the salvation of Christ, and the necessity of making application to it as often as the guilt of sin renews itself upon his conscience. This resort of faith to the perfect sacrifice of Christ is the one way that lies open for the sinner's attainment of pardon and restoration to peace. And then in the sacrifice itself there is the reality of that incomparable worth and preciousness which were so significantly represented in the sin-offering by the sacredness of its blood and the hallowed destination of its flesh. With reference to this the blood of Christ is called emphatically "the precious blood," and the blood that "cleanseth from all sin" (1 John 1:7).

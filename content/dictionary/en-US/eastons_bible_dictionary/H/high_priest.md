@@ -1,0 +1,18 @@
+# High priest
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/High_priest
+
+---
+
+**High priest**: Aaron was the first who was solemnly set apart to this office (Exodus 29:7; 30:23; Leviticus 8:12). He wore a peculiar dress, which on his death passed to his successor in office (Exodus 29:29,30). Besides those garments which he wore in common with all priests, there were four that were peculiar to himself as high priest:
+
+1. The "robe" of the ephod, all of blue, of "woven work," worn immediately under the ephod. It was without seam or sleeves. The hem or skirt was ornamented with pomegranates and golden bells, seventy-two of each in alternate order. The sounding of the bells intimated to the people in the outer court the time when the high priest entered into the holy place to burn incense before the Lord (Exodus 28).
+2. The "ephod" consisted of two parts, one of which covered the back and the other the breast, which were united by the "curious girdle." It was made of fine twined linen, and ornamented with gold and purple. Each of the shoulder-straps was adorned with a precious stone, on which the names of the twelve tribes were engraved. This was the high priest's distinctive vestment (1 Samuel 2:28; 14:3; 21:9; 23:6,9; 30:7).
+3. The "breastplate of judgment" (Exodus 28:6-12,25-28; 39:2-7) of "cunning work." It was a piece of cloth doubled, of one span square. It bore twelve precious stones, set in four rows of three in a row, which constituted the Urim and Thummim (which see). These stones had the names of the twelve tribes engraved on them. When the high priest, clothed with the ephod and the breastplate, inquired of the Lord, answers were given in some mysterious way by the Urim and Thummim (1 Samuel 14:3,18,19; 23:2,4,9,11,12; 28:6; 2 Samuel 5:23).
+4. The "mitre," or upper turban, a twisted band of eight yards of fine linen coiled into a cap, with a gold plate in front, engraved with "Holiness to the Lord," fastened to it by a ribbon of blue.
+
+To the high priest alone it was permitted to enter the holy of holies, which he did only once a year, on the great Day of Atonement, for "the way into the holiest of all was not yet made manifest" (Hebrews 9; 10). Wearing his gorgeous priestly vestments, he entered the temple before all the people, and then, laying them aside and assuming only his linen garments in secret, he entered the holy of holies alone, and made expiation, sprinkling the blood of the sin offering on the mercy seat, and offering up incense. Then resuming his splendid robes, he reappeared before the people (Leviticus 16). Thus the wearing of these robes came to be identified with the Day of Atonement.
+
+The office, dress, and ministration of the high priest were typical of the priesthood of our Lord (Hebrews 4:14; 7:25; 9:12, etc.).
+
+It is supposed that there were in all eighty-three high priests, beginning with Aaron (B.C. 1657) and ending with Phannias (A.D. 70). At its first institution the office of high priest was held for life (but comp. 1 Kings 2:27), and was hereditary in the family of Aaron (Numbers 3:10). The office continued in the line of Eleazar, Aaron's eldest son, for two hundred and ninety-six years, when it passed to Eli, the first of the line of Ithamar, who was the fourth son of Aaron. In this line it continued to Abiathar, whom Solomon deposed, and appointed Zadok, of the family of Eleazar, in his stead (1 Kings 2:35), in which it remained till the time of the Captivity. After the Return, Joshua, the son of Josedek, of the family of Eleazar, was appointed to this office. After him the succession was changed from time to time under priestly or political influences.

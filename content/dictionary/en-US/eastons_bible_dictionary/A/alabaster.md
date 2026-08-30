@@ -1,0 +1,8 @@
+# Alabaster
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Alabaster
+
+---
+
+**Alabaster**
+Occurs only in the New Testament in connection with the box of "ointment of spikenard very precious", with the contents of which a woman anointed the head of Jesus as he sat at supper in the house of Simon the leper (Matthew 26:7; Mark 14:3; Luke 7:37). These boxes were made from a stone found near Alabastron in Egypt, and from this circumstance the Greeks gave them the name of the city where they were made. The name was then given to the stone of which they were made; and finally to all perfume vessels, of whatever material they were formed. The woman "broke" the vessel; i.e., she broke off, as was usually done, the long and narrow neck so as to reach the contents. This stone resembles marble, but is softer in its texture, and hence very easily wrought into boxes. Mark says (14:5) that this box of ointment was worth more than 300 pence, i.e., denarii, each of the value of sevenpence halfpenny of our money, and therefore worth about 10 pounds. But if we take the denarius as the day's wage of a labourer (Matthew 20:2), say two shillings of our money, then the whole would be worth about 30 pounds, so costly was Mary's offering.

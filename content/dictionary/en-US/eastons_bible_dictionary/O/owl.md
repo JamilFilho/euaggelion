@@ -1,0 +1,11 @@
+# Owl
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/owl.html
+
+---
+
+1. Heb. bath-haya'anah, "daughter of greediness" or of "shouting." In the list of unclean birds (Leviticus 11:16; Deuteronomy 14:15); also mentioned in Job 30:29; Isaiah 13:21; 34:13; 43:20; Jeremiah 50:39; Micah 1:8. In all these passages the Revised Version translates "ostrich" (which see), which is the correct rendering.
+2. Heb. yanshuph, rendered "great owl" in Leviticus 11:17; Deuteronomy 14:16, and "owl" in Isaiah 34:11. This is supposed to be the Egyptian eagle-owl (Bubo ascalaphus), which takes the place of the eagle-owl (Bubo maximus) found in Southern Europe. It is found frequenting the ruins of Egypt and also of the Holy Land. "Its cry is a loud, prolonged, and very powerful hoot. I know nothing which more vividly brought to my mind the sense of desolation and loneliness than the re-echoing hoot of two or three of these great owls as I stood at midnight among the ruined temples of Baalbek" (Tristram). The LXX. and Vulgate render this word by "ibis", i.e., the Egyptian heron.
+3. Heb. kos, rendered "little owl" in Leviticus 11:17; Deuteronomy 14:16, and "owl" in Psalm 102:6. The Arabs call this bird "the mother of ruins." It is by far the most common of all the owls of Palestine. It is the Athene persica, the bird of Minerva, the symbol of ancient Athens.
+4. Heb. kippoz, the "great owl" (Isaiah 34:15); Revised Version, "arrow-snake;" LXX. and Vulgate, "hedgehog," reading in the text, kippod, instead of kippoz. There is no reason to doubt the correctness of the rendering of the Authorized Version. Tristram says: "The word [i.e., kippoz] is very possibly an imitation of the cry of the scops owl (Scops giu), which is very common among ruins, caves, and old walls of towns...It is a migrant, returning to Palestine in spring."
+5. Heb. lilith, "screech owl" (Isaiah 34:14, marg. and R.V., "night monster"). The Hebrew word is from a root signifying "night." Some species of the owl is obviously intended by this word. It may be the hooting or tawny owl (Syrnium aluco), which is common in Egypt and in many parts of Palestine. This verse in Isaiah is "descriptive of utter and perpetual desolation, of a land that should be full of ruins, and inhabited by the animals that usually make such ruins their abode."

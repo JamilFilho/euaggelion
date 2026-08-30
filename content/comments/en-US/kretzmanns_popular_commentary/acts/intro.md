@@ -1,0 +1,29 @@
+# Acts — Introduction
+
+Fonte: https://kretzmanncommentary.org/acts/intro
+
+---
+
+The author of the Acts of the Apostles, by the unanimous consent of the early Church, is Luke, the “beloved physician,” the friend, companion, and coworker of St. Paul. The book, by its own testimony, is a sequel to the Gospel of St. Luke. Cp. chap. 1, 1 with Luke 1, 1–4. To all those that doubt the authorship of Luke, after comparing this book with the third gospel and noting the similarity in style, language, and vocabulary, it must be said, as one commentator has it:
+
+> The question of authorship lies between Luke and some other writer; and the adverse testimony, to be conclusive, should name that other writer.
+>
+> — McGarvey, *New Commentary on Acts*, X.
+
+Luke had the best opportunity to get his information from the most authentic sources, from the apostles, especially from Paul himself, and by his own personal observation, as the so-called “we” passages show. If one takes into consideration that the Holy Spirit, in using the holy writers as His tools for the penning of the divine truths, made use of their natural gifts and acquired abilities, the “Pauline character” of the book will stand out very prominently. The Book of Acts, like the Gospel of St. Luke, is inscribed to Theophilus, very probably a Roman convert belonging to the wealthier and more influential class. It is thus addressed principally to the Gentile Christians of Italy and elsewhere, by whom the easy style and fluent Greek of the author could readily be understood.
+
+The aim or object of St. Luke in writing the Book of Acts appears in every chapter and almost on every page. He wanted to relate, in the first place, in what manner the gift of the Holy Ghost was given on the day of Pentecost, and that the subsequent work of the apostles was due entirely to His agency and ministry. So prominent is this feature, the Holy Ghost and His work being mentioned about seventy times, that one teacher of the Church has called the book the Gospel of the Holy Spirit. Closely connected with this feature is the fact that all the happenings in the history of the early Church are based upon, and made to appear as following out of, the resurrection of Jesus Christ. For this reason another teacher of the ancient Church called the book the Demonstration of the Resurrection. But, in the second place, Luke wanted to give an account of the spread of Christianity, not only among the Jews, but also among the Gentiles, by the missionary efforts of the apostles. “The dominant note of the book is the missionary cause.” The Book of Acts intends to supplement the history of Jesus, as found in the Gospel of Luke, with a history of the apostles, and to give a graphic account of the victorious progress of the Gospel of Jesus from Jerusalem, the capital of Jewry, to Rome, the capital of the world. But there is also a third purpose evident in the Book of Acts.
+
+> This book you should read and regard not merely as St. Luke's record of the personal doings or history of the apostles, but this is the point you should rather note, namely, that with this book St. Luke teaches all Christendom to the end of the world the true chief article of Christian doctrine, which tells us that we must all be justified alone by faith in Jesus Christ, without the Law or our own works.
+>
+> — Luther, 14, 92.
+
+Hence the frequent use of the word “grace” and the continual reference to the glad tidings of the mercy of God in Christ Jesus.
+
+Concerning the time when the Book of Acts was written, it is probable that it was written soon after the gospel, before the destruction of Jerusalem, but not long before the year 70 A. D. Its last verses indicate that it must have been written before the death of St. Paul, which occurred in 67 or early in 68. Taking everything together, the conclusion seems well founded to assume the year 65 as the date of composition and Rome as the place.
+
+The Book of Acts is readily divided into two chief parts. In the first division Luke speaks of the general history of the Christian Church up to the death of Herod (chap. 1, 1–12, 25). This part may again be subdivided, since the author relates first of all the early history of the congregation at Jerusalem (1, 1–8, 4) and then the spread of the Church through Judea, Samaria, and the surrounding country (8, 5 to 12, 25). The second principal division of the book brings an account of the life and labors of the Apostle Paul. We have there, in the first place, a history of his preaching tours among the Gentiles to his visit at Jerusalem (13, 1 to 21, 16). And the end of the book gives the history of his five years’ imprisonment.
+
+> In the Book of Acts we see how the Church of Christ was formed and settled. The apostles simply proclaim the truth of God relative to the Passion, death, resurrection, and ascension of Christ; and God accompanies their testimony with the demonstration of His Spirit. What was the consequence? Thousands acknowledge the truth, embrace Christianity, and openly profess it at the most imminent risk of their lives. The change is not a change of merely one religious sentiment or mode of worship for another; but a change of tempers, passions, prospects, and moral conduct. All before was earthly, or animal, or devilish, or all these together; but now all is holy, spiritual, and divine; the heavenly influence becomes extended, and nations are born unto God. And how was all this brought about? Not by might nor power; not by the sword, nor by secular authority; not through worldly motives and prospects; not by pious frauds or cunning craftiness; not by the force of persuasive eloquence: in a word, by nothing but the sole influence of Truth itself, attested to the heart by the power of the Holy Ghost.
+>
+> — Clarke, *Commentary*, 5, 680.

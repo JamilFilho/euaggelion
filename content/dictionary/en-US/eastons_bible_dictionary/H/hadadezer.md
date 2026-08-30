@@ -1,0 +1,7 @@
+# Hadadezer
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Hadadezer
+
+---
+
+**Hadadezer**: Hadad is help; called also Hadarezer, Adod is his help, the king of Zobah. Hanun, the king of the Ammonites, hired among others the army of Hadadezer to assist him in his war against David. Joab, who was sent against this confederate host, found them in double battle array, the Ammonities toward their capital of Rabbah, and the Syrian mercenaries near Medeba. In the battle which was fought the Syrians were scattered, and the Ammonites in alarm fled into their capital. After this Hadadezer went north "to recover his border" (2 Samuel 8:3, A.V.); but rather, as the Revised Version renders, "to recover his dominion", i.e., to recruit his forces. Then followed another battle with the Syrian army thus recruited, which resulted in its being totally routed at Helam (2 Samuel 10:17). Shobach, the leader of the Syrian army, died on the field of battle. The Syrians of Damascus, who had come to help Hadadezer, were also routed, and Damascus was made tributary to David. All the spoils taken in this war, "shields of gold" and "very much brass," from which afterwards the "brasen sea, and the pillars, and the vessels of brass" for the temple were made (1 Chronicles 18:8), were brought to Jerusalem and dedicated to Jehovah. Thus the power of the Ammonites and the Syrians was finally broken, and David's empire extended to the Euphrates (2 Samuel 10:15-19; 1 Chronicles 19:15-19).

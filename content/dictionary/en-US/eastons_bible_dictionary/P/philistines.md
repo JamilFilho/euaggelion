@@ -1,0 +1,14 @@
+# Philistines
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Philistines
+
+---
+
+**Philistines**
+(Gen. 10:14, R.V.; but in A.V., "Philistim"), a tribe allied to the Phoenicians. They were a branch of the primitive race which spread over the whole district of the Lebanon and the valley of the Jordan, and Crete and other Mediterranean islands. Some suppose them to have been a branch of the Rephaim (2 Sam. 21:16-22). In the time of Abraham they inhabited the south-west of Judea, Abimelech of Gerar being their king (Gen. 21:32, 34; 26:1). They are, however, not noticed among the Canaanitish tribes mentioned in the Pentateuch. They are spoken of by Amos (9:7) and Jeremiah (47:4) as from Caphtor, i.e., probably Crete, or, as some think, the Delta of Egypt. In the whole record from Exodus to Samuel they are represented as inhabiting the tract of country which lay between Judea and Egypt (Ex. 13:17; 15:14, 15; Josh. 13:3; 1 Sam. 4).
+
+This powerful tribe made frequent incursions against the Hebrews. There was almost perpetual war between them. They sometimes held the tribes, especially the southern tribes, in degrading servitude (Judg. 15:11; 1 Sam. 13:19-22); at other times they were defeated with great slaughter (1 Sam. 14:1-47; 17). These hostilities did not cease till the time of Hezekiah (2 Kings 18:8), when they were entirely subdued. They still, however, occupied their territory, and always showed their old hatred to Israel (Ezek. 25:15-17). They were finally conquered by the Romans.
+
+The Philistines are called Pulsata or Pulista on the Egyptian monuments; the land of the Philistines (Philistia) being termed Palastu and Pilista in the Assyrian inscriptions. They occupied the five cities of Gaza, Ashkelon, Ashdod, Ekron, and Gath, in the south-western corner of Canaan, which belonged to Egypt up to the closing days of the Nineteenth Dynasty. The occupation took place during the reign of Rameses III. of the Twentieth Dynasty. The Philistines had formed part of the great naval confederacy which attacked Egypt, but were eventually repulsed by that Pharaoh, who, however, could not dislodge them from their settlements in Palestine. As they did not enter Palestine till the time of the Exodus, the use of the name Philistines in Gen. 26:1 must be proleptic. Indeed the country was properly Gerar, as in ch. 20.
+
+They are called Allophyli, "foreigners," in the Septuagint, and in the Books of Samuel they are spoken of as uncircumcised. It would therefore appear that they were not of the Semitic race, though after their establishment in Canaan they adopted the Semitic language of the country. We learn from the Old Testament that they came from Caphtor, usually supposed to be Crete. From Philistia the name of the land of the Philistines came to be extended to the whole of "Palestine." Many scholars identify the Philistines with the Pelethites of 2 Sam. 8:18.

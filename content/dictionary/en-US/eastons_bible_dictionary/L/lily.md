@@ -1,0 +1,11 @@
+# Lily
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/lily.html
+
+---
+
+**Lily:** The Hebrew name shushan or shoshan, i.e., "whiteness", was used as the general name of several plants common to Syria, such as the tulip, iris, anemone, gladiolus, ranunculus, etc. Some interpret it, with much probability, as denoting in the Old Testament the water-lily (Nymphoea lotus of Linn.), or lotus (Song of Solomon 2:1,2; 2:16; 4:5; 5:13; 6:2,3; 7:2). "Its flowers are large, and they are of a white colour, with streaks of pink. They supplied models for the ornaments of the pillars and the molten sea" (1 Kings 7:19,22,26; 2 Chronicles 4:5). In the Canticles its beauty and fragrance shadow forth the preciousness of Christ to the Church. Groser, however (Scrip. Nat. Hist.), strongly argues that the word, both in the Old and New Testaments, denotes liliaceous plants in general, or if one genus is to be selected, that it must be the genus Iris, which is "large, vigorous, elegant in form, and gorgeous in colouring."
+
+The lilies (Gr. krinia) spoken of in the New Testament (Matthew 6:28; Luke 12:27) were probably the scarlet martagon (Lilium Chalcedonicum) or "red Turk's-cap lily", which "comes into flower at the season of the year when our Lord's sermon on the mount is supposed to have been delivered. It is abundant in the district of Galilee; and its fine scarlet flowers render it a very conspicous and showy object, which would naturally attract the attention of the hearers" (Balfour's Plants of the Bible).
+
+Of the true "floral glories of Palestine" the pheasant's eye (Adonis Palestina), the ranunuculus (R. Asiaticus), and the anemone (A coronaria), the last named is however, with the greatest probability regarded as the "lily of the field" to which our Lord refers. "Certainly," says Tristram (Nat. Hist. of the Bible), "if, in the wondrous richness of bloom which characterizes the land of Israel in spring, any one plant can claim pre-eminence, it is the anemone, the most natural flower for our Lord to pluck and seize upon as an illustration, whether walking in the fields or sitting on the hill-side." "The white water-lily (Nymphcea alba) and the yellow water-lily (Nuphar lutea) are both abundant in the marshes of the Upper Jordan, but have no connection with the lily of Scripture."

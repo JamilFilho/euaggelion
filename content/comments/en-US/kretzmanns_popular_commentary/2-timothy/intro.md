@@ -1,0 +1,9 @@
+# 2 Timothy — Introduction
+
+Fonte: https://kretzmanncommentary.org/2-timothy/intro
+
+---
+
+After Paul had written his first letter to Timothy, he continued his apostolic labors in Macedonia and the Orient, although it is probable, from certain historical traditions, that he also visited Spain. But for some unknown reason his ministry was suddenly interrupted by his arrest and subsequent transportation to Rome. The situation of the apostle during this last imprisonment was wholly changed from that of his previous stay in Rome. He was in bonds, chap. 1, 8. 16; he no longer had the expectation, as before, of being released. It is true that he had, for the moment, escaped from a great danger, chap. 4, 17; yet he is strongly convinced that the time of his departure is at hand, chap. 4, 6. His last letter, therefore, bears a unique character, so that it has been, not without reason, called the testament of the dying apostle to his spiritual son and to the entire community. The epistle was written not long after his imprisonment and in view of his certainly approaching death, either in 66 or 67, the latter year being mentioned by tradition.
+
+The familiar tone which is evident in the first letter is brought out here with even greater force. The epistle is a confidential talk of the apostle with the man to whom he had given the love of a father from the time of his conversion. After the address and greeting there is an admonition to continue in the bold confession of the Gospel through the power of God. The apostle then speaks at length of the proper administration of the ministerial office with reference to various difficult conditions, always emphasizing faithfulness as an essential virtue of a pastor. In conclusion he gives some information as to various personal acquaintances and a short report of his first hearing in court. He closes with greetings and his apostolic blessing, the significance of which is in force to this day.

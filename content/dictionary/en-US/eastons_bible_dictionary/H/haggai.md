@@ -1,0 +1,8 @@
+# Haggai
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Haggai
+
+---
+
+**Haggai**
+Festive, one of the twelve so-called minor prophets. He was the first of the three (Zechariah, his contemporary, and Malachi, who was about one hundred years later, being the other two) whose ministry belonged to the period of Jewish history which began after the return from captivity in Babylon. Scarcely anything is known of his personal history. He may have been one of the captives taken to Babylon by Nebuchadnezzar. He began his ministry about sixteen years after the Return. The work of rebuilding the temple had been put a stop to through the intrigues of the Samaritans. After having been suspended for fifteen years, the work was resumed through the efforts of Haggai and Zechariah (Ezra 6:14), who by their exhortations roused the people from their lethargy, and induced them to take advantage of the favourable opportunity that had arisen in a change in the policy of the Persian government. (See [254]DARIUS [2].) Haggai's prophecies have thus been characterized:, "There is a ponderous and simple dignity in the emphatic reiteration addressed alike to every class of the community, prince, priest, and people, `Be strong, be strong, be strong' (2:4). `Cleave, stick fast, to the work you have to do;' or again, `Consider your ways, consider, consider, consider' (1:5, 7;2:15, 18). It is the Hebrew phrase for the endeavour, characteristic of the gifted seers of all times, to compel their hearers to turn the inside of their hearts outwards to their own view, to take the mask from off their consciences, to `see life steadily, and to see it wholly.'", Stanley's Jewish Church. (See [255]SIGNET.)

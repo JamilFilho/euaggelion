@@ -1,0 +1,7 @@
+# Micaiah
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/micaiah.html
+
+---
+
+**Micaiah:** who is like Jehovah?, the son of Imlah, a faithful prophet of Samaria (1 Kings 22:8-28). Three years after the great battle with Ben-hadad (1 Kings 20:29-34), Ahab proposed to Jehoshaphat, king of Judah, that they should go up against Ramoth-Gilead to do battle again with Ben-hadad. Jehoshaphat agreed, but suggested that inquiry should be first made "at the word of Jehovah." Ahab's prophets approved of the expedition; but Jehoshaphat, still dissatisfied, asked if there was no other prophet besides the four hundred that had appeared, and was informed of this Micaiah. He was sent for from prison, where he had been confined, probably on account of some prediction disagreeable to Ahab; and he condemned the expedition, and prophesied that it would end, as it did, in disaster. We hear nothing further of this prophet. Some have supposed that he was the unnamed prophet referred to in 1 Kings 20:35-42.

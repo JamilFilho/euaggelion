@@ -1,0 +1,15 @@
+# 1 John — Introduction
+
+Fonte: https://kretzmanncommentary.org/1-john/intro
+
+---
+
+Although the author of this epistle does not mention his name, the fact that he speaks of himself as an eye-witness of the ministry and of the Passion of Christ, and the other point, that the thoughts, the style, and the entire contents of the letter agree so closely with those of the fourth gospel, make it certain beyond reasonable doubt that John, the Apostle of Love, is the author. From the tone which he employs throughout it appears that John was well known to his readers, was on terms of loving intimacy with them. It is generally assumed that they were members of the Christian congregations in Asia Minor, especially of the western part, in the Roman province of Asia. They seem to have been the same people for whom John also wrote his gospel. These congregations had been founded by Paul or his companions and pupils. But after Paul had died as martyr in Rome, about 67 A. D., John left Jerusalem and made Ephesus his home. During the remaining thirty odd years of his life he had the oversight over the churches in Asia Minor. It was toward the end of his life that he wrote this letter. As the only surviving apostle and as an aged pastor addressing men of a later generation, he speaks in a tone befitting his station, that of a father instructing and admonishing his children, in a series of most beautiful appeals.
+
+The general purpose of the letter is to warn against false teachers, most of whom, if not all, had come from the congregations themselves. He designates them as false prophets and as antichrists, because they denied the mystery of the incarnation of Jesus, attempted to reduce the horror which Christians should feel toward sin, and denied brotherly love. This was a trend of thought and practise which was found quite generally in those days, also in the case of sectarians that troubled the Christian Church for almost another century.
+
+Although the epistle does not show a sharp outline, being written in letter style, yet we may distinguish certain groups of instructions and admonitions. The introduction gives the subject-matter and the purpose of the epistle. Under the general thought “God is Light” the apostle shows that walking in the light involves fellowship with God and with the brethren, consciousness and confession of sin, keeping God’s commandments; it excludes hatred of the brethren, love of the world, and discipleship under false teachers. Under a second general topic “God is Love” the apostle depicts the singular love of God in calling us His children, naming as the evidence of sonship righteousness and brotherly love. He warns against believing all teachers who boast of the Spirit. He exhorts the believers to love one another and to be like God, who is Love, and in this love sent His Son to be our Savior. He shows that faith in Christ is the source of love, and describes the witnesses of our faith. In the conclusion he summarizes all his teaching and admonishing in a powerful appeal.[^1]
+
+---
+
+[^1]: Cp. Fuerbringer, *Einleitung in das Neue Testament*, 102; *Concordia Bible Class*, Nov., 1919, 184.

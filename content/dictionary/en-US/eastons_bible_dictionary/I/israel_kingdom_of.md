@@ -1,0 +1,16 @@
+# Israel, Kingdom of
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Israel,_Kingdom_of
+
+---
+
+**Israel, Kingdom of**
+(B.C. 975-B.C. 722). Soon after the death of Solomon, Ahijah's prophecy (1 Kings 11:31-35) was fulfilled, and the kingdom was rent in twain. Rehoboam, the son and successor of Solomon, was scarcely seated on his throne when the old jealousies between Judah and the other tribes broke out anew, and Jeroboam was sent for from Egypt by the malcontents (12:2, 3). Rehoboam insolently refused to lighten the burdensome taxation and services which his father had imposed on his subjects (12:4), and the rebellion became complete. Ephraim and all Israel raised the old cry, "Every man to his tents, O Israel" (2 Sam. 20:1). Rehoboam fled to Jerusalem (1 Kings 12:1-18; 2 Chr. 10), and Jeroboam was proclaimed king over all Israel at Shechem, Judah and Benjamin remaining faithful to Solomon's son. War, with varying success, was carried on between the two kingdoms for about sixty years, till Jehoshaphat entered into an alliance with the house of Ahab.
+
+Extent of the kingdom. In the time of Solomon the area of Palestine, excluding the Phoenician territories on the shore of the Mediterranean, did not much exceed 13,000 square miles. The kingdom of Israel comprehended about 9,375 square miles. Shechem was the first capital of this kingdom (1 Kings 12:25), afterwards Tirza (14:17). Samaria was subsequently chosen as the capital (16:24), and continued to be so till the destruction of the kingdom by the Assyrians (2 Kings 17:5). During the siege of Samaria (which lasted for three years) by the Assyrians, Shalmaneser died and was succeeded by Sargon, who himself thus records the capture of that city: "Samaria I looked at, I captured; 27,280 men who dwelt in it I carried away" (2 Kings 17:6) into Assyria. Thus after a duration of two hundred and fifty-three years the kingdom of the ten tribes came to an end. They were scattered throughout the East. (See [302]CAPTIVITY.)
+
+"Judah held its ground against Assyria for yet one hundred and twenty-three years, and became the rallying-point of the dispersed of every tribe, and eventually gave its name to the whole race. Those of the people who in the last struggle escaped into the territories of Judah or other neighbouring countries naturally looked to Judah as the head and home of their race. And when Judah itself was carried off to Babylon, many of the exiled Israelites joined them from Assyria, and swelled that immense population which made Babylonia a second Palestine."
+
+After the deportation of the ten tribes, the deserted land was colonized by various eastern tribes, whom the king of Assyria sent thither (Ezra 4:2, 10; 2 Kings 17:24-29). (See [303]KINGS.)
+
+In contrast with the kingdom of Judah is that of Israel. (1.) "There was no fixed capital and no religious centre. (2.) The army was often insubordinate. (3.) The succession was constantly interrupted, so that out of nineteen kings there were no less than nine dynasties, each ushered in by a revolution. (4.) The authorized priests left the kingdom in a body, and the priesthood established by Jeroboam had no divine sanction and no promise; it was corrupt at its very source." (Maclean's O. T. Hist.)

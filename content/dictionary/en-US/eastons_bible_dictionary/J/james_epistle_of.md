@@ -1,0 +1,16 @@
+# James, Epistle of
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/James,_Epistle_of
+
+---
+
+**James, Epistle of**
+(1.) Author of, was James the Less, the Lord's brother, one of the twelve apostles. He was one of the three pillars of the Church (Gal. 2:9).
+
+(2.) It was addressed to the Jews of the dispersion, "the twelve tribes scattered abroad."
+
+(3.) The place and time of the writing of the epistle were Jerusalem, where James was residing, and, from internal evidence, the period between Paul's two imprisonments at Rome, probably about A.D. 62.
+
+(4.) The object of the writer was to enforce the practical duties of the Christian life. "The Jewish vices against which he warns them are, formalism, which made the service of God consist in washings and outward ceremonies, whereas he reminds them (1:27) that it consists rather in active love and purity; fanaticism, which, under the cloak of religious zeal, was tearing Jerusalem in pieces (1:20); fatalism, which threw its sins on God (1:13); meanness, which crouched before the rich (2:2); falsehood, which had made words and oaths play-things (3:2-12); partisanship (3:14); evil speaking (4:11); boasting (4:16); oppression (5:4). The great lesson which he teaches them as Christians is patience, patience in trial (1:2), patience in good works (1:22-25), patience under provocation (3:17), patience under oppression (5:7), patience under persecution (5:10); and the ground of their patience is that the coming of the Lord draweth nigh, which is to right all wrong (5:8)."
+
+"Justification by works," which James contends for, is justification before man, the justification of our profession of faith by a consistent life. Paul contends for the doctrine of "justification by faith;" but that is justification before God, a being regarded and accepted as just by virtue of the righteousness of Christ, which is received by faith.

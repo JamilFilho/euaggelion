@@ -1,0 +1,7 @@
+# Ararat
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Ararat
+
+---
+
+**Ararat**: sacred land or high land, the name of a country on one of the mountains of which the ark rested after the Flood subsided (Genesis 8:4). The "mountains" mentioned were probably the Kurdish range of South Armenia. In 2 Kings 19:37, Isaiah 37:38, the word is rendered "Armenia" in the Authorized Version, but in the Revised Version, "Land of Ararat." In Jeremiah 51:27, the name denotes the central or southern portion of Armenia. It is, however, generally applied to a high and almost inaccessible mountain which rises majestically from the plain of the Araxes. It has two conical peaks, about 7 miles apart, the one 14,300 feet and the other 10,300 feet above the level of the plain. Three thousand feet of the summit of the higher of these peaks is covered with perpetual snow. It is called Kuh-i-nuh, i.e., "Noah's mountain", by the Persians. This part of Armenia was inhabited by a people who spoke a language unlike any other now known, though it may have been related to the modern Georgian. About B.C. 900 they borrowed the cuneiform characters of Nineveh, and from this time we have inscriptions of a line of kings who at times contended with Assyria. At the close of the seventh century B.C. the kingdom of Ararat came to an end, and the country was occupied by a people who are ancestors of the Armenians of the present day.

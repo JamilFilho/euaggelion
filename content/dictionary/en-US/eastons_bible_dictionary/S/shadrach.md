@@ -1,0 +1,8 @@
+# Shadrach
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Shadrach
+
+---
+
+**Shadrach**
+Aku's command, the Chaldean name given to Hananiah, one of the Hebrew youths whom Nebuchadnezzar carried captive to Babylon (Dan. 1:6, 7; 3:12-30). He and his two companions refused to bow down before the image which Nebuchadnezzar had set up on the plains of Dura. Their conduct filled the king with the greatest fury, and he commanded them to be cast into the burning fiery furnace. Here, amid the fiery flames, they were miraculously preserved from harm. Over them the fire had no power, "neither was a hair of their head singed, neither had the smell of fire passed on them." Thus Nebuchadnezzar learned the greatness of the God of Israel. (See ABEDNEGO)

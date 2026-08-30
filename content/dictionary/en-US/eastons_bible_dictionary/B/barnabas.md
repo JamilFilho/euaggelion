@@ -1,0 +1,11 @@
+# Barnabas
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Barnabas
+
+---
+
+**Barnabas**: son of consolation, the surname of Joses, a Levite (Acts 4:36). His name stands first on the list of prophets and teachers of the church at Antioch (Acts 13:1). Luke speaks of him as a "good man" (Acts 11:24). He was born of Jewish parents of the tribe of Levi. He was a native of Cyprus, where he had a possession of land (Acts 4:36, 37), which he sold. His personal appearance is supposed to have been dignified and commanding (Acts 14:11, 12). When Paul returned to Jerusalem after his conversion, Barnabas took him and introduced him to the apostles (Acts 9:27). They had probably been companions as students in the school of Gamaliel.
+
+The prosperity of the church at Antioch led the apostles and brethren at Jerusalem to send Barnabas thither to superintend the movement. He found the work so extensive and weighty that he went to Tarsus in search of Saul to assist him. Saul returned with him to Antioch and laboured with him for a whole year (Acts 11:25,26). The two were at the end of this period sent up to Jerusalem with the contributions the church at Antioch had made for the poorer brethren there (Acts 11:28-30). Shortly after they returned, bringing John Mark with them, they were appointed as missionaries to the heathen world, and in this capacity visited Cyprus and some of the principal cities of Asia Minor (Acts 13:14). Returning from this first missionary journey to Antioch, they were again sent up to Jerusalem to consult with the church there regarding the relation of Gentiles to the church (Acts 15:2: Galatians 2:1). This matter having been settled, they returned again to Antioch, bringing the decree of the council as the rule by which Gentiles were to be admitted into the church.
+
+When about to set forth on a second missionary journey, a dispute arose between Saul and Barnabas as to the propriety of taking John Mark with them again. The dispute ended by Saul and Barnabas taking separate routes. Saul took Silas as his companion, and journeyed through Syria and Cilicia; while Barnabas took his nephew John Mark, and visited Cyprus (Acts 15:36-41). Barnabas is not again mentioned by Luke in the Acts.

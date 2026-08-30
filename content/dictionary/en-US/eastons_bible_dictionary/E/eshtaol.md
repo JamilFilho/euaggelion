@@ -1,0 +1,7 @@
+# Eshtaol
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/eshtaol.html
+
+---
+
+**Eshtaol:** narrow pass or recess, a town (Joshua 15:33) in the low country, the She-phelah of Judah. It was allotted to the tribe of Dan (Joshua 19:41), and was one of their strongholds. Here Samson spent his boyhood, and first began to show his mighty strength; and here he was buried in the burying-place of Manoah his father (Judges 13:25; 16:31; 18:2,8,11,12). It is identified with the modern Yeshua, on a hill 2 miles east of Zorah. Others, however, identify it with Kustul, east of Kirjath-jearim.

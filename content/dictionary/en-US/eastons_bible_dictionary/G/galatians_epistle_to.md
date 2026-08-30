@@ -1,0 +1,22 @@
+# Galatians, Epistle to
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/galatians%2C+epistle+to.html
+
+---
+
+**Galatians, Epistle to:** The genuineness of this epistle is not called in question. Its Pauline origin is universally acknowledged.
+
+Occasion of. The churches of Galatia were founded by Paul himself (Acts 16:6; Galatians 1:8; 4:13,19). They seem to have been composed mainly of converts from heathenism (Galatians 4:8), but partly also of Jewish converts, who probably, under the influence of Judaizing teachers, sought to incorporate the rites of Judaism with Christianity, and by their active zeal had succeeded in inducing the majority of the churches to adopt their views (Galatians 1:6; 3:1). This epistle was written for the purpose of counteracting this Judaizing tendency, and of recalling the Galatians to the simplicity of the gospel, and at the same time also of vindicating Paul's claim to be a divinely-commissioned apostle.
+
+Time and place of writing. The epistle was probably written very soon after Paul's second visit to Galatia (Acts 18:23). The references of the epistle appear to agree with this conclusion. The visit to Jerusalem, mentioned in Galatians 2:1-10, was identical with that of Acts 15, and it is spoken of as a thing of the past, and consequently the epistle was written subsequently to the council of Jerusalem. The similarity between this epistle and that to the Romans has led to the conclusion that they were both written at the same time, namely, in the winter of A.D. 57-8, during Paul's stay in Corinth (Acts 20:2,3). This to the Galatians is written on the urgency of the occasion, tidings having reached him of the state of matters; and that to the Romans in a more deliberate and systematic way, in exposition of the same great doctrines of the gospel.
+
+Contents of. The great question discussed is, Was the Jewish law binding on Christians? The epistle is designed to prove against the Jews that men are justified by faith without the works of the law of Moses. After an introductory address (Galatians 1:1-10) the apostle discusses the subjects which had occasioned the epistle.
+
+1. He defends his apostolic authority (Galatians 1:11-19; 2:1-14);
+2. shows the evil influence of the Judaizers in destroying the very essence of the gospel (Galatians 3 and 4);
+3. exhorts the Galatian believers to stand fast in the faith as it is in Jesus, and to abound in the fruits of the Spirit, and in a right use of their Christian freedom (Galatians 5-6:1-10);
+4. and then concludes with a summary of the topics discussed, and with the benediction.
+
+The Epistle to the Galatians and that to the Romans taken together "form a complete proof that justification is not to be obtained meritoriously either by works of morality or by rites and ceremonies, though of divine appointment; but that it is a free gift, proceeding entirely from the mercy of God, to those who receive it by faith in Jesus our Lord."
+
+In the conclusion of the epistle (Galatians 6:11) Paul says, "Ye see how large a letter I have written with mine own hand." It is implied that this was different from his ordinary usage, which was simply to write the concluding salutation with his own hand, indicating that the rest of the epistle was written by another hand. Regarding this conclusion, Lightfoot, in his Commentary on the epistle, says: "At this point the apostle takes the pen from his amanuensis, and the concluding paragraph is written with his own hand. From the time when letters began to be forged in his name (2 Thessalonians 2:2; 3:17) it seems to have been his practice to close with a few words in his own handwriting, as a precaution against such forgeries...In the present case he writes a whole paragraph, summing up the main lessons of the epistle in terse, eager, disjointed sentences. He writes it, too, in large, bold characters (Gr. pelikois grammasin), that his hand-writing may reflect the energy and determination of his soul." (See JUSTIFICATION.)

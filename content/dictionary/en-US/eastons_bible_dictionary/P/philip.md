@@ -1,0 +1,14 @@
+# Philip
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Philip
+
+---
+
+**Philip**
+Lover of horses. (1.) One of the twelve apostles; a native of Bethsaida, "the city of Andrew and Peter" (John 1:44). He readily responded to the call of Jesus when first addressed to him (43), and forthwith brought Nathanael also to Jesus (45, 46). He seems to have held a prominent place among the apostles (Matt. 10:3; Mark 3:18; John 6:5-7; 12:21, 22; 14:8, 9; Acts 1:13). Of his later life nothing is certainly known. He is said to have preached in Phrygia, and to have met his death at Hierapolis.
+
+(2.) One of the "seven" (Acts 6:5), called also "the evangelist" (21:8, 9). He was one of those who were "scattered abroad" by the persecution that arose on the death of Stephen. He went first to Samaria, where he laboured as an evangelist with much success (8:5-13). While he was there he received a divine command to proceed toward the south, along the road leading from Jerusalem to Gaza. These towns were connected by two roads. The one Philip was directed to take was that which led through Hebron, and thence through a district little inhabited, and hence called "desert." As he travelled along this road he was overtaken by a chariot in which sat a man of Ethiopia, the eunuch or chief officer of Queen Candace, who was at that moment reading, probably from the Septuagint version, a portion of the prophecies of Isaiah (53:6, 7). Philip entered into conversation with him, and expounded these verses, preaching to him the glad tidings of the Saviour. The eunuch received the message and believed, and was forthwith baptized, and then "went on his way rejoicing." Philip was instantly caught away by the Spirit after the baptism, and the eunuch saw him no more. He was next found at Azotus, whence he went forth in his evangelistic work till he came to Caesarea. He is not mentioned again for about twenty years, when he is still found at Caesarea (Acts 21:8) when Paul and his companions were on the way to Jerusalem. He then finally disappears from the page of history.
+
+(3.) Mentioned only in connection with the imprisonment of John the Baptist (Matt. 14:3; Mark 6:17; Luke 3:19). He was the son of Herod the Great, and the first husband of Herodias, and the father of Salome. (See [481]HEROD PHILIP I.)
+
+(4.) The "tetrarch of Ituraea" (Luke 3:1); a son of Herod the Great, and brother of Herod Antipas. The city of Caesarea-Philippi was named partly after him (Matt. 16:13; Mark 8:27). (See [482]HEROD PHILIP II.)

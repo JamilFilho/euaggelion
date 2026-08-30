@@ -1,0 +1,11 @@
+# Eagle
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Eagle
+
+---
+
+**Eagle** (Herb. nesher; properly the griffon vulture or great vulture, so called from its tearing its prey with its beak), referred to for its swiftness of flight (Deut. 28:49; 2 Sam. 1:23), its mounting high in the air (Job 39:27), its strength (Ps. 103:5), its setting its nest in high places (Jer. 49:16), and its power of vision (Job 39:27-30).
+
+This "ravenous bird" is a symbol of those nations whom God employs and sends forth to do a work of destruction, sweeping away whatever is decaying and putrescent (Matt. 24:28; Isa. 46:11; Ezek. 39:4; Deut. 28:49; Jer. 4:13; 48:40). It is said that the eagle sheds his feathers in the beginning of spring, and with fresh plumage assumes the appearance of youth. To this, allusion is made in Ps. 103:5 and Isa. 40:31. God's care over his people is likened to that of the eagle in training its young to fly (Ex. 19:4; Deut. 32:11, 12). An interesting illustration is thus recorded by Sir Humphry Davy:, "I once saw a very interesting sight above the crags of Ben Nevis. Two parent eagles were teaching their offspring, two young birds, the maneuvers of flight. They began by rising from the top of the mountain in the eye of the sun. It was about mid-day, and bright for the climate. They at first made small circles, and the young birds imitated them. They paused on their wings, waiting till they had made their flight, and then took a second and larger gyration, always rising toward the sun, and enlarging their circle of flight so as to make a gradually ascending spiral. The young ones still and slowly followed, apparently flying better as they mounted; and they continued this sublime exercise, always rising till they became mere points in the air, and the young ones were lost, and afterwards their parents, to our aching sight." (See Isa. 40:31.)
+
+There have been observed in Palestine four distinct species of eagles, (1) the golden eagle (Aquila chrysaetos); (2) the spotted eagle (Aquila naevia); (3) the common species, the imperial eagle (Aquila heliaca); and (4) the Circaetos gallicus, which preys on reptiles. The eagle was unclean by the Levitical law (Lev. 11:13; Deut. 14:12).

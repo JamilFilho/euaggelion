@@ -1,0 +1,11 @@
+# Numbering of the people
+
+Fonte: https://www.christianity.com/bible/dictionary/eastons-bible-dictionary/numbering+of+the+people.html
+
+---
+
+**Numbering of the people:** Besides the numbering of the tribes mentioned in the history of the wanderings in the wilderness, we have an account of a general census of the whole nation from Dan to Beersheba, which David gave directions to Joab to make (1 Chronicles 21:1). Joab very reluctantly began to carry out the king's command.
+
+This act of David in ordering a numbering of the people arose from pride and a self-glorifying spirit. It indicated a reliance on his part on an arm of flesh, an estimating of his power not by the divine favour but by the material resources of his kingdom. He thought of military achievement and of conquest, and forgot that he was God's vicegerent. In all this he sinned against God. While Joab was engaged in the census, David's heart smote him, and he became deeply conscious of his fault; and in profound humiliation he confessed, "I have sinned greatly in what I have done." The prophet Gad was sent to him to put before him three dreadful alternatives (2 Samuel 24:13; for "seven years" in this verse, the LXX. and 1 Chronicles 21:12 have "three years"), three of Jehovah's four sore judgments (Ezekiel 14:21). Two of these David had already experienced. He had fled for some months before Absalom, and had suffered three years' famine on account of the slaughter of the Gibeonites. In his "strait" David said, "Let me fall into the hands of the Lord." A pestilence broke out among the people, and in three days swept away 70,000. At David's intercession the plague was stayed, and at the threshing-floor of Araunah (which see), where the destroying angel was arrested in his progress, David erected an altar, and there offered up sacrifies to God (2 Chronicles 3:1).
+
+The census, so far as completed, showed that there were at least 1,300,000 fighting men in the kingdom, indicating at that time a population of about six or seven millions in all. (See CENSUS.)

@@ -1,0 +1,14 @@
+# Maccabees, Books of the
+
+Fonte: https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/Maccabees,_Books_of_the
+
+---
+
+**Maccabees, Books of the**
+There were originally five books of the Maccabees. The first contains a history of the war of independence, commencing (B.C. 175) in a series of patriotic struggles against the tyranny of Antiochus Epiphanes, and terminating B.C. 135. It became part of the Vulgate Version of the Bible, and was thus retained among the Apocrypha.
+
+The second gives a history of the Maccabees' struggle from B.C. 176 to B.C. 161. Its object is to encourage and admonish the Jews to be faithful to the religion of their fathers.
+
+The third does not hold a place in the Apocrypha, but is read in the Greek Church. Its design is to comfort the Alexandrian Jews in their persecution. Its writer was evidently an Alexandrian Jew.
+
+The fourth was found in the Library of Lyons, but was afterwards burned. The fifth contains a history of the Jews from B.C. 184 to B.C. 86. It is a compilation made by a Jew after the destruction of Jerusalem, from ancient memoirs, to which he had access. It need scarcely be added that none of these books has any divine authority.
